@@ -5353,5 +5353,80 @@
         "type": "EntityIndex"
       }
     ]
+  },
+  {
+    "name": "dota_xp_fountain_activated",
+    "sourceFile": "game",
+    "local": false,
+    "fields": [
+      {
+        "name": "entindex",
+        "type": "EntityIndex"
+      },
+      {
+        "name": "teamnumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "dota_tormentor_killed",
+    "sourceFile": "game",
+    "local": false,
+    "fields": [
+      {
+        "name": "entindex",
+        "type": "EntityIndex"
+      },
+      {
+        "name": "teamnumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "dota_roshan_killed",
+    "sourceFile": "game",
+    "local": false,
+    "fields": [
+      {
+        "name": "entindex",
+        "type": "EntityIndex"
+      },
+      {
+        "name": "teamnumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "dota_ancient_decoration_spawn",
+    "sourceFile": "game",
+    "local": false,
+    "fields": [
+      {
+        "name": "entindex",
+        "type": "EntityIndex"
+      },
+      {
+        "name": "teamnumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "name": "dota_enemy_ancient_killed",
+    "sourceFile": "game",
+    "local": false,
+    "fields": [
+      {
+        "name": "entindex",
+        "type": "EntityIndex"
+      },
+      {
+        "name": "teamnumber",
+        "type": "int"
+      }
+    ]
   }
 ]

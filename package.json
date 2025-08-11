@@ -10,7 +10,7 @@
     "files/**/*.{json,ts}"
   ],
   "scripts": {
-    "build": "run-s build:clean build:static build:tsc",
+    "build": "run-s build:clean build:static build:tsc build:modifiers",
     "build:clean": "rimraf \"{files,lib}/**/*\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
@@ -23,7 +23,8 @@
     "fix:prettier": "prettier --write .",
     "prepublishOnly": "npm run build:tsc",
     "test": "jest",
-    "auto-dump": "tsx dumper/start-dumper.mts"
+    "auto-dump": "tsx dumper/start-dumper.mts",
+    "build:modifiers": "tsx dumper/build-modifiers.ts"
   },
   "prettier": {
     "printWidth": 100,

@@ -705,6 +705,10 @@
       {
         "name": "OVERHEAD_ALERT_FORCE_MISS",
         "value": 25
+      },
+      {
+        "name": "OVERHEAD_ALERT_AEGIS",
+        "value": 26
       }
     ]
   },
@@ -3529,20 +3533,24 @@
         "value": 100
       },
       {
+        "name": "DOTA_LOADOUT_TYPE_PET_EFFIGY",
+        "value": 101
+      },
+      {
         "name": "DOTA_PLAYER_LOADOUT_START",
         "value": 70
       },
       {
         "name": "DOTA_PLAYER_LOADOUT_END",
-        "value": 100
-      },
-      {
-        "name": "DOTA_LOADOUT_TYPE_NONE",
         "value": 101
       },
       {
-        "name": "DOTA_LOADOUT_TYPE_COUNT",
+        "name": "DOTA_LOADOUT_TYPE_NONE",
         "value": 102
+      },
+      {
+        "name": "DOTA_LOADOUT_TYPE_COUNT",
+        "value": 103
       }
     ]
   },
