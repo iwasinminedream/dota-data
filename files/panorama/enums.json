@@ -398,6 +398,10 @@
       {
         "name": "DOTA_GAMEMODE_COACHES_CHALLENGE",
         "value": 25
+      },
+      {
+        "name": "DOTA_GAMEMODE_BOT_CHALLENGE",
+        "value": 26
       }
     ]
   },
@@ -5741,6 +5745,10 @@
       {
         "name": "MODIFIER_ATTRIBUTE_IGNORE_DODGE",
         "value": 16
+      },
+      {
+        "name": "MODIFIER_ATTRIBUTE_DUPLICATED",
+        "value": 32
       }
     ]
   },
