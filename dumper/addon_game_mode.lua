@@ -93,6 +93,8 @@ SCRIPT = [[
   cl_script_reload
   echoln $> cl_dump_modifier_list
   cl_dump_modifier_list
+  echoln $> cvarlist
+  cvarlist
   echoln $> cl_panorama_typescript_declarations
 ]]
 

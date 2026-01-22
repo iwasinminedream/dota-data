@@ -4,6 +4,7 @@ import { generateEvents } from './events';
 import { generateEngineEnums } from './engine-enums';
 import { generatePanorama } from './panorama';
 import { generateVScripts } from './vscripts';
+import { generateConvars } from './convars';
 
 import { validateApi } from './vscripts/api';
 import { validateApiTypes } from './vscripts/api-types';
@@ -29,6 +30,7 @@ import { validateEnums } from './vscripts/enums';
   console.log('Generating enums from dump...');
 
   await generateEngineEnums(dota2Dir);
+  await generateConvars();
 
   console.log('Generating VScript types...');
 
