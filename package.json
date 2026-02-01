@@ -10,10 +10,11 @@
     "files/**/*.{json,ts}"
   ],
   "scripts": {
-    "build": "run-s build:clean build:static build:tsc build:modifiers",
+    "build": "run-s build:clean build:static build:tsc build:modifiers build:extra",
     "build:clean": "rimraf \"{files,lib}/**/*\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
+    "build:extra": "node build/rebuild-data.js",
     "dev": "run-p dev:static dev:tsc",
     "dev:static": "nodemon",
     "dev:tsc": "tsc --watch --preserveWatchOutput",
@@ -23,8 +24,9 @@
     "fix:prettier": "prettier --write .",
     "prepublishOnly": "npm run build:tsc",
     "test": "jest",
-    "auto-dump": "tsx dumper/start-dumper.mts",
-    "build:modifiers": "tsx dumper/build-modifiers.ts"
+    "auto-dump": "tsx dumper/start-dumper.mts && npm run build:modifiers && npm run build:extra",
+    "build:modifiers": "tsx dumper/build-modifiers.ts",
+    "rebuild-data": "node build/rebuild-data.js"
   },
   "prettier": {
     "printWidth": 100,
@@ -74,7 +76,8 @@
     "tsx": "^3.12.4",
     "typescript": "^4.9.5",
     "valve-kv": "^1.2.1",
-    "vpk": "^0.2.0"
+    "vpk": "^0.2.0",
+    "webpack-cli": "^6.0.1"
   },
   "engines": {
     "node": ">=12.13.0"
