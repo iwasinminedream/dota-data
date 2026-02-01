@@ -1,0 +1,24 @@
+name: Trigger Site Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'files/**'
+      - 'lib/**'
+
+jobs:
+  trigger-deploy:
+    name: Trigger ModDota Site Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger moddota.github.io deploy
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.MODDOTA_DISPATCH_TOKEN }}
+          repository: iwasinminedream/moddota.github.io
+          event-type: dota-data-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
