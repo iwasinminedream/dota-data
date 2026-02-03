@@ -6483,6 +6483,10 @@
         "shortName": "DONT_RESUME_MOVEMENT"
       },
       {
+        "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND",
+        "shortName": "FORCE_KEYBIND"
+      },
+      {
         "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI",
         "shortName": "FORCE_NO_INNATE_UI"
       },

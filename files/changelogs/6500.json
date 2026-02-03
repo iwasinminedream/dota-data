@@ -1,0 +1,57 @@
+{
+  "version": "6500",
+  "date": "Aug 05 2025",
+  "time": "12:18:50",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_AEGIS",
+          "value": 26
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_PET_EFFIGY",
+          "value": 101
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
+          "value": 17
+        }
+      ]
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "name": "Start Tracking"
+        }
+      ],
+      "removed": []
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_AEGIS",
+          "value": 26
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_PET_EFFIGY",
+          "value": 101
+        }
+      ],
+      "removed": []
+    }
+  }
+}

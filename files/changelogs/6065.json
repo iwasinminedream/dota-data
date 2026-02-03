@@ -1,0 +1,44 @@
+{
+  "version": "6065",
+  "date": "May 22 2024",
+  "time": "21:21:00",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Buff",
+          "name": "IsNull",
+          "signature": "IsNull()"
+        }
+      ],
+      "removed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_HL2MP_IDLE_CROUCH_MELEE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_UNSWAPPABLE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "UnitTargetFlags",
+          "name": "DOTA_UNIT_TARGET_FLAG_CAN_BE_SEEN"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_IDLE_AIM_AUTOGUN"
+        }
+      ]
+    }
+  }
+}

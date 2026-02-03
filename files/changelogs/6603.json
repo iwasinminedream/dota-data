@@ -1,0 +1,1213 @@
+{
+  "version": "6603",
+  "date": "Nov 10 2025",
+  "time": "17:52:42",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_BaseNPC",
+          "name": "SetControllableByAllPlayers",
+          "signature": "SetControllableByAllPlayers(controllableByAllPlayers)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetBuffAmplification",
+          "signature": "GetBuffAmplification()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierOverrideBaseDamage",
+          "signature": "GetModifierOverrideBaseDamage()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierOverrideCreepBounty",
+          "signature": "GetModifierOverrideCreepBounty()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPercentageConvertExpToGold",
+          "signature": "GetModifierPercentageConvertExpToGold()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertySuppressInvalidMoveAttackOrders",
+          "signature": "GetModifierPropertySuppressInvalidMoveAttackOrders()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnAbilitySwapped",
+          "signature": "OnAbilitySwapped()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnModifierRefreshed",
+          "signature": "OnModifierRefreshed()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnOrderReceived",
+          "signature": "OnOrderReceived()"
+        },
+        {
+          "type": "function",
+          "name": "DebugChangeTeam",
+          "signature": "DebugChangeTeam(arg1)"
+        }
+      ],
+      "removed": [
+        {
+          "type": "class",
+          "name": "CDotaQuest"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "AddSubquest",
+          "signature": "AddSubquest(subquest)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "CompleteQuest",
+          "signature": "CompleteQuest()"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "GetSubquest",
+          "signature": "GetSubquest(index)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "GetSubquestByName",
+          "signature": "GetSubquestByName(name)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "RemoveSubquest",
+          "signature": "RemoveSubquest(subquest)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "SetTextReplaceString",
+          "signature": "SetTextReplaceString(string)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "SetTextReplaceValue",
+          "signature": "SetTextReplaceValue(valueSlot, value)"
+        },
+        {
+          "type": "class",
+          "name": "CDotaSubquestBase"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "CompleteSubquest",
+          "signature": "CompleteSubquest()"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "SetTextReplaceString",
+          "signature": "SetTextReplaceString(string)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "SetTextReplaceValue",
+          "signature": "SetTextReplaceValue(valueSlot, value)"
+        },
+        {
+          "type": "class",
+          "name": "CDOTATutorial"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddBot",
+          "signature": "AddBot(heroName, arg2, arg3, arg4)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddQuest",
+          "signature": "AddQuest(arg1, arg2, arg3, arg4)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddShopWhitelistItem",
+          "signature": "AddShopWhitelistItem(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "CompleteQuest",
+          "signature": "CompleteQuest(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "CreateLocationTask",
+          "signature": "CreateLocationTask(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnableCreepAggroViz",
+          "signature": "EnableCreepAggroViz(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnablePlayerOffscreenTip",
+          "signature": "EnablePlayerOffscreenTip(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnableTowerAggroViz",
+          "signature": "EnableTowerAggroViz(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "FinishTutorial",
+          "signature": "FinishTutorial()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "ForceGameStart",
+          "signature": "ForceGameStart()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "IsItemInWhiteList",
+          "signature": "IsItemInWhiteList(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "RemoveShopWhitelistItem",
+          "signature": "RemoveShopWhitelistItem(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SelectHero",
+          "signature": "SelectHero(heroName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SelectPlayerTeam",
+          "signature": "SelectPlayerTeam(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetItemGuide",
+          "signature": "SetItemGuide(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetOrModifyPlayerGold",
+          "signature": "SetOrModifyPlayerGold(goldAmount, setNotModify)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetQuickBuy",
+          "signature": "SetQuickBuy(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetShopOpen",
+          "signature": "SetShopOpen(open)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetTutorialConvar",
+          "signature": "SetTutorialConvar(arg1, arg2)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetTutorialUI",
+          "signature": "SetTutorialUI(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetWhiteListEnabled",
+          "signature": "SetWhiteListEnabled(whiteListEnabled)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "StartTutorialMode",
+          "signature": "StartTutorialMode()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "UpgradePlayerAbility",
+          "signature": "UpgradePlayerAbility(abilityName)"
+        },
+        {
+          "type": "class",
+          "name": "CDotaTutorialNPCBlocker"
+        },
+        {
+          "type": "method",
+          "class": "CDotaTutorialNPCBlocker",
+          "name": "SetEnabled",
+          "signature": "SetEnabled(enabled)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaTutorialNPCBlocker",
+          "name": "SetOtherBlocker",
+          "signature": "SetOtherBlocker(blocker)"
+        },
+        {
+          "type": "class",
+          "name": "CEnvProjectedTexture"
+        },
+        {
+          "type": "method",
+          "class": "CEnvProjectedTexture",
+          "name": "SetFarRange",
+          "signature": "SetFarRange(range)"
+        },
+        {
+          "type": "method",
+          "class": "CEnvProjectedTexture",
+          "name": "SetLinearAttenuation",
+          "signature": "SetLinearAttenuation(atten)"
+        },
+        {
+          "type": "method",
+          "class": "CEnvProjectedTexture",
+          "name": "SetNearRange",
+          "signature": "SetNearRange(range)"
+        },
+        {
+          "type": "method",
+          "class": "CEnvProjectedTexture",
+          "name": "SetQuadraticAttenuation",
+          "signature": "SetQuadraticAttenuation(atten)"
+        },
+        {
+          "type": "method",
+          "class": "CEnvProjectedTexture",
+          "name": "SetVolumetrics",
+          "signature": "SetVolumetrics(on, intensity, noise, planes, planeOffset)"
+        },
+        {
+          "type": "method",
+          "class": "CSceneEntity",
+          "name": "LoadSceneFromString",
+          "signature": "LoadSceneFromString(arg1, arg2)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "GetGraphParameter",
+          "signature": "GetGraphParameter(param)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphLookTarget",
+          "signature": "SetGraphLookTarget(value)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameter",
+          "signature": "SetGraphParameter(param, svArg)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameterBool",
+          "signature": "SetGraphParameterBool(name, value)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameterEnum",
+          "signature": "SetGraphParameterEnum(name, value)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameterFloat",
+          "signature": "SetGraphParameterFloat(name, value)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameterInt",
+          "signature": "SetGraphParameterInt(name, value)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseAnimGraph",
+          "name": "SetGraphParameterVector",
+          "signature": "SetGraphParameterVector(name, value)"
+        }
+      ]
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTAModifierAttribute_t",
+          "name": "MODIFIER_ATTRIBUTE_DUPLICATED",
+          "value": 32
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST3_STATUE",
+          "value": 1790
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST4_STATUE",
+          "value": 1791
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1792
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_IDLE_STATUE",
+          "value": 1793
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_CL_CREATE_PARTICLE_BRASS",
+          "value": 54
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_DISPEL",
+          "value": 27
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_SUCCESS",
+          "value": 1774
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL",
+          "value": 1775
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_ON",
+          "value": 1777
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_OFF",
+          "value": 1778
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1806
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONVERT_EXP_TO_GOLD_PCT",
+          "value": 139
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BUFF_AMPLIFICATION",
+          "value": 192
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ORDER_RECEIVED",
+          "value": 202
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_INVALID_MOVE_ATTACK_ORDERS",
+          "value": 379
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_MODIFIER_REFRESHED",
+          "value": 382
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ABILITY_SWAPPED",
+          "value": 383
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY",
+          "value": 384
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE",
+          "value": 385
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "ConVarFlags",
+          "name": "FCVAR_NOT_CONNECTED",
+          "value": 4194304
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1797
+        },
+        {
+          "type": "enum",
+          "name": "quest_text_replace_values_t"
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE",
+          "value": 1
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_ROUND",
+          "value": 2
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_REWARD",
+          "value": 3
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_NUM_TEXT_REPLACE_VALUES",
+          "value": 4
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_PULSE_GRAPH_AIMAT",
+          "value": 27
+        },
+        {
+          "type": "enum",
+          "name": "subquest_text_replace_values_t"
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE",
+          "value": 1
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_NUM_TEXT_REPLACE_VALUES",
+          "value": 2
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1796
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_PULSE_GRAPH_LOOKAT",
+          "value": 26
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_PULSE_GRAPH_IKLOCKLEFTARM",
+          "value": 27
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_PULSE_GRAPH_IKLOCKRIGHTARM",
+          "value": 28
+        }
+      ]
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_monster_hunter_event"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_flayers_bota"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_flayers_bota_active"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_holy_locket_active_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_idol_of_screeauk"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_angels_demise_internal_cd"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_ash_legion_shield"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_bot_challenge_meteor_staff_land"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_consecrated_wraps"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_consecrated_wraps_effect"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crellas_crozier"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_defiant_shell_attack"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_damage"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_heal"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_self_xp"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_hydras_breath_poison"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_pyrrhic_cloak_target"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_ward_recently_spawned"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_weighted_dice"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_metamorphic_mandible_active"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_armor_per_barracks"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_bot_challenge_skeleton_king_bone_guard"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_bot_challenge_skeleton_king_bone_guard_damage_tracker"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_bot_challenge_skeleton_king_bone_guard_summon"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_bot_challenge_skeleton_king_bone_guard_summon_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_consecrated_wraps_heal"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_crellas_crozier_active"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_event_frogling"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_hydras_breath"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_hydras_breath_procdamage"
+        },
+        {
+          "type": "modifier",
+          "category": "rattletrap",
+          "name": "modifier_rattletrap_jetpack_tracker"
+        },
+        {
+          "type": "modifier",
+          "category": "riki",
+          "name": "modifier_riki_tricks_of_the_trade"
+        },
+        {
+          "type": "modifier",
+          "category": "riki",
+          "name": "modifier_riki_tricks_of_the_trade_speed"
+        },
+        {
+          "type": "modifier",
+          "category": "spectre",
+          "name": "modifier_spectre_haunt_fear"
+        },
+        {
+          "type": "modifier",
+          "category": "spectre",
+          "name": "modifier_spectre_reality"
+        },
+        {
+          "type": "modifier",
+          "category": "spectre",
+          "name": "modifier_spectre_shadow_step_illusion"
+        },
+        {
+          "type": "modifier",
+          "category": "clinkz",
+          "name": "modifier_clinkz_infernal_shred"
+        },
+        {
+          "type": "modifier",
+          "category": "clinkz",
+          "name": "modifier_clinkz_infernal_shred_armor_piercing"
+        },
+        {
+          "type": "modifier",
+          "category": "lone_druid",
+          "name": "modifier_lone_druid_entangle_counter"
+        },
+        {
+          "type": "modifier",
+          "category": "lone_druid",
+          "name": "modifier_lone_druid_spirit_bear_entangle_vfx"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_bottoms_up_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_drunken_brawler_brewed_up"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_drunken_brawler_brewed_up_hangover"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_earth_brewling_earth_stance"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_fire_brewling_fire_stance"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_liquid_courage_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_primal_split_scepter_ui"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_storm_brewling_storm_stance"
+        },
+        {
+          "type": "modifier",
+          "category": "phantom_lancer",
+          "name": "modifier_phantom_lancer_phantom_edge_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "treant",
+          "name": "modifier_treant_leech_seed_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "treant",
+          "name": "modifier_treant_living_armor_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "treant",
+          "name": "modifier_treant_living_armor_permanent"
+        },
+        {
+          "type": "modifier",
+          "category": "treant",
+          "name": "modifier_treant_natures_guise_damage_cooldown"
+        },
+        {
+          "type": "modifier",
+          "category": "treant",
+          "name": "modifier_treant_super_bloom"
+        },
+        {
+          "type": "modifier",
+          "category": "slark",
+          "name": "modifier_slark_saltwater_shiv"
+        },
+        {
+          "type": "modifier",
+          "category": "slark",
+          "name": "modifier_slark_saltwater_shiv_effect"
+        },
+        {
+          "type": "modifier",
+          "category": "slark",
+          "name": "modifier_slark_saltwater_shiv_impact_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "earth_spirit",
+          "name": "modifier_earth_spirit_stone_caller_innate"
+        },
+        {
+          "type": "modifier",
+          "category": "pangolier",
+          "name": "modifier_pangolier_swashbuckle_damage_penalty"
+        },
+        {
+          "type": "modifier",
+          "category": "pangolier",
+          "name": "modifier_pangolier_swashbuckle_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_amphibian_rhapsody_ambient_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_amphibian_rhapsody_self"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_amphibian_rhapsody_self_tracker"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_catchy_lick_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_catchy_lick_knockback"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_croak_of_genius_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_croak_of_genius_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_encore"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogling"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogling_band2_frogling"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogling_band2_frogling_leave"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogling_band2_frogling_vanish"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogling_band2_self"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogstomp_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogstomp_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_frogstomp_treeshake"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_groovin"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_song_attack_burst"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_song_speed_burst"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_song_speed_burst_slowres"
+        }
+      ],
+      "removed": [
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_tutorial_sleep"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_guardian_shell_active"
+        },
+        {
+          "type": "modifier",
+          "category": "clinkz",
+          "name": "modifier_clinkz_bone_and_arrow"
+        },
+        {
+          "type": "modifier",
+          "category": "lone_druid",
+          "name": "modifier_lone_druid_entangling_claws"
+        },
+        {
+          "type": "modifier",
+          "category": "lone_druid",
+          "name": "modifier_lone_druid_spirit_bear_defender"
+        },
+        {
+          "type": "modifier",
+          "category": "lone_druid",
+          "name": "modifier_lone_druid_spirit_bear_defender_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_belligerent"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_belligerent_damage"
+        },
+        {
+          "type": "modifier",
+          "category": "brewmaster",
+          "name": "modifier_brewmaster_drunken_brawler"
+        },
+        {
+          "type": "modifier",
+          "category": "earth_spirit",
+          "name": "modifier_earth_spirit_rolling_boulder_allied_hero"
+        },
+        {
+          "type": "modifier",
+          "category": "pangolier",
+          "name": "modifier_pangolier_shield_crash_slow"
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_GameMode",
+          "name": "DOTA_GAMEMODE_BOT_CHALLENGE",
+          "value": 26
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAModifierAttribute_t",
+          "name": "MODIFIER_ATTRIBUTE_DUPLICATED",
+          "value": 32
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_DISPEL",
+          "value": 27
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI",
+          "value": 562949953421312
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_SUCCESS",
+          "value": 1774
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL",
+          "value": 1775
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_ON",
+          "value": 1777
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_OFF",
+          "value": 1778
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONVERT_EXP_TO_GOLD_PCT",
+          "value": 139
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BUFF_AMPLIFICATION",
+          "value": 192
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ORDER_RECEIVED",
+          "value": 202
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_INVALID_MOVE_ATTACK_ORDERS",
+          "value": 379
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_MODIFIER_REFRESHED",
+          "value": 382
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ABILITY_SWAPPED",
+          "value": 383
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY",
+          "value": 384
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE",
+          "value": 385
+        }
+      ],
+      "removed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_SUCCESS"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_OFF"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_LARGO_ULT_TOGGLE_ON"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI"
+        }
+      ],
+      "removed": []
+    }
+  }
+}

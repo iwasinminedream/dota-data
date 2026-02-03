@@ -1,0 +1,58 @@
+{
+  "version": "6694",
+  "date": "Feb 02 2026",
+  "time": "19:56:17",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1807
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
+          "value": 51
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1799
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND",
+          "value": 1125899906842624
+        }
+      ],
+      "removed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
+        }
+      ],
+      "removed": []
+    }
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "version": "6141",
+  "date": "Jul 31 2024",
+  "time": "22:54:13",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetBaseAttackPostBonus",
+          "signature": "GetBaseAttackPostBonus()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetDisableManaGain",
+          "signature": "GetDisableManaGain()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetMagicalArmorPiercingPercentageTarget",
+          "signature": "GetMagicalArmorPiercingPercentageTarget()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierInnateDamageBlockPctOverride",
+          "signature": "GetModifierInnateDamageBlockPctOverride()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierInventorySlotRestricted",
+          "signature": "GetModifierInventorySlotRestricted()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSpellAmplify_PercentageTarget",
+          "signature": "GetModifierSpellAmplify_PercentageTarget()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierTotal_ConstantBlockStacking",
+          "signature": "GetModifierTotal_ConstantBlockStacking()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetPhysicalArmorPiercingPercentageTarget",
+          "signature": "GetPhysicalArmorPiercingPercentageTarget()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetRedirectSpell",
+          "signature": "GetRedirectSpell()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetTierTokenReroll",
+          "signature": "GetTierTokenReroll()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetVisionDegreeRestriction",
+          "signature": "GetVisionDegreeRestriction()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "MinAttributeLevel",
+          "signature": "MinAttributeLevel()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnCleaveAttackLanded",
+          "signature": "OnCleaveAttackLanded()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnTierTokenRerolled",
+          "signature": "OnTierTokenRerolled()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnTreeCutDown",
+          "signature": "OnTreeCutDown()"
+        }
+      ],
+      "removed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_UNSWAPPABLE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_INVALID_ORDERS",
+          "name": "DOTA_INVALID_ORDER_CANT_BUYBACK_CEASELESS_DIRGE",
+          "value": 120
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_UNIT_TARGET_FLAGS",
+          "name": "DOTA_UNIT_TARGET_FLAG_CAN_BE_SEEN",
+          "value": 384
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_PHYSICAL_BLOCK",
+          "value": 8
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_ALL_BLOCK",
+          "value": 524288
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_BASE",
+          "value": 16
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET",
+          "value": 48
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_INNATE_DAMAGE_BLOCK_PCT_OVERRIDE",
+          "value": 141
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_DISABLE_MANA_GAIN",
+          "value": 169
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+          "value": 183
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAGICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+          "value": 184
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TREE_CUT_DOWN",
+          "value": 337
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED",
+          "value": 338
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL",
+          "value": 339
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_TIER_TOKEN_REROLL",
+          "value": 340
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION",
+          "value": 341
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_STACKING",
+          "value": 342
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED",
+          "value": 343
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TIER_TOKEN_REROLLED",
+          "value": 344
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REDIRECT_SPELL",
+          "value": 345
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BASEATTACK_POSTBONUS",
+          "value": 346
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_DISABLE_PLATFORM",
+          "value": 32
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ENABLE_PLATFORM",
+          "value": 33
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_BLOCK",
+          "value": 8
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_UNIT_TARGET_FLAGS",
+          "name": "DOTA_UNIT_TARGET_FLAG_CAN_BE_SEEN",
+          "value": 384
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_UNSWAPPABLE",
+          "value": 17592186044416
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
+          "value": 35184372088832
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_PHYSICAL_BLOCK",
+          "value": 8
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_ALL_BLOCK",
+          "value": 524288
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_BASE",
+          "value": 16
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET",
+          "value": 48
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_INNATE_DAMAGE_BLOCK_PCT_OVERRIDE",
+          "value": 141
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_DISABLE_MANA_GAIN",
+          "value": 169
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+          "value": 183
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAGICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+          "value": 184
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TREE_CUT_DOWN",
+          "value": 337
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED",
+          "value": 338
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL",
+          "value": 339
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_TIER_TOKEN_REROLL",
+          "value": 340
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION",
+          "value": 341
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_STACKING",
+          "value": 342
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED",
+          "value": 343
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TIER_TOKEN_REROLLED",
+          "value": 344
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REDIRECT_SPELL",
+          "value": 345
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BASEATTACK_POSTBONUS",
+          "value": 346
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES",
+          "value": 2199023255552
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_BYPASSES_BLOCK",
+          "value": 8
+        }
+      ]
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_IDLE_AIM_AUTOGUN"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_BREAK_DISABLES"
+        }
+      ]
+    }
+  }
+}

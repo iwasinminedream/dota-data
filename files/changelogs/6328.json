@@ -1,0 +1,835 @@
+{
+  "version": "6328",
+  "date": "Feb 20 2025",
+  "time": "14:16:18",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "class",
+          "name": "CDOTA_BaseNPC_LotusPool"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Item",
+          "name": "IsActiveNeutral",
+          "signature": "IsActiveNeutral()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetConvertAttackPhysicalToPure",
+          "signature": "GetConvertAttackPhysicalToPure()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetCriticalStrikeBonus",
+          "signature": "GetCriticalStrikeBonus()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetMinMana",
+          "signature": "GetMinMana()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierAvoidAttackProcs",
+          "signature": "GetModifierAvoidAttackProcs()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeed_MaxOverride",
+          "signature": "GetModifierMoveSpeed_MaxOverride()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeed_MinOverride",
+          "signature": "GetModifierMoveSpeed_MinOverride()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeedMax_BonusConstant",
+          "signature": "GetModifierMoveSpeedMax_BonusConstant()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant ",
+          "signature": "GetModifierMoveSpeedPostMultiplierBonus_Constant ()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMPRegenAmplify_Percentage_Unique",
+          "signature": "GetModifierMPRegenAmplify_Percentage_Unique()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierNeutralEnhancementOptions",
+          "signature": "GetModifierNeutralEnhancementOptions()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierNeutralTrinketOptions",
+          "signature": "GetModifierNeutralTrinketOptions()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPreserveNeutralItemPassives",
+          "signature": "GetModifierPreserveNeutralItemPassives()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierProperty_MagicalLifesteal",
+          "signature": "GetModifierProperty_MagicalLifesteal()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierProperty_PhysicalLifesteal",
+          "signature": "GetModifierProperty_PhysicalLifesteal()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSlowResistanceAppliesToAttacks",
+          "signature": "GetModifierSlowResistanceAppliesToAttacks()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique",
+          "signature": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierXPFountainCountdownTimeOverride",
+          "signature": "GetModifierXPFountainCountdownTimeOverride()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetSuppressAttackProcs",
+          "signature": "GetSuppressAttackProcs()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnAbilityToggled",
+          "signature": "OnAbilityToggled()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnFoWTeamChanged",
+          "signature": "OnFoWTeamChanged()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnNightStarted",
+          "signature": "OnNightStarted()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnPureDamageCalculated",
+          "signature": "OnPureDamageCalculated()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnRuneSpawn",
+          "signature": "OnRuneSpawn()"
+        }
+      ],
+      "removed": [
+        {
+          "type": "method",
+          "class": "CBaseEntity",
+          "name": "OverrideFriction",
+          "signature": "OverrideFriction(duration, friction)"
+        },
+        {
+          "type": "class",
+          "name": "CDOTA_BaseNPC_MangoTree"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Item",
+          "name": "IsNeutralDrop",
+          "signature": "IsNeutralDrop()"
+        },
+        {
+          "type": "method",
+          "class": "CPhysicsProp",
+          "name": "SetDynamicVsDynamicContinuous",
+          "signature": "SetDynamicVsDynamicContinuous(isDynamicVsDynamicContinuousEnabled)"
+        }
+      ]
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DamageCategory_t",
+          "name": "DOTA_DAMAGE_CATEGORY_BARRIER",
+          "value": 2
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_INVALID_ORDERS",
+          "name": "DOTA_INVALID_ORDER_CANT_ATTACK_BUILDINGS",
+          "value": 121
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAScriptInventorySlot_t",
+          "name": "DOTA_ITEM_NEUTRAL_ACTIVE_SLOT",
+          "value": 16
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAScriptInventorySlot_t",
+          "name": "DOTA_ITEM_NEUTRAL_PASSIVE_SLOT",
+          "value": 17
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_EFFIGY",
+          "value": 22
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_EFFIGY_PERSONA_1",
+          "value": 60
+        },
+        {
+          "type": "enum_member",
+          "enum": "dotaunitorder_t",
+          "name": "DOTA_UNIT_ORDER_SET_ITEM_MARK_FOR_SELL",
+          "value": 42
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SHADOW_VAULT",
+          "value": 1765
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_START",
+          "value": 1766
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_A",
+          "value": 1767
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B",
+          "value": 1768
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_END",
+          "value": 1769
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE",
+          "value": 1770
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE_FAST",
+          "value": 1771
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_UNICYCLE",
+          "value": 1772
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_UNICYCLE_END",
+          "value": 1773
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TAUNT_STATUE",
+          "value": 1785
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MIN_OVERRIDE",
+          "value": 18
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MAX_OVERRIDE",
+          "value": 19
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE_UNIQUE",
+          "value": 57
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE",
+          "value": 59
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_MANA",
+          "value": 161
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CRITICAL_STRIKE_BONUS",
+          "value": 190
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONVERT_ATTACK_PHYSICAL_TO_PURE",
+          "value": 191
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SLOW_RESISTANCE_APPLIES_TO_ATTACKS",
+          "value": 299
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE",
+          "value": 310
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PRESERVE_NEUTRAL_ITEM_PASSIVES",
+          "value": 313
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_NIGHT_STARTED",
+          "value": 337
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_FOW_TEAM_CHANGED",
+          "value": 358
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_ATTACK_PROCS",
+          "value": 359
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ABILITY_TOGGLED",
+          "value": 360
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_AVOID_ATTACK_PROCS",
+          "value": 361
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_RUNE_SPAWN",
+          "value": 362
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_LIFESTEAL",
+          "value": 363
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAGICAL_LIFESTEAL",
+          "value": 364
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED",
+          "value": 365
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS",
+          "value": 366
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS",
+          "value": 367
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT",
+          "value": 368
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT",
+          "value": 369
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_NEUTRALS_DONT_ATTACK",
+          "value": 63
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_KEZ_SAI",
+          "value": 79
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ENABLE_PLATFORM_PLAYER_FOLLOWS_YAW",
+          "value": 33
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ENABLE_PLATFORM_PLAYER_IGNORES_YAW",
+          "value": 34
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ANIMGRAPH_SET_PARAM",
+          "value": 35
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_DESTRUCTIBLE_PART_DESTROY",
+          "value": 36
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTAScriptInventorySlot_t",
+          "name": "DOTA_ITEM_NEUTRAL_SLOT",
+          "value": 16
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_NO_INVISIBILITY_VISUALS",
+          "value": 57
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ENABLE_PLATFORM",
+          "value": 33
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_PHYSGUN",
+          "value": 8388608
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_PLASMA",
+          "value": 16777216
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "dotaunitorder_t",
+          "name": "DOTA_UNIT_ORDER_SET_ITEM_MARK_FOR_SELL",
+          "value": 42
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE",
+          "value": 70368744177664
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE",
+          "value": 140737488355328
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM",
+          "value": 281474976710656
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SHADOW_VAULT",
+          "value": 1765
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_START",
+          "value": 1766
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_A",
+          "value": 1767
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B",
+          "value": 1768
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_END",
+          "value": 1769
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE",
+          "value": 1770
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE_FAST",
+          "value": 1771
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_UNICYCLE",
+          "value": 1772
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_UNICYCLE_END",
+          "value": 1773
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_EFFIGY",
+          "value": 22
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_HERO_EFFIGY_PERSONA_1",
+          "value": 60
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MIN_OVERRIDE",
+          "value": 18
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MAX_OVERRIDE",
+          "value": 19
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE_UNIQUE",
+          "value": 57
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE",
+          "value": 59
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_MANA",
+          "value": 161
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CRITICAL_STRIKE_BONUS",
+          "value": 190
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONVERT_ATTACK_PHYSICAL_TO_PURE",
+          "value": 191
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SLOW_RESISTANCE_APPLIES_TO_ATTACKS",
+          "value": 299
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE",
+          "value": 310
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PRESERVE_NEUTRAL_ITEM_PASSIVES",
+          "value": 313
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_NIGHT_STARTED",
+          "value": 337
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_FOW_TEAM_CHANGED",
+          "value": 358
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_ATTACK_PROCS",
+          "value": 359
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ABILITY_TOGGLED",
+          "value": 360
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_AVOID_ATTACK_PROCS",
+          "value": 361
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_RUNE_SPAWN",
+          "value": 362
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_LIFESTEAL",
+          "value": 363
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAGICAL_LIFESTEAL",
+          "value": 364
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED",
+          "value": 365
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS",
+          "value": 366
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS",
+          "value": 367
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT",
+          "value": 368
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT",
+          "value": 369
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_NEUTRALS_DONT_ATTACK",
+          "value": 63
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_NO_INVISIBILITY_VISUALS",
+          "value": 57
+        }
+      ]
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_KEZ_SAI"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_IMPALE_FAST"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_A"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_END"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_START"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_SHADOW_VAULT"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_UNICYCLE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_UNICYCLE_END"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_MP_GESTURE_VC_FISTPUMP_ITEM2"
+        }
+      ]
+    }
+  }
+}

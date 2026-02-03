@@ -2,15 +2,23 @@ const fs = require('fs');
 const path = require('path');
 
 const filesDir = path.join(__dirname, '../files');
-const changelogPath = path.join(filesDir, 'changelog.json');
+const changelogIndexPath = path.join(filesDir, 'changelog-index.json');
+const changelogsDir = path.join(filesDir, 'changelogs');
+const statesDir = path.join(filesDir, 'changelog-states');
 
-// Files to track for changes
+// Ensure directories exist
+[changelogsDir, statesDir].forEach(dir => {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+});
+
+// Files to track
 const trackedFiles = [
   { file: 'vscripts/api.json', type: 'api', name: 'Lua API' },
   { file: 'vscripts/api-types.json', type: 'types', name: 'Lua Types' },
   { file: 'vscripts/enums.json', type: 'enums', name: 'Lua Enums' },
   { file: 'vscripts/modifier_list.json', type: 'modifiers', name: 'Modifiers' },
   { file: 'events.json', type: 'events', name: 'Game Events' },
+  { file: 'panorama/api.json', type: 'panorama_api', name: 'Panorama API' },
   { file: 'panorama/events.json', type: 'panorama_events', name: 'Panorama Events' },
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
@@ -21,229 +29,260 @@ const trackedFiles = [
 const dumpPath = path.join(__dirname, '../dumper/dump');
 const dump = fs.readFileSync(dumpPath, 'utf8');
 
-// Extract version information
 const versionMatch = dump.match(/ClientVersion=(\d+)/);
 const dateMatch = dump.match(/VersionDate=(.+)/);
 const timeMatch = dump.match(/VersionTime=(.+)/);
 
 const currentVersion = {
-  clientVersion: versionMatch ? versionMatch[1] : 'unknown',
+  version: versionMatch ? versionMatch[1] : 'unknown',
   date: dateMatch ? dateMatch[1].trim() : new Date().toISOString().split('T')[0],
   time: timeMatch ? timeMatch[1].trim() : '',
-  timestamp: new Date().toISOString(),
 };
 
-// Load existing changelog or create new one
-let changelog = {
-  versions: [],
-  states: {},
-  changes: {},
-};
+console.log(`Processing version ${currentVersion.version}...`);
 
-if (fs.existsSync(changelogPath)) {
-  try {
-    changelog = JSON.parse(fs.readFileSync(changelogPath, 'utf8'));
-  } catch (e) {
-    console.log('Could not parse existing changelog, creating new one');
-  }
-}
-
-// Check if this version already exists
-const existingVersionIndex = changelog.versions.findIndex(
-  (v) => v.clientVersion === currentVersion.clientVersion
-);
-
-if (existingVersionIndex !== -1) {
-  console.log(`Version ${currentVersion.clientVersion} already in changelog, updating state...`);
-  // Remove existing version to re-add with updated state
-  changelog.versions.splice(existingVersionIndex, 1);
-  delete changelog.states[currentVersion.clientVersion];
-  delete changelog.changes[currentVersion.clientVersion];
-}
-
-// Helper to extract function signatures for comparison
-function getFunctionSignature(func) {
-  if (!func.args) return func.name;
-  const args = func.args.map(a => `${a.name}:${Array.isArray(a.types) ? a.types.join('|') : a.types || 'any'}`).join(',');
+// Format function signature
+function formatSignature(func) {
+  if (!func.args || !func.args.length) return `${func.name}()`;
+  const args = func.args.map(a => a.name).join(', ');
   return `${func.name}(${args})`;
 }
 
-// Helper to extract detailed items from API
+// Extract items from API
 function extractApiItems(content) {
-  const items = {
-    classes: [],
-    functions: [],
-    constants: [],
-    enums: [],
-    methods: {},
-  };
-  
+  const items = [];
   if (!Array.isArray(content)) return items;
   
   for (const item of content) {
     if (item.kind === 'class') {
-      items.classes.push(item.name);
-      // Track methods with signatures
+      items.push({ type: 'class', name: item.name });
       if (item.members) {
-        items.methods[item.name] = item.members
-          .filter(m => m.kind === 'function')
-          .map(m => getFunctionSignature(m));
+        for (const m of item.members) {
+          if (m.kind === 'function') {
+            items.push({ type: 'method', class: item.name, name: m.name, signature: formatSignature(m) });
+          }
+        }
       }
     } else if (item.kind === 'function') {
-      items.functions.push(getFunctionSignature(item));
+      items.push({ type: 'function', name: item.name, signature: formatSignature(item) });
     } else if (item.kind === 'constant') {
-      items.constants.push(`${item.name}=${item.value}`);
-    } else if (item.kind === 'enum') {
-      items.enums.push(item.name);
+      items.push({ type: 'constant', name: item.name, value: item.value });
     }
   }
-  
   return items;
 }
 
-// Helper to extract types from api-types
+// Extract enums with members
+function extractEnums(content) {
+  const items = [];
+  if (!Array.isArray(content)) return items;
+  
+  for (const e of content) {
+    items.push({ type: 'enum', name: e.name });
+    if (e.members) {
+      for (const m of e.members) {
+        items.push({ type: 'enum_member', enum: e.name, name: m.name, value: m.value });
+      }
+    }
+  }
+  return items;
+}
+
+// Extract types
 function extractTypes(content) {
   if (!Array.isArray(content)) return [];
-  return content.map(t => `${t.kind}:${t.name}`);
+  return content.map(t => ({ type: t.kind, name: t.name }));
 }
 
-// Store current state for comparison
-const currentState = {};
-
-for (const tracked of trackedFiles) {
-  const filePath = path.join(filesDir, tracked.file);
-  if (!fs.existsSync(filePath)) {
-    console.log(`File not found: ${tracked.file}`);
-    continue;
-  }
-
-  try {
-    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    const fileKey = tracked.type;
-
-    if (tracked.type === 'api') {
-      // Detailed API tracking
-      const apiItems = extractApiItems(content);
-      currentState[fileKey] = {
-        type: 'api',
-        name: tracked.name,
-        items: [...apiItems.classes, ...apiItems.functions, ...apiItems.constants],
-        details: apiItems,
-      };
-    } else if (tracked.type === 'types') {
-      // Track type definitions
-      currentState[fileKey] = {
-        type: 'types',
-        name: tracked.name,
-        items: extractTypes(content),
-      };
-    } else if (tracked.type === 'modifiers') {
-      // Flatten modifier list
-      const allModifiers = [];
-      Object.entries(content).forEach(([category, items]) => {
-        if (Array.isArray(items)) {
-          items.forEach(item => allModifiers.push(`${category}:${item}`));
-        }
-      });
-      currentState[fileKey] = {
-        type: 'modifiers',
-        name: tracked.name,
-        items: allModifiers,
-      };
-    } else if (Array.isArray(content)) {
-      // Arrays (events, enums)
-      currentState[fileKey] = {
-        type: 'array',
-        name: tracked.name,
-        items: content.map((item) => {
-          if (typeof item === 'string') return item;
-          if (item.name) return item.name;
-          return JSON.stringify(item);
-        }),
-      };
-    } else if (typeof content === 'object') {
-      // Objects (convars, panorama events)
-      currentState[fileKey] = {
-        type: 'object',
-        name: tracked.name,
-        items: Object.keys(content),
-      };
+// Extract modifiers
+function extractModifiers(content) {
+  const items = [];
+  if (typeof content !== 'object') return items;
+  for (const [cat, list] of Object.entries(content)) {
+    if (Array.isArray(list)) {
+      list.forEach(m => items.push({ type: 'modifier', category: cat, name: m }));
     }
-  } catch (e) {
-    console.error(`Error processing ${tracked.file}:`, e.message);
   }
+  return items;
 }
 
-// Calculate changes from previous version
-const changes = {
-  added: {},
-  removed: {},
-  modified: {},
+// Extract events
+function extractEvents(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  return Object.keys(content).map(k => ({ type: 'event', name: k }));
+}
+
+// Extract convars
+function extractConvars(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  return Object.keys(content).map(k => ({ type: 'convar', name: k }));
+}
+
+// Build current state
+function buildCurrentState() {
+  const state = {};
+  
+  for (const tracked of trackedFiles) {
+    const filePath = path.join(filesDir, tracked.file);
+    if (!fs.existsSync(filePath)) continue;
+    
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    let items = [];
+    
+    switch (tracked.type) {
+      case 'api':
+      case 'panorama_api':
+        items = extractApiItems(content);
+        break;
+      case 'types':
+        items = extractTypes(content);
+        break;
+      case 'enums':
+      case 'panorama_enums':
+      case 'engine_enums':
+        items = extractEnums(content);
+        break;
+      case 'modifiers':
+        items = extractModifiers(content);
+        break;
+      case 'events':
+      case 'panorama_events':
+        items = extractEvents(content);
+        break;
+      case 'convars':
+        items = extractConvars(content);
+        break;
+    }
+    
+    state[tracked.type] = { name: tracked.name, items };
+  }
+  
+  return state;
+}
+
+// Create item key for comparison
+function itemKey(item) {
+  if (item.type === 'method') return `method:${item.class}.${item.name}`;
+  if (item.type === 'enum_member') return `enum_member:${item.enum}.${item.name}`;
+  if (item.type === 'modifier') return `modifier:${item.category}:${item.name}`;
+  return `${item.type}:${item.name}`;
+}
+
+// Compare states
+function compareStates(prev, curr) {
+  const changes = {};
+  
+  for (const [key, currData] of Object.entries(curr)) {
+    const prevData = prev?.[key];
+    const prevKeys = new Set((prevData?.items || []).map(itemKey));
+    const currKeys = new Set(currData.items.map(itemKey));
+    
+    const added = currData.items.filter(i => !prevKeys.has(itemKey(i)));
+    const removed = (prevData?.items || []).filter(i => !currKeys.has(itemKey(i)));
+    
+    if (added.length > 0 || removed.length > 0) {
+      changes[currData.name] = { added, removed };
+    }
+  }
+  
+  if (prev) {
+    for (const [key, prevData] of Object.entries(prev)) {
+      if (!curr[key] && prevData.items.length > 0) {
+        changes[prevData.name] = { added: [], removed: prevData.items };
+      }
+    }
+  }
+  
+  return changes;
+}
+
+// Load previous state
+function loadPreviousState(version) {
+  const statePath = path.join(statesDir, `${version}.json`);
+  if (fs.existsSync(statePath)) {
+    return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+  }
+  return null;
+}
+
+// Get previous version from index
+function getPreviousVersion() {
+  if (!fs.existsSync(changelogIndexPath)) return null;
+  
+  const index = JSON.parse(fs.readFileSync(changelogIndexPath, 'utf8'));
+  for (const entry of index) {
+    if (entry.version !== currentVersion.version) {
+      return entry.version;
+    }
+  }
+  return null;
+}
+
+// Main
+const currState = buildCurrentState();
+
+const prevVersion = getPreviousVersion();
+console.log(`Previous version: ${prevVersion || 'none'}`);
+
+const prevState = prevVersion ? loadPreviousState(prevVersion) : null;
+
+if (!prevState && prevVersion) {
+  console.log(`Warning: No state file for ${prevVersion}`);
+}
+
+const changes = compareStates(prevState, currState);
+
+// Count changes
+let addedCount = 0, removedCount = 0;
+for (const cat of Object.values(changes)) {
+  addedCount += cat.added?.length || 0;
+  removedCount += cat.removed?.length || 0;
+}
+
+// Write changelog
+const changelogEntry = {
+  version: currentVersion.version,
+  date: currentVersion.date,
+  time: currentVersion.time,
+  changes,
 };
 
-const previousVersion = changelog.versions[0];
-if (previousVersion && changelog.states && changelog.states[previousVersion.clientVersion]) {
-  const prevState = changelog.states[previousVersion.clientVersion];
+fs.writeFileSync(path.join(changelogsDir, `${currentVersion.version}.json`), JSON.stringify(changelogEntry, null, 2));
 
-  for (const [fileKey, current] of Object.entries(currentState)) {
-    const prev = prevState[fileKey];
-    if (!prev) {
-      // Entire category is new
-      changes.added[fileKey] = current.items;
-      continue;
-    }
+// Save state
+fs.writeFileSync(path.join(statesDir, `${currentVersion.version}.json`), JSON.stringify(currState, null, 2));
 
-    const prevSet = new Set(prev.items);
-    const currSet = new Set(current.items);
-
-    const added = current.items.filter((item) => !prevSet.has(item));
-    const removed = prev.items.filter((item) => !currSet.has(item));
-
-    if (added.length > 0) {
-      changes.added[fileKey] = added;
-    }
-    if (removed.length > 0) {
-      changes.removed[fileKey] = removed;
-    }
-  }
+// Update index
+let index = [];
+if (fs.existsSync(changelogIndexPath)) {
+  index = JSON.parse(fs.readFileSync(changelogIndexPath, 'utf8'));
 }
 
-// Add new version to changelog
-changelog.versions.unshift(currentVersion);
+const existingIdx = index.findIndex(e => e.version === currentVersion.version);
+const indexEntry = {
+  version: currentVersion.version,
+  date: currentVersion.date,
+  time: currentVersion.time,
+  addedCount,
+  removedCount,
+};
 
-// Store current state for future comparisons
-changelog.states[currentVersion.clientVersion] = currentState;
-
-// Store changes for this version (empty for first version)
-changelog.changes[currentVersion.clientVersion] = changes;
-
-// Keep only last 50 versions
-if (changelog.versions.length > 50) {
-  const removedVersions = changelog.versions.splice(50);
-  removedVersions.forEach((v) => {
-    delete changelog.states[v.clientVersion];
-    delete changelog.changes[v.clientVersion];
-  });
-}
-
-// Write updated changelog
-fs.writeFileSync(changelogPath, JSON.stringify(changelog, null, 2));
-
-console.log(`Generated changelog for version ${currentVersion.clientVersion}`);
-console.log(`Total versions tracked: ${changelog.versions.length}`);
-
-// Summary of changes
-const totalAdded = Object.values(changes.added).reduce((sum, arr) => sum + arr.length, 0);
-const totalRemoved = Object.values(changes.removed).reduce((sum, arr) => sum + arr.length, 0);
-
-if (totalAdded > 0 || totalRemoved > 0) {
-  console.log(`Changes: +${totalAdded} added, -${totalRemoved} removed`);
-  Object.entries(changes.added).forEach(([key, items]) => {
-    if (items.length > 0) console.log(`  ${key}: +${items.length}`);
-  });
-  Object.entries(changes.removed).forEach(([key, items]) => {
-    if (items.length > 0) console.log(`  ${key}: -${items.length}`);
-  });
+if (existingIdx !== -1) {
+  index[existingIdx] = indexEntry;
 } else {
-  console.log('No changes detected from previous version (or this is the first version)');
+  index.push(indexEntry);
+}
+
+index.sort((a, b) => parseInt(b.version) - parseInt(a.version));
+fs.writeFileSync(changelogIndexPath, JSON.stringify(index, null, 2));
+
+console.log(`\nGenerated changelog for version ${currentVersion.version}`);
+console.log(`Changes: +${addedCount} added, -${removedCount} removed`);
+
+if (addedCount > 0 || removedCount > 0) {
+  for (const [cat, ch] of Object.entries(changes)) {
+    const a = ch.added?.length || 0;
+    const r = ch.removed?.length || 0;
+    if (a > 0 || r > 0) console.log(`  ${cat}: +${a} -${r}`);
+  }
 }

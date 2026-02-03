@@ -1,0 +1,36 @@
+{
+  "version": "6515",
+  "date": "Aug 19 2025",
+  "time": "15:40:24",
+  "changes": {
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_NEUTRAL_ITEM_SELECT1",
+          "value": 62
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_NEUTRAL_ITEM_SELECT2",
+          "value": 63
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_NEUTRAL_ITEM_SELECT3",
+          "value": 64
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_NEUTRAL_ITEM_SELECT4",
+          "value": 65
+        }
+      ],
+      "removed": []
+    }
+  }
+}

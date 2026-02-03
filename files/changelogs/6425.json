@@ -1,0 +1,278 @@
+{
+  "version": "6425",
+  "date": "May 23 2025",
+  "time": "19:41:03",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyConsumableUseSpeed",
+          "signature": "GetModifierPropertyConsumableUseSpeed()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyForbidIllusions",
+          "signature": "GetModifierPropertyForbidIllusions()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyHealingAmplificationUnique",
+          "signature": "GetModifierPropertyHealingAmplificationUnique()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyManacostOverride",
+          "signature": "GetModifierPropertyManacostOverride()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyRestorationAmplification",
+          "signature": "GetModifierPropertyRestorationAmplification()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyRestorationAmplificationUnique",
+          "signature": "GetModifierPropertyRestorationAmplificationUnique()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyUpgradeNeutralArtifacts",
+          "signature": "GetModifierPropertyUpgradeNeutralArtifacts()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetSuppressIncomingCrit",
+          "signature": "GetSuppressIncomingCrit()"
+        }
+      ],
+      "removed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_NO_REFLECTION",
+          "value": 1048576
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_MVP_SCREEN",
+          "value": 1776
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORBID_ILLUSIONS",
+          "value": 370
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MANACOST_OVERRIDE",
+          "value": 371
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION",
+          "value": 372
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION_UNIQUE",
+          "value": 373
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE_UNIQUE",
+          "value": 374
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_INCOMING_CRIT",
+          "value": 375
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UPGRADE_NEUTRAL_ARTIFACTS",
+          "value": 376
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONSUMABLE_USE_SPEED",
+          "value": 377
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
+          "value": 378
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_EARLY",
+          "value": 13
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_CLOSE",
+          "value": 14
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_MISS",
+          "value": 15
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_RAGDOLL",
+          "value": 13
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_ANIMGRAPH_SET_PARAM",
+          "value": 35
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTADamageFlag_t",
+          "name": "DOTA_DAMAGE_FLAG_NO_REFLECTION",
+          "value": 1048576
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_MVP_SCREEN",
+          "value": 1776
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORBID_ILLUSIONS",
+          "value": 370
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MANACOST_OVERRIDE",
+          "value": 371
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION",
+          "value": 372
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION_UNIQUE",
+          "value": 373
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE_UNIQUE",
+          "value": 374
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPPRESS_INCOMING_CRIT",
+          "value": 375
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UPGRADE_NEUTRAL_ARTIFACTS",
+          "value": 376
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_CONSUMABLE_USE_SPEED",
+          "value": 377
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
+          "value": 378
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_SPEC_DROPDOWN_HEROFACET",
+          "value": 218
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_EARLY",
+          "value": 13
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_CLOSE",
+          "value": 14
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_LAST_HIT_MISS",
+          "value": 15
+        }
+      ]
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_MVP_SCREEN"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_MP_GESTURE_VC_FISTPUMP_ITEM2"
+        },
+        {
+          "type": "enum_member",
+          "enum": "FieldType",
+          "name": "FIELD_HNMGRAPHDEFINITION"
+        }
+      ],
+      "removed": []
+    }
+  }
+}

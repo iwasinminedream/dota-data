@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3423",
+    "default": "3427",
     "flags": [
       "cl",
       "a",
@@ -11121,7 +11121,7 @@
     "description": "Determines how someone can join this demo mode session. 0 means invite only, 1 means any friend can join."
   },
   "dota_hero_demo_map": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -12754,7 +12754,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "260",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -34327,7 +34327,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "DELL U2415 (NVIDIA High Definition Audio)",
+    "default": "Наушники (2- WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },

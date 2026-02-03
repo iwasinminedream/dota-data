@@ -1,0 +1,125 @@
+{
+  "version": "6469",
+  "date": "Jun 18 2025",
+  "time": "17:56:09",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetRequiredLevel",
+          "signature": "GetRequiredLevel()"
+        }
+      ],
+      "removed": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierHPRegen_CanBeNegative",
+          "signature": "GetModifierHPRegen_CanBeNegative()"
+        }
+      ]
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REQUIRED_LEVEL",
+          "value": 377
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HP_REGEN_CAN_BE_NEGATIVE",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
+          "value": 378
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REQUIRED_LEVEL",
+          "value": 377
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_TOGGLE_BUYBACK_PROTECTION",
+          "value": 147
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HP_REGEN_CAN_BE_NEGATIVE",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
+          "value": 378
+        }
+      ]
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "ABILITY_TYPE_ATTRIBUTES"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "ABILITY_TYPE_BASIC"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "ABILITY_TYPE_HIDDEN"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "ABILITY_TYPE_ULTIMATE"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "DOTA_ABILITY_TYPE_ATTRIBUTES"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "DOTA_ABILITY_TYPE_BASIC"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "DOTA_ABILITY_TYPE_HIDDEN"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityType",
+          "name": "DOTA_ABILITY_TYPE_ULTIMATE"
+        }
+      ]
+    }
+  }
+}

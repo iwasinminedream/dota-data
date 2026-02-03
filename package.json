@@ -10,11 +10,12 @@
     "files/**/*.{json,ts}"
   ],
   "scripts": {
-    "build": "run-s build:clean build:static build:tsc build:modifiers build:extra",
-    "build:clean": "rimraf \"{files,lib}/**/*\"",
+    "build": "run-s build:clean build:static build:tsc build:modifiers build:extra build:changelog",
+    "build:clean": "rimraf \"files/**/*\" \"!files/changelog-index.json\" \"!files/changelogs\" \"!files/changelogs/**\" \"!files/changelog-states\" \"!files/changelog-states/**\" \"lib/**/*\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
     "build:extra": "node build/rebuild-data.js",
+    "build:changelog": "node build/generate-changelog.js",
     "dev": "run-p dev:static dev:tsc",
     "dev:static": "nodemon",
     "dev:tsc": "tsc --watch --preserveWatchOutput",
@@ -24,7 +25,7 @@
     "fix:prettier": "prettier --write .",
     "prepublishOnly": "npm run build:tsc",
     "test": "jest",
-    "auto-dump": "tsx dumper/start-dumper.mts && npm run build:modifiers && npm run build:extra",
+    "auto-dump": "tsx dumper/start-dumper.mts && npm run build:modifiers && npm run build:extra && npm run build:changelog",
     "build:modifiers": "tsx dumper/build-modifiers.ts",
     "rebuild-data": "node build/rebuild-data.js"
   },

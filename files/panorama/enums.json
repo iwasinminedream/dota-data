@@ -1743,6 +1743,10 @@
       {
         "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI",
         "value": 562949953421312
+      },
+      {
+        "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND",
+        "value": 1125899906842624
       }
     ]
   },

@@ -1,0 +1,350 @@
+{
+  "version": "6676",
+  "date": "Jan 21 2026",
+  "time": "15:43:12",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierOverrideUntargetableFrom",
+          "signature": "GetModifierOverrideUntargetableFrom()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierOverrideUntargetableTo",
+          "signature": "GetModifierOverrideUntargetableTo()"
+        },
+        {
+          "type": "class",
+          "name": "CDotaQuest"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "AddSubquest",
+          "signature": "AddSubquest(subquest)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "CompleteQuest",
+          "signature": "CompleteQuest()"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "GetSubquest",
+          "signature": "GetSubquest(index)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "GetSubquestByName",
+          "signature": "GetSubquestByName(name)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "RemoveSubquest",
+          "signature": "RemoveSubquest(subquest)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "SetTextReplaceString",
+          "signature": "SetTextReplaceString(string)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaQuest",
+          "name": "SetTextReplaceValue",
+          "signature": "SetTextReplaceValue(valueSlot, value)"
+        },
+        {
+          "type": "class",
+          "name": "CDotaSubquestBase"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "CompleteSubquest",
+          "signature": "CompleteSubquest()"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "SetTextReplaceString",
+          "signature": "SetTextReplaceString(string)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaSubquestBase",
+          "name": "SetTextReplaceValue",
+          "signature": "SetTextReplaceValue(valueSlot, value)"
+        },
+        {
+          "type": "class",
+          "name": "CDOTATutorial"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddBot",
+          "signature": "AddBot(heroName, arg2, arg3, arg4)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddQuest",
+          "signature": "AddQuest(arg1, arg2, arg3, arg4)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "AddShopWhitelistItem",
+          "signature": "AddShopWhitelistItem(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "CompleteQuest",
+          "signature": "CompleteQuest(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "CreateLocationTask",
+          "signature": "CreateLocationTask(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnableCreepAggroViz",
+          "signature": "EnableCreepAggroViz(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnablePlayerOffscreenTip",
+          "signature": "EnablePlayerOffscreenTip(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "EnableTowerAggroViz",
+          "signature": "EnableTowerAggroViz(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "FinishTutorial",
+          "signature": "FinishTutorial()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "ForceGameStart",
+          "signature": "ForceGameStart()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "IsItemInWhiteList",
+          "signature": "IsItemInWhiteList(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "RemoveShopWhitelistItem",
+          "signature": "RemoveShopWhitelistItem(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SelectHero",
+          "signature": "SelectHero(heroName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SelectPlayerTeam",
+          "signature": "SelectPlayerTeam(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetItemGuide",
+          "signature": "SetItemGuide(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetOrModifyPlayerGold",
+          "signature": "SetOrModifyPlayerGold(goldAmount, setNotModify)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetQuickBuy",
+          "signature": "SetQuickBuy(itemName)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetShopOpen",
+          "signature": "SetShopOpen(open)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetTutorialConvar",
+          "signature": "SetTutorialConvar(arg1, arg2)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetTutorialUI",
+          "signature": "SetTutorialUI(arg1)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "SetWhiteListEnabled",
+          "signature": "SetWhiteListEnabled(whiteListEnabled)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "StartTutorialMode",
+          "signature": "StartTutorialMode()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "UpgradePlayerAbility",
+          "signature": "UpgradePlayerAbility(abilityName)"
+        },
+        {
+          "type": "class",
+          "name": "CDotaTutorialNPCBlocker"
+        },
+        {
+          "type": "method",
+          "class": "CDotaTutorialNPCBlocker",
+          "name": "SetEnabled",
+          "signature": "SetEnabled(enabled)"
+        },
+        {
+          "type": "method",
+          "class": "CDotaTutorialNPCBlocker",
+          "name": "SetOtherBlocker",
+          "signature": "SetOtherBlocker(blocker)"
+        }
+      ],
+      "removed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UNTARGETABLE_FROM",
+          "value": 386
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UNTARGETABLE_TO",
+          "value": 387
+        },
+        {
+          "type": "enum",
+          "name": "quest_text_replace_values_t"
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE",
+          "value": 1
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_ROUND",
+          "value": 2
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_TEXT_REPLACE_VALUE_REWARD",
+          "value": 3
+        },
+        {
+          "type": "enum_member",
+          "enum": "quest_text_replace_values_t",
+          "name": "QUEST_NUM_TEXT_REPLACE_VALUES",
+          "value": 4
+        },
+        {
+          "type": "enum",
+          "name": "subquest_text_replace_values_t"
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE",
+          "value": 1
+        },
+        {
+          "type": "enum_member",
+          "enum": "subquest_text_replace_values_t",
+          "name": "SUBQUEST_NUM_TEXT_REPLACE_VALUES",
+          "value": 2
+        }
+      ],
+      "removed": []
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_tutorial_sleep"
+        }
+      ],
+      "removed": []
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UNTARGETABLE_FROM",
+          "value": 386
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_UNTARGETABLE_TO",
+          "value": 387
+        }
+      ],
+      "removed": []
+    }
+  }
+}
