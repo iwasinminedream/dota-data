@@ -1,0 +1,25 @@
+{
+  "version": "6695",
+  "date": "Feb 03 2026",
+  "time": "15:50:43",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1806
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
+          "value": 51
+        }
+      ]
+    }
+  }
+}

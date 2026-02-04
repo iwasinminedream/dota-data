@@ -9110,11 +9110,19 @@
         "value": 1791
       },
       {
-        "name": "ACT_DOTA_CAST4_STATUE",
+        "name": "ACT_DOTA_DISABLED_END",
+        "value": 1792
+      },
+      {
+        "name": "ACT_DOTA_RELAX_IN",
         "value": 1793
       },
       {
-        "name": "ACT_DOTA_DISABLED_END",
+        "name": "ACT_DOTA_RELAX_OUT",
+        "value": 1794
+      },
+      {
+        "name": "ACT_DOTA_CAST_FENCE",
         "value": 1795
       },
       {
@@ -9126,40 +9134,36 @@
         "value": 1798
       },
       {
-        "name": "ACT_DOTA_CAST5_STATUE",
+        "name": "ACT_DOTA_CAST4_STATUE",
         "value": 1799
       },
       {
-        "name": "ACT_DOTA_CYCLONE",
+        "name": "ACT_DOTA_CAST5_STATUE",
         "value": 1800
       },
       {
-        "name": "ACT_DOTA_IMPALE",
+        "name": "ACT_DOTA_CYCLONE",
         "value": 1801
       },
       {
-        "name": "ACT_DOTA_TORRENT",
+        "name": "ACT_DOTA_IMPALE",
         "value": 1802
       },
       {
-        "name": "ACT_DOTA_VOODOO_REST",
+        "name": "ACT_DOTA_TORRENT",
         "value": 1803
       },
       {
-        "name": "ACT_DOTA_RELAX_IN",
+        "name": "ACT_DOTA_SPWN",
         "value": 1804
       },
       {
-        "name": "ACT_DOTA_RELAX_OUT",
+        "name": "ACT_DOTA_VOODOO_REST",
         "value": 1805
       },
       {
-        "name": "ACT_DOTA_CAST_FENCE",
+        "name": "ACT_DOTA_RUN_ALT",
         "value": 1806
-      },
-      {
-        "name": "ACT_DOTA_SPWN",
-        "value": 1807
       }
     ]
   },
@@ -12149,12 +12153,8 @@
         "value": 50
       },
       {
-        "name": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
-        "value": 51
-      },
-      {
         "name": "AE_CL_CREATE_PARTICLE_BRASS",
-        "value": 52
+        "value": 51
       }
     ],
     "description": "https://developer.valvesoftware.com/wiki/Animation_Events#Server_events"

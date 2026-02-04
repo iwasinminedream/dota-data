@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "run-s build:clean build:static build:tsc build:modifiers build:extra build:changelog",
-    "build:clean": "rimraf \"files/**/*\" \"!files/changelog-index.json\" \"!files/changelogs\" \"!files/changelogs/**\" \"!files/changelog-states\" \"!files/changelog-states/**\" \"lib/**/*\"",
+    "build:clean": "rimraf \"files/vscripts\" \"files/panorama\" \"files/convars.json\" \"files/engine-enums.json\" \"files/engine-enums.d.ts\" \"files/events.json\" \"files/events.d.ts\" \"lib\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
     "build:extra": "node build/rebuild-data.js",
