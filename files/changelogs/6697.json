@@ -1,0 +1,33 @@
+{
+  "version": "6697",
+  "date": "Feb 04 2026",
+  "time": "13:50:12",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1805
+        }
+      ]
+    },
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_ITEM_NAGINATA"
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD"
+        }
+      ]
+    }
+  }
+}

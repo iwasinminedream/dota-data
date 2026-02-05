@@ -187,10 +187,6 @@
         "shortName": "ITEM_MKB"
       },
       {
-        "name": "DOTA_PSEUDO_RANDOM_ITEM_NAGINATA",
-        "shortName": "ITEM_NAGINATA"
-      },
-      {
         "name": "DOTA_PSEUDO_RANDOM_ITEM_PMS",
         "shortName": "ITEM_PMS"
       },
@@ -245,10 +241,6 @@
       {
         "name": "DOTA_PSEUDO_RANDOM_LYCAN_CRIT",
         "shortName": "LYCAN_CRIT"
-      },
-      {
-        "name": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD",
-        "shortName": "MAGNUS_SHARD"
       },
       {
         "name": "DOTA_PSEUDO_RANDOM_MARS_BULWARK",

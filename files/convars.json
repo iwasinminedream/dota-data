@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3431",
+    "default": "3435",
     "flags": [
       "cl",
       "a",
@@ -19509,7 +19509,7 @@
     "description": ""
   },
   "dota_video_config.setting.mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -24403,7 +24403,7 @@
     "description": ""
   },
   "mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -32918,7 +32918,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.053167",
+    "default": "1",
     "flags": [
       "a"
     ],
@@ -37774,7 +37774,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.020362",
+    "default": "1",
     "flags": [
       "a"
     ],
