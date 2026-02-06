@@ -25,7 +25,7 @@
     "fix:prettier": "prettier --write .",
     "prepublishOnly": "npm run build:tsc",
     "test": "jest",
-    "auto-dump": "tsx dumper/start-dumper.mts && npm run build:modifiers && npm run build:extra && npm run build:changelog",
+    "auto-dump": "tsx dumper/start-dumper.mts",
     "build:modifiers": "tsx dumper/build-modifiers.ts",
     "rebuild-data": "node build/rebuild-data.js"
   },

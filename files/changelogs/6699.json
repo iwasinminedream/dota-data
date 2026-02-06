@@ -1,0 +1,25 @@
+{
+  "version": "6699",
+  "date": "Feb 05 2026",
+  "time": "16:27:58",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1808
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1802
+        }
+      ]
+    }
+  }
+}
