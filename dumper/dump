@@ -1,13 +1,13 @@
-ClientVersion=6699
-ServerVersion=6699
+ClientVersion=6702
+ServerVersion=6702
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10430278
-VersionDate=Feb 05 2026
-VersionTime=16:27:58
+SourceRevision=10433915
+VersionDate=Feb 06 2026
+VersionTime=18:30:06
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34649,15 +34649,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34773,7 +34773,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1803
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -34929,7 +34929,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1805
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35101,7 +35101,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1806
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35365,7 +35365,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1800
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35405,7 +35405,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1801
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35417,7 +35417,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1802
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35434,6 +35434,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_RUN",
     "value":1502
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_RUN_ALT",
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35518,10 +35522,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_SPWN",
-    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35625,7 +35625,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1807
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -35689,7 +35689,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1808
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45218,19 +45218,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1796
+    "value":1803
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1797
+    "value":1804
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1798
+    "value":1805
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1799
+    "value":1797
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52885,7 +52885,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3436             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3448             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53316,7 +53316,7 @@ dota_lane_selection_soft_support                                                
 dota_last_acknowledged_plus_status                                               : 2                : cl, a, per_user                  : 
 dota_last_event_id                                                               : 31               : cl, a, per_user                  : 
 dota_last_hit_multiple_kill_time                                                 : 8                : sv                               : 
-dota_last_primary_event_id                                                       : 51               : cl, a                            : 
+dota_last_primary_event_id                                                       : 0                : cl, a                            : 
 dota_launch_custom_game                                                          : cmd              : cl, release, vconsole_fuzzy, vconsole_set_focus : Launch a custom game
 dota_league_force_public                                                         : 15438, 15475, 15689, 15690, 15691, 15692, 15693, 15694, 15728, 16844, 16935, 18324 : cl                               : A comma separated list of league ids to force public usage
 dota_league_info_batch_interval_s                                                : 1                : cl                               : 
@@ -53355,7 +53355,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 128              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 260              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 0                : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -53404,7 +53404,7 @@ dota_minimap_use_dynamic_mesh                                                   
 dota_modifier_debug                                                              : false            : sv, cl, rep, cheat               : 
 dota_modifier_dump                                                               : cmd              : sv, cheat                        : Dump all modifiers on all entities.
 dota_modifier_test                                                               : cmd              : sv, cheat                        : Creates a test modifier on unit: dota_modifier_test <entityindex> <modifiername> <duration>
-dota_monster_hunter_hero_codex_intro_state                                       : 0                : cl, a                            : 
+dota_monster_hunter_hero_codex_intro_state                                       : 1                : cl, a                            : 
 dota_monster_hunter_investigation_banner_expire_time                             : 8                : cl, cheat                        : 
 dota_monster_hunter_investigation_rewards_loss_percentage                        : 0.5              : sv, cl, rep                      : What percent of the rewards do you get for a loss
 dota_monster_hunter_lock_investigations                                          : cmd              : sv, cheat                        : 
@@ -54238,7 +54238,7 @@ dota_video_config.setting.gpu_level                                             
 dota_video_config.setting.gpu_mem_level                                          : 2                : cl                               : 
 dota_video_config.setting.high_dpi                                               : 0                : cl                               : 
 dota_video_config.setting.knowndevice                                            : 0                : cl                               : 
-dota_video_config.setting.mat_viewportscale                                      : 1                : cl                               : 
+dota_video_config.setting.mat_viewportscale                                      : 0.999999         : cl                               : 
 dota_video_config.setting.mat_vsync                                              : 0                : cl                               : 
 dota_video_config.setting.mem_level                                              : 2                : cl                               : 
 dota_video_config.setting.monitor_index                                          : 0                : cl                               : 
@@ -54943,7 +54943,7 @@ mat_tonemap_force_rate                                                          
 mat_tonemap_force_scale                                                          : 0                : cheat                            : 
 mat_tonemap_force_use_alpha                                                      : -1               : cheat                            : 
 mat_tonemap_uncap_exposure                                                       : 0                : cheat                            : 
-mat_viewportscale                                                                : 1                : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
+mat_viewportscale                                                                : 0.999999         : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
 mat_wireframe                                                                    : 0                : cheat                            : 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
 mem_compact                                                                      : cmd              :                                  : Compacts the heap
 mem_dump                                                                         : cmd              :                                  : Dump memory stats to text file or <stdout>.
@@ -56137,7 +56137,7 @@ snd_gain                                                                        
 snd_gain_max                                                                     : 1                : cheat                            : 
 snd_gain_min                                                                     : 0.01             : cheat                            : 
 snd_gamevoicevolume                                                              : 0                : a                                : Game v.o. volume
-snd_gamevolume                                                                   : 1                : a                                : Game volume
+snd_gamevolume                                                                   : 0.019932         : a                                : Game volume
 snd_get_physics_surface_properties                                               : cmd              : cheat                            : Get physics surface properties for all the materials.
 snd_group_cluster_debug                                                          : false            : rep, cheat                       : 
 snd_group_priority_debug                                                         : false            : rep, cheat                       : 

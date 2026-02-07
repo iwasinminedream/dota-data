@@ -187,6 +187,10 @@
         "shortName": "ITEM_MKB"
       },
       {
+        "name": "DOTA_PSEUDO_RANDOM_ITEM_NAGINATA",
+        "shortName": "ITEM_NAGINATA"
+      },
+      {
         "name": "DOTA_PSEUDO_RANDOM_ITEM_PMS",
         "shortName": "ITEM_PMS"
       },
@@ -201,10 +205,6 @@
       {
         "name": "DOTA_PSEUDO_RANDOM_ITEM_SANGEYASHA_MAIM",
         "shortName": "ITEM_SANGEYASHA_MAIM"
-      },
-      {
-        "name": "DOTA_PSEUDO_RANDOM_ITEM_SILVER_EDGE",
-        "shortName": "ITEM_SILVER_EDGE"
       },
       {
         "name": "DOTA_PSEUDO_RANDOM_ITEM_SOLAR_CREST",

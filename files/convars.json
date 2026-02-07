@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3436",
+    "default": "3448",
     "flags": [
       "cl",
       "a",
@@ -12453,7 +12453,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "51",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12754,7 +12754,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "260",
     "flags": [
       "cl",
       "a"
@@ -13154,7 +13154,7 @@
     "description": "Creates a test modifier on unit: dota_modifier_test <entityindex> <modifiername> <duration>"
   },
   "dota_monster_hunter_hero_codex_intro_state": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a"
@@ -19509,7 +19509,7 @@
     "description": ""
   },
   "dota_video_config.setting.mat_viewportscale": {
-    "default": "1",
+    "default": "0.999999",
     "flags": [
       "cl"
     ],
@@ -24403,7 +24403,7 @@
     "description": ""
   },
   "mat_viewportscale": {
-    "default": "1",
+    "default": "0.999999",
     "flags": [
       "cl"
     ],
@@ -32918,7 +32918,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "1",
+    "default": "0.019932",
     "flags": [
       "a"
     ],
