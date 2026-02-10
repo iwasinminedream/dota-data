@@ -1,10 +1,17 @@
 [
   {
+    "version": "6704",
+    "date": "Feb 09 2026",
+    "time": "21:30:40",
+    "addedCount": 0,
+    "removedCount": 1
+  },
+  {
     "version": "6702",
     "date": "Feb 06 2026",
     "time": "18:30:06",
     "addedCount": 2,
-    "removedCount": 2
+    "removedCount": 1
   },
   {
     "version": "6699",

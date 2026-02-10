@@ -28,6 +28,9 @@ if (!fs.existsSync(addonPath)) {
 }
 
 const vscriptsPath = path.join(addonPath, 'scripts', 'vscripts');
+if (!fs.existsSync(vscriptsPath)) {
+  fs.mkdirSync(vscriptsPath, { recursive: true });
+}
 fs.copyFileSync(
   path.join('dumper', 'addon_game_mode.lua'),
   path.join(vscriptsPath, 'addon_game_mode.lua'),
@@ -52,9 +55,26 @@ const dumpWriteStream = fs.createWriteStream('dumper/dump', {});
 dumpWriteStream.write(steamInfContent);
 
 //const p2 = spawn(path.join(dotaBinDir, "vconsole2.exe"), { detached: true });
+console.log('Spawning Dota:', path.join(dotaBinDir, 'dota2.exe'), args.join(' '));
 const p1 = spawn(path.join(dotaBinDir, 'dota2.exe'), args, { cwd: dotaBinDir });
 
-const dotaConsole = await vConsole.connect(29000);
+p1.on('error', (err) => {
+  console.error('Failed to spawn dota2.exe:', err);
+});
+p1.on('exit', (code, signal) => {
+  console.log(`dota2.exe exited with code=${code} signal=${signal}`);
+});
+
+// Wait briefly to let Dota initialize and bind vconsole port
+await new Promise((r) => setTimeout(r, 5000));
+
+let dotaConsole;
+try {
+  dotaConsole = await vConsole.connect(29000);
+} catch (err) {
+  console.error('Не удалось подключиться к vConsole после запуска Dota:', err);
+  throw err;
+}
 
 console.log('Connected! Waiting for dump...');
 

@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3448",
+    "default": "3457",
     "flags": [
       "cl",
       "a",
@@ -12453,7 +12453,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "0",
+    "default": "51",
     "flags": [
       "cl",
       "a"
@@ -12754,7 +12754,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "260",
+    "default": "128",
     "flags": [
       "cl",
       "a"

@@ -10,11 +10,11 @@
     "files/**/*.{json,ts}"
   ],
   "scripts": {
-    "build": "run-s build:clean build:static build:tsc build:modifiers build:extra build:changelog",
+    "build": "run-s build:clean build:static build:tsc build:modifiers build:convars build:changelog",
     "build:clean": "rimraf \"files/vscripts\" \"files/panorama\" \"files/convars.json\" \"files/engine-enums.json\" \"files/engine-enums.d.ts\" \"files/events.json\" \"files/events.d.ts\" \"lib\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
-    "build:extra": "node build/rebuild-data.js",
+    "build:convars": "node build/generate-convars.js",
     "build:changelog": "node build/generate-changelog.js",
     "dev": "run-p dev:static dev:tsc",
     "dev:static": "nodemon",
@@ -26,8 +26,7 @@
     "prepublishOnly": "npm run build:tsc",
     "test": "jest",
     "auto-dump": "tsx dumper/start-dumper.mts",
-    "build:modifiers": "tsx dumper/build-modifiers.ts",
-    "rebuild-data": "node build/rebuild-data.js"
+    "build:modifiers": "tsx dumper/build-modifiers.ts"
   },
   "prettier": {
     "printWidth": 100,

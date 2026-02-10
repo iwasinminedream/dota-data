@@ -472,7 +472,7 @@ apiTypesDeclarations.push({
   kind: 'object',
   name: 'ModifierUnitEvent',
   fields: [
-    { name: 'new_pos', types: ['Vector'] },
+    // { name: 'new_pos', types: ['Vector'] },
     { name: 'order_type', types: ['dotaunitorder_t'] },
     { name: 'unit', types: ['CDOTA_BaseNPC'] },
   ],

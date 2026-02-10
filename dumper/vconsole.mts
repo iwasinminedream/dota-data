@@ -1,8 +1,9 @@
 import * as net from 'net';
 
 export async function connect(port: number): Promise<net.Socket> {
-  const MAX_TRIES = 10;
-  const RETRY_DELAY = 1000; //ms
+const MAX_TRIES = 10;
+const RETRY_DELAY = 1000; //ms
+const BACKOFF_MULT = 1.5;
   let tries = 0;
 
   return new Promise((resolve, reject) => {
@@ -12,10 +13,13 @@ export async function connect(port: number): Promise<net.Socket> {
     });
     socket.on('error', (err) => {
       if (++tries < MAX_TRIES) {
+        const delay = Math.round(RETRY_DELAY * Math.pow(BACKOFF_MULT, tries - 1));
+        console.log(`vConsole connect attempt ${tries} failed, retrying in ${delay}ms...`);
         setTimeout(() => {
           socket.connect({ host: '127.0.0.1', port });
-        }, RETRY_DELAY);
+        }, delay);
       } else {
+        console.error('vConsole connect failed after max retries:', err);
         reject(err);
       }
     });

@@ -1,0 +1,18 @@
+{
+  "version": "6704",
+  "date": "Feb 09 2026",
+  "time": "21:30:40",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1804
+        }
+      ]
+    }
+  }
+}

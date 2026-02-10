@@ -28393,80 +28393,74 @@
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_CAST3_STATUE",
+        "name": "ACT_DOTA_VOODOO_REST",
         "value": 1793
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_CAST4_STATUE",
+        "name": "ACT_DOTA_RUN_ALT",
         "value": 1794
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_CAST5_STATUE",
+        "name": "ACT_DOTA_CAST3_STATUE",
         "value": 1795
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_RELAX_IN",
+        "name": "ACT_DOTA_CAST4_STATUE",
         "value": 1796
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_RELAX_OUT",
+        "name": "ACT_DOTA_CAST5_STATUE",
         "value": 1797
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_CAST_FENCE",
+        "name": "ACT_DOTA_CYCLONE",
         "value": 1798
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_CYCLONE",
+        "name": "ACT_DOTA_IMPALE",
         "value": 1799
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_IMPALE",
+        "name": "ACT_DOTA_TORRENT",
         "value": 1800
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_TORRENT",
-        "value": 1801
-      },
-      {
-        "type": "enum_member",
-        "enum": "GameActivity_t",
         "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-        "value": 1803
-      },
-      {
-        "type": "enum_member",
-        "enum": "GameActivity_t",
-        "name": "ACT_DOTA_SPWN",
-        "value": 1804
-      },
-      {
-        "type": "enum_member",
-        "enum": "GameActivity_t",
-        "name": "ACT_DOTA_VOODOO_REST",
         "value": 1805
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_RUN_ALT",
+        "name": "ACT_DOTA_RELAX_IN",
         "value": 1806
+      },
+      {
+        "type": "enum_member",
+        "enum": "GameActivity_t",
+        "name": "ACT_DOTA_RELAX_OUT",
+        "value": 1807
+      },
+      {
+        "type": "enum_member",
+        "enum": "GameActivity_t",
+        "name": "ACT_DOTA_CAST_FENCE",
+        "value": 1808
       },
       {
         "type": "enum",

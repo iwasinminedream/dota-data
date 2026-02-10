@@ -9,17 +9,10 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_RUN_ALT",
-          "value": 1802
+          "value": 1806
         }
       ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_SPWN",
-          "value": 1804
-        }
-      ]
+      "removed": []
     },
     "Engine Enums": {
       "added": [

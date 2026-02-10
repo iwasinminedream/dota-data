@@ -1430,12 +1430,6 @@
     "name": "ModifierUnitEvent",
     "fields": [
       {
-        "name": "new_pos",
-        "types": [
-          "Vector"
-        ]
-      },
-      {
         "name": "order_type",
         "types": [
           "dotaunitorder_t"
