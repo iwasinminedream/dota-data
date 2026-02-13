@@ -1,13 +1,13 @@
-ClientVersion=6704
-ServerVersion=6704
+ClientVersion=6707
+ServerVersion=6707
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10439477
-VersionDate=Feb 09 2026
-VersionTime=21:30:40
+SourceRevision=10447809
+VersionDate=Feb 12 2026
+VersionTime=13:54:37
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -22017,6 +22017,14 @@ Initializing script VM...
         "returns":"void"
       },{
         "args":[{
+            "name":"cap",
+            "type":"int"
+          }],
+        "description":"Caps the number of players spawned when the game is reset. Used in tutorials where players are spawned in the script.",
+        "name":"SetForcedHeroCapOnReset",
+        "returns":"void"
+      },{
+        "args":[{
             "name":"flConstantManaRegen",
             "type":"float"
           }],
@@ -34649,15 +34657,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1795
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1796
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1797
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34773,7 +34781,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1808
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -34929,7 +34937,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1798
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35101,7 +35109,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1799
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35365,7 +35373,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1805
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35405,7 +35413,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1806
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35417,7 +35425,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1807
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35434,10 +35442,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_RUN",
     "value":1502
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_RUN_ALT",
-    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35522,6 +35526,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35625,7 +35633,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1800
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -35689,7 +35697,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1793
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45218,19 +45226,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1801
+    "value":1799
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1802
+    "value":1800
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1803
+    "value":1801
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1804
+    "value":1806
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52885,7 +52893,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3457             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3468             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53183,7 +53191,7 @@ dota_hide_frontpage_video                                                       
 dota_hide_spectator_player_names                                                 : false            : cl                               : 
 dota_hide_tips_on_loading_screens                                                : false            : cl, a, per_user                  : 
 dota_hide_wearables                                                              : false            : sv, cl, rep, cheat               : If set, wearables (default body parts) will be hidden. This is for the item icon editor.
-dota_highest_seen_item_id                                                        : 33339346557      : cl, a, per_user                  : 
+dota_highest_seen_item_id                                                        : 34412839621      : cl, a, per_user                  : 
 dota_highlight_reel                                                              : false            : cl                               : 
 dota_highlight_reel_debug                                                        : false            : cl, cheat                        : 
 dota_highlight_reel_leadin_seconds                                               : 13               : cl                               : 
@@ -53355,7 +53363,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 128              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 4                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 0                : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections

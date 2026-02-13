@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3457",
+    "default": "3468",
     "flags": [
       "cl",
       "a",
@@ -11457,7 +11457,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "33339346557",
+    "default": "34412839621",
     "flags": [
       "cl",
       "a",
@@ -12754,7 +12754,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "4",
     "flags": [
       "cl",
       "a"

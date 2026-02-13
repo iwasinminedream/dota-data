@@ -8,7 +8,7 @@ import { Socket } from 'net';
 import * as path from 'path';
 
 import { findSteamAppById } from '@moddota/find-steam-app';
-import * as vConsole from './vconsole.mjs';
+import * as vConsole from './vconsole.mts';
 
 const ADDON_NAME = 'dumper';
 
@@ -63,9 +63,14 @@ p1.on('error', (err) => {
 });
 p1.on('exit', (code, signal) => {
   console.log(`dota2.exe exited with code=${code} signal=${signal}`);
+
+  try { dumpWriteStream && dumpWriteStream.close(); } catch (e) {}
+  try { if (typeof postQuitKill !== 'undefined' && postQuitKill) clearTimeout(postQuitKill); } catch (e) {}
+
+  const exitCode = typeof code === 'number' ? code : (signal ? 1 : 0);
+  process.exit(0);
 });
 
-// Wait briefly to let Dota initialize and bind vconsole port
 await new Promise((r) => setTimeout(r, 5000));
 
 let dotaConsole;
@@ -82,9 +87,16 @@ await readDump(dotaConsole, dumpWriteStream);
 
 dumpWriteStream.close();
 
-console.log('Saved dump. Closing dota...');
+console.log('Saved dump — exiting dumper.');
 
-await vConsole.execute(dotaConsole, 'quit');
+try {
+  await vConsole.disconnect(dotaConsole);
+} catch (e) {
+
+}
+
+process.exit(0);
+
 
 async function readDump(dota: Socket, dumpStream: fs.WriteStream): Promise<void> {
   return new Promise((resolve) => {
