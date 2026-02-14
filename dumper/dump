@@ -1,13 +1,13 @@
-ClientVersion=6707
-ServerVersion=6707
+ClientVersion=6708
+ServerVersion=6708
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10447809
-VersionDate=Feb 12 2026
-VersionTime=13:54:37
+SourceRevision=10452236
+VersionDate=Feb 13 2026
+VersionTime=16:20:10
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34657,15 +34657,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34937,7 +34937,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1796
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35109,7 +35109,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1797
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35373,7 +35373,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1807
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35442,6 +35442,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_RUN",
     "value":1502
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_RUN_ALT",
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35632,10 +35636,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_TORRENT",
-    "value":1798
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -35697,7 +35697,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1808
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45226,19 +45226,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1799
+    "value":1793
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1800
+    "value":1794
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1801
+    "value":1795
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1806
+    "value":1800
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52893,7 +52893,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3468             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3470             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53324,7 +53324,7 @@ dota_lane_selection_soft_support                                                
 dota_last_acknowledged_plus_status                                               : 2                : cl, a, per_user                  : 
 dota_last_event_id                                                               : 31               : cl, a, per_user                  : 
 dota_last_hit_multiple_kill_time                                                 : 8                : sv                               : 
-dota_last_primary_event_id                                                       : 51               : cl, a                            : 
+dota_last_primary_event_id                                                       : 55               : cl, a                            : 
 dota_launch_custom_game                                                          : cmd              : cl, release, vconsole_fuzzy, vconsole_set_focus : Launch a custom game
 dota_league_force_public                                                         : 15438, 15475, 15689, 15690, 15691, 15692, 15693, 15694, 15728, 16844, 16935, 18324 : cl                               : A comma separated list of league ids to force public usage
 dota_league_info_batch_interval_s                                                : 1                : cl                               : 
@@ -60932,4 +60932,3 @@ declare enum DOTA_SHOP_TYPE
     DOTA_SHOP_NEUTRALS = 7,
     DOTA_SHOP_NONE = 8,
 }
-
