@@ -1,13 +1,13 @@
-ClientVersion=6708
-ServerVersion=6708
+ClientVersion=6711
+ServerVersion=6711
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10452236
-VersionDate=Feb 13 2026
-VersionTime=16:20:10
+SourceRevision=10461301
+VersionDate=Feb 18 2026
+VersionTime=16:52:42
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -7444,6 +7444,10 @@ Initializing script VM...
     "name":"ACT_DOTA_RELAX_END",
     "value":1610
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_RELAX_IN",
+    "value":1790
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -7453,6 +7457,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP_END",
     "value":1634
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_RELAX_OUT",
+    "value":1791
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -11510,6 +11518,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"AE_DOTA_PET_ITEM_PICKUP",
     "value":40
+  },{
+    "kind":"constant",
+    "name":"AE_DOTA_PLAY_SOUND_ATTACK",
+    "value":48
   },{
     "kind":"constant",
     "name":"AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
@@ -19309,6 +19321,38 @@ Initializing script VM...
     "name":"__UNKNOWN__",
     "value":16
   },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_a",
+    "value":1783
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_b",
+    "value":1784
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_c",
+    "value":1785
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_d",
+    "value":1786
+  },{
+    "kind":"constant",
+    "name":"dummy",
+    "value":1779
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp1",
+    "value":1780
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp2",
+    "value":1781
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp3",
+    "value":1782
+  },{
     "enum":"DOTACustomCameraEventFlags_t",
     "kind":"constant",
     "name":"k_ECustomCameraEventFlags_FadeIn",
@@ -19373,6 +19417,18 @@ Initializing script VM...
     "kind":"constant",
     "name":"k_ECustomCameraEventFlags_Zoom",
     "value":1
+  },{
+    "kind":"constant",
+    "name":"muerta_debut_creep0",
+    "value":1787
+  },{
+    "kind":"constant",
+    "name":"muerta_debut_creep1",
+    "value":1788
+  },{
+    "kind":"constant",
+    "name":"muerta_debut_creep2",
+    "value":1789
   },{
     "extend":"CBaseModelEntity",
     "kind":"class",
@@ -34577,7 +34633,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_ATTACK_STATUE",
-    "value":1786
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_AW_MAGNETIC_FIELD",
@@ -34649,23 +34705,23 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST1_STATUE",
-    "value":1780
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST2_STATUE",
-    "value":1781
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1797
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1798
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1799
+    "value":1818
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34781,7 +34837,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1804
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -34937,7 +34993,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1807
+    "value":1819
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -34969,7 +35025,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1792
+    "value":1813
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -35001,7 +35057,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLAIL_STATUE",
-    "value":1783
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLEE",
@@ -35017,7 +35073,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FORCESTAFF_STATUE",
-    "value":1787
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FRUSTRATION",
@@ -35105,11 +35161,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IDLE_STATUE",
-    "value":1791
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1808
+    "value":1820
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35373,7 +35429,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1801
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35413,7 +35469,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1802
+    "value":1790
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35425,7 +35481,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1803
+    "value":1791
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35445,7 +35501,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1796
+    "value":1817
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35453,7 +35509,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_STATUE",
-    "value":1779
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SAND_KING_BURROW_IN",
@@ -35521,7 +35577,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPAWN_STATUE",
-    "value":1784
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_END",
@@ -35533,7 +35589,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1805
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35545,7 +35601,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STUN_STATUE",
-    "value":1782
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SWIM",
@@ -35569,7 +35625,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TAUNT_STATUE",
-    "value":1790
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT",
@@ -35601,7 +35657,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_END_STATUE",
-    "value":1785
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_REACT",
@@ -35613,7 +35669,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_STATUE",
-    "value":1788
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_THIRST",
@@ -35685,7 +35741,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VICTORY_STATUE",
-    "value":1789
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VIPER_DIVE",
@@ -35697,7 +35753,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1806
+    "value":1811
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -39461,7 +39517,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"AE_DOTA_PLAY_SOUND_ATTACK",
-    "value":50
+    "value":48
   },{
     "kind":"constant",
     "name":"AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
@@ -39481,11 +39537,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"AE_EF_DRAW",
-    "value":49
+    "value":50
   },{
     "kind":"constant",
     "name":"AE_EF_NODRAW",
-    "value":48
+    "value":49
   },{
     "kind":"constant",
     "name":"AE_EMPTY",
@@ -45159,6 +45215,38 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "name":"__UNKNOWN__",
     "value":16
   },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_a",
+    "value":1783
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_b",
+    "value":1784
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_c",
+    "value":1785
+  },{
+    "kind":"constant",
+    "name":"battlemaiden_debut_creep_d",
+    "value":1786
+  },{
+    "kind":"constant",
+    "name":"dummy",
+    "value":1779
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp1",
+    "value":1780
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp2",
+    "value":1781
+  },{
+    "kind":"constant",
+    "name":"hoodwink_debut_crp3",
+    "value":1782
+  },{
     "enum":"DOTACustomCameraEventFlags_t",
     "kind":"constant",
     "name":"k_ECustomCameraEventFlags_FadeIn",
@@ -45225,20 +45313,36 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1
   },{
     "kind":"constant",
+    "name":"muerta_debut_creep0",
+    "value":1787
+  },{
+    "kind":"constant",
+    "name":"muerta_debut_creep1",
+    "value":1788
+  },{
+    "kind":"constant",
+    "name":"muerta_debut_creep2",
+    "value":1789
+  },{
+    "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1793
+    "value":1814
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1794
+    "value":1815
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1795
+    "value":1816
+  },{
+    "kind":"constant",
+    "name":"punch",
+    "value":1812
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1800
+    "value":1806
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52008,8 +52112,8 @@ cl_dota_gridnav_show_size                                                       
 cl_dota_mk_tree_shake_duration                                                   : 2                : cl                               : 
 cl_dota_mk_tree_shake_peak_time                                                  : 0.25             : cl                               : 
 cl_dota_mk_tree_shake_strength                                                   : 15               : cl                               : 
-cl_dota_recent_games_include_custom_games                                        : false            : cl, a                            : 
-cl_dota_recent_games_include_event_games                                         : false            : cl, a                            : 
+cl_dota_recent_games_include_custom_games                                        : true             : cl, a                            : 
+cl_dota_recent_games_include_event_games                                         : true             : cl, a                            : 
 cl_dota_recent_games_include_practice_matches                                    : false            : cl, a                            : 
 cl_dota_showents                                                                 : cmd              : cl, cheat                        : Dump entity list to console.
 cl_dota_speech_spec_ancientattack                                                : true             : cl                               : Set to 0 to prevent hearing 'your ancient is under attack' lines.
@@ -52490,10 +52594,10 @@ dota_ability_refcount_modifiers                                                 
 dota_ability_self_cast_timeout                                                   : 0.252174         : cl, a, per_user                  : 
 dota_ability_think_always                                                        : false            : sv                               : 
 dota_ability_use_original_cast_mode_for_stolen_spell                             : true             : cl, a, per_user                  : 
-dota_activate_window_on_hero_picking_start                                       : false            : cl, a                            : If set, brings Dota to the foreground when hero picking starts
-dota_activate_window_on_match_found                                              : false            : cl, a                            : If set, brings Dota to the foreground when match found
-dota_activate_window_on_ready_check                                              : false            : cl, a                            : If set, brings Dota to the foreground on a ready check
-dota_activate_window_on_unpause                                                  : false            : cl, a                            : If set, brings Dota to the foreground when unpaused
+dota_activate_window_on_hero_picking_start                                       : true             : cl, a                            : If set, brings Dota to the foreground when hero picking starts
+dota_activate_window_on_match_found                                              : true             : cl, a                            : If set, brings Dota to the foreground when match found
+dota_activate_window_on_ready_check                                              : true             : cl, a                            : If set, brings Dota to the foreground on a ready check
+dota_activate_window_on_unpause                                                  : true             : cl, a                            : If set, brings Dota to the foreground when unpaused
 dota_active_play_section_new                                                     : 1                : cl, a, per_user                  : 
 dota_aghanims_pudge_fx                                                           : particles/items2_fx/mask_of_madness.vpcf : sv, cl, rep, cheat               : 
 dota_aghanims_pudge_fx_overhead                                                  : false            : sv, cl, rep, cheat               : 
@@ -52546,7 +52650,7 @@ dota_armory_CustomTagDisplayName_5                                              
 dota_armory_CustomTagDisplayName_6                                               : Tag 6            : cl, a                            : 
 dota_armory_CustomTagDisplayName_7                                               : Tag 7            : cl, a                            : 
 dota_armory_CustomTagDisplayName_8                                               : Tag 8            : cl, a                            : 
-dota_armory_last_selected_hero_id                                                : 94               : cl, a                            : 
+dota_armory_last_selected_hero_id                                                : -1               : cl, a                            : 
 dota_armory_stickers_event_filter_option                                         : 0                : cl                               : 
 dota_armory_stickers_group_option                                                : 4                : cl                               : 
 dota_armory_stickers_quality_filter_option                                       : 0                : cl                               : 
@@ -52893,7 +52997,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3470             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3486             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53042,7 +53146,7 @@ dota_friends_guild_members_expanded                                             
 dota_friends_offline_expanded                                                    : true             : cl, a                            : If true expands friends online sub nav, if false minimizes it.
 dota_friends_online_expanded                                                     : true             : cl, a                            : If true expands friends online sub nav, if false minimizes it.
 dota_friends_open_party_expanded                                                 : true             : cl, a                            : If true expands open party sub nav, if false minimizes it.
-dota_friends_pending_expanded                                                    : false            : cl, a                            : If true expands friends pending sub nav, if false minimizes it.
+dota_friends_pending_expanded                                                    : true             : cl, a                            : If true expands friends pending sub nav, if false minimizes it.
 dota_frogling_aatest_threat                                                      : -1               : sv, cheat                        : 
 dota_frogling_allow_infront                                                      : true             : sv, cheat                        : 
 dota_frogling_creepdist_maxthreat                                                : 0.1              : sv, cheat                        : 
@@ -53363,7 +53467,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 4                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 128              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 0                : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -53412,7 +53516,7 @@ dota_minimap_use_dynamic_mesh                                                   
 dota_modifier_debug                                                              : false            : sv, cl, rep, cheat               : 
 dota_modifier_dump                                                               : cmd              : sv, cheat                        : Dump all modifiers on all entities.
 dota_modifier_test                                                               : cmd              : sv, cheat                        : Creates a test modifier on unit: dota_modifier_test <entityindex> <modifiername> <duration>
-dota_monster_hunter_hero_codex_intro_state                                       : 1                : cl, a                            : 
+dota_monster_hunter_hero_codex_intro_state                                       : 0                : cl, a                            : 
 dota_monster_hunter_investigation_banner_expire_time                             : 8                : cl, cheat                        : 
 dota_monster_hunter_investigation_rewards_loss_percentage                        : 0.5              : sv, cl, rep                      : What percent of the rewards do you get for a loss
 dota_monster_hunter_lock_investigations                                          : cmd              : sv, cheat                        : 
@@ -53668,8 +53772,8 @@ dota_pro_player_hide_sub_team_tags                                              
 dota_profile_battle_report_stats_columns                                         : 0                : cl, a, per_user, release         : 
 dota_profile_battle_report_stats_match_columns                                   : 0                : cl, a, per_user, release         : 
 dota_profile_battle_report_stats_sort_priorities                                 : 0                : cl, a                            : 
-dota_profile_hero_stats_sort_priorities                                          : -9 10 -6 -5 -3 4 1 : cl, a                            : 
-dota_profile_teammate_stats_sort_priorities                                      : -2 -3 1          : cl, a                            : 
+dota_profile_hero_stats_sort_priorities                                          : 0                : cl, a                            : 
+dota_profile_teammate_stats_sort_priorities                                      : 0                : cl, a                            : 
 dota_profile_teammate_stats_sort_priorities_old                                  : 0                : cl, a                            : 
 dota_projection_continue_offscreen_abilities                                     : true             : cl, a                            : 
 dota_projection_embargo_enabled                                                  : true             : cl, a                            : 
@@ -53870,7 +53974,7 @@ dota_show_accept_match_details                                                  
 dota_show_cast_range                                                             : true             : cl, a                            : 
 dota_show_combatlog                                                              : cmd              : cl                               : 
 dota_show_data_driven_camera                                                     : cmd              : cl, cheat                        : <camera_file>
-dota_show_facet_help                                                             : false            : cl, a                            : 
+dota_show_facet_help                                                             : true             : cl, a                            : 
 dota_show_fight_recap                                                            : cmd              : cl                               : Show the most recent fight recap.
 dota_show_heightmap                                                              : false            : sv, cheat                        : 
 dota_show_hero_compare_page                                                      : cmd              : cl                               : Shows a page with two heroes side by side.
@@ -53974,7 +54078,7 @@ dota_spectre_arcana_disable_display                                             
 dota_spectre_arcana_progress_delay                                               : 0.25             : cl, a                            : 
 dota_speech_emotes                                                               : true             : sv                               : Set 0 to disable emotes.
 dota_speech_hardcoded_respeak_delay                                              : true             : sv, cl, rep, cheat               : Certain speech concepts will not be said more than once per (n) seconds. Set to 0 to disable.
-dota_speech_level                                                                : 0                : cl, a                            : Mutes certain parts of the units speech: 0 = no speech, 1 = only events, 2 = all
+dota_speech_level                                                                : 2                : cl, a                            : Mutes certain parts of the units speech: 0 = no speech, 1 = only events, 2 = all
 dota_speech_meepo_pitch                                                          : 5                : cl, cheat                        : Increase the pitch of every successive meepo voice by this many %
 dota_speech_missinglane_call_interval                                            : 10               : sv, cheat                        : Bots will call 'missing' on a lane no more than once per this many seconds.
 dota_speech_missinglane_call_threshold                                           : 8                : sv, cheat                        : Bots will call 'missing' on a lane if an opponent has been gone this many seconds.
@@ -54230,10 +54334,10 @@ dota_use_heightmap                                                              
 dota_use_occluded_click_particle_effects                                         : true             : cl                               : 
 dota_use_winter2022_postprocess_material                                         : true             : cl                               : 
 dota_versus_scene_disable_heroes                                                 : false            : cl                               : 
-dota_video_config.DeviceID                                                       : 7170             : cl                               : 
+dota_video_config.DeviceID                                                       : 11269            : cl                               : 
 dota_video_config.setting.aspectratiomode                                        : 1                : cl                               : 
 dota_video_config.setting.coop_fullscreen                                        : 0                : cl                               : 
-dota_video_config.setting.cpu_level                                              : 1                : cl                               : 
+dota_video_config.setting.cpu_level                                              : 2                : cl                               : 
 dota_video_config.setting.defaultres                                             : 1920             : cl                               : 
 dota_video_config.setting.defaultresheight                                       : 1080             : cl                               : 
 dota_video_config.setting.dota_ambient_cloth                                     : true             : cl                               : 
@@ -54241,12 +54345,12 @@ dota_video_config.setting.dota_ambient_creatures                                
 dota_video_config.setting.dota_cheap_water                                       : false            : cl                               : 
 dota_video_config.setting.dota_portrait_animate                                  : true             : cl                               : 
 dota_video_config.setting.fullscreen                                             : 0                : cl                               : 
-dota_video_config.setting.fullscreen_min_on_focus_loss                           : 0                : cl                               : 
+dota_video_config.setting.fullscreen_min_on_focus_loss                           : 1                : cl                               : 
 dota_video_config.setting.gpu_level                                              : 3                : cl                               : 
 dota_video_config.setting.gpu_mem_level                                          : 2                : cl                               : 
 dota_video_config.setting.high_dpi                                               : 0                : cl                               : 
 dota_video_config.setting.knowndevice                                            : 0                : cl                               : 
-dota_video_config.setting.mat_viewportscale                                      : 0.999999         : cl                               : 
+dota_video_config.setting.mat_viewportscale                                      : 1                : cl                               : 
 dota_video_config.setting.mat_vsync                                              : 0                : cl                               : 
 dota_video_config.setting.mem_level                                              : 2                : cl                               : 
 dota_video_config.setting.monitor_index                                          : 0                : cl                               : 
@@ -54344,7 +54448,7 @@ engine_accurate_input_processing_delta_time                                     
 engine_allow_multiple_simulates_per_frame                                        : false            :                                  : When the client is catching up in low frame rate situations, should we run client simulate more than once a frame?
 engine_allow_multiple_ticks_per_frame                                            : true             :                                  : When the client is catching up in low frame rate situations, should we run tick more than once a frame?
 engine_client_tick_pad_enable                                                    : false            :                                  : 
-engine_cpu_info_extended                                                         : 4 CPUs, Frequency: 3.0 GHz,  Features: F/M/S 6/158/9 GenuineIntel 'Intel(R) Core(TM) i5-7400 CPU @ 3.00GHz' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process) :                                  : CPU the engine is running on.
+engine_cpu_info_extended                                                         : 16 CPUs (8 cores), Frequency: 4.7 GHz,  Features: F/M/S 26/68/0 AuthenticAMD 'AMD Ryzen 7 9800X3D 8-Core Processor           ' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 AVX512+VPCLMULQDQ MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process) :                                  : CPU the engine is running on.
 engine_frametime_amnesty_debug                                                   : false            :                                  : Enable logging about events that disable frame time warnings
 engine_frametime_print_report                                                    : cmd              :                                  : Print a performance report from the current data in the vprof 'lite' profiler
 engine_frametime_warnings_enable                                                 : false            :                                  : Enable framerate-related warnings, such as sv_long_frame_ms.  Disabling warnings is useful when running in situations such a debug where a slow frame rate is expected
@@ -54360,7 +54464,7 @@ engine_rendersystem_init                                                        
 engine_rendersystem_meets_min_dx_110                                             : Yes (111)        :                                  : Rendersystem meets min DX110 feature level (changing this does not change the shader model).
 engine_rendersystem_meets_min_dx_110_simple                                      : Yes              :                                  : Rendersystem meets min DX110 feature level (changing this does not change the shader model).
 engine_rendersystem_shader_model                                                 : 111              :                                  : Rendersystem shader model in use (changing this does not change the shader model).
-engine_rendersystem_used                                                         : -dx11 (cfg -dx11) :                                  : Rendersystem option in use (changing this does not change the rendersystem).
+engine_rendersystem_used                                                         : -dx11            :                                  : Rendersystem option in use (changing this does not change the rendersystem).
 engine_show_frame_pacing                                                         : false            : release                          : 
 engine_show_frame_ticks                                                          : false            :                                  : 
 engine_sse42                                                                     : true             :                                  : turn on sse4.2 optimizations in the engine
@@ -54684,7 +54788,7 @@ host_timescale_dec                                                              
 host_timescale_inc                                                               : cmd              : cheat                            : Increment the timescale by one step
 host_writeconfig                                                                 : cmd              : release                          : Saves out the user config values.
 hostfile                                                                         : host.txt         : sv, release                      : The HOST file to load.
-hostip                                                                           : 452400473        : release                          : Host game server ip
+hostip                                                                           : 1682549075       : release                          : Host game server ip
 hostname                                                                         : zavoz            : release                          : Hostname for server.
 hostname_in_client_status                                                        : false            : release                          : Show server hostname in client status.
 hostport                                                                         : 27015            : release                          : Host game server port
@@ -54951,7 +55055,7 @@ mat_tonemap_force_rate                                                          
 mat_tonemap_force_scale                                                          : 0                : cheat                            : 
 mat_tonemap_force_use_alpha                                                      : -1               : cheat                            : 
 mat_tonemap_uncap_exposure                                                       : 0                : cheat                            : 
-mat_viewportscale                                                                : 0.999999         : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
+mat_viewportscale                                                                : 1                : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
 mat_wireframe                                                                    : 0                : cheat                            : 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
 mem_compact                                                                      : cmd              :                                  : Compacts the heap
 mem_dump                                                                         : cmd              :                                  : Dump memory stats to text file or <stdout>.
@@ -55598,7 +55702,7 @@ r_dota_enabled_3d_skybox_postprocess                                            
 r_dota_framebuffer_refraction                                                    : true             : cl, cheat                        : 
 r_dota_fsr_enable_mip_bias                                                       : true             : cl                               : Apply negative mip bias when rendering with FSR.
 r_dota_fsr_rcas_sharpness                                                        : 0.25             : cl                               : RCAS sharpness when using FSR + RCAS upsample.
-r_dota_fsr_upsample                                                              : 2                : cl                               : 0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample
+r_dota_fsr_upsample                                                              : 0                : cl                               : 0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample
 r_dota_fxaa                                                                      : true             : cl                               : 
 r_dota_height_fog_exclusion_radius                                               : 2200             : cl                               : 
 r_dota_height_fog_plane_height                                                   : 128              : cl                               : 
@@ -55807,7 +55911,7 @@ r_texture_lod_scale                                                             
 r_texture_nonstreaming_load                                                      : true             :                                  : Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency.
 r_texture_pool_increase_rate                                                     : 64               :                                  : Increase texture memory pool size by this many MB / s when under budget.
 r_texture_pool_reduce_rate                                                       : 256              :                                  : Reduce texture memory pool size by this many MB / s when over budget.
-r_texture_pool_size                                                              : 2372             :                                  : Total size of the texture pool in MB
+r_texture_pool_size                                                              : 14971            :                                  : Total size of the texture pool in MB
 r_texture_stream_max_resolution                                                  : 2147483647       :                                  : Maximum resolution for top mip level in streaming textures
 r_texture_stream_mip_bias                                                        : 0                :                                  : Biases the mip level the texture streaming system choses to stream for each texture.
 r_texture_stream_resolution_bias                                                 : 1                :                                  : 
@@ -56145,7 +56249,7 @@ snd_gain                                                                        
 snd_gain_max                                                                     : 1                : cheat                            : 
 snd_gain_min                                                                     : 0.01             : cheat                            : 
 snd_gamevoicevolume                                                              : 0                : a                                : Game v.o. volume
-snd_gamevolume                                                                   : 0.019932         : a                                : Game volume
+snd_gamevolume                                                                   : 0.026749         : a                                : Game volume
 snd_get_physics_surface_properties                                               : cmd              : cheat                            : Get physics surface properties for all the materials.
 snd_group_cluster_debug                                                          : false            : rep, cheat                       : 
 snd_group_priority_debug                                                         : false            : rep, cheat                       : 
@@ -56357,7 +56461,7 @@ soundscape_fadetime                                                             
 soundscape_flush                                                                 : cmd              : sv                               : Flushes the server & client side soundscapes
 soundscape_message                                                               : false            : cl                               : 
 soundscape_radius_debug                                                          : false            : cl, cheat                        : Prints current volume of radius sounds
-soundsystem_device_used                                                          : Наушники (2- WH-1000XM6) :                                  : Sound device in use (changing this does not change the soundsystem).
+soundsystem_device_used                                                          : Наушники (WH-1000XM6) :                                  : Sound device in use (changing this does not change the soundsystem).
 soundsystem_update_async                                                         : true             :                                  : 
 soundsysteminfo                                                                  : cmd              :                                  : Describe the current sound device without an active voice list.
 spawn_group_activate                                                             : cmd              : sv, cheat                        : Activate specified spawngroup.
@@ -56846,7 +56950,7 @@ voice_stall_ms                                                                  
 voice_threshold                                                                  : -60              : cl, a                            : decibel threshold for how loud the talker's input signal is before we think they are talking.
 voice_vox                                                                        : 0                : cl, a, per_user                  : Voice chat uses a vox-style always on
 voice_vox_current_peak                                                           : 0                : cl                               : Current peak value (out of 64k) of the incoming voice stream
-volume                                                                           : 1                : a                                : Sound volume
+volume                                                                           : 0.062757         : a                                : Sound volume
 volume_fog_debug_volumes                                                         : false            : cheat                            : 
 volume_fog_depth                                                                 : 128              :                                  : Depth of volume fog texture
 volume_fog_depth_warp                                                            : 7                :                                  : 
@@ -60932,3 +61036,4 @@ declare enum DOTA_SHOP_TYPE
     DOTA_SHOP_NEUTRALS = 7,
     DOTA_SHOP_NONE = 8,
 }
+
