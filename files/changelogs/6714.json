@@ -1,0 +1,34 @@
+{
+  "version": "6714",
+  "date": "Feb 20 2026",
+  "time": "15:49:51",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1795
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1808
+        }
+      ]
+    },
+    "Console Variables": {
+      "added": [],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "dota_mark_for_sell_new_badge"
+        }
+      ]
+    }
+  }
+}

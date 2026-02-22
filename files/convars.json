@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3486",
+    "default": "3501",
     "flags": [
       "cl",
       "a",
@@ -10273,7 +10273,7 @@
     "description": "If true expands open party sub nav, if false minimizes it."
   },
   "dota_friends_pending_expanded": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -12705,14 +12705,6 @@
     ],
     "description": ""
   },
-  "dota_mark_for_sell_new_badge": {
-    "default": "true",
-    "flags": [
-      "cl",
-      "a"
-    ],
-    "description": "Show the Mark for Sell new badge"
-  },
   "dota_match_game_modes": {
     "default": "0",
     "flags": [
@@ -12754,7 +12746,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "388",
     "flags": [
       "cl",
       "a"
@@ -16681,7 +16673,7 @@
     "description": "<camera_file>"
   },
   "dota_show_facet_help": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -19579,7 +19571,7 @@
     "description": ""
   },
   "dota_video_config.setting.useadvanced": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -21630,7 +21622,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "120",
+    "default": "120.144",
     "flags": [
       "a",
       "release"
