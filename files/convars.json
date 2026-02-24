@@ -1931,7 +1931,7 @@
     "description": ""
   },
   "chat_wheel_phrase_10": {
-    "default": "62",
+    "default": "79",
     "flags": [
       "cl",
       "a",
@@ -1940,7 +1940,7 @@
     "description": ""
   },
   "chat_wheel_phrase_11": {
-    "default": "55",
+    "default": "66",
     "flags": [
       "cl",
       "a",
@@ -1949,7 +1949,7 @@
     "description": ""
   },
   "chat_wheel_phrase_12": {
-    "default": "231",
+    "default": "80",
     "flags": [
       "cl",
       "a",
@@ -1967,7 +1967,7 @@
     "description": ""
   },
   "chat_wheel_phrase_14": {
-    "default": "76",
+    "default": "62",
     "flags": [
       "cl",
       "a",
@@ -2039,7 +2039,7 @@
     "description": ""
   },
   "chat_wheel_phrase_8": {
-    "default": "54",
+    "default": "65",
     "flags": [
       "cl",
       "a",
@@ -2048,7 +2048,7 @@
     "description": ""
   },
   "chat_wheel_phrase_9": {
-    "default": "52",
+    "default": "69",
     "flags": [
       "cl",
       "a",
@@ -4935,7 +4935,7 @@
     "description": ""
   },
   "con_enable": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "a",
       "per_user"
@@ -6042,7 +6042,7 @@
     "description": ""
   },
   "dota_ability_self_cast_timeout": {
-    "default": "0.252174",
+    "default": "0.6",
     "flags": [
       "cl",
       "a",
@@ -6099,7 +6099,7 @@
     "description": "If set, brings Dota to the foreground when unpaused"
   },
   "dota_active_play_section_new": {
-    "default": "1",
+    "default": "11",
     "flags": [
       "cl",
       "a",
@@ -6685,7 +6685,7 @@
     "description": "Automatically create a proxy"
   },
   "dota_auto_mark_for_buy": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -7129,7 +7129,7 @@
     "description": ""
   },
   "dota_bot_script_index_mask": {
-    "default": "1",
+    "default": "15",
     "flags": [
       "cl",
       "a",
@@ -7457,7 +7457,7 @@
     "description": ""
   },
   "dota_camera_accelerate": {
-    "default": "50",
+    "default": "49",
     "flags": [
       "cl",
       "a",
@@ -7677,7 +7677,7 @@
     "description": ""
   },
   "dota_camera_deatheffect": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8200,7 +8200,7 @@
     "description": ""
   },
   "dota_camera_speed": {
-    "default": "5972.41",
+    "default": "3000",
     "flags": [
       "cl",
       "a",
@@ -8377,7 +8377,7 @@
     "description": ""
   },
   "dota_chat_allow_global": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8401,7 +8401,7 @@
     "description": ""
   },
   "dota_chat_enable_whispers": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8483,7 +8483,7 @@
     "description": "Set fs_warning_level and fs_warning_mode to warn on synchronous file warnings."
   },
   "dota_client_first_session": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8518,7 +8518,7 @@
     "description": ""
   },
   "dota_clip_builder_bitrate": {
-    "default": "11",
+    "default": "30",
     "flags": [
       "cl",
       "a",
@@ -8769,7 +8769,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "5969",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -8838,7 +8838,7 @@
     "description": ""
   },
   "dota_courier_autodeliver": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -9026,7 +9026,7 @@
     "description": ""
   },
   "dota_custom_game_difficulty_mask": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -9129,7 +9129,7 @@
     "description": "Flash when enemies take damage from the player"
   },
   "dota_dashboard_enable_mouse_history": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3501",
+    "default": "3",
     "flags": [
       "cl",
       "a",
@@ -9671,7 +9671,7 @@
     "description": "If non-zero, the time the creep spawner uses for deciding what to spawn"
   },
   "dota_enable_direct_quickcast_bindings": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9696,7 +9696,7 @@
     "description": "Enables simple shop mode"
   },
   "dota_enable_range_finder": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9982,7 +9982,7 @@
     "description": ""
   },
   "dota_fantasy_league_region": {
-    "default": "3",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -10023,7 +10023,7 @@
     "description": "How often the server updates the GC with player fantasy stats"
   },
   "dota_featured_game_mode_splash_time": {
-    "default": "1666970777",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10146,7 +10146,7 @@
     "description": ""
   },
   "dota_force_right_click_attack": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10273,7 +10273,7 @@
     "description": "If true expands open party sub nav, if false minimizes it."
   },
   "dota_friends_pending_expanded": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -10644,7 +10644,7 @@
     "description": ""
   },
   "dota_global_item_shuffle_enabled_slots": {
-    "default": "393224",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10653,7 +10653,7 @@
     "description": ""
   },
   "dota_global_item_shuffle_enabled_slots_upconverted": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -10850,7 +10850,7 @@
     "description": ""
   },
   "dota_guild_ignore_nonfriend_invites": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11043,7 +11043,7 @@
     "description": ""
   },
   "dota_help_tips_enabled": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -11251,7 +11251,7 @@
     "description": ""
   },
   "dota_hero_overhead_names": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11457,7 +11457,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "34412839621",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11558,7 +11558,7 @@
     "description": ""
   },
   "dota_hud_colorblind": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11574,7 +11574,7 @@
     "description": "Combine base and bonus move speed numbers on the HUD"
   },
   "dota_hud_contextual_tips_disable": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11605,7 +11605,7 @@
     "description": "If set, shows debug names for all entities."
   },
   "dota_hud_disable_damage_numbers": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11623,7 +11623,7 @@
     "description": "Show the overhead dispel effect."
   },
   "dota_hud_extra_large_minimap": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11632,7 +11632,7 @@
     "description": "Set minimap to extra large size"
   },
   "dota_hud_flip": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -11693,7 +11693,7 @@
     "description": ""
   },
   "dota_hud_healthbar_disable_status_display": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11767,7 +11767,7 @@
     "description": "Stuns lower than this will add UnitMiniStunned class to the HUD"
   },
   "dota_hud_netgraph": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11922,7 +11922,7 @@
     "description": "Show/Hide the tooltip box that appears when you hover another hero."
   },
   "dota_hud_show_minimal_shop": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12070,7 +12070,7 @@
     "description": "If set, guild invites and team invites will be automatically rejected"
   },
   "dota_ignore_nonfriend_invites": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12428,7 +12428,7 @@
     "description": ""
   },
   "dota_last_acknowledged_plus_status": {
-    "default": "2",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -12437,7 +12437,7 @@
     "description": ""
   },
   "dota_last_event_id": {
-    "default": "31",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -12453,7 +12453,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "55",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12730,7 +12730,7 @@
     "description": ""
   },
   "dota_match_solo_fast_queue": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12746,7 +12746,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "388",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12836,7 +12836,7 @@
     "description": "Games required on a hero for average KDA to be valid and calibrated"
   },
   "dota_minimap_always_draw_hero_icons": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12943,7 +12943,7 @@
     "description": ""
   },
   "dota_minimap_hero_size": {
-    "default": "897.931",
+    "default": "600",
     "flags": [
       "cl",
       "a",
@@ -12979,7 +12979,7 @@
     "description": "No longer used, please use dota_minimap_background_option instead."
   },
   "dota_minimap_misclick_time": {
-    "default": "0",
+    "default": "0.2",
     "flags": [
       "cl",
       "a",
@@ -13022,7 +13022,7 @@
     "description": ""
   },
   "dota_minimap_position_option": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -13038,7 +13038,7 @@
     "description": ""
   },
   "dota_minimap_primary_option": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -13345,7 +13345,7 @@
     "description": ""
   },
   "dota_muerta_release_dont_show_ingame_event_description": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -13630,7 +13630,7 @@
     "description": ""
   },
   "dota_new_player_seen_learn_tab": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -14428,7 +14428,7 @@
     "description": ""
   },
   "dota_player_auto_repeat_right_mouse": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -14579,7 +14579,7 @@
     "description": ""
   },
   "dota_player_units_auto_attack_mode": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -15807,7 +15807,7 @@
     "description": "Redeem a legacy Dota item code."
   },
   "dota_redirect_allies_voice_to_private_coaching_group": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -15906,7 +15906,7 @@
     "description": ""
   },
   "dota_reset_camera_on_spawn": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -15979,7 +15979,7 @@
     "description": ""
   },
   "dota_rp_hide_party_unless_open": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16162,7 +16162,7 @@
     "description": ""
   },
   "dota_screen_shake": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -16264,7 +16264,7 @@
     "description": ""
   },
   "dota_selection_groups": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -16400,7 +16400,7 @@
     "description": ""
   },
   "dota_settings_quick_move": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16409,7 +16409,7 @@
     "description": ""
   },
   "dota_settings_quick_target_attack": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16673,7 +16673,7 @@
     "description": "<camera_file>"
   },
   "dota_show_facet_help": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -17386,7 +17386,7 @@
     "description": "International 2012: for testing, override the team ID # for the radiant."
   },
   "dota_spectator_use_broadcaster_stats_panel": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -17536,7 +17536,7 @@
     "description": "If enabled, server will spew connected player GC updates"
   },
   "dota_splash_ad_acknowledged_id": {
-    "default": "147",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -17983,7 +17983,7 @@
     "description": ""
   },
   "dota_summoned_units_auto_attack_mode_2": {
-    "default": "0",
+    "default": "2",
     "flags": [
       "cl",
       "a",
@@ -18006,7 +18006,7 @@
     "description": "If enabled, a team will surrender if all players on that team disconnect"
   },
   "dota_survivors_difficulty_setting": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -18032,7 +18032,7 @@
     "description": ""
   },
   "dota_survivors_hero_select_setting": {
-    "default": "2",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -18420,7 +18420,7 @@
     "description": ""
   },
   "dota_toasts_show_foundneutralitems": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -18649,7 +18649,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "119",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -19395,13 +19395,6 @@
     ],
     "description": ""
   },
-  "dota_video_config.setting.aspectratiomode": {
-    "default": "1",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_video_config.setting.coop_fullscreen": {
     "default": "0",
     "flags": [
@@ -19417,14 +19410,14 @@
     "description": ""
   },
   "dota_video_config.setting.defaultres": {
-    "default": "1920",
+    "default": "1900",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.defaultresheight": {
-    "default": "1080",
+    "default": "1200",
     "flags": [
       "cl"
     ],
@@ -19521,13 +19514,6 @@
     ],
     "description": ""
   },
-  "dota_video_config.setting.monitor_index": {
-    "default": "0",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_video_config.setting.nowindowborder": {
     "default": "0",
     "flags": [
@@ -19571,7 +19557,7 @@
     "description": ""
   },
   "dota_video_config.setting.useadvanced": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -19717,7 +19703,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -21622,7 +21608,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "120.144",
+    "default": "120",
     "flags": [
       "a",
       "release"
@@ -22467,7 +22453,7 @@
     "description": "Find help about a convar/concommand."
   },
   "hero_grid_selected_config": {
-    "default": "0:#DOTA_Armory_Attributes",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -22476,7 +22462,7 @@
     "description": ""
   },
   "hero_grid_selected_rank_tier": {
-    "default": "6",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -22561,14 +22547,14 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "1682549075",
+    "default": "-971898879",
     "flags": [
       "release"
     ],
     "description": "Host game server ip"
   },
   "hostname": {
-    "default": "zavoz",
+    "default": "frenki",
     "flags": [
       "release"
     ],
@@ -22611,7 +22597,7 @@
     "description": "Reloads hud layout and animation scripts."
   },
   "hud_river_vial_ui_expanded": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -24837,7 +24823,7 @@
     "description": "Multiply specified convar value."
   },
   "name": {
-    "default": "zavoz",
+    "default": "frenki",
     "flags": [
       "a",
       "per_user"
@@ -27775,7 +27761,7 @@
     "description": "Input toggle control"
   },
   "overwatch_help_shown_once": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -28368,7 +28354,7 @@
     "description": ""
   },
   "ping_wheel_3": {
-    "default": "3",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -28377,7 +28363,7 @@
     "description": ""
   },
   "ping_wheel_4": {
-    "default": "4",
+    "default": "8",
     "flags": [
       "cl",
       "a",
@@ -28386,7 +28372,7 @@
     "description": ""
   },
   "ping_wheel_5": {
-    "default": "5",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -28395,7 +28381,7 @@
     "description": ""
   },
   "ping_wheel_6": {
-    "default": "6",
+    "default": "5",
     "flags": [
       "cl",
       "a",
@@ -28404,7 +28390,7 @@
     "description": ""
   },
   "ping_wheel_7": {
-    "default": "1",
+    "default": "6",
     "flags": [
       "cl",
       "a",
@@ -32910,7 +32896,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.026749",
+    "default": "0",
     "flags": [
       "a"
     ],
@@ -34214,7 +34200,7 @@
     "description": "If set to 1, show all incoming updates to vmix inputs."
   },
   "snd_voipvolume": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "a"
     ],
@@ -36653,7 +36639,7 @@
     "description": "test top bar status message. usage: top_bar_message ['message here'] [scary: 0/1]"
   },
   "treasure_escalating_rares_popup_seen": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -37766,7 +37752,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.062757",
+    "default": "0",
     "flags": [
       "a"
     ],

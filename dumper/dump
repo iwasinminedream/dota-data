@@ -1,13 +1,13 @@
-ClientVersion=6714
-ServerVersion=6714
+ClientVersion=6715
+ServerVersion=6715
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10466614
-VersionDate=Feb 20 2026
-VersionTime=15:49:51
+SourceRevision=10470957
+VersionDate=Feb 23 2026
+VersionTime=16:34:51
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34657,15 +34657,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1801
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1802
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1803
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34781,7 +34777,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1808
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -34937,7 +34933,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1793
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35109,7 +35105,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1794
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35373,7 +35369,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1805
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35413,7 +35409,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1806
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35425,7 +35421,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1807
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35445,7 +35441,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1797
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35530,6 +35526,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35633,7 +35633,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1795
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -35697,7 +35697,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1796
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45226,19 +45226,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1798
+    "value":1793
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1799
+    "value":1794
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1800
+    "value":1795
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1804
+    "value":1796
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -51926,11 +51926,11 @@ chat_wheel_emoticon_8                                                           
 chat_wheel_emoticon_9                                                            : 0                : cl, a, per_user                  : 
 chat_wheel_phrase_0                                                              : 8                : cl, a, per_user                  : 
 chat_wheel_phrase_1                                                              : 1                : cl, a, per_user                  : 
-chat_wheel_phrase_10                                                             : 62               : cl, a, per_user                  : 
-chat_wheel_phrase_11                                                             : 55               : cl, a, per_user                  : 
-chat_wheel_phrase_12                                                             : 231              : cl, a, per_user                  : 
+chat_wheel_phrase_10                                                             : 79               : cl, a, per_user                  : 
+chat_wheel_phrase_11                                                             : 66               : cl, a, per_user                  : 
+chat_wheel_phrase_12                                                             : 80               : cl, a, per_user                  : 
 chat_wheel_phrase_13                                                             : 61               : cl, a, per_user                  : 
-chat_wheel_phrase_14                                                             : 76               : cl, a, per_user                  : 
+chat_wheel_phrase_14                                                             : 62               : cl, a, per_user                  : 
 chat_wheel_phrase_15                                                             : 70               : cl, a, per_user                  : 
 chat_wheel_phrase_2                                                              : 2                : cl, a, per_user                  : 
 chat_wheel_phrase_3                                                              : 3                : cl, a, per_user                  : 
@@ -51938,8 +51938,8 @@ chat_wheel_phrase_4                                                             
 chat_wheel_phrase_5                                                              : 5                : cl, a, per_user                  : 
 chat_wheel_phrase_6                                                              : 6                : cl, a, per_user                  : 
 chat_wheel_phrase_7                                                              : 7                : cl, a, per_user                  : 
-chat_wheel_phrase_8                                                              : 54               : cl, a, per_user                  : 
-chat_wheel_phrase_9                                                              : 52               : cl, a, per_user                  : 
+chat_wheel_phrase_8                                                              : 65               : cl, a, per_user                  : 
+chat_wheel_phrase_9                                                              : 69               : cl, a, per_user                  : 
 +chatwheel                                                                       : cmd              : cl                               : Opens chatwheel menu while held
 +chatwheel2                                                                      : cmd              : cl                               : Opens the second chatwheel menu while held
 chatwheel_say                                                                    : cmd              : cl                               : Send a chatwheel message. Usage: chatwheel_say <messagenum>
@@ -52333,7 +52333,7 @@ commentary_available                                                            
 commentary_cvarsnotchanging                                                      : cmd              : sv                               : 
 commentary_finishnode                                                            : cmd              : sv                               : 
 commentary_node_use_viewfacing                                                   : false            : cl                               : 
-con_enable                                                                       : true             : a, per_user                      : Allows the console to be activated.
+con_enable                                                                       : false            : a, per_user                      : Allows the console to be activated.
 con_logfile_suffix                                                               : 0                :                                  : Suffix to append to the console log, may be changed to reopen the log
 condump                                                                          : cmd              : release                          : dump the text currently in the console to condumpXX.log
 connect                                                                          : cmd              : release                          : Connect to a remote server.
@@ -52487,14 +52487,14 @@ dota_ability_projection_data_file                                               
 dota_ability_quick_cast                                                          : true             : cl, a, per_user                  : 
 dota_ability_quickcast                                                           : cmd              : cl                               : 
 dota_ability_refcount_modifiers                                                  : false            : sv, cheat                        : 
-dota_ability_self_cast_timeout                                                   : 0.252174         : cl, a, per_user                  : 
+dota_ability_self_cast_timeout                                                   : 0.6              : cl, a, per_user                  : 
 dota_ability_think_always                                                        : false            : sv                               : 
 dota_ability_use_original_cast_mode_for_stolen_spell                             : true             : cl, a, per_user                  : 
 dota_activate_window_on_hero_picking_start                                       : true             : cl, a                            : If set, brings Dota to the foreground when hero picking starts
 dota_activate_window_on_match_found                                              : true             : cl, a                            : If set, brings Dota to the foreground when match found
 dota_activate_window_on_ready_check                                              : true             : cl, a                            : If set, brings Dota to the foreground on a ready check
 dota_activate_window_on_unpause                                                  : true             : cl, a                            : If set, brings Dota to the foreground when unpaused
-dota_active_play_section_new                                                     : 1                : cl, a, per_user                  : 
+dota_active_play_section_new                                                     : 11               : cl, a, per_user                  : 
 dota_aghanims_pudge_fx                                                           : particles/items2_fx/mask_of_madness.vpcf : sv, cl, rep, cheat               : 
 dota_aghanims_pudge_fx_overhead                                                  : false            : sv, cl, rep, cheat               : 
 dota_aghanims_pudge_fx_sound                                                     : DOTA_Item.MaskOfMadness.Activate : sv, cl, rep, cheat               : 
@@ -52566,7 +52566,7 @@ dota_auto_courier_wait_time_item_purchase                                       
 dota_auto_courier_wait_time_manualorder                                          : 2                : cl, user, release                : Time for courier to wait after a manual order completes
 dota_auto_courier_wait_time_manualorder_stop                                     : 10               : cl, user, release                : Time for courier to wait after a stop order
 dota_auto_create_proxy                                                           : false            : cl                               : Automatically create a proxy
-dota_auto_mark_for_buy                                                           : false            : cl, a, user, per_user, release   : Whether items added to quickbuy default to marked for buy.
+dota_auto_mark_for_buy                                                           : true             : cl, a, user, per_user, release   : Whether items added to quickbuy default to marked for buy.
 dota_auto_surrender_all_disconnected_timeout                                     : 60               : sv, cheat                        : If all players have been disconnected for at least N seconds, end the game immediately
 dota_autoselect_bots                                                             : false            : cl, cheat                        : If set, new bots will be autoselected. This is for the item icon editor.
 dota_autoselect_entity                                                           : none             : cl, cheat                        : If set, new bots of the given type will be autoselected. This is for the item icon editor.
@@ -52623,7 +52623,7 @@ dota_bot_practice_team_desired                                                  
 dota_bot_purchase_item_enable                                                    : true             : sv                               : 
 dota_bot_reload_scripts                                                          : cmd              : sv                               : Reloads all the bot scripts
 dota_bot_report_dota_suggest_loadout                                             : true             : sv                               : 
-dota_bot_script_index_mask                                                       : 1                : cl, a, per_user                  : Valid dedicated server script indexes for bots.
+dota_bot_script_index_mask                                                       : 15               : cl, a, per_user                  : Valid dedicated server script indexes for bots.
 dota_bot_select_debug                                                            : cmd              : sv, cheat                        : Displays general bot debugging information.
 dota_bot_select_debug_attack                                                     : cmd              : sv, cheat                        : Displays debugging info on potential attack targets.
 dota_bot_set_difficulty                                                          : cmd              : sv, cheat                        : Sets all bots to a particular difficulty (0 = easy, 1 = medium, 2 = hard, 3 = unfair.
@@ -52668,7 +52668,7 @@ dota_cache_duration_limited_item_purchase_s                                     
 dota_cache_duration_partysearch_s                                                : 10               : cl                               : 
 dota_cache_duration_player_accomplishments_s                                     : 300              : cl                               : 
 dota_cache_duration_team_info_s                                                  : 60               : cl                               : 
-dota_camera_accelerate                                                           : 50               : cl, a, per_user                  : 
+dota_camera_accelerate                                                           : 49               : cl, a, per_user                  : 
 dota_camera_allow_freecam                                                        : false            : cl, cheat                        : 
 dota_camera_assisted_camera_operator_bias_constant_oneteam                       : 1                : cl                               : 
 dota_camera_assisted_camera_operator_bias_constant_twoteams                      : 0.1              : cl                               : 
@@ -52700,7 +52700,7 @@ dota_camera_broadcaster_mousewheel_frametime_multiplier                         
 dota_camera_center                                                               : cmd              : cl                               : 
 dota_camera_center_on_entity                                                     : cmd              : cl                               : 
 +dota_camera_center_on_hero                                                      : cmd              : cl                               : 
-dota_camera_deatheffect                                                          : false            : cl, a, per_user                  : 
+dota_camera_deatheffect                                                          : true             : cl, a, per_user                  : 
 dota_camera_disable_yaw                                                          : true             : cl, cheat                        : 
 dota_camera_disable_zoom                                                         : false            : cl, a, per_user                  : 
 dota_camera_distance                                                             : 1200             : cl, cheat                        : 
@@ -52772,7 +52772,7 @@ dota_camera_smart_follow_offset_reset                                           
 dota_camera_smart_follow_offset_time                                             : 1                : cl                               : 
 dota_camera_smooth_count                                                         : 8                : cl                               : 
 dota_camera_smooth_distance                                                      : 96               : cl                               : 
-dota_camera_speed                                                                : 5972.41          : cl, a, per_user                  : 
+dota_camera_speed                                                                : 3000             : cl, a, per_user                  : 
 dota_camera_stage_fov                                                            : 15               : cl                               : 
 dota_camera_stage_pitch                                                          : 0                : cl                               : 
 dota_camera_stage_rotate                                                         : 0                : cl                               : 
@@ -52796,10 +52796,10 @@ dota_candy_shop_generate_recipes                                                
 dota_candy_shop_print_recipes                                                    : cmd              : cl                               : Generate all recipes.
 dota_cd_captain_pick_time                                                        : 10               : sv, cheat                        : 
 dota_cd_minimum_pick_time                                                        : 5                : sv, cheat                        : 
-dota_chat_allow_global                                                           : false            : cl, a, per_user                  : Allow chat channels to be set to global, causing their chat to show up in other channel's tabs.
+dota_chat_allow_global                                                           : true             : cl, a, per_user                  : Allow chat channels to be set to global, causing their chat to show up in other channel's tabs.
 dota_chat_broadcast_whispers                                                     : true             : cl, a                            : Show whispers in all chat tabs, not just the tab for the individual user.
 dota_chat_disable_refresh_user_list                                              : false            : cl                               : 
-dota_chat_enable_whispers                                                        : false            : cl, a, per_user                  : Show steam messages as whispers inline in chat.
+dota_chat_enable_whispers                                                        : true             : cl, a, per_user                  : Show steam messages as whispers inline in chat.
 dota_chat_filter_settings                                                        : 3                : cl, a                            : What chat filtering level the user wants (EDotaChatFilter)
 dota_chat_filter_settings_apply_to_spectators                                    : false            : cl, a                            : Whether chat filtering applies to spectating as well or not.
 dota_chat_lines_always_create_new_label                                          : false            : cl                               : 
@@ -52810,11 +52810,11 @@ dota_cheers_enable_scene_reload                                                 
 dota_cl_projection_enabled                                                       : true             : cl                               : 
 dota_claim_item_action_async_rewards_timeout_duration                            : 20               : cl                               : 
 dota_client_filesystem_warnings                                                  : false            : cl                               : Set fs_warning_level and fs_warning_mode to warn on synchronous file warnings.
-dota_client_first_session                                                        : false            : cl, a, per_user                  : 
+dota_client_first_session                                                        : true             : cl, a, per_user                  : 
 dota_client_ping_max_allowance                                                   : 4                : cl, cheat                        : 
 dota_client_ping_max_allowance_period_seconds                                    : 1                : cl, cheat                        : 
 dota_clientside_wearables                                                        : true             : sv, cl, rep, release             : 
-dota_clip_builder_bitrate                                                        : 11               : cl, a, per_user                  : Bitrate of the resulting clip
+dota_clip_builder_bitrate                                                        : 30               : cl, a, per_user                  : Bitrate of the resulting clip
 dota_clip_builder_format                                                         : mp4              : cl, a, per_user                  : 
 dota_clip_builder_framerate                                                      : 60               : cl, a, per_user                  : 
 dota_clip_builder_hide_game_ui                                                   : false            : cl, a, per_user                  : 
@@ -52845,7 +52845,7 @@ dota_compendium_2024_predictions_results_popup_state                            
 dota_compendium_2025_predictions_main_event_results_shown                        : false            : cl, a                            : 
 dota_compendium_2025_predictions_rtti_results_shown                              : false            : cl, a                            : 
 dota_competitive_game_modes                                                      : 0                : cl, a                            : Bit masks of game modes to search for in ranked matchmaking
-dota_conduct_scorecard_latest_ack_seq_num                                        : 5969             : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
+dota_conduct_scorecard_latest_ack_seq_num                                        : 0                : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
 dota_contest_schema_do_contest_validation                                        : true             : cl                               : 
 dota_context_aware_voice_change_window_minutes                                   : 2                : sv, cl, rep, cheat               : 
 dota_context_aware_voice_networth_change_threshold                               : 0.025            : sv, cl, rep, cheat               : 
@@ -52854,7 +52854,7 @@ dota_contextual_tips_queue_custom_tip                                           
 dota_contextual_tips_queue_tip_id                                                : cmd              : cl                               : Queues a specific tip ID to be displayed
 dota_continue_click_movement_after_cast_cancel                                   : true             : cl, a, per_user                  : 
 +dota_control_group                                                              : cmd              : cl                               : 
-dota_courier_autodeliver                                                         : false            : cl, a, user, per_user, release   : Whether courier auto-mode is on.
+dota_courier_autodeliver                                                         : true             : cl, a, user, per_user, release   : Whether courier auto-mode is on.
 dota_courier_burst                                                               : cmd              : cl                               : Activate speed burst on courier
 dota_courier_deliver                                                             : cmd              : cl                               : Order courier to deliver my items
 dota_courier_shield                                                              : cmd              : cl                               : Activate speed shield on courier
@@ -52878,7 +52878,7 @@ dota_crownfall_intro_state_act_4                                                
 dota_crownfall_most_recent_active_season_id                                      : 0                : cl, a                            : 
 dota_crownfall_node_tooltip_show_delay                                           : 0.2              : cl                               : 
 dota_crownfall_sticky_tooltip_time_required                                      : 0.4              : cl                               : 
-dota_custom_game_difficulty_mask                                                 : 2                : cl, a, per_user                  : Difficulties of the event game to matchmake for.
+dota_custom_game_difficulty_mask                                                 : 0                : cl, a, per_user                  : Difficulties of the event game to matchmake for.
 dota_custom_game_library_filter                                                  : 0                : cl, a                            : Custom game library filter type
 dota_custom_game_library_sort                                                    : 0                : cl, a                            : Custom game library sort type
 dota_custom_game_local_lobbies_max_ping                                          : 150              : cl, a, per_user                  : Maximum ping for custom game overview.
@@ -52891,9 +52891,9 @@ dota_custom_ui_debug_panel                                                      
 dota_cycle_prev_selected                                                         : cmd              : cl                               : 
 dota_cycle_selected                                                              : cmd              : cl                               : 
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
-dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
+dota_dashboard_enable_mouse_history                                              : true             : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3501             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3                : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -52961,10 +52961,10 @@ dota_econ_item_high_market_price_threshold                                      
 dota_econ_item_immortal_animation_speed                                          : 0.2              : cl                               : The animation speed of the immortal item tiles.
 dota_econ_item_particle_sim_speed                                                : 0.7              : cl                               : The simulation speed of particles in full set tiles.
 dota_effective_creep_spawn_time                                                  : 0                : sv, cheat                        : If non-zero, the time the creep spawner uses for deciding what to spawn
-dota_enable_direct_quickcast_bindings                                            : true             : cl, a, per_user                  : Enables ability to directly bind keys to quickcast.
+dota_enable_direct_quickcast_bindings                                            : false            : cl, a, per_user                  : Enables ability to directly bind keys to quickcast.
 dota_enable_illusion_recycling                                                   : true             : sv                               : 
 dota_enable_new_player_shop                                                      : false            : cl, a, per_user                  : Enables simple shop mode
-dota_enable_range_finder                                                         : true             : cl, a, per_user                  : 
+dota_enable_range_finder                                                         : false            : cl, a, per_user                  : 
 dota_enable_regeneration                                                         : true             : sv, rep, cheat                   : 
 dota_enable_same_user_chat_wheel_pitch_increase                                  : false            : cl, cheat                        : 
 dota_enable_spatial_audio                                                        : true             : release                          : Flag to enable spatial audio in Dota 2.
@@ -53002,12 +53002,12 @@ dota_fanfare_disable                                                            
 dota_fantasy_2024_tutorial_state                                                 : 0                : cl, a                            : 
 dota_fantasy_2025_tutorial_state                                                 : 0                : cl, a                            : 
 dota_fantasy_craft_tutorial_state                                                : 0                : cl, a                            : 
-dota_fantasy_league_region                                                       : 3                : cl, a, per_user                  : Set a valid league region.
+dota_fantasy_league_region                                                       : 1                : cl, a, per_user                  : Set a valid league region.
 dota_fantasy_popup_help_dpc                                                      : true             : cl, a                            : 
 dota_fantasy_popup_help_ti10                                                     : true             : cl, a                            : 
 dota_fantasy_spew_scoring                                                        : false            : cl, cheat                        : 
 dota_fantasy_stat_update_interval_s                                              : 20               : sv, cheat                        : How often the server updates the GC with player fantasy stats
-dota_featured_game_mode_splash_time                                              : 1666970777       : cl, a, per_user                  : 
+dota_featured_game_mode_splash_time                                              : 0                : cl, a, per_user                  : 
 dota_fg_debug_draw                                                               : false            : cl                               : 
 dota_fg_net_ignore_all_challenges                                                : false            : cl, a                            : 
 dota_fight_recap_button_stay_time                                                : 35               : cl, a                            : 
@@ -53026,7 +53026,7 @@ dota_force_gamemode                                                             
 dota_force_minigame                                                              : 0                : sv, cl, rep                      : 
 dota_force_neutral_drop_tier                                                     : 0                : sv, rep, cheat                   : 
 dota_force_pick_allow                                                            : false            : sv, cl, rep                      : 
-dota_force_right_click_attack                                                    : 1                : cl, a, per_user                  : 
+dota_force_right_click_attack                                                    : 0                : cl, a, per_user                  : 
 dota_force_rune                                                                  : -1               : sv, rep, cheat                   : Always spawn the same rune.
 dota_force_steamlearn_snapshots                                                  : false            : sv, cheat                        : 
 dota_force_upload_match_stats                                                    : false            : sv, cheat                        : If enabled, server will upload match stats even when there aren't human players on each side
@@ -53042,7 +53042,7 @@ dota_friends_guild_members_expanded                                             
 dota_friends_offline_expanded                                                    : true             : cl, a                            : If true expands friends online sub nav, if false minimizes it.
 dota_friends_online_expanded                                                     : true             : cl, a                            : If true expands friends online sub nav, if false minimizes it.
 dota_friends_open_party_expanded                                                 : true             : cl, a                            : If true expands open party sub nav, if false minimizes it.
-dota_friends_pending_expanded                                                    : false            : cl, a                            : If true expands friends pending sub nav, if false minimizes it.
+dota_friends_pending_expanded                                                    : true             : cl, a                            : If true expands friends pending sub nav, if false minimizes it.
 dota_frogling_aatest_threat                                                      : -1               : sv, cheat                        : 
 dota_frogling_allow_infront                                                      : true             : sv, cheat                        : 
 dota_frogling_creepdist_maxthreat                                                : 0.1              : sv, cheat                        : 
@@ -53089,8 +53089,8 @@ dota_gg_call_time                                                               
 dota_gift_permissions_cache_duration                                             : 300              : cl                               : 
 dota_gift_permissions_request_timeout                                            : 60               : cl                               : 
 dota_global_hero_stats_cache_duration                                            : 300              : cl                               : 
-dota_global_item_shuffle_enabled_slots                                           : 393224           : cl, a, per_user                  : 
-dota_global_item_shuffle_enabled_slots_upconverted                               : true             : cl, a, per_user                  : 
+dota_global_item_shuffle_enabled_slots                                           : 0                : cl, a, per_user                  : 
+dota_global_item_shuffle_enabled_slots_upconverted                               : false            : cl, a, per_user                  : 
 dota_glyph                                                                       : cmd              : cl                               : trigger the Glyph of Fortification for your team
 dota_gold_redistribute_time                                                      : 1                : sv, cheat                        : 
 dota_gold_summary                                                                : cmd              : cl                               : Print out gold info
@@ -53115,7 +53115,7 @@ dota_guide_prioritize_recent                                                    
 dota_guild_banner_replacement_radius                                             : 0                : sv, cl, rep                      : how far from the fountain to replace banners with guild ones ( < 0: disable, == 0: all)
 dota_guild_details_force_show_chat_type                                          : false            : cl                               : 
 dota_guild_ignore_invites                                                        : false            : cl, a, per_user                  : 
-dota_guild_ignore_nonfriend_invites                                              : true             : cl, a, per_user                  : If set, guild invites from non-friends are automatically rejected
+dota_guild_ignore_nonfriend_invites                                              : false            : cl, a, per_user                  : If set, guild invites from non-friends are automatically rejected
 dota_guild_persona_batch_interval                                                : 0.5              : cl                               : 
 dota_guild_persona_use_webapi                                                    : false            : cl                               : 
 dota_hack_delay_start                                                            : false            : sv                               : 
@@ -53141,7 +53141,7 @@ dota_health_marker_minor_alpha                                                  
 dota_health_per_vertical_marker                                                  : 250              : cl                               : How much health between each vertical line in the health bars
 dota_height_fog_scale                                                            : 1                : cl, cheat                        : 
 dota_help_tips_active_per_category                                               : 2                : cl                               : 
-dota_help_tips_enabled                                                           : false            : cl, a, per_user                  : 
+dota_help_tips_enabled                                                           : true             : cl, a, per_user                  : 
 dota_help_tips_reset                                                             : cmd              : cl                               : Removes records of any already dismissed help tips.
 dota_help_tips_reset_intro                                                       : cmd              : cl                               : Removes records of intro tips.
 dota_hero_adjectives_dump                                                        : cmd              : cl                               : [adjective] [value] Dumps out which heroes have which adjectives
@@ -53166,7 +53166,7 @@ dota_hero_muerta_double_shot_debug                                              
 dota_hero_muerta_double_shot_debug_offset                                        : 100              : sv, cl, rep, cheat               : Vertical offset for Muerta's double shot debug render.
 dota_hero_muerta_double_shot_debug_sphere_size                                   : 20               : sv, cl, rep, cheat               : Sphere size for Muerta's double shot debug render.
 dota_hero_multiple_kill_time                                                     : 18               : sv                               : 
-dota_hero_overhead_names                                                         : 1                : cl, a, per_user                  : 
+dota_hero_overhead_names                                                         : 0                : cl, a, per_user                  : 
 dota_hero_relic_debug_visuals                                                    : false            : cl                               : 
 dota_hero_ringmaster_dark_carnival_souvenir_add_charge                           : cmd              : sv                               : 
 dota_hero_ringmaster_dark_carnival_souvenir_force_illusion_scale_set             : 0                : sv, cl, rep, cheat               : 
@@ -53191,7 +53191,7 @@ dota_hide_frontpage_video                                                       
 dota_hide_spectator_player_names                                                 : false            : cl                               : 
 dota_hide_tips_on_loading_screens                                                : false            : cl, a, per_user                  : 
 dota_hide_wearables                                                              : false            : sv, cl, rep, cheat               : If set, wearables (default body parts) will be hidden. This is for the item icon editor.
-dota_highest_seen_item_id                                                        : 34412839621      : cl, a, per_user                  : 
+dota_highest_seen_item_id                                                        : 0                : cl, a, per_user                  : 
 dota_highlight_reel                                                              : false            : cl                               : 
 dota_highlight_reel_debug                                                        : false            : cl, cheat                        : 
 dota_highlight_reel_leadin_seconds                                               : 13               : cl                               : 
@@ -53205,16 +53205,16 @@ dota_hold                                                                       
 dota_hud_chat_fade_time                                                          : 7                : cl                               : 
 dota_hud_chat_history_lines                                                      : 15               : cl                               : Number of history lines to save for in-game chat.
 dota_hud_chat_wheel                                                              : true             : cl                               : 
-dota_hud_colorblind                                                              : 2                : cl, a, per_user                  : Which color mode to use for HUD elements (name is legacy)
+dota_hud_colorblind                                                              : 0                : cl, a, per_user                  : Which color mode to use for HUD elements (name is legacy)
 dota_hud_combine_move_speed                                                      : true             : cl                               : Combine base and bonus move speed numbers on the HUD
-dota_hud_contextual_tips_disable                                                 : true             : cl, a, per_user                  : Disable in-game contextual tips
+dota_hud_contextual_tips_disable                                                 : false            : cl, a, per_user                  : Disable in-game contextual tips
 dota_hud_custom_css_class                                                        : 0                : cl, cheat                        : Add a custom class to the root of the HUD for testing purposes.
 dota_hud_custom_label_offset                                                     : 16               : cl                               : 
 dota_hud_debug_name_all_entities                                                 : false            : cl                               : If set, shows debug names for all entities.
-dota_hud_disable_damage_numbers                                                  : true             : cl, a, per_user                  : Hide the incoming and outgoing damage numbers.
+dota_hud_disable_damage_numbers                                                  : false            : cl, a, per_user                  : Hide the incoming and outgoing damage numbers.
 dota_hud_enable_dispel_effect                                                    : false            : cl, a, per_user                  : Show the overhead dispel effect.
-dota_hud_extra_large_minimap                                                     : 1                : cl, a, per_user                  : Set minimap to extra large size
-dota_hud_flip                                                                    : false            : cl, a, per_user                  : No longer used.  Use dota_minimap_position_option instead.
+dota_hud_extra_large_minimap                                                     : 0                : cl, a, per_user                  : Set minimap to extra large size
+dota_hud_flip                                                                    : true             : cl, a, per_user                  : No longer used.  Use dota_minimap_position_option instead.
 dota_hud_force_killcam                                                           : false            : cl                               : 
 dota_hud_force_query                                                             : false            : cl, cheat                        : Left clicking a unit will force query selection to that unit.
 dota_hud_force_rank_wagering                                                     : false            : cl, cheat                        : 
@@ -53222,7 +53222,7 @@ dota_hud_force_wagering                                                         
 dota_hud_gameend                                                                 : true             : cl                               : 
 dota_hud_gameend_dev                                                             : false            : cl                               : 
 dota_hud_gameend_dev_winning_team                                                : 2                : cl                               : 
-dota_hud_healthbar_disable_status_display                                        : true             : cl, a, per_user                  : Hide the overhead status text for hero status effects.
+dota_hud_healthbar_disable_status_display                                        : false            : cl, a, per_user                  : Hide the overhead status text for hero status effects.
 dota_hud_healthbar_hoveroutline_alpha                                            : 200              : cl                               : Mouse hover outline brightness on healthbars
 dota_hud_healthbar_local_player_high_visibility                                  : false            : cl, a, per_user                  : 
 dota_hud_healthbars                                                              : 3                : cl                               : Show unit health bars, etc.
@@ -53232,7 +53232,7 @@ dota_hud_hide_overlaymap                                                        
 dota_hud_hide_topbar                                                             : false            : cl                               : 
 dota_hud_ingame_predictions_hide                                                 : false            : cl                               : 
 dota_hud_ministun_duration                                                       : 0.25             : cl                               : Stuns lower than this will add UnitMiniStunned class to the HUD
-dota_hud_netgraph                                                                : true             : cl, a, per_user                  : Display net statistics on the hud
+dota_hud_netgraph                                                                : false            : cl, a, per_user                  : Display net statistics on the hud
 dota_hud_new_query_panel                                                         : false            : cl, a                            : Enable new query panel
 +dota_hud_overlaymap_inputkey                                                    : cmd              : cl                               : 
 dota_hud_popup_battlecup_fade_delay                                              : 3                : cl                               : 
@@ -53254,7 +53254,7 @@ dota_hud_replay_scrubber_update_msecs                                           
 dota_hud_shop_show_filter                                                        : true             : cl, a, release                   : 
 dota_hud_shop_v2                                                                 : false            : cl                               : 
 dota_hud_show_crosshair_hero_tooltip                                             : true             : cl                               : Show/Hide the tooltip box that appears when you hover another hero.
-dota_hud_show_minimal_shop                                                       : true             : cl, a, per_user                  : 
+dota_hud_show_minimal_shop                                                       : false            : cl, a, per_user                  : 
 dota_hud_show_overhead_events                                                    : true             : cl                               : Show Crit, Gold, XP, etc. Overhead Event Messages
 dota_hud_skins_enabled                                                           : true             : cl                               : Enable HUD skins on the panorama HUD
 +dota_hud_toggle_overlaymap                                                      : cmd              : cl                               : 
@@ -53275,7 +53275,7 @@ dota_idle_time                                                                  
 dota_idle_time_buffer                                                            : 2                : sv, cheat                        : 
 dota_idle_time_turbo                                                             : 240              : sv                               : How long a player needs to be idle before they count as disconnected in turbo.
 dota_ignore_invites                                                              : false            : cl, a, per_user                  : If set, guild invites and team invites will be automatically rejected
-dota_ignore_nonfriend_invites                                                    : true             : cl, a, per_user                  : If set, party and lobby invites from non-friends are ignored
+dota_ignore_nonfriend_invites                                                    : false            : cl, a, per_user                  : If set, party and lobby invites from non-friends are ignored
 dota_import_steam_inventory_layout                                               : cmd              : cl                               : Load the inventory layout from the Steam servers.
 dota_inhibit_query_after_cast                                                    : 0                : cl, a                            : 
 dota_international2023_rewards_level_animation_duration_max_change               : 200              : cl                               : 
@@ -53321,10 +53321,10 @@ dota_lane_selection_midlane                                                     
 dota_lane_selection_offlane                                                      : true             : cl, a                            : 
 dota_lane_selection_safelane                                                     : true             : cl, a                            : 
 dota_lane_selection_soft_support                                                 : true             : cl, a                            : 
-dota_last_acknowledged_plus_status                                               : 2                : cl, a, per_user                  : 
-dota_last_event_id                                                               : 31               : cl, a, per_user                  : 
+dota_last_acknowledged_plus_status                                               : -1               : cl, a, per_user                  : 
+dota_last_event_id                                                               : 0                : cl, a, per_user                  : 
 dota_last_hit_multiple_kill_time                                                 : 8                : sv                               : 
-dota_last_primary_event_id                                                       : 55               : cl, a                            : 
+dota_last_primary_event_id                                                       : 0                : cl, a                            : 
 dota_launch_custom_game                                                          : cmd              : cl, release, vconsole_fuzzy, vconsole_set_focus : Launch a custom game
 dota_league_force_public                                                         : 15438, 15475, 15689, 15690, 15691, 15692, 15693, 15694, 15728, 16844, 16935, 18324 : cl                               : A comma separated list of league ids to force public usage
 dota_league_info_batch_interval_s                                                : 1                : cl                               : 
@@ -53360,9 +53360,9 @@ dota_map_ping_waypoint_path_allowance_period_seconds                            
 dota_match_game_modes                                                            : 0                : cl, a                            : Bit masks of game modes to search for in unranked matchmaking
 dota_match_languages                                                             : 0                : cl, a                            : Bit masks of languages to search for in matchmaking
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
-dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
+dota_match_solo_fast_queue                                                       : false            : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 388              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 0                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 0                : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -53374,7 +53374,7 @@ dota_max_physical_items_drop_limit                                              
 dota_max_physical_items_purchase_limit                                           : 24               : sv                               : Maximum allowed physical items per player (purchasing disallowed when reached)
 dota_max_videomode_matches                                                       : 20               : cl                               : Max number of video resolutions to show in UI.
 dota_metadata_min_games_for_avg_stats                                            : 2                : sv                               : Games required on a hero for average KDA to be valid and calibrated
-dota_minimap_always_draw_hero_icons                                              : true             : cl, a, per_user                  : No longer used, please use dota_minimap_primary_option and dota_minimap_secondary_option instead.
+dota_minimap_always_draw_hero_icons                                              : false            : cl, a, per_user                  : No longer used, please use dota_minimap_primary_option and dota_minimap_secondary_option instead.
 dota_minimap_background_option                                                   : 1                : cl, a, per_user                  : Background options for minimap. 0 = None, 1 = Simple, 2 = Realistic
 dota_minimap_create                                                              : cmd              : cl, cheat                        : Does a bunch of work to create a minimap
 dota_minimap_create_output_size                                                  : 512              : cl, cheat                        : Size of minimap texture generated with dota_minimap_create (512 default)
@@ -53387,18 +53387,18 @@ dota_minimap_hero_name_shadowsize                                               
 dota_minimap_hero_scalar                                                         : false            : cl, a, per_user                  : 
 dota_minimap_hero_scalar_distance                                                : 30               : cl, a, per_user                  : 
 dota_minimap_hero_scalar_minimum                                                 : 513              : cl, a, per_user                  : 
-dota_minimap_hero_size                                                           : 897.931          : cl, a, per_user                  : 
+dota_minimap_hero_size                                                           : 600              : cl, a, per_user                  : 
 dota_minimap_hero_spread                                                         : false            : cl, a, per_user                  : 
 dota_minimap_hero_spread_distance                                                : 500              : cl, a, per_user                  : Defined in world units.
 dota_minimap_hide_background                                                     : false            : cl, a, per_user                  : No longer used, please use dota_minimap_background_option instead.
-dota_minimap_misclick_time                                                       : 0                : cl, a, per_user                  : Minimum time after the mouse enters the minimap before we accept a move command. Used to prevent misclicks.
+dota_minimap_misclick_time                                                       : 0.2              : cl, a, per_user                  : Minimum time after the mouse enters the minimap before we accept a move command. Used to prevent misclicks.
 dota_minimap_options_migrated                                                    : true             : cl, a, per_user                  : If false, will migrate from previous minimap options to new ones.  Should not be set manually because it can override your minimap settings.
 dota_minimap_ping_chat_message_cooldown                                          : 1.5              : cl, a                            : 
 dota_minimap_ping_show_waypoint_path                                             : true             : sv, cl, rep, cheat               : 
 dota_minimap_ping_tag_duration                                                   : 10               : cl                               : 
-dota_minimap_position_option                                                     : 0                : cl, a, per_user                  : Minimap on Left = 0, Minimap on Right = 1.
+dota_minimap_position_option                                                     : 1                : cl, a, per_user                  : Minimap on Left = 0, Minimap on Right = 1.
 dota_minimap_power_rune_scale                                                    : 1.5              : cl                               : 
-dota_minimap_primary_option                                                      : 0                : cl, a, per_user                  : Display options for primary minimap mode. 0 = Hero icon with arrow, 1 = Arrow with player colors, 2 = Arrow with team colors, 3 = Hero icon only
+dota_minimap_primary_option                                                      : 1                : cl, a, per_user                  : Display options for primary minimap mode. 0 = Hero icon with arrow, 1 = Arrow with player colors, 2 = Arrow with team colors, 3 = Hero icon only
 dota_minimap_rune_size                                                           : 325              : cl                               : 
 dota_minimap_secondary_option                                                    : 0                : cl, a, per_user                  : Display options for secondary (alt) minimap mode. 0 = Hero icon with arrow, 1 = Arrow with player colors, 2 = Arrow with team colors, 3 = Hero icon only
 dota_minimap_show_cast_range                                                     : true             : cl, a                            : 
@@ -53435,7 +53435,7 @@ dota_monster_hunter_tracking_tutorial_dismissed                                 
 dota_mouse_spectator_window_lock                                                 : false            : cl, a                            : If enabled, mouse will be locked to the window when in game and spectating in a mode that doesn't give camera control
 dota_mouse_window_lock                                                           : true             : cl, a                            : If enabled, mouse will be locked to the window when ingame
 dota_muerta_ofrenda_reveal_sequence_current_state                                : 0                : cl, a                            : 
-dota_muerta_release_dont_show_ingame_event_description                           : true             : cl, a, per_user                  : 
+dota_muerta_release_dont_show_ingame_event_description                           : false            : cl, a, per_user                  : 
 dota_muerta_release_event_enable_custom_versus_screen                            : true             : cl, cheat                        : 
 dota_muerta_release_event_fake_event_active                                      : false            : cl, cheat                        : 
 dota_music_battle_debug                                                          : false            : sv                               : 
@@ -53473,7 +53473,7 @@ dota_neutral_timer_alarm_stack_ring_g                                           
 dota_neutral_timer_alarm_stack_ring_r                                            : 223              : cl                               : 
 dota_new_player                                                                  : false            : cl, a, per_user                  : 
 dota_new_player_pool_matches_played                                              : 0                : cl, a, per_user                  : 
-dota_new_player_seen_learn_tab                                                   : true             : cl, a, per_user                  : 
+dota_new_player_seen_learn_tab                                                   : false            : cl, a, per_user                  : 
 dota_no_madstone_limit                                                           : false            : sv, cl, rep, cheat               : 
 dota_no_minimap                                                                  : false            : cl                               : 
 dota_notify_steam_when_client_update_required                                    : true             : cl, release                      : When we detect the client is out of date, notify SteamAPI  to request an update
@@ -53577,7 +53577,7 @@ dota_play_custom_server                                                         
 dota_play_custom_server_name                                                     : 0                : cl                               : 
 dota_play_predict_hpq_state                                                      : true             : cl                               : 
 dota_player_add_summoned_to_selection                                            : false            : cl, a, per_user                  : 
-dota_player_auto_repeat_right_mouse                                              : true             : cl, a, per_user                  : 
+dota_player_auto_repeat_right_mouse                                              : false            : cl, a, per_user                  : 
 dota_player_cards_duplicate_display_ti10                                         : 1                : cl, cheat                        : 
 dota_player_cards_duplicate_display_ti9                                          : 1                : cl, cheat                        : 
 dota_player_channels_require_stop                                                : false            : cl, a, per_user                  : 
@@ -53596,7 +53596,7 @@ dota_player_simplified_controls                                                 
 dota_player_smart_multiunit_cast                                                 : false            : cl, a                            : 
 dota_player_status                                                               : cmd              : sv                               : Gives a status update on all players.
 dota_player_teleport_requires_halt                                               : true             : cl, a, per_user                  : 
-dota_player_units_auto_attack_mode                                               : 0                : cl, a, per_user                  : 
+dota_player_units_auto_attack_mode                                               : 1                : cl, a, per_user                  : 
 dota_playtest_recommended_heroes                                                 : 0                : sv, cl, rep, cheat               : Required heroes in a playtest.
 dota_playtest_required_heroes                                                    : 0                : sv, cl, rep, cheat               : Required heroes in a playtest.
 dota_plus_items_collapse_spew                                                    : false            : cl                               : 
@@ -53759,7 +53759,7 @@ dota_recorder_use_fullbody_portrait                                             
 dota_recorder_use_portrait_file                                                  : 0                : cl, cheat                        : Load camera setup from a specific portrait file
 dota_recorder_use_portrait_position                                              : true             : cl, cheat                        : Use camera position/activity from the portrait setup
 dota_redeem_item_code                                                            : cmd              : cl                               : Redeem a legacy Dota item code.
-dota_redirect_allies_voice_to_private_coaching_group                             : false            : cl, a, per_user                  : 
+dota_redirect_allies_voice_to_private_coaching_group                             : true             : cl, a, per_user                  : 
 dota_ref_winner_dire                                                             : cmd              : sv                               : Causes the dire team to win
 dota_ref_winner_radiant                                                          : cmd              : sv                               : Causes the radiant team to win
 dota_reload_event_schema                                                         : cmd              : sv, cl, linked                   : 
@@ -53772,7 +53772,7 @@ dota_replay_manager_download_chunk_size                                         
 dota_replay_manager_download_simultaneous_requests                               : 3                : cl, a                            : 
 dota_replay_skip_exits_cinematic_mode                                            : false            : cl, a                            : 
 dota_report_order_latency                                                        : false            : cl, release                      : 
-dota_reset_camera_on_spawn                                                       : false            : cl, a, per_user                  : If enabled, camera will reset to your hero when you respawn
+dota_reset_camera_on_spawn                                                       : true             : cl, a, per_user                  : If enabled, camera will reset to your hero when you respawn
 dota_reset_muerta_ofrenda_state                                                  : cmd              : cl                               : 
 dota_respawn_roshan                                                              : cmd              : sv, cheat                        : Respawn Roshan
 dota_restrict_partner_type_chat                                                  : true             : sv                               : Disallow chat between certain partner types
@@ -53781,7 +53781,7 @@ dota_road_to_ti_use_playtest_data                                               
 dota_roadtoti_test_pre_game                                                      : false            : cl                               : 
 dota_roshan_initial_move_timer                                                   : 899              : sv, cl, rep, cheat               : 
 dota_roshan_upgrade_rate                                                         : 60               : sv, cl, rep, cheat               : 
-dota_rp_hide_party_unless_open                                                   : true             : cl, a, per_user                  : If set, party status will not be sent to friends via rich presence, unless the party is open
+dota_rp_hide_party_unless_open                                                   : false            : cl, a, per_user                  : If set, party status will not be sent to friends via rich presence, unless the party is open
 dota_run_rare_chance                                                             : 0.2              : sv, cheat                        : 
 dota_salute_rate_limit_seconds                                                   : 30               : sv, cl, rep, cheat               : The amount of seconds that you must wait before you can salute again.
 dota_save_scenario                                                               : cmd              : cl                               : [output_file] [-binary] [-nopretty] save scenario of the game currently being spectated
@@ -53802,7 +53802,7 @@ dota_scenario_autosave_interval                                                 
 dota_scenario_autosave_remotely                                                  : false            : cl, release                      : Allow autosaving while in HLTV/replay.  (Not saved in settings)
 dota_scenario_enable                                                             : false            : cl, a, release                   : Enable scenario ui in private lobbies
 dota_scoreboard_force_visible                                                    : false            : cl                               : 
-dota_screen_shake                                                                : false            : cl, a, per_user                  : 
+dota_screen_shake                                                                : true             : cl, a, per_user                  : 
 dota_script_function_help                                                        : cmd              : sv                               : Get help on registered script API functions and tables.
 dota_scripted_replay                                                             : false            : cl                               : 
 dota_scripted_replay_camspeed                                                    : 1                : cl                               : 
@@ -53816,7 +53816,7 @@ dota_select_courier                                                             
 dota_select_neutral_item                                                         : cmd              : cl                               : 
 dota_select_scout                                                                : cmd              : cl                               : Select a scout, or snap camera to courier if already selected
 dota_selected_broadcaster_player_id                                              : 0                : cl                               : 
-dota_selection_groups                                                            : false            : cl, a, per_user                  : If set, certain units like spiderlings, eidolons and treants are considered groups for selection.
+dota_selection_groups                                                            : true             : cl, a, per_user                  : If set, certain units like spiderlings, eidolons and treants are considered groups for selection.
 dota_selection_test                                                              : true             : cl                               : 
 dota_send_courier_killed                                                         : true             : sv                               : 
 dota_send_poogie_fled_message                                                    : cmd              : sv, cheat                        : 
@@ -53835,8 +53835,8 @@ dota_set_fantasy_role                                                           
 dota_settings_healthbar_boss_creep_height_offset                                 : -4               : cl                               : 
 dota_settings_healthbar_boss_creep_icon_size                                     : 24               : cl                               : 
 dota_settings_healthbar_boss_creep_width_offset                                  : 20               : cl                               : 
-dota_settings_quick_move                                                         : true             : cl, a, per_user                  : 
-dota_settings_quick_target_attack                                                : true             : cl, a, per_user                  : 
+dota_settings_quick_move                                                         : false            : cl, a, per_user                  : 
+dota_settings_quick_target_attack                                                : false            : cl, a, per_user                  : 
 dota_settings_reborn_dismissed_new_settings                                      : 0                : cl, a                            : New Settings which have already been dismissed by the user
 dota_settings_reborn_last_ability_direct_cast_type                               : 0                : cl, per_user                     : 
 dota_settings_reborn_last_item_direct_cast_type                                  : 0                : cl, per_user                     : 
@@ -53869,7 +53869,7 @@ dota_show_accept_match_details                                                  
 dota_show_cast_range                                                             : true             : cl, a                            : 
 dota_show_combatlog                                                              : cmd              : cl                               : 
 dota_show_data_driven_camera                                                     : cmd              : cl, cheat                        : <camera_file>
-dota_show_facet_help                                                             : false            : cl, a                            : 
+dota_show_facet_help                                                             : true             : cl, a                            : 
 dota_show_fight_recap                                                            : cmd              : cl                               : Show the most recent fight recap.
 dota_show_heightmap                                                              : false            : sv, cheat                        : 
 dota_show_hero_compare_page                                                      : cmd              : cl                               : Shows a page with two heroes side by side.
@@ -53967,7 +53967,7 @@ dota_spectator_statstoggle                                                      
 dota_spectator_teamname_dire                                                     : 0                : cl                               : International 2012: for testing, override the team ID # for the dire.
 dota_spectator_teamname_overrides                                                : true             : cl                               : International 2012: enable override of 'radiant's turn to ban' with 'navi's turn to ban'.
 dota_spectator_teamname_radiant                                                  : 0                : cl                               : International 2012: for testing, override the team ID # for the radiant.
-dota_spectator_use_broadcaster_stats_panel                                       : false            : cl, a, per_user                  : Follow the broadcasters choice of stats display.
+dota_spectator_use_broadcaster_stats_panel                                       : true             : cl, a, per_user                  : Follow the broadcasters choice of stats display.
 dota_spectator_watching_broadcaster                                              : false            : cl                               : Indicates if you are watching a broadcaster in player view, so that the handling of selection can be treated differently. Meaningless when not in player view spectator mode.
 dota_spectre_arcana_disable_display                                              : false            : cl, a                            : 
 dota_spectre_arcana_progress_delay                                               : 0.25             : cl, a                            : 
@@ -53986,7 +53986,7 @@ dota_speech_shop_enter_interval                                                 
 dota_speech_shopkeeper                                                           : false            : sv, cheat                        : Enable or disable shopkeepers' speech.
 dota_speech_test                                                                 : cmd              : cl                               : Play an arbitrary speech VCD as if it were coming out of the local player.
 dota_spew_connected_players                                                      : false            : sv                               : If enabled, server will spew connected player GC updates 
-dota_splash_ad_acknowledged_id                                                   : 147              : cl, a, per_user                  : 
+dota_splash_ad_acknowledged_id                                                   : 0                : cl, a, per_user                  : 
 dota_start_ai_game                                                               : false            : sv, cl, rep                      : 
 dota_start_party_ready_check                                                     : cmd              : cl                               : Start a party ready check.
 dota_start_tormentor_transition_animation                                        : cmd              : sv, cheat                        : Start Tormentor Location Transition Animation
@@ -54049,13 +54049,13 @@ dota_suggest_learn_win_probability_interval                                     
 dota_suggest_learn_win_probability_interval_league                               : 5                : sv                               : 
 dota_suggest_ranks_force_enable                                                  : true             : sv                               : 
 dota_suggestion_quick_buy_and_neutral_timeout                                    : 1                : sv                               : 
-dota_summoned_units_auto_attack_mode_2                                           : 0                : cl, a, per_user                  : 
+dota_summoned_units_auto_attack_mode_2                                           : 2                : cl, a, per_user                  : 
 dota_suppress_invalid_orders                                                     : false            : sv                               : Don't log invalid orders
 dota_surrender_on_disconnect                                                     : true             : sv                               : If enabled, a team will surrender if all players on that team disconnect
-dota_survivors_difficulty_setting                                                : 7                : cl, a, per_user                  : 
+dota_survivors_difficulty_setting                                                : 0                : cl, a, per_user                  : 
 dota_survivors_disable_dialogue                                                  : false            : cl, a                            : 
 dota_survivors_has_been_created_from_dashboard_before                            : false            : cl, a, per_user                  : 
-dota_survivors_hero_select_setting                                               : 2                : cl, a, per_user                  : 
+dota_survivors_hero_select_setting                                               : 1                : cl, a, per_user                  : 
 dota_survivors_pickup_particle_cull_radius                                       : 1800             : cl                               : 
 dota_survivors_token_filter                                                      : 0                : cl, a                            : Which tokens to filter on in hero pick and other token progression UI
 dota_sv_load_scenario_timeout                                                    : 20               : sv                               : Timeout to receive saved scenario from GC
@@ -54108,7 +54108,7 @@ dota_ti_podseats_data_file                                                      
 dota_ti_winners_data_file                                                        : scripts/tournaments/ti_winners.txt : cl, a                            : 
 dota_time_of_day_rate                                                            : 0.001667         : sv, cl, rep, cheat               : Rate at which time of day changes relative to game seconds
 dota_toasts_show_courierleftfountain                                             : false            : cl, a, per_user                  : 
-dota_toasts_show_foundneutralitems                                               : true             : cl, a, per_user                  : 
+dota_toasts_show_foundneutralitems                                               : false            : cl, a, per_user                  : 
 dota_toasts_show_itemgifts                                                       : true             : cl, a, per_user                  : 
 dota_toasts_show_itempickups                                                     : true             : cl, a, per_user                  : 
 dota_toasts_show_relicprogress                                                   : false            : cl, a, per_user                  : 
@@ -54136,7 +54136,7 @@ dota_trivia_autoplay_sounds                                                     
 dota_trivia_chat_enabled2                                                        : false            : cl, a                            : 
 dota_trophies_cache_duration                                                     : 300              : cl                               : 
 dota_turbo_courier_default_auto_deliver                                          : true             : cl, a, user, per_user, release   : Whether courier auto mode is on in Turbo.
-dota_turbo_matches_played                                                        : 119              : cl, a, per_user                  : 
+dota_turbo_matches_played                                                        : 0                : cl, a, per_user                  : 
 dota_tutorial_actionpanel                                                        : true             : sv, cl, rep                      : 
 dota_tutorial_camera_location_dist                                               : 500              : sv, rep                          : 
 dota_tutorial_debug                                                              : true             : sv, rep                          : 
@@ -54230,11 +54230,10 @@ dota_use_occluded_click_particle_effects                                        
 dota_use_winter2022_postprocess_material                                         : true             : cl                               : 
 dota_versus_scene_disable_heroes                                                 : false            : cl                               : 
 dota_video_config.DeviceID                                                       : 11269            : cl                               : 
-dota_video_config.setting.aspectratiomode                                        : 1                : cl                               : 
 dota_video_config.setting.coop_fullscreen                                        : 0                : cl                               : 
 dota_video_config.setting.cpu_level                                              : 2                : cl                               : 
-dota_video_config.setting.defaultres                                             : 1920             : cl                               : 
-dota_video_config.setting.defaultresheight                                       : 1080             : cl                               : 
+dota_video_config.setting.defaultres                                             : 1900             : cl                               : 
+dota_video_config.setting.defaultresheight                                       : 1200             : cl                               : 
 dota_video_config.setting.dota_ambient_cloth                                     : true             : cl                               : 
 dota_video_config.setting.dota_ambient_creatures                                 : true             : cl                               : 
 dota_video_config.setting.dota_cheap_water                                       : false            : cl                               : 
@@ -54248,14 +54247,13 @@ dota_video_config.setting.knowndevice                                           
 dota_video_config.setting.mat_viewportscale                                      : 1                : cl                               : 
 dota_video_config.setting.mat_vsync                                              : 0                : cl                               : 
 dota_video_config.setting.mem_level                                              : 2                : cl                               : 
-dota_video_config.setting.monitor_index                                          : 0                : cl                               : 
 dota_video_config.setting.nowindowborder                                         : 0                : cl                               : 
 dota_video_config.setting.recommendedheight                                      : 2160             : cl                               : 
 dota_video_config.setting.recommendedwidth                                       : 1900             : cl                               : 
 dota_video_config.setting.refreshrate_denominator                                : 0                : cl                               : 
 dota_video_config.setting.refreshrate_numerator                                  : 0                : cl                               : 
 dota_video_config.setting.shaderquality                                          : 1                : cl                               : 
-dota_video_config.setting.useadvanced                                            : 1                : cl                               : 
+dota_video_config.setting.useadvanced                                            : 0                : cl                               : 
 dota_video_config.setting.version                                                : 1                : cl                               : 
 dota_video_config.VendorID                                                       : 4318             : cl                               : 
 dota_video_config.Version                                                        : 0                : cl                               : 
@@ -54277,7 +54275,7 @@ dota_watch_live_request_period                                                  
 dota_watch_pause_at_the_end_of_all_replays                                       : true             : cl                               : Pause at the end of replays
 dota_wearables_clientside                                                        : false            : sv, cl, rep                      : 
 dota_weekend_tourney_debug                                                       : cmd              : cl                               : Prints local weekend tourney object(s), if any
-dota_weekend_tourney_selected_division                                           : 2                : cl, a                            : Default division ID to show for weekend leagues and such
+dota_weekend_tourney_selected_division                                           : 0                : cl, a                            : Default division ID to show for weekend leagues and such
 dota_will_purchase_gold_remaining_max_remaining                                  : 1000             : cl                               : On the 'I will purchase <item>' alert, the maximum amount of gold remaining when showing the remaining gold cost
 dota_will_purchase_gold_remaining_min_cost                                       : 2000             : cl                               : On the 'I will purchase <item>' alert, the minimum cost of an item to show the remaining gold cost
 dota_windrunner_arcana_disable_hud_display                                       : false            : cl, a                            : 
@@ -54532,7 +54530,7 @@ fow_server_test_tempviewer                                                      
 fow_simd_unseen                                                                  : true             : sv, cl, rep                      : 
 fow_tile_update_time                                                             : 0                : sv, cl, rep                      : FoW tile update time.
 fp_trace                                                                         : cmd              :                                  : Toggle field path tracing to file 
-fps_max                                                                          : 120.144          : a, release                       : Frame rate limiter.  0=no limit.  Does not apply to dedicated server.
+fps_max                                                                          : 120              : a, release                       : Frame rate limiter.  0=no limit.  Does not apply to dedicated server.
 fps_max_tools                                                                    : 120              : a                                : Additional frame rate limit while in tools mode and a window other than the game window has focus. Note that fps_max still applies, this only allows the maximum frame rate for tools mode to be lower. 0=no tools specific limit.
 fps_max_ui                                                                       : 0                : a                                : Frame rate limiter while the game UI is displayed.  0=no limit.  Does not apply to dedicated server.
 freecamera_accel                                                                 : 5                : cl                               : Tweak this parameter to adjust Free Camera movement acceleration.
@@ -54669,8 +54667,8 @@ hammer_world_trace_multisample                                                  
 hammer_world_trace_pack_rays                                                     : false            :                                  : 
 healme                                                                           : cmd              : sv, cheat                        : Heals the player.  Arguments: <health to gain>
 help                                                                             : cmd              : release                          : Find help about a convar/concommand.
-hero_grid_selected_config                                                        : 0:#DOTA_Armory_Attributes : cl, a, per_user                  : 
-hero_grid_selected_rank_tier                                                     : 6                : cl, a, per_user                  : 
+hero_grid_selected_config                                                        : 0                : cl, a, per_user                  : 
+hero_grid_selected_rank_tier                                                     : -1               : cl, a, per_user                  : 
 +herochatwheel                                                                   : cmd              : cl                               : Opens hero chatwheel menu while held
 hide_sf_shop                                                                     : cmd              : cl                               : hide shop
 hideconsole                                                                      : cmd              : norecord, release                : Hide the console.
@@ -54683,14 +54681,14 @@ host_timescale_dec                                                              
 host_timescale_inc                                                               : cmd              : cheat                            : Increment the timescale by one step
 host_writeconfig                                                                 : cmd              : release                          : Saves out the user config values.
 hostfile                                                                         : host.txt         : sv, release                      : The HOST file to load.
-hostip                                                                           : 1682549075       : release                          : Host game server ip
-hostname                                                                         : zavoz            : release                          : Hostname for server.
+hostip                                                                           : -971898879       : release                          : Host game server ip
+hostname                                                                         : frenki           : release                          : Hostname for server.
 hostname_in_client_status                                                        : false            : release                          : Show server hostname in client status.
 hostport                                                                         : 27015            : release                          : Host game server port
 hud_fastswitch                                                                   : 0                : cl, a                            : 
 hud_max_minimap_distance                                                         : 2600             : cl                               : 
 hud_reloadscheme                                                                 : cmd              : cl                               : Reloads hud layout and animation scripts.
-hud_river_vial_ui_expanded                                                       : false            : cl, a, per_user                  : 
+hud_river_vial_ui_expanded                                                       : true             : cl, a, per_user                  : 
 hud_sticky_item_name                                                             : item_tpscroll    : cl, a                            : 
 hud_toggle_visibility                                                            : cmd              : cl                               : Toggles the Hud on and off
 hullivr_edge_merge_tan                                                           : 0.02             : sv, rep                          : Should we try to straighten two faces connected to this edge? (tangent)
@@ -55012,7 +55010,7 @@ multiunit_y_gap_three_col                                                       
 multiunit_y_gap_two_col                                                          : 15               : cl                               : 
 multiunit_y_start                                                                : 0                : cl                               : 
 multvar                                                                          : cmd              : norecord, release                : Multiply specified convar value.
-name                                                                             : zavoz            : a, per_user                      : 
+name                                                                             : frenki           : a, per_user                      : 
 nav_add_to_selected_set                                                          : cmd              : sv, cheat                        : Add current area to the selected set.
 nav_add_to_selected_set_by_id                                                    : cmd              : sv, cheat                        : Add specified area id to the selected set.
 nav_begin_deselecting                                                            : cmd              : sv, cheat                        : Start continuously removing from the selected set.
@@ -55394,7 +55392,7 @@ npcsolve_separation_r2                                                          
 open_asset                                                                       : cmd              :                                  : Opens an asset in it's primary editor of choice. Specify the full path to the asset from the mod directory.
 openshop_category                                                                : cmd              : cl                               : opens shop from clicks on the world shop model, specific tab request
 option_duck_method                                                               : false            : cl, a, user, per_user            : Input toggle control
-overwatch_help_shown_once                                                        : true             : cl, a, per_user                  : 
+overwatch_help_shown_once                                                        : false            : cl, a, per_user                  : 
 p2p_listpeers                                                                    : cmd              :                                  : List currently known peers.
 p2p_ping                                                                         : cmd              : cl                               : Ping a peer.
 panorama_debugger_theme                                                          : Light            : cl, a                            : 
@@ -55474,11 +55472,11 @@ pickup_check_period                                                             
 ping_wheel_0                                                                     : 0                : cl, a, per_user                  : 
 ping_wheel_1                                                                     : 1                : cl, a, per_user                  : 
 ping_wheel_2                                                                     : 2                : cl, a, per_user                  : 
-ping_wheel_3                                                                     : 3                : cl, a, per_user                  : 
-ping_wheel_4                                                                     : 4                : cl, a, per_user                  : 
-ping_wheel_5                                                                     : 5                : cl, a, per_user                  : 
-ping_wheel_6                                                                     : 6                : cl, a, per_user                  : 
-ping_wheel_7                                                                     : 1                : cl, a, per_user                  : 
+ping_wheel_3                                                                     : -1               : cl, a, per_user                  : 
+ping_wheel_4                                                                     : 8                : cl, a, per_user                  : 
+ping_wheel_5                                                                     : 4                : cl, a, per_user                  : 
+ping_wheel_6                                                                     : 5                : cl, a, per_user                  : 
+ping_wheel_7                                                                     : 6                : cl, a, per_user                  : 
 ping_wheel_8                                                                     : -1               : cl, a, per_user                  : 
 ping_wheel_9                                                                     : -1               : cl, a, per_user                  : 
 pixelvis_debug                                                                   : cmd              : cheat                            : Dump debug info
@@ -56144,7 +56142,7 @@ snd_gain                                                                        
 snd_gain_max                                                                     : 1                : cheat                            : 
 snd_gain_min                                                                     : 0.01             : cheat                            : 
 snd_gamevoicevolume                                                              : 0                : a                                : Game v.o. volume
-snd_gamevolume                                                                   : 0.026749         : a                                : Game volume
+snd_gamevolume                                                                   : 0                : a                                : Game volume
 snd_get_physics_surface_properties                                               : cmd              : cheat                            : Get physics surface properties for all the materials.
 snd_group_cluster_debug                                                          : false            : rep, cheat                       : 
 snd_group_priority_debug                                                         : false            : rep, cheat                       : 
@@ -56342,7 +56340,7 @@ snd_use_baked_occlusion                                                         
 snd_vmidi_flush                                                                  : cmd              : cheat                            : Purge and reload all vmidi data and files.
 snd_vmix_override_mix_decay_time                                                 : -1               : cheat                            : If set > 0, overrides how long the decay time is on all mix graphs (in seconds). 
 snd_vmix_show_input_updates                                                      : false            : cheat                            : If set to 1, show all incoming updates to vmix inputs. 
-snd_voipvolume                                                                   : 1                : a                                : Voice volume
+snd_voipvolume                                                                   : 0                : a                                : Voice volume
 sndplaydelay                                                                     : cmd              :                                  : 
 sos_debug_emit                                                                   : false            : sv, cl, rep                      : 
 sos_use_guid_filter                                                              : false            : sv, cl, rep                      : 
@@ -56681,7 +56679,7 @@ tool_request                                                                    
 toolhud_enable                                                                   : true             :                                  : 
 tools_renderscenes                                                               : true             :                                  : 
 top_bar_message                                                                  : cmd              : cl                               : test top bar status message. usage: top_bar_message ['message here'] [scary: 0/1] 
-treasure_escalating_rares_popup_seen                                             : true             : cl, a, per_user                  : 
+treasure_escalating_rares_popup_seen                                             : false            : cl, a, per_user                  : 
 treasure_opening_particle_emission_max                                           : 2                : cl                               : 
 treasure_opening_particle_emission_min                                           : 0.3              : cl                               : 
 treasure_opening_particle_emissionB_max                                          : 1                : cl                               : 
@@ -56845,7 +56843,7 @@ voice_stall_ms                                                                  
 voice_threshold                                                                  : -60              : cl, a                            : decibel threshold for how loud the talker's input signal is before we think they are talking.
 voice_vox                                                                        : 0                : cl, a, per_user                  : Voice chat uses a vox-style always on
 voice_vox_current_peak                                                           : 0                : cl                               : Current peak value (out of 64k) of the incoming voice stream
-volume                                                                           : 0.062757         : a                                : Sound volume
+volume                                                                           : 0                : a                                : Sound volume
 volume_fog_debug_volumes                                                         : false            : cheat                            : 
 volume_fog_depth                                                                 : 128              :                                  : Depth of volume fog texture
 volume_fog_depth_warp                                                            : 7                :                                  : 
@@ -56889,7 +56887,7 @@ writeip                                                                         
 writekeybindings                                                                 : cmd              : release                          : Saves current key bindings to disk.
 zoom_sensitivity_ratio                                                           : 1                : cl, a, per_user                  : Additional mouse sensitivity scale factor applied when FOV is zoomed in.
 --------------
-5199 total convars/concommands
+5197 total convars/concommands
 $> cl_panorama_typescript_declarations
 interface CPanoramaScript_GameEvents
 {
@@ -60907,27 +60905,3 @@ declare enum DOTAKeybindCommand_t
     DOTA_KEYBIND_SPEC_FOCUS_PLAYER_6 = 238,
     DOTA_KEYBIND_SPEC_FOCUS_PLAYER_7 = 239,
     DOTA_KEYBIND_SPEC_FOCUS_PLAYER_8 = 240,
-    DOTA_KEYBIND_SPEC_FOCUS_PLAYER_9 = 241,
-    DOTA_KEYBIND_SPEC_FOCUS_PLAYER_10 = 242,
-    DOTA_KEYBIND_SPEC_COACH_VIEWTOGGLE = 243,
-    DOTA_KEYBIND_INSPECTHEROINWORLD = 244,
-    DOTA_KEYBIND_CAMERA_ZOOM_IN = 245,
-    DOTA_KEYBIND_CAMERA_ZOOM_OUT = 246,
-    DOTA_KEYBIND_CONTROL_GROUPCYCLEPREV = 247,
-    DOTA_KEYBIND_DOTA_ALT = 248,
-    DOTA_KEYBIND_DOTA_ALTERNATIVE_CAST_SWITCH = 249,
-    DOTA_KEYBIND_COUNT = 250,
-}
-
-declare enum DOTA_SHOP_TYPE
-{
-    DOTA_SHOP_HOME = 0,
-    DOTA_SHOP_SIDE = 1,
-    DOTA_SHOP_SECRET = 2,
-    DOTA_SHOP_GROUND = 3,
-    DOTA_SHOP_SIDE2 = 4,
-    DOTA_SHOP_SECRET2 = 5,
-    DOTA_SHOP_CUSTOM = 6,
-    DOTA_SHOP_NEUTRALS = 7,
-    DOTA_SHOP_NONE = 8,
-}
