@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3529",
+    "default": "3552",
     "flags": [
       "cl",
       "a",
@@ -12746,7 +12746,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "260",
     "flags": [
       "cl",
       "a"
@@ -12943,7 +12943,7 @@
     "description": ""
   },
   "dota_minimap_hero_size": {
-    "default": "897.931",
+    "default": "597.22",
     "flags": [
       "cl",
       "a",
@@ -19501,7 +19501,7 @@
     "description": ""
   },
   "dota_video_config.setting.mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -24395,7 +24395,7 @@
     "description": ""
   },
   "mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -27796,7 +27796,7 @@
     "description": "Ping a peer."
   },
   "panorama_debugger_theme": {
-    "default": "Light",
+    "default": "Dark",
     "flags": [
       "cl",
       "a"
@@ -32910,7 +32910,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "a"
     ],
@@ -34319,7 +34319,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (HUAWEI FreeBuds 4)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
@@ -37766,7 +37766,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0",
+    "default": "0.556561",
     "flags": [
       "a"
     ],
