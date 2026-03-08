@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3552",
+    "default": "3557",
     "flags": [
       "cl",
       "a",
@@ -12746,7 +12746,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "260",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -19501,7 +19501,7 @@
     "description": ""
   },
   "dota_video_config.setting.mat_viewportscale": {
-    "default": "1",
+    "default": "0.999999",
     "flags": [
       "cl"
     ],
@@ -24395,7 +24395,7 @@
     "description": ""
   },
   "mat_viewportscale": {
-    "default": "1",
+    "default": "0.999999",
     "flags": [
       "cl"
     ],
@@ -32910,7 +32910,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "1",
+    "default": "0.103053",
     "flags": [
       "a"
     ],
@@ -37766,7 +37766,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.556561",
+    "default": "0.199745",
     "flags": [
       "a"
     ],
