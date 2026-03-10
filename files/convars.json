@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3557",
+    "default": "3559",
     "flags": [
       "cl",
       "a",
@@ -17536,7 +17536,7 @@
     "description": "If enabled, server will spew connected player GC updates"
   },
   "dota_splash_ad_acknowledged_id": {
-    "default": "147",
+    "default": "148",
     "flags": [
       "cl",
       "a",
@@ -22561,7 +22561,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "1682549075",
+    "default": "-1062709066",
     "flags": [
       "release"
     ],

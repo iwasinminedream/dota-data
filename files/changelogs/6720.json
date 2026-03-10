@@ -1,0 +1,25 @@
+{
+  "version": "6720",
+  "date": "Mar 10 2026",
+  "time": "13:02:25",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1804
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1806
+        }
+      ]
+    }
+  }
+}
