@@ -9145,7 +9145,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3559",
+    "default": "3606",
     "flags": [
       "cl",
       "a",
@@ -11457,7 +11457,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "34864670197",
+    "default": "34930089341",
     "flags": [
       "cl",
       "a",
@@ -12453,7 +12453,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "55",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12746,7 +12746,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "260",
     "flags": [
       "cl",
       "a"
@@ -13146,7 +13146,7 @@
     "description": "Creates a test modifier on unit: dota_modifier_test <entityindex> <modifiername> <duration>"
   },
   "dota_monster_hunter_hero_codex_intro_state": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a"
@@ -19466,7 +19466,7 @@
     "description": ""
   },
   "dota_video_config.setting.fullscreen_min_on_focus_loss": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -21622,7 +21622,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "120.144",
+    "default": "120",
     "flags": [
       "a",
       "release"
@@ -22561,7 +22561,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "-1062709066",
+    "default": "1682549075",
     "flags": [
       "release"
     ],
@@ -32910,7 +32910,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.103053",
+    "default": "0.026018",
     "flags": [
       "a"
     ],
@@ -37766,7 +37766,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.199745",
+    "default": "0.152715",
     "flags": [
       "a"
     ],

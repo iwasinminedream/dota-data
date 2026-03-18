@@ -30900,6 +30900,23 @@
       },
       {
         "kind": "function",
+        "name": "MoveCameraToLocation",
+        "available": "server",
+        "description": "Moves the camera to a position.",
+        "returns": [
+          "nil"
+        ],
+        "args": [
+          {
+            "name": "arg1",
+            "types": [
+              "Vector"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "function",
         "name": "RemoveShopWhitelistItem",
         "available": "server",
         "description": "Remove an item from the shop whitelist.",

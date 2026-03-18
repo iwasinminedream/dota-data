@@ -1,0 +1,36 @@
+{
+  "version": "6725",
+  "date": "Mar 16 2026",
+  "time": "11:25:27",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTATutorial",
+          "name": "MoveCameraToLocation",
+          "signature": "MoveCameraToLocation(arg1)"
+        }
+      ],
+      "removed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1797
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+          "value": 1794
+        }
+      ]
+    }
+  }
+}
