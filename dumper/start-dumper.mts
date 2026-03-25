@@ -85,7 +85,7 @@ console.log('Connected! Waiting for dump...');
 
 await readDump(dotaConsole, dumpWriteStream);
 
-dumpWriteStream.close();
+await new Promise<void>((resolve) => dumpWriteStream.end(resolve));
 
 console.log('Saved dump — exiting dumper.');
 

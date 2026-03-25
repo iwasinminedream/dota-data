@@ -449,7 +449,7 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-          "value": 1802
+          "value": 1799
         },
         {
           "type": "enum_member",
@@ -564,8 +564,8 @@
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1800
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1803
         },
         {
           "type": "enum_member",

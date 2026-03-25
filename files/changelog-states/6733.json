@@ -35631,73 +35631,73 @@
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_VOODOO_REST",
+        "name": "ACT_DOTA_RUN_ALT",
         "value": 1793
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
-        "name": "ACT_DOTA_RUN_ALT",
-        "value": 1794
-      },
-      {
-        "type": "enum_member",
-        "enum": "GameActivity_t",
         "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-        "value": 1799
+        "value": 1798
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_RELAX_IN",
-        "value": 1800
+        "value": 1799
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_RELAX_OUT",
-        "value": 1801
+        "value": 1800
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_CAST_FENCE",
-        "value": 1802
+        "value": 1801
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_SPWN",
-        "value": 1803
+        "value": 1802
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_CAST3_STATUE",
-        "value": 1804
+        "value": 1803
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_CAST4_STATUE",
-        "value": 1805
+        "value": 1804
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_CAST5_STATUE",
-        "value": 1806
+        "value": 1805
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_CYCLONE",
-        "value": 1807
+        "value": 1806
       },
       {
         "type": "enum_member",
         "enum": "GameActivity_t",
         "name": "ACT_DOTA_IMPALE",
+        "value": 1807
+      },
+      {
+        "type": "enum_member",
+        "enum": "GameActivity_t",
+        "name": "ACT_DOTA_TORRENT",
         "value": 1808
       },
       {
