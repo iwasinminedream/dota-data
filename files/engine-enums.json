@@ -35,6 +35,10 @@
         "shortName": "CHAOS_DOUBLE_CRIT"
       },
       {
+        "name": "DOTA_PSEUDO_RANDOM_CHAOS_KNIGHT_HAVOC",
+        "shortName": "CHAOS_KNIGHT_HAVOC"
+      },
+      {
         "name": "DOTA_PSEUDO_RANDOM_CHAOS_KNIGHT_INNATE_REFUND",
         "shortName": "CHAOS_KNIGHT_INNATE_REFUND"
       },
@@ -235,6 +239,10 @@
         "shortName": "KEZ_SAI"
       },
       {
+        "name": "DOTA_PSEUDO_RANDOM_LARGO_FROGSTOMP",
+        "shortName": "LARGO_FROGSTOMP"
+      },
+      {
         "name": "DOTA_PSEUDO_RANDOM_LEGION_MOMENT",
         "shortName": "LEGION_MOMENT"
       },
@@ -261,6 +269,10 @@
       {
         "name": "DOTA_PSEUDO_RANDOM_MUERTA_GUNSLINGER",
         "shortName": "MUERTA_GUNSLINGER"
+      },
+      {
+        "name": "DOTA_PSEUDO_RANDOM_NAGA_RIPTIDE",
+        "shortName": "NAGA_RIPTIDE"
       },
       {
         "name": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER1",
@@ -361,52 +373,6 @@
       {
         "name": "DOTA_PSEUDO_RANDOM_WOLF_CRIT",
         "shortName": "WOLF_CRIT"
-      }
-    ]
-  },
-  {
-    "name": "OrbPriority",
-    "members": [
-      {
-        "name": "DOTA_ORB_PRIORITY_ABILITY",
-        "shortName": "ABILITY"
-      },
-      {
-        "name": "DOTA_ORB_PRIORITY_DEFAULT",
-        "shortName": "DEFAULT"
-      },
-      {
-        "name": "DOTA_ORB_PRIORITY_ITEM",
-        "shortName": "ITEM"
-      },
-      {
-        "name": "DOTA_ORB_PRIORITY_ITEM_PROC",
-        "shortName": "ITEM_PROC"
-      },
-      {
-        "name": "DOTA_ORB_PRIORITY_NONE",
-        "shortName": "NONE"
-      }
-    ]
-  },
-  {
-    "name": "OrbLabel",
-    "members": [
-      {
-        "name": "DOTA_ORB_LABEL_DEFAULT",
-        "shortName": "DEFAULT"
-      },
-      {
-        "name": "DOTA_ORB_LABEL_EXCEPTION",
-        "shortName": "EXCEPTION"
-      },
-      {
-        "name": "DOTA_ORB_LABEL_NONE",
-        "shortName": "NONE"
-      },
-      {
-        "name": "DOTA_ORB_LABEL_SKADI",
-        "shortName": "SKADI"
       }
     ]
   },
@@ -2894,10 +2860,6 @@
       {
         "name": "ACT_IDLETORUN",
         "shortName": "IDLETORUN"
-      },
-      {
-        "name": "ACT_INVALID",
-        "shortName": "INVALID"
       },
       {
         "name": "ACT_ITEM1_VM_DRAW",
@@ -6539,6 +6501,10 @@
         "shortName": "ITEM"
       },
       {
+        "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
+        "shortName": "ITEM_IMBUE"
+      },
+      {
         "name": "DOTA_ABILITY_BEHAVIOR_LAST_RESORT_POINT",
         "shortName": "LAST_RESORT_POINT"
       },
@@ -6739,16 +6705,8 @@
     "name": "BotItemType",
     "members": [
       {
-        "name": "ITEM_CONSUMABLE",
-        "shortName": "CONSUMABLE"
-      },
-      {
         "name": "ITEM_CORE",
         "shortName": "CORE"
-      },
-      {
-        "name": "ITEM_DERIVED",
-        "shortName": "DERIVED"
       },
       {
         "name": "ITEM_EXTENSION",
@@ -6757,10 +6715,6 @@
       {
         "name": "ITEM_LUXURY",
         "shortName": "LUXURY"
-      },
-      {
-        "name": "ITEM_SELLABLE",
-        "shortName": "SELLABLE"
       }
     ]
   },

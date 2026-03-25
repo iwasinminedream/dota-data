@@ -2623,17 +2623,6 @@
         "returns": "number"
       },
       {
-        "name": "CanAbilityBeUpgraded",
-        "args": [
-          {
-            "name": "nEntityIndex",
-            "type": "number"
-          }
-        ],
-        "returns": "number",
-        "description": "Returns an AbilityLearnResult_t"
-      },
-      {
         "name": "CanBeExecuted",
         "args": [
           {
@@ -3212,6 +3201,21 @@
           }
         ],
         "returns": "number"
+      },
+      {
+        "name": "CanAbilityBeUpgraded",
+        "args": [
+          {
+            "name": "nEntityIndex",
+            "type": "number"
+          },
+          {
+            "name": "bTomeUpgrade",
+            "type": "boolean"
+          }
+        ],
+        "returns": "number",
+        "description": "Returns an AbilityLearnResult_t"
       },
       {
         "name": "GetLocalPlayerActiveAbility",
@@ -6017,24 +6021,6 @@
         "returns": "void"
       },
       {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
-          }
-        ],
-        "returns": "void"
-      },
-      {
         "name": "ScrollToTop",
         "args": [],
         "returns": "void"
@@ -7038,24 +7024,6 @@
           {
             "name": "_arg_2",
             "type": "string"
-          }
-        ],
-        "returns": "void"
-      },
-      {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
           }
         ],
         "returns": "void"
@@ -8098,24 +8066,6 @@
         "returns": "void"
       },
       {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
-          }
-        ],
-        "returns": "void"
-      },
-      {
         "name": "ScrollToTop",
         "args": [],
         "returns": "void"
@@ -9119,24 +9069,6 @@
           {
             "name": "_arg_2",
             "type": "string"
-          }
-        ],
-        "returns": "void"
-      },
-      {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
           }
         ],
         "returns": "void"
@@ -10190,24 +10122,6 @@
         "returns": "void"
       },
       {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
-          }
-        ],
-        "returns": "void"
-      },
-      {
         "name": "ScrollToTop",
         "args": [],
         "returns": "void"
@@ -11236,24 +11150,6 @@
         "returns": "void"
       },
       {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
-          }
-        ],
-        "returns": "void"
-      },
-      {
         "name": "ScrollToTop",
         "args": [],
         "returns": "void"
@@ -12257,24 +12153,6 @@
           {
             "name": "_arg_2",
             "type": "string"
-          }
-        ],
-        "returns": "void"
-      },
-      {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
           }
         ],
         "returns": "void"
@@ -13313,24 +13191,6 @@
           {
             "name": "_arg_2",
             "type": "string"
-          }
-        ],
-        "returns": "void"
-      },
-      {
-        "name": "SetDialogVariablePluralLocStringInt",
-        "args": [
-          {
-            "name": "_arg_1",
-            "type": "string"
-          },
-          {
-            "name": "_arg_2",
-            "type": "string"
-          },
-          {
-            "name": "_arg_3",
-            "type": "number"
           }
         ],
         "returns": "void"

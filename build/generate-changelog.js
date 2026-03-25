@@ -48,6 +48,12 @@ function formatSignature(func) {
   return `${func.name}(${args})`;
 }
 
+// Format args with type info for detailed comparison
+function formatArgsDetail(args) {
+  if (!args || !args.length) return '';
+  return args.map(a => `${a.name}: ${(a.types || []).join(' | ')}`).join(', ');
+}
+
 // Extract items from API
 function extractApiItems(content) {
   const items = [];
@@ -59,12 +65,27 @@ function extractApiItems(content) {
       if (item.members) {
         for (const m of item.members) {
           if (m.kind === 'function') {
-            items.push({ type: 'method', class: item.name, name: m.name, signature: formatSignature(m) });
+            items.push({
+              type: 'method',
+              class: item.name,
+              name: m.name,
+              signature: formatSignature(m),
+              returns: (m.returns || []).join(' | '),
+              argsDetail: formatArgsDetail(m.args),
+              description: m.description || '',
+            });
           }
         }
       }
     } else if (item.kind === 'function') {
-      items.push({ type: 'function', name: item.name, signature: formatSignature(item) });
+      items.push({
+        type: 'function',
+        name: item.name,
+        signature: formatSignature(item),
+        returns: (item.returns || []).join(' | '),
+        argsDetail: formatArgsDetail(item.args),
+        description: item.description || '',
+      });
     } else if (item.kind === 'constant') {
       items.push({ type: 'constant', name: item.name, value: item.value });
     }
@@ -108,8 +129,21 @@ function extractModifiers(content) {
 
 // Extract events
 function extractEvents(content) {
-  if (typeof content !== 'object' || Array.isArray(content)) return [];
-  return Object.keys(content).map(k => ({ type: 'event', name: k }));
+  if (Array.isArray(content)) {
+    // Array format (game events)
+    return content.map(e => {
+      const fieldsDetail = (e.fields || []).map(f => `${f.name}: ${f.type || 'unknown'}`).join(', ');
+      return { type: 'event', name: e.name, fieldsDetail };
+    });
+  }
+  if (typeof content === 'object' && content !== null) {
+    // Object format (panorama events)
+    return Object.entries(content).map(([name, data]) => {
+      const argsDetail = (data.args || []).map(a => `${a.name}: ${a.type || 'unknown'}`).join(', ');
+      return { type: 'event', name, fieldsDetail: argsDetail, description: data.description || '' };
+    });
+  }
+  return [];
 }
 
 // Extract convars
@@ -168,27 +202,101 @@ function itemKey(item) {
   return `${item.type}:${item.name}`;
 }
 
+// Build a detail fingerprint for an item (used to detect changes)
+// Only includes fields that have meaningful values
+function itemFingerprint(item) {
+  const parts = [];
+  if (item.signature) parts.push(`sig:${item.signature}`);
+  if (item.returns) parts.push(`ret:${item.returns}`);
+  if (item.argsDetail) parts.push(`args:${item.argsDetail}`);
+  if (item.value !== undefined) parts.push(`val:${item.value}`);
+  if (item.fieldsDetail) parts.push(`fields:${item.fieldsDetail}`);
+  return parts.join('|');
+}
+
+// Check if two items have meaningful differences
+// Only compares fields that BOTH items have (non-empty)
+function hasItemChanged(oldItem, newItem) {
+  const fieldsToCompare = ['signature', 'returns', 'argsDetail', 'value', 'fieldsDetail'];
+  for (const field of fieldsToCompare) {
+    const oldVal = oldItem[field];
+    const newVal = newItem[field];
+    // Only compare when both sides have a meaningful value
+    if (oldVal !== undefined && oldVal !== '' && newVal !== undefined && newVal !== '') {
+      if (String(oldVal) !== String(newVal)) return true;
+    }
+  }
+  return false;
+}
+
+// Build per-field diff between old and new items
+// Only includes fields where both have values and they differ
+function buildItemDiff(oldItem, newItem) {
+  const diffFields = {};
+  const fieldsToCompare = ['signature', 'returns', 'argsDetail', 'value', 'fieldsDetail', 'description'];
+  for (const field of fieldsToCompare) {
+    const oldVal = oldItem[field];
+    const newVal = newItem[field];
+    // Only include if both sides have meaningful values and they differ
+    if (oldVal !== undefined && oldVal !== '' && newVal !== undefined && newVal !== '') {
+      if (String(oldVal) !== String(newVal)) {
+        diffFields[field] = { old: String(oldVal), new: String(newVal) };
+      }
+    }
+  }
+  return diffFields;
+}
+
 // Compare states
 function compareStates(prev, curr) {
   const changes = {};
   
   for (const [key, currData] of Object.entries(curr)) {
     const prevData = prev?.[key];
-    const prevKeys = new Set((prevData?.items || []).map(itemKey));
-    const currKeys = new Set(currData.items.map(itemKey));
+    const prevItems = prevData?.items || [];
+    const prevMap = new Map(prevItems.map(i => [itemKey(i), i]));
+    const currMap = new Map(currData.items.map(i => [itemKey(i), i]));
+    
+    const prevKeys = new Set(prevMap.keys());
+    const currKeys = new Set(currMap.keys());
     
     const added = currData.items.filter(i => !prevKeys.has(itemKey(i)));
-    const removed = (prevData?.items || []).filter(i => !currKeys.has(itemKey(i)));
+    const removed = prevItems.filter(i => !currKeys.has(itemKey(i)));
     
-    if (added.length > 0 || removed.length > 0) {
-      changes[currData.name] = { added, removed };
+    // Detect changes in items that exist in both states
+    // Only track changes for functions/methods, not enums or other types
+    const changed = [];
+    const trackableTypes = new Set(['function', 'method']);
+    for (const [k, currItem] of currMap) {
+      if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
+        const prevItem = prevMap.get(k);
+        if (hasItemChanged(prevItem, currItem)) {
+          const diff = buildItemDiff(prevItem, currItem);
+          // Skip if only description changed (too noisy) unless it's the only change
+          const nonDescChanges = Object.keys(diff).filter(f => f !== 'description');
+          if (nonDescChanges.length > 0) {
+            changed.push({
+              type: currItem.type,
+              name: currItem.name,
+              class: currItem.class,
+              enum: currItem.enum,
+              category: currItem.category,
+              changes: diff,
+            });
+          }
+        }
+      }
+    }
+    
+    if (added.length > 0 || removed.length > 0 || changed.length > 0) {
+      changes[currData.name] = { added, removed, changed };
     }
   }
   
   if (prev) {
     for (const [key, prevData] of Object.entries(prev)) {
       if (!curr[key] && prevData.items.length > 0) {
-        changes[prevData.name] = { added: [], removed: prevData.items };
+        changes[prevData.name] = { added: [], removed: prevData.items, changed: [] };
       }
     }
   }
@@ -233,10 +341,11 @@ if (!prevState && prevVersion) {
 const changes = compareStates(prevState, currState);
 
 // Count changes
-let addedCount = 0, removedCount = 0;
+let addedCount = 0, removedCount = 0, changedCount = 0;
 for (const cat of Object.values(changes)) {
   addedCount += cat.added?.length || 0;
   removedCount += cat.removed?.length || 0;
+  changedCount += cat.changed?.length || 0;
 }
 
 // Write changelog
@@ -265,6 +374,7 @@ const indexEntry = {
   time: currentVersion.time,
   addedCount,
   removedCount,
+  changedCount,
 };
 
 if (existingIdx !== -1) {
@@ -277,12 +387,13 @@ index.sort((a, b) => parseInt(b.version) - parseInt(a.version));
 fs.writeFileSync(changelogIndexPath, JSON.stringify(index, null, 2));
 
 console.log(`\nGenerated changelog for version ${currentVersion.version}`);
-console.log(`Changes: +${addedCount} added, -${removedCount} removed`);
+console.log(`Changes: +${addedCount} added, -${removedCount} removed, ~${changedCount} changed`);
 
-if (addedCount > 0 || removedCount > 0) {
+if (addedCount > 0 || removedCount > 0 || changedCount > 0) {
   for (const [cat, ch] of Object.entries(changes)) {
     const a = ch.added?.length || 0;
     const r = ch.removed?.length || 0;
-    if (a > 0 || r > 0) console.log(`  ${cat}: +${a} -${r}`);
+    const c = ch.changed?.length || 0;
+    if (a > 0 || r > 0 || c > 0) console.log(`  ${cat}: +${a} -${r} ~${c}`);
   }
 }

@@ -1,0 +1,4582 @@
+{
+  "version": "6730",
+  "date": "Mar 24 2026",
+  "time": "17:44:55",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "class",
+          "name": "CBaseAnimatingOverlay"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_BaseNPC_Hero",
+          "name": "IsBuybackDisabledByDevilsBargain",
+          "signature": "IsBuybackDisabledByDevilsBargain()",
+          "returns": "bool",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_BaseNPC_Hero",
+          "name": "SetBuyBackDisabledByDevilsBargain",
+          "signature": "SetBuyBackDisabledByDevilsBargain(buybackDisabled)",
+          "returns": "nil",
+          "argsDetail": "buybackDisabled: bool",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierBaseArmorPerAgiBonusPercentage",
+          "signature": "GetModifierBaseArmorPerAgiBonusPercentage()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierBaseAttackSpeedPerAgiBonusPercentage",
+          "signature": "GetModifierBaseAttackSpeedPerAgiBonusPercentage()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierBaseHpRegenPerStrBonusPercentage",
+          "signature": "GetModifierBaseHpRegenPerStrBonusPercentage()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierBaseMagicResistPerIntBonusPercentage",
+          "signature": "GetModifierBaseMagicResistPerIntBonusPercentage()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierBaseManaRegenPerIntBonusPercentage",
+          "signature": "GetModifierBaseManaRegenPerIntBonusPercentage()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierHeroLevelScale",
+          "signature": "GetModifierHeroLevelScale()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierIntellectNone",
+          "signature": "GetModifierIntellectNone()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPercentageKillAssistGoldBoost",
+          "signature": "GetModifierPercentageKillAssistGoldBoost()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPhysical_ConstantBlockBonus",
+          "signature": "GetModifierPhysical_ConstantBlockBonus()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSuperIllusionWithItems",
+          "signature": "GetModifierSuperIllusionWithItems()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "HasBonusNeutralItemPassive",
+          "signature": "HasBonusNeutralItemPassive()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnIllusionCreated",
+          "signature": "OnIllusionCreated()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnKnockbackAttempted",
+          "signature": "OnKnockbackAttempted()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnPurged",
+          "signature": "OnPurged()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnScepterUpgradeSelected",
+          "signature": "OnScepterUpgradeSelected()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnShardUpgradeSelected",
+          "signature": "OnShardUpgradeSelected()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnSpentItemCharge",
+          "signature": "OnSpentItemCharge()",
+          "returns": "nil",
+          "argsDetail": "",
+          "description": ""
+        }
+      ],
+      "removed": [
+        {
+          "type": "class",
+          "name": "CBaseFlex"
+        },
+        {
+          "type": "method",
+          "class": "CBaseFlex",
+          "name": "GetCurrentScene",
+          "signature": "GetCurrentScene()"
+        },
+        {
+          "type": "method",
+          "class": "CBaseFlex",
+          "name": "GetSceneByIndex",
+          "signature": "GetSceneByIndex(index)"
+        },
+        {
+          "type": "method",
+          "class": "CBaseFlex",
+          "name": "ScriptPlayScene",
+          "signature": "ScriptPlayScene(scene, delay)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_BaseNPC_Hero",
+          "name": "IsBuybackDisabledByReapersScythe",
+          "signature": "IsBuybackDisabledByReapersScythe()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_BaseNPC_Hero",
+          "name": "SetBuyBackDisabledByReapersScythe",
+          "signature": "SetBuyBackDisabledByReapersScythe(buybackDisabled)"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMaxDebuffDuration",
+          "signature": "GetModifierMaxDebuffDuration()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSpellAmplify_PercentageCreep",
+          "signature": "GetModifierSpellAmplify_PercentageCreep()"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnPreDebuffApplied",
+          "signature": "OnPreDebuffApplied()"
+        },
+        {
+          "type": "class",
+          "name": "CTakeDamageInfo"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "AddDamage",
+          "signature": "AddDamage(addAmount)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "AddDamageType",
+          "signature": "AddDamageType(damageType)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetAmmoType",
+          "signature": "GetAmmoType()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetAttacker",
+          "signature": "GetAttacker()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamage",
+          "signature": "GetDamage()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageCustom",
+          "signature": "GetDamageCustom()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageForce",
+          "signature": "GetDamageForce()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamagePosition",
+          "signature": "GetDamagePosition()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageType",
+          "signature": "GetDamageType()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetInflictor",
+          "signature": "GetInflictor()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetOriginalDamage",
+          "signature": "GetOriginalDamage()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetReportedPosition",
+          "signature": "GetReportedPosition()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetTotalledDamage",
+          "signature": "GetTotalledDamage()"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "HasDamageType",
+          "signature": "HasDamageType(damageType)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "ScaleDamage",
+          "signature": "ScaleDamage(scaleAmount)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetAmmoType",
+          "signature": "SetAmmoType(ammoType)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetAttacker",
+          "signature": "SetAttacker(attacker)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamage",
+          "signature": "SetDamage(damage)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageCustom",
+          "signature": "SetDamageCustom(damageCustom)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageForce",
+          "signature": "SetDamageForce(damageForce)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamagePosition",
+          "signature": "SetDamagePosition(damagePosition)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageType",
+          "signature": "SetDamageType(damageType)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetOriginalDamage",
+          "signature": "SetOriginalDamage(originalDamage)"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetReportedPosition",
+          "signature": "SetReportedPosition(reportedPosition)"
+        }
+      ],
+      "changed": [
+        {
+          "type": "method",
+          "name": "Script_GetMagicalArmorValue",
+          "class": "CDOTA_BaseNPC",
+          "changes": {
+            "signature": {
+              "old": "Script_GetMagicalArmorValue(useExperimentalFormula, inflictor)",
+              "new": "Script_GetMagicalArmorValue(inflictor)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddExperience",
+          "class": "CDOTA_BaseNPC_Hero",
+          "changes": {
+            "signature": {
+              "old": "AddExperience(xp, reason, applyBotDifficultyScaling, incrementTotal)",
+              "new": "AddExperience(xp, reason, applyBotDifficultyScaling, incrementTotal, cloneCount)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "BeginTemporaryNight",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "BeginTemporaryNight(duration)",
+              "new": "BeginTemporaryNight(duration, arg2)"
+            }
+          }
+        }
+      ]
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
+          "value": 0
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_INVALID_ORDERS",
+          "name": "DOTA_INVALID_ORDER_CANT_BUYBACK_DEVILS_BARGAIN",
+          "value": 98
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_INVALID_ORDERS",
+          "name": "DOTA_INVALID_ORDER_PURCHASE_LEVEL",
+          "value": 122
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_BONUS_PURE_DAMAGE",
+          "value": 28
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+          "value": 1802
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_STATS_INTELLECT_NONE",
+          "value": 109
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_KILL_ASSIST_GOLD_BOOST",
+          "value": 139
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_BONUS",
+          "value": 146
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SPENT_ITEM_CHARGE",
+          "value": 225
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_KNOCKBACK_ATTEMPTED",
+          "value": 238
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SCEPTER_UPGRADE_SELECTED",
+          "value": 239
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SHARD_UPGRADE_SELECTED",
+          "value": 240
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE",
+          "value": 319
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BASE_ATTACKSPEED_PER_AGI_BONUS_PERCENTAGE",
+          "value": 341
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ITEMS",
+          "value": 394
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PURGE",
+          "value": 395
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ILLUSION_CREATED",
+          "value": 396
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HEROLEVELSCALE",
+          "value": 397
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_POWER_COGS",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_CHAOS_KNIGHT_HAVOC",
+          "value": 80
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_LARGO_FROGSTOMP",
+          "value": 81
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_NAGA_RIPTIDE",
+          "value": 82
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_INVALID_ORDERS",
+          "name": "DOTA_INVALID_ORDER_CANT_BUYBACK_REAPERS_SCYTHE",
+          "value": 98
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1800
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_CREEP",
+          "value": 47
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAX_DEBUFF_DURATION",
+          "value": 184
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PREDEBUFF_APPLIED",
+          "value": 282
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_FISSURE",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_DROWNRECOVER",
+          "value": 524288
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_ACID",
+          "value": 1048576
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_SLOWBURN",
+          "value": 2097152
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineDamageTypes",
+          "name": "DMG_REMOVENORAGDOLL",
+          "value": 4194304
+        }
+      ],
+      "changed": []
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "neutral",
+          "name": "modifier_miniboss_fortification"
+        },
+        {
+          "type": "modifier",
+          "category": "neutral",
+          "name": "modifier_miniboss_team_unreliable_gold_tracker_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_foragers_health_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_foragers_kit"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_foragers_kit_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_hydras_breath"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_hydras_breath_procdamage"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_aghanims_scepter_wait_for_upgrade_selected"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_aghanims_shard_wait_for_upgrade_selected"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_bloodstone_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_chasm_stone"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_conjurers_catalyst"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_conjurers_catalyst_overheat"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_consecrated_wraps_auto_barrier"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_consecrated_wraps_speed_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crellas_crozier_active"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crellas_crozier_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crellas_crozier_movespeed_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crellas_crozier_movespeed_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_eldwurms_edda"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_eldwurms_edda_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_enchanters_bauble"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_enhancement_hulking"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_enhancement_manic"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_enhancement_nimble"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_enhancement_vital"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_thinker_vfx"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_vision"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_foragers_health"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_foragers_mana"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_foragers_stats"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_harmonizer"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_hydras_breath_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_imbue_choice"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_nether_raiment"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_partisans_brand"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_prophets_pendulum"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_rabbits_foot"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_shawl"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_spellslinger"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_sphere_target_enemy"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_splintmail"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_stonefeather_satchel"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wizard_hat"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_spellslinger_restore"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_falconers_glove"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_obsidian_destroy_mana_cost"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_omninight_guardian_angel_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_omninight_guardian_angel_self_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "ancient_apparition",
+          "name": "modifier_ancient_apparition_bone_chill"
+        },
+        {
+          "type": "modifier",
+          "category": "ancient_apparition",
+          "name": "modifier_ancient_apparition_bone_chill_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "axe",
+          "name": "modifier_axe_culling_blade_permanent"
+        },
+        {
+          "type": "modifier",
+          "category": "bane",
+          "name": "modifier_bane_ichor_of_nyctasha_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "beastmaster",
+          "name": "modifier_beastmaster_summon_raptor"
+        },
+        {
+          "type": "modifier",
+          "category": "beastmaster",
+          "name": "modifier_beastmaster_summon_raptor_summoning"
+        },
+        {
+          "type": "modifier",
+          "category": "beastmaster",
+          "name": "modifier_beastmaster_wild_axes_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_holy_persuasion_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_zealot"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_zealot_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "crystal_maiden",
+          "name": "modifier_crystal_maiden_cold_comfort"
+        },
+        {
+          "type": "modifier",
+          "category": "crystal_maiden",
+          "name": "modifier_crystal_maiden_glacial_guard_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_dragon_blood"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_wyrms_wrath"
+        },
+        {
+          "type": "modifier",
+          "category": "doom_bringer",
+          "name": "modifier_doom_bringer_lvl_pain_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "drow_ranger",
+          "name": "modifier_drow_ranger_glaicer_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "faceless_void",
+          "name": "modifier_faceless_void_time_dilation_distortion_aura_applicator"
+        },
+        {
+          "type": "modifier",
+          "category": "faceless_void",
+          "name": "modifier_faceless_void_time_dilation_selfbuff"
+        },
+        {
+          "type": "modifier",
+          "category": "furion",
+          "name": "modifier_furion_treant_hero_damage"
+        },
+        {
+          "type": "modifier",
+          "category": "juggernaut",
+          "name": "modifier_juggernaut_trinity_movement"
+        },
+        {
+          "type": "modifier",
+          "category": "juggernaut",
+          "name": "modifier_juggernaut_vaulted_strike"
+        },
+        {
+          "type": "modifier",
+          "category": "juggernaut",
+          "name": "modifier_juggernaut_vaulted_strike_slashing"
+        },
+        {
+          "type": "modifier",
+          "category": "kunkka",
+          "name": "modifier_kunkka_tidebringer_armor_pierce"
+        },
+        {
+          "type": "modifier",
+          "category": "life_stealer",
+          "name": "modifier_life_stealer_open_wounds_attack_speed_bonus"
+        },
+        {
+          "type": "modifier",
+          "category": "lion",
+          "name": "modifier_lion_to_hell_and_back_respawn_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "mirana",
+          "name": "modifier_mirana_celestial_quiver"
+        },
+        {
+          "type": "modifier",
+          "category": "mirana",
+          "name": "modifier_mirana_nightveil"
+        },
+        {
+          "type": "modifier",
+          "category": "morphling",
+          "name": "modifier_morphling_ebb_and_flow"
+        },
+        {
+          "type": "modifier",
+          "category": "morphling",
+          "name": "modifier_morphling_ebb_and_flow_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "morphling",
+          "name": "modifier_morphling_morph_str_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "morphling",
+          "name": "modifier_morphling_syntropy"
+        },
+        {
+          "type": "modifier",
+          "category": "morphling",
+          "name": "modifier_morphling_syntropy_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "nevermore",
+          "name": "modifier_nevermore_feast_of_souls_collection"
+        },
+        {
+          "type": "modifier",
+          "category": "nevermore",
+          "name": "modifier_nevermore_feast_of_souls_linger"
+        },
+        {
+          "type": "modifier",
+          "category": "night_stalker",
+          "name": "modifier_night_stalker_midnight_feast"
+        },
+        {
+          "type": "modifier",
+          "category": "rattletrap",
+          "name": "modifier_rattletrap_cogs_movement"
+        },
+        {
+          "type": "modifier",
+          "category": "shadow_shaman",
+          "name": "modifier_shadow_shaman_chicken_speed"
+        },
+        {
+          "type": "modifier",
+          "category": "shadow_shaman",
+          "name": "modifier_shadow_shaman_mass_serpent_ward_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "sniper",
+          "name": "modifier_sniper_take_aim"
+        },
+        {
+          "type": "modifier",
+          "category": "tidehunter",
+          "name": "modifier_tidehunter_krill_eater_counter"
+        },
+        {
+          "type": "modifier",
+          "category": "tidehunter",
+          "name": "modifier_tidehunter_krill_eater_stacks"
+        },
+        {
+          "type": "modifier",
+          "category": "tinker",
+          "name": "modifier_tinker_turret"
+        },
+        {
+          "type": "modifier",
+          "category": "tinker",
+          "name": "modifier_tinker_turret_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "tinker",
+          "name": "modifier_tinker_turret_drop_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "tiny",
+          "name": "modifier_tiny_tree_grab_damage"
+        },
+        {
+          "type": "modifier",
+          "category": "vengefulspirit",
+          "name": "modifier_vengefulspirit_command_aura_effect_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "vengefulspirit",
+          "name": "modifier_vengefulspirit_restitution_enemydebuff"
+        },
+        {
+          "type": "modifier",
+          "category": "vengefulspirit",
+          "name": "modifier_vengefulspirit_restitution_revival"
+        },
+        {
+          "type": "modifier",
+          "category": "venomancer",
+          "name": "modifier_venomancer_snakebite"
+        },
+        {
+          "type": "modifier",
+          "category": "weaver",
+          "name": "modifier_weaver_threads_of_fate"
+        },
+        {
+          "type": "modifier",
+          "category": "weaver",
+          "name": "modifier_weaver_threads_of_fate_buff_linger"
+        },
+        {
+          "type": "modifier",
+          "category": "weaver",
+          "name": "modifier_weaver_threads_of_fate_established"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_tailwind"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_tailwind_counter"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_tailwind_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "broodmother",
+          "name": "modifier_broodmother_webwalk"
+        },
+        {
+          "type": "modifier",
+          "category": "broodmother",
+          "name": "modifier_broodmother_webwalk_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "broodmother",
+          "name": "modifier_broodmother_webwalk_trap_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "bounty_hunter",
+          "name": "modifier_bounty_hunter_big_game_hunter_tracks"
+        },
+        {
+          "type": "modifier",
+          "category": "spirit_breaker",
+          "name": "modifier_spirit_breaker_bull_rush_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "spirit_breaker",
+          "name": "modifier_spirit_breaker_bull_rush_linger"
+        },
+        {
+          "type": "modifier",
+          "category": "spirit_breaker",
+          "name": "modifier_spirit_breaker_greater_bash_cascading_bashes"
+        },
+        {
+          "type": "modifier",
+          "category": "spirit_breaker",
+          "name": "modifier_spirit_breaker_greater_bash_cascading_bashes_tracker"
+        },
+        {
+          "type": "modifier",
+          "category": "spirit_breaker",
+          "name": "modifier_spiritbreaker_greater_bash_knockback"
+        },
+        {
+          "type": "modifier",
+          "category": "obsidian_destroyer",
+          "name": "modifier_obsidian_destroyer_objurgation_cd"
+        },
+        {
+          "type": "modifier",
+          "category": "obsidian_destroyer",
+          "name": "modifier_obsidian_destroyer_objurgation_mana"
+        },
+        {
+          "type": "modifier",
+          "category": "shadow_demon",
+          "name": "modifier_shadow_demon_innate_soul_catcher_hploss"
+        },
+        {
+          "type": "modifier",
+          "category": "ogre_magi",
+          "name": "modifier_ogre_magi_school"
+        },
+        {
+          "type": "modifier",
+          "category": "gyrocopter",
+          "name": "modifier_gyrocopter_afterburner"
+        },
+        {
+          "type": "modifier",
+          "category": "rubick",
+          "name": "modifier_rubick_curiosity"
+        },
+        {
+          "type": "modifier",
+          "category": "rubick",
+          "name": "modifier_rubick_curiosity_from_heroes_tracker"
+        },
+        {
+          "type": "modifier",
+          "category": "wisp",
+          "name": "modifier_wisp_equilibrium"
+        },
+        {
+          "type": "modifier",
+          "category": "disruptor",
+          "name": "modifier_disruptor_kinetic_field_touch_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "templar_assassin",
+          "name": "modifier_templar_assassin_inner_peace_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "templar_assassin",
+          "name": "modifier_templar_assassin_meditation"
+        },
+        {
+          "type": "modifier",
+          "category": "templar_assassin",
+          "name": "modifier_templar_assassin_meditation_illusion"
+        },
+        {
+          "type": "modifier",
+          "category": "naga_siren",
+          "name": "modifier_naga_siren_slithereen_cutlass"
+        },
+        {
+          "type": "modifier",
+          "category": "naga_siren",
+          "name": "modifier_naga_siren_slithereen_cutlass_miss_chance"
+        },
+        {
+          "type": "modifier",
+          "category": "nyx_assassin",
+          "name": "modifier_nyx_assassin_neuro_sting"
+        },
+        {
+          "type": "modifier",
+          "category": "nyx_assassin",
+          "name": "modifier_nyx_assassin_neuro_sting_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "keeper_of_the_light",
+          "name": "modifier_keeper_of_the_light_bright_speed"
+        },
+        {
+          "type": "modifier",
+          "category": "visage",
+          "name": "modifier_visage_silent_as_the_grave_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "visage",
+          "name": "modifier_visage_talent_base_damage"
+        },
+        {
+          "type": "modifier",
+          "category": "meepo",
+          "name": "modifier_meepo_fling_held"
+        },
+        {
+          "type": "modifier",
+          "category": "meepo",
+          "name": "modifier_meepo_fling_held_caster"
+        },
+        {
+          "type": "modifier",
+          "category": "meepo",
+          "name": "modifier_meepo_geomancy"
+        },
+        {
+          "type": "modifier",
+          "category": "troll_warlord",
+          "name": "modifier_troll_warlord_switch_stance"
+        },
+        {
+          "type": "modifier",
+          "category": "bristleback",
+          "name": "modifier_bristleback_brawlers_grit"
+        },
+        {
+          "type": "modifier",
+          "category": "bristleback",
+          "name": "modifier_bristleback_brawlers_grit_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "elder_titan",
+          "name": "modifier_elder_titan_fundamental_fury"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_duel_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_duel_aura_effect"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_intimidate"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_intimidate_damage_reduction"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_intimidate_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "legion_commander",
+          "name": "modifier_legion_commander_outfight_them_aura_marker"
+        },
+        {
+          "type": "modifier",
+          "category": "techies",
+          "name": "modifier_techies_mutually_assured_destruction"
+        },
+        {
+          "type": "modifier",
+          "category": "techies",
+          "name": "modifier_techies_snare_trap"
+        },
+        {
+          "type": "modifier",
+          "category": "techies",
+          "name": "modifier_techies_snare_trap_slowed"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_death"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_death_next"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_fool"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_fool_next"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_lovers"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_lovers_next"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_tower"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_tower_next"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_world"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_diviners_deck_the_world_next"
+        },
+        {
+          "type": "modifier",
+          "category": "winter_wyvern",
+          "name": "modifier_winter_wyvern_accelerated_learning"
+        },
+        {
+          "type": "modifier",
+          "category": "mars",
+          "name": "modifier_mars_arena_of_blood_vision_obstruction"
+        },
+        {
+          "type": "modifier",
+          "category": "mars",
+          "name": "modifier_mars_arena_of_blood_vision_obstruction_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "mars",
+          "name": "modifier_mars_immovable"
+        },
+        {
+          "type": "modifier",
+          "category": "snapfire",
+          "name": "modifier_snapfire_boomstick"
+        },
+        {
+          "type": "modifier",
+          "category": "hoodwink",
+          "name": "modifier_hoodwink_tomokan_tracker_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "hoodwink",
+          "name": "modifier_hoodwink_tomokan_tracker_tracks"
+        },
+        {
+          "type": "modifier",
+          "category": "muerta",
+          "name": "modifier_muerta_spectral_slug_ethereal"
+        },
+        {
+          "type": "modifier",
+          "category": "ringmaster",
+          "name": "modifier_ringmaster_unicycle_cycle"
+        },
+        {
+          "type": "modifier",
+          "category": "kez",
+          "name": "modifier_kez_shodo_sai_mark_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "largo",
+          "name": "modifier_largo_catchy_lick_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "rune",
+          "name": "modifier_largo_catchy_lick_rune"
+        }
+      ],
+      "removed": [
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_assassins_dagger_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_gladiator_helm_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_aetherial_halo"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_aetherial_halo_burn"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_aetherial_halo_land"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_ancient_perseverance"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_arcane_scout"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_arcane_scout_invulnerability"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_arcane_scout_self_vision"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_assassins_dagger"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_barricade"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_barricade_blocker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_barricade_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_blighted_spirit"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_blighted_spirit_blight"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_circlet_of_the_flayed_twins"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_claddish_spyglass"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_crystal_raindrop"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_cursed_circlet"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_essence_distiller_self_xp"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_fortitude_ring"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_fortitude_ring_active"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_gladiator_helm"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_gloves_of_travel"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_grandmasters_glaive"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_grandmasters_glaive_bonus_agi"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_grandmasters_glaive_bonus_int"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_grandmasters_glaive_bonus_str"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_hellbear_totem"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_hermes_sandals"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_hermes_sandals_active"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_horizons_equilibrium"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_icarus_wings"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_icarus_wings_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_icarus_wings_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_light_robes"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_lunar_crest"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_lunar_crest_barrier_addition"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_lunar_crest_barrier_reduction"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_magus_minimus"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_magus_minimus_aura_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_magus_minimus_inhibit"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_manacles_of_power"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_manacles_of_power_effect"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_medallion_of_courage"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_neutral_tabi"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_oakheart"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_ogre_heart"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_sample_picker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_samurai_tabi"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_samurai_tabi_agi"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_samurai_tabi_int"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_samurai_tabi_str"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_satchel"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_slime_vial"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_slime_vial_spill_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_slime_vial_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_star_mace"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_tome_of_omniscience"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_turtle_shell"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_turtle_shell_shell"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_veil_of_discord_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_vengeances_shadow"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_venom_gland"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wand_of_sanctitude"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wand_of_sanctitude_active_thinker"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wand_of_the_brine"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wand_of_the_brine_active"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_warhammer"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_warhammer_armor"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_witches_switch"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_witches_switch_aura_effect"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_wizard_glass"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_oakheart_healing"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_overflowing_elixir_regen"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_vengeances_shadow_illusions"
+        },
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_venom_gland_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_consecrated_wraps_heal"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_crellas_crozier_active"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_hydras_breath"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_hydras_breath_procdamage"
+        },
+        {
+          "type": "modifier",
+          "category": "other",
+          "name": "modifier_watcher_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "axe",
+          "name": "modifier_axe_coat_of_blood"
+        },
+        {
+          "type": "modifier",
+          "category": "beastmaster",
+          "name": "modifier_beastmaster_call_of_the_wild_hawk"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_disciple_attack_speed"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_innate_active_disciple"
+        },
+        {
+          "type": "modifier",
+          "category": "chen",
+          "name": "modifier_chen_summon_convert_tooltip"
+        },
+        {
+          "type": "modifier",
+          "category": "crystal_maiden",
+          "name": "modifier_crystal_maiden_blueheart_floe"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_corrosive_breath"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_dragon_blood_aura"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_frost_breath"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_inherited_vigor"
+        },
+        {
+          "type": "modifier",
+          "category": "dragon_knight",
+          "name": "modifier_dragon_knight_splash_attack"
+        },
+        {
+          "type": "modifier",
+          "category": "doom_bringer",
+          "name": "modifier_doom_bringer_devour_upgrade_timer"
+        },
+        {
+          "type": "modifier",
+          "category": "drow_ranger",
+          "name": "modifier_drow_ranger_vantage_point"
+        },
+        {
+          "type": "modifier",
+          "category": "kunkka",
+          "name": "modifier_kunkka_ghost_ship_damage_absorb_lesser"
+        },
+        {
+          "type": "modifier",
+          "category": "lich",
+          "name": "modifier_lich_death_charge"
+        },
+        {
+          "type": "modifier",
+          "category": "lion",
+          "name": "modifier_lion_mana_drain_buff"
+        },
+        {
+          "type": "modifier",
+          "category": "lion",
+          "name": "modifier_lion_mana_drain_debuff"
+        },
+        {
+          "type": "modifier",
+          "category": "rattletrap",
+          "name": "modifier_rattletrap_cog_leash"
+        },
+        {
+          "type": "modifier",
+          "category": "rattletrap",
+          "name": "modifier_rattletrap_cog_thinker_leash"
+        },
+        {
+          "type": "modifier",
+          "category": "venomancer",
+          "name": "modifier_venomancer_noxious_plague_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "venomancer",
+          "name": "modifier_venomancer_poison_nova_intrinsic"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_windrun_ally"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_windrun_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_windrun_slow"
+        },
+        {
+          "type": "modifier",
+          "category": "windrunner",
+          "name": "modifier_windrunner_windrun_speed"
+        },
+        {
+          "type": "modifier",
+          "category": "zuus",
+          "name": "modifier_zuus_heavenly_jump_boost"
+        },
+        {
+          "type": "modifier",
+          "category": "rubick",
+          "name": "modifier_rubick_fade_bolt_buff_counter"
+        },
+        {
+          "type": "modifier",
+          "category": "wisp",
+          "name": "modifier_wisp_sight_seer"
+        },
+        {
+          "type": "modifier",
+          "category": "meepo",
+          "name": "modifier_meepo_self_geostrike"
+        },
+        {
+          "type": "modifier",
+          "category": "oracle",
+          "name": "modifier_oracle_false_promise_invis"
+        },
+        {
+          "type": "modifier",
+          "category": "hoodwink",
+          "name": "modifier_hoodwink_scurry_passive"
+        },
+        {
+          "type": "modifier",
+          "category": "marci",
+          "name": "modifier_marci_guardian_magic_immunity"
+        }
+      ],
+      "changed": []
+    },
+    "Game Events": {
+      "added": [
+        {
+          "type": "event",
+          "name": "server_spawn",
+          "fieldsDetail": "hostname: string, address: string, port: short, game: string, mapname: string, addonname: string, maxplayers: long, os: string, dedicated: bool, password: bool"
+        },
+        {
+          "type": "event",
+          "name": "server_pre_shutdown",
+          "fieldsDetail": "reason: string"
+        },
+        {
+          "type": "event",
+          "name": "server_shutdown",
+          "fieldsDetail": "reason: string"
+        },
+        {
+          "type": "event",
+          "name": "server_message",
+          "fieldsDetail": "text: string"
+        },
+        {
+          "type": "event",
+          "name": "server_cvar",
+          "fieldsDetail": "cvarname: string, cvarvalue: string"
+        },
+        {
+          "type": "event",
+          "name": "player_activate",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "player_connect_full",
+          "fieldsDetail": "userid: EntityIndex, index: short, PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "player_full_update",
+          "fieldsDetail": "userid: EntityIndex, count: short"
+        },
+        {
+          "type": "event",
+          "name": "player_connect",
+          "fieldsDetail": "name: string, userid: EntityIndex, networkid: string, xuid: uint64, bot: bool, index: byte"
+        },
+        {
+          "type": "event",
+          "name": "player_disconnect",
+          "fieldsDetail": "userid: EntityIndex, reason: short, name: string, networkid: string, xuid: uint64, PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "player_info",
+          "fieldsDetail": "name: string, userid: EntityIndex, steamid: uint64, bot: bool"
+        },
+        {
+          "type": "event",
+          "name": "player_spawn",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "player_team",
+          "fieldsDetail": "userid: EntityIndex, team: byte, oldteam: byte, disconnect: bool, silent: bool, name: string, isbot: bool"
+        },
+        {
+          "type": "event",
+          "name": "local_player_team",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "local_player_controller_team",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "player_changename",
+          "fieldsDetail": "userid: EntityIndex, oldname: string, newname: string"
+        },
+        {
+          "type": "event",
+          "name": "player_hurt",
+          "fieldsDetail": "userid: EntityIndex, attacker: player_controller_and_pawn, health: byte"
+        },
+        {
+          "type": "event",
+          "name": "player_chat",
+          "fieldsDetail": "teamonly: bool, userid: EntityIndex, playerid: PlayerID, text: string"
+        },
+        {
+          "type": "event",
+          "name": "local_player_pawn_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "teamplay_broadcast_audio",
+          "fieldsDetail": "team: byte, sound: string"
+        },
+        {
+          "type": "event",
+          "name": "finale_start",
+          "fieldsDetail": "rushes: short"
+        },
+        {
+          "type": "event",
+          "name": "player_stats_updated",
+          "fieldsDetail": "forceupload: bool"
+        },
+        {
+          "type": "event",
+          "name": "user_data_downloaded",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "ragdoll_dissolved",
+          "fieldsDetail": "entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "team_info",
+          "fieldsDetail": "teamid: byte, teamname: string"
+        },
+        {
+          "type": "event",
+          "name": "team_score",
+          "fieldsDetail": "teamid: byte, score: short"
+        },
+        {
+          "type": "event",
+          "name": "hltv_cameraman",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "hltv_chase",
+          "fieldsDetail": "target1: player_controller, target2: player_controller, distance: short, theta: short, phi: short, inertia: byte, ineye: byte"
+        },
+        {
+          "type": "event",
+          "name": "hltv_rank_camera",
+          "fieldsDetail": "index: byte, rank: float, target: player_controller"
+        },
+        {
+          "type": "event",
+          "name": "hltv_rank_entity",
+          "fieldsDetail": "userid: EntityIndex, rank: float, target: player_controller"
+        },
+        {
+          "type": "event",
+          "name": "hltv_fixed",
+          "fieldsDetail": "posx: long, posy: long, posz: long, theta: short, phi: short, offset: short, fov: float, target: player_controller"
+        },
+        {
+          "type": "event",
+          "name": "hltv_message",
+          "fieldsDetail": "text: string"
+        },
+        {
+          "type": "event",
+          "name": "hltv_status",
+          "fieldsDetail": "clients: long, slots: long, proxies: short, master: string"
+        },
+        {
+          "type": "event",
+          "name": "hltv_title",
+          "fieldsDetail": "text: string"
+        },
+        {
+          "type": "event",
+          "name": "hltv_chat",
+          "fieldsDetail": "text: string, steamID: uint64, name: string"
+        },
+        {
+          "type": "event",
+          "name": "hltv_versioninfo",
+          "fieldsDetail": "version: long"
+        },
+        {
+          "type": "event",
+          "name": "hltv_replay",
+          "fieldsDetail": "delay: long, reason: long"
+        },
+        {
+          "type": "event",
+          "name": "hltv_replay_status",
+          "fieldsDetail": "reason: long"
+        },
+        {
+          "type": "event",
+          "name": "demo_start",
+          "fieldsDetail": "dota_combatlog_list: local, dota_hero_chase_list: local, dota_pick_hero_list: local"
+        },
+        {
+          "type": "event",
+          "name": "demo_stop",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "demo_skip",
+          "fieldsDetail": "playback_tick: long, skipto_tick: long, user_message_list: local, dota_hero_chase_list: local"
+        },
+        {
+          "type": "event",
+          "name": "map_shutdown",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "map_transition",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "hostname_changed",
+          "fieldsDetail": "hostname: string"
+        },
+        {
+          "type": "event",
+          "name": "difficulty_changed",
+          "fieldsDetail": "newDifficulty: short, oldDifficulty: short, strDifficulty: string"
+        },
+        {
+          "type": "event",
+          "name": "game_message",
+          "fieldsDetail": "target: byte, text: string"
+        },
+        {
+          "type": "event",
+          "name": "game_newmap",
+          "fieldsDetail": "mapname: string, transition: bool"
+        },
+        {
+          "type": "event",
+          "name": "round_start",
+          "fieldsDetail": "timelimit: long, fraglimit: long, objective: string"
+        },
+        {
+          "type": "event",
+          "name": "round_end",
+          "fieldsDetail": "winner: byte, reason: byte, message: string, time: float"
+        },
+        {
+          "type": "event",
+          "name": "round_start_pre_entity",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "round_start_post_nav",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "round_freeze_end",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "teamplay_round_start",
+          "fieldsDetail": "full_reset: bool"
+        },
+        {
+          "type": "event",
+          "name": "player_death",
+          "fieldsDetail": "userid: EntityIndex, attacker: player_controller_and_pawn"
+        },
+        {
+          "type": "event",
+          "name": "player_footstep",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "player_hintmessage",
+          "fieldsDetail": "hintmessage: string"
+        },
+        {
+          "type": "event",
+          "name": "break_breakable",
+          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, material: byte"
+        },
+        {
+          "type": "event",
+          "name": "broken_breakable",
+          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, material: byte"
+        },
+        {
+          "type": "event",
+          "name": "break_prop",
+          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, player_held: bool, player_thrown: bool, player_dropped: bool"
+        },
+        {
+          "type": "event",
+          "name": "entity_killed",
+          "fieldsDetail": "entindex_killed: EntityIndex, entindex_attacker: EntityIndex, entindex_inflictor: EntityIndex, damagebits: long"
+        },
+        {
+          "type": "event",
+          "name": "door_close",
+          "fieldsDetail": "userid: EntityIndex, checkpoint: bool"
+        },
+        {
+          "type": "event",
+          "name": "vote_started",
+          "fieldsDetail": "issue: string, param1: string, votedata: string, team: byte, initiator: long, reliable: 1"
+        },
+        {
+          "type": "event",
+          "name": "vote_failed",
+          "fieldsDetail": "team: byte, reliable: 1"
+        },
+        {
+          "type": "event",
+          "name": "vote_passed",
+          "fieldsDetail": "details: string, param1: string, team: byte, reliable: 1"
+        },
+        {
+          "type": "event",
+          "name": "vote_changed",
+          "fieldsDetail": "yesVotes: byte, noVotes: byte, potentialVotes: byte"
+        },
+        {
+          "type": "event",
+          "name": "vote_cast_yes",
+          "fieldsDetail": "team: byte, entityid: long"
+        },
+        {
+          "type": "event",
+          "name": "vote_cast_no",
+          "fieldsDetail": "team: byte, entityid: long"
+        },
+        {
+          "type": "event",
+          "name": "achievement_event",
+          "fieldsDetail": "achievement_name: string, cur_val: short, max_val: short"
+        },
+        {
+          "type": "event",
+          "name": "achievement_earned",
+          "fieldsDetail": "player: player_controller, achievement: short"
+        },
+        {
+          "type": "event",
+          "name": "achievement_write_failed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "bonus_updated",
+          "fieldsDetail": "numadvanced: short, numbronze: short, numsilver: short, numgold: short"
+        },
+        {
+          "type": "event",
+          "name": "spec_target_updated",
+          "fieldsDetail": "userid: EntityIndex, target: ehandle"
+        },
+        {
+          "type": "event",
+          "name": "spec_mode_updated",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "entity_visible",
+          "fieldsDetail": "userid: EntityIndex, subject: long, classname: string, entityname: string"
+        },
+        {
+          "type": "event",
+          "name": "gameinstructor_draw",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "gameinstructor_nodraw",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "flare_ignite_npc",
+          "fieldsDetail": "entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "helicopter_grenade_punt_miss",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "physgun_pickup",
+          "fieldsDetail": "target: ehandle"
+        },
+        {
+          "type": "event",
+          "name": "inventory_updated",
+          "fieldsDetail": "itemdef: short, itemid: long"
+        },
+        {
+          "type": "event",
+          "name": "cart_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "store_pricesheet_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "item_schema_initialized",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "drop_rate_modified",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "event_ticket_modified",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "gc_connected",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "instructor_start_lesson",
+          "fieldsDetail": "userid: EntityIndex, hint_name: string, hint_target: long, vr_movement_type: byte, vr_single_controller: bool, vr_controller_type: byte"
+        },
+        {
+          "type": "event",
+          "name": "instructor_close_lesson",
+          "fieldsDetail": "userid: EntityIndex, hint_name: string"
+        },
+        {
+          "type": "event",
+          "name": "instructor_server_hint_create",
+          "fieldsDetail": "userid: EntityIndex, hint_entindex: EntityIndex, hint_name: string, hint_replace_key: string, hint_target: long, hint_activator_userid: EntityIndex, hint_timeout: short, hint_icon_onscreen: string, hint_icon_offscreen: string, hint_caption: string, hint_activator_caption: string, hint_color: string, hint_icon_offset: float, hint_range: float, hint_flags: long, hint_binding: string, hint_allow_nodraw_target: bool, hint_nooffscreen: bool, hint_forcecaption: bool, hint_local_player_only: bool, hint_start_sound: string, hint_layoutfile: string, hint_vr_panel_type: short, hint_vr_height_offset: float, hint_vr_offset_x: float, hint_vr_offset_y: float, hint_vr_offset_z: float"
+        },
+        {
+          "type": "event",
+          "name": "instructor_server_hint_stop",
+          "fieldsDetail": "hint_name: string, hint_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "set_instructor_group_enabled",
+          "fieldsDetail": "group: string, enabled: short"
+        },
+        {
+          "type": "event",
+          "name": "clientside_lesson_closed",
+          "fieldsDetail": "lesson_name: string"
+        },
+        {
+          "type": "event",
+          "name": "dynamic_shadow_light_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "bot_takeover",
+          "fieldsDetail": "userid: EntityIndex, botid: player_controller, p: float, y: float, r: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_chase_hero",
+          "fieldsDetail": "target1: short, target2: short, type: byte, priority: short, gametime: float, highlight: bool, target1playerid: PlayerID, target2playerid: PlayerID, eventtype: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_combatlog",
+          "fieldsDetail": "type: byte, sourcename: short, targetname: short, attackername: short, inflictorname: short, attackerillusion: bool, targetillusion: bool, value: short, health: short, timestamp: float, targetsourcename: short, timestampraw: float, attackerhero: bool, targethero: bool, ability_toggle_on: bool, ability_toggle_off: bool, ability_level: short, gold_reason: short, xp_reason: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_game_state_change",
+          "fieldsDetail": "old_state: short, new_state: short"
+        },
+        {
+          "type": "event",
+          "name": "hero_selected",
+          "fieldsDetail": "player_id: PlayerID, team_number: short, hero_unit: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_pick_hero",
+          "fieldsDetail": "player: short, heroindex: short, hero: string"
+        },
+        {
+          "type": "event",
+          "name": "modifier_event",
+          "fieldsDetail": "eventname: string, caster: short, ability: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_kill",
+          "fieldsDetail": "victim_userid: EntityIndex, killer1_userid: EntityIndex, killer2_userid: EntityIndex, killer3_userid: EntityIndex, killer4_userid: EntityIndex, killer5_userid: EntityIndex, bounty: short, neutral: short, greevil: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_deny",
+          "fieldsDetail": "killer_userid: EntityIndex, victim_userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_barracks_kill",
+          "fieldsDetail": "barracks_id: short, barracks_type: short, teamnumber: short, killer_userid: EntityIndex, killer_team: short, gold: short, pos_x: float, pos_y: float, pos_z: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_tower_kill",
+          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short, tier: short, pos_x: float, pos_y: float, pos_z: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_tower_deny",
+          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short, tier: short, pos_x: float, pos_y: float, pos_z: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_effigy_kill",
+          "fieldsDetail": "owner_userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_roshan_kill",
+          "fieldsDetail": "teamnumber: short, gold: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_miniboss_kill",
+          "fieldsDetail": "shard_recipient_id: short, teamnumber: short, gold: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_banner_planted",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_courier_lost",
+          "fieldsDetail": "killerid: short, teamnumber: short, bounty_gold: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_courier_respawned",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_glyph_used",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_super_creeps",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_purchase",
+          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_gifted",
+          "fieldsDetail": "userid: EntityIndex, item_ability_id: int, sourceid: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_placed_in_neutral_stash",
+          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_rune_pickup",
+          "fieldsDetail": "userid: EntityIndex, type: short, rune: short, bounty_amount: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_rune_deny",
+          "fieldsDetail": "userid: EntityIndex, rune: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_ward_killed",
+          "fieldsDetail": "userid: EntityIndex, type: short, bounty_amount: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_rune_spotted",
+          "fieldsDetail": "userid: EntityIndex, rune: short, map_location: string, rune_team: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_spotted",
+          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_no_battle_points",
+          "fieldsDetail": "userid: EntityIndex, reason: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_informational",
+          "fieldsDetail": "userid: EntityIndex, type: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_action_item",
+          "fieldsDetail": "reason: short, itemdef: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_ban_notification",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_event",
+          "fieldsDetail": "userid: EntityIndex, gold: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_timed_reward",
+          "fieldsDetail": "userid: EntityIndex, itmedef: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_pause_event",
+          "fieldsDetail": "userid: EntityIndex, value: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_kill_streak",
+          "fieldsDetail": "gold: short, killer_id: short, killer_streak: short, killer_multikill: short, victim_id: short, victim_streak: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_first_blood",
+          "fieldsDetail": "gold: short, killer_id: short, victim_id: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_assassin_announce",
+          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_assassin_denied",
+          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_chat_assassin_success",
+          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_update_hero_selection",
+          "fieldsDetail": "tabcycle: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_update_selected_unit",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_update_query_unit",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_update_killcam_unit",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_take_tower_damage",
+          "fieldsDetail": "PlayerID: PlayerID, damage: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_hud_error_message",
+          "fieldsDetail": "reason: byte, message: string, sequenceNumber: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_action_success",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_team_neutral_stash_items_changed",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_team_neutral_stash_items_acknowledged_changed",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_money_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_enemy_money_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_portrait_unit_stats_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_portrait_unit_modifiers_changed",
+          "fieldsDetail": "modifier_affects_abilities: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_force_portrait_update",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_inventory_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_ability_points_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_item_picked_up",
+          "fieldsDetail": "itemname: string, PlayerID: PlayerID, ItemEntityIndex: EntityIndex, HeroEntityIndex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_physical_destroyed",
+          "fieldsDetail": "itemname: string, PlayerID: PlayerID, ItemEntityIndex: EntityIndex, HeroEntityIndex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_neutral_item_sent_to_stash",
+          "fieldsDetail": "player_id: PlayerID, itemname: string, item_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_inventory_item_changed",
+          "fieldsDetail": "entityIndex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_ability_changed",
+          "fieldsDetail": "entityIndex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_spectator_talent_changed",
+          "fieldsDetail": "abilityname: string, playerid: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_portrait_ability_layout_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_inventory_item_added",
+          "fieldsDetail": "item_slot: short, inventory_player_id: PlayerID, itemname: string, item_entindex: EntityIndex, inventory_parent_entindex: EntityIndex, is_courier: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_inventory_changed_query_unit",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_link_clicked",
+          "fieldsDetail": "link: string, nav: bool, nav_back: bool, recipe: short, shop: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_set_quick_buy",
+          "fieldsDetail": "item: string, recipe: byte, toggle: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_quick_buy_changed",
+          "fieldsDetail": "item: string, recipe: byte"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_shop_changed",
+          "fieldsDetail": "prevshopmask: byte, shopmask: byte"
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_entered_shop",
+          "fieldsDetail": "shop_type: short, shop_entindex: EntityIndex, hero_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_show_killcam",
+          "fieldsDetail": "nodes: byte, player: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_show_minikillcam",
+          "fieldsDetail": "nodes: byte, player: short"
+        },
+        {
+          "type": "event",
+          "name": "gc_user_session_created",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "team_data_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "guild_data_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "guild_open_parties_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "fantasy_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "fantasy_league_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "fantasy_score_info_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "league_admin_info_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "league_series_info_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "player_info_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "player_info_individual_updated",
+          "fieldsDetail": "account_id: long"
+        },
+        {
+          "type": "event",
+          "name": "game_rules_state_change",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "match_history_updated",
+          "fieldsDetail": "SteamID: uint64"
+        },
+        {
+          "type": "event",
+          "name": "match_details_updated",
+          "fieldsDetail": "matchID: uint64"
+        },
+        {
+          "type": "event",
+          "name": "team_details_updated",
+          "fieldsDetail": "teamID: long"
+        },
+        {
+          "type": "event",
+          "name": "live_games_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "recent_matches_updated",
+          "fieldsDetail": "Page: short"
+        },
+        {
+          "type": "event",
+          "name": "news_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "persona_updated",
+          "fieldsDetail": "SteamID: uint64"
+        },
+        {
+          "type": "event",
+          "name": "tournament_state_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "party_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "lobby_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dashboard_caches_cleared",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "last_hit",
+          "fieldsDetail": "PlayerID: PlayerID, EntKilled: short, FirstBlood: bool, HeroKill: bool, TowerKill: bool"
+        },
+        {
+          "type": "event",
+          "name": "player_completed_game",
+          "fieldsDetail": "PlayerID: PlayerID, Winner: byte"
+        },
+        {
+          "type": "event",
+          "name": "player_reconnected",
+          "fieldsDetail": "PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "nommed_tree",
+          "fieldsDetail": "PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_rune_activated_server",
+          "fieldsDetail": "PlayerID: PlayerID, rune: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_gained_level",
+          "fieldsDetail": "player: short, player_id: PlayerID, level: short, hero_entindex: EntityIndex, PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_learned_ability",
+          "fieldsDetail": "PlayerID: PlayerID, player: short, abilityname: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_used_ability",
+          "fieldsDetail": "PlayerID: PlayerID, abilityname: string, caster_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_non_player_used_ability",
+          "fieldsDetail": "abilityname: string, caster_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_begin_cast",
+          "fieldsDetail": "PlayerID: PlayerID, abilityname: string, caster_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_non_player_begin_cast",
+          "fieldsDetail": "abilityname: string, caster_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_ability_channel_finished",
+          "fieldsDetail": "abilityname: string, interrupted: bool, caster_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_holdout_revive_complete",
+          "fieldsDetail": "caster: short, target: short, channel_time: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_holdout_revive_eliminated",
+          "fieldsDetail": "caster: short, target: short, channel_time: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_killed",
+          "fieldsDetail": "PlayerID: PlayerID, HeroKill: bool, TowerKill: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_assist_earned",
+          "fieldsDetail": "entindex_hero: EntityIndex, playerid_victim: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "bindpanel_open",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "bindpanel_close",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "keybind_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_item_drag_begin",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_item_drag_end",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_shop_item_drag_begin",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_shop_item_drag_end",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_item_purchased",
+          "fieldsDetail": "PlayerID: PlayerID, itemname: string, itemcost: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_combined",
+          "fieldsDetail": "PlayerID: PlayerID, itemname: string, itemcost: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_used",
+          "fieldsDetail": "PlayerID: PlayerID, itemname: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_auto_purchase",
+          "fieldsDetail": "item_id: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_unit_event",
+          "fieldsDetail": "victim: short, attacker: short, basepriority: short, priority: short, eventtype: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_quest_started",
+          "fieldsDetail": "questIndex: long"
+        },
+        {
+          "type": "event",
+          "name": "dota_quest_completed",
+          "fieldsDetail": "questIndex: long"
+        },
+        {
+          "type": "event",
+          "name": "gameui_activated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "gameui_hidden",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "player_fullyjoined",
+          "fieldsDetail": "userid: EntityIndex, name: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_spectate_hero",
+          "fieldsDetail": "entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_match_done",
+          "fieldsDetail": "winningteam: byte"
+        },
+        {
+          "type": "event",
+          "name": "dota_match_done_client",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "joined_chat_channel",
+          "fieldsDetail": "channelName: string"
+        },
+        {
+          "type": "event",
+          "name": "left_chat_channel",
+          "fieldsDetail": "channelName: string"
+        },
+        {
+          "type": "event",
+          "name": "gc_chat_channel_list_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "file_downloaded",
+          "fieldsDetail": "success: bool, local_filename: string, remote_url: string"
+        },
+        {
+          "type": "event",
+          "name": "player_report_counts_updated",
+          "fieldsDetail": "positive_remaining: byte, negative_remaining: byte, positive_total: short, negative_total: short"
+        },
+        {
+          "type": "event",
+          "name": "scaleform_file_download_complete",
+          "fieldsDetail": "success: bool, local_filename: string, remote_url: string"
+        },
+        {
+          "type": "event",
+          "name": "item_purchased",
+          "fieldsDetail": "itemid: short"
+        },
+        {
+          "type": "event",
+          "name": "gc_mismatched_version",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_workshop_fileselected",
+          "fieldsDetail": "filename: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_workshop_filecanceled",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "rich_presence_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "live_leagues_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_random",
+          "fieldsDetail": "userid: EntityIndex, heroid: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_river_painted",
+          "fieldsDetail": "userid: EntityIndex, riverid: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_scan_used",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_scan_found_enemy",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_rd_chat_turn",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_ad_nominated_ban",
+          "fieldsDetail": "heroid: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_ad_ban",
+          "fieldsDetail": "heroid: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_ad_ban_count",
+          "fieldsDetail": "count: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_ad_hero_collision",
+          "fieldsDetail": "heroid: short, playerid1: PlayerID, playerid2: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_favorite_heroes_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "profile_opened",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "profile_closed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "item_preview_closed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dashboard_switched_section",
+          "fieldsDetail": "section: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_tournament_item_event",
+          "fieldsDetail": "winner_count: short, event_type: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_swap",
+          "fieldsDetail": "playerid1: PlayerID, playerid2: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_reset_suggested_items",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "halloween_high_score_received",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "halloween_phase_end",
+          "fieldsDetail": "phase: byte, team: byte"
+        },
+        {
+          "type": "event",
+          "name": "halloween_high_score_request_failed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_hud_skin_changed",
+          "fieldsDetail": "skin: string, style: byte"
+        },
+        {
+          "type": "event",
+          "name": "dota_inventory_player_got_item",
+          "fieldsDetail": "itemname: string"
+        },
+        {
+          "type": "event",
+          "name": "player_is_experienced",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "player_is_notexperienced",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_tutorial_lesson_start",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_tutorial_task_advance",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_tutorial_shop_toggled",
+          "fieldsDetail": "shop_opened: bool"
+        },
+        {
+          "type": "event",
+          "name": "richpresence_custom_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "game_end_visible",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "enable_china_logomark",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "highlight_hud_element",
+          "fieldsDetail": "elementname: string, duration: float"
+        },
+        {
+          "type": "event",
+          "name": "hide_highlight_hud_element",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "intro_video_finished",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "matchmaking_status_visibility_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "practice_lobby_visibility_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_courier_transfer_item",
+          "fieldsDetail": "hero_entindex: EntityIndex, courier_entindex: EntityIndex, item_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "full_ui_unlocked",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "client_disconnect",
+          "fieldsDetail": "reason_code: int, reason_desc: string"
+        },
+        {
+          "type": "event",
+          "name": "hero_selector_preview_set",
+          "fieldsDetail": "setindex: short"
+        },
+        {
+          "type": "event",
+          "name": "antiaddiction_toast",
+          "fieldsDetail": "message: string, duration: float"
+        },
+        {
+          "type": "event",
+          "name": "hero_picker_shown",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "hero_picker_hidden",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_local_quickbuy_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "hud_flip_changed",
+          "fieldsDetail": "flipped: bool"
+        },
+        {
+          "type": "event",
+          "name": "frosty_points_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "defeated",
+          "fieldsDetail": "entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "reset_defeated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "booster_state_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "tree_cut",
+          "fieldsDetail": "tree_x: float, tree_y: float"
+        },
+        {
+          "type": "event",
+          "name": "ugc_details_arrived",
+          "fieldsDetail": "published_file_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "ugc_subscribed",
+          "fieldsDetail": "published_file_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "ugc_unsubscribed",
+          "fieldsDetail": "published_file_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "ugc_download_requested",
+          "fieldsDetail": "published_file_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "ugc_installed",
+          "fieldsDetail": "published_file_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "prizepool_received",
+          "fieldsDetail": "success: bool, prizepool: uint64, leagueid: uint64"
+        },
+        {
+          "type": "event",
+          "name": "microtransaction_success",
+          "fieldsDetail": "txnid: uint64"
+        },
+        {
+          "type": "event",
+          "name": "dota_rubick_ability_steal",
+          "fieldsDetail": "abilityIndex: short, abilityLevel: byte"
+        },
+        {
+          "type": "event",
+          "name": "community_cached_names_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "spec_item_pickup",
+          "fieldsDetail": "player_id: PlayerID, item_name: string, purchase: bool, gift: bool, gift_player_id: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "spec_aegis_reclaim_time",
+          "fieldsDetail": "reclaim_time: float"
+        },
+        {
+          "type": "event",
+          "name": "account_all_hero_challenge_changed",
+          "fieldsDetail": "account_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "team_showcase_ui_update",
+          "fieldsDetail": "show: bool, account_id: uint64, hero_entindex: EntityIndex, display_ui_on_left: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_match_signout",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_illusions_created",
+          "fieldsDetail": "original_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_year_beast_killed",
+          "fieldsDetail": "killer_player_id: PlayerID, message: short, beast_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_spawned",
+          "fieldsDetail": "PlayerID: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_undoselection",
+          "fieldsDetail": "playerid1: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_challenge_socache_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_team_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "party_invites_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "lobby_invites_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "custom_game_mode_list_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "custom_game_lobby_list_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "friend_lobby_list_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_team_player_list_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_connection_state_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_details_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "custom_game_player_count_updated",
+          "fieldsDetail": "custom_game_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "custom_game_friends_played_updated",
+          "fieldsDetail": "custom_game_id: uint64"
+        },
+        {
+          "type": "event",
+          "name": "custom_games_friends_play_updated",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_player_update_assigned_hero",
+          "fieldsDetail": "playerid: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_hero_selection_dirty",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_npc_goal_reached",
+          "fieldsDetail": "npc_entindex: EntityIndex, goal_entindex: EntityIndex, next_goal_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_selected_custom_team",
+          "fieldsDetail": "player_id: PlayerID, team_id: short, success: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_coin_wager",
+          "fieldsDetail": "userid: EntityIndex, message: short, coins: uint64"
+        },
+        {
+          "type": "event",
+          "name": "dota_wager_token",
+          "fieldsDetail": "userid: EntityIndex, message: short, amount: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_rank_wager",
+          "fieldsDetail": "userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_bounty",
+          "fieldsDetail": "userid: EntityIndex, target: short, bounty_event: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_candy",
+          "fieldsDetail": "userid: EntityIndex, candy_event: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_ad_randomed",
+          "fieldsDetail": "userid: EntityIndex, item_ability_id: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_custom_camera_updated",
+          "fieldsDetail": "flags: int, zoom: float, x: float, y: float, extra_yaw: float, pitch: float, duration: float, player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_event_game_camera_zoom_updated",
+          "fieldsDetail": "zoom: int, duration: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_event_game_camera_position_updated",
+          "fieldsDetail": "x: float, y: float, duration: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_custom_camera_pitch_updated",
+          "fieldsDetail": "pitch: float"
+        },
+        {
+          "type": "event",
+          "name": "colorblind_mode_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_report_submitted",
+          "fieldsDetail": "result: int, report_flags: int, message: string"
+        },
+        {
+          "type": "event",
+          "name": "client_reload_game_keyvalues",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_inventory_item_change",
+          "fieldsDetail": "player_id: int, hero_entindex: EntityIndex, item_entindex: EntityIndex, item_ability_id: int, removed: bool, dropped: bool, sold: bool, in_sellback_windown: bool"
+        },
+        {
+          "type": "event",
+          "name": "game_rules_shutdown",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "aegis_event",
+          "fieldsDetail": "player_id: PlayerID, chat_message_type: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_buyback",
+          "fieldsDetail": "entindex: EntityIndex, player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "bought_back",
+          "fieldsDetail": "player_id: PlayerID"
+        },
+        {
+          "type": "event",
+          "name": "dota_shrine_kill",
+          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short"
+        },
+        {
+          "type": "event",
+          "name": "particle_system_start",
+          "fieldsDetail": "targetname: string"
+        },
+        {
+          "type": "event",
+          "name": "particle_system_stop",
+          "fieldsDetail": "targetname: string, immediate: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_combat_event_message",
+          "fieldsDetail": "message: string, teamnumber: short, player_id: int, player_id2: int, value: float, value1: float, value2: float, value3: float, int_value: int, int_value2: int, ability_name: string, locstring_value: string, locstring_value2: string, string_replace_token: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_item_spawned",
+          "fieldsDetail": "item_ent_index: EntityIndex, player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_player_reconnected",
+          "fieldsDetail": "player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_on_hero_finish_spawn",
+          "fieldsDetail": "heroindex: int, hero: string"
+        },
+        {
+          "type": "event",
+          "name": "dota_creature_gained_level",
+          "fieldsDetail": "entindex: EntityIndex, level: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_teleport_to_unit",
+          "fieldsDetail": "hero_entindex: EntityIndex, unit_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_neutral_creep_camp_cleared",
+          "fieldsDetail": "camp_name: string, camp_type: int, killer_player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_watch_tower_captured",
+          "fieldsDetail": "entindex: EntityIndex, team_number: short, old_team_number: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_team_kill_credit",
+          "fieldsDetail": "killer_userid: EntityIndex, victim_userid: EntityIndex, teamnumber: short, herokills: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_alchemist_granted_scepter",
+          "fieldsDetail": "alchemist_userid: EntityIndex, grantee_userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_protector_spawned",
+          "fieldsDetail": "player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_crafting_xp",
+          "fieldsDetail": "userid: EntityIndex, type: short, xp: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_roshan_roar",
+          "fieldsDetail": "teamnumber: short"
+        },
+        {
+          "type": "event",
+          "name": "dota_unit_aghshard_status_change",
+          "fieldsDetail": "entindex: EntityIndex, has_scepter: bool, has_shard: bool"
+        },
+        {
+          "type": "event",
+          "name": "dota_stone_of_recall_used",
+          "fieldsDetail": "caster_userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_blessing_chosen",
+          "fieldsDetail": "blessing_receipient_id: short, blessing: int"
+        },
+        {
+          "type": "event",
+          "name": "npc_spawned",
+          "fieldsDetail": "entindex: EntityIndex, is_respawn: short"
+        },
+        {
+          "type": "event",
+          "name": "npc_spawn_finished",
+          "fieldsDetail": "entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "npc_replaced",
+          "fieldsDetail": "old_entindex: EntityIndex, new_entindex: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "entity_hurt",
+          "fieldsDetail": "entindex_killed: EntityIndex, entindex_attacker: EntityIndex, entindex_inflictor: EntityIndex, damagebits: long, damage: float"
+        },
+        {
+          "type": "event",
+          "name": "chat_new_message",
+          "fieldsDetail": "channel: byte"
+        },
+        {
+          "type": "event",
+          "name": "chat_members_changed",
+          "fieldsDetail": "channel: byte"
+        },
+        {
+          "type": "event",
+          "name": "dota_hero_on_gain_aggro",
+          "fieldsDetail": "entindex_attacker: EntityIndex, entindex_hero: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_ancient_decoration_event",
+          "fieldsDetail": "entindex: EntityIndex, teamnumber: int, eventname: string"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama Events": {
+      "added": [
+        {
+          "type": "event",
+          "name": "DOTAShowAbilityLevelUpTooltipForEntityIndex",
+          "fieldsDetail": "abilityName: string, entityIndex: int32",
+          "description": "Show a tooltip describing what will happen when an ability levels. Current level information comes from the entity specified by the entityIndex."
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_OVERHEAD_ALERT",
+          "name": "OVERHEAD_ALERT_BONUS_PURE_DAMAGE",
+          "value": 28
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
+          "value": 2251799813685248
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_STATS_INTELLECT_NONE",
+          "value": 109
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_KILL_ASSIST_GOLD_BOOST",
+          "value": 139
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_BONUS",
+          "value": 146
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SPENT_ITEM_CHARGE",
+          "value": 225
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_KNOCKBACK_ATTEMPTED",
+          "value": 238
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SCEPTER_UPGRADE_SELECTED",
+          "value": 239
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_SHARD_UPGRADE_SELECTED",
+          "value": 240
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE",
+          "value": 319
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_BASE_ATTACKSPEED_PER_AGI_BONUS_PERCENTAGE",
+          "value": 341
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ITEMS",
+          "value": 394
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PURGE",
+          "value": 395
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_ILLUSION_CREATED",
+          "value": 396
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_HEROLEVELSCALE",
+          "value": 397
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_POWER_COGS",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTAKeybindCommand_t",
+          "name": "DOTA_KEYBIND_NEUTRAL_ITEM_SELECT5",
+          "value": 66
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_CREEP",
+          "value": 47
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MAX_DEBUFF_DURATION",
+          "value": 184
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_PREDEBUFF_APPLIED",
+          "value": 282
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierstate",
+          "name": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_FISSURE",
+          "value": 53
+        }
+      ],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "+cammousemove"
+        },
+        {
+          "type": "convar",
+          "name": "+dota_ability_execute"
+        },
+        {
+          "type": "convar",
+          "name": "-camdistance"
+        },
+        {
+          "type": "convar",
+          "name": "assetsystem_dump_all_dirs"
+        },
+        {
+          "type": "convar",
+          "name": "assetsystem_dump_one_dir"
+        },
+        {
+          "type": "convar",
+          "name": "cl_debug_precipitation_surface_graph"
+        },
+        {
+          "type": "convar",
+          "name": "cl_dota_preview_hero_vision"
+        },
+        {
+          "type": "convar",
+          "name": "cl_dota_preview_hero_vision_hold_time"
+        },
+        {
+          "type": "convar",
+          "name": "cl_ent_joint_filter_name"
+        },
+        {
+          "type": "convar",
+          "name": "debug_font_name"
+        },
+        {
+          "type": "convar",
+          "name": "dota_dump_ability_and_item_contributions"
+        },
+        {
+          "type": "convar",
+          "name": "dota_dump_ability_and_item_contributions_error_rate_limit"
+        },
+        {
+          "type": "convar",
+          "name": "dota_hero_muerta_add_supernatural_stack"
+        },
+        {
+          "type": "convar",
+          "name": "dota_shop_watched_items_6"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tormentor_desired_location_override"
+        },
+        {
+          "type": "convar",
+          "name": "dota_track_ability_and_item_contributions"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_max_range"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_no_destroy"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_receiver_animation_duration"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_receiver_animation_offset"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_x_offset"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_y_offset"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ui_show_give_item_indicator"
+        },
+        {
+          "type": "convar",
+          "name": "dota_wraith_king_arcana_hero_claim_bucket_6"
+        },
+        {
+          "type": "convar",
+          "name": "dota_write_ability_contributions_to_match"
+        },
+        {
+          "type": "convar",
+          "name": "ent_joint_filter_name"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_count"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_debug_all"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_debug_parallel"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_debug_showtext"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_debug_verbose"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_enable_debug_all"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_imgui_log_count"
+        },
+        {
+          "type": "convar",
+          "name": "hammer_analytic_grid"
+        },
+        {
+          "type": "convar",
+          "name": "hammer_analytic_grid_transparent"
+        },
+        {
+          "type": "convar",
+          "name": "lb_time_sliced_shadow_map_reallocation_age"
+        },
+        {
+          "type": "convar",
+          "name": "lb_time_sliced_shadow_map_reallocation_pct"
+        },
+        {
+          "type": "convar",
+          "name": "lb_time_sliced_shadow_map_rendering_enable"
+        },
+        {
+          "type": "convar",
+          "name": "mat_async_shader_load"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_flow_map"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_constrain_spline"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_constrain_spline_relax"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_rays_use_npc_move"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_search_on_path"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_search_on_path_boundary_edges_only"
+        },
+        {
+          "type": "convar",
+          "name": "net_permutation_info"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_ambient_strength"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_cone_angles"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_cone_strengths"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_position_0"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_position_1"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_position_2"
+        },
+        {
+          "type": "convar",
+          "name": "r_aoproxy_default_light_position_3"
+        },
+        {
+          "type": "convar",
+          "name": "save_debug_snapshots"
+        },
+        {
+          "type": "convar",
+          "name": "sc_distancefield_visualize_atlas"
+        },
+        {
+          "type": "convar",
+          "name": "sc_instanced_mesh_opaque_fade"
+        },
+        {
+          "type": "convar",
+          "name": "scene_coordinator_add_request"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_print_activetracks"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_print_arrangements"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_print_sequences"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_set_track_bpm"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_set_track_transpose"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_stop_all_tracks"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_stop_track"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequencer_vmidi_flush"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sos_stop_track"
+        },
+        {
+          "type": "convar",
+          "name": "sv_noclipspeedscaleonshift"
+        },
+        {
+          "type": "convar",
+          "name": "sv_pack_entities_really_verbose"
+        },
+        {
+          "type": "convar",
+          "name": "sv_pack_entities_verbose_entidx"
+        }
+      ],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "+camdistance"
+        },
+        {
+          "type": "convar",
+          "name": "-cammousemove"
+        },
+        {
+          "type": "convar",
+          "name": "HACK_dota_tooltip_force_properties_for_test_id"
+        },
+        {
+          "type": "convar",
+          "name": "ai_expression_frametime"
+        },
+        {
+          "type": "convar",
+          "name": "ai_expression_optimization"
+        },
+        {
+          "type": "convar",
+          "name": "anim_disable"
+        },
+        {
+          "type": "convar",
+          "name": "cl_bone_cache_optimization"
+        },
+        {
+          "type": "convar",
+          "name": "cl_enable_eye_occlusion"
+        },
+        {
+          "type": "convar",
+          "name": "cl_eye_occlusion_debug"
+        },
+        {
+          "type": "convar",
+          "name": "cl_eye_sin_wave"
+        },
+        {
+          "type": "convar",
+          "name": "cl_eye_target_override"
+        },
+        {
+          "type": "convar",
+          "name": "cl_eye_yaw_multiplier"
+        },
+        {
+          "type": "convar",
+          "name": "cl_phys_networked_start_sleep"
+        },
+        {
+          "type": "convar",
+          "name": "cl_viewtarget_clamp"
+        },
+        {
+          "type": "convar",
+          "name": "dota_ability_execute"
+        },
+        {
+          "type": "convar",
+          "name": "dota_bot_report_dota_suggest_loadout"
+        },
+        {
+          "type": "convar",
+          "name": "dota_crownfall_node_tooltip_show_delay"
+        },
+        {
+          "type": "convar",
+          "name": "dota_crownfall_sticky_tooltip_time_required"
+        },
+        {
+          "type": "convar",
+          "name": "dota_shop_watched_items_5"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tormentor_desired_team_override"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_debug_extra_text"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_verbose_log_count"
+        },
+        {
+          "type": "convar",
+          "name": "lb_allow_time_sliced_shadow_map_rendering"
+        },
+        {
+          "type": "convar",
+          "name": "nav_gen_flow_map_all_pairs_mode"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_constrain_results"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_constrain_results_relax"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_draw_accel"
+        },
+        {
+          "type": "convar",
+          "name": "r_force_zprepass"
+        },
+        {
+          "type": "convar",
+          "name": "r_showdebugrendertarget"
+        },
+        {
+          "type": "convar",
+          "name": "r_showsunshadowdebugrendertargets"
+        },
+        {
+          "type": "convar",
+          "name": "r_showsunshadowdebugsplitvis"
+        },
+        {
+          "type": "convar",
+          "name": "r_zprepass_normals"
+        },
+        {
+          "type": "convar",
+          "name": "snd_print_activetracks"
+        },
+        {
+          "type": "convar",
+          "name": "snd_print_arrangements"
+        },
+        {
+          "type": "convar",
+          "name": "snd_print_sequences"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequence_set_track_bpm"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequence_set_track_transpose"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequence_stop_all_tracks"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sequence_stop_track"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_export_scene"
+        },
+        {
+          "type": "convar",
+          "name": "snd_vmidi_flush"
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_CHAOS_KNIGHT_HAVOC"
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_LARGO_FROGSTOMP"
+        },
+        {
+          "type": "enum_member",
+          "enum": "PseudoRandom",
+          "name": "DOTA_PSEUDO_RANDOM_NAGA_RIPTIDE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum",
+          "name": "OrbPriority"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbPriority",
+          "name": "DOTA_ORB_PRIORITY_ABILITY"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbPriority",
+          "name": "DOTA_ORB_PRIORITY_DEFAULT"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbPriority",
+          "name": "DOTA_ORB_PRIORITY_ITEM"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbPriority",
+          "name": "DOTA_ORB_PRIORITY_ITEM_PROC"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbPriority",
+          "name": "DOTA_ORB_PRIORITY_NONE"
+        },
+        {
+          "type": "enum",
+          "name": "OrbLabel"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbLabel",
+          "name": "DOTA_ORB_LABEL_DEFAULT"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbLabel",
+          "name": "DOTA_ORB_LABEL_EXCEPTION"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbLabel",
+          "name": "DOTA_ORB_LABEL_NONE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "OrbLabel",
+          "name": "DOTA_ORB_LABEL_SKADI"
+        },
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_INVALID"
+        },
+        {
+          "type": "enum_member",
+          "enum": "BotItemType",
+          "name": "ITEM_CONSUMABLE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "BotItemType",
+          "name": "ITEM_DERIVED"
+        },
+        {
+          "type": "enum_member",
+          "enum": "BotItemType",
+          "name": "ITEM_SELLABLE"
+        }
+      ],
+      "changed": []
+    }
+  }
+}
