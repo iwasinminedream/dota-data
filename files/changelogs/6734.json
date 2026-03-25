@@ -1,0 +1,264 @@
+{
+  "version": "6734",
+  "date": "Mar 25 2026",
+  "time": "11:12:09",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "class",
+          "name": "CTakeDamageInfo"
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "AddDamage",
+          "signature": "AddDamage(addAmount)",
+          "returns": "nil",
+          "argsDetail": "addAmount: float",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "AddDamageType",
+          "signature": "AddDamageType(damageType)",
+          "returns": "nil",
+          "argsDetail": "damageType: int",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetAmmoType",
+          "signature": "GetAmmoType()",
+          "returns": "int",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetAttacker",
+          "signature": "GetAttacker()",
+          "returns": "handle",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamage",
+          "signature": "GetDamage()",
+          "returns": "float",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageCustom",
+          "signature": "GetDamageCustom()",
+          "returns": "int",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageForce",
+          "signature": "GetDamageForce()",
+          "returns": "Vector",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamagePosition",
+          "signature": "GetDamagePosition()",
+          "returns": "unknown",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetDamageType",
+          "signature": "GetDamageType()",
+          "returns": "unknown",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetInflictor",
+          "signature": "GetInflictor()",
+          "returns": "handle",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetOriginalDamage",
+          "signature": "GetOriginalDamage()",
+          "returns": "float",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetReportedPosition",
+          "signature": "GetReportedPosition()",
+          "returns": "unknown",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "GetTotalledDamage",
+          "signature": "GetTotalledDamage()",
+          "returns": "float",
+          "argsDetail": "",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "HasDamageType",
+          "signature": "HasDamageType(damageType)",
+          "returns": "bool",
+          "argsDetail": "damageType: int",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "ScaleDamage",
+          "signature": "ScaleDamage(scaleAmount)",
+          "returns": "nil",
+          "argsDetail": "scaleAmount: float",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetAmmoType",
+          "signature": "SetAmmoType(ammoType)",
+          "returns": "nil",
+          "argsDetail": "ammoType: int",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetAttacker",
+          "signature": "SetAttacker(attacker)",
+          "returns": "nil",
+          "argsDetail": "attacker: handle",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamage",
+          "signature": "SetDamage(damage)",
+          "returns": "nil",
+          "argsDetail": "damage: float",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageCustom",
+          "signature": "SetDamageCustom(damageCustom)",
+          "returns": "nil",
+          "argsDetail": "damageCustom: int",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageForce",
+          "signature": "SetDamageForce(damageForce)",
+          "returns": "nil",
+          "argsDetail": "damageForce: Vector",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamagePosition",
+          "signature": "SetDamagePosition(damagePosition)",
+          "returns": "nil",
+          "argsDetail": "damagePosition: unknown",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetDamageType",
+          "signature": "SetDamageType(damageType)",
+          "returns": "nil",
+          "argsDetail": "damageType: int",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetOriginalDamage",
+          "signature": "SetOriginalDamage(originalDamage)",
+          "returns": "nil",
+          "argsDetail": "originalDamage: float",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CTakeDamageInfo",
+          "name": "SetReportedPosition",
+          "signature": "SetReportedPosition(reportedPosition)",
+          "returns": "nil",
+          "argsDetail": "reportedPosition: unknown",
+          "description": ""
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_INTRO_STATUE",
+          "value": 1788
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_IDLE_RARE_STATUE",
+          "value": 1789
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1801
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1802
+        }
+      ],
+      "changed": []
+    }
+  }
+}

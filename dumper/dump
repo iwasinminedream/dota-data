@@ -1,13 +1,13 @@
-ClientVersion=6733
-ServerVersion=6733
+ClientVersion=6734
+ServerVersion=6734
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10552083
-VersionDate=Mar 24 2026
-VersionTime=22:05:46
+SourceRevision=10553076
+VersionDate=Mar 25 2026
+VersionTime=11:12:09
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -3309,7 +3309,6 @@ declare enum DOTA_SHOP_TYPE
 $> script_reload
 Initializing script VM...
 ...done
-CreateDamageInfo parameter 4: expected vectorws but got vector.
 [{
     "args":[{
         "type":"int"
@@ -32309,6 +32308,145 @@ CreateDamageInfo parameter 4: expected vectorws but got vector.
       }],
     "name":"CScriptUniformRandomStream"
   },{
+    "kind":"class",
+    "members":[{
+        "args":[{
+            "name":"flAddAmount",
+            "type":"float"
+          }],
+        "name":"AddDamage",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"iDamageType",
+            "type":"int"
+          }],
+        "name":"AddDamageType",
+        "returns":"void"
+      },{
+        "args":[],
+        "name":"GetAmmoType",
+        "returns":"int"
+      },{
+        "args":[],
+        "name":"GetAttacker",
+        "returns":"handle"
+      },{
+        "args":[],
+        "name":"GetDamage",
+        "returns":"float"
+      },{
+        "args":[],
+        "name":"GetDamageCustom",
+        "returns":"int"
+      },{
+        "args":[],
+        "name":"GetDamageForce",
+        "returns":"Vector"
+      },{
+        "args":[],
+        "name":"GetDamagePosition",
+        "returns":"<unknown>"
+      },{
+        "args":[],
+        "name":"GetDamageType",
+        "returns":"<unknown>"
+      },{
+        "args":[],
+        "name":"GetInflictor",
+        "returns":"handle"
+      },{
+        "args":[],
+        "name":"GetOriginalDamage",
+        "returns":"float"
+      },{
+        "args":[],
+        "name":"GetReportedPosition",
+        "returns":"<unknown>"
+      },{
+        "args":[],
+        "name":"GetTotalledDamage",
+        "returns":"float"
+      },{
+        "args":[{
+            "name":"iDamageType",
+            "type":"int"
+          }],
+        "name":"HasDamageType",
+        "returns":"bool"
+      },{
+        "args":[{
+            "name":"flScaleAmount",
+            "type":"float"
+          }],
+        "name":"ScaleDamage",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"iAmmoType",
+            "type":"int"
+          }],
+        "name":"SetAmmoType",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"hAttacker",
+            "type":"handle"
+          }],
+        "name":"SetAttacker",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"flDamage",
+            "type":"float"
+          }],
+        "name":"SetDamage",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"iDamageCustom",
+            "type":"int"
+          }],
+        "name":"SetDamageCustom",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"damageForce",
+            "type":"Vector"
+          }],
+        "name":"SetDamageForce",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"damagePosition",
+            "type":"<unknown>"
+          }],
+        "name":"SetDamagePosition",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"iDamageType",
+            "type":"int"
+          }],
+        "name":"SetDamageType",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"flOriginalDamage",
+            "type":"float"
+          }],
+        "name":"SetOriginalDamage",
+        "returns":"void"
+      },{
+        "args":[{
+            "name":"reportedPosition",
+            "type":"<unknown>"
+          }],
+        "name":"SetReportedPosition",
+        "returns":"void"
+      }],
+    "name":"CTakeDamageInfo"
+  },{
     "instance":"Convars",
     "kind":"class",
     "members":[{
@@ -34532,7 +34670,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_ATTACK_STATUE",
-    "value":1786
+    "value":1782
   },{
     "kind":"constant",
     "name":"ACT_DOTA_AW_MAGNETIC_FIELD",
@@ -34604,23 +34742,23 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST1_STATUE",
-    "value":1780
+    "value":1783
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST2_STATUE",
-    "value":1781
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1803
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1804
+    "value":1784
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1805
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34736,7 +34874,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1801
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -34892,7 +35030,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1806
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -34924,7 +35062,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1792
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -34956,7 +35094,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLAIL_STATUE",
-    "value":1783
+    "value":1785
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLEE",
@@ -34972,7 +35110,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FORCESTAFF_STATUE",
-    "value":1787
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FRUSTRATION",
@@ -35051,6 +35189,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1501
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_IDLE_RARE_STATUE",
+    "value":1789
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_IDLE_SLEEPING",
     "value":1622
   },{
@@ -35060,11 +35202,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IDLE_STATUE",
-    "value":1791
+    "value":1780
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1807
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35073,6 +35215,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_INTRO_LOOP",
     "value":1649
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_INTRO_STATUE",
+    "value":1788
   },{
     "kind":"constant",
     "name":"ACT_DOTA_ITEM_DROP",
@@ -35328,7 +35474,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1798
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35368,7 +35514,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1799
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35380,7 +35526,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1800
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35400,7 +35546,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1793
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35476,7 +35622,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPAWN_STATUE",
-    "value":1784
+    "value":1781
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_END",
@@ -35485,10 +35631,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_SPWN",
-    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35500,7 +35642,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STUN_STATUE",
-    "value":1782
+    "value":1786
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SWIM",
@@ -35524,7 +35666,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TAUNT_STATUE",
-    "value":1790
+    "value":1791
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT",
@@ -35556,7 +35698,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_END_STATUE",
-    "value":1785
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_REACT",
@@ -35568,7 +35710,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_STATUE",
-    "value":1788
+    "value":1787
   },{
     "kind":"constant",
     "name":"ACT_DOTA_THIRST",
@@ -35592,7 +35734,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1808
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -35644,7 +35786,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VICTORY_STATUE",
-    "value":1789
+    "value":1790
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VIPER_DIVE",
@@ -35653,6 +35795,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_VIPER_DIVE_END",
     "value":1763
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_VOODOO_REST",
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45250,19 +45396,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1794
+    "value":1803
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1795
+    "value":1804
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1796
+    "value":1805
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1797
+    "value":1806
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52621,7 +52767,7 @@ dota_armory_CustomTagDisplayName_5                                              
 dota_armory_CustomTagDisplayName_6                                               : Tag 6            : cl, a                            : 
 dota_armory_CustomTagDisplayName_7                                               : Tag 7            : cl, a                            : 
 dota_armory_CustomTagDisplayName_8                                               : Tag 8            : cl, a                            : 
-dota_armory_last_selected_hero_id                                                : -1               : cl, a                            : 
+dota_armory_last_selected_hero_id                                                : 94               : cl, a                            : 
 dota_armory_stickers_event_filter_option                                         : 0                : cl                               : 
 dota_armory_stickers_group_option                                                : 4                : cl                               : 
 dota_armory_stickers_quality_filter_option                                       : 0                : cl                               : 
@@ -52965,7 +53111,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3631             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3638             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53437,7 +53583,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 128              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 260              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 0                : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -56248,7 +56394,7 @@ snd_gain                                                                        
 snd_gain_max                                                                     : 1                : cheat                            : 
 snd_gain_min                                                                     : 0.01             : cheat                            : 
 snd_gamevoicevolume                                                              : 0                : a                                : Game v.o. volume
-snd_gamevolume                                                                   : 0.027149         : a                                : Game volume
+snd_gamevolume                                                                   : 0.104072         : a                                : Game volume
 snd_get_physics_surface_properties                                               : cmd              : cheat                            : Get physics surface properties for all the materials.
 snd_group_cluster_debug                                                          : false            : rep, cheat                       : 
 snd_group_priority_debug                                                         : false            : rep, cheat                       : 
@@ -56952,7 +57098,7 @@ voice_stall_ms                                                                  
 voice_threshold                                                                  : -60              : cl, a                            : decibel threshold for how loud the talker's input signal is before we think they are talking.
 voice_vox                                                                        : 0                : cl, a, per_user                  : Voice chat uses a vox-style always on
 voice_vox_current_peak                                                           : 0                : cl                               : Current peak value (out of 64k) of the incoming voice stream
-volume                                                                           : 0.085973         : a                                : Sound volume
+volume                                                                           : 0.176471         : a                                : Sound volume
 volume_fog_debug_volumes                                                         : false            : cheat                            : 
 volume_fog_depth                                                                 : 128              :                                  : Depth of volume fog texture
 volume_fog_depth_warp                                                            : 7                :                                  : 

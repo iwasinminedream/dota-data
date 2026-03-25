@@ -6482,7 +6482,7 @@
     "description": ""
   },
   "dota_armory_last_selected_hero_id": {
-    "default": "-1",
+    "default": "94",
     "flags": [
       "cl",
       "a"
@@ -9089,7 +9089,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3631",
+    "default": "3638",
     "flags": [
       "cl",
       "a",
@@ -12711,7 +12711,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "260",
     "flags": [
       "cl",
       "a"
@@ -33071,7 +33071,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.027149",
+    "default": "0.104072",
     "flags": [
       "a"
     ],
@@ -37952,7 +37952,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.085973",
+    "default": "0.176471",
     "flags": [
       "a"
     ],
