@@ -31,7 +31,9 @@ export function generateEnumDeclarations(): EnumResult {
   ].filter(({ name }) => !droppedConstants.includes(name));
   const takeGlobals = (filter: (name: DumpConstant) => boolean) => {
     const [extracted, rest] = _.partition(allGlobals, filter);
-    assert(extracted.length > 0);
+    if (extracted.length === 0) {
+      console.warn('Warning: No matching globals found for filter, skipping...');
+    }
     allGlobals = rest;
     return extracted;
   };
@@ -66,29 +68,37 @@ export function generateEnumDeclarations(): EnumResult {
   const enums: Enum[] = [];
 
   enums.push(
-    ...Object.entries(prefixedEnums).map(([name, prefix]): Enum => {
+    ...Object.entries(prefixedEnums).flatMap(([name, prefix]): Enum[] => {
       const members = takeGlobals((x) =>
         typeof prefix === 'string' ? x.name.startsWith(prefix) : prefix.test(x.name),
       );
+      if (members.length === 0) {
+        console.warn(`Warning: Prefixed enum "${name}" has no matching globals, skipping.`);
+        return [];
+      }
 
-      return {
+      return [{
         kind: 'enum',
         name,
         available: getCommonAvailability(members),
         members: transformMembers(members),
-      };
+      }];
     }),
   );
 
   enums.push(
-    ...Object.entries(globalEnums).map(([name, values]): Enum => {
+    ...Object.entries(globalEnums).flatMap(([name, values]): Enum[] => {
       const members = takeGlobals((x) => values.includes(x.name));
-      return {
+      if (members.length === 0) {
+        console.warn(`Warning: Global enum "${name}" has no matching globals, skipping.`);
+        return [];
+      }
+      return [{
         kind: 'enum',
         name,
         available: getCommonAvailability(members),
         members: transformMembers(members),
-      };
+      }];
     }),
   );
 

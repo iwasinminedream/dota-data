@@ -1,8 +1,16 @@
 import { readDump } from '../util';
 
 const reloadMessage = 'Initializing script VM...\n...done';
-export const serverDump: Dump = JSON.parse(readDump('script_reload').replace(reloadMessage, ''));
 export const clientDump: Dump = JSON.parse(readDump('cl_script_reload').replace(reloadMessage, ''));
+
+let _serverDump: Dump;
+try {
+  _serverDump = JSON.parse(readDump('script_reload').replace(reloadMessage, ''));
+} catch {
+  console.warn('Warning: Failed to parse server dump, falling back to client dump');
+  _serverDump = clientDump;
+}
+export const serverDump: Dump = _serverDump;
 
 export type Dump = (DumpConstant | DumpClass | DumpFunction)[];
 
