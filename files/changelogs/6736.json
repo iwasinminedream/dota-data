@@ -1,0 +1,39 @@
+{
+  "version": "6736",
+  "date": "Mar 25 2026",
+  "time": "17:04:50",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1801
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_INTRO_STATUE",
+          "value": 1788
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_IDLE_RARE_STATUE",
+          "value": 1789
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1800
+        }
+      ],
+      "changed": []
+    }
+    
+  }
+}

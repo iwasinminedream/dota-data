@@ -9089,7 +9089,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3638",
+    "default": "3641",
     "flags": [
       "cl",
       "a",
@@ -12711,7 +12711,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "260",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -22653,7 +22653,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "1682549075",
+    "default": "-971898879",
     "flags": [
       "release"
     ],
@@ -33071,7 +33071,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.104072",
+    "default": "0.783937",
     "flags": [
       "a"
     ],
@@ -34480,7 +34480,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (WH-1000XM6)",
+    "default": "Динамики (FIFINE K670 Microphone)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
@@ -37952,7 +37952,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.176471",
+    "default": "0.874434",
     "flags": [
       "a"
     ],
