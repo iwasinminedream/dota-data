@@ -9,10 +9,18 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_RUN_ALT",
-          "value": 1806
+          "value": 1802
         }
       ],
-      "removed": []
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1804
+        }
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -28,7 +36,8 @@
           "enum": "PseudoRandom",
           "name": "DOTA_PSEUDO_RANDOM_ITEM_SILVER_EDGE"
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

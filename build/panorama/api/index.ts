@@ -47,8 +47,8 @@ export function generatePanoramaApi(): PanoramaApiInterface[] {
   for (const block of interfaceBlocks) {
     if (!block.trim().startsWith('interface')) continue;
     
-    // Extract interface name
-    const nameMatch = block.match(/^interface\s+(\w+)/);
+    // Extract interface name (\w+ or $ for the global $ namespace)
+    const nameMatch = block.match(/^interface\s+([\w$]+)/);
     if (!nameMatch) continue;
     
     const interfaceName = nameMatch[1];

@@ -12,7 +12,8 @@
           "name": "ACT_DOTA_VOODOO_REST",
           "value": 1805
         }
-      ]
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [],
@@ -27,7 +28,8 @@
           "enum": "PseudoRandom",
           "name": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD"
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

@@ -31,7 +31,8 @@
           "name": "ACT_DOTA_RUN_ALT",
           "value": 1799
         }
-      ]
+      ],
+      "changed": []
     },
     "Panorama Enums": {
       "added": [
@@ -42,7 +43,8 @@
           "value": 1125899906842624
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -52,7 +54,8 @@
           "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND"
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     }
   }
 }

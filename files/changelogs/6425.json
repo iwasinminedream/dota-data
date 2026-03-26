@@ -9,52 +9,81 @@
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyConsumableUseSpeed",
-          "signature": "GetModifierPropertyConsumableUseSpeed()"
+          "signature": "GetModifierPropertyConsumableUseSpeed()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyForbidIllusions",
-          "signature": "GetModifierPropertyForbidIllusions()"
+          "signature": "GetModifierPropertyForbidIllusions()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyHealingAmplificationUnique",
-          "signature": "GetModifierPropertyHealingAmplificationUnique()"
+          "signature": "GetModifierPropertyHealingAmplificationUnique()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyManacostOverride",
-          "signature": "GetModifierPropertyManacostOverride()"
+          "signature": "GetModifierPropertyManacostOverride()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyRestorationAmplification",
-          "signature": "GetModifierPropertyRestorationAmplification()"
+          "signature": "GetModifierPropertyRestorationAmplification()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyRestorationAmplificationUnique",
-          "signature": "GetModifierPropertyRestorationAmplificationUnique()"
+          "signature": "GetModifierPropertyRestorationAmplificationUnique()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPropertyUpgradeNeutralArtifacts",
-          "signature": "GetModifierPropertyUpgradeNeutralArtifacts()"
+          "signature": "GetModifierPropertyUpgradeNeutralArtifacts()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetSuppressIncomingCrit",
-          "signature": "GetSuppressIncomingCrit()"
+          "signature": "GetSuppressIncomingCrit()",
+          "returns": "nil",
+          "description": ""
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": [
+        {
+          "type": "method",
+          "name": "SetBodygroup",
+          "class": "CBaseModelEntity",
+          "changes": {
+            "signature": {
+              "old": "SetBodygroup(group: int, value: int)",
+              "new": "SetBodygroup(bodyGroup: int, choice: int)"
+            }
+          }
+        }
+      ]
     },
     "Lua Enums": {
       "added": [
@@ -156,7 +185,35 @@
           "name": "AE_ANIMGRAPH_SET_PARAM",
           "value": 35
         }
-      ]
+      ],
+      "changed": []
+    },
+    "Game Events": {
+      "added": [
+        {
+          "type": "event",
+          "name": "dota_roshan_roar",
+          "fieldsDetail": "teamnumber: short"
+        }
+      ],
+      "removed": [
+        {
+          "type": "event",
+          "name": "dota_item_suggestions_changed",
+          "fieldsDetail": ""
+        }
+      ],
+      "changed": []
+    },
+    "Panorama CSS": {
+      "added": [
+        {
+          "type": "property",
+          "name": "cursor"
+        }
+      ],
+      "removed": [],
+      "changed": []
     },
     "Panorama Enums": {
       "added": [
@@ -252,7 +309,8 @@
           "name": "OVERHEAD_ALERT_LAST_HIT_MISS",
           "value": 15
         }
-      ]
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -272,7 +330,8 @@
           "name": "FIELD_HNMGRAPHDEFINITION"
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     }
   }
 }

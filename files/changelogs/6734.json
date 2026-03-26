@@ -13,18 +13,16 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "AddDamage",
-          "signature": "AddDamage(addAmount)",
+          "signature": "AddDamage(addAmount: float)",
           "returns": "nil",
-          "argsDetail": "addAmount: float",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "AddDamageType",
-          "signature": "AddDamageType(damageType)",
+          "signature": "AddDamageType(damageType: int)",
           "returns": "nil",
-          "argsDetail": "damageType: int",
           "description": ""
         },
         {
@@ -33,7 +31,6 @@
           "name": "GetAmmoType",
           "signature": "GetAmmoType()",
           "returns": "int",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -42,7 +39,6 @@
           "name": "GetAttacker",
           "signature": "GetAttacker()",
           "returns": "handle",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -51,7 +47,6 @@
           "name": "GetDamage",
           "signature": "GetDamage()",
           "returns": "float",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -60,7 +55,6 @@
           "name": "GetDamageCustom",
           "signature": "GetDamageCustom()",
           "returns": "int",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -69,7 +63,6 @@
           "name": "GetDamageForce",
           "signature": "GetDamageForce()",
           "returns": "Vector",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -78,7 +71,6 @@
           "name": "GetDamagePosition",
           "signature": "GetDamagePosition()",
           "returns": "unknown",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -87,7 +79,6 @@
           "name": "GetDamageType",
           "signature": "GetDamageType()",
           "returns": "unknown",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -96,7 +87,6 @@
           "name": "GetInflictor",
           "signature": "GetInflictor()",
           "returns": "handle",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -105,7 +95,6 @@
           "name": "GetOriginalDamage",
           "signature": "GetOriginalDamage()",
           "returns": "float",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -114,7 +103,6 @@
           "name": "GetReportedPosition",
           "signature": "GetReportedPosition()",
           "returns": "unknown",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -123,106 +111,94 @@
           "name": "GetTotalledDamage",
           "signature": "GetTotalledDamage()",
           "returns": "float",
-          "argsDetail": "",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "HasDamageType",
-          "signature": "HasDamageType(damageType)",
+          "signature": "HasDamageType(damageType: int)",
           "returns": "bool",
-          "argsDetail": "damageType: int",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "ScaleDamage",
-          "signature": "ScaleDamage(scaleAmount)",
+          "signature": "ScaleDamage(scaleAmount: float)",
           "returns": "nil",
-          "argsDetail": "scaleAmount: float",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetAmmoType",
-          "signature": "SetAmmoType(ammoType)",
+          "signature": "SetAmmoType(ammoType: int)",
           "returns": "nil",
-          "argsDetail": "ammoType: int",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetAttacker",
-          "signature": "SetAttacker(attacker)",
+          "signature": "SetAttacker(attacker: handle)",
           "returns": "nil",
-          "argsDetail": "attacker: handle",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamage",
-          "signature": "SetDamage(damage)",
+          "signature": "SetDamage(damage: float)",
           "returns": "nil",
-          "argsDetail": "damage: float",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageCustom",
-          "signature": "SetDamageCustom(damageCustom)",
+          "signature": "SetDamageCustom(damageCustom: int)",
           "returns": "nil",
-          "argsDetail": "damageCustom: int",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageForce",
-          "signature": "SetDamageForce(damageForce)",
+          "signature": "SetDamageForce(damageForce: Vector)",
           "returns": "nil",
-          "argsDetail": "damageForce: Vector",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamagePosition",
-          "signature": "SetDamagePosition(damagePosition)",
+          "signature": "SetDamagePosition(damagePosition: unknown)",
           "returns": "nil",
-          "argsDetail": "damagePosition: unknown",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageType",
-          "signature": "SetDamageType(damageType)",
+          "signature": "SetDamageType(damageType: int)",
           "returns": "nil",
-          "argsDetail": "damageType: int",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetOriginalDamage",
-          "signature": "SetOriginalDamage(originalDamage)",
+          "signature": "SetOriginalDamage(originalDamage: float)",
           "returns": "nil",
-          "argsDetail": "originalDamage: float",
           "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetReportedPosition",
-          "signature": "SetReportedPosition(reportedPosition)",
+          "signature": "SetReportedPosition(reportedPosition: unknown)",
           "returns": "nil",
-          "argsDetail": "reportedPosition: unknown",
           "description": ""
         }
       ],

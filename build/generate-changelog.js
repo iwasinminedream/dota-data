@@ -19,6 +19,7 @@ const trackedFiles = [
   { file: 'vscripts/modifier_list.json', type: 'modifiers', name: 'Modifiers' },
   { file: 'events.json', type: 'events', name: 'Game Events' },
   { file: 'panorama/api.json', type: 'panorama_api', name: 'Panorama API' },
+  { file: 'panorama/css.json', type: 'panorama_css', name: 'Panorama CSS' },
   { file: 'panorama/events.json', type: 'panorama_events', name: 'Panorama Events' },
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
@@ -41,17 +42,11 @@ const currentVersion = {
 
 console.log(`Processing version ${currentVersion.version}...`);
 
-// Format function signature
+// Format function signature with typed args
 function formatSignature(func) {
   if (!func.args || !func.args.length) return `${func.name}()`;
-  const args = func.args.map(a => a.name).join(', ');
+  const args = func.args.map(a => `${a.name}: ${(a.types || []).join(' | ')}`).join(', ');
   return `${func.name}(${args})`;
-}
-
-// Format args with type info for detailed comparison
-function formatArgsDetail(args) {
-  if (!args || !args.length) return '';
-  return args.map(a => `${a.name}: ${(a.types || []).join(' | ')}`).join(', ');
 }
 
 // Extract items from API
@@ -71,7 +66,6 @@ function extractApiItems(content) {
               name: m.name,
               signature: formatSignature(m),
               returns: (m.returns || []).join(' | '),
-              argsDetail: formatArgsDetail(m.args),
               description: m.description || '',
             });
           }
@@ -83,11 +77,40 @@ function extractApiItems(content) {
         name: item.name,
         signature: formatSignature(item),
         returns: (item.returns || []).join(' | '),
-        argsDetail: formatArgsDetail(item.args),
         description: item.description || '',
       });
     } else if (item.kind === 'constant') {
       items.push({ type: 'constant', name: item.name, value: item.value });
+    }
+  }
+  return items;
+}
+
+// Format panorama args with types (array of {name, type?} objects)
+function formatPanoramaArgs(args) {
+  if (!args || !Array.isArray(args)) return '';
+  return args.map(a => `${a.name}: ${a.type || 'unknown'}`).join(', ');
+}
+
+// Extract Panorama API items (different format: no 'kind', members have array args)
+function extractPanoramaApiItems(content) {
+  const items = [];
+  if (!Array.isArray(content)) return items;
+  
+  for (const iface of content) {
+    if (!iface.name) continue;
+    items.push({ type: 'class', name: iface.name });
+    if (iface.members) {
+      for (const m of iface.members) {
+        items.push({
+          type: 'method',
+          class: iface.name,
+          name: m.name,
+          signature: `${m.name}(${formatPanoramaArgs(m.args)})`,
+          returns: m.returns || '',
+          description: m.description || '',
+        });
+      }
     }
   }
   return items;
@@ -152,6 +175,12 @@ function extractConvars(content) {
   return Object.keys(content).map(k => ({ type: 'convar', name: k }));
 }
 
+// Extract CSS properties
+function extractCssProperties(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  return Object.keys(content).map(k => ({ type: 'property', name: k }));
+}
+
 // Build current state
 function buildCurrentState() {
   const state = {};
@@ -165,8 +194,10 @@ function buildCurrentState() {
     
     switch (tracked.type) {
       case 'api':
-      case 'panorama_api':
         items = extractApiItems(content);
+        break;
+      case 'panorama_api':
+        items = extractPanoramaApiItems(content);
         break;
       case 'types':
         items = extractTypes(content);
@@ -185,6 +216,9 @@ function buildCurrentState() {
         break;
       case 'convars':
         items = extractConvars(content);
+        break;
+      case 'panorama_css':
+        items = extractCssProperties(content);
         break;
     }
     
@@ -208,7 +242,6 @@ function itemFingerprint(item) {
   const parts = [];
   if (item.signature) parts.push(`sig:${item.signature}`);
   if (item.returns) parts.push(`ret:${item.returns}`);
-  if (item.argsDetail) parts.push(`args:${item.argsDetail}`);
   if (item.value !== undefined) parts.push(`val:${item.value}`);
   if (item.fieldsDetail) parts.push(`fields:${item.fieldsDetail}`);
   return parts.join('|');
@@ -217,7 +250,7 @@ function itemFingerprint(item) {
 // Check if two items have meaningful differences
 // Only compares fields that BOTH items have (non-empty)
 function hasItemChanged(oldItem, newItem) {
-  const fieldsToCompare = ['signature', 'returns', 'argsDetail', 'value', 'fieldsDetail'];
+  const fieldsToCompare = ['signature', 'returns', 'value', 'fieldsDetail'];
   for (const field of fieldsToCompare) {
     const oldVal = oldItem[field];
     const newVal = newItem[field];
@@ -233,7 +266,7 @@ function hasItemChanged(oldItem, newItem) {
 // Only includes fields where both have values and they differ
 function buildItemDiff(oldItem, newItem) {
   const diffFields = {};
-  const fieldsToCompare = ['signature', 'returns', 'argsDetail', 'value', 'fieldsDetail', 'description'];
+  const fieldsToCompare = ['signature', 'returns', 'value', 'fieldsDetail', 'description'];
   for (const field of fieldsToCompare) {
     const oldVal = oldItem[field];
     const newVal = newItem[field];

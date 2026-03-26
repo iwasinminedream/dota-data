@@ -15,16 +15,14 @@
           "name": "IsBuybackDisabledByDevilsBargain",
           "signature": "IsBuybackDisabledByDevilsBargain()",
           "returns": "bool",
-          "argsDetail": "",
           "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_BaseNPC_Hero",
           "name": "SetBuyBackDisabledByDevilsBargain",
-          "signature": "SetBuyBackDisabledByDevilsBargain(buybackDisabled)",
+          "signature": "SetBuyBackDisabledByDevilsBargain(buybackDisabled: bool)",
           "returns": "nil",
-          "argsDetail": "buybackDisabled: bool",
           "description": ""
         },
         {
@@ -33,7 +31,6 @@
           "name": "GetModifierBaseArmorPerAgiBonusPercentage",
           "signature": "GetModifierBaseArmorPerAgiBonusPercentage()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -42,7 +39,6 @@
           "name": "GetModifierBaseAttackSpeedPerAgiBonusPercentage",
           "signature": "GetModifierBaseAttackSpeedPerAgiBonusPercentage()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -51,7 +47,6 @@
           "name": "GetModifierBaseHpRegenPerStrBonusPercentage",
           "signature": "GetModifierBaseHpRegenPerStrBonusPercentage()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -60,7 +55,6 @@
           "name": "GetModifierBaseMagicResistPerIntBonusPercentage",
           "signature": "GetModifierBaseMagicResistPerIntBonusPercentage()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -69,7 +63,6 @@
           "name": "GetModifierBaseManaRegenPerIntBonusPercentage",
           "signature": "GetModifierBaseManaRegenPerIntBonusPercentage()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -78,7 +71,6 @@
           "name": "GetModifierHeroLevelScale",
           "signature": "GetModifierHeroLevelScale()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -87,7 +79,6 @@
           "name": "GetModifierIntellectNone",
           "signature": "GetModifierIntellectNone()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -96,7 +87,6 @@
           "name": "GetModifierPercentageKillAssistGoldBoost",
           "signature": "GetModifierPercentageKillAssistGoldBoost()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -105,7 +95,6 @@
           "name": "GetModifierPhysical_ConstantBlockBonus",
           "signature": "GetModifierPhysical_ConstantBlockBonus()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -114,7 +103,6 @@
           "name": "GetModifierSuperIllusionWithItems",
           "signature": "GetModifierSuperIllusionWithItems()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -123,7 +111,6 @@
           "name": "HasBonusNeutralItemPassive",
           "signature": "HasBonusNeutralItemPassive()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -132,7 +119,6 @@
           "name": "OnIllusionCreated",
           "signature": "OnIllusionCreated()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -141,7 +127,6 @@
           "name": "OnKnockbackAttempted",
           "signature": "OnKnockbackAttempted()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -150,7 +135,6 @@
           "name": "OnPurged",
           "signature": "OnPurged()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -159,7 +143,6 @@
           "name": "OnScepterUpgradeSelected",
           "signature": "OnScepterUpgradeSelected()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -168,7 +151,6 @@
           "name": "OnShardUpgradeSelected",
           "signature": "OnShardUpgradeSelected()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         },
         {
@@ -177,7 +159,6 @@
           "name": "OnSpentItemCharge",
           "signature": "OnSpentItemCharge()",
           "returns": "nil",
-          "argsDetail": "",
           "description": ""
         }
       ],
@@ -190,49 +171,65 @@
           "type": "method",
           "class": "CBaseFlex",
           "name": "GetCurrentScene",
-          "signature": "GetCurrentScene()"
+          "signature": "GetCurrentScene()",
+          "returns": "CSceneEntity | nil",
+          "description": "Returns the instance of the oldest active scene entity (if any)."
         },
         {
           "type": "method",
           "class": "CBaseFlex",
           "name": "GetSceneByIndex",
-          "signature": "GetSceneByIndex(index)"
+          "signature": "GetSceneByIndex(index: int)",
+          "returns": "CSceneEntity | nil",
+          "description": "Returns the instance of the scene entity at the specified index."
         },
         {
           "type": "method",
           "class": "CBaseFlex",
           "name": "ScriptPlayScene",
-          "signature": "ScriptPlayScene(scene, delay)"
+          "signature": "ScriptPlayScene(scene: string, delay: float)",
+          "returns": "float",
+          "description": "Play specified vcd file."
         },
         {
           "type": "method",
           "class": "CDOTA_BaseNPC_Hero",
           "name": "IsBuybackDisabledByReapersScythe",
-          "signature": "IsBuybackDisabledByReapersScythe()"
+          "signature": "IsBuybackDisabledByReapersScythe()",
+          "returns": "bool",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_BaseNPC_Hero",
           "name": "SetBuyBackDisabledByReapersScythe",
-          "signature": "SetBuyBackDisabledByReapersScythe(buybackDisabled)"
+          "signature": "SetBuyBackDisabledByReapersScythe(buybackDisabled: bool)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMaxDebuffDuration",
-          "signature": "GetModifierMaxDebuffDuration()"
+          "signature": "GetModifierMaxDebuffDuration()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierSpellAmplify_PercentageCreep",
-          "signature": "GetModifierSpellAmplify_PercentageCreep()"
+          "signature": "GetModifierSpellAmplify_PercentageCreep()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnPreDebuffApplied",
-          "signature": "OnPreDebuffApplied()"
+          "signature": "OnPreDebuffApplied()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "class",
@@ -242,156 +239,226 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "AddDamage",
-          "signature": "AddDamage(addAmount)"
+          "signature": "AddDamage(addAmount: float)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "AddDamageType",
-          "signature": "AddDamageType(damageType)"
+          "signature": "AddDamageType(damageType: int)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetAmmoType",
-          "signature": "GetAmmoType()"
+          "signature": "GetAmmoType()",
+          "returns": "int",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetAttacker",
-          "signature": "GetAttacker()"
+          "signature": "GetAttacker()",
+          "returns": "handle",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetDamage",
-          "signature": "GetDamage()"
+          "signature": "GetDamage()",
+          "returns": "float",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetDamageCustom",
-          "signature": "GetDamageCustom()"
+          "signature": "GetDamageCustom()",
+          "returns": "int",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetDamageForce",
-          "signature": "GetDamageForce()"
+          "signature": "GetDamageForce()",
+          "returns": "Vector",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetDamagePosition",
-          "signature": "GetDamagePosition()"
+          "signature": "GetDamagePosition()",
+          "returns": "unknown",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetDamageType",
-          "signature": "GetDamageType()"
+          "signature": "GetDamageType()",
+          "returns": "unknown",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetInflictor",
-          "signature": "GetInflictor()"
+          "signature": "GetInflictor()",
+          "returns": "handle",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetOriginalDamage",
-          "signature": "GetOriginalDamage()"
+          "signature": "GetOriginalDamage()",
+          "returns": "float",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetReportedPosition",
-          "signature": "GetReportedPosition()"
+          "signature": "GetReportedPosition()",
+          "returns": "unknown",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "GetTotalledDamage",
-          "signature": "GetTotalledDamage()"
+          "signature": "GetTotalledDamage()",
+          "returns": "float",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "HasDamageType",
-          "signature": "HasDamageType(damageType)"
+          "signature": "HasDamageType(damageType: int)",
+          "returns": "bool",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "ScaleDamage",
-          "signature": "ScaleDamage(scaleAmount)"
+          "signature": "ScaleDamage(scaleAmount: float)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetAmmoType",
-          "signature": "SetAmmoType(ammoType)"
+          "signature": "SetAmmoType(ammoType: int)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetAttacker",
-          "signature": "SetAttacker(attacker)"
+          "signature": "SetAttacker(attacker: handle)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamage",
-          "signature": "SetDamage(damage)"
+          "signature": "SetDamage(damage: float)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageCustom",
-          "signature": "SetDamageCustom(damageCustom)"
+          "signature": "SetDamageCustom(damageCustom: int)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageForce",
-          "signature": "SetDamageForce(damageForce)"
+          "signature": "SetDamageForce(damageForce: Vector)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamagePosition",
-          "signature": "SetDamagePosition(damagePosition)"
+          "signature": "SetDamagePosition(damagePosition: unknown)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamageType",
-          "signature": "SetDamageType(damageType)"
+          "signature": "SetDamageType(damageType: int)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetOriginalDamage",
-          "signature": "SetOriginalDamage(originalDamage)"
+          "signature": "SetOriginalDamage(originalDamage: float)",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetReportedPosition",
-          "signature": "SetReportedPosition(reportedPosition)"
+          "signature": "SetReportedPosition(reportedPosition: unknown)",
+          "returns": "nil",
+          "description": ""
         }
       ],
       "changed": [
+        {
+          "type": "method",
+          "name": "GetAttachmentOrigin",
+          "class": "CBaseModelEntity",
+          "changes": {
+            "returns": {
+              "old": "Vector",
+              "new": "unknown"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddImpulseAtPosition",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "AddImpulseAtPosition(arg1: Vector, arg2: Vector)",
+              "new": "AddImpulseAtPosition(arg1: Vector, arg2: unknown)"
+            }
+          }
+        },
         {
           "type": "method",
           "name": "Script_GetMagicalArmorValue",
           "class": "CDOTA_BaseNPC",
           "changes": {
             "signature": {
-              "old": "Script_GetMagicalArmorValue(useExperimentalFormula, inflictor)",
-              "new": "Script_GetMagicalArmorValue(inflictor)"
+              "old": "Script_GetMagicalArmorValue(useExperimentalFormula: bool, inflictor: handle)",
+              "new": "Script_GetMagicalArmorValue(inflictor: handle)"
             }
           }
         },
@@ -401,8 +468,8 @@
           "class": "CDOTA_BaseNPC_Hero",
           "changes": {
             "signature": {
-              "old": "AddExperience(xp, reason, applyBotDifficultyScaling, incrementTotal)",
-              "new": "AddExperience(xp, reason, applyBotDifficultyScaling, incrementTotal, cloneCount)"
+              "old": "AddExperience(xp: float, reason: EDOTA_ModifyXP_Reason, applyBotDifficultyScaling: bool, incrementTotal: bool)",
+              "new": "AddExperience(xp: float, reason: EDOTA_ModifyXP_Reason, applyBotDifficultyScaling: bool, incrementTotal: bool, cloneCount: int)"
             }
           }
         },
@@ -412,8 +479,272 @@
           "class": "CDOTAGameRules",
           "changes": {
             "signature": {
-              "old": "BeginTemporaryNight(duration)",
-              "new": "BeginTemporaryNight(duration, arg2)"
+              "old": "BeginTemporaryNight(duration: float)",
+              "new": "BeginTemporaryNight(duration: float, arg2: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindAllByClassnameWithin",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindAllByClassnameWithin(className: string, location: Vector, radius: float)",
+              "new": "FindAllByClassnameWithin(className: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindAllByNameWithin",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindAllByNameWithin(name: string, location: Vector, radius: float)",
+              "new": "FindAllByNameWithin(name: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindAllInSphere",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindAllInSphere(location: Vector, radius: float)",
+              "new": "FindAllInSphere(location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindByClassnameNearest",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindByClassnameNearest(className: string, location: Vector, radius: float)",
+              "new": "FindByClassnameNearest(className: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindByClassnameWithin",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: Vector, radius: float)",
+              "new": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindByModelWithin",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: Vector, radius: float)",
+              "new": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindByNameNearest",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindByNameNearest(name: string, location: Vector, radius: float)",
+              "new": "FindByNameNearest(name: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindByNameWithin",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: Vector, radius: float)",
+              "new": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindInSphere",
+          "class": "CEntities",
+          "changes": {
+            "signature": {
+              "old": "FindInSphere(previous: CBaseEntity | nil, location: Vector, radius: float)",
+              "new": "FindInSphere(previous: CBaseEntity | nil, location: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SpawnEntityAtLocation",
+          "class": "CEnvEntityMaker",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityAtLocation(vecAlternateOrigin: Vector, vecAlternateAngles: Vector)",
+              "new": "SpawnEntityAtLocation(vecAlternateOrigin: unknown, vecAlternateAngles: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateDamageInfo",
+          "changes": {
+            "signature": {
+              "old": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: Vector, arg5: float, arg6: int)",
+              "new": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: unknown, arg5: float, arg6: int)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateTrigger",
+          "changes": {
+            "signature": {
+              "old": "CreateTrigger(arg1: Vector, arg2: Vector, arg3: Vector)",
+              "new": "CreateTrigger(arg1: unknown, arg2: Vector, arg3: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateTriggerRadiusApproximate",
+          "changes": {
+            "signature": {
+              "old": "CreateTriggerRadiusApproximate(vecOrigin: Vector, radius: float)",
+              "new": "CreateTriggerRadiusApproximate(vecOrigin: unknown, radius: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawBoxDirection",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawBoxDirection(cent: Vector, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)",
+              "new": "DebugDrawBoxDirection(cent: unknown, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawCircle",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawCircle(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
+              "new": "DebugDrawCircle(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawLine",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawLine(origin: Vector, target: Vector, r: int, g: int, b: int, ztest: bool, duration: float)",
+              "new": "DebugDrawLine(origin: unknown, target: unknown, r: int, g: int, b: int, ztest: bool, duration: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawLine_vCol",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawLine_vCol(arg1: Vector, arg2: Vector, arg3: Vector, arg4: bool, arg5: float)",
+              "new": "DebugDrawLine_vCol(arg1: unknown, arg2: unknown, arg3: Vector, arg4: bool, arg5: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawSphere",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawSphere(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
+              "new": "DebugDrawSphere(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "EmitSoundOnLocationForAllies",
+          "changes": {
+            "signature": {
+              "old": "EmitSoundOnLocationForAllies(location: Vector, soundName: string, caster: CBaseEntity)",
+              "new": "EmitSoundOnLocationForAllies(location: unknown, soundName: string, caster: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "EmitSoundOnLocationWithCaster",
+          "changes": {
+            "signature": {
+              "old": "EmitSoundOnLocationWithCaster(location: Vector, soundName: string, caster: CDOTA_BaseNPC)",
+              "new": "EmitSoundOnLocationWithCaster(location: unknown, soundName: string, caster: CDOTA_BaseNPC)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotatePosition",
+          "changes": {
+            "signature": {
+              "old": "RotatePosition(arg1: Vector, arg2: QAngle, arg3: Vector)",
+              "new": "RotatePosition(arg1: unknown, arg2: QAngle, arg3: unknown)"
+            },
+            "returns": {
+              "old": "Vector",
+              "new": "unknown"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ScreenShake",
+          "changes": {
+            "signature": {
+              "old": "ScreenShake(center: Vector, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)",
+              "new": "ScreenShake(center: unknown, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEventFromPosition",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEventFromPosition(soundName: string, position: Vector)",
+              "new": "StartSoundEventFromPosition(soundName: string, position: unknown)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEventFromPositionReliable",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEventFromPositionReliable(soundName: string, position: Vector)",
+              "new": "StartSoundEventFromPositionReliable(soundName: string, position: unknown)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEventFromPositionUnreliable",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEventFromPositionUnreliable(soundName: string, position: Vector)",
+              "new": "StartSoundEventFromPositionUnreliable(soundName: string, position: unknown)"
             }
           }
         }
@@ -449,7 +780,7 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-          "value": 1799
+          "value": 1802
         },
         {
           "type": "enum_member",
@@ -564,8 +895,8 @@
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
-          "name": "ACT_DOTA_TORRENT",
-          "value": 1803
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1800
         },
         {
           "type": "enum_member",
@@ -2059,1776 +2390,6 @@
       "added": [
         {
           "type": "event",
-          "name": "server_spawn",
-          "fieldsDetail": "hostname: string, address: string, port: short, game: string, mapname: string, addonname: string, maxplayers: long, os: string, dedicated: bool, password: bool"
-        },
-        {
-          "type": "event",
-          "name": "server_pre_shutdown",
-          "fieldsDetail": "reason: string"
-        },
-        {
-          "type": "event",
-          "name": "server_shutdown",
-          "fieldsDetail": "reason: string"
-        },
-        {
-          "type": "event",
-          "name": "server_message",
-          "fieldsDetail": "text: string"
-        },
-        {
-          "type": "event",
-          "name": "server_cvar",
-          "fieldsDetail": "cvarname: string, cvarvalue: string"
-        },
-        {
-          "type": "event",
-          "name": "player_activate",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "player_connect_full",
-          "fieldsDetail": "userid: EntityIndex, index: short, PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "player_full_update",
-          "fieldsDetail": "userid: EntityIndex, count: short"
-        },
-        {
-          "type": "event",
-          "name": "player_connect",
-          "fieldsDetail": "name: string, userid: EntityIndex, networkid: string, xuid: uint64, bot: bool, index: byte"
-        },
-        {
-          "type": "event",
-          "name": "player_disconnect",
-          "fieldsDetail": "userid: EntityIndex, reason: short, name: string, networkid: string, xuid: uint64, PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "player_info",
-          "fieldsDetail": "name: string, userid: EntityIndex, steamid: uint64, bot: bool"
-        },
-        {
-          "type": "event",
-          "name": "player_spawn",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "player_team",
-          "fieldsDetail": "userid: EntityIndex, team: byte, oldteam: byte, disconnect: bool, silent: bool, name: string, isbot: bool"
-        },
-        {
-          "type": "event",
-          "name": "local_player_team",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "local_player_controller_team",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "player_changename",
-          "fieldsDetail": "userid: EntityIndex, oldname: string, newname: string"
-        },
-        {
-          "type": "event",
-          "name": "player_hurt",
-          "fieldsDetail": "userid: EntityIndex, attacker: player_controller_and_pawn, health: byte"
-        },
-        {
-          "type": "event",
-          "name": "player_chat",
-          "fieldsDetail": "teamonly: bool, userid: EntityIndex, playerid: PlayerID, text: string"
-        },
-        {
-          "type": "event",
-          "name": "local_player_pawn_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "teamplay_broadcast_audio",
-          "fieldsDetail": "team: byte, sound: string"
-        },
-        {
-          "type": "event",
-          "name": "finale_start",
-          "fieldsDetail": "rushes: short"
-        },
-        {
-          "type": "event",
-          "name": "player_stats_updated",
-          "fieldsDetail": "forceupload: bool"
-        },
-        {
-          "type": "event",
-          "name": "user_data_downloaded",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "ragdoll_dissolved",
-          "fieldsDetail": "entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "team_info",
-          "fieldsDetail": "teamid: byte, teamname: string"
-        },
-        {
-          "type": "event",
-          "name": "team_score",
-          "fieldsDetail": "teamid: byte, score: short"
-        },
-        {
-          "type": "event",
-          "name": "hltv_cameraman",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "hltv_chase",
-          "fieldsDetail": "target1: player_controller, target2: player_controller, distance: short, theta: short, phi: short, inertia: byte, ineye: byte"
-        },
-        {
-          "type": "event",
-          "name": "hltv_rank_camera",
-          "fieldsDetail": "index: byte, rank: float, target: player_controller"
-        },
-        {
-          "type": "event",
-          "name": "hltv_rank_entity",
-          "fieldsDetail": "userid: EntityIndex, rank: float, target: player_controller"
-        },
-        {
-          "type": "event",
-          "name": "hltv_fixed",
-          "fieldsDetail": "posx: long, posy: long, posz: long, theta: short, phi: short, offset: short, fov: float, target: player_controller"
-        },
-        {
-          "type": "event",
-          "name": "hltv_message",
-          "fieldsDetail": "text: string"
-        },
-        {
-          "type": "event",
-          "name": "hltv_status",
-          "fieldsDetail": "clients: long, slots: long, proxies: short, master: string"
-        },
-        {
-          "type": "event",
-          "name": "hltv_title",
-          "fieldsDetail": "text: string"
-        },
-        {
-          "type": "event",
-          "name": "hltv_chat",
-          "fieldsDetail": "text: string, steamID: uint64, name: string"
-        },
-        {
-          "type": "event",
-          "name": "hltv_versioninfo",
-          "fieldsDetail": "version: long"
-        },
-        {
-          "type": "event",
-          "name": "hltv_replay",
-          "fieldsDetail": "delay: long, reason: long"
-        },
-        {
-          "type": "event",
-          "name": "hltv_replay_status",
-          "fieldsDetail": "reason: long"
-        },
-        {
-          "type": "event",
-          "name": "demo_start",
-          "fieldsDetail": "dota_combatlog_list: local, dota_hero_chase_list: local, dota_pick_hero_list: local"
-        },
-        {
-          "type": "event",
-          "name": "demo_stop",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "demo_skip",
-          "fieldsDetail": "playback_tick: long, skipto_tick: long, user_message_list: local, dota_hero_chase_list: local"
-        },
-        {
-          "type": "event",
-          "name": "map_shutdown",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "map_transition",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "hostname_changed",
-          "fieldsDetail": "hostname: string"
-        },
-        {
-          "type": "event",
-          "name": "difficulty_changed",
-          "fieldsDetail": "newDifficulty: short, oldDifficulty: short, strDifficulty: string"
-        },
-        {
-          "type": "event",
-          "name": "game_message",
-          "fieldsDetail": "target: byte, text: string"
-        },
-        {
-          "type": "event",
-          "name": "game_newmap",
-          "fieldsDetail": "mapname: string, transition: bool"
-        },
-        {
-          "type": "event",
-          "name": "round_start",
-          "fieldsDetail": "timelimit: long, fraglimit: long, objective: string"
-        },
-        {
-          "type": "event",
-          "name": "round_end",
-          "fieldsDetail": "winner: byte, reason: byte, message: string, time: float"
-        },
-        {
-          "type": "event",
-          "name": "round_start_pre_entity",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "round_start_post_nav",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "round_freeze_end",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "teamplay_round_start",
-          "fieldsDetail": "full_reset: bool"
-        },
-        {
-          "type": "event",
-          "name": "player_death",
-          "fieldsDetail": "userid: EntityIndex, attacker: player_controller_and_pawn"
-        },
-        {
-          "type": "event",
-          "name": "player_footstep",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "player_hintmessage",
-          "fieldsDetail": "hintmessage: string"
-        },
-        {
-          "type": "event",
-          "name": "break_breakable",
-          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, material: byte"
-        },
-        {
-          "type": "event",
-          "name": "broken_breakable",
-          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, material: byte"
-        },
-        {
-          "type": "event",
-          "name": "break_prop",
-          "fieldsDetail": "entindex: EntityIndex, userid: EntityIndex, player_held: bool, player_thrown: bool, player_dropped: bool"
-        },
-        {
-          "type": "event",
-          "name": "entity_killed",
-          "fieldsDetail": "entindex_killed: EntityIndex, entindex_attacker: EntityIndex, entindex_inflictor: EntityIndex, damagebits: long"
-        },
-        {
-          "type": "event",
-          "name": "door_close",
-          "fieldsDetail": "userid: EntityIndex, checkpoint: bool"
-        },
-        {
-          "type": "event",
-          "name": "vote_started",
-          "fieldsDetail": "issue: string, param1: string, votedata: string, team: byte, initiator: long, reliable: 1"
-        },
-        {
-          "type": "event",
-          "name": "vote_failed",
-          "fieldsDetail": "team: byte, reliable: 1"
-        },
-        {
-          "type": "event",
-          "name": "vote_passed",
-          "fieldsDetail": "details: string, param1: string, team: byte, reliable: 1"
-        },
-        {
-          "type": "event",
-          "name": "vote_changed",
-          "fieldsDetail": "yesVotes: byte, noVotes: byte, potentialVotes: byte"
-        },
-        {
-          "type": "event",
-          "name": "vote_cast_yes",
-          "fieldsDetail": "team: byte, entityid: long"
-        },
-        {
-          "type": "event",
-          "name": "vote_cast_no",
-          "fieldsDetail": "team: byte, entityid: long"
-        },
-        {
-          "type": "event",
-          "name": "achievement_event",
-          "fieldsDetail": "achievement_name: string, cur_val: short, max_val: short"
-        },
-        {
-          "type": "event",
-          "name": "achievement_earned",
-          "fieldsDetail": "player: player_controller, achievement: short"
-        },
-        {
-          "type": "event",
-          "name": "achievement_write_failed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "bonus_updated",
-          "fieldsDetail": "numadvanced: short, numbronze: short, numsilver: short, numgold: short"
-        },
-        {
-          "type": "event",
-          "name": "spec_target_updated",
-          "fieldsDetail": "userid: EntityIndex, target: ehandle"
-        },
-        {
-          "type": "event",
-          "name": "spec_mode_updated",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "entity_visible",
-          "fieldsDetail": "userid: EntityIndex, subject: long, classname: string, entityname: string"
-        },
-        {
-          "type": "event",
-          "name": "gameinstructor_draw",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "gameinstructor_nodraw",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "flare_ignite_npc",
-          "fieldsDetail": "entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "helicopter_grenade_punt_miss",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "physgun_pickup",
-          "fieldsDetail": "target: ehandle"
-        },
-        {
-          "type": "event",
-          "name": "inventory_updated",
-          "fieldsDetail": "itemdef: short, itemid: long"
-        },
-        {
-          "type": "event",
-          "name": "cart_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "store_pricesheet_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "item_schema_initialized",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "drop_rate_modified",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "event_ticket_modified",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "gc_connected",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "instructor_start_lesson",
-          "fieldsDetail": "userid: EntityIndex, hint_name: string, hint_target: long, vr_movement_type: byte, vr_single_controller: bool, vr_controller_type: byte"
-        },
-        {
-          "type": "event",
-          "name": "instructor_close_lesson",
-          "fieldsDetail": "userid: EntityIndex, hint_name: string"
-        },
-        {
-          "type": "event",
-          "name": "instructor_server_hint_create",
-          "fieldsDetail": "userid: EntityIndex, hint_entindex: EntityIndex, hint_name: string, hint_replace_key: string, hint_target: long, hint_activator_userid: EntityIndex, hint_timeout: short, hint_icon_onscreen: string, hint_icon_offscreen: string, hint_caption: string, hint_activator_caption: string, hint_color: string, hint_icon_offset: float, hint_range: float, hint_flags: long, hint_binding: string, hint_allow_nodraw_target: bool, hint_nooffscreen: bool, hint_forcecaption: bool, hint_local_player_only: bool, hint_start_sound: string, hint_layoutfile: string, hint_vr_panel_type: short, hint_vr_height_offset: float, hint_vr_offset_x: float, hint_vr_offset_y: float, hint_vr_offset_z: float"
-        },
-        {
-          "type": "event",
-          "name": "instructor_server_hint_stop",
-          "fieldsDetail": "hint_name: string, hint_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "set_instructor_group_enabled",
-          "fieldsDetail": "group: string, enabled: short"
-        },
-        {
-          "type": "event",
-          "name": "clientside_lesson_closed",
-          "fieldsDetail": "lesson_name: string"
-        },
-        {
-          "type": "event",
-          "name": "dynamic_shadow_light_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "bot_takeover",
-          "fieldsDetail": "userid: EntityIndex, botid: player_controller, p: float, y: float, r: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_chase_hero",
-          "fieldsDetail": "target1: short, target2: short, type: byte, priority: short, gametime: float, highlight: bool, target1playerid: PlayerID, target2playerid: PlayerID, eventtype: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_combatlog",
-          "fieldsDetail": "type: byte, sourcename: short, targetname: short, attackername: short, inflictorname: short, attackerillusion: bool, targetillusion: bool, value: short, health: short, timestamp: float, targetsourcename: short, timestampraw: float, attackerhero: bool, targethero: bool, ability_toggle_on: bool, ability_toggle_off: bool, ability_level: short, gold_reason: short, xp_reason: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_game_state_change",
-          "fieldsDetail": "old_state: short, new_state: short"
-        },
-        {
-          "type": "event",
-          "name": "hero_selected",
-          "fieldsDetail": "player_id: PlayerID, team_number: short, hero_unit: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_pick_hero",
-          "fieldsDetail": "player: short, heroindex: short, hero: string"
-        },
-        {
-          "type": "event",
-          "name": "modifier_event",
-          "fieldsDetail": "eventname: string, caster: short, ability: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_kill",
-          "fieldsDetail": "victim_userid: EntityIndex, killer1_userid: EntityIndex, killer2_userid: EntityIndex, killer3_userid: EntityIndex, killer4_userid: EntityIndex, killer5_userid: EntityIndex, bounty: short, neutral: short, greevil: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_deny",
-          "fieldsDetail": "killer_userid: EntityIndex, victim_userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_barracks_kill",
-          "fieldsDetail": "barracks_id: short, barracks_type: short, teamnumber: short, killer_userid: EntityIndex, killer_team: short, gold: short, pos_x: float, pos_y: float, pos_z: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_tower_kill",
-          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short, tier: short, pos_x: float, pos_y: float, pos_z: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_tower_deny",
-          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short, tier: short, pos_x: float, pos_y: float, pos_z: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_effigy_kill",
-          "fieldsDetail": "owner_userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_roshan_kill",
-          "fieldsDetail": "teamnumber: short, gold: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_miniboss_kill",
-          "fieldsDetail": "shard_recipient_id: short, teamnumber: short, gold: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_banner_planted",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_courier_lost",
-          "fieldsDetail": "killerid: short, teamnumber: short, bounty_gold: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_courier_respawned",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_glyph_used",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_super_creeps",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_purchase",
-          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_gifted",
-          "fieldsDetail": "userid: EntityIndex, item_ability_id: int, sourceid: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_placed_in_neutral_stash",
-          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_rune_pickup",
-          "fieldsDetail": "userid: EntityIndex, type: short, rune: short, bounty_amount: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_rune_deny",
-          "fieldsDetail": "userid: EntityIndex, rune: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_ward_killed",
-          "fieldsDetail": "userid: EntityIndex, type: short, bounty_amount: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_rune_spotted",
-          "fieldsDetail": "userid: EntityIndex, rune: short, map_location: string, rune_team: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_spotted",
-          "fieldsDetail": "userid: EntityIndex, item_ability_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_no_battle_points",
-          "fieldsDetail": "userid: EntityIndex, reason: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_informational",
-          "fieldsDetail": "userid: EntityIndex, type: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_action_item",
-          "fieldsDetail": "reason: short, itemdef: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_ban_notification",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_event",
-          "fieldsDetail": "userid: EntityIndex, gold: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_timed_reward",
-          "fieldsDetail": "userid: EntityIndex, itmedef: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_pause_event",
-          "fieldsDetail": "userid: EntityIndex, value: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_kill_streak",
-          "fieldsDetail": "gold: short, killer_id: short, killer_streak: short, killer_multikill: short, victim_id: short, victim_streak: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_first_blood",
-          "fieldsDetail": "gold: short, killer_id: short, victim_id: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_assassin_announce",
-          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_assassin_denied",
-          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_chat_assassin_success",
-          "fieldsDetail": "assassin_id: short, target_id: short, message: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_update_hero_selection",
-          "fieldsDetail": "tabcycle: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_update_selected_unit",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_update_query_unit",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_update_killcam_unit",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_take_tower_damage",
-          "fieldsDetail": "PlayerID: PlayerID, damage: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_hud_error_message",
-          "fieldsDetail": "reason: byte, message: string, sequenceNumber: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_action_success",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_team_neutral_stash_items_changed",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_team_neutral_stash_items_acknowledged_changed",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_money_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_enemy_money_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_portrait_unit_stats_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_portrait_unit_modifiers_changed",
-          "fieldsDetail": "modifier_affects_abilities: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_force_portrait_update",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_inventory_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_ability_points_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_item_picked_up",
-          "fieldsDetail": "itemname: string, PlayerID: PlayerID, ItemEntityIndex: EntityIndex, HeroEntityIndex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_physical_destroyed",
-          "fieldsDetail": "itemname: string, PlayerID: PlayerID, ItemEntityIndex: EntityIndex, HeroEntityIndex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_neutral_item_sent_to_stash",
-          "fieldsDetail": "player_id: PlayerID, itemname: string, item_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_inventory_item_changed",
-          "fieldsDetail": "entityIndex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_ability_changed",
-          "fieldsDetail": "entityIndex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_spectator_talent_changed",
-          "fieldsDetail": "abilityname: string, playerid: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_portrait_ability_layout_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_inventory_item_added",
-          "fieldsDetail": "item_slot: short, inventory_player_id: PlayerID, itemname: string, item_entindex: EntityIndex, inventory_parent_entindex: EntityIndex, is_courier: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_inventory_changed_query_unit",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_link_clicked",
-          "fieldsDetail": "link: string, nav: bool, nav_back: bool, recipe: short, shop: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_set_quick_buy",
-          "fieldsDetail": "item: string, recipe: byte, toggle: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_quick_buy_changed",
-          "fieldsDetail": "item: string, recipe: byte"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_shop_changed",
-          "fieldsDetail": "prevshopmask: byte, shopmask: byte"
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_entered_shop",
-          "fieldsDetail": "shop_type: short, shop_entindex: EntityIndex, hero_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_show_killcam",
-          "fieldsDetail": "nodes: byte, player: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_show_minikillcam",
-          "fieldsDetail": "nodes: byte, player: short"
-        },
-        {
-          "type": "event",
-          "name": "gc_user_session_created",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "team_data_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "guild_data_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "guild_open_parties_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "fantasy_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "fantasy_league_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "fantasy_score_info_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "league_admin_info_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "league_series_info_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "player_info_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "player_info_individual_updated",
-          "fieldsDetail": "account_id: long"
-        },
-        {
-          "type": "event",
-          "name": "game_rules_state_change",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "match_history_updated",
-          "fieldsDetail": "SteamID: uint64"
-        },
-        {
-          "type": "event",
-          "name": "match_details_updated",
-          "fieldsDetail": "matchID: uint64"
-        },
-        {
-          "type": "event",
-          "name": "team_details_updated",
-          "fieldsDetail": "teamID: long"
-        },
-        {
-          "type": "event",
-          "name": "live_games_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "recent_matches_updated",
-          "fieldsDetail": "Page: short"
-        },
-        {
-          "type": "event",
-          "name": "news_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "persona_updated",
-          "fieldsDetail": "SteamID: uint64"
-        },
-        {
-          "type": "event",
-          "name": "tournament_state_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "party_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "lobby_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dashboard_caches_cleared",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "last_hit",
-          "fieldsDetail": "PlayerID: PlayerID, EntKilled: short, FirstBlood: bool, HeroKill: bool, TowerKill: bool"
-        },
-        {
-          "type": "event",
-          "name": "player_completed_game",
-          "fieldsDetail": "PlayerID: PlayerID, Winner: byte"
-        },
-        {
-          "type": "event",
-          "name": "player_reconnected",
-          "fieldsDetail": "PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "nommed_tree",
-          "fieldsDetail": "PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_rune_activated_server",
-          "fieldsDetail": "PlayerID: PlayerID, rune: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_gained_level",
-          "fieldsDetail": "player: short, player_id: PlayerID, level: short, hero_entindex: EntityIndex, PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_learned_ability",
-          "fieldsDetail": "PlayerID: PlayerID, player: short, abilityname: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_used_ability",
-          "fieldsDetail": "PlayerID: PlayerID, abilityname: string, caster_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_non_player_used_ability",
-          "fieldsDetail": "abilityname: string, caster_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_begin_cast",
-          "fieldsDetail": "PlayerID: PlayerID, abilityname: string, caster_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_non_player_begin_cast",
-          "fieldsDetail": "abilityname: string, caster_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_ability_channel_finished",
-          "fieldsDetail": "abilityname: string, interrupted: bool, caster_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_holdout_revive_complete",
-          "fieldsDetail": "caster: short, target: short, channel_time: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_holdout_revive_eliminated",
-          "fieldsDetail": "caster: short, target: short, channel_time: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_killed",
-          "fieldsDetail": "PlayerID: PlayerID, HeroKill: bool, TowerKill: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_assist_earned",
-          "fieldsDetail": "entindex_hero: EntityIndex, playerid_victim: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "bindpanel_open",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "bindpanel_close",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "keybind_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_item_drag_begin",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_item_drag_end",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_shop_item_drag_begin",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_shop_item_drag_end",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_item_purchased",
-          "fieldsDetail": "PlayerID: PlayerID, itemname: string, itemcost: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_combined",
-          "fieldsDetail": "PlayerID: PlayerID, itemname: string, itemcost: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_used",
-          "fieldsDetail": "PlayerID: PlayerID, itemname: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_auto_purchase",
-          "fieldsDetail": "item_id: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_unit_event",
-          "fieldsDetail": "victim: short, attacker: short, basepriority: short, priority: short, eventtype: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_quest_started",
-          "fieldsDetail": "questIndex: long"
-        },
-        {
-          "type": "event",
-          "name": "dota_quest_completed",
-          "fieldsDetail": "questIndex: long"
-        },
-        {
-          "type": "event",
-          "name": "gameui_activated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "gameui_hidden",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "player_fullyjoined",
-          "fieldsDetail": "userid: EntityIndex, name: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_spectate_hero",
-          "fieldsDetail": "entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_match_done",
-          "fieldsDetail": "winningteam: byte"
-        },
-        {
-          "type": "event",
-          "name": "dota_match_done_client",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "joined_chat_channel",
-          "fieldsDetail": "channelName: string"
-        },
-        {
-          "type": "event",
-          "name": "left_chat_channel",
-          "fieldsDetail": "channelName: string"
-        },
-        {
-          "type": "event",
-          "name": "gc_chat_channel_list_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "file_downloaded",
-          "fieldsDetail": "success: bool, local_filename: string, remote_url: string"
-        },
-        {
-          "type": "event",
-          "name": "player_report_counts_updated",
-          "fieldsDetail": "positive_remaining: byte, negative_remaining: byte, positive_total: short, negative_total: short"
-        },
-        {
-          "type": "event",
-          "name": "scaleform_file_download_complete",
-          "fieldsDetail": "success: bool, local_filename: string, remote_url: string"
-        },
-        {
-          "type": "event",
-          "name": "item_purchased",
-          "fieldsDetail": "itemid: short"
-        },
-        {
-          "type": "event",
-          "name": "gc_mismatched_version",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_workshop_fileselected",
-          "fieldsDetail": "filename: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_workshop_filecanceled",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "rich_presence_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "live_leagues_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_random",
-          "fieldsDetail": "userid: EntityIndex, heroid: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_river_painted",
-          "fieldsDetail": "userid: EntityIndex, riverid: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_scan_used",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_scan_found_enemy",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_rd_chat_turn",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_ad_nominated_ban",
-          "fieldsDetail": "heroid: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_ad_ban",
-          "fieldsDetail": "heroid: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_ad_ban_count",
-          "fieldsDetail": "count: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_ad_hero_collision",
-          "fieldsDetail": "heroid: short, playerid1: PlayerID, playerid2: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_favorite_heroes_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "profile_opened",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "profile_closed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "item_preview_closed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dashboard_switched_section",
-          "fieldsDetail": "section: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_tournament_item_event",
-          "fieldsDetail": "winner_count: short, event_type: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_swap",
-          "fieldsDetail": "playerid1: PlayerID, playerid2: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_reset_suggested_items",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "halloween_high_score_received",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "halloween_phase_end",
-          "fieldsDetail": "phase: byte, team: byte"
-        },
-        {
-          "type": "event",
-          "name": "halloween_high_score_request_failed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_hud_skin_changed",
-          "fieldsDetail": "skin: string, style: byte"
-        },
-        {
-          "type": "event",
-          "name": "dota_inventory_player_got_item",
-          "fieldsDetail": "itemname: string"
-        },
-        {
-          "type": "event",
-          "name": "player_is_experienced",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "player_is_notexperienced",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_tutorial_lesson_start",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_tutorial_task_advance",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_tutorial_shop_toggled",
-          "fieldsDetail": "shop_opened: bool"
-        },
-        {
-          "type": "event",
-          "name": "richpresence_custom_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "game_end_visible",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "enable_china_logomark",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "highlight_hud_element",
-          "fieldsDetail": "elementname: string, duration: float"
-        },
-        {
-          "type": "event",
-          "name": "hide_highlight_hud_element",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "intro_video_finished",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "matchmaking_status_visibility_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "practice_lobby_visibility_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_courier_transfer_item",
-          "fieldsDetail": "hero_entindex: EntityIndex, courier_entindex: EntityIndex, item_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "full_ui_unlocked",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "client_disconnect",
-          "fieldsDetail": "reason_code: int, reason_desc: string"
-        },
-        {
-          "type": "event",
-          "name": "hero_selector_preview_set",
-          "fieldsDetail": "setindex: short"
-        },
-        {
-          "type": "event",
-          "name": "antiaddiction_toast",
-          "fieldsDetail": "message: string, duration: float"
-        },
-        {
-          "type": "event",
-          "name": "hero_picker_shown",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "hero_picker_hidden",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_local_quickbuy_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "hud_flip_changed",
-          "fieldsDetail": "flipped: bool"
-        },
-        {
-          "type": "event",
-          "name": "frosty_points_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "defeated",
-          "fieldsDetail": "entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "reset_defeated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "booster_state_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "tree_cut",
-          "fieldsDetail": "tree_x: float, tree_y: float"
-        },
-        {
-          "type": "event",
-          "name": "ugc_details_arrived",
-          "fieldsDetail": "published_file_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "ugc_subscribed",
-          "fieldsDetail": "published_file_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "ugc_unsubscribed",
-          "fieldsDetail": "published_file_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "ugc_download_requested",
-          "fieldsDetail": "published_file_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "ugc_installed",
-          "fieldsDetail": "published_file_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "prizepool_received",
-          "fieldsDetail": "success: bool, prizepool: uint64, leagueid: uint64"
-        },
-        {
-          "type": "event",
-          "name": "microtransaction_success",
-          "fieldsDetail": "txnid: uint64"
-        },
-        {
-          "type": "event",
-          "name": "dota_rubick_ability_steal",
-          "fieldsDetail": "abilityIndex: short, abilityLevel: byte"
-        },
-        {
-          "type": "event",
-          "name": "community_cached_names_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "spec_item_pickup",
-          "fieldsDetail": "player_id: PlayerID, item_name: string, purchase: bool, gift: bool, gift_player_id: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "spec_aegis_reclaim_time",
-          "fieldsDetail": "reclaim_time: float"
-        },
-        {
-          "type": "event",
-          "name": "account_all_hero_challenge_changed",
-          "fieldsDetail": "account_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "team_showcase_ui_update",
-          "fieldsDetail": "show: bool, account_id: uint64, hero_entindex: EntityIndex, display_ui_on_left: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_match_signout",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_illusions_created",
-          "fieldsDetail": "original_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_year_beast_killed",
-          "fieldsDetail": "killer_player_id: PlayerID, message: short, beast_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_spawned",
-          "fieldsDetail": "PlayerID: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_undoselection",
-          "fieldsDetail": "playerid1: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_challenge_socache_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_team_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "party_invites_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "lobby_invites_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "custom_game_mode_list_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "custom_game_lobby_list_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "friend_lobby_list_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_team_player_list_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_connection_state_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_details_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "custom_game_player_count_updated",
-          "fieldsDetail": "custom_game_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "custom_game_friends_played_updated",
-          "fieldsDetail": "custom_game_id: uint64"
-        },
-        {
-          "type": "event",
-          "name": "custom_games_friends_play_updated",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_player_update_assigned_hero",
-          "fieldsDetail": "playerid: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_hero_selection_dirty",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_npc_goal_reached",
-          "fieldsDetail": "npc_entindex: EntityIndex, goal_entindex: EntityIndex, next_goal_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_selected_custom_team",
-          "fieldsDetail": "player_id: PlayerID, team_id: short, success: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_coin_wager",
-          "fieldsDetail": "userid: EntityIndex, message: short, coins: uint64"
-        },
-        {
-          "type": "event",
-          "name": "dota_wager_token",
-          "fieldsDetail": "userid: EntityIndex, message: short, amount: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_rank_wager",
-          "fieldsDetail": "userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_bounty",
-          "fieldsDetail": "userid: EntityIndex, target: short, bounty_event: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_candy",
-          "fieldsDetail": "userid: EntityIndex, candy_event: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_ad_randomed",
-          "fieldsDetail": "userid: EntityIndex, item_ability_id: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_custom_camera_updated",
-          "fieldsDetail": "flags: int, zoom: float, x: float, y: float, extra_yaw: float, pitch: float, duration: float, player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_event_game_camera_zoom_updated",
-          "fieldsDetail": "zoom: int, duration: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_event_game_camera_position_updated",
-          "fieldsDetail": "x: float, y: float, duration: float"
-        },
-        {
-          "type": "event",
-          "name": "dota_custom_camera_pitch_updated",
-          "fieldsDetail": "pitch: float"
-        },
-        {
-          "type": "event",
-          "name": "colorblind_mode_changed",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_report_submitted",
-          "fieldsDetail": "result: int, report_flags: int, message: string"
-        },
-        {
-          "type": "event",
-          "name": "client_reload_game_keyvalues",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_inventory_item_change",
-          "fieldsDetail": "player_id: int, hero_entindex: EntityIndex, item_entindex: EntityIndex, item_ability_id: int, removed: bool, dropped: bool, sold: bool, in_sellback_windown: bool"
-        },
-        {
-          "type": "event",
-          "name": "game_rules_shutdown",
-          "fieldsDetail": ""
-        },
-        {
-          "type": "event",
-          "name": "aegis_event",
-          "fieldsDetail": "player_id: PlayerID, chat_message_type: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_buyback",
-          "fieldsDetail": "entindex: EntityIndex, player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "bought_back",
-          "fieldsDetail": "player_id: PlayerID"
-        },
-        {
-          "type": "event",
-          "name": "dota_shrine_kill",
-          "fieldsDetail": "killer_userid: EntityIndex, teamnumber: short, gold: short"
-        },
-        {
-          "type": "event",
-          "name": "particle_system_start",
-          "fieldsDetail": "targetname: string"
-        },
-        {
-          "type": "event",
-          "name": "particle_system_stop",
-          "fieldsDetail": "targetname: string, immediate: bool"
-        },
-        {
-          "type": "event",
-          "name": "dota_combat_event_message",
-          "fieldsDetail": "message: string, teamnumber: short, player_id: int, player_id2: int, value: float, value1: float, value2: float, value3: float, int_value: int, int_value2: int, ability_name: string, locstring_value: string, locstring_value2: string, string_replace_token: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_item_spawned",
-          "fieldsDetail": "item_ent_index: EntityIndex, player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_player_reconnected",
-          "fieldsDetail": "player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_on_hero_finish_spawn",
-          "fieldsDetail": "heroindex: int, hero: string"
-        },
-        {
-          "type": "event",
-          "name": "dota_creature_gained_level",
-          "fieldsDetail": "entindex: EntityIndex, level: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_hero_teleport_to_unit",
-          "fieldsDetail": "hero_entindex: EntityIndex, unit_entindex: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_neutral_creep_camp_cleared",
-          "fieldsDetail": "camp_name: string, camp_type: int, killer_player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_watch_tower_captured",
-          "fieldsDetail": "entindex: EntityIndex, team_number: short, old_team_number: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_team_kill_credit",
-          "fieldsDetail": "killer_userid: EntityIndex, victim_userid: EntityIndex, teamnumber: short, herokills: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_alchemist_granted_scepter",
-          "fieldsDetail": "alchemist_userid: EntityIndex, grantee_userid: EntityIndex"
-        },
-        {
-          "type": "event",
-          "name": "dota_protector_spawned",
-          "fieldsDetail": "player_id: int"
-        },
-        {
-          "type": "event",
-          "name": "dota_crafting_xp",
-          "fieldsDetail": "userid: EntityIndex, type: short, xp: short"
-        },
-        {
-          "type": "event",
-          "name": "dota_roshan_roar",
-          "fieldsDetail": "teamnumber: short"
-        },
-        {
-          "type": "event",
           "name": "dota_unit_aghshard_status_change",
           "fieldsDetail": "entindex: EntityIndex, has_scepter: bool, has_shard: bool"
         },
@@ -3841,46 +2402,98 @@
           "type": "event",
           "name": "dota_blessing_chosen",
           "fieldsDetail": "blessing_receipient_id: short, blessing: int"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama API": {
+      "added": [],
+      "removed": [
+        {
+          "type": "method",
+          "class": "DOTAHeroModelOverlay",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "npc_spawned",
-          "fieldsDetail": "entindex: EntityIndex, is_respawn: short"
+          "type": "method",
+          "class": "DOTAPlay",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "npc_spawn_finished",
-          "fieldsDetail": "entindex: EntityIndex"
+          "type": "method",
+          "class": "Panel",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "npc_replaced",
-          "fieldsDetail": "old_entindex: EntityIndex, new_entindex: EntityIndex"
+          "type": "method",
+          "class": "Label",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "entity_hurt",
-          "fieldsDetail": "entindex_killed: EntityIndex, entindex_attacker: EntityIndex, entindex_inflictor: EntityIndex, damagebits: long, damage: float"
+          "type": "method",
+          "class": "ToggleButton",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "chat_new_message",
-          "fieldsDetail": "channel: byte"
+          "type": "method",
+          "class": "TabButton",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "chat_members_changed",
-          "fieldsDetail": "channel: byte"
+          "type": "method",
+          "class": "DOTAAvatarImage",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
         },
         {
-          "type": "event",
-          "name": "dota_hero_on_gain_aggro",
-          "fieldsDetail": "entindex_attacker: EntityIndex, entindex_hero: EntityIndex"
-        },
+          "type": "method",
+          "class": "CustomUIElement",
+          "name": "SetDialogVariablePluralLocStringInt",
+          "signature": "SetDialogVariablePluralLocStringInt(_arg_1: string, _arg_2: string, _arg_3: number)",
+          "returns": "void",
+          "description": ""
+        }
+      ],
+      "changed": [
         {
-          "type": "event",
-          "name": "dota_ancient_decoration_event",
-          "fieldsDetail": "entindex: EntityIndex, teamnumber: int, eventname: string"
+          "type": "method",
+          "name": "CanAbilityBeUpgraded",
+          "class": "CScriptBindingPR_Abilities",
+          "changes": {
+            "signature": {
+              "old": "CanAbilityBeUpgraded(nEntityIndex: number)",
+              "new": "CanAbilityBeUpgraded(nEntityIndex: number, bTomeUpgrade: boolean)"
+            }
+          }
+        }
+      ]
+    },
+    "Panorama CSS": {
+      "added": [
+        {
+          "type": "property",
+          "name": "paragraph-spacing"
         }
       ],
       "removed": [],

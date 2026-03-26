@@ -13486,5 +13486,216 @@
         "returns": "string"
       }
     ]
+  },
+  {
+    "name": "$",
+    "members": [
+      {
+        "name": "Msg",
+        "description": "Log a message",
+        "args": [
+          { "name": "msg" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "AssertHelper",
+        "description": "Trigger an assert",
+        "args": [
+          { "name": "msg" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "Warning",
+        "description": "Log a warning message to specified channel",
+        "args": [
+          { "name": "msg" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "DispatchEvent",
+        "description": "Dispatch an event",
+        "args": [
+          { "name": "event" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "DispatchEventAsync",
+        "description": "Dispatch an event to occur later",
+        "args": [
+          { "name": "delay" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "RegisterEventHandler",
+        "description": "Register an event handler",
+        "args": [
+          { "name": "event" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "RegisterForUnhandledEvent",
+        "description": "Register a handler for an event that is not otherwise handled",
+        "args": [
+          { "name": "event" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "UnregisterForUnhandledEvent",
+        "description": "Remove an unhandled event handler",
+        "args": [
+          { "name": "handle" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "FindChildInContext",
+        "description": "Find an element",
+        "args": [
+          { "name": "id" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "AsyncWebRequest",
+        "description": "Make a web request (disabled)",
+        "args": [
+          { "name": "url" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "CreatePanel",
+        "description": "Create a new panel",
+        "args": [
+          { "name": "type" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "CreatePanelWithProperties",
+        "description": "DEPRECATED: Use $.CreatePanel which has the same signature and supports properties.",
+        "args": [
+          { "name": "type" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "Localize",
+        "description": "Localize a string. Optionally accepts a Panel argument for dialog variable values.",
+        "args": [
+          { "name": "token" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "ConstructString",
+        "description": "Localize a string using the given property values",
+        "args": [
+          { "name": "token" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "ConstructMFString",
+        "description": "Localize a MessageFormat string using the given property values",
+        "args": [
+          { "name": "token" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "Language",
+        "description": "Get the current language",
+        "args": [],
+        "returns": "void"
+      },
+      {
+        "name": "Schedule",
+        "description": "Schedule a function to be called later",
+        "args": [
+          { "name": "delay" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "CancelScheduled",
+        "description": "Cancels a scheduled function",
+        "args": [
+          { "name": "handle" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "FrameTime",
+        "description": "Gets the time this frame started, in seconds since panorama was initialized",
+        "args": [],
+        "returns": "void"
+      },
+      {
+        "name": "GetContextPanel",
+        "description": "Get the current panel context",
+        "args": [],
+        "returns": "void"
+      },
+      {
+        "name": "RegisterKeyBind",
+        "description": "Register a key binding",
+        "args": [
+          { "name": "panel" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "Each",
+        "description": "Call a function on each given item",
+        "args": [
+          { "name": "items" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "DbgIsReloadingScript",
+        "description": "Call during JS startup code to check if script is being reloaded",
+        "args": [],
+        "returns": "void"
+      },
+      {
+        "name": "HTMLEscape",
+        "description": "Convert a string to HTML-safe",
+        "args": [
+          { "name": "str" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "LogChannel",
+        "description": "Create a logging channel",
+        "args": [
+          { "name": "name" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "BImageFileExists",
+        "description": "Return true if a file exists. Path will usually start with 'file://{images}'",
+        "args": [
+          { "name": "path" }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "MousePosition",
+        "description": "Return the position of the mouse in the parent window.",
+        "args": [],
+        "returns": "void"
+      }
+    ]
   }
 ]

@@ -14,7 +14,8 @@
           "name": "dota_video_config.setting.monitor_index"
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     }
   }
 }

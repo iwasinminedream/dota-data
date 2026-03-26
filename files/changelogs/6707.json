@@ -9,10 +9,13 @@
           "type": "method",
           "class": "CDOTABaseGameMode",
           "name": "SetForcedHeroCapOnReset",
-          "signature": "SetForcedHeroCapOnReset(cap)"
+          "signature": "SetForcedHeroCapOnReset(cap: int)",
+          "returns": "nil",
+          "description": "Caps the number of players spawned when the game is reset. Used in tutorials where players are spawned in the script."
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     },
     "Lua Enums": {
       "added": [
@@ -30,7 +33,8 @@
           "name": "ACT_DOTA_RUN_ALT",
           "value": 1794
         }
-      ]
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -45,7 +49,8 @@
           "name": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD"
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     }
   }
 }

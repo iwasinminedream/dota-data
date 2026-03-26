@@ -19,7 +19,8 @@
           "name": "ACT_DOTA_SPWN",
           "value": 1808
         }
-      ]
+      ],
+      "changed": []
     },
     "Console Variables": {
       "added": [],
@@ -28,7 +29,8 @@
           "type": "convar",
           "name": "dota_mark_for_sell_new_badge"
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

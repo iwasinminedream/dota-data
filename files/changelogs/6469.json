@@ -9,7 +9,9 @@
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetRequiredLevel",
-          "signature": "GetRequiredLevel()"
+          "signature": "GetRequiredLevel()",
+          "returns": "nil",
+          "description": ""
         }
       ],
       "removed": [
@@ -17,9 +19,12 @@
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierHPRegen_CanBeNegative",
-          "signature": "GetModifierHPRegen_CanBeNegative()"
+          "signature": "GetModifierHPRegen_CanBeNegative()",
+          "returns": "nil",
+          "description": ""
         }
-      ]
+      ],
+      "changed": []
     },
     "Lua Enums": {
       "added": [
@@ -43,7 +48,8 @@
           "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
           "value": 378
         }
-      ]
+      ],
+      "changed": []
     },
     "Panorama Enums": {
       "added": [
@@ -73,7 +79,8 @@
           "name": "MODIFIER_PROPERTY_FORCE_NETWORK_TRANSMIT",
           "value": 378
         }
-      ]
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -119,7 +126,8 @@
           "enum": "AbilityType",
           "name": "DOTA_ABILITY_TYPE_ULTIMATE"
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

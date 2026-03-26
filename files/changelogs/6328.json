@@ -13,145 +13,193 @@
           "type": "method",
           "class": "CDOTA_Item",
           "name": "IsActiveNeutral",
-          "signature": "IsActiveNeutral()"
+          "signature": "IsActiveNeutral()",
+          "returns": "bool",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetConvertAttackPhysicalToPure",
-          "signature": "GetConvertAttackPhysicalToPure()"
+          "signature": "GetConvertAttackPhysicalToPure()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetCriticalStrikeBonus",
-          "signature": "GetCriticalStrikeBonus()"
+          "signature": "GetCriticalStrikeBonus()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetMinMana",
-          "signature": "GetMinMana()"
+          "signature": "GetMinMana()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierAvoidAttackProcs",
-          "signature": "GetModifierAvoidAttackProcs()"
+          "signature": "GetModifierAvoidAttackProcs()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMoveSpeed_MaxOverride",
-          "signature": "GetModifierMoveSpeed_MaxOverride()"
+          "signature": "GetModifierMoveSpeed_MaxOverride()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMoveSpeed_MinOverride",
-          "signature": "GetModifierMoveSpeed_MinOverride()"
+          "signature": "GetModifierMoveSpeed_MinOverride()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMoveSpeedMax_BonusConstant",
-          "signature": "GetModifierMoveSpeedMax_BonusConstant()"
+          "signature": "GetModifierMoveSpeedMax_BonusConstant()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant ",
-          "signature": "GetModifierMoveSpeedPostMultiplierBonus_Constant ()"
+          "signature": "GetModifierMoveSpeedPostMultiplierBonus_Constant ()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierMPRegenAmplify_Percentage_Unique",
-          "signature": "GetModifierMPRegenAmplify_Percentage_Unique()"
+          "signature": "GetModifierMPRegenAmplify_Percentage_Unique()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierNeutralEnhancementOptions",
-          "signature": "GetModifierNeutralEnhancementOptions()"
+          "signature": "GetModifierNeutralEnhancementOptions()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierNeutralTrinketOptions",
-          "signature": "GetModifierNeutralTrinketOptions()"
+          "signature": "GetModifierNeutralTrinketOptions()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierPreserveNeutralItemPassives",
-          "signature": "GetModifierPreserveNeutralItemPassives()"
+          "signature": "GetModifierPreserveNeutralItemPassives()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierProperty_MagicalLifesteal",
-          "signature": "GetModifierProperty_MagicalLifesteal()"
+          "signature": "GetModifierProperty_MagicalLifesteal()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierProperty_PhysicalLifesteal",
-          "signature": "GetModifierProperty_PhysicalLifesteal()"
+          "signature": "GetModifierProperty_PhysicalLifesteal()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierSlowResistanceAppliesToAttacks",
-          "signature": "GetModifierSlowResistanceAppliesToAttacks()"
+          "signature": "GetModifierSlowResistanceAppliesToAttacks()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique",
-          "signature": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique()"
+          "signature": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetModifierXPFountainCountdownTimeOverride",
-          "signature": "GetModifierXPFountainCountdownTimeOverride()"
+          "signature": "GetModifierXPFountainCountdownTimeOverride()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "GetSuppressAttackProcs",
-          "signature": "GetSuppressAttackProcs()"
+          "signature": "GetSuppressAttackProcs()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnAbilityToggled",
-          "signature": "OnAbilityToggled()"
+          "signature": "OnAbilityToggled()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnFoWTeamChanged",
-          "signature": "OnFoWTeamChanged()"
+          "signature": "OnFoWTeamChanged()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnNightStarted",
-          "signature": "OnNightStarted()"
+          "signature": "OnNightStarted()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnPureDamageCalculated",
-          "signature": "OnPureDamageCalculated()"
+          "signature": "OnPureDamageCalculated()",
+          "returns": "nil",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CDOTA_Modifier_Lua",
           "name": "OnRuneSpawn",
-          "signature": "OnRuneSpawn()"
+          "signature": "OnRuneSpawn()",
+          "returns": "nil",
+          "description": ""
         }
       ],
       "removed": [
@@ -159,7 +207,9 @@
           "type": "method",
           "class": "CBaseEntity",
           "name": "OverrideFriction",
-          "signature": "OverrideFriction(duration, friction)"
+          "signature": "OverrideFriction(duration: float, friction: float)",
+          "returns": "nil",
+          "description": "Takes duration, value for a temporary override."
         },
         {
           "type": "class",
@@ -169,13 +219,85 @@
           "type": "method",
           "class": "CDOTA_Item",
           "name": "IsNeutralDrop",
-          "signature": "IsNeutralDrop()"
+          "signature": "IsNeutralDrop()",
+          "returns": "bool",
+          "description": ""
         },
         {
           "type": "method",
           "class": "CPhysicsProp",
           "name": "SetDynamicVsDynamicContinuous",
-          "signature": "SetDynamicVsDynamicContinuous(isDynamicVsDynamicContinuousEnabled)"
+          "signature": "SetDynamicVsDynamicContinuous(isDynamicVsDynamicContinuousEnabled: bool)",
+          "returns": "nil",
+          "description": "Enable/disable dynamic vs dynamic continuous collision traces."
+        }
+      ],
+      "changed": [
+        {
+          "type": "method",
+          "name": "TriggerModifierDodge",
+          "class": "CDOTA_BaseNPC",
+          "changes": {
+            "signature": {
+              "old": "TriggerModifierDodge()",
+              "new": "TriggerModifierDodge(ability: handle, buff: handle)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "HasTag",
+          "class": "CMarkupVolumeTagged",
+          "changes": {
+            "signature": {
+              "old": "HasTag(tagName: string)",
+              "new": "HasTag(tagName: unknown)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddDamageType",
+          "class": "CTakeDamageInfo",
+          "changes": {
+            "signature": {
+              "old": "AddDamageType(bitsDamageType: int)",
+              "new": "AddDamageType(damageType: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetDamageType",
+          "class": "CTakeDamageInfo",
+          "changes": {
+            "returns": {
+              "old": "int",
+              "new": "unknown"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "HasDamageType",
+          "class": "CTakeDamageInfo",
+          "changes": {
+            "signature": {
+              "old": "HasDamageType(bitsToTest: int)",
+              "new": "HasDamageType(damageType: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetDamageType",
+          "class": "CTakeDamageInfo",
+          "changes": {
+            "signature": {
+              "old": "SetDamageType(bitsDamageType: int)",
+              "new": "SetDamageType(damageType: int)"
+            }
+          }
         }
       ]
     },
@@ -507,7 +629,45 @@
           "name": "DMG_PLASMA",
           "value": 16777216
         }
-      ]
+      ],
+      "changed": []
+    },
+    "Game Events": {
+      "added": [
+        {
+          "type": "event",
+          "name": "bot_takeover",
+          "fieldsDetail": "userid: EntityIndex, botid: player_controller, p: float, y: float, r: float"
+        },
+        {
+          "type": "event",
+          "name": "dota_alchemist_granted_scepter",
+          "fieldsDetail": "alchemist_userid: EntityIndex, grantee_userid: EntityIndex"
+        },
+        {
+          "type": "event",
+          "name": "dota_protector_spawned",
+          "fieldsDetail": "player_id: int"
+        },
+        {
+          "type": "event",
+          "name": "dota_crafting_xp",
+          "fieldsDetail": "userid: EntityIndex, type: short, xp: short"
+        }
+      ],
+      "removed": [
+        {
+          "type": "event",
+          "name": "dota_starting_position_changed",
+          "fieldsDetail": ""
+        },
+        {
+          "type": "event",
+          "name": "dota_estimated_match_duration_changed",
+          "fieldsDetail": ""
+        }
+      ],
+      "changed": []
     },
     "Panorama Enums": {
       "added": [
@@ -753,7 +913,8 @@
           "name": "MODIFIER_STATE_NO_INVISIBILITY_VISUALS",
           "value": 57
         }
-      ]
+      ],
+      "changed": []
     },
     "Engine Enums": {
       "added": [
@@ -829,7 +990,8 @@
           "enum": "Activity",
           "name": "ACT_MP_GESTURE_VC_FISTPUMP_ITEM2"
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

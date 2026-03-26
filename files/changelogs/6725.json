@@ -9,10 +9,13 @@
           "type": "method",
           "class": "CDOTATutorial",
           "name": "MoveCameraToLocation",
-          "signature": "MoveCameraToLocation(arg1)"
+          "signature": "MoveCameraToLocation(arg1: Vector)",
+          "returns": "nil",
+          "description": "Moves the camera to a position."
         }
       ],
-      "removed": []
+      "removed": [],
+      "changed": []
     },
     "Lua Enums": {
       "added": [
@@ -30,7 +33,8 @@
           "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
           "value": 1794
         }
-      ]
+      ],
+      "changed": []
     }
   }
 }

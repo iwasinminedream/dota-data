@@ -8,8 +8,8 @@
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
-          "name": "ACT_DOTA_TORRENT",
-          "value": 1808
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1805
         }
       ],
       "removed": [
@@ -17,7 +17,7 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_VOODOO_REST",
-          "value": 1793
+          "value": 1796
         }
       ],
       "changed": []

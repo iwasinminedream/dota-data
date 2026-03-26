@@ -1,42 +1,24 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
-
-async function fetchText(url: string): Promise<string> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} (${response.statusText}) during load: ${url}`);
-  }
-  return await response.text();
-}
-
-let heroListText: string;
-let abilityListText: string;
-let NeutralNames: string;
-
-async function loadData() {
-
-  const heroUrl = 'https://raw.githubusercontent.com/spirit-bear-productions/dota_vpk_updates/refs/heads/main/scripts/npc/activelist.txt';
-  const abilityUrl = 'https://raw.githubusercontent.com/spirit-bear-productions/dota_vpk_updates/refs/heads/main/scripts/npc/npc_ability_ids.txt';
-  const neutralUrl = 'https://raw.githubusercontent.com/spirit-bear-productions/dota_vpk_updates/refs/heads/main/scripts/npc/npc_units.txt';
-
-  try {
-    [heroListText, abilityListText, NeutralNames] = await Promise.all([
-      fetchText(heroUrl),
-      fetchText(abilityUrl),
-      fetchText(neutralUrl)
-    ]);
-
-    buildModifiers()
-
-  } catch (error) {
-    console.error('Error get data', error);
-    return;
-  }
-}
+import { findSteamAppById } from '@moddota/find-steam-app';
+import vpk from 'vpk';
 
 async function buildModifiers() {
+  const dota2Dir = await findSteamAppById(570);
+  if (!dota2Dir) {
+    throw new Error('Could not locate a Dota 2 installation');
+  }
+  console.log(`Found Dota 2: ${dota2Dir}`);
 
-  const SpecCheckFilter = ["roshan", "rune", "special_bonus"]
+  console.log('Opening game VPK...');
+  const gameVpk = new vpk(join(dota2Dir, 'game', 'dota', 'pak01_dir.vpk'));
+  gameVpk.load();
+
+  const heroListText = gameVpk.getFile('scripts/npc/activelist.txt').toString();
+  const abilityListText = gameVpk.getFile('scripts/npc/npc_ability_ids.txt').toString();
+  const neutralNamesText = gameVpk.getFile('scripts/npc/npc_units.txt').toString();
+
+  const SpecCheckFilter = ["roshan", "rune", "special_bonus"];
   
   const heroList = heroListText
     .split(/\r?\n/)
@@ -55,7 +37,7 @@ async function buildModifiers() {
   const itemList = abilityList.filter((a) => a.startsWith("item_"));
     
   let NeutralList: string[] = [];
-  const lines = NeutralNames.split('\n');
+  const lines = neutralNamesText.split('\n');
   let currentNeutral: string;
   for (const line of lines) {
     const neutralMatch = line.match(/"npc_dota_neutral_([^"]+)"/);
@@ -237,6 +219,10 @@ async function buildModifiers() {
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, JSON.stringify(result, null, 2), 'utf8');
 
-  console.log(`✔ Frouped ${allModifiers.length} modifiers → ${outPath}`);
+  console.log(`✔ Grouped ${allModifiers.length} modifiers → ${outPath}`);
 }
-loadData();
+
+buildModifiers().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

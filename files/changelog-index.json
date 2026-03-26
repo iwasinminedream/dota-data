@@ -19,190 +19,216 @@
     "version": "6730",
     "date": "Mar 24 2026",
     "time": "17:44:55",
-    "addedCount": 670,
-    "removedCount": 218,
-    "changedCount": 3
+    "addedCount": 309,
+    "removedCount": 226,
+    "changedCount": 31
   },
   {
     "version": "6725",
     "date": "Mar 16 2026",
     "time": "11:25:27",
     "addedCount": 2,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6720",
     "date": "Mar 10 2026",
     "time": "13:02:25",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6719",
     "date": "Mar 06 2026",
     "time": "16:14:43",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6718",
     "date": "Mar 05 2026",
     "time": "13:44:04",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6717",
     "date": "Feb 26 2026",
     "time": "16:06:35",
     "addedCount": 2,
-    "removedCount": 0
+    "removedCount": 0,
+    "changedCount": 0
   },
   {
     "version": "6715",
     "date": "Feb 23 2026",
     "time": "16:34:51",
     "addedCount": 1,
-    "removedCount": 3
+    "removedCount": 3,
+    "changedCount": 0
   },
   {
     "version": "6714",
     "date": "Feb 20 2026",
     "time": "15:49:51",
     "addedCount": 1,
-    "removedCount": 2
+    "removedCount": 2,
+    "changedCount": 0
   },
   {
     "version": "6711",
     "date": "Feb 18 2026",
     "time": "16:52:42",
     "addedCount": 0,
-    "removedCount": 0
+    "removedCount": 0,
+    "changedCount": 0
   },
   {
     "version": "6708",
     "date": "Feb 13 2026",
     "time": "16:20:10",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6707",
     "date": "Feb 12 2026",
     "time": "13:54:37",
     "addedCount": 4,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6704",
     "date": "Feb 09 2026",
     "time": "21:30:40",
     "addedCount": 0,
-    "removedCount": 1
+    "removedCount": 0,
+    "changedCount": 0
   },
   {
     "version": "6702",
     "date": "Feb 06 2026",
     "time": "18:30:06",
     "addedCount": 2,
-    "removedCount": 1
+    "removedCount": 2,
+    "changedCount": 0
   },
   {
     "version": "6699",
     "date": "Feb 05 2026",
     "time": "16:27:58",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6697",
     "date": "Feb 04 2026",
     "time": "13:50:12",
     "addedCount": 0,
-    "removedCount": 3
+    "removedCount": 3,
+    "changedCount": 0
   },
   {
     "version": "6695",
     "date": "Feb 03 2026",
     "time": "15:50:43",
     "addedCount": 1,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6694",
     "date": "Feb 02 2026",
     "time": "19:56:17",
     "addedCount": 5,
-    "removedCount": 1
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6691",
     "date": "Jan 30 2026",
     "time": "17:57:16",
-    "addedCount": 5201,
-    "removedCount": 1
+    "addedCount": 6656,
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6676",
     "date": "Jan 21 2026",
     "time": "15:43:12",
-    "addedCount": 56,
-    "removedCount": 0
+    "addedCount": 175,
+    "removedCount": 22,
+    "changedCount": 0
   },
   {
     "version": "6603",
     "date": "Nov 10 2025",
     "time": "17:52:42",
-    "addedCount": 133,
-    "removedCount": 82
+    "addedCount": 18,
+    "removedCount": 65,
+    "changedCount": 21
   },
   {
     "version": "6515",
     "date": "Aug 19 2025",
     "time": "15:40:24",
     "addedCount": 4,
-    "removedCount": 0
+    "removedCount": 0,
+    "changedCount": 0
   },
   {
     "version": "6500",
     "date": "Aug 05 2025",
     "time": "12:18:50",
-    "addedCount": 3227,
-    "removedCount": 1
+    "addedCount": 3232,
+    "removedCount": 1,
+    "changedCount": 0
   },
   {
     "version": "6469",
     "date": "Jun 18 2025",
     "time": "17:56:09",
     "addedCount": 8,
-    "removedCount": 9
+    "removedCount": 9,
+    "changedCount": 0
   },
   {
     "version": "6425",
     "date": "May 23 2025",
     "time": "19:41:03",
-    "addedCount": 34,
-    "removedCount": 8
+    "addedCount": 36,
+    "removedCount": 9,
+    "changedCount": 1
   },
   {
     "version": "6328",
     "date": "Feb 20 2025",
     "time": "14:16:18",
-    "addedCount": 126,
-    "removedCount": 11
+    "addedCount": 130,
+    "removedCount": 13,
+    "changedCount": 6
   },
   {
     "version": "6141",
     "date": "Jul 31 2024",
     "time": "22:54:13",
-    "addedCount": 62,
-    "removedCount": 5
+    "addedCount": 65,
+    "removedCount": 5,
+    "changedCount": 4
   },
   {
     "version": "6065",
     "date": "May 22 2024",
     "time": "21:21:00",
-    "addedCount": 4,
-    "removedCount": 1
+    "addedCount": 9368,
+    "removedCount": 0,
+    "changedCount": 0
   }
 ]
