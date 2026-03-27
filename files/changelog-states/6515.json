@@ -1346,7 +1346,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Axis",
-        "signature": "Axis(arg1: Vector, arg2: unknown, arg3: float, arg4: bool, arg5: float)",
+        "signature": "Axis(arg1: Vector, arg2: QAngle, arg3: float, arg4: bool, arg5: float)",
         "returns": "nil",
         "description": "Draws an axis. Specify origin + orientation in world space."
       },
@@ -1362,7 +1362,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "BoxAngles",
-        "signature": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: unknown, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: QAngle, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
         "returns": "nil",
         "description": "Draws an oriented box at the origin. Specify bounds in local space."
       },
@@ -1370,7 +1370,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Capsule",
-        "signature": "Capsule(arg1: Vector, arg2: unknown, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "Capsule(arg1: Vector, arg2: QAngle, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
         "returns": "nil",
         "description": "Draws a capsule. Specify base in world space."
       },
@@ -1378,7 +1378,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Circle",
-        "signature": "Circle(arg1: Vector, arg2: unknown, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Circle(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws a circle. Specify center in world space."
       },
@@ -1418,7 +1418,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cross3DOriented",
-        "signature": "Cross3DOriented(arg1: Vector, arg2: unknown, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Cross3DOriented(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws an oriented cross. Specify origin in world space."
       },
@@ -1554,7 +1554,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "SweptBox",
-        "signature": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: unknown, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
+        "signature": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: QAngle, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
         "returns": "nil",
         "description": "Draws a swept box. Specify endpoints in world space and the bounds in local space."
       },
@@ -1586,7 +1586,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "VectorText3D",
-        "signature": "VectorText3D(arg1: Vector, arg2: unknown, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "VectorText3D(arg1: Vector, arg2: QAngle, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws 3D text. Specify origin + orientation in world space."
       },
@@ -16794,7 +16794,7 @@
         "type": "method",
         "class": "CMarkupVolumeTagged",
         "name": "HasTag",
-        "signature": "HasTag(tagName: unknown)",
+        "signature": "HasTag(tagName: string)",
         "returns": "bool",
         "description": "Does this volume have the given tag."
       },

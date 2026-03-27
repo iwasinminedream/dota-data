@@ -70,7 +70,7 @@
           "class": "CTakeDamageInfo",
           "name": "GetDamagePosition",
           "signature": "GetDamagePosition()",
-          "returns": "unknown",
+          "returns": "Vector",
           "description": ""
         },
         {
@@ -102,7 +102,7 @@
           "class": "CTakeDamageInfo",
           "name": "GetReportedPosition",
           "signature": "GetReportedPosition()",
-          "returns": "unknown",
+          "returns": "Vector",
           "description": ""
         },
         {
@@ -173,7 +173,7 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamagePosition",
-          "signature": "SetDamagePosition(damagePosition: unknown)",
+          "signature": "SetDamagePosition(damagePosition: Vector)",
           "returns": "nil",
           "description": ""
         },
@@ -197,7 +197,7 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetReportedPosition",
-          "signature": "SetReportedPosition(reportedPosition: unknown)",
+          "signature": "SetReportedPosition(reportedPosition: Vector)",
           "returns": "nil",
           "description": ""
         }

@@ -33,7 +33,232 @@
         }
       ],
       "changed": []
+    },
+    "Panorama API": {
+      "added": [
+        {
+          "type": "class",
+          "name": "$"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Msg",
+          "signature": "Msg(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Log a message"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "AssertHelper",
+          "signature": "AssertHelper(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Trigger an assert"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Warning",
+          "signature": "Warning(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Log a warning message to specified channel"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "DispatchEvent",
+          "signature": "DispatchEvent(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Dispatch an event"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "DispatchEventAsync",
+          "signature": "DispatchEventAsync(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Dispatch an event to occur later"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "RegisterEventHandler",
+          "signature": "RegisterEventHandler(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Register an event handler"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "RegisterForUnhandledEvent",
+          "signature": "RegisterForUnhandledEvent(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Register a handler for an event that is not otherwise handled"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "UnregisterForUnhandledEvent",
+          "signature": "UnregisterForUnhandledEvent(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Remove an unhandled event handler"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "FindChildInContext",
+          "signature": "FindChildInContext(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Find an element"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "AsyncWebRequest",
+          "signature": "AsyncWebRequest(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Make a web request (disabled)"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "CreatePanel",
+          "signature": "CreatePanel(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Create a new panel"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "CreatePanelWithProperties",
+          "signature": "CreatePanelWithProperties(_arg_1: unknown)",
+          "returns": "void",
+          "description": "DEPRECATED: Use $.CreatePanel which has the same signature and supports properties."
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Localize",
+          "signature": "Localize(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Localize a string. Optionally accepts a Panel argument for dialog variable values."
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "ConstructString",
+          "signature": "ConstructString(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Localize a string using the given property values"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "ConstructMFString",
+          "signature": "ConstructMFString(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Localize a MessageFormat string using the given property values"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Language",
+          "signature": "Language(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Get the current language"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Schedule",
+          "signature": "Schedule(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Schedule a function to be called later"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "CancelScheduled",
+          "signature": "CancelScheduled(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Cancels a scheduled function"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "FrameTime",
+          "signature": "FrameTime(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Gets the time this frame started, in seconds since panorama was initialized"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "GetContextPanel",
+          "signature": "GetContextPanel(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Get the current panel context"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "RegisterKeyBind",
+          "signature": "RegisterKeyBind(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Register a key binding"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "Each",
+          "signature": "Each(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Call a function on each given item"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "DbgIsReloadingScript",
+          "signature": "DbgIsReloadingScript(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Call during JS startup code to check if script is being reloaded"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "HTMLEscape",
+          "signature": "HTMLEscape(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Convert a string to HTML-safe"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "LogChannel",
+          "signature": "LogChannel(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Create a logging channel"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "BImageFileExists",
+          "signature": "BImageFileExists(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Return true if a file exists.  Path will usually start with 'file://{images}'"
+        },
+        {
+          "type": "method",
+          "class": "$",
+          "name": "MousePosition",
+          "signature": "MousePosition(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Return the position of the mouse in the parent window."
+        }
+      ],
+      "removed": [],
+      "changed": []
     }
-    
   }
 }

@@ -195,7 +195,7 @@
         "class": "CBaseEntity",
         "name": "EyePosition",
         "signature": "EyePosition()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Get vector to eye position - absolute coords."
       },
       {
@@ -235,7 +235,7 @@
         "class": "CBaseEntity",
         "name": "GetAbsOrigin",
         "signature": "GetAbsOrigin()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": ""
       },
       {
@@ -307,7 +307,7 @@
         "class": "CBaseEntity",
         "name": "GetCenter",
         "signature": "GetCenter()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Get vector to center of object - absolute coords."
       },
       {
@@ -427,7 +427,7 @@
         "class": "CBaseEntity",
         "name": "GetOrigin",
         "signature": "GetOrigin()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": ""
       },
       {
@@ -626,7 +626,7 @@
         "type": "method",
         "class": "CBaseEntity",
         "name": "SetAbsOrigin",
-        "signature": "SetAbsOrigin(origin: unknown)",
+        "signature": "SetAbsOrigin(origin: Vector)",
         "returns": "nil",
         "description": ""
       },
@@ -843,14 +843,14 @@
         "class": "CBaseEntity",
         "name": "TransformPointEntityToWorld",
         "signature": "TransformPointEntityToWorld(point: Vector)",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Returns the input Vector transformed from entity to world space."
       },
       {
         "type": "method",
         "class": "CBaseEntity",
         "name": "TransformPointWorldToEntity",
-        "signature": "TransformPointWorldToEntity(point: unknown)",
+        "signature": "TransformPointWorldToEntity(point: Vector)",
         "returns": "Vector",
         "description": "Returns the input Vector transformed from world to entity space."
       },
@@ -895,7 +895,7 @@
         "class": "CBaseModelEntity",
         "name": "GetAttachmentOrigin",
         "signature": "GetAttachmentOrigin(attachment: int)",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Get the attachment id's origin vector."
       },
       {
@@ -1134,7 +1134,7 @@
         "type": "method",
         "class": "CBodyComponent",
         "name": "AddImpulseAtPosition",
-        "signature": "AddImpulseAtPosition(arg1: Vector, arg2: unknown)",
+        "signature": "AddImpulseAtPosition(arg1: Vector, arg2: Vector)",
         "returns": "nil",
         "description": "Apply an impulse at a worldspace position to the physics."
       },
@@ -1258,7 +1258,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Axis",
-        "signature": "Axis(arg1: Vector, arg2: unknown, arg3: float, arg4: bool, arg5: float)",
+        "signature": "Axis(arg1: Vector, arg2: QAngle, arg3: float, arg4: bool, arg5: float)",
         "returns": "nil",
         "description": "Draws an axis. Specify origin + orientation in world space."
       },
@@ -1274,7 +1274,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "BoxAngles",
-        "signature": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: unknown, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: QAngle, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
         "returns": "nil",
         "description": "Draws an oriented box at the origin. Specify bounds in local space."
       },
@@ -1282,7 +1282,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Capsule",
-        "signature": "Capsule(arg1: Vector, arg2: unknown, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "Capsule(arg1: Vector, arg2: QAngle, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
         "returns": "nil",
         "description": "Draws a capsule. Specify base in world space."
       },
@@ -1290,7 +1290,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Circle",
-        "signature": "Circle(arg1: Vector, arg2: unknown, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Circle(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws a circle. Specify center in world space."
       },
@@ -1330,7 +1330,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cross3DOriented",
-        "signature": "Cross3DOriented(arg1: Vector, arg2: unknown, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Cross3DOriented(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws an oriented cross. Specify origin in world space."
       },
@@ -1466,7 +1466,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "SweptBox",
-        "signature": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: unknown, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
+        "signature": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: QAngle, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
         "returns": "nil",
         "description": "Draws a swept box. Specify endpoints in world space and the bounds in local space."
       },
@@ -1498,7 +1498,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "VectorText3D",
-        "signature": "VectorText3D(arg1: Vector, arg2: unknown, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "VectorText3D(arg1: Vector, arg2: QAngle, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
         "returns": "nil",
         "description": "Draws 3D text. Specify origin + orientation in world space."
       },
@@ -2751,7 +2751,7 @@
         "class": "CDOTA_BaseNPC",
         "name": "GetCursorPosition",
         "signature": "GetCursorPosition()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": ""
       },
       {
@@ -4022,7 +4022,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "MoveToPositionAggressive",
-        "signature": "MoveToPositionAggressive(dest: unknown)",
+        "signature": "MoveToPositionAggressive(dest: Vector)",
         "returns": "nil",
         "description": "Issue an Attack-Move-To command."
       },
@@ -12591,7 +12591,7 @@
         "class": "CDOTABaseAbility",
         "name": "GetCursorPosition",
         "signature": "GetCursorPosition()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": ""
       },
       {
@@ -16342,7 +16342,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindAllByClassnameWithin",
-        "signature": "FindAllByClassnameWithin(className: string, location: unknown, radius: float)",
+        "signature": "FindAllByClassnameWithin(className: string, location: Vector, radius: float)",
         "returns": "[object Object]",
         "description": "Find entities by class name within a radius."
       },
@@ -16366,7 +16366,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindAllByNameWithin",
-        "signature": "FindAllByNameWithin(name: string, location: unknown, radius: float)",
+        "signature": "FindAllByNameWithin(name: string, location: Vector, radius: float)",
         "returns": "[object Object]",
         "description": "Find entities by name within a radius."
       },
@@ -16382,7 +16382,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindAllInSphere",
-        "signature": "FindAllInSphere(location: unknown, radius: float)",
+        "signature": "FindAllInSphere(location: Vector, radius: float)",
         "returns": "[object Object]",
         "description": "Find entities within a radius."
       },
@@ -16398,7 +16398,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindByClassnameNearest",
-        "signature": "FindByClassnameNearest(className: string, location: unknown, radius: float)",
+        "signature": "FindByClassnameNearest(className: string, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities by class name nearest to a point."
       },
@@ -16406,7 +16406,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindByClassnameWithin",
-        "signature": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: unknown, radius: float)",
+        "signature": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search."
       },
@@ -16422,7 +16422,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindByModelWithin",
-        "signature": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: unknown, radius: float)",
+        "signature": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search."
       },
@@ -16438,7 +16438,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindByNameNearest",
-        "signature": "FindByNameNearest(name: string, location: unknown, radius: float)",
+        "signature": "FindByNameNearest(name: string, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities by name nearest to a point."
       },
@@ -16446,7 +16446,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindByNameWithin",
-        "signature": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: unknown, radius: float)",
+        "signature": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search."
       },
@@ -16462,7 +16462,7 @@
         "type": "method",
         "class": "CEntities",
         "name": "FindInSphere",
-        "signature": "FindInSphere(previous: CBaseEntity | nil, location: unknown, radius: float)",
+        "signature": "FindInSphere(previous: CBaseEntity | nil, location: Vector, radius: float)",
         "returns": "CBaseEntity | nil",
         "description": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search."
       },
@@ -16698,7 +16698,7 @@
         "type": "method",
         "class": "CEnvEntityMaker",
         "name": "SpawnEntityAtLocation",
-        "signature": "SpawnEntityAtLocation(vecAlternateOrigin: unknown, vecAlternateAngles: Vector)",
+        "signature": "SpawnEntityAtLocation(vecAlternateOrigin: Vector, vecAlternateAngles: Vector)",
         "returns": "nil",
         "description": "Create an entity at a specified location and orientaton, orientation is Euler angle in degrees."
       },
@@ -16846,7 +16846,7 @@
         "type": "method",
         "class": "CMarkupVolumeTagged",
         "name": "HasTag",
-        "signature": "HasTag(tagName: unknown)",
+        "signature": "HasTag(tagName: string)",
         "returns": "bool",
         "description": "Does this volume have the given tag."
       },
@@ -18041,7 +18041,7 @@
       {
         "type": "function",
         "name": "CreateDamageInfo",
-        "signature": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: unknown, arg5: float, arg6: int)",
+        "signature": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: Vector, arg5: float, arg6: int)",
         "returns": "CTakeDamageInfo",
         "description": "Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object."
       },
@@ -18139,14 +18139,14 @@
       {
         "type": "function",
         "name": "CreateTrigger",
-        "signature": "CreateTrigger(arg1: unknown, arg2: Vector, arg3: Vector)",
+        "signature": "CreateTrigger(arg1: Vector, arg2: Vector, arg3: Vector)",
         "returns": "CBaseTrigger",
         "description": "Creates and returns an AABB trigger."
       },
       {
         "type": "function",
         "name": "CreateTriggerRadiusApproximate",
-        "signature": "CreateTriggerRadiusApproximate(vecOrigin: unknown, radius: float)",
+        "signature": "CreateTriggerRadiusApproximate(vecOrigin: Vector, radius: float)",
         "returns": "CBaseTrigger",
         "description": "Creates and returns an AABB trigger thats bigger than the radius provided."
       },
@@ -18230,21 +18230,21 @@
       {
         "type": "function",
         "name": "DebugDrawBox",
-        "signature": "DebugDrawBox(arg1: unknown, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
+        "signature": "DebugDrawBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
         "returns": "nil",
         "description": "Draw a debug overlay box."
       },
       {
         "type": "function",
         "name": "DebugDrawBoxDirection",
-        "signature": "DebugDrawBoxDirection(cent: unknown, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)",
+        "signature": "DebugDrawBoxDirection(cent: Vector, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)",
         "returns": "nil",
         "description": "Draw a debug forward box."
       },
       {
         "type": "function",
         "name": "DebugDrawCircle",
-        "signature": "DebugDrawCircle(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
+        "signature": "DebugDrawCircle(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draw a debug circle."
       },
@@ -18258,14 +18258,14 @@
       {
         "type": "function",
         "name": "DebugDrawLine",
-        "signature": "DebugDrawLine(origin: unknown, target: unknown, r: int, g: int, b: int, ztest: bool, duration: float)",
+        "signature": "DebugDrawLine(origin: Vector, target: Vector, r: int, g: int, b: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draw a debug overlay line."
       },
       {
         "type": "function",
         "name": "DebugDrawLine_vCol",
-        "signature": "DebugDrawLine_vCol(arg1: unknown, arg2: unknown, arg3: Vector, arg4: bool, arg5: float)",
+        "signature": "DebugDrawLine_vCol(arg1: Vector, arg2: Vector, arg3: Vector, arg4: bool, arg5: float)",
         "returns": "nil",
         "description": "Draw a debug line using color vec."
       },
@@ -18279,14 +18279,14 @@
       {
         "type": "function",
         "name": "DebugDrawSphere",
-        "signature": "DebugDrawSphere(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
+        "signature": "DebugDrawSphere(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draw a debug sphere."
       },
       {
         "type": "function",
         "name": "DebugDrawText",
-        "signature": "DebugDrawText(origin: unknown, text: string, viewCheck: bool, duration: float)",
+        "signature": "DebugDrawText(origin: Vector, text: string, viewCheck: bool, duration: float)",
         "returns": "nil",
         "description": "Draw text in 3d."
       },
@@ -18454,7 +18454,7 @@
       {
         "type": "function",
         "name": "EmitSoundOnLocationForAllies",
-        "signature": "EmitSoundOnLocationForAllies(location: unknown, soundName: string, caster: CBaseEntity)",
+        "signature": "EmitSoundOnLocationForAllies(location: Vector, soundName: string, caster: CBaseEntity)",
         "returns": "nil",
         "description": "Emit a sound on a location from a unit, only for players allied with that unit."
       },
@@ -18468,7 +18468,7 @@
       {
         "type": "function",
         "name": "EmitSoundOnLocationWithCaster",
-        "signature": "EmitSoundOnLocationWithCaster(location: unknown, soundName: string, caster: CDOTA_BaseNPC)",
+        "signature": "EmitSoundOnLocationWithCaster(location: Vector, soundName: string, caster: CDOTA_BaseNPC)",
         "returns": "nil",
         "description": "Emit a sound on a location from a unit."
       },
@@ -19203,8 +19203,8 @@
       {
         "type": "function",
         "name": "RotatePosition",
-        "signature": "RotatePosition(arg1: unknown, arg2: QAngle, arg3: unknown)",
-        "returns": "unknown",
+        "signature": "RotatePosition(arg1: Vector, arg2: QAngle, arg3: Vector)",
+        "returns": "Vector",
         "description": "Rotate a Vector around a point."
       },
       {
@@ -19238,7 +19238,7 @@
       {
         "type": "function",
         "name": "ScreenShake",
-        "signature": "ScreenShake(center: unknown, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)",
+        "signature": "ScreenShake(center: Vector, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)",
         "returns": "nil",
         "description": "Start a screenshake."
       },
@@ -19434,21 +19434,21 @@
       {
         "type": "function",
         "name": "StartSoundEventFromPosition",
-        "signature": "StartSoundEventFromPosition(soundName: string, position: unknown)",
+        "signature": "StartSoundEventFromPosition(soundName: string, position: Vector)",
         "returns": "nil",
         "description": "Start a sound event from position."
       },
       {
         "type": "function",
         "name": "StartSoundEventFromPositionReliable",
-        "signature": "StartSoundEventFromPositionReliable(soundName: string, position: unknown)",
+        "signature": "StartSoundEventFromPositionReliable(soundName: string, position: Vector)",
         "returns": "nil",
         "description": "Start a sound event from position with reliable delivery."
       },
       {
         "type": "function",
         "name": "StartSoundEventFromPositionUnreliable",
-        "signature": "StartSoundEventFromPositionUnreliable(soundName: string, position: unknown)",
+        "signature": "StartSoundEventFromPositionUnreliable(soundName: string, position: Vector)",
         "returns": "nil",
         "description": "Start a sound event from position with optional delivery."
       },

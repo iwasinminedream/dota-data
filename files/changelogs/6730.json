@@ -296,7 +296,7 @@
           "class": "CTakeDamageInfo",
           "name": "GetDamagePosition",
           "signature": "GetDamagePosition()",
-          "returns": "unknown",
+          "returns": "Vector",
           "description": ""
         },
         {
@@ -328,7 +328,7 @@
           "class": "CTakeDamageInfo",
           "name": "GetReportedPosition",
           "signature": "GetReportedPosition()",
-          "returns": "unknown",
+          "returns": "Vector",
           "description": ""
         },
         {
@@ -399,7 +399,7 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetDamagePosition",
-          "signature": "SetDamagePosition(damagePosition: unknown)",
+          "signature": "SetDamagePosition(damagePosition: Vector)",
           "returns": "nil",
           "description": ""
         },
@@ -423,34 +423,12 @@
           "type": "method",
           "class": "CTakeDamageInfo",
           "name": "SetReportedPosition",
-          "signature": "SetReportedPosition(reportedPosition: unknown)",
+          "signature": "SetReportedPosition(reportedPosition: Vector)",
           "returns": "nil",
           "description": ""
         }
       ],
       "changed": [
-        {
-          "type": "method",
-          "name": "GetAttachmentOrigin",
-          "class": "CBaseModelEntity",
-          "changes": {
-            "returns": {
-              "old": "Vector",
-              "new": "unknown"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "AddImpulseAtPosition",
-          "class": "CBodyComponent",
-          "changes": {
-            "signature": {
-              "old": "AddImpulseAtPosition(arg1: Vector, arg2: Vector)",
-              "new": "AddImpulseAtPosition(arg1: Vector, arg2: unknown)"
-            }
-          }
-        },
         {
           "type": "method",
           "name": "Script_GetMagicalArmorValue",
@@ -481,270 +459,6 @@
             "signature": {
               "old": "BeginTemporaryNight(duration: float)",
               "new": "BeginTemporaryNight(duration: float, arg2: int)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindAllByClassnameWithin",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindAllByClassnameWithin(className: string, location: Vector, radius: float)",
-              "new": "FindAllByClassnameWithin(className: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindAllByNameWithin",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindAllByNameWithin(name: string, location: Vector, radius: float)",
-              "new": "FindAllByNameWithin(name: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindAllInSphere",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindAllInSphere(location: Vector, radius: float)",
-              "new": "FindAllInSphere(location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindByClassnameNearest",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindByClassnameNearest(className: string, location: Vector, radius: float)",
-              "new": "FindByClassnameNearest(className: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindByClassnameWithin",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: Vector, radius: float)",
-              "new": "FindByClassnameWithin(previous: CBaseEntity | nil, className: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindByModelWithin",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: Vector, radius: float)",
-              "new": "FindByModelWithin(previous: CBaseEntity | nil, modelName: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindByNameNearest",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindByNameNearest(name: string, location: Vector, radius: float)",
-              "new": "FindByNameNearest(name: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindByNameWithin",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: Vector, radius: float)",
-              "new": "FindByNameWithin(previous: CBaseEntity | nil, name: string, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "FindInSphere",
-          "class": "CEntities",
-          "changes": {
-            "signature": {
-              "old": "FindInSphere(previous: CBaseEntity | nil, location: Vector, radius: float)",
-              "new": "FindInSphere(previous: CBaseEntity | nil, location: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "SpawnEntityAtLocation",
-          "class": "CEnvEntityMaker",
-          "changes": {
-            "signature": {
-              "old": "SpawnEntityAtLocation(vecAlternateOrigin: Vector, vecAlternateAngles: Vector)",
-              "new": "SpawnEntityAtLocation(vecAlternateOrigin: unknown, vecAlternateAngles: Vector)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "CreateDamageInfo",
-          "changes": {
-            "signature": {
-              "old": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: Vector, arg5: float, arg6: int)",
-              "new": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: unknown, arg5: float, arg6: int)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "CreateTrigger",
-          "changes": {
-            "signature": {
-              "old": "CreateTrigger(arg1: Vector, arg2: Vector, arg3: Vector)",
-              "new": "CreateTrigger(arg1: unknown, arg2: Vector, arg3: Vector)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "CreateTriggerRadiusApproximate",
-          "changes": {
-            "signature": {
-              "old": "CreateTriggerRadiusApproximate(vecOrigin: Vector, radius: float)",
-              "new": "CreateTriggerRadiusApproximate(vecOrigin: unknown, radius: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "DebugDrawBoxDirection",
-          "changes": {
-            "signature": {
-              "old": "DebugDrawBoxDirection(cent: Vector, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)",
-              "new": "DebugDrawBoxDirection(cent: unknown, min: Vector, max: Vector, forward: Vector, rgb: Vector, a: float, duration: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "DebugDrawCircle",
-          "changes": {
-            "signature": {
-              "old": "DebugDrawCircle(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
-              "new": "DebugDrawCircle(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "DebugDrawLine",
-          "changes": {
-            "signature": {
-              "old": "DebugDrawLine(origin: Vector, target: Vector, r: int, g: int, b: int, ztest: bool, duration: float)",
-              "new": "DebugDrawLine(origin: unknown, target: unknown, r: int, g: int, b: int, ztest: bool, duration: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "DebugDrawLine_vCol",
-          "changes": {
-            "signature": {
-              "old": "DebugDrawLine_vCol(arg1: Vector, arg2: Vector, arg3: Vector, arg4: bool, arg5: float)",
-              "new": "DebugDrawLine_vCol(arg1: unknown, arg2: unknown, arg3: Vector, arg4: bool, arg5: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "DebugDrawSphere",
-          "changes": {
-            "signature": {
-              "old": "DebugDrawSphere(center: Vector, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)",
-              "new": "DebugDrawSphere(center: unknown, rgb: Vector, a: float, rad: float, ztest: bool, duration: float)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "EmitSoundOnLocationForAllies",
-          "changes": {
-            "signature": {
-              "old": "EmitSoundOnLocationForAllies(location: Vector, soundName: string, caster: CBaseEntity)",
-              "new": "EmitSoundOnLocationForAllies(location: unknown, soundName: string, caster: CBaseEntity)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "EmitSoundOnLocationWithCaster",
-          "changes": {
-            "signature": {
-              "old": "EmitSoundOnLocationWithCaster(location: Vector, soundName: string, caster: CDOTA_BaseNPC)",
-              "new": "EmitSoundOnLocationWithCaster(location: unknown, soundName: string, caster: CDOTA_BaseNPC)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "RotatePosition",
-          "changes": {
-            "signature": {
-              "old": "RotatePosition(arg1: Vector, arg2: QAngle, arg3: Vector)",
-              "new": "RotatePosition(arg1: unknown, arg2: QAngle, arg3: unknown)"
-            },
-            "returns": {
-              "old": "Vector",
-              "new": "unknown"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "ScreenShake",
-          "changes": {
-            "signature": {
-              "old": "ScreenShake(center: Vector, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)",
-              "new": "ScreenShake(center: unknown, amplitude: float, frequency: float, duration: float, radius: float, command: [object Object] | [object Object], airShake: bool)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "StartSoundEventFromPosition",
-          "changes": {
-            "signature": {
-              "old": "StartSoundEventFromPosition(soundName: string, position: Vector)",
-              "new": "StartSoundEventFromPosition(soundName: string, position: unknown)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "StartSoundEventFromPositionReliable",
-          "changes": {
-            "signature": {
-              "old": "StartSoundEventFromPositionReliable(soundName: string, position: Vector)",
-              "new": "StartSoundEventFromPositionReliable(soundName: string, position: unknown)"
-            }
-          }
-        },
-        {
-          "type": "function",
-          "name": "StartSoundEventFromPositionUnreliable",
-          "changes": {
-            "signature": {
-              "old": "StartSoundEventFromPositionUnreliable(soundName: string, position: Vector)",
-              "new": "StartSoundEventFromPositionUnreliable(soundName: string, position: unknown)"
             }
           }
         }

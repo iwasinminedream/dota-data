@@ -403,7 +403,7 @@
         "available": "server",
         "description": "Get vector to eye position - absolute coords.",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -483,7 +483,7 @@
         "name": "GetAbsOrigin",
         "available": "both",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -571,7 +571,7 @@
         "available": "server",
         "description": "Get vector to center of object - absolute coords.",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -733,7 +733,7 @@
         "name": "GetOrigin",
         "available": "server",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -1045,7 +1045,7 @@
           {
             "name": "origin",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -1625,7 +1625,7 @@
         "available": "server",
         "description": "Returns the input Vector transformed from entity to world space.",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": [
           {
@@ -1648,7 +1648,7 @@
           {
             "name": "point",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -1721,7 +1721,7 @@
         "available": "server",
         "description": "Get the attachment id's origin vector.",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": [
           {
@@ -2180,7 +2180,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -2504,7 +2504,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -2616,7 +2616,7 @@
           {
             "name": "arg4",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -2675,7 +2675,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -2746,7 +2746,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -3059,7 +3059,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -3833,7 +3833,7 @@
           {
             "name": "arg5",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -4087,7 +4087,7 @@
           {
             "name": "arg2",
             "types": [
-              "unknown"
+              "QAngle"
             ]
           },
           {
@@ -6562,7 +6562,7 @@
         "name": "GetCursorPosition",
         "available": "server",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -8388,7 +8388,7 @@
           {
             "name": "dest",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -23674,7 +23674,7 @@
         "name": "GetCursorPosition",
         "available": "server",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -31311,7 +31311,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31389,7 +31389,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31439,7 +31439,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31494,7 +31494,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31531,7 +31531,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31593,7 +31593,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31648,7 +31648,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31685,7 +31685,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -31741,7 +31741,7 @@
           {
             "name": "location",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -32182,7 +32182,7 @@
           {
             "name": "vecAlternateOrigin",
             "types": [
-              "unknown"
+              "Vector"
             ]
           },
           {
@@ -32540,7 +32540,7 @@
           {
             "name": "tagName",
             "types": [
-              "unknown"
+              "string"
             ]
           }
         ]
@@ -34162,7 +34162,7 @@
         "name": "GetDamagePosition",
         "available": "server",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -34198,7 +34198,7 @@
         "name": "GetReportedPosition",
         "available": "server",
         "returns": [
-          "unknown"
+          "Vector"
         ],
         "args": []
       },
@@ -34334,7 +34334,7 @@
           {
             "name": "damagePosition",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -34382,7 +34382,7 @@
           {
             "name": "reportedPosition",
             "types": [
-              "unknown"
+              "Vector"
             ]
           }
         ]
@@ -35867,7 +35867,7 @@
       {
         "name": "arg4",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36268,7 +36268,7 @@
       {
         "name": "arg1",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36297,7 +36297,7 @@
       {
         "name": "vecOrigin",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36670,7 +36670,7 @@
       {
         "name": "arg1",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36729,7 +36729,7 @@
       {
         "name": "cent",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36782,7 +36782,7 @@
       {
         "name": "center",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36839,13 +36839,13 @@
       {
         "name": "origin",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
         "name": "target",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36892,13 +36892,13 @@
       {
         "name": "arg1",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
         "name": "arg2",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -36998,7 +36998,7 @@
       {
         "name": "center",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -37045,7 +37045,7 @@
       {
         "name": "origin",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -37834,7 +37834,7 @@
       {
         "name": "location",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -37892,7 +37892,7 @@
       {
         "name": "location",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -40113,13 +40113,13 @@
     "available": "both",
     "description": "Rotate a Vector around a point.",
     "returns": [
-      "unknown"
+      "Vector"
     ],
     "args": [
       {
         "name": "arg1",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -40131,7 +40131,7 @@
       {
         "name": "arg3",
         "types": [
-          "unknown"
+          "Vector"
         ]
       }
     ]
@@ -40253,7 +40253,7 @@
       {
         "name": "center",
         "types": [
-          "unknown"
+          "Vector"
         ]
       },
       {
@@ -41115,7 +41115,7 @@
       {
         "name": "position",
         "types": [
-          "unknown"
+          "Vector"
         ]
       }
     ]
@@ -41138,7 +41138,7 @@
       {
         "name": "position",
         "types": [
-          "unknown"
+          "Vector"
         ]
       }
     ]
@@ -41161,7 +41161,7 @@
       {
         "name": "position",
         "types": [
-          "unknown"
+          "Vector"
         ]
       }
     ]

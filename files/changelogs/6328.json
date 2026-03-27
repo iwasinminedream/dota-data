@@ -246,17 +246,6 @@
         },
         {
           "type": "method",
-          "name": "HasTag",
-          "class": "CMarkupVolumeTagged",
-          "changes": {
-            "signature": {
-              "old": "HasTag(tagName: string)",
-              "new": "HasTag(tagName: unknown)"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "AddDamageType",
           "class": "CTakeDamageInfo",
           "changes": {
