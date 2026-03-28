@@ -1,0 +1,33 @@
+{
+  "version": "6743",
+  "date": "Mar 27 2026",
+  "time": "14:48:20",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1804
+        }
+      ],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "dota_ability_contribution_assert_minimum"
+        },
+        {
+          "type": "convar",
+          "name": "dota_bot_debug_assign_hero_roles"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}

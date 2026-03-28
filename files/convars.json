@@ -5900,6 +5900,13 @@
     ],
     "description": ""
   },
+  "dota_ability_contribution_assert_minimum": {
+    "default": "100",
+    "flags": [
+      "sv"
+    ],
+    "description": "Minimum threshold for ability contribution delta before triggering asserts."
+  },
   "dota_ability_debug": {
     "default": "false",
     "flags": [
@@ -6764,6 +6771,13 @@
       "cl"
     ],
     "description": "Draw some basic client-side debug info for each hero."
+  },
+  "dota_bot_debug_assign_hero_roles": {
+    "default": "cmd",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
   },
   "dota_bot_debug_clear": {
     "default": "cmd",
@@ -9089,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3654",
+    "default": "3657",
     "flags": [
       "cl",
       "a",
@@ -12711,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "4",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -34480,7 +34494,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (WH-1000XM6)",
+    "default": "Динамики (FIFINE K670 Microphone)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
