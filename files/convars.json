@@ -8733,7 +8733,7 @@
     "description": ""
   },
   "dota_competitive_game_modes": {
-    "default": "0",
+    "default": "4194304",
     "flags": [
       "cl",
       "a"
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3657",
+    "default": "3672",
     "flags": [
       "cl",
       "a",
@@ -11102,7 +11102,7 @@
     "description": ""
   },
   "dota_hero_demo_spawn_creeps_enabled": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -12693,7 +12693,7 @@
     "description": "Bit masks of game modes to search for in unranked matchmaking"
   },
   "dota_match_languages": {
-    "default": "0",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -12922,7 +12922,7 @@
     "description": ""
   },
   "dota_minimap_hero_size": {
-    "default": "597.22",
+    "default": "913.055",
     "flags": [
       "cl",
       "a",
@@ -19564,7 +19564,7 @@
     "description": ""
   },
   "dota_video_config.setting.nowindowborder": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -22726,7 +22726,7 @@
     "description": ""
   },
   "hud_sticky_item_name": {
-    "default": "item_tpscroll_lua",
+    "default": "item_tpscroll",
     "flags": [
       "cl",
       "a"
@@ -34494,7 +34494,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (FIFINE K670 Microphone)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
