@@ -144,6 +144,15 @@ export function generateEnumDeclarations(): EnumResult {
     ),
   );
 
+  // Mark enum members with values > 2^31 — these overflow in Lua (32-bit integers)
+  for (const enumDecl of enums) {
+    for (const member of enumDecl.members) {
+      if (member.value > 0x7FFFFFFF) {
+        member.overflow = true;
+      }
+    }
+  }
+
   _.each(enumValueDescriptions, (descriptions, scopeName) => {
     const enumValue = enums.find((x) => x.name === scopeName);
     if (enumValue == null) throw new Error(`Enum ${scopeName} not found`);

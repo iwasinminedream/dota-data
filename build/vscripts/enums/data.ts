@@ -75,6 +75,10 @@ export const prefixedEnums: Record<string, string | RegExp> = {
 };
 
 export const enumValueDescriptions = {
+  DOTA_ABILITY_BEHAVIOR: {
+    __self: 'Members marked with * must been used as number in lua because real ennum is 0',
+  },
+
   // https://wiki.garrysmod.com/page/Enums/FCVAR
   ConVarFlags: {
     FCVAR_PROTECTED: dedent`

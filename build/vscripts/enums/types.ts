@@ -26,5 +26,6 @@ export interface EnumMember {
   name: string;
   description?: string;
   value: number;
+  overflow?: true;
 }
 // EXPORT END

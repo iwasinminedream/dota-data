@@ -562,85 +562,106 @@
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_LAST_RESORT_POINT",
-        "value": 2147483648
+        "value": 2147483648,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST",
-        "value": 4294967296
+        "value": 4294967296,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
-        "value": 8589934592
+        "value": 8589934592,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_UNLOCKED_BY_EFFECT_INDEX",
-        "value": 17179869184
+        "value": 17179869184,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE",
-        "value": 34359738368
+        "value": 34359738368,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_FREE_DRAW_TARGETING",
-        "value": 68719476736
+        "value": 68719476736,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE",
-        "value": 137438953472
+        "value": 137438953472,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
-        "value": 274877906944
+        "value": 274877906944,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_MUTED",
-        "value": 549755813888
+        "value": 549755813888,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_ALT_CASTABLE",
-        "value": 1099511627776
+        "value": 1099511627776,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS",
-        "value": 4398046511104
+        "value": 4398046511104,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_INNATE_UI",
-        "value": 8796093022208
+        "value": 8796093022208,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_UNSWAPPABLE",
-        "value": 17592186044416
+        "value": 17592186044416,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES",
-        "value": 35184372088832
+        "value": 35184372088832,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE",
-        "value": 70368744177664
+        "value": 70368744177664,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_AFFECTED_BY_MUTE",
-        "value": 140737488355328
+        "value": 140737488355328,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM",
-        "value": 281474976710656
+        "value": 281474976710656,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_FORCE_NO_INNATE_UI",
-        "value": 562949953421312
+        "value": 562949953421312,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_FORCE_KEYBIND",
-        "value": 1125899906842624
+        "value": 1125899906842624,
+        "overflow": true
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
-        "value": 2251799813685248
+        "value": 2251799813685248,
+        "overflow": true
       }
-    ]
+    ],
+    "description": "Members marked with * must been used as number in lua because real ennum is 0"
   },
   {
     "kind": "enum",
