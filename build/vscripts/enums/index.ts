@@ -2,6 +2,7 @@ import assert from 'assert';
 import _ from 'lodash';
 import { getEnumDescription } from '../api/data/modifier-properties';
 import { clientDump, DumpConstant, serverDump } from '../dump';
+import { enums as panoramaEnums } from '../../panorama/enums';
 import {
   droppedConstants,
   enumValueDescriptions,
@@ -22,9 +23,34 @@ interface EnumResult {
   unknownGlobals: DumpConstant[];
 }
 
+/**
+ * Fix enum member values that overflow in Lua's 32-bit integers.
+ * Values >= 2^31 become 0 or -2147483648 in the Lua dump, but Panorama
+ * (JavaScript) has the correct 64-bit values. This cross-references
+ * panorama enums to restore the correct values.
+ */
+function fixLuaIntOverflow(constants: DumpConstant[]): void {
+  const panoramaLookup = new Map<string, number>();
+  for (const penum of panoramaEnums) {
+    for (const member of penum.members) {
+      panoramaLookup.set(member.name, member.value);
+    }
+  }
+
+  for (const constant of constants) {
+    if (constant.value !== 0 && constant.value !== -2147483648) continue;
+    const panoramaValue = panoramaLookup.get(constant.name);
+    if (panoramaValue != null && panoramaValue > 0 && panoramaValue !== constant.value) {
+      constant.value = panoramaValue;
+    }
+  }
+}
+
 export function generateEnumDeclarations(): EnumResult {
   const serverGlobals = serverDump.filter((x): x is DumpConstant => x.kind === 'constant');
   const clientGlobals = clientDump.filter((x): x is DumpConstant => x.kind === 'constant');
+  fixLuaIntOverflow(serverGlobals);
+  fixLuaIntOverflow(clientGlobals);
   let allGlobals = [
     ...serverGlobals,
     ...clientGlobals.filter((cc) => !serverGlobals.some((sc) => sc.name === cc.name)),

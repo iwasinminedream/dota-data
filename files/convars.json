@@ -6489,7 +6489,7 @@
     "description": ""
   },
   "dota_armory_last_selected_hero_id": {
-    "default": "94",
+    "default": "30",
     "flags": [
       "cl",
       "a"
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3672",
+    "default": "3681",
     "flags": [
       "cl",
       "a",
