@@ -27,6 +27,8 @@ async function buildAbilities() {
   delete root.Version;
 
   // Extract hero ability files from scripts/npc/heroes/
+  // Also build a mapping: ability_name -> hero_name
+  const abilityHeroMap: Record<string, string> = {};
   const heroFiles = gameVpk.files.filter(
     (f: string) => f.startsWith('scripts/npc/heroes/') && f.endsWith('.txt'),
   );
@@ -34,6 +36,7 @@ async function buildAbilities() {
 
   for (const filePath of heroFiles) {
     try {
+      const heroName = filePath.match(/npc_dota_hero_(\w+)\.txt/)?.[1];
       const text = gameVpk.getFile(filePath).toString();
       const heroParsed = deserialize(text);
       const heroRoot = heroParsed[Object.keys(heroParsed)[0]] as KVObject;
@@ -41,6 +44,7 @@ async function buildAbilities() {
         for (const [key, value] of Object.entries(heroRoot)) {
           if (key === 'Version') continue;
           root[key] = value;
+          if (heroName) abilityHeroMap[key] = heroName;
         }
       }
     } catch (e) {
@@ -69,8 +73,12 @@ async function buildAbilities() {
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, JSON.stringify(root, null, 2), 'utf8');
 
+  const mapPath = join('files', 'ability-hero-map.json');
+  writeFileSync(mapPath, JSON.stringify(abilityHeroMap, null, 2), 'utf8');
+
   const count = Object.keys(root).length;
   console.log(`✔ Extracted ${count} abilities + items → ${outPath}`);
+  console.log(`✔ Hero map: ${Object.keys(abilityHeroMap).length} abilities → ${mapPath}`);
 }
 
 function parseNumbersRecursive(object: KVObject) {
