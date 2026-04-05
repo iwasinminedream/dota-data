@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../moddota.github.io-1"
+		},
+        {
+			"path": "../../project/vscode-dota2-tools"
 		}
 	],
     "settings": {}
