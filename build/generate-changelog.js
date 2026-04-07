@@ -24,6 +24,10 @@ const trackedFiles = [
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
   { file: 'engine-enums.json', type: 'engine_enums', name: 'Engine Enums' },
+  { file: 'abilities.json', type: 'abilities', name: 'Abilities' },
+  { file: 'units.json', type: 'units', name: 'Units' },
+  { file: 'abilities.json', type: 'ability_kv_properties', name: 'Ability KV Properties' },
+  { file: 'units.json', type: 'unit_kv_properties', name: 'Unit KV Properties' },
 ];
 
 // Read the dump file to get version info
@@ -175,6 +179,47 @@ function extractConvars(content) {
   return Object.keys(content).map(k => ({ type: 'convar', name: k }));
 }
 
+// Extract abilities
+function extractAbilities(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  const items = [];
+  for (const [name, data] of Object.entries(content)) {
+    const kvPairs = typeof data === 'object' && data !== null
+      ? Object.entries(data).map(([k, v]) => `${k}=${typeof v === 'object' ? JSON.stringify(v) : v}`).join(', ')
+      : String(data);
+    items.push({ type: 'ability', name, fieldsDetail: kvPairs });
+  }
+  return items;
+}
+
+// Extract units (same format as abilities — flat KV object)
+function extractUnits(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  const items = [];
+  for (const [name, data] of Object.entries(content)) {
+    const kvPairs = typeof data === 'object' && data !== null
+      ? Object.entries(data).map(([k, v]) => `${k}=${typeof v === 'object' ? JSON.stringify(v) : v}`).join(', ')
+      : String(data);
+    items.push({ type: 'unit', name, fieldsDetail: kvPairs });
+  }
+  return items;
+}
+
+// Extract unique KV property names from a flat KV object (abilities/items/units)
+// Collects all top-level property keys used across all entries
+function extractKvProperties(content, typeName) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  const propSet = new Set();
+  for (const [, data] of Object.entries(content)) {
+    if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+      for (const key of Object.keys(data)) {
+        propSet.add(key);
+      }
+    }
+  }
+  return Array.from(propSet).sort().map(name => ({ type: typeName, name }));
+}
+
 // Extract CSS properties
 function extractCssProperties(content) {
   if (typeof content !== 'object' || Array.isArray(content)) return [];
@@ -219,6 +264,18 @@ function buildCurrentState() {
         break;
       case 'panorama_css':
         items = extractCssProperties(content);
+        break;
+      case 'abilities':
+        items = extractAbilities(content);
+        break;
+      case 'units':
+        items = extractUnits(content);
+        break;
+      case 'ability_kv_properties':
+        items = extractKvProperties(content, 'kv_property');
+        break;
+      case 'unit_kv_properties':
+        items = extractKvProperties(content, 'kv_property');
         break;
     }
     
@@ -299,7 +356,7 @@ function compareStates(prev, curr) {
     // Detect changes in items that exist in both states
     // Only track changes for functions/methods, not enums or other types
     const changed = [];
-    const trackableTypes = new Set(['function', 'method']);
+    const trackableTypes = new Set(['function', 'method', 'ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
         const prevItem = prevMap.get(k);
