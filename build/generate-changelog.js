@@ -179,30 +179,94 @@ function extractConvars(content) {
   return Object.keys(content).map(k => ({ type: 'convar', name: k }));
 }
 
-// Extract abilities
+// Extract abilities — store full structured data for deep comparison
 function extractAbilities(content) {
   if (typeof content !== 'object' || Array.isArray(content)) return [];
   const items = [];
   for (const [name, data] of Object.entries(content)) {
-    const kvPairs = typeof data === 'object' && data !== null
-      ? Object.entries(data).map(([k, v]) => `${k}=${typeof v === 'object' ? JSON.stringify(v) : v}`).join(', ')
-      : String(data);
-    items.push({ type: 'ability', name, fieldsDetail: kvPairs });
+    items.push({ type: 'ability', name, data: typeof data === 'object' && data !== null ? data : {} });
   }
   return items;
 }
 
-// Extract units (same format as abilities — flat KV object)
+// Extract units — store full structured data for deep comparison
 function extractUnits(content) {
   if (typeof content !== 'object' || Array.isArray(content)) return [];
   const items = [];
   for (const [name, data] of Object.entries(content)) {
-    const kvPairs = typeof data === 'object' && data !== null
-      ? Object.entries(data).map(([k, v]) => `${k}=${typeof v === 'object' ? JSON.stringify(v) : v}`).join(', ')
-      : String(data);
-    items.push({ type: 'unit', name, fieldsDetail: kvPairs });
+    items.push({ type: 'unit', name, data: typeof data === 'object' && data !== null ? data : {} });
   }
   return items;
+}
+
+// Deep diff two KV objects, showing changes in KV style.
+// - Top level: only changed properties
+// - Object properties (e.g. AbilityValues): only changed sub-entries
+// - Sub-entries that are objects: ALL fields expanded as { old, new } for full context
+function deepDiffKV(oldObj, newObj) {
+  const diff = {};
+  const allKeys = new Set([...Object.keys(oldObj || {}), ...Object.keys(newObj || {})]);
+
+  for (const key of allKeys) {
+    const oldVal = oldObj?.[key];
+    const newVal = newObj?.[key];
+
+    if (oldVal === undefined && newVal !== undefined) {
+      diff[key] = isPlainObject(newVal) ? expandAllFields(null, newVal) : { old: null, new: newVal };
+    } else if (oldVal !== undefined && newVal === undefined) {
+      diff[key] = isPlainObject(oldVal) ? expandAllFields(oldVal, null) : { old: oldVal, new: null };
+    } else if (isPlainObject(oldVal) && isPlainObject(newVal)) {
+      // Nested objects: find changed sub-entries, expand each fully
+      const subDiff = {};
+      const subKeys = new Set([...Object.keys(oldVal), ...Object.keys(newVal)]);
+      let hasSubChanges = false;
+
+      for (const subKey of subKeys) {
+        const oldSub = oldVal[subKey];
+        const newSub = newVal[subKey];
+
+        if (JSON.stringify(oldSub) !== JSON.stringify(newSub)) {
+          if (isPlainObject(oldSub) || isPlainObject(newSub)) {
+            // Expand ALL fields of the sub-object with old/new per field
+            subDiff[subKey] = expandAllFields(
+              isPlainObject(oldSub) ? oldSub : null,
+              isPlainObject(newSub) ? newSub : null,
+            );
+            // If one side was a primitive, add it as _value
+            if (oldSub !== undefined && !isPlainObject(oldSub)) subDiff[subKey]._value = { old: oldSub, new: null };
+            if (newSub !== undefined && !isPlainObject(newSub)) subDiff[subKey]._value = { old: null, new: newSub };
+          } else {
+            subDiff[subKey] = { old: oldSub ?? null, new: newSub ?? null };
+          }
+          hasSubChanges = true;
+        }
+      }
+
+      if (hasSubChanges) {
+        diff[key] = subDiff;
+      }
+    } else if (String(oldVal) !== String(newVal)) {
+      diff[key] = { old: oldVal, new: newVal };
+    }
+  }
+  return diff;
+}
+
+function isPlainObject(v) {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+// Expand ALL fields of two objects, showing { old, new } for each field
+function expandAllFields(oldObj, newObj) {
+  const result = {};
+  const allKeys = new Set([
+    ...Object.keys(oldObj || {}),
+    ...Object.keys(newObj || {}),
+  ]);
+  for (const key of allKeys) {
+    result[key] = { old: oldObj?.[key] ?? null, new: newObj?.[key] ?? null };
+  }
+  return result;
 }
 
 // Extract unique KV property names from a flat KV object (abilities/items/units)
@@ -354,13 +418,26 @@ function compareStates(prev, curr) {
     const removed = prevItems.filter(i => !currKeys.has(itemKey(i)));
     
     // Detect changes in items that exist in both states
-    // Only track changes for functions/methods, not enums or other types
     const changed = [];
     const trackableTypes = new Set(['function', 'method', 'ability', 'unit']);
+    const kvTypes = new Set(['ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
         const prevItem = prevMap.get(k);
-        if (hasItemChanged(prevItem, currItem)) {
+
+        if (kvTypes.has(currItem.type)) {
+          // Deep KV diff for abilities and units
+          // Skip if previous state lacks structured data (old format migration)
+          if (!prevItem.data) continue;
+          const kvDiff = deepDiffKV(prevItem.data, currItem.data);
+          if (Object.keys(kvDiff).length > 0) {
+            changed.push({
+              type: currItem.type,
+              name: currItem.name,
+              changes: kvDiff,
+            });
+          }
+        } else if (hasItemChanged(prevItem, currItem)) {
           const diff = buildItemDiff(prevItem, currItem);
           // Skip if only description changed (too noisy) unless it's the only change
           const nonDescChanges = Object.keys(diff).filter(f => f !== 'description');
