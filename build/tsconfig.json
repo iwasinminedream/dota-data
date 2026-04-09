@@ -7,5 +7,5 @@
     "target": "esnext",
     "strict": true
   },
-  "include": ["**/*.ts", "vpk.d.ts"]
+  "include": ["**/*.ts"]
 }

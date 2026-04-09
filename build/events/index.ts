@@ -1,7 +1,7 @@
 import assert from 'assert';
 import { formatDescription, outputFile, outputJson } from '../util';
 import { Event, types } from './types';
-import vpk from 'vpk';
+import VPK from '../util/vpk';
 import * as path from 'path';
 
 function parseFile(events: Record<string, Event>, content: string, sourceFile: string) {
@@ -62,11 +62,11 @@ function parseFile(events: Record<string, Event>, content: string, sourceFile: s
 
 export async function generateEvents(dota2Dir: string) {
   console.log('- Opening core vpk...');
-  const coreVpk = new vpk(path.join(dota2Dir, 'game', 'core', 'pak01_dir.vpk'));
+  const coreVpk = new VPK(path.join(dota2Dir, 'game', 'core', 'pak01_dir.vpk'));
   coreVpk.load();
 
   console.log('- Opening game vpk...');
-  const gameVpk = new vpk(path.join(dota2Dir, 'game', 'dota', 'pak01_dir.vpk'));
+  const gameVpk = new VPK(path.join(dota2Dir, 'game', 'dota', 'pak01_dir.vpk'));
   gameVpk.load();
 
   const coreEvents = coreVpk.getFile('resource/core.gameevents');

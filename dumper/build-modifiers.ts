@@ -1,8 +1,7 @@
-/// <reference path="../build/vpk.d.ts" />
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { findSteamAppById } from '@moddota/find-steam-app';
-import vpk from 'vpk';
+import VPK from '../build/util/vpk';
 
 // ============================================================================
 // Static configuration
@@ -161,7 +160,7 @@ async function buildModifiers() {
   console.log(`Found Dota 2: ${dota2Dir}`);
 
   console.log('Opening game VPK...');
-  const gameVpk = new vpk(join(dota2Dir, 'game', 'dota', 'pak01_dir.vpk'));
+  const gameVpk = new VPK(join(dota2Dir, 'game', 'dota', 'pak01_dir.vpk'));
   gameVpk.load();
 
   const heroListText = gameVpk.getFile('scripts/npc/activelist.txt').toString();
