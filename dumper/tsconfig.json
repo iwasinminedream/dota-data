@@ -5,5 +5,12 @@
     "target": "esnext",
     "strict": true
   },
-  "include": ["start-dumper.mts", "vconsole.mts"]
+  "include": [
+    "start-dumper.mts",
+    "vconsole.mts",
+    "build-modifiers.ts",
+    "build-abilities.ts",
+    "build-units.ts",
+    "../build/vpk.d.ts"
+  ]
 }

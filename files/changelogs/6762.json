@@ -1,0 +1,65 @@
+{
+  "version": "6762",
+  "date": "Apr 07 2026",
+  "time": "14:33:20",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyRedirectHealthGain",
+          "signature": "GetModifierPropertyRedirectHealthGain()",
+          "returns": "nil",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnRedirectHealthGain",
+          "signature": "OnRedirectHealthGain()",
+          "returns": "nil",
+          "description": ""
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_REDIRECT_HEALTH_GAIN",
+          "value": 234
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REDIRECT_HEALTH_GAIN",
+          "value": 384
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_REDIRECT_HEALTH_GAIN",
+          "value": 234
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_REDIRECT_HEALTH_GAIN",
+          "value": 384
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}

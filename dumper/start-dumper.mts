@@ -54,21 +54,26 @@ const steamInfContent = fs.readFileSync(steamInfPath);
 const dumpWriteStream = fs.createWriteStream('dumper/dump', {});
 dumpWriteStream.write(steamInfContent);
 
+let dumpCompleted = false;
+
 //const p2 = spawn(path.join(dotaBinDir, "vconsole2.exe"), { detached: true });
 console.log('Spawning Dota:', path.join(dotaBinDir, 'dota2.exe'), args.join(' '));
 const p1 = spawn(path.join(dotaBinDir, 'dota2.exe'), args, { cwd: dotaBinDir });
 
 p1.on('error', (err) => {
   console.error('Failed to spawn dota2.exe:', err);
+  process.exit(1);
 });
 p1.on('exit', (code, signal) => {
   console.log(`dota2.exe exited with code=${code} signal=${signal}`);
 
   try { dumpWriteStream && dumpWriteStream.close(); } catch (e) {}
-  try { if (typeof postQuitKill !== 'undefined' && postQuitKill) clearTimeout(postQuitKill); } catch (e) {}
 
-  const exitCode = typeof code === 'number' ? code : (signal ? 1 : 0);
-  process.exit(0);
+  if (!dumpCompleted) {
+    console.error('dota2.exe exited before the dump was completed.');
+    const exitCode = typeof code === 'number' && code !== 0 ? code : 1;
+    process.exit(exitCode);
+  }
 });
 
 await new Promise((r) => setTimeout(r, 5000));
@@ -78,15 +83,23 @@ try {
   dotaConsole = await vConsole.connect(29000);
 } catch (err) {
   console.error('Не удалось подключиться к vConsole после запуска Dota:', err);
-  throw err;
+  try { p1.kill(); } catch (e) {}
+  process.exit(1);
 }
 
 console.log('Connected! Waiting for dump...');
 
-await readDump(dotaConsole, dumpWriteStream);
+try {
+  await readDump(dotaConsole, dumpWriteStream);
+} catch (err) {
+  console.error('Failed while reading dump:', err);
+  try { p1.kill(); } catch (e) {}
+  process.exit(1);
+}
 
 await new Promise<void>((resolve) => dumpWriteStream.end(resolve));
 
+dumpCompleted = true;
 console.log('Saved dump — exiting dumper.');
 
 try {
@@ -94,6 +107,8 @@ try {
 } catch (e) {
 
 }
+
+try { p1.kill(); } catch (e) {}
 
 process.exit(0);
 

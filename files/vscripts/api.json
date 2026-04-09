@@ -17991,6 +17991,16 @@
       },
       {
         "kind": "function",
+        "name": "GetModifierPropertyRedirectHealthGain",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
         "name": "GetModifierPropertyRestorationAmplification",
         "available": "both",
         "abstract": true,
@@ -19480,6 +19490,16 @@
       {
         "kind": "function",
         "name": "OnPurged",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "OnRedirectHealthGain",
         "available": "both",
         "abstract": true,
         "args": [],
