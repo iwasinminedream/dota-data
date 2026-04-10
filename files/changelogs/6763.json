@@ -1,0 +1,52 @@
+{
+  "version": "6763",
+  "date": "Apr 09 2026",
+  "time": "14:08:53",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1795
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1806
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "item_consecrated_wraps",
+          "changes": {
+            "AbilityChargeRestoreTime": {
+              "old": 3,
+              "new": 4
+            },
+            "AbilityValues": {
+              "stack_gain_time": {
+                "old": 4,
+                "new": null
+              },
+              "max_stacks": {
+                "old": 3,
+                "new": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

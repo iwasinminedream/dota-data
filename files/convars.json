@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3703",
+    "default": "3706",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "4",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -22667,7 +22667,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "-971898879",
+    "default": "1682796961",
     "flags": [
       "release"
     ],
