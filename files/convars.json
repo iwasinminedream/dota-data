@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3706",
+    "default": "3726",
     "flags": [
       "cl",
       "a",
@@ -22667,7 +22667,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "1682796961",
+    "default": "-971898879",
     "flags": [
       "release"
     ],
@@ -33085,7 +33085,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.041985",
+    "default": "0.030543",
     "flags": [
       "a"
     ],
@@ -37966,7 +37966,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.63914",
+    "default": "0.084842",
     "flags": [
       "a"
     ],
