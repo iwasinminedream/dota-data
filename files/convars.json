@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3726",
+    "default": "3737",
     "flags": [
       "cl",
       "a",
@@ -33085,7 +33085,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.030543",
+    "default": "0.031807",
     "flags": [
       "a"
     ],
@@ -37966,7 +37966,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.084842",
+    "default": "0.059796",
     "flags": [
       "a"
     ],

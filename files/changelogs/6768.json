@@ -1,0 +1,37 @@
+{
+  "version": "6768",
+  "date": "Apr 15 2026",
+  "time": "17:25:06",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1805
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1799
+        }
+      ],
+      "changed": []
+    },
+    "Modifiers": {
+      "added": [],
+      "removed": [
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_conjurers_catalyst_overheat"
+        }
+      ],
+      "changed": []
+    }
+  }
+}
