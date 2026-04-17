@@ -1,0 +1,62 @@
+{
+  "version": "6771",
+  "date": "Apr 17 2026",
+  "time": "10:45:02",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant",
+          "signature": "GetModifierMoveSpeedPostMultiplierBonus_Constant()",
+          "returns": "nil",
+          "description": ""
+        }
+      ],
+      "removed": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant ",
+          "signature": "GetModifierMoveSpeedPostMultiplierBonus_Constant ()",
+          "returns": "nil",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnKnockbackAttempted",
+          "signature": "OnKnockbackAttempted()",
+          "returns": "nil",
+          "description": ""
+        }
+      ],
+      "changed": []
+    },
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_KNOCKBACK_ATTEMPTED",
+          "value": 239
+        }
+      ],
+      "changed": []
+    },
+    "Panorama Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_KNOCKBACK_ATTEMPTED",
+          "value": 239
+        }
+      ],
+      "changed": []
+    }
+  }
+}

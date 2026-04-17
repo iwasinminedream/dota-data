@@ -17125,7 +17125,7 @@
       },
       {
         "kind": "function",
-        "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant ",
+        "name": "GetModifierMoveSpeedPostMultiplierBonus_Constant",
         "available": "both",
         "abstract": true,
         "args": [],
@@ -19295,16 +19295,6 @@
       {
         "kind": "function",
         "name": "OnKill",
-        "available": "both",
-        "abstract": true,
-        "args": [],
-        "returns": [
-          "nil"
-        ]
-      },
-      {
-        "kind": "function",
-        "name": "OnKnockbackAttempted",
         "available": "both",
         "abstract": true,
         "args": [],
