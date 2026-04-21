@@ -5428,6 +5428,16 @@
         "description": "DEPRECATED: Use $.CreatePanel which has the same signature and supports properties."
       },
       {
+        "name": "CanLocalize",
+        "args": [
+          {
+            "name": "_arg_1"
+          }
+        ],
+        "returns": "void",
+        "description": "Check whether the given localization token is known to the localization system."
+      },
+      {
         "name": "Localize",
         "args": [
           {

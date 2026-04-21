@@ -1,0 +1,40 @@
+{
+  "version": "6774",
+  "date": "Apr 21 2026",
+  "time": "15:09:59",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1793
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1808
+        }
+      ],
+      "changed": []
+    },
+    "Panorama API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "$",
+          "name": "CanLocalize",
+          "signature": "CanLocalize(_arg_1: unknown)",
+          "returns": "void",
+          "description": "Check whether the given localization token is known to the localization system."
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
