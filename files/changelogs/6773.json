@@ -1,0 +1,63 @@
+{
+  "version": "6773",
+  "date": "Apr 20 2026",
+  "time": "16:01:07",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1808
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1806
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Team",
+          "name": "DOTA_TEAM_NEUTRALS"
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "item_refresher_shard",
+          "changes": {
+            "ItemHideCharges": {
+              "old": null,
+              "new": 1
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_tidehunter_fish",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

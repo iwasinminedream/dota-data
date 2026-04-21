@@ -1,13 +1,13 @@
-ClientVersion=6771
-ServerVersion=6771
+ClientVersion=6773
+ServerVersion=6773
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10596977
-VersionDate=Apr 17 2026
-VersionTime=10:45:02
+SourceRevision=10600095
+VersionDate=Apr 20 2026
+VersionTime=16:01:07
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34757,15 +34757,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34881,7 +34881,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1798
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -35037,7 +35037,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1807
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35209,7 +35209,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1808
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35473,7 +35473,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1800
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35513,7 +35513,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1796
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35525,7 +35525,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1797
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35545,7 +35545,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1805
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35633,7 +35633,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1801
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35736,6 +35736,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_TORRENT",
+    "value":1808
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -35794,10 +35798,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_VIPER_DIVE_END",
     "value":1763
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_VOODOO_REST",
-    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45401,19 +45401,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1802
+    "value":1794
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1803
+    "value":1795
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1804
+    "value":1796
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1799
+    "value":1797
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52237,7 +52237,7 @@ cl_dota_gridnav_show_size                                                       
 cl_dota_mk_tree_shake_duration                                                   : 2                : cl                               : 
 cl_dota_mk_tree_shake_peak_time                                                  : 0.25             : cl                               : 
 cl_dota_mk_tree_shake_strength                                                   : 15               : cl                               : 
-cl_dota_preview_hero_vision                                                      : false            : cl, a                            : 
+cl_dota_preview_hero_vision                                                      : true             : cl, a                            : 
 cl_dota_preview_hero_vision_hold_time                                            : 0.25             : cl, a                            : 
 cl_dota_recent_games_include_custom_games                                        : false            : cl, a                            : 
 cl_dota_recent_games_include_event_games                                         : false            : cl, a                            : 
@@ -53118,7 +53118,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3747             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3762             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53450,7 +53450,7 @@ dota_hud_force_wagering                                                         
 dota_hud_gameend                                                                 : true             : cl                               : 
 dota_hud_gameend_dev                                                             : false            : cl                               : 
 dota_hud_gameend_dev_winning_team                                                : 2                : cl                               : 
-dota_hud_healthbar_disable_status_display                                        : true             : cl, a, per_user                  : Hide the overhead status text for hero status effects.
+dota_hud_healthbar_disable_status_display                                        : false            : cl, a, per_user                  : Hide the overhead status text for hero status effects.
 dota_hud_healthbar_hoveroutline_alpha                                            : 200              : cl                               : Mouse hover outline brightness on healthbars
 dota_hud_healthbar_local_player_high_visibility                                  : false            : cl, a, per_user                  : 
 dota_hud_healthbars                                                              : 3                : cl                               : Show unit health bars, etc.
@@ -53482,7 +53482,7 @@ dota_hud_replay_scrubber_update_msecs                                           
 dota_hud_shop_show_filter                                                        : true             : cl, a, release                   : 
 dota_hud_shop_v2                                                                 : false            : cl                               : 
 dota_hud_show_crosshair_hero_tooltip                                             : true             : cl                               : Show/Hide the tooltip box that appears when you hover another hero.
-dota_hud_show_minimal_shop                                                       : true             : cl, a, per_user                  : 
+dota_hud_show_minimal_shop                                                       : false            : cl, a, per_user                  : 
 dota_hud_show_overhead_events                                                    : true             : cl                               : Show Crit, Gold, XP, etc. Overhead Event Messages
 dota_hud_skins_enabled                                                           : true             : cl                               : Enable HUD skins on the panorama HUD
 +dota_hud_toggle_overlaymap                                                      : cmd              : cl                               : 
@@ -53590,7 +53590,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 260              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 388              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 107              : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -54485,7 +54485,7 @@ dota_video_config.setting.mat_viewportscale                                     
 dota_video_config.setting.mat_vsync                                              : 0                : cl                               : 
 dota_video_config.setting.mem_level                                              : 2                : cl                               : 
 dota_video_config.setting.monitor_index                                          : 0                : cl                               : 
-dota_video_config.setting.nowindowborder                                         : 1                : cl                               : 
+dota_video_config.setting.nowindowborder                                         : 0                : cl                               : 
 dota_video_config.setting.recommendedheight                                      : 2160             : cl                               : 
 dota_video_config.setting.recommendedwidth                                       : 1900             : cl                               : 
 dota_video_config.setting.refreshrate_denominator                                : 0                : cl                               : 
@@ -54771,7 +54771,7 @@ fow_server_test_tempviewer                                                      
 fow_simd_unseen                                                                  : true             : sv, cl, rep                      : 
 fow_tile_update_time                                                             : 0                : sv, cl, rep                      : FoW tile update time.
 fp_trace                                                                         : cmd              :                                  : Toggle field path tracing to file 
-fps_max                                                                          : 120              : a, release                       : Frame rate limiter.  0=no limit.  Does not apply to dedicated server.
+fps_max                                                                          : 120.361          : a, release                       : Frame rate limiter.  0=no limit.  Does not apply to dedicated server.
 fps_max_tools                                                                    : 120              : a                                : Additional frame rate limit while in tools mode and a window other than the game window has focus. Note that fps_max still applies, this only allows the maximum frame rate for tools mode to be lower. 0=no tools specific limit.
 fps_max_ui                                                                       : 0                : a                                : Frame rate limiter while the game UI is displayed.  0=no limit.  Does not apply to dedicated server.
 freecamera_accel                                                                 : 5                : cl                               : Tweak this parameter to adjust Free Camera movement acceleration.
@@ -54928,7 +54928,7 @@ host_timescale_dec                                                              
 host_timescale_inc                                                               : cmd              : cheat                            : Increment the timescale by one step
 host_writeconfig                                                                 : cmd              : release                          : Saves out the user config values.
 hostfile                                                                         : host.txt         : sv, release                      : The HOST file to load.
-hostip                                                                           : -971898879       : release                          : Host game server ip
+hostip                                                                           : -1062709066      : release                          : Host game server ip
 hostname                                                                         : zavoz            : release                          : Hostname for server.
 hostname_in_client_status                                                        : false            : release                          : Show server hostname in client status.
 hostport                                                                         : 27015            : release                          : Host game server port
@@ -55678,7 +55678,7 @@ particle_test_destroy                                                           
 particle_test_file                                                               : 0                : sv, cheat                        : Name of the particle system to dynamically spawn
 particle_test_start                                                              : cmd              : sv, cheat                        : Dispatches the test particle system with the parameters specified in particle_test_file,  particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 particle_test_stop                                                               : cmd              : sv, cheat                        : Stops all particle systems on the selected entities.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
-password                                                                         : 0                : a, norecord, server_cant_query   : Current server access password
+password                                                                         : 1139992684660696927 : a, norecord, server_cant_query   : Current server access password
 path                                                                             : cmd              :                                  : Show the filesystem path.
 pause                                                                            : cmd              : release                          : Toggle the server pause state.
 pet_preview_gravity                                                              : 0.000000 0.000000 -800.000000 :                                  : 

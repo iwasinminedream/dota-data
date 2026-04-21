@@ -521,10 +521,6 @@
         "shortName": "GOODGUYS"
       },
       {
-        "name": "DOTA_TEAM_NEUTRALS",
-        "shortName": "NEUTRALS"
-      },
-      {
         "name": "DOTA_TEAM_NOTEAM",
         "shortName": "NOTEAM"
       }

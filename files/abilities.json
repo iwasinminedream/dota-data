@@ -44564,6 +44564,7 @@
     "ItemShareability": "ITEM_FULLY_SHAREABLE",
     "ItemPermanent": 0,
     "ItemInitialCharges": 1,
+    "ItemHideCharges": 1,
     "ItemDeclarations": "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS",
     "ItemContributesToNetWorthWhenDropped": 0,
     "IsTempestDoubleClonable": 0,
@@ -50163,7 +50164,7 @@
     }
   },
   "item_tidehunter_fish": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE",
     "Model": "models/heroes/tidehunter/tidehunter_fish_pickup.vmdl",
     "AbilityCastRange": 20,
     "AbilityCastPoint": 0,

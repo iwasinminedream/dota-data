@@ -2517,7 +2517,7 @@
     "description": ""
   },
   "cl_dota_preview_hero_vision": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3747",
+    "default": "3762",
     "flags": [
       "cl",
       "a",
@@ -11672,7 +11672,7 @@
     "description": ""
   },
   "dota_hud_healthbar_disable_status_display": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11901,7 +11901,7 @@
     "description": "Show/Hide the tooltip box that appears when you hover another hero."
   },
   "dota_hud_show_minimal_shop": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "260",
+    "default": "388",
     "flags": [
       "cl",
       "a"
@@ -19564,7 +19564,7 @@
     "description": ""
   },
   "dota_video_config.setting.nowindowborder": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -21681,7 +21681,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "120",
+    "default": "120.361",
     "flags": [
       "a",
       "release"
@@ -22667,7 +22667,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "-971898879",
+    "default": "-1062709066",
     "flags": [
       "release"
     ],
@@ -28151,7 +28151,7 @@
     "description": "Stops all particle systems on the selected entities.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
   "password": {
-    "default": "0",
+    "default": "1139992684660696927",
     "flags": [
       "a",
       "norecord",
