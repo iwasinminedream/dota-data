@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3763",
+    "default": "3772",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -16397,7 +16397,7 @@
     "description": ""
   },
   "dota_settings_reborn_dismissed_new_settings": {
-    "default": "0",
+    "default": "16,",
     "flags": [
       "cl",
       "a"
@@ -22667,7 +22667,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "-1062709066",
+    "default": "-971898879",
     "flags": [
       "release"
     ],

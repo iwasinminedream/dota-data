@@ -1,0 +1,107 @@
+{
+  "version": "6775",
+  "date": "Apr 23 2026",
+  "time": "15:05:06",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Ability_Lua",
+          "name": "PiercesDebuffImmunity",
+          "signature": "PiercesDebuffImmunity()",
+          "returns": "bool",
+          "description": "Return if an ability and its modifiers should pierce debuff immunity."
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "PiercesDebuffImmunity",
+          "signature": "PiercesDebuffImmunity()",
+          "returns": "bool",
+          "description": "Returns true or false on if the effects of this modifier should pierce debuff immunity. By default uses the setting from the ability."
+        },
+        {
+          "type": "method",
+          "class": "CDOTABaseAbility",
+          "name": "GetAltCastState",
+          "signature": "GetAltCastState()",
+          "returns": "bool",
+          "description": "Gets the current Alt Cast State."
+        },
+        {
+          "type": "method",
+          "class": "CDOTABaseAbility",
+          "name": "SetAltCastState",
+          "signature": "SetAltCastState(altCastEnabled: bool)",
+          "returns": "nil",
+          "description": "Set Alt Cast State to a specific value (true for on, false for off)."
+        },
+        {
+          "type": "method",
+          "class": "CDOTABaseAbility",
+          "name": "ShouldAltCast",
+          "signature": "ShouldAltCast()",
+          "returns": "bool",
+          "description": "This is what the Alt Cast State of the ability was when it was initially cast. Updated during Execute Orders."
+        },
+        {
+          "type": "method",
+          "class": "CDOTABaseAbility",
+          "name": "ToggleAltCast",
+          "signature": "ToggleAltCast()",
+          "returns": "nil",
+          "description": "Toggle the Alt Cast State of an Ability."
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "method",
+          "name": "OnChargeCountChanged",
+          "class": "CDOTA_Item_Lua",
+          "changes": {
+            "signature": {
+              "old": "OnChargeCountChanged()",
+              "new": "OnChargeCountChanged(spent: bool)"
+            },
+            "description": {
+              "old": "Runs when item's charge count changes.",
+              "new": "Runs when item's charge count changes. bSpent is true when the charge count change is coming from SpendCharge."
+            }
+          }
+        }
+      ]
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1808
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_VOODOO_REST",
+          "value": 1793
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Team",
+          "name": "DOTA_TEAM_NEUTRALS"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
