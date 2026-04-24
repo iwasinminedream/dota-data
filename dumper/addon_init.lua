@@ -1,3 +1,5 @@
+LinkLuaModifier("modifier_test_properties", "modifier_test_properties", LUA_MODIFIER_MOTION_NONE)
+
 ADDON_LOADED = ADDON_LOADED ~= nil or false
 if not ADDON_LOADED then return end
 

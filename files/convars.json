@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3772",
+    "default": "3774",
     "flags": [
       "cl",
       "a",
@@ -17194,7 +17194,7 @@
     "description": "Hero spawning takes at least this long so that we can move the camera and play the particle effect"
   },
   "dota_spectator_mode": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -34494,7 +34494,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (FIFINE K670 Microphone)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },

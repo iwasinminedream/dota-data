@@ -37,6 +37,15 @@ fs.copyFileSync(
 );
 fs.copyFileSync(path.join('dumper', 'addon_init.lua'), path.join(vscriptsPath, 'addon_init.lua'));
 
+const modifiersPath = path.join(vscriptsPath, 'modifiers');
+if (!fs.existsSync(modifiersPath)) {
+  fs.mkdirSync(modifiersPath, { recursive: true });
+}
+fs.copyFileSync(
+  path.join('dumper', 'modifier_test_properties.lua'),
+  path.join(vscriptsPath, 'modifier_test_properties.lua'),
+);
+
 console.log('Starting dumper...');
 
 const dotaBinDir = path.join(dota2Dir, 'game', 'bin', 'win64');
@@ -89,8 +98,11 @@ try {
 
 console.log('Connected! Waiting for dump...');
 
+const modifierWriteStream = fs.createWriteStream('dumper/modifier_test_output.txt', {});
+let modifierTestCompleted = false;
+
 try {
-  await readDump(dotaConsole, dumpWriteStream);
+  await readDump(dotaConsole, dumpWriteStream, modifierWriteStream);
 } catch (err) {
   console.error('Failed while reading dump:', err);
   try { p1.kill(); } catch (e) {}
@@ -98,9 +110,11 @@ try {
 }
 
 await new Promise<void>((resolve) => dumpWriteStream.end(resolve));
+await new Promise<void>((resolve) => modifierWriteStream.end(resolve));
 
 dumpCompleted = true;
-console.log('Saved dump — exiting dumper.');
+modifierTestCompleted = true;
+console.log('Saved dump + modifier test — exiting dumper.');
 
 try {
   await vConsole.disconnect(dotaConsole);
@@ -113,19 +127,47 @@ try { p1.kill(); } catch (e) {}
 process.exit(0);
 
 
-async function readDump(dota: Socket, dumpStream: fs.WriteStream): Promise<void> {
+async function readDump(dota: Socket, dumpStream: fs.WriteStream, modifierStream: fs.WriteStream): Promise<void> {
   return new Promise((resolve) => {
-    let reading = false;
+    let dumpReading = false;
+    let dumpDone = false;
+    let modifierReading = false;
+    let modifierDone = false;
+
+    function checkDone() {
+      if (dumpDone && modifierDone) {
+        resolve();
+      }
+    }
+
     vConsole.onMessage(dota, (type, channel, message) => {
       if (type === 'PRNT') {
-        if (message.startsWith('$>')) {
-          reading = true;
+        // Dump capture
+        if (!dumpDone) {
+          if (message.startsWith('$>')) {
+            dumpReading = true;
+          }
+          if (message.startsWith('===ENDOFDUMP')) {
+            dumpReading = false;
+            dumpDone = true;
+            console.log('Dump completed. Waiting for modifier test...');
+            checkDone();
+          } else if (dumpReading) {
+            dumpStream.write(message);
+          }
         }
-        if (message.startsWith('===ENDOFDUMP')) {
-          reading = false;
-          resolve();
-        } else if (reading) {
-          dumpStream.write(message);
+
+        // Modifier test capture
+        if (message.startsWith('local previous_state')) {
+          modifierReading = true;
+        }
+        if (message.startsWith('===ENDOFMODIFIERTEST')) {
+          modifierReading = false;
+          modifierDone = true;
+          console.log('Modifier test completed.');
+          checkDone();
+        } else if (modifierReading) {
+          modifierStream.write(message);
         }
       }
     });

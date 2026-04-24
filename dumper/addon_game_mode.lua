@@ -105,8 +105,28 @@ end
 SCRIPT = SCRIPT .. "\necholn ===ENDOFDUMP"
 
 function Activate()
+  GameRules:SetCustomGameSetupAutoLaunchDelay(0)
+  GameRules:SetCustomGameSetupTimeout(-1)
+  GameRules:SetPreGameTime(6)
+  GameRules:SetStrategyTime(0)
+  GameRules:SetShowcaseTime(0)
+  GameRules:GetGameModeEntity():SetCustomGameForceHero("npc_dota_hero_axe")
+
+  ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(GameMode, "OnGameRulesStateChange"), GameMode)
+
   Convars:RegisterCommand("dump_vscripts", function()
     SendToServerConsole(SCRIPT)
   end, "", 0)
   GameRules:GetGameModeEntity():SetContextThink("", function() SendToServerConsole(SCRIPT) end, 1)
+end
+
+GameMode = {}
+
+function GameMode:OnGameRulesStateChange()
+  if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+    local hHero = PlayerResource:GetSelectedHeroEntity(0)
+    if hHero then
+      hHero:AddNewModifier(hHero, nil, "modifier_test_properties", {})
+    end
+  end
 end

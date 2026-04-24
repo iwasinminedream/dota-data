@@ -22,6 +22,7 @@ const trackedFiles = [
   { file: 'panorama/css.json', type: 'panorama_css', name: 'Panorama CSS' },
   { file: 'panorama/events.json', type: 'panorama_events', name: 'Panorama Events' },
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
+  { file: 'vscripts/modifier_properties.json', type: 'modifier_properties', name: 'Properties Fixed' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
   { file: 'engine-enums.json', type: 'engine_enums', name: 'Engine Enums' },
   { file: 'abilities.json', type: 'abilities', name: 'Abilities' },
@@ -284,6 +285,15 @@ function extractKvProperties(content, typeName) {
   return Array.from(propSet).sort().map(name => ({ type: typeName, name }));
 }
 
+// Extract modifier properties — only include properties that are available (true).
+// This way false→true shows as "added" (fixed) and true→false shows as "removed" (broken).
+function extractModifierProperties(content) {
+  if (typeof content !== 'object' || Array.isArray(content)) return [];
+  return Object.entries(content)
+    .filter(([, available]) => available === true)
+    .map(([name]) => ({ type: 'modifier_property', name }));
+}
+
 // Extract CSS properties
 function extractCssProperties(content) {
   if (typeof content !== 'object' || Array.isArray(content)) return [];
@@ -318,6 +328,9 @@ function buildCurrentState() {
         break;
       case 'modifiers':
         items = extractModifiers(content);
+        break;
+      case 'modifier_properties':
+        items = extractModifierProperties(content);
         break;
       case 'events':
       case 'panorama_events':
