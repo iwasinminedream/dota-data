@@ -283,7 +283,7 @@ async function buildModifiers() {
   // ---------------------------------------------------------------------------
   const dumpTxt = readFileSync(join('dumper', 'dump'), 'utf8');
   const allModifiers = Array.from(
-    new Set(dumpTxt.split(/\r?\n/).filter((l) => l.startsWith('modifier_'))),
+    new Set(dumpTxt.split(/\r?\n/).filter((l) => l.startsWith('modifier_') && l !== 'modifier_test_properties')),
   );
 
   const SpecCheckFilter = ['roshan', 'rune', 'special_bonus'];
