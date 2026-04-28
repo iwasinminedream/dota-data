@@ -1,0 +1,44 @@
+{
+  "version": "6777",
+  "date": "Apr 27 2026",
+  "time": "15:48:12",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1803
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1801
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "dragon_knight_elder_dragon_form",
+          "changes": {
+            "AbilityValues": {
+              "flying_movement": {
+                "old": null,
+                "new": "0 0 0 1"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
