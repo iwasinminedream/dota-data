@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3787",
+    "default": "3788",
     "flags": [
       "cl",
       "a",

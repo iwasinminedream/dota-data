@@ -1,0 +1,42 @@
+{
+  "version": "6781",
+  "date": "May 01 2026",
+  "time": "16:11:21",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_SPWN",
+          "value": 1801
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1798
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "dark_willow_bedlam",
+          "changes": {
+            "AbilityCastRange": {
+              "old": 900,
+              "new": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

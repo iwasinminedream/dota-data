@@ -13592,7 +13592,6 @@
     "LinkedAbility": "dark_willow_terrorize",
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCastGestureSlot": "ABSOLUTE",
-    "AbilityCastRange": 900,
     "AbilityCooldown": 30,
     "AbilityManaCost": "100 150 200",
     "AbilityValues": {
