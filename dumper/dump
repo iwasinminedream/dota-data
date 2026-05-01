@@ -1,13 +1,13 @@
-ClientVersion=6778
-ServerVersion=6778
+ClientVersion=6780
+ServerVersion=6780
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10619040
-VersionDate=Apr 28 2026
-VersionTime=10:41:07
+SourceRevision=10625714
+VersionDate=Apr 30 2026
+VersionTime=14:24:30
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -53165,7 +53165,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3781             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3787             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53637,7 +53637,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 388              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 4                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 107              : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -53882,14 +53882,14 @@ dota_plus_use_assistant                                                         
 dota_poogie_distance_from_ancient_to_follow_hero                                 : 1500             : sv, cheat                        : 
 dota_poogie_distance_from_effigy_in_demo_mode                                    : 450              : sv, cheat                        : 
 dota_poogie_emote_animation_duration                                             : 3.8              : sv, cheat                        : 
-dota_poogie_enemies_near_base_timer_duration                                     : 5                : sv, cheat                        : 
+dota_poogie_enemies_near_base_timer_duration                                     : 15               : sv, cheat                        : 
 dota_poogie_greet_hero_cooldown_duration                                         : 300              : sv, cheat                        : 
 dota_poogie_high_five_acknowledge_range                                          : 230              : sv, cheat                        : 
 dota_poogie_high_five_cooldown_duration                                          : 5                : sv, cheat                        : 
 dota_poogie_high_five_distance_from_hero                                         : 550              : sv, cheat                        : 
 dota_poogie_position_offsets_timer                                               : 9                : sv, cheat                        : 
 dota_poogie_search_effigy_reference_duration                                     : 5                : sv, cheat                        : 
-dota_poogie_search_radius_from_ancient_for_enemies                               : 3000             : sv, cheat                        : 
+dota_poogie_search_radius_from_ancient_for_enemies                               : 3500             : sv, cheat                        : 
 dota_poogie_stressed_position_offsets_timer                                      : 3.5              : sv, cheat                        : 
 dota_poogie_vanish_animation_duration                                            : 1                : sv, cheat                        : 
 dota_poor_network_detection_debug_level                                          : 2                : sv                               : Spew verbosity for poor network condition detection
@@ -54635,7 +54635,7 @@ engine_frametime_warnings_enable                                                
 engine_low_latency_sleep_after_client_tick                                       : false            : release                          : When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation.
 engine_max_resource_system_update_time                                           : 5                :                                  : 
 engine_max_ticks_to_simulate                                                     : -1               :                                  : Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time.
-engine_no_focus_sleep                                                            : 20               : a                                : 
+engine_no_focus_sleep                                                            : 0                : a                                : 
 engine_no_focus_sleep_vconsole_suppress                                          : true             :                                  : When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior
 engine_ostype                                                                    : Windows 11       :                                  : OS type the engine is running on.
 engine_platform_name_extended                                                    : pc64             :                                  : Platform the engine is running on.
@@ -56660,7 +56660,7 @@ soundscape_fadetime                                                             
 soundscape_flush                                                                 : cmd              : sv                               : Flushes the server & client side soundscapes
 soundscape_message                                                               : false            : cl                               : 
 soundscape_radius_debug                                                          : false            : cl, cheat                        : Prints current volume of radius sounds
-soundsystem_device_used                                                          : Наушники (WH-1000XM6) :                                  : Sound device in use (changing this does not change the soundsystem).
+soundsystem_device_used                                                          : Динамики (FIFINE K670 Microphone) :                                  : Sound device in use (changing this does not change the soundsystem).
 soundsystem_update_async                                                         : true             :                                  : 
 soundsysteminfo                                                                  : cmd              :                                  : Describe the current sound device without an active voice list.
 spawn_group_activate                                                             : cmd              : sv, cheat                        : Activate specified spawngroup.

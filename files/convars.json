@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3781",
+    "default": "3787",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "388",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -14648,7 +14648,7 @@
     "description": ""
   },
   "dota_poogie_enemies_near_base_timer_duration": {
-    "default": "5",
+    "default": "15",
     "flags": [
       "sv",
       "cheat"
@@ -14704,7 +14704,7 @@
     "description": ""
   },
   "dota_poogie_search_radius_from_ancient_for_enemies": {
-    "default": "3000",
+    "default": "3500",
     "flags": [
       "sv",
       "cheat"
@@ -20280,7 +20280,7 @@
     "description": "Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time."
   },
   "engine_no_focus_sleep": {
-    "default": "20",
+    "default": "0",
     "flags": [
       "a"
     ],
@@ -34494,7 +34494,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (WH-1000XM6)",
+    "default": "Динамики (FIFINE K670 Microphone)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },

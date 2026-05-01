@@ -1,0 +1,18 @@
+{
+  "version": "6780",
+  "date": "Apr 30 2026",
+  "time": "14:24:30",
+  "changes": {
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B"
+        }
+      ],
+      "changed": []
+    }
+  }
+}
