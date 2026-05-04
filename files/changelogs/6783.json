@@ -1,0 +1,26 @@
+{
+  "version": "6783",
+  "date": "May 04 2026",
+  "time": "14:18:21",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_TORRENT",
+          "value": 1808
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1805
+        }
+      ],
+      "changed": []
+    }
+  }
+}
