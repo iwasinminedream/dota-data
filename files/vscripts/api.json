@@ -18265,6 +18265,16 @@
       },
       {
         "kind": "function",
+        "name": "GetModifierPropertyPseudoRandomBonus",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "float"
+        ]
+      },
+      {
+        "kind": "function",
         "name": "GetModifierPropertyRedirectHealthGain",
         "available": "both",
         "abstract": true,
@@ -18426,7 +18436,7 @@
       },
       {
         "kind": "function",
-        "name": "GEtModifierSlowResistance_Unique",
+        "name": "GetModifierSlowResistance_Unique",
         "available": "both",
         "abstract": true,
         "args": [],
@@ -18824,16 +18834,6 @@
         "available": "both",
         "abstract": true,
         "description": "Multiplier for xp shrine collection time.",
-        "args": [],
-        "returns": [
-          "float"
-        ]
-      },
-      {
-        "kind": "function",
-        "name": "GetModofierPropertyPseudoRandomBonus",
-        "available": "both",
-        "abstract": true,
         "args": [],
         "returns": [
           "float"

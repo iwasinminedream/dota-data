@@ -388,7 +388,7 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   GetModifierTotal_ConstantBlockStacking: ['ModifierAttackEvent', anyNumber],
   GetModifierXPDuringDeath: [null, binaryBoolean],
   GetModifierXPFountainCountdownTimeOverride: [null, anyNumber, 'Multiplier for xp shrine collection time.'],
-  GetModofierPropertyPseudoRandomBonus: [null, anyNumber],
+  GetModifierPropertyPseudoRandomBonus: [null, anyNumber],
   GetPhysicalArmorPiercingPercentageTarget: [null, anyNumber],
   GetRedirectSpell: ['ModifierAbilityEvent', binaryBoolean],
   GetRequiredLevel: [null, anyNumber],
@@ -402,7 +402,7 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   GetTriggerCosmeticAndEndAttack: [null, binaryBoolean],
   GetVisionDegreeRestriction: [null, anyNumber],
   GetVisualZSpeedBaseOverride: [null, anyNumber],
-  GEtModifierSlowResistance_Unique: [null, anyNumber],
+  GetModifierSlowResistance_Unique: [null, anyNumber],
   HasBonusNeutralItemPassive: [null, binaryBoolean],
   MinAttributeLevel: [null, anyNumber],
   MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST: [null, anyNumber],
@@ -440,6 +440,12 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   ReincarnateSuppressFX: [null, binaryBoolean],
 };
 
+// Typo corrections for function names as they appear in the dump
+const dumpNameCorrections: Record<string, string> = {
+  GetModofierPropertyPseudoRandomBonus: 'GetModifierPropertyPseudoRandomBonus',
+  GEtModifierSlowResistance_Unique: 'GetModifierSlowResistance_Unique',
+};
+
 export function getEnumDescription(functionName?: string) {
   if (!functionName || functionName === 'Unused') return undefined;
 
@@ -457,7 +463,8 @@ export function modifierFunctionMethods(): apiTypes.ClassMethod[] {
     .filter((x): x is typeof x & { description: string } => x.description != null)
     .filter((x) => x.description !== 'Unused')
     .map((x): apiTypes.ClassMethod => {
-      const functionName = x.description;
+      const rawName = x.description;
+      const functionName = dumpNameCorrections[rawName] ?? rawName;
 
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       const [argumentType, returns, description] = modifiersData[functionName] ?? [null, ['nil']];

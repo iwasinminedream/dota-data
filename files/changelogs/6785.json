@@ -4,8 +4,42 @@
   "time": "22:07:51",
   "changes": {
     "Lua API": {
-      "added": [],
-      "removed": [],
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierPropertyPseudoRandomBonus",
+          "signature": "GetModifierPropertyPseudoRandomBonus()",
+          "returns": "float",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierSlowResistance_Unique",
+          "signature": "GetModifierSlowResistance_Unique()",
+          "returns": "nil",
+          "description": ""
+        }
+      ],
+      "removed": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GEtModifierSlowResistance_Unique",
+          "signature": "GEtModifierSlowResistance_Unique()",
+          "returns": "nil",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModofierPropertyPseudoRandomBonus",
+          "signature": "GetModofierPropertyPseudoRandomBonus()",
+          "returns": "nil",
+          "description": ""
+        }
+      ],
       "changed": [
         {
           "type": "method",
@@ -1148,17 +1182,6 @@
         {
           "type": "method",
           "name": "GetModifierXPFountainCountdownTimeOverride",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModofierPropertyPseudoRandomBonus",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
