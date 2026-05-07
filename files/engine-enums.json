@@ -1774,6 +1774,10 @@
         "shortName": "DOTA_KEZ_KATANA_ULT_CHAIN_A"
       },
       {
+        "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B",
+        "shortName": "DOTA_KEZ_KATANA_ULT_CHAIN_B"
+      },
+      {
         "name": "ACT_DOTA_KEZ_KATANA_ULT_END",
         "shortName": "DOTA_KEZ_KATANA_ULT_END"
       },
@@ -1788,10 +1792,6 @@
       {
         "name": "ACT_DOTA_KINETIC_FIELD",
         "shortName": "DOTA_KINETIC_FIELD"
-      },
-      {
-        "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL",
-        "shortName": "DOTA_LARGO_ULT_STRUM_FAIL"
       },
       {
         "name": "ACT_DOTA_LARGO_ULT_STRUM_SUCCESS",

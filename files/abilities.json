@@ -1028,8 +1028,8 @@
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
     "AbilityType": "ABILITY_TYPE_BASIC",
     "AbilityValues": {
-      "aura_duration": 10,
-      "hp_restoration_pct": 2,
+      "aura_duration": 15,
+      "hp_restoration_pct": 2.25,
       "radius": 900
     }
   },
@@ -8389,7 +8389,7 @@
       },
       "curse_dps": {
         "value": "15 25 35 45",
-        "special_bonus_unique_abaddon_5": "+25"
+        "special_bonus_unique_abaddon_5": "+30"
       },
       "tower_dps_pct": 100,
       "curse_interval": 0.5
@@ -8806,7 +8806,7 @@
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "AbilityCastPoint": 0.1,
     "AbilityCastRange": 900,
-    "AbilityCooldown": "22.0 21 20 19",
+    "AbilityCooldown": 21,
     "AbilityManaCost": 120,
     "AbilityValues": {
       "radius": {
@@ -8914,7 +8914,7 @@
         "dynamic_value": "true"
       },
       "bonus_bonus_gold": 2,
-      "bonus_gold_per_scepter": 6,
+      "bonus_gold_per_scepter": 3,
       "bounty_multiplier": 2,
       "damage": {
         "special_bonus_unique_alchemist_7": "+3"
@@ -8959,7 +8959,7 @@
       },
       "bonus_health": 0,
       "bonus_health_regen": {
-        "value": "60 90 120",
+        "value": "50 85 120",
         "special_bonus_unique_alchemist_4": "+50"
       },
       "bonus_mana_regen": 0,
@@ -9083,7 +9083,7 @@
     "AbilityValues": {
       "damage": {
         "value": "30 60 90 120",
-        "special_bonus_unique_ancient_apparition_2": "+80"
+        "special_bonus_unique_ancient_apparition_2": "+100"
       },
       "duration": 3,
       "slow": {
@@ -9119,7 +9119,7 @@
     "AbilityDamage": "250 325 400",
     "AbilityValues": {
       "radius_min": {
-        "value": 275,
+        "value": 300,
         "affected_by_aoe_increase": 1
       },
       "radius_grow": {
@@ -9130,7 +9130,7 @@
         "affected_by_aoe_increase": 1
       },
       "path_radius": {
-        "value": 275,
+        "value": 300,
         "affected_by_aoe_increase": 1
       },
       "frostbite_duration": {
@@ -9323,7 +9323,7 @@
         "hero_levelup": "+1",
         "special_bonus_unique_antimage_5": "+18"
       },
-      "mana_threshold": 50,
+      "mana_threshold": 60,
       "slow_duration": 0.75,
       "zero_tooltip": 0
     }
@@ -10045,7 +10045,7 @@
     "AbilitySound": "Hero_Bane.BrainSap",
     "HasShardUpgrade": 1,
     "AbilityCastPoint": 0.2,
-    "AbilityManaCost": "120 130 140 150",
+    "AbilityManaCost": "105 120 135 150",
     "AbilityValues": {
       "brain_sap_damage": {
         "value": "90 160 230 300",
@@ -10211,7 +10211,7 @@
       "application_damage": "5 10 15 20",
       "building_damage_pct": {
         "value": 0,
-        "special_bonus_shard": "+25"
+        "special_bonus_shard": "+20"
       },
       "napalm_stacks_on_attack": {
         "value": 0,
@@ -10320,7 +10320,7 @@
     "AbilityManaCost": 100,
     "AbilityValues": {
       "damage_per_second": {
-        "value": "25 50 75 100",
+        "value": "20 40 60 80",
         "CalculateSpellDamageTooltip": 1,
         "special_bonus_unique_batrider_4": "+30"
       },
@@ -10366,7 +10366,7 @@
       "drag_distance": "300 300 300",
       "break_distance": 425,
       "damage": {
-        "value": "200 350 500",
+        "value": "125 250 375",
         "CalculateSpellDamageTooltip": 1
       },
       "grab_radius_scepter": {
@@ -10452,7 +10452,7 @@
     "HasShardUpgrade": 1,
     "AbilityCastRange": 1500,
     "AbilityCastPoint": 0.3,
-    "AbilityManaCost": "50 55 60 65",
+    "AbilityManaCost": 65,
     "AbilityValues": {
       "radius": {
         "value": 175,
@@ -10499,9 +10499,9 @@
     "AbilityValues": {
       "duration": 60,
       "boar_base_max_health": "300 450 600 750",
-      "boar_base_damage": "30 45 60 75",
+      "boar_base_damage": "24 41 58 75",
       "boar_total_damage_tooltip": {
-        "value": "30 45 60 75",
+        "value": "24 41 58 75",
         "special_bonus_unique_beastmaster_2": "+30",
         "CalculateSpellDamageTooltip": 0
       },
@@ -10742,7 +10742,7 @@
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_5",
     "AbilityValues": {
       "radius": {
-        "value": 600,
+        "value": 525,
         "affected_by_aoe_increase": 1
       },
       "max_stacks": 20,
@@ -10750,7 +10750,7 @@
       "min_drum_hit_interval": 0.5,
       "max_drum_hit_interval": 3,
       "base_damage": {
-        "value": 80,
+        "value": 70,
         "CalculateSpellDamageTooltip": 1
       },
       "heal_pct": 20,
@@ -11032,7 +11032,7 @@
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "AbilityCastPoint": "0.3 0.3 0.3 0.3",
     "AbilityCooldown": 5,
-    "AbilityManaCost": "75 80 85 90",
+    "AbilityManaCost": "75 85 95 105",
     "AbilityModifierSupportValue": 0.1,
     "HasScepterUpgrade": 1,
     "AbilityValues": {
@@ -11122,7 +11122,7 @@
         "value": 0,
         "special_bonus_unique_bounty_hunter_9": "+30"
       },
-      "bonus_move_speed_pct": "8 12 16 20"
+      "bonus_move_speed_pct": "11 14 17 20"
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
   },
@@ -11158,7 +11158,7 @@
     "AbilityCastPoint": "0.3 0.3 0.3",
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCooldown": "6 5 4",
-    "AbilityManaCost": 60,
+    "AbilityManaCost": 50,
     "AbilityValues": {
       "target_damage_amp": "8 12 16",
       "bonus_gold_radius": {
@@ -11520,7 +11520,7 @@
     "IsGrantedByScepter": 1,
     "HasScepterUpgrade": 1,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_1",
-    "AbilityCooldown": 0,
+    "AbilityCooldown": 3,
     "AbilityCastPoint": 0,
     "AbilityManaCost": 0
   },
@@ -11725,7 +11725,7 @@
     "AbilityCastRange": 750,
     "AbilityCastPoint": 0.1,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
-    "AbilityCooldown": 13,
+    "AbilityCooldown": 15,
     "AbilityManaCost": 60,
     "AbilityValues": {
       "projectile_speed": 1200,
@@ -11815,7 +11815,7 @@
       "back_angle": 70,
       "quill_release_threshold": {
         "value": "275 250 225 200",
-        "special_bonus_unique_bristleback": -25
+        "special_bonus_unique_bristleback": -30
       },
       "quill_release_interval": 0.1,
       "goo_radius": {
@@ -11882,7 +11882,7 @@
     "IsBreakable": 1,
     "AbilityValues": {
       "damage_per_stack": {
-        "value": "15 20 25",
+        "value": "12 16 20",
         "special_bonus_facet_bristleback_berserk": "=5",
         "special_bonus_unique_bristleback_3": "+18",
         "CalculateSpellDamageTooltip": 0,
@@ -12121,7 +12121,7 @@
         "special_bonus_shard": 1
       },
       "aura_radius": {
-        "value": 800,
+        "value": 1200,
         "affected_by_aoe_increase": 1
       }
     }
@@ -12142,7 +12142,7 @@
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCharges": 2,
     "AbilityChargeRestoreTime": 30,
-    "AbilityManaCost": 100,
+    "AbilityManaCost": 70,
     "AbilityValues": {
       "formation_delay": 2,
       "root_duration": 3,
@@ -12186,7 +12186,7 @@
       },
       "stun_duration": {
         "value": "1.6 1.8 2.0 2.2",
-        "special_bonus_unique_centaur_2": "+0.8"
+        "special_bonus_unique_centaur_2": "+1.0"
       },
       "windup_time": 0.5
     }
@@ -12479,7 +12479,7 @@
         "special_bonus_unique_chaos_knight_5": "+10"
       },
       "crit_min": 120,
-      "crit_max": "140 180 220 260",
+      "crit_max": "150 190 230 270",
       "lifesteal": {
         "value": "30 40 50 60",
         "special_bonus_unique_chaos_knight_6": "+30"
@@ -13646,7 +13646,7 @@
     "AbilityValues": {
       "destination_travel_speed": 2000,
       "destination_radius": {
-        "value": "400 450 500",
+        "value": "450 500 550",
         "affected_by_aoe_increase": 1
       },
       "destination_status_duration": "2.8 3.0 3.2",
@@ -13980,7 +13980,7 @@
         "value": "130 160 190",
         "CalculateSpellDamageTooltip": 1
       },
-      "land_stun_duration": "1.4 1.6 1.8",
+      "land_stun_duration": "1.2 1.4 1.6",
       "max_offset_distance": 350,
       "scepter_channel_time": {
         "special_bonus_scepter": 1.7
@@ -14950,7 +14950,7 @@
         "value": "20 30 40 50"
       },
       "bonus_health_regen": {
-        "value": "7 8 9 10"
+        "value": 6.66
       },
       "radius": {
         "value": "666 666 666 666",
@@ -15268,7 +15268,7 @@
     "AbilityValues": {
       "frost_arrows_movement_speed": "-15 -25 -35 -45",
       "damage": {
-        "value": "10 15 20 25",
+        "value": "12 18 24 30",
         "CalculateSpellDamageTooltip": 0
       },
       "shard_regen_reduction_pct_per_stack": {
@@ -15383,7 +15383,7 @@
         "value": "19 17 15 13"
       },
       "AbilityManaCost": {
-        "value": 70
+        "value": 55
       },
       "miss_chance": {
         "value": 0
@@ -16080,7 +16080,7 @@
       },
       "sleep_duration": "2 2.8 3.6 4.4",
       "stomp_damage": {
-        "value": "60 100 140 180",
+        "value": "65 110 155 200",
         "special_bonus_unique_elder_titan_2": "+75",
         "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
       },
@@ -17087,7 +17087,7 @@
       },
       "AbilityCooldown": {
         "value": "21 16 11 6",
-        "special_bonus_unique_faceless_void_5": -1.25
+        "special_bonus_unique_faceless_void_5": -1
       },
       "backtrack_duration": {
         "value": 2,
@@ -17236,7 +17236,7 @@
       },
       "bonus_attack_speed": {
         "value": 0,
-        "special_bonus_unique_faceless_void": "+100"
+        "special_bonus_unique_faceless_void": "+80"
       }
     }
   },
@@ -17317,7 +17317,7 @@
       "duration": "2.5 3 3.5 4",
       "sprout_damage": {
         "value": "70 130 190 250",
-        "special_bonus_unique_furion_4": "+170"
+        "special_bonus_unique_furion_4": "+220"
       },
       "sprout_damage_radius": {
         "value": 275,
@@ -17378,7 +17378,7 @@
     "AbilitySound": "Hero_Furion.ForceOfNature",
     "AbilityCastRange": 750,
     "AbilityCastPoint": "0.5 0.5 0.5 0.5",
-    "AbilityManaCost": 100,
+    "AbilityManaCost": "85 90 95 100",
     "AbilityValues": {
       "area_of_effect": {
         "value": "150 225 300 375",
@@ -17395,7 +17395,7 @@
         "special_bonus_unique_furion": "x3"
       },
       "treant_bonus_hero_damage": {
-        "value": "4 8 12 16",
+        "value": "6 10 14 18",
         "special_bonus_unique_furion": "x3"
       },
       "treant_movespeed": {
@@ -17457,7 +17457,7 @@
       },
       "AbilityCooldown": {
         "value": 85,
-        "special_bonus_unique_furion_7": -15
+        "special_bonus_unique_furion_7": -20
       },
       "scepter_min_entangle_duration": {
         "special_bonus_scepter": 1.5
@@ -18136,7 +18136,7 @@
     "Innate": 1,
     "AbilityValues": {
       "bonus_movespeed_duration": {
-        "value": 3.9,
+        "value": 4.9,
         "hero_levelup": 0.1
       },
       "bonus_movement_speed_per_hit": 1,
@@ -19926,7 +19926,7 @@
     "AbilityCastPoint": 0.4,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCooldown": "90 80 70",
-    "AbilityManaCost": "250 350 450",
+    "AbilityManaCost": "225 325 425",
     "AbilityValues": {
       "damage": {
         "value": "100 150 200",
@@ -20011,7 +20011,7 @@
     "AbilityManaCost": 120,
     "AbilityValues": {
       "blade_fury_damage": {
-        "value": "80 110 140 170",
+        "value": "85 115 145 175",
         "special_bonus_unique_juggernaut": "+120"
       },
       "blade_fury_damage_tick": {
@@ -21256,7 +21256,7 @@
         "hero_levelup": "+0.25"
       },
       "AbilityCooldown": {
-        "value": 60.5,
+        "value": 50.5,
         "hero_levelup": -0.5
       }
     }
@@ -21430,7 +21430,8 @@
         "special_bonus_unique_largo_1": "+15"
       },
       "total_ticks": {
-        "value": "4 5 6 7"
+        "value": "4 5 6 7",
+        "special_bonus_unique_largo_5": "x2"
       },
       "slow": {
         "value": "12 18 24 30"
@@ -21445,7 +21446,10 @@
       "stun_duration": {
         "value": 0.1
       },
-      "stomp_interval": 1,
+      "stomp_interval": {
+        "value": 1,
+        "special_bonus_unique_largo_5": "x0.5"
+      },
       "delay": 0.5
     }
   },
@@ -21519,8 +21523,7 @@
         "special_bonus_unique_largo_8": "=2"
       },
       "damage": {
-        "value": "85 170 255 340",
-        "special_bonus_unique_largo_5": "+200"
+        "value": "85 170 255 340"
       },
       "pull_distance": {
         "value": "235 265 295 325",
@@ -22057,7 +22060,7 @@
         "special_bonus_unique_lich_2": "+0.3"
       },
       "destination": "32 38 44 50",
-      "mana_drain": 20,
+      "mana_drain": 25,
       "aoe_scepter": {
         "special_bonus_scepter": "+400",
         "affected_by_aoe_increase": 1
@@ -22608,7 +22611,7 @@
       "light_strike_array_delay_time": 0.5,
       "light_strike_array_stun_duration": "1.2 1.6 2.0 2.4",
       "light_strike_array_damage": {
-        "value": "80 120 160 200",
+        "value": "80 125 170 215",
         "special_bonus_unique_lina_3": "+110"
       }
     },
@@ -22676,7 +22679,7 @@
     "AbilityModifierSupportValue": 0,
     "AbilityValues": {
       "damage": {
-        "value": "380 565 750"
+        "value": "400 580 760"
       },
       "damage_delay": 0.25,
       "AbilityCooldown": {
@@ -23005,11 +23008,10 @@
     "Innate": 1,
     "MaxLevel": 1,
     "AbilityCastPoint": 0.5,
-    "AbilityManaCost": 75,
+    "AbilityManaCost": 100,
     "AbilityValues": {
       "AbilityCooldown": {
-        "value": 120,
-        "special_bonus_unique_lone_druid_2": -25
+        "value": 120
       },
       "bear_hp": 1500,
       "bear_regen_tooltip": 3,
@@ -23077,6 +23079,7 @@
       "lifesteal_percent": {
         "value": "15 30 45 60"
       },
+      "creep_lifesteal_penalty": 40,
       "lifesteal_both_ways": 1,
       "duration": 20,
       "active_bonus": 35,
@@ -23106,6 +23109,7 @@
       "lifesteal_percent": {
         "value": "15 30 45 60"
       },
+      "creep_lifesteal_penalty": 40,
       "lifesteal_both_ways": 1,
       "duration": 20,
       "active_bonus": 35,
@@ -23140,13 +23144,13 @@
         "affected_by_aoe_increase": 1
       },
       "shard_movement_speed_pct": {
-        "special_bonus_shard": 15
+        "special_bonus_shard": 10
       },
       "shard_attack_speed": {
         "special_bonus_shard": 40
       },
       "shard_duration": {
-        "special_bonus_shard": 5
+        "special_bonus_shard": 4
       },
       "AbilityCooldown": {
         "value": "29 26 23 20",
@@ -23199,7 +23203,8 @@
         "special_bonus_facet_lone_druid_unbearable": "+15"
       },
       "duration": {
-        "value": 25
+        "value": 25,
+        "special_bonus_unique_lone_druid_2": "+5"
       },
       "transformation_time": 1.933,
       "AbilityCooldown": {
@@ -23391,7 +23396,7 @@
     "AbilityValues": {
       "bonus_building_damage": {
         "value": 30,
-        "special_bonus_unique_lone_druid_spirit_bear_demolish": "+20"
+        "special_bonus_unique_lone_druid_spirit_bear_demolish": "+15"
       },
       "bonus_damage_against_entangled": {
         "special_bonus_unique_lone_druid_spirit_bear_damage_against_entangled": 15
@@ -23694,21 +23699,21 @@
       },
       "wolf_damage": {
         "value": "22 28 34 40 46 52",
-        "special_bonus_unique_lycan_3": "+10",
+        "special_bonus_unique_lycan_3": "+14",
         "CalculateSpellDamageTooltip": 0,
         "DamageTypeTooltip": "DAMAGE_TYPE_PHYSICAL"
       },
       "wolf_hp": {
         "value": "325 375 425 475 525 575",
-        "special_bonus_unique_lycan_7": "+350"
+        "special_bonus_unique_lycan_7": "+375"
       },
       "bonus_health": {
         "value": 0,
-        "special_bonus_unique_lycan_7": "+350"
+        "special_bonus_unique_lycan_7": "+375"
       },
       "bonus_damage": {
         "value": 0,
-        "special_bonus_unique_lycan_3": "+10",
+        "special_bonus_unique_lycan_3": "+14",
         "CalculateSpellDamageTooltip": 0,
         "DamageTypeTooltip": "DAMAGE_TYPE_PHYSICAL"
       },
@@ -23807,7 +23812,7 @@
         "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
       },
       "bonus_hp_regen": {
-        "value": "1 3 5 7"
+        "value": "2 4 6 8"
       },
       "max_level": {
         "value": 4,
@@ -23994,7 +23999,7 @@
         "value": 4
       },
       "basic_slow_duration": {
-        "value": "0.4 0.6 0.8 1.0"
+        "value": "0.55 0.7 0.85 1.0"
       },
       "return_damage_pct": {
         "value": 0,
@@ -24195,7 +24200,7 @@
       },
       "stats_per_stack": {
         "value": 0,
-        "special_bonus_unique_magnus_reverse_polarity_stats": "+12"
+        "special_bonus_unique_magnus_reverse_polarity_stats": "+14"
       }
     }
   },
@@ -24268,7 +24273,7 @@
       },
       "impact_damage": {
         "value": "60 150 240 330",
-        "special_bonus_unique_marci_grapple_damage": "+100"
+        "special_bonus_unique_marci_grapple_damage": "+115"
       },
       "movement_slow_pct": "20 30 40 50"
     }
@@ -24454,7 +24459,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "FightRecapLevel": 1,
     "AbilitySound": "Hero_Marci.Guardian.Applied",
-    "AbilityCastRange": 500,
+    "AbilityCastRange": 600,
     "AbilityCastPoint": 0.2,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
     "AbilityCastGestureSlot": "DEFAULT",
@@ -24575,7 +24580,7 @@
     "HasShardUpgrade": 1,
     "AbilityCastPoint": 0.25,
     "AbilityCooldown": "14.0 13.0 12.0 11.0",
-    "AbilityManaCost": "100 110 120 130",
+    "AbilityManaCost": "90 100 110 120",
     "AbilityValues": {
       "damage": {
         "value": "100 175 250 325",
@@ -24668,7 +24673,7 @@
     "IsBreakable": 1,
     "AbilityValues": {
       "health_regen_per_enemy": {
-        "value": 40,
+        "value": 50,
         "special_bonus_unique_mars_dauntless_hpregen": "+10"
       },
       "radius": {
@@ -25294,7 +25299,7 @@
     "AbilityCastRange": 3000,
     "AbilityCastPoint": "0.5 0.5 0.5 0.5",
     "AbilityDuration": "3.11 3.11 3.11 3.11",
-    "AbilityDamage": "60 150 240 330",
+    "AbilityDamage": "60 160 260 360",
     "AbilityManaCost": 90,
     "AbilityValues": {
       "AbilityCooldown": {
@@ -25405,7 +25410,7 @@
       "leap_speedbonus": "6 12 18 24",
       "leap_speedbonus_as": {
         "value": "25 50 75 100",
-        "special_bonus_unique_mirana_1": "+90"
+        "special_bonus_unique_mirana_1": "+100"
       },
       "leap_bonus_duration": 5,
       "additional_charges": {
@@ -25499,7 +25504,7 @@
       "bonus_damage": {
         "value": 5,
         "hero_levelup": "+3",
-        "special_bonus_unique_mirana_quiver_damage": "+40"
+        "special_bonus_unique_mirana_quiver_damage": "+50"
       },
       "quiver_restore": {
         "value": 0,
@@ -25692,7 +25697,7 @@
       "impact_damage": {
         "value": "110 200 290 380"
       },
-      "impact_movement_slow": "35 50 65 80",
+      "impact_movement_slow": "30 40 50 60",
       "impact_slow_duration": 4,
       "impact_radius": {
         "value": 375,
@@ -25818,7 +25823,7 @@
     }
   },
   "morphling_waveform": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
     "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "FightRecapLevel": 1,
@@ -26265,6 +26270,7 @@
       "stack_collection_range": 925,
       "spell_amp_per_stack": 1,
       "max_stacks_tooltip": {
+        "value": 5,
         "hero_levelup": "+1"
       }
     }
@@ -26829,7 +26835,7 @@
     "AbilityCastAnimation": "ACT_DOTA_RAZE_1",
     "AbilityCastGestureSlot": "DEFAULT",
     "AbilityCastPoint": 0.55,
-    "AbilityManaCost": 80,
+    "AbilityManaCost": 75,
     "AbilityValues": {
       "shadowraze_damage": {
         "value": "85 150 215 280"
@@ -26879,7 +26885,7 @@
     "AbilityCastAnimation": "ACT_DOTA_RAZE_2",
     "AbilityCastGestureSlot": "DEFAULT",
     "AbilityCastPoint": 0.55,
-    "AbilityManaCost": 80,
+    "AbilityManaCost": 75,
     "AbilityValues": {
       "shadowraze_damage": {
         "value": "85 150 215 280"
@@ -26929,7 +26935,7 @@
     "AbilityCastAnimation": "ACT_DOTA_RAZE_3",
     "AbilityCastGestureSlot": "DEFAULT",
     "AbilityCastPoint": 0.55,
-    "AbilityManaCost": 80,
+    "AbilityManaCost": 75,
     "AbilityValues": {
       "shadowraze_damage": {
         "value": "85 150 215 280"
@@ -27014,7 +27020,7 @@
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_5",
     "AbilityValues": {
       "presence_armor_reduction": {
-        "value": "-3 -4 -5 -6",
+        "value": "-2.5 -4 -5.5 -7",
         "special_bonus_unique_nevermore_3": -2
       },
       "presence_radius": {
@@ -27601,7 +27607,7 @@
       },
       "mana_capacity_steal": {
         "value": "16 19 22 25",
-        "special_bonus_unique_outworld_devourer_4": "+10"
+        "special_bonus_unique_outworld_devourer_4": "+12"
       },
       "mana_capacity_duration": {
         "value": "30 40 50 60"
@@ -27678,7 +27684,7 @@
     "AbilityValues": {
       "base_damage": "200 300 400",
       "radius": {
-        "value": "450 500 550",
+        "value": "500 525 550",
         "affected_by_aoe_increase": 1
       },
       "cast_range": 700,
@@ -27713,7 +27719,7 @@
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "IsBreakable": 1,
     "AbilityCastPoint": 0.2,
-    "AbilityManaCost": 250,
+    "AbilityManaCost": 175,
     "HasScepterUpgrade": 1,
     "AbilityValues": {
       "AbilityCooldown": {
@@ -27997,7 +28003,7 @@
         "value": "30 50 70 90",
         "special_bonus_unique_omniknight_4": "+75"
       },
-      "bonus_damage": "20 40 60 80",
+      "bonus_damage": "25 45 65 85",
       "heal_pct": {
         "value": 35
       },
@@ -28148,7 +28154,7 @@
     "SpellImmunityType": "SPELL_IMMUNITY_ALLIES_YES",
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "AbilityCastPoint": 0.3,
-    "AbilityCooldown": "40 36 32 28",
+    "AbilityCooldown": "40 35 30 25",
     "AbilityManaCost": "90 105 120 135",
     "AbilityValues": {
       "AbilityCastRange": {
@@ -28485,7 +28491,7 @@
     "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
     "AbilityCastPoint": 0.15,
     "AbilityCastRange": "575 650 725 800",
-    "AbilityManaCost": "75 80 85 90",
+    "AbilityManaCost": "85 90 95 100",
     "AbilityValues": {
       "AbilityCooldown": {
         "value": "19 16 13 10",
@@ -28598,7 +28604,7 @@
       "attack_slow": "35 70 105 140",
       "armor": {
         "value": "2 4 6 8",
-        "special_bonus_unique_pangolier_luckyshot_armor": "+3"
+        "special_bonus_unique_pangolier_luckyshot_armor": "+2"
       }
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
@@ -28696,7 +28702,7 @@
     "AbilityCastPoint": 0.1,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCooldown": 40,
-    "AbilityManaCost": 50,
+    "AbilityManaCost": 75,
     "precache": {
       "model": "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
     },
@@ -28856,7 +28862,7 @@
       },
       "duration": {
         "value": 3,
-        "special_bonus_unique_phantom_assassin_4": "+0.6"
+        "special_bonus_unique_phantom_assassin_4": "+0.8"
       },
       "AbilityCastRange": {
         "value": "650 750 850 950",
@@ -29148,7 +29154,7 @@
       "min_distance": 275,
       "max_distance": {
         "value": "600 675 750 825",
-        "special_bonus_scepter": "+625"
+        "special_bonus_scepter": "+575"
       },
       "bonus_speed": 800,
       "bonus_agility": 0,
@@ -29272,7 +29278,7 @@
         "special_bonus_unique_phoenix_5": "+1.5"
       },
       "base_heal": "7 10 13 16",
-      "hp_perc_heal": "0.5 1.0 1.5 2.0",
+      "hp_perc_heal": "0.4 0.8 1.2 1.6",
       "radius": {
         "value": 130,
         "affected_by_aoe_increase": 1
@@ -29330,7 +29336,7 @@
         "value": 1200,
         "affected_by_aoe_increase": 1
       },
-      "damage_per_sec": "60 90 120",
+      "damage_per_sec": "50 80 110",
       "tick_interval": 0.2,
       "stun_duration": {
         "value": "1.6 2 2.4",
@@ -29389,7 +29395,7 @@
         "affected_by_aoe_increase": 1
       },
       "damage_pct": {
-        "value": 4,
+        "value": 3.5,
         "special_bonus_unique_phoenix_dying_light_damage": "+1"
       },
       "tick_interval": 0.2
@@ -29506,7 +29512,7 @@
     "AbilityCastGestureSlot": "ABSOLUTE",
     "AbilityValues": {
       "effect_radius": {
-        "value": 230,
+        "value": 200,
         "affected_by_aoe_increase": 1
       },
       "step_distance": 140,
@@ -29820,7 +29826,8 @@
     "IsBreakable": 1,
     "AbilityValues": {
       "mana_and_health_restore_pct": {
-        "value": 3
+        "value": 3,
+        "special_bonus_unique_puck_5": "+2"
       },
       "dodged_spell_multiplier": 3
     }
@@ -29916,7 +29923,7 @@
     "AbilityValues": {
       "AbilityCooldown": {
         "value": 75,
-        "special_bonus_unique_puck": -15
+        "special_bonus_unique_puck": -30
       },
       "coil_duration": "5 5.5 6",
       "coil_break_radius": 600,
@@ -29947,9 +29954,6 @@
       "attack_rate_pct": {
         "value": 0,
         "special_bonus_scepter": "+90"
-      },
-      "pierces_debuff_immunity": {
-        "special_bonus_unique_puck_5": 1
       }
     }
   },
@@ -30313,7 +30317,7 @@
     "HasScepterUpgrade": 1,
     "AbilityCastRange": "450 500 550 600",
     "AbilityCastPoint": 0.3,
-    "AbilityCooldown": "13 10 7 4",
+    "AbilityCooldown": "11 9 7 5",
     "AbilityManaCost": "100 110 120 130",
     "AbilityValues": {
       "strike_damage": {
@@ -30338,7 +30342,7 @@
       },
       "aoe_radius": {
         "value": 0,
-        "special_bonus_scepter": "+375",
+        "special_bonus_scepter": "+300",
         "affected_by_aoe_increase": 1
       },
       "duration": 16
@@ -30810,7 +30814,7 @@
       "drain_duration": "12 14 16 18",
       "drain_rate": {
         "value": "6 12 18 24",
-        "special_bonus_unique_razor": "+5"
+        "special_bonus_unique_razor": "+6"
       },
       "drain_range_buffer": 250,
       "radius": "200 200 200 200",
@@ -30845,11 +30849,11 @@
       "strike_target_count": 3,
       "strike_damage": {
         "value": "50 90 130 170",
-        "special_bonus_unique_razor_storm_surge_damage_and_slow": "+30%"
+        "special_bonus_unique_razor_storm_surge_damage_and_slow": "+35%"
       },
       "strike_move_slow_pct": {
         "value": "25 30 35 40",
-        "special_bonus_unique_razor_storm_surge_damage_and_slow": "+30"
+        "special_bonus_unique_razor_storm_surge_damage_and_slow": "+35"
       },
       "strike_slow_duration": 1,
       "strike_search_radius": {
@@ -31702,7 +31706,7 @@
       "jump_delay": "0.25 0.25 0.25 0.25",
       "AbilityCooldown": {
         "value": "16 14 12 10",
-        "special_bonus_unique_rubick_3": -3
+        "special_bonus_unique_rubick_3": -4
       },
       "steals_damage": 0
     }
@@ -31760,7 +31764,7 @@
       "grace_period": 3,
       "curiosity_factor": {
         "value": 0,
-        "special_bonus_unique_rubick_curiosity_factor": "+2"
+        "special_bonus_unique_rubick_curiosity_factor": "+1.5"
       },
       "charge_radius": {
         "value": 1200,
@@ -31802,7 +31806,7 @@
       "stolen_debuff_amp": 0,
       "stolen_mana_reduction": {
         "value": 0,
-        "special_bonus_unique_rubick_6": "+50"
+        "special_bonus_unique_rubick_6": "+40"
       },
       "stolen_spell_cooldown_percent": {
         "value": "10 20 30"
@@ -31979,7 +31983,7 @@
         "CalculateSpellDamageTooltip": 1
       },
       "epicenter_radius_base": {
-        "value": 500,
+        "value": 450,
         "affected_by_aoe_increase": 1
       },
       "epicenter_radius_increment": {
@@ -32054,7 +32058,7 @@
         "value": "50 75 100 125",
         "special_bonus_unique_sand_king_scorpion_strike_damage": "+125"
       },
-      "debuff_duration": "4 5 6 7",
+      "debuff_duration": 5,
       "strike_slow": {
         "value": "10 12 14 16",
         "special_bonus_unique_sand_king_3": "+12"
@@ -32686,7 +32690,7 @@
     "AbilityValues": {
       "bonus_armor": "0.4 0.5 0.6 0.7",
       "bonus_hp_regen": {
-        "value": "0.4 0.5 0.6 0.7",
+        "value": "0.5 0.6 0.7 0.8",
         "special_bonus_unique_timbersaw_reactive_armor_regen_per_stack": "+0.25"
       },
       "stack_limit": {
@@ -33426,7 +33430,7 @@
     "AbilityCastPoint": "0.1 0.1 0.1 0.1",
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
     "AbilityCastGestureSlot": "DEFAULT",
-    "AbilityCooldown": "60.0 40.0 20.0",
+    "AbilityCooldown": "55 35 15",
     "AbilityManaCost": "300 550 800",
     "AbilityValues": {
       "radius": {
@@ -33589,7 +33593,7 @@
         "special_bonus_shard": 0
       },
       "AbilityCooldown": {
-        "value": 7,
+        "value": "8.5 8 7.5 7",
         "special_bonus_unique_slardar_4": -3
       }
     },
@@ -34479,7 +34483,7 @@
     "IsBreakable": 1,
     "AbilityValues": {
       "damage_reflection_pct": {
-        "value": "8 12 16 20",
+        "value": "9 12 15 18",
         "special_bonus_unique_spectre_5": "+4"
       },
       "min_radius": {
@@ -35021,11 +35025,11 @@
       },
       "overload_move_slow": {
         "value": -80,
-        "special_bonus_unique_storm_spirit_overload_aspd": -20
+        "special_bonus_unique_storm_spirit_overload_aspd": -25
       },
       "overload_attack_slow": {
         "value": -90,
-        "special_bonus_unique_storm_spirit_overload_aspd": -20
+        "special_bonus_unique_storm_spirit_overload_aspd": -25
       },
       "overload_damage": {
         "value": "25 50 75 100"
@@ -35105,7 +35109,8 @@
         "value": 1200,
         "affected_by_aoe_increase": 1
       },
-      "charges_per_death": 2
+      "charges_per_death": 2,
+      "level_divisor": 3
     }
   },
   "sven_storm_bolt": {
@@ -35130,7 +35135,7 @@
         "special_bonus_unique_sven_stormhammer_cooldown": "-25%"
       },
       "AbilityManaCost": {
-        "value": "110 115 120 125",
+        "value": 110,
         "special_bonus_unique_sven_stormhammer_cooldown": "-25%"
       },
       "bolt_speed": {
@@ -35498,7 +35503,7 @@
       },
       "bonus_ms": "18 22 26 30",
       "explosion_radius": {
-        "value": 450,
+        "value": 400,
         "affected_by_aoe_increase": 1
       },
       "damage": {
@@ -35642,8 +35647,8 @@
     "AbilityCastPoint": 1,
     "AbilityValues": {
       "bonus_mana_as_mana_regen": {
-        "value": 0.08,
-        "hero_levelup": "+0.02"
+        "value": 0.1,
+        "hero_levelup": "+0.01"
       },
       "radius": {
         "value": 400,
@@ -36888,7 +36893,10 @@
     "AbilityManaCost": "40 35 30 25",
     "AbilityModifierSupportBonus": 35,
     "AbilityValues": {
-      "attack_count": "5 6 7 8",
+      "attack_count": {
+        "value": "5 6 7 8",
+        "special_bonus_unique_tiny_6": "+2"
+      },
       "bonus_damage": {
         "value": "10 20 30 40",
         "special_bonus_unique_tiny_7": "+60"
@@ -36983,11 +36991,10 @@
         "CalculateSpellDamageTooltip": 0
       },
       "attack_speed_reduction": {
-        "value": -35,
-        "special_bonus_unique_tiny_6": "+8"
+        "value": -35
       },
       "toss_bonus_damage": {
-        "value": "50 175 300",
+        "value": "50 200 350",
         "DamageTypeTooltip": "DAMAGE_TYPE_MAGICAL"
       },
       "move_speed": "10 20 30",
@@ -37163,7 +37170,7 @@
     "AbilityValues": {
       "heal_per_second": {
         "value": "4 7 10 13",
-        "special_bonus_unique_treant_8": "+4"
+        "special_bonus_unique_treant_8": "+3"
       },
       "duration": 12,
       "aoe_radius": {
@@ -37233,7 +37240,7 @@
     }
   },
   "treant_eyes_in_the_forest": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_AOE",
     "AbilityUnitTargetType": "DOTA_UNIT_TARGET_TREE",
     "MaxLevel": 1,
     "FightRecapLevel": 1,
@@ -37400,7 +37407,7 @@
         "special_bonus_scepter": -5
       },
       "AbilityManacost": {
-        "value": 60,
+        "value": 50,
         "special_bonus_scepter": -30
       },
       "pierces_magic_immunity": {
@@ -37422,7 +37429,7 @@
     "AbilityCastPoint": 0,
     "AbilityValues": {
       "damage": {
-        "value": "50 100 150 200",
+        "value": "75 120 165 210",
         "special_bonus_unique_troll_warlord_3": "+160"
       },
       "hit_radius": {
@@ -37745,7 +37752,7 @@
     }
   },
   "tusk_drinking_buddies": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
     "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
     "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
@@ -38309,7 +38316,7 @@
         "DamageTypeTooltip": "DAMAGE_TYPE_NONE"
       },
       "self_multiplier": {
-        "value": 20,
+        "value": 25,
         "special_bonus_scepter": "+10"
       },
       "aura_radius": {
@@ -38525,8 +38532,8 @@
         "CalculateSpellDamageTooltip": 1
       },
       "movement_speed": {
-        "value": 10,
-        "special_bonus_unique_venomancer_2": 7
+        "value": 8,
+        "special_bonus_unique_venomancer_2": 10
       },
       "hp_regen_reduction": {
         "value": 0,
@@ -38639,11 +38646,10 @@
     "AbilityValues": {
       "base_damage": {
         "value": "40 60 80 100",
-        "special_bonus_unique_venomancer_4": "+40%"
+        "special_bonus_unique_venomancer_4": "+100"
       },
       "tick_damage": {
-        "value": "20 25 30 35",
-        "special_bonus_unique_venomancer_4": "+40%"
+        "value": "10 20 30 40"
       },
       "duration": 6,
       "damage_interval": 0.5,
@@ -38952,7 +38958,7 @@
     "SubAbilityNames": "viper_nethertoxin;viper_corrosive_skin",
     "AbilityCastPoint": 0.1,
     "AbilityCastRange": 700,
-    "AbilityCooldown": 20,
+    "AbilityCooldown": 25,
     "AbilityManaCost": 75,
     "AbilityValues": {
       "corrosive_radius": {
@@ -39869,7 +39875,7 @@
     "AbilityCastPoint": "0.3 0.3 0.3 0.3",
     "AbilityCastRange": 3000,
     "AbilityCooldown": "44 36 28 20",
-    "AbilityManaCost": 110,
+    "AbilityManaCost": "110 105 100 95",
     "AbilityModifierSupportValue": 0.2,
     "AbilityValues": {
       "damage": "18 23 28 33",
@@ -40147,7 +40153,7 @@
       },
       "max_execute_threshold": {
         "value": 0,
-        "special_bonus_unique_windranger_7": "+15"
+        "special_bonus_unique_windranger_7": "+16"
       }
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2"
@@ -40229,7 +40235,7 @@
         }
       },
       "cooldown_reduction_per_kill": {
-        "special_bonus_unique_windranger_2": "+18"
+        "special_bonus_unique_windranger_2": "+16"
       },
       "bonus_range": {
         "value": 0,
@@ -40348,8 +40354,8 @@
         "affected_by_aoe_increase": 1,
         "special_bonus_unique_winter_wyvern_2": "+175"
       },
-      "bonus_movespeed": "-28 -32 -36 -40",
-      "movespeed_slow_tooltip": "28 32 36 40",
+      "bonus_movespeed": "-27 -30 -33 -36",
+      "movespeed_slow_tooltip": "27 30 33 36",
       "slow_duration": 4,
       "secondary_projectile_speed": 1000,
       "damage": {
@@ -40380,7 +40386,7 @@
       "duration": 4,
       "heal_additive": {
         "value": "40 45 50 55",
-        "special_bonus_unique_winter_wyvern_5": "+20"
+        "special_bonus_unique_winter_wyvern_5": "+15"
       },
       "heal_percentage": "2.25 3 3.75 4.5",
       "shard_cooldown_reduction": {
@@ -40551,8 +40557,8 @@
         "value": 700
       },
       "latch_speed": 1000,
-      "tether_heal_amp": "60 80 100 120",
-      "tether_mana_amp": "60 80 100 120",
+      "tether_heal_amp": "55 75 95 115",
+      "tether_mana_amp": "55 75 95 115",
       "self_bonus": 0,
       "slow": {
         "value": "15 30 45 60"
@@ -40596,6 +40602,7 @@
       },
       "revolution_time": "5.0 5.0 5.0 5.0",
       "min_range": 200,
+      "default_radius": 425,
       "max_range": {
         "value": 650,
         "affected_by_aoe_increase": 1
@@ -40801,7 +40808,7 @@
         "special_bonus_unique_witch_doctor_4": "+25"
       },
       "radius": {
-        "value": "500 550 600 650",
+        "value": 650,
         "special_bonus_facet_witch_doctor_voodoo_festeration": "+100",
         "affected_by_aoe_increase": 1
       },
@@ -44176,7 +44183,7 @@
   },
   "item_recipe_heart": {
     "Model": "models/props_gameplay/recipe.vmdl",
-    "ItemCost": 600,
+    "ItemCost": 700,
     "ItemShopTags": "",
     "ItemRecipe": 1,
     "ItemResult": "item_heart",
@@ -44186,7 +44193,7 @@
   },
   "item_heart": {
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-    "ItemCost": 5100,
+    "ItemCost": 5200,
     "ItemShopTags": "str;regen_health;health_pool;tank",
     "ItemQuality": "epic",
     "ItemDeclarations": "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS",
@@ -44279,7 +44286,7 @@
         "value": 1200,
         "affected_by_aoe_increase": 1
       },
-      "aura_attack_speed": -45,
+      "aura_attack_speed": -40,
       "blast_damage": 260,
       "blast_movement_speed": -40,
       "blast_debuff_duration": 4,
@@ -44304,7 +44311,7 @@
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
     "FightRecapLevel": 2,
     "AbilityCastPoint": 0,
-    "AbilityCooldown": 30,
+    "AbilityCooldown": 35,
     "AbilityManaCost": 0,
     "ItemCost": 4700,
     "ItemShopTags": "int;regen_health;mana_pool;health_pool;tank",
@@ -44313,7 +44320,7 @@
     "AllowedInBackpack": 1,
     "SuggestLategame": 1,
     "AbilityValues": {
-      "bonus_health": 650,
+      "bonus_health": 625,
       "bonus_mana": 450,
       "bonus_mp_regen": 0,
       "bonus_hp_regen": 0,
@@ -44322,7 +44329,7 @@
       "buff_duration": 5,
       "spell_lifesteal_while_active": 60,
       "hp_cost": 0,
-      "aura_spell_vulnerability": 12,
+      "aura_spell_vulnerability": 10,
       "aura_radius": {
         "value": 1200,
         "affected_by_aoe_increase": 1
@@ -44663,8 +44670,8 @@
       "soul_damage_amount": 25,
       "duration": 8,
       "ground_duration": 15,
-      "latch_range": 400,
-      "latch_vision": 400,
+      "latch_range": 450,
+      "latch_vision": 450,
       "linger_after_latch_duration": 0.5
     }
   },
@@ -44917,7 +44924,7 @@
         "value": 900,
         "affected_by_aoe_increase": 1
       },
-      "movespeed_steal_pct": 5,
+      "movespeed_steal_pct": 6,
       "active_health_steal": 75,
       "stack_duration": 1.5
     }
@@ -45285,7 +45292,7 @@
   "item_silver_edge": {
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
     "FightRecapLevel": 1,
-    "AbilityCooldown": 20,
+    "AbilityCooldown": 22,
     "AbilitySharedCooldown": "shadow_blade",
     "AbilityManaCost": 75,
     "ItemCost": 5700,
@@ -45300,7 +45307,7 @@
       "bonus_intellect": 0,
       "bonus_mana_regen": 0,
       "windwalk_duration": 17,
-      "windwalk_movement_speed": 25,
+      "windwalk_movement_speed": 22,
       "windwalk_fade_time": 0.3,
       "windwalk_bonus_damage": 300,
       "backstab_duration": 5,
@@ -45830,9 +45837,9 @@
       "purge_rate": 5,
       "purge_root_duration": 3,
       "damage_per_burn": 1,
-      "enemy_effect_duration": 5,
-      "ally_effect_duration": 5,
-      "movement_speed_buff_rate": 5,
+      "enemy_effect_duration": 4,
+      "ally_effect_duration": 4,
+      "movement_speed_buff_rate": 4,
       "phase_movement_speed": 100,
       "slow_resist": 40
     }
@@ -45887,7 +45894,7 @@
   },
   "item_soul_ring": {
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE",
-    "AbilityCooldown": 25,
+    "AbilityCooldown": 30,
     "AbilityHealthCost": 170,
     "ItemCost": 805,
     "ItemShopTags": "regen_health;boost_mana;mana;regen_mana",
@@ -46082,7 +46089,7 @@
       "bonus_mana_regen": 2.5,
       "bonus_damage": 15,
       "duration": 3,
-      "dps": 40
+      "dps": 35
     }
   },
   "item_recipe_ancient_janggo": {
@@ -46144,7 +46151,7 @@
     "SuggestLategame": 1,
     "SpeciallyBannedFromNeutralSlot": 1,
     "AbilityValues": {
-      "aura_movement_speed": 20,
+      "aura_movement_speed": 15,
       "aura_health_regen": 2.5,
       "bonus_str": 8,
       "bonus_int": 0,
@@ -49059,7 +49066,7 @@
     "Model": "models/props_gameplay/neutral_box.vmdl",
     "MaxLevel": 4,
     "AbilityValues": {
-      "bonus_damage": "7 10 13 16",
+      "bonus_damage": "6 9 12 15",
       "armor": "0 4 6 8",
       "knockback_resist": "0 0 0 40"
     }
@@ -49100,7 +49107,7 @@
     "AbilityValues": {
       "health_restoration": "9 12 15",
       "bat_reduce": "6 9 12",
-      "intelligence_pct": -6
+      "intelligence_pct": -9
     }
   },
   "item_enhancement_boundless": {
@@ -49155,7 +49162,7 @@
     "MaxLevel": 2,
     "AbilityValues": {
       "bonus_gpm": "75 100",
-      "bonus_mana": "200 250",
+      "bonus_mana": "150 200",
       "bonus_damage": "-30 -60"
     }
   },
@@ -49725,7 +49732,7 @@
     "SuggestLategame": 1,
     "AbilityValues": {
       "all_stats": 0,
-      "agility": 12,
+      "agility": 15,
       "damage": 20,
       "count": 2,
       "secondary_target_range_bonus": 150,

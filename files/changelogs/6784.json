@@ -1,0 +1,2692 @@
+{
+  "version": "6784",
+  "date": "May 06 2026",
+  "time": "14:47:00",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_RUN_ALT",
+          "value": 1796
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_IDLE_STATUE",
+          "value": 1791
+        }
+      ],
+      "changed": []
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "items",
+          "name": "modifier_item_foragers_nuts_consumed"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "dota_ui_give_item_indicator_min_ping_distance"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Activity",
+          "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL"
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "miniboss_alleviation",
+          "changes": {
+            "AbilityValues": {
+              "aura_duration": {
+                "old": 10,
+                "new": 15
+              },
+              "hp_restoration_pct": {
+                "old": 2,
+                "new": 2.25
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "abaddon_frostmourne",
+          "changes": {
+            "AbilityValues": {
+              "curse_dps": {
+                "value": {
+                  "old": "15 25 35 45",
+                  "new": "15 25 35 45"
+                },
+                "special_bonus_unique_abaddon_5": {
+                  "old": "+25",
+                  "new": "+30"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "alchemist_acid_spray",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "22.0 21 20 19",
+              "new": 21
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "alchemist_goblins_greed",
+          "changes": {
+            "AbilityValues": {
+              "bonus_gold_per_scepter": {
+                "old": 6,
+                "new": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "alchemist_chemical_rage",
+          "changes": {
+            "AbilityValues": {
+              "bonus_health_regen": {
+                "value": {
+                  "old": "60 90 120",
+                  "new": "50 85 120"
+                },
+                "special_bonus_unique_alchemist_4": {
+                  "old": "+50",
+                  "new": "+50"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "ancient_apparition_chilling_touch",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "30 60 90 120",
+                  "new": "30 60 90 120"
+                },
+                "special_bonus_unique_ancient_apparition_2": {
+                  "old": "+80",
+                  "new": "+100"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "ancient_apparition_ice_blast",
+          "changes": {
+            "AbilityValues": {
+              "radius_min": {
+                "value": {
+                  "old": 275,
+                  "new": 300
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              },
+              "path_radius": {
+                "value": {
+                  "old": 275,
+                  "new": 300
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "antimage_persectur",
+          "changes": {
+            "AbilityValues": {
+              "mana_threshold": {
+                "old": 50,
+                "new": 60
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bane_brain_sap",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "120 130 140 150",
+              "new": "105 120 135 150"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "batrider_sticky_napalm",
+          "changes": {
+            "AbilityValues": {
+              "building_damage_pct": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_shard": {
+                  "old": "+25",
+                  "new": "+20"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "batrider_firefly",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_second": {
+                "value": {
+                  "old": "25 50 75 100",
+                  "new": "20 40 60 80"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 1,
+                  "new": 1
+                },
+                "special_bonus_unique_batrider_4": {
+                  "old": "+30",
+                  "new": "+30"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "batrider_flaming_lasso",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "200 350 500",
+                  "new": "125 250 375"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "beastmaster_wild_axes",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "50 55 60 65",
+              "new": 65
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "beastmaster_summon_razorback",
+          "changes": {
+            "AbilityValues": {
+              "boar_base_damage": {
+                "old": "30 45 60 75",
+                "new": "24 41 58 75"
+              },
+              "boar_total_damage_tooltip": {
+                "value": {
+                  "old": "30 45 60 75",
+                  "new": "24 41 58 75"
+                },
+                "special_bonus_unique_beastmaster_2": {
+                  "old": "+30",
+                  "new": "+30"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "beastmaster_drums_of_slom",
+          "changes": {
+            "AbilityValues": {
+              "radius": {
+                "value": {
+                  "old": 600,
+                  "new": 525
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              },
+              "base_damage": {
+                "value": {
+                  "old": 80,
+                  "new": 70
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bounty_hunter_shuriken_toss",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "75 80 85 90",
+              "new": "75 85 95 105"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bounty_hunter_wind_walk",
+          "changes": {
+            "AbilityValues": {
+              "bonus_move_speed_pct": {
+                "old": "8 12 16 20",
+                "new": "11 14 17 20"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bounty_hunter_track",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 60,
+              "new": 50
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "brewmaster_primal_split_cancel",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 0,
+              "new": 3
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bristleback_hairball",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 13,
+              "new": 15
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bristleback_bristleback",
+          "changes": {
+            "AbilityValues": {
+              "quill_release_threshold": {
+                "value": {
+                  "old": "275 250 225 200",
+                  "new": "275 250 225 200"
+                },
+                "special_bonus_unique_bristleback": {
+                  "old": -25,
+                  "new": -30
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bristleback_warpath",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_stack": {
+                "value": {
+                  "old": "15 20 25",
+                  "new": "12 16 20"
+                },
+                "special_bonus_facet_bristleback_berserk": {
+                  "old": "=5",
+                  "new": "=5"
+                },
+                "special_bonus_unique_bristleback_3": {
+                  "old": "+18",
+                  "new": "+18"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "broodmother_insatiable_hunger",
+          "changes": {
+            "AbilityValues": {
+              "aura_radius": {
+                "value": {
+                  "old": 800,
+                  "new": 1200
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "broodmother_sticky_snare",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 100,
+              "new": 70
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "centaur_hoof_stomp",
+          "changes": {
+            "AbilityValues": {
+              "stun_duration": {
+                "value": {
+                  "old": "1.6 1.8 2.0 2.2",
+                  "new": "1.6 1.8 2.0 2.2"
+                },
+                "special_bonus_unique_centaur_2": {
+                  "old": "+0.8",
+                  "new": "+1.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "chaos_knight_chaos_strike",
+          "changes": {
+            "AbilityValues": {
+              "crit_max": {
+                "old": "140 180 220 260",
+                "new": "150 190 230 270"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "dark_willow_terrorize",
+          "changes": {
+            "AbilityValues": {
+              "destination_radius": {
+                "value": {
+                  "old": "400 450 500",
+                  "new": "450 500 550"
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "dawnbreaker_solar_guardian",
+          "changes": {
+            "AbilityValues": {
+              "land_stun_duration": {
+                "old": "1.4 1.6 1.8",
+                "new": "1.2 1.4 1.6"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "doom_bringer_scorched_earth",
+          "changes": {
+            "AbilityValues": {
+              "bonus_health_regen": {
+                "value": {
+                  "old": "7 8 9 10",
+                  "new": 6.66
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "drow_ranger_frost_arrows",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "10 15 20 25",
+                  "new": "12 18 24 30"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "drow_ranger_wave_of_silence",
+          "changes": {
+            "AbilityValues": {
+              "AbilityManaCost": {
+                "value": {
+                  "old": 70,
+                  "new": 55
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "elder_titan_echo_stomp",
+          "changes": {
+            "AbilityValues": {
+              "stomp_damage": {
+                "value": {
+                  "old": "60 100 140 180",
+                  "new": "65 110 155 200"
+                },
+                "special_bonus_unique_elder_titan_2": {
+                  "old": "+75",
+                  "new": "+75"
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_NONE",
+                  "new": "DAMAGE_TYPE_NONE"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "faceless_void_time_walk",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "21 16 11 6",
+                  "new": "21 16 11 6"
+                },
+                "special_bonus_unique_faceless_void_5": {
+                  "old": -1.25,
+                  "new": -1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "faceless_void_chronosphere",
+          "changes": {
+            "AbilityValues": {
+              "bonus_attack_speed": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_faceless_void": {
+                  "old": "+100",
+                  "new": "+80"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "furion_sprout",
+          "changes": {
+            "AbilityValues": {
+              "sprout_damage": {
+                "value": {
+                  "old": "70 130 190 250",
+                  "new": "70 130 190 250"
+                },
+                "special_bonus_unique_furion_4": {
+                  "old": "+170",
+                  "new": "+220"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "furion_force_of_nature",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 100,
+              "new": "85 90 95 100"
+            },
+            "AbilityValues": {
+              "treant_bonus_hero_damage": {
+                "value": {
+                  "old": "4 8 12 16",
+                  "new": "6 10 14 18"
+                },
+                "special_bonus_unique_furion": {
+                  "old": "x3",
+                  "new": "x3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "furion_wrath_of_nature",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 85,
+                  "new": 85
+                },
+                "special_bonus_unique_furion_7": {
+                  "old": -15,
+                  "new": -20
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "gyrocopter_afterburner",
+          "changes": {
+            "AbilityValues": {
+              "bonus_movespeed_duration": {
+                "value": {
+                  "old": 3.9,
+                  "new": 4.9
+                },
+                "hero_levelup": {
+                  "old": 0.1,
+                  "new": 0.1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "jakiro_macropyre",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "250 350 450",
+              "new": "225 325 425"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "juggernaut_blade_fury",
+          "changes": {
+            "AbilityValues": {
+              "blade_fury_damage": {
+                "value": {
+                  "old": "80 110 140 170",
+                  "new": "85 115 145 175"
+                },
+                "special_bonus_unique_juggernaut": {
+                  "old": "+120",
+                  "new": "+120"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kunkka_admirals_rum",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 60.5,
+                  "new": 50.5
+                },
+                "hero_levelup": {
+                  "old": -0.5,
+                  "new": -0.5
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_frogstomp",
+          "changes": {
+            "AbilityValues": {
+              "total_ticks": {
+                "value": {
+                  "old": "4 5 6 7",
+                  "new": "4 5 6 7"
+                },
+                "special_bonus_unique_largo_5": {
+                  "old": null,
+                  "new": "x2"
+                }
+              },
+              "stomp_interval": {
+                "value": {
+                  "old": null,
+                  "new": 1
+                },
+                "special_bonus_unique_largo_5": {
+                  "old": null,
+                  "new": "x0.5"
+                },
+                "_value": {
+                  "old": 1,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_catchy_lick",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "85 170 255 340",
+                  "new": "85 170 255 340"
+                },
+                "special_bonus_unique_largo_5": {
+                  "old": "+200",
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lich_sinister_gaze",
+          "changes": {
+            "AbilityValues": {
+              "mana_drain": {
+                "old": 20,
+                "new": 25
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lina_light_strike_array",
+          "changes": {
+            "AbilityValues": {
+              "light_strike_array_damage": {
+                "value": {
+                  "old": "80 120 160 200",
+                  "new": "80 125 170 215"
+                },
+                "special_bonus_unique_lina_3": {
+                  "old": "+110",
+                  "new": "+110"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lina_laguna_blade",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "380 565 750",
+                  "new": "400 580 760"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 75,
+              "new": 100
+            },
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 120,
+                  "new": 120
+                },
+                "special_bonus_unique_lone_druid_2": {
+                  "old": -25,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_link",
+          "changes": {
+            "AbilityValues": {
+              "creep_lifesteal_penalty": {
+                "old": null,
+                "new": 40
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear_spirit_link",
+          "changes": {
+            "AbilityValues": {
+              "creep_lifesteal_penalty": {
+                "old": null,
+                "new": 40
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_savage_roar",
+          "changes": {
+            "AbilityValues": {
+              "shard_movement_speed_pct": {
+                "special_bonus_shard": {
+                  "old": 15,
+                  "new": 10
+                }
+              },
+              "shard_duration": {
+                "special_bonus_shard": {
+                  "old": 5,
+                  "new": 4
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_true_form",
+          "changes": {
+            "AbilityValues": {
+              "duration": {
+                "value": {
+                  "old": 25,
+                  "new": 25
+                },
+                "special_bonus_unique_lone_druid_2": {
+                  "old": null,
+                  "new": "+5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear_demolish",
+          "changes": {
+            "AbilityValues": {
+              "bonus_building_damage": {
+                "value": {
+                  "old": 30,
+                  "new": 30
+                },
+                "special_bonus_unique_lone_druid_spirit_bear_demolish": {
+                  "old": "+20",
+                  "new": "+15"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lycan_summon_wolves",
+          "changes": {
+            "AbilityValues": {
+              "wolf_damage": {
+                "value": {
+                  "old": "22 28 34 40 46 52",
+                  "new": "22 28 34 40 46 52"
+                },
+                "special_bonus_unique_lycan_3": {
+                  "old": "+10",
+                  "new": "+14"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              },
+              "wolf_hp": {
+                "value": {
+                  "old": "325 375 425 475 525 575",
+                  "new": "325 375 425 475 525 575"
+                },
+                "special_bonus_unique_lycan_7": {
+                  "old": "+350",
+                  "new": "+375"
+                }
+              },
+              "bonus_health": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_lycan_7": {
+                  "old": "+350",
+                  "new": "+375"
+                }
+              },
+              "bonus_damage": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_lycan_3": {
+                  "old": "+10",
+                  "new": "+14"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lycan_feral_impulse",
+          "changes": {
+            "AbilityValues": {
+              "bonus_hp_regen": {
+                "value": {
+                  "old": "1 3 5 7",
+                  "new": "2 4 6 8"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "magnataur_shockwave",
+          "changes": {
+            "AbilityValues": {
+              "basic_slow_duration": {
+                "value": {
+                  "old": "0.4 0.6 0.8 1.0",
+                  "new": "0.55 0.7 0.85 1.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "magnataur_reverse_polarity",
+          "changes": {
+            "AbilityValues": {
+              "stats_per_stack": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_magnus_reverse_polarity_stats": {
+                  "old": "+12",
+                  "new": "+14"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "marci_grapple",
+          "changes": {
+            "AbilityValues": {
+              "impact_damage": {
+                "value": {
+                  "old": "60 150 240 330",
+                  "new": "60 150 240 330"
+                },
+                "special_bonus_unique_marci_grapple_damage": {
+                  "old": "+100",
+                  "new": "+115"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "marci_bodyguard",
+          "changes": {
+            "AbilityCastRange": {
+              "old": 500,
+              "new": 600
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mars_spear",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "100 110 120 130",
+              "new": "90 100 110 120"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mars_dauntless",
+          "changes": {
+            "AbilityValues": {
+              "health_regen_per_enemy": {
+                "value": {
+                  "old": 40,
+                  "new": 50
+                },
+                "special_bonus_unique_mars_dauntless_hpregen": {
+                  "old": "+10",
+                  "new": "+10"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_arrow",
+          "changes": {
+            "AbilityDamage": {
+              "old": "60 150 240 330",
+              "new": "60 160 260 360"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_leap",
+          "changes": {
+            "AbilityValues": {
+              "leap_speedbonus_as": {
+                "value": {
+                  "old": "25 50 75 100",
+                  "new": "25 50 75 100"
+                },
+                "special_bonus_unique_mirana_1": {
+                  "old": "+90",
+                  "new": "+100"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_celestial_quiver",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "value": {
+                  "old": 5,
+                  "new": 5
+                },
+                "hero_levelup": {
+                  "old": "+3",
+                  "new": "+3"
+                },
+                "special_bonus_unique_mirana_quiver_damage": {
+                  "old": "+40",
+                  "new": "+50"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "monkey_king_primal_spring",
+          "changes": {
+            "AbilityValues": {
+              "impact_movement_slow": {
+                "old": "35 50 65 80",
+                "new": "30 40 50 60"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "morphling_waveform",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "muerta_supernatural",
+          "changes": {
+            "AbilityValues": {
+              "max_stacks_tooltip": {
+                "hero_levelup": {
+                  "old": "+1",
+                  "new": "+1"
+                },
+                "value": {
+                  "old": null,
+                  "new": 5
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze1",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 80,
+              "new": 75
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze2",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 80,
+              "new": 75
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze3",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 80,
+              "new": 75
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_dark_lord",
+          "changes": {
+            "AbilityValues": {
+              "presence_armor_reduction": {
+                "value": {
+                  "old": "-3 -4 -5 -6",
+                  "new": "-2.5 -4 -5.5 -7"
+                },
+                "special_bonus_unique_nevermore_3": {
+                  "old": -2,
+                  "new": -2
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "obsidian_destroyer_astral_imprisonment",
+          "changes": {
+            "AbilityValues": {
+              "mana_capacity_steal": {
+                "value": {
+                  "old": "16 19 22 25",
+                  "new": "16 19 22 25"
+                },
+                "special_bonus_unique_outworld_devourer_4": {
+                  "old": "+10",
+                  "new": "+12"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "obsidian_destroyer_sanity_eclipse",
+          "changes": {
+            "AbilityValues": {
+              "radius": {
+                "value": {
+                  "old": "450 500 550",
+                  "new": "500 525 550"
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "obsidian_destroyer_objurgation",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 250,
+              "new": 175
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "omniknight_hammer_of_purity",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "old": "20 40 60 80",
+                "new": "25 45 65 85"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "omniknight_martyr",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "40 36 32 28",
+              "new": "40 35 30 25"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "pangolier_swashbuckle",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "75 80 85 90",
+              "new": "85 90 95 100"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "pangolier_lucky_shot",
+          "changes": {
+            "AbilityValues": {
+              "armor": {
+                "value": {
+                  "old": "2 4 6 8",
+                  "new": "2 4 6 8"
+                },
+                "special_bonus_unique_pangolier_luckyshot_armor": {
+                  "old": "+3",
+                  "new": "+2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "pangolier_rollup",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 50,
+              "new": 75
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phantom_assassin_phantom_strike",
+          "changes": {
+            "AbilityValues": {
+              "duration": {
+                "value": {
+                  "old": 3,
+                  "new": 3
+                },
+                "special_bonus_unique_phantom_assassin_4": {
+                  "old": "+0.6",
+                  "new": "+0.8"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phantom_lancer_phantom_edge",
+          "changes": {
+            "AbilityValues": {
+              "max_distance": {
+                "value": {
+                  "old": "600 675 750 825",
+                  "new": "600 675 750 825"
+                },
+                "special_bonus_scepter": {
+                  "old": "+625",
+                  "new": "+575"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phoenix_sun_ray",
+          "changes": {
+            "AbilityValues": {
+              "hp_perc_heal": {
+                "old": "0.5 1.0 1.5 2.0",
+                "new": "0.4 0.8 1.2 1.6"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phoenix_supernova",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_sec": {
+                "old": "60 90 120",
+                "new": "50 80 110"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phoenix_dying_light",
+          "changes": {
+            "AbilityValues": {
+              "damage_pct": {
+                "value": {
+                  "old": 4,
+                  "new": 3.5
+                },
+                "special_bonus_unique_phoenix_dying_light_damage": {
+                  "old": "+1",
+                  "new": "+1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "primal_beast_trample",
+          "changes": {
+            "AbilityValues": {
+              "effect_radius": {
+                "value": {
+                  "old": 230,
+                  "new": 200
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "puck_puckish",
+          "changes": {
+            "AbilityValues": {
+              "mana_and_health_restore_pct": {
+                "value": {
+                  "old": 3,
+                  "new": 3
+                },
+                "special_bonus_unique_puck_5": {
+                  "old": null,
+                  "new": "+2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "puck_dream_coil",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 75,
+                  "new": 75
+                },
+                "special_bonus_unique_puck": {
+                  "old": -15,
+                  "new": -30
+                }
+              },
+              "pierces_debuff_immunity": {
+                "special_bonus_unique_puck_5": {
+                  "old": 1,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "queenofpain_shadow_strike",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "13 10 7 4",
+              "new": "11 9 7 5"
+            },
+            "AbilityValues": {
+              "aoe_radius": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_scepter": {
+                  "old": "+375",
+                  "new": "+300"
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "razor_static_link",
+          "changes": {
+            "AbilityValues": {
+              "drain_rate": {
+                "value": {
+                  "old": "6 12 18 24",
+                  "new": "6 12 18 24"
+                },
+                "special_bonus_unique_razor": {
+                  "old": "+5",
+                  "new": "+6"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "razor_storm_surge",
+          "changes": {
+            "AbilityValues": {
+              "strike_damage": {
+                "value": {
+                  "old": "50 90 130 170",
+                  "new": "50 90 130 170"
+                },
+                "special_bonus_unique_razor_storm_surge_damage_and_slow": {
+                  "old": "+30%",
+                  "new": "+35%"
+                }
+              },
+              "strike_move_slow_pct": {
+                "value": {
+                  "old": "25 30 35 40",
+                  "new": "25 30 35 40"
+                },
+                "special_bonus_unique_razor_storm_surge_damage_and_slow": {
+                  "old": "+30",
+                  "new": "+35"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "rubick_fade_bolt",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "16 14 12 10",
+                  "new": "16 14 12 10"
+                },
+                "special_bonus_unique_rubick_3": {
+                  "old": -3,
+                  "new": -4
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "rubick_curiosity",
+          "changes": {
+            "AbilityValues": {
+              "curiosity_factor": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_rubick_curiosity_factor": {
+                  "old": "+2",
+                  "new": "+1.5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "rubick_spell_steal",
+          "changes": {
+            "AbilityValues": {
+              "stolen_mana_reduction": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_rubick_6": {
+                  "old": "+50",
+                  "new": "+40"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sandking_epicenter",
+          "changes": {
+            "AbilityValues": {
+              "epicenter_radius_base": {
+                "value": {
+                  "old": 500,
+                  "new": 450
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sandking_scorpion_strike",
+          "changes": {
+            "AbilityValues": {
+              "debuff_duration": {
+                "old": "4 5 6 7",
+                "new": 5
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "shredder_reactive_armor",
+          "changes": {
+            "AbilityValues": {
+              "bonus_hp_regen": {
+                "value": {
+                  "old": "0.4 0.5 0.6 0.7",
+                  "new": "0.5 0.6 0.7 0.8"
+                },
+                "special_bonus_unique_timbersaw_reactive_armor_regen_per_stack": {
+                  "old": "+0.25",
+                  "new": "+0.25"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "skywrath_mage_mystic_flare",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "60.0 40.0 20.0",
+              "new": "55 35 15"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "slardar_slithereen_crush",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 7,
+                  "new": "8.5 8 7.5 7"
+                },
+                "special_bonus_unique_slardar_4": {
+                  "old": -3,
+                  "new": -3
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "spectre_dispersion",
+          "changes": {
+            "AbilityValues": {
+              "damage_reflection_pct": {
+                "value": {
+                  "old": "8 12 16 20",
+                  "new": "9 12 15 18"
+                },
+                "special_bonus_unique_spectre_5": {
+                  "old": "+4",
+                  "new": "+4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "storm_spirit_overload",
+          "changes": {
+            "AbilityValues": {
+              "overload_move_slow": {
+                "value": {
+                  "old": -80,
+                  "new": -80
+                },
+                "special_bonus_unique_storm_spirit_overload_aspd": {
+                  "old": -20,
+                  "new": -25
+                }
+              },
+              "overload_attack_slow": {
+                "value": {
+                  "old": -90,
+                  "new": -90
+                },
+                "special_bonus_unique_storm_spirit_overload_aspd": {
+                  "old": -20,
+                  "new": -25
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "storm_spirit_galvanized",
+          "changes": {
+            "AbilityValues": {
+              "level_divisor": {
+                "old": null,
+                "new": 3
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sven_storm_bolt",
+          "changes": {
+            "AbilityValues": {
+              "AbilityManaCost": {
+                "value": {
+                  "old": "110 115 120 125",
+                  "new": 110
+                },
+                "special_bonus_unique_sven_stormhammer_cooldown": {
+                  "old": "-25%",
+                  "new": "-25%"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "techies_reactive_tazer",
+          "changes": {
+            "AbilityValues": {
+              "explosion_radius": {
+                "value": {
+                  "old": 450,
+                  "new": 400
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "techies_mutually_assured_destruction",
+          "changes": {
+            "AbilityValues": {
+              "bonus_mana_as_mana_regen": {
+                "value": {
+                  "old": 0.08,
+                  "new": 0.1
+                },
+                "hero_levelup": {
+                  "old": "+0.02",
+                  "new": "+0.01"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "tiny_tree_grab",
+          "changes": {
+            "AbilityValues": {
+              "attack_count": {
+                "value": {
+                  "old": null,
+                  "new": "5 6 7 8"
+                },
+                "special_bonus_unique_tiny_6": {
+                  "old": null,
+                  "new": "+2"
+                },
+                "_value": {
+                  "old": "5 6 7 8",
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "tiny_grow",
+          "changes": {
+            "AbilityValues": {
+              "attack_speed_reduction": {
+                "value": {
+                  "old": -35,
+                  "new": -35
+                },
+                "special_bonus_unique_tiny_6": {
+                  "old": "+8",
+                  "new": null
+                }
+              },
+              "toss_bonus_damage": {
+                "value": {
+                  "old": "50 175 300",
+                  "new": "50 200 350"
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_MAGICAL",
+                  "new": "DAMAGE_TYPE_MAGICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "treant_living_armor",
+          "changes": {
+            "AbilityValues": {
+              "heal_per_second": {
+                "value": {
+                  "old": "4 7 10 13",
+                  "new": "4 7 10 13"
+                },
+                "special_bonus_unique_treant_8": {
+                  "old": "+4",
+                  "new": "+3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "treant_eyes_in_the_forest",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_AOE"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "troll_warlord_whirling_axes_ranged",
+          "changes": {
+            "AbilityValues": {
+              "AbilityManacost": {
+                "value": {
+                  "old": 60,
+                  "new": 50
+                },
+                "special_bonus_scepter": {
+                  "old": -30,
+                  "new": -30
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "troll_warlord_whirling_axes_melee",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "50 100 150 200",
+                  "new": "75 120 165 210"
+                },
+                "special_bonus_unique_troll_warlord_3": {
+                  "old": "+160",
+                  "new": "+160"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "tusk_drinking_buddies",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
+              "new": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "vengefulspirit_command_aura",
+          "changes": {
+            "AbilityValues": {
+              "self_multiplier": {
+                "value": {
+                  "old": 20,
+                  "new": 25
+                },
+                "special_bonus_scepter": {
+                  "old": "+10",
+                  "new": "+10"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "venomancer_poison_sting",
+          "changes": {
+            "AbilityValues": {
+              "movement_speed": {
+                "value": {
+                  "old": 10,
+                  "new": 8
+                },
+                "special_bonus_unique_venomancer_2": {
+                  "old": 7,
+                  "new": 10
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "venomancer_snakebite",
+          "changes": {
+            "AbilityValues": {
+              "base_damage": {
+                "value": {
+                  "old": "40 60 80 100",
+                  "new": "40 60 80 100"
+                },
+                "special_bonus_unique_venomancer_4": {
+                  "old": "+40%",
+                  "new": "+100"
+                }
+              },
+              "tick_damage": {
+                "value": {
+                  "old": "20 25 30 35",
+                  "new": "10 20 30 40"
+                },
+                "special_bonus_unique_venomancer_4": {
+                  "old": "+40%",
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "viper_nose_dive",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 20,
+              "new": 25
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "weaver_the_swarm",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 110,
+              "new": "110 105 100 95"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "windrunner_powershot",
+          "changes": {
+            "AbilityValues": {
+              "max_execute_threshold": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_windranger_7": {
+                  "old": "+15",
+                  "new": "+16"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "windrunner_focusfire",
+          "changes": {
+            "AbilityValues": {
+              "cooldown_reduction_per_kill": {
+                "special_bonus_unique_windranger_2": {
+                  "old": "+18",
+                  "new": "+16"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "winter_wyvern_splinter_blast",
+          "changes": {
+            "AbilityValues": {
+              "bonus_movespeed": {
+                "old": "-28 -32 -36 -40",
+                "new": "-27 -30 -33 -36"
+              },
+              "movespeed_slow_tooltip": {
+                "old": "28 32 36 40",
+                "new": "27 30 33 36"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "winter_wyvern_cold_embrace",
+          "changes": {
+            "AbilityValues": {
+              "heal_additive": {
+                "value": {
+                  "old": "40 45 50 55",
+                  "new": "40 45 50 55"
+                },
+                "special_bonus_unique_winter_wyvern_5": {
+                  "old": "+20",
+                  "new": "+15"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "wisp_tether",
+          "changes": {
+            "AbilityValues": {
+              "tether_heal_amp": {
+                "old": "60 80 100 120",
+                "new": "55 75 95 115"
+              },
+              "tether_mana_amp": {
+                "old": "60 80 100 120",
+                "new": "55 75 95 115"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "wisp_spirits",
+          "changes": {
+            "AbilityValues": {
+              "default_radius": {
+                "old": null,
+                "new": 425
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "witch_doctor_voodoo_restoration",
+          "changes": {
+            "AbilityValues": {
+              "radius": {
+                "value": {
+                  "old": "500 550 600 650",
+                  "new": 650
+                },
+                "special_bonus_facet_witch_doctor_voodoo_festeration": {
+                  "old": "+100",
+                  "new": "+100"
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_heart",
+          "changes": {
+            "ItemCost": {
+              "old": 600,
+              "new": 700
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_heart",
+          "changes": {
+            "ItemCost": {
+              "old": 5100,
+              "new": 5200
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_shivas_guard",
+          "changes": {
+            "AbilityValues": {
+              "aura_attack_speed": {
+                "old": -45,
+                "new": -40
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_bloodstone",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 30,
+              "new": 35
+            },
+            "AbilityValues": {
+              "bonus_health": {
+                "old": 650,
+                "new": 625
+              },
+              "aura_spell_vulnerability": {
+                "old": 12,
+                "new": 10
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_essence_distiller",
+          "changes": {
+            "AbilityValues": {
+              "latch_range": {
+                "old": 400,
+                "new": 450
+              },
+              "latch_vision": {
+                "old": 400,
+                "new": 450
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_crellas_crozier",
+          "changes": {
+            "AbilityValues": {
+              "movespeed_steal_pct": {
+                "old": 5,
+                "new": 6
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_silver_edge",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 20,
+              "new": 22
+            },
+            "AbilityValues": {
+              "windwalk_movement_speed": {
+                "old": 25,
+                "new": 22
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_disperser",
+          "changes": {
+            "AbilityValues": {
+              "enemy_effect_duration": {
+                "old": 5,
+                "new": 4
+              },
+              "ally_effect_duration": {
+                "old": 5,
+                "new": 4
+              },
+              "movement_speed_buff_rate": {
+                "old": 5,
+                "new": 4
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_soul_ring",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 25,
+              "new": 30
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_mage_slayer",
+          "changes": {
+            "AbilityValues": {
+              "dps": {
+                "old": 40,
+                "new": 35
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_boots_of_bearing",
+          "changes": {
+            "AbilityValues": {
+              "aura_movement_speed": {
+                "old": 20,
+                "new": 15
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_enhancement_tough",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "old": "7 10 13 16",
+                "new": "6 9 12 15"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_enhancement_crude",
+          "changes": {
+            "AbilityValues": {
+              "intelligence_pct": {
+                "old": -6,
+                "new": -9
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_enhancement_greedy",
+          "changes": {
+            "AbilityValues": {
+              "bonus_mana": {
+                "old": "200 250",
+                "new": "150 200"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_specialists_array",
+          "changes": {
+            "AbilityValues": {
+              "agility": {
+                "old": 12,
+                "new": 15
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_puck",
+          "changes": {
+            "Ability12": {
+              "old": "special_bonus_unique_puck",
+              "new": "special_bonus_unique_puck_5"
+            },
+            "Ability16": {
+              "old": "special_bonus_unique_puck_5",
+              "new": "special_bonus_unique_puck"
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_sand_king",
+          "changes": {
+            "BaseAttackSpeed": {
+              "old": 110,
+              "new": 100
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_tiny",
+          "changes": {
+            "Ability11": {
+              "old": "special_bonus_strength_8",
+              "new": "special_bonus_unique_tiny_6"
+            },
+            "Ability12": {
+              "old": "special_bonus_unique_tiny_6",
+              "new": "special_bonus_strength_10"
+            },
+            "BaseAttackSpeed": {
+              "old": 90,
+              "new": 85
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_tidehunter",
+          "changes": {
+            "StatusManaRegen": {
+              "old": 0.5,
+              "new": 0
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_beastmaster",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 25,
+              "new": 24
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_queenofpain",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 22,
+              "new": 20
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_phantom_assassin",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 21,
+              "new": 22
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_templar_assassin",
+          "changes": {
+            "MovementSpeed": {
+              "old": 310,
+              "new": 315
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_dark_seer",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 22,
+              "new": 23
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_huskar",
+          "changes": {
+            "StatusHealthRegen": {
+              "old": null,
+              "new": 0
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_jakiro",
+          "changes": {
+            "AttributeStrengthGain": {
+              "old": 2.5,
+              "new": 2.6
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_batrider",
+          "changes": {
+            "MovementSpeed": {
+              "old": 320,
+              "new": 310
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_spectre",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 26,
+              "new": 29
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_invoker",
+          "changes": {
+            "MovementSpeed": {
+              "old": 285,
+              "new": 280
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_ogre_magi",
+          "changes": {
+            "AttributeStrengthGain": {
+              "old": 4.2,
+              "new": 4
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_rubick",
+          "changes": {
+            "AttributeAgilityGain": {
+              "old": 2.5,
+              "new": 2.2
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_keeper_of_the_light",
+          "changes": {
+            "MovementSpeed": {
+              "old": 315,
+              "new": 310
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_centaur",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 27,
+              "new": 28
+            },
+            "AttributeStrengthGain": {
+              "old": 4.2,
+              "new": 4.3
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_shredder",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 23,
+              "new": 25
+            },
+            "AttackDamageMax": {
+              "old": 27,
+              "new": 29
+            },
+            "AttributeBaseIntelligence": {
+              "old": 23,
+              "new": 24
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_abaddon",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 18,
+              "new": 19
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_ember_spirit",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 22,
+              "new": 21
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_earth_spirit",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 22,
+              "new": 23
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_techies",
+          "changes": {
+            "AttributeIntelligenceGain": {
+              "old": 3,
+              "new": 2.7
+            },
+            "StatusManaRegen": {
+              "old": 1,
+              "new": 0.5
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_arc_warden",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 20,
+              "new": 22
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_monkey_king",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 24,
+              "new": 23
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_pangolier",
+          "changes": {
+            "StatusHealthRegen": {
+              "old": 1.25,
+              "new": 0.25
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_snapfire",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 25,
+              "new": 27
+            },
+            "AttackDamageMax": {
+              "old": 31,
+              "new": 33
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_hoodwink",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 22,
+              "new": 25
+            },
+            "AttackDamageMax": {
+              "old": 29,
+              "new": 32
+            },
+            "AttributeBaseAgility": {
+              "old": 25,
+              "new": 22
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_dawnbreaker",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 31,
+              "new": 30
+            },
+            "AttackDamageMax": {
+              "old": 35,
+              "new": 34
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_muerta",
+          "changes": {
+            "BaseAttackSpeed": {
+              "old": 115,
+              "new": 110
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_largo",
+          "changes": {
+            "Ability19": {
+              "old": "special_bonus_unique_largo_5",
+              "new": "special_bonus_unique_largo_8"
+            },
+            "Ability22": {
+              "old": "special_bonus_unique_largo_8",
+              "new": "special_bonus_unique_largo_5"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
