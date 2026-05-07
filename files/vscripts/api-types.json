@@ -1445,6 +1445,24 @@
   },
   {
     "kind": "object",
+    "name": "ModifierTargetEvent",
+    "fields": [
+      {
+        "name": "order_type",
+        "types": [
+          "dotaunitorder_t"
+        ]
+      },
+      {
+        "name": "target",
+        "types": [
+          "CDOTA_BaseNPC"
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "object",
     "name": "ModifierAbilityEvent",
     "extend": [
       "ModifierUnitEvent"

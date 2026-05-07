@@ -10796,7 +10796,7 @@
       },
       {
         "name": "MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE",
-        "description": "Method Name: `GetModifierXPFountainCountdownTimeOverride`",
+        "description": "Multiplier for xp shrine collection time.\n\nMethod Name: `GetModifierXPFountainCountdownTimeOverride`.",
         "value": 316
       },
       {
@@ -11156,7 +11156,7 @@
       },
       {
         "name": "MODIFIER_PROPERTY_UPGRADE_NEUTRAL_ARTIFACTS",
-        "description": "Method Name: `GetModifierPropertyUpgradeNeutralArtifacts`",
+        "description": "Dormant Curio bonus\n\nMethod Name: `GetModifierPropertyUpgradeNeutralArtifacts`.",
         "value": 385
       },
       {

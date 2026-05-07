@@ -15009,7 +15009,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15161,14 +15161,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15196,14 +15189,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15222,7 +15208,14 @@
         "name": "GetBaseAttackPostBonus",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -15284,7 +15277,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15295,14 +15288,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15313,7 +15299,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15358,14 +15344,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15430,7 +15409,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15449,7 +15428,14 @@
         "name": "GetMinMana",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -15471,7 +15457,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15492,7 +15478,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15501,7 +15487,14 @@
         "name": "GetModifierAoEBonusConstantStacking",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -15513,7 +15506,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15582,7 +15575,14 @@
         "name": "GetModifierAttackSpeed_Limit",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -15592,7 +15592,14 @@
         "name": "GetModifierAttackSpeedAbsoluteMax",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -15642,7 +15649,14 @@
         "name": "GetModifierAvoidAttackProcs",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           {
             "kind": "literal",
@@ -15759,7 +15773,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15770,7 +15784,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15855,14 +15869,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15873,14 +15880,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15891,14 +15891,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15909,14 +15902,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -15927,7 +15913,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15958,7 +15944,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -15979,7 +15965,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16000,7 +15986,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16021,7 +16007,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16066,7 +16052,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16169,7 +16155,14 @@
         "name": "GetModifierConvertManaCostToHealthCost",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
           {
             "kind": "literal",
@@ -16223,7 +16216,14 @@
         "name": "GetModifierCreepDenyPercent",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -16269,7 +16269,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16280,7 +16280,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16389,7 +16389,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16440,7 +16440,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16451,7 +16451,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16472,14 +16472,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -16488,7 +16481,14 @@
         "name": "GetModifierHealAmplify_PercentageSource",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -16498,7 +16498,14 @@
         "name": "GetModifierHealAmplify_PercentageTarget",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -16538,7 +16545,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16626,14 +16633,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -16783,7 +16783,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16794,14 +16794,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -16810,7 +16803,14 @@
         "name": "GetModifierInventorySlotRestricted",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierTargetEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -16849,14 +16849,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -16887,7 +16880,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16896,7 +16889,14 @@
         "name": "GetModifierLifestealRegenAmplify_Percentage",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -16925,7 +16925,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16953,7 +16953,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -16964,7 +16964,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17036,7 +17036,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17057,7 +17057,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17076,7 +17076,14 @@
         "name": "GetModifierMiss_Percentage_Target",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -17471,7 +17478,14 @@
         "name": "GetModifierOverrideCreepBounty",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -17481,7 +17495,14 @@
         "name": "GetModifierOverrideUntargetableFrom",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           {
             "kind": "literal",
@@ -17498,7 +17519,14 @@
         "name": "GetModifierOverrideUntargetableTo",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           {
             "kind": "literal",
@@ -17517,7 +17545,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17545,7 +17573,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17573,7 +17601,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17663,7 +17691,14 @@
         "name": "GetModifierPercentageKillAssistGoldBoost",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -17739,7 +17774,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17805,7 +17840,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17850,7 +17885,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17861,7 +17896,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17899,7 +17934,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17908,7 +17943,14 @@
         "name": "GetModifierPreAttack_BonusDamage_Target",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -17954,7 +17996,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17975,7 +18017,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -17986,14 +18028,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18021,7 +18056,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18066,14 +18101,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18111,7 +18139,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18132,7 +18160,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18143,7 +18171,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18152,7 +18180,14 @@
         "name": "GetModifierProperty_MagicalLifesteal",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -18162,7 +18197,14 @@
         "name": "GetModifierProperty_PhysicalLifesteal",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -18226,14 +18268,7 @@
         "name": "GetModifierPropertyRedirectHealthGain",
         "available": "both",
         "abstract": true,
-        "args": [
-          {
-            "name": "event",
-            "types": [
-              "ModifierHealEvent"
-            ]
-          }
-        ],
+        "args": [],
         "returns": [
           "float"
         ]
@@ -18280,16 +18315,7 @@
         "name": "GetModifierPropertyUpgradeNeutralArtifacts",
         "available": "both",
         "abstract": true,
-        "args": [],
-        "returns": [
-          "float"
-        ]
-      },
-      {
-        "kind": "function",
-        "name": "GetModifierPropetyFailAttack",
-        "available": "both",
-        "abstract": true,
+        "description": "Dormant Curio bonus",
         "args": [],
         "returns": [
           {
@@ -18300,6 +18326,16 @@
             "kind": "literal",
             "value": 1
           }
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierPropetyFailAttack",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
         ],
         "broken": true
       },
@@ -18327,7 +18363,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18357,14 +18393,7 @@
         "description": "Applies shard when this property is active",
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18402,7 +18431,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18413,14 +18442,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18448,7 +18470,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18467,7 +18489,14 @@
         "name": "GetModifierSpellLifestealRegenAmplify_Percentage",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -18477,7 +18506,14 @@
         "name": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierInstanceEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -18489,7 +18525,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18557,14 +18593,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18575,14 +18604,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18661,7 +18683,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18753,7 +18775,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18764,14 +18786,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18799,14 +18814,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -18815,6 +18823,7 @@
         "name": "GetModifierXPFountainCountdownTimeOverride",
         "available": "both",
         "abstract": true,
+        "description": "Multiplier for xp shrine collection time.",
         "args": [],
         "returns": [
           "float"
@@ -18874,7 +18883,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -18987,14 +18996,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -19005,14 +19007,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -19021,7 +19016,14 @@
         "name": "GetSuppressIncomingCrit",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
           {
             "kind": "literal",
@@ -19057,7 +19059,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -19068,14 +19070,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -19126,14 +19121,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          {
-            "kind": "literal",
-            "value": 0
-          },
-          {
-            "kind": "literal",
-            "value": 1
-          }
+          "nil"
         ],
         "broken": true
       },
@@ -19154,7 +19142,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "float"
+          "nil"
         ],
         "broken": true
       },
@@ -19760,7 +19748,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierAttackEvent"
+              "ModifierInstanceEvent"
             ]
           }
         ],
@@ -20014,7 +20002,14 @@
         "name": "OnRuneSpawn",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierUnitEvent"
+            ]
+          }
+        ],
         "returns": [
           "nil"
         ]

@@ -20,42 +20,13 @@
         },
         {
           "type": "method",
-          "name": "BotAttackScoreBonus",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetAllowEtherealAttack",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetAlwaysAutoAttackWhileHoldPosition",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetBaseAttackPostBonus",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetBaseAttackPostBonus()",
+              "new": "GetBaseAttackPostBonus(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -75,75 +46,13 @@
         },
         {
           "type": "method",
-          "name": "GetBuffAmplification",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetConvertAttackPhysicalToPure",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetCriticalStrikeBonus",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetDisableManaGain",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetMagicalArmorPiercingPercentageTarget",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetMinMana",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierAbilityPoints",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            "signature": {
+              "old": "GetMinMana()",
+              "new": "GetMinMana(event: ModifierAbilityEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -163,9 +72,13 @@
         },
         {
           "type": "method",
-          "name": "GetModifierAoEBonusConstant",
+          "name": "GetModifierAoEBonusConstantStacking",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierAoEBonusConstantStacking()",
+              "new": "GetModifierAoEBonusConstantStacking(event: ModifierAbilityEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -174,12 +87,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierAoEBonusConstantStacking",
+          "name": "GetModifierAoEBonusPercentage",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -199,6 +112,10 @@
           "name": "GetModifierAttackSpeed_Limit",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierAttackSpeed_Limit()",
+              "new": "GetModifierAttackSpeed_Limit(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -210,6 +127,10 @@
           "name": "GetModifierAttackSpeedAbsoluteMax",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierAttackSpeedAbsoluteMax()",
+              "new": "GetModifierAttackSpeedAbsoluteMax(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -221,6 +142,10 @@
           "name": "GetModifierAvoidAttackProcs",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierAvoidAttackProcs()",
+              "new": "GetModifierAvoidAttackProcs(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
@@ -246,6 +171,28 @@
             "returns": {
               "old": "nil",
               "new": "float"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierBaseAttackTimeConstant_Adjust",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "float",
+              "new": "nil"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierBaseAttackTimePercentage",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -284,45 +231,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierBecomeAgility",
+          "name": "GetModifierBecomeUniversal",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierBecomeIntelligence",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierBecomeStrength",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierBonusDamageOutgoing_Percentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -339,18 +253,40 @@
         },
         {
           "type": "method",
-          "name": "GetModifierBonusUphillMissChance",
+          "name": "GetModifierBonusStats_Agility_Percentage",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
         {
           "type": "method",
-          "name": "GetModifierBuybackPenaltyPercent",
+          "name": "GetModifierBonusStats_Intellect_Percentage",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "float",
+              "new": "nil"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierBonusStats_Strength_Percentage",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "float",
+              "new": "nil"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierBonusUphillMissChance",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
@@ -367,6 +303,10 @@
             "signature": {
               "old": "GetModifierCastRangeBonusPercentage(event: ModifierAbilityEvent)",
               "new": "GetModifierCastRangeBonusPercentage()"
+            },
+            "returns": {
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -375,6 +315,10 @@
           "name": "GetModifierConvertManaCostToHealthCost",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierConvertManaCostToHealthCost()",
+              "new": "GetModifierConvertManaCostToHealthCost(event: ModifierAbilityEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
@@ -408,28 +352,10 @@
           "name": "GetModifierCreepDenyPercent",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierDamageOutgoing_Percentage_Illusion_Amplify",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierDamageOutgoing_PercentageMultiplicative",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            "signature": {
+              "old": "GetModifierCreepDenyPercent()",
+              "new": "GetModifierCreepDenyPercent(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -444,17 +370,6 @@
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierExtraManaBonusPercentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
             }
           }
         },
@@ -482,28 +397,6 @@
         },
         {
           "type": "method",
-          "name": "GetModifierForceMaxHealth",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierForceMaxMana",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetModifierFoWTeam",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
@@ -515,20 +408,13 @@
         },
         {
           "type": "method",
-          "name": "GetModifierHasBonusNeutralItemChoice",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetModifierHealAmplify_PercentageSource",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierHealAmplify_PercentageSource()",
+              "new": "GetModifierHealAmplify_PercentageSource(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -540,17 +426,10 @@
           "name": "GetModifierHealAmplify_PercentageTarget",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierHealthcostReduction_Constant",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            "signature": {
+              "old": "GetModifierHealAmplify_PercentageTarget()",
+              "new": "GetModifierHealAmplify_PercentageTarget(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -592,23 +471,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierInnateDamageBlockPctOverride",
+          "name": "GetModifierIgnoreCooldown",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierIntellectNone",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -617,6 +485,10 @@
           "name": "GetModifierInventorySlotRestricted",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierInventorySlotRestricted()",
+              "new": "GetModifierInventorySlotRestricted(event: ModifierTargetEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -626,17 +498,6 @@
         {
           "type": "method",
           "name": "GetModifierInvisibilityAttackBehaviorException",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierIsPackRat",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
@@ -669,75 +530,13 @@
         },
         {
           "type": "method",
-          "name": "GetModifierKnockbackAmplification_Percentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetModifierLifestealRegenAmplify_Percentage",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierMagicalResistanceBaseReduction",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierMagicalResistanceBonusIllusions",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierMagicalResistanceBonusUnique",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierManaDrainAmplify_Percentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierMinPhysicalArmor",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            "signature": {
+              "old": "GetModifierLifestealRegenAmplify_Percentage()",
+              "new": "GetModifierLifestealRegenAmplify_Percentage(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -749,6 +548,10 @@
           "name": "GetModifierMiss_Percentage_Target",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierMiss_Percentage_Target()",
+              "new": "GetModifierMiss_Percentage_Target(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -914,6 +717,10 @@
           "name": "GetModifierOverrideCreepBounty",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierOverrideCreepBounty()",
+              "new": "GetModifierOverrideCreepBounty(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -925,6 +732,10 @@
           "name": "GetModifierOverrideUntargetableFrom",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierOverrideUntargetableFrom()",
+              "new": "GetModifierOverrideUntargetableFrom(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
@@ -936,6 +747,10 @@
           "name": "GetModifierOverrideUntargetableTo",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierOverrideUntargetableTo()",
+              "new": "GetModifierOverrideUntargetableTo(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
@@ -944,12 +759,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierPercentageConvertExpToGold",
+          "name": "GetModifierPercentageAttackAnimTime",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -961,6 +776,10 @@
             "signature": {
               "old": "GetModifierPercentageCooldownOngoing(event: ModifierAbilityEvent)",
               "new": "GetModifierPercentageCooldownOngoing()"
+            },
+            "returns": {
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -991,6 +810,10 @@
           "name": "GetModifierPercentageKillAssistGoldBoost",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierPercentageKillAssistGoldBoost()",
+              "new": "GetModifierPercentageKillAssistGoldBoost(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -999,45 +822,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierPhysical_ConstantBlockBonus",
+          "name": "GetModifierPreAttack_BonusDamage_Proc",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierPhysicalArmorBonusPost",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierPhysicalArmorTotal_Percentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierPhysicalDamageOutgoing_Percentage",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -1046,6 +836,10 @@
           "name": "GetModifierPreAttack_BonusDamage_Target",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierPreAttack_BonusDamage_Target()",
+              "new": "GetModifierPreAttack_BonusDamage_Target(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1054,67 +848,23 @@
         },
         {
           "type": "method",
-          "name": "GetModifierPreAttack_DeadlyBlow",
+          "name": "GetModifierProjectileSpeed",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
         {
           "type": "method",
-          "name": "GetModifierPrereduceIncomingDamage_Mult",
+          "name": "GetModifierProjectileSpeedBonusPercentage",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierPreserveNeutralItemPassives",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierProcAttack_BonusDamage_Magical_Target",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierProcAttack_ConvertPhysicalToMagical",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierProjectileSpeedTarget",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
+              "old": "float",
+              "new": "nil"
             }
           }
         },
@@ -1123,6 +873,10 @@
           "name": "GetModifierProperty_MagicalLifesteal",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierProperty_MagicalLifesteal()",
+              "new": "GetModifierProperty_MagicalLifesteal(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1134,6 +888,10 @@
           "name": "GetModifierProperty_PhysicalLifesteal",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierProperty_PhysicalLifesteal()",
+              "new": "GetModifierProperty_PhysicalLifesteal(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1193,10 +951,6 @@
           "name": "GetModifierPropertyRedirectHealthGain",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "signature": {
-              "old": "GetModifierPropertyRedirectHealthGain()",
-              "new": "GetModifierPropertyRedirectHealthGain(event: ModifierHealEvent)"
-            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1243,18 +997,29 @@
           "changes": {
             "returns": {
               "old": "nil",
-              "new": "float"
+              "new": "[object Object] | [object Object]"
             }
           }
         },
         {
           "type": "method",
-          "name": "GetModifierPropetyFailAttack",
+          "name": "GetModifierRadarCooldownReduction",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
+              "old": "float",
+              "new": "nil"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierShard",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -1282,42 +1047,13 @@
         },
         {
           "type": "method",
-          "name": "GEtModifierSlowResistance_Unique",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierSlowResistanceAppliesToAttacks",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierSpellAmplify_PercentageTarget",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetModifierSpellLifestealRegenAmplify_Percentage",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierSpellLifestealRegenAmplify_Percentage()",
+              "new": "GetModifierSpellLifestealRegenAmplify_Percentage(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1329,6 +1065,10 @@
           "name": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
+            "signature": {
+              "old": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique()",
+              "new": "GetModifierSpellLifestealRegenAmplify_Percentage_Unique(event: ModifierInstanceEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "float"
@@ -1337,23 +1077,12 @@
         },
         {
           "type": "method",
-          "name": "GetModifierSpellRedirectTarget",
+          "name": "GetModifierSuperIllusion",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetModifierStrongIllusion",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -1381,17 +1110,6 @@
         },
         {
           "type": "method",
-          "name": "GetModifierTickGold_Multiplier",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "GetModifierTotal_ConstantBlockStacking",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
@@ -1407,12 +1125,23 @@
         },
         {
           "type": "method",
-          "name": "GetModifierXPDuringDeath",
+          "name": "GetModifierTurnRateConstant",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
+              "old": "float",
+              "new": "nil"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetModifierUnitDisllowUpgrading",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "returns": {
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -1430,17 +1159,6 @@
         {
           "type": "method",
           "name": "GetModofierPropertyPseudoRandomBonus",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetPhysicalArmorPiercingPercentageTarget",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
@@ -1505,17 +1223,10 @@
             "signature": {
               "old": "GetSuppressCleave(event: ModifierAttackEvent)",
               "new": "GetSuppressCleave()"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetSuppressCrit",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            },
             "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
+              "old": "[object Object] | [object Object]",
+              "new": "nil"
             }
           }
         },
@@ -1524,28 +1235,10 @@
           "name": "GetSuppressIncomingCrit",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetTierTokenReroll",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "GetTriggerCosmeticAndEndAttack",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
+            "signature": {
+              "old": "GetSuppressIncomingCrit()",
+              "new": "GetSuppressIncomingCrit(event: ModifierAttackEvent)"
+            },
             "returns": {
               "old": "nil",
               "new": "[object Object] | [object Object]"
@@ -1576,29 +1269,7 @@
         },
         {
           "type": "method",
-          "name": "HasBonusNeutralItemPassive",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "[object Object] | [object Object]"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "MinAttributeLevel",
-          "class": "CDOTA_Modifier_Lua",
-          "changes": {
-            "returns": {
-              "old": "nil",
-              "new": "float"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
             "returns": {
@@ -1735,7 +1406,7 @@
           "changes": {
             "signature": {
               "old": "OnMagicDamageCalculated()",
-              "new": "OnMagicDamageCalculated(event: ModifierAttackEvent)"
+              "new": "OnMagicDamageCalculated(event: ModifierInstanceEvent)"
             }
           }
         },
@@ -1796,6 +1467,17 @@
         },
         {
           "type": "method",
+          "name": "OnRuneSpawn",
+          "class": "CDOTA_Modifier_Lua",
+          "changes": {
+            "signature": {
+              "old": "OnRuneSpawn()",
+              "new": "OnRuneSpawn(event: ModifierUnitEvent)"
+            }
+          }
+        },
+        {
+          "type": "method",
           "name": "ReincarnateSuppressFX",
           "class": "CDOTA_Modifier_Lua",
           "changes": {
@@ -1806,6 +1488,16 @@
           }
         }
       ]
+    },
+    "Lua Types": {
+      "added": [
+        {
+          "type": "object",
+          "name": "ModifierTargetEvent"
+        }
+      ],
+      "removed": [],
+      "changed": []
     },
     "Lua Enums": {
       "added": [
