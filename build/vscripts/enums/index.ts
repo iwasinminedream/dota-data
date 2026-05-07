@@ -186,8 +186,8 @@ export function generateEnumDeclarations(): EnumResult {
   enums.sort((a, b) => a.name.localeCompare(b.name, 'en'));
 
   return {
-    clientGlobals,
-    serverGlobals,
+    clientGlobals: clientGlobals.filter(({ name }) => !droppedConstants.includes(name)),
+    serverGlobals: serverGlobals.filter(({ name }) => !droppedConstants.includes(name)),
     enumDeclarations: [...constants, ...enums],
     unknownGlobals: allGlobals,
   };

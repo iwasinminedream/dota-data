@@ -1754,6 +1754,25 @@
   },
   {
     "kind": "enum",
+    "name": "DOTA_RuneStatus_t",
+    "available": "server",
+    "members": [
+      {
+        "name": "DOTA_RUNE_STATUS_UNKNOWN",
+        "value": 0
+      },
+      {
+        "name": "DOTA_RUNE_STATUS_AVAILABLE",
+        "value": 1
+      },
+      {
+        "name": "DOTA_RUNE_STATUS_MISSING",
+        "value": 2
+      }
+    ]
+  },
+  {
+    "kind": "enum",
     "name": "DOTA_SHOP_TYPE",
     "available": "both",
     "members": [
@@ -9089,110 +9108,6 @@
       {
         "name": "ACT_DOTA_LARGO_ULT_TOGGLE_OFF",
         "value": 1778
-      },
-      {
-        "name": "ACT_DOTA_RUN_STATUE",
-        "value": 1779
-      },
-      {
-        "name": "ACT_DOTA_CAST1_STATUE",
-        "value": 1780
-      },
-      {
-        "name": "ACT_DOTA_CAST2_STATUE",
-        "value": 1781
-      },
-      {
-        "name": "ACT_DOTA_STUN_STATUE",
-        "value": 1782
-      },
-      {
-        "name": "ACT_DOTA_FLAIL_STATUE",
-        "value": 1783
-      },
-      {
-        "name": "ACT_DOTA_SPAWN_STATUE",
-        "value": 1784
-      },
-      {
-        "name": "ACT_DOTA_TELEPORT_END_STATUE",
-        "value": 1785
-      },
-      {
-        "name": "ACT_DOTA_ATTACK_STATUE",
-        "value": 1786
-      },
-      {
-        "name": "ACT_DOTA_FORCESTAFF_STATUE",
-        "value": 1787
-      },
-      {
-        "name": "ACT_DOTA_TELEPORT_STATUE",
-        "value": 1788
-      },
-      {
-        "name": "ACT_DOTA_VICTORY_STATUE",
-        "value": 1789
-      },
-      {
-        "name": "ACT_DOTA_TAUNT_STATUE",
-        "value": 1790
-      },
-      {
-        "name": "ACT_DOTA_IDLE_STATUE",
-        "value": 1791
-      },
-      {
-        "name": "ACT_DOTA_DISABLED_END",
-        "value": 1792
-      },
-      {
-        "name": "ACT_DOTA_CYCLONE",
-        "value": 1793
-      },
-      {
-        "name": "ACT_DOTA_IMPALE",
-        "value": 1794
-      },
-      {
-        "name": "ACT_DOTA_TORRENT",
-        "value": 1795
-      },
-      {
-        "name": "ACT_DOTA_VOODOO_REST",
-        "value": 1796
-      },
-      {
-        "name": "ACT_DOTA_RUN_ALT",
-        "value": 1797
-      },
-      {
-        "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-        "value": 1802
-      },
-      {
-        "name": "ACT_DOTA_RELAX_IN",
-        "value": 1803
-      },
-      {
-        "name": "ACT_DOTA_RELAX_OUT",
-        "value": 1804
-      },
-      {
-        "name": "ACT_DOTA_CAST_FENCE",
-        "value": 1805
-      },
-      {
-        "name": "ACT_DOTA_SPWN",
-        "value": 1806
-      },
-      {
-        "name": "ACT_DOTA_CAST3_STATUE",
-        "value": 1807
-      },
-      {
-        "name": "ACT_DOTA_CAST4_STATUE",
-        "value": 1808
       }
     ]
   },
@@ -12328,22 +12243,6 @@
       {
         "name": "AE_DOTA_SWITCH_ATTACK_COMBO",
         "value": 47
-      },
-      {
-        "name": "AE_EF_NODRAW",
-        "value": 48
-      },
-      {
-        "name": "AE_EF_DRAW",
-        "value": 49
-      },
-      {
-        "name": "AE_DOTA_PLAY_SOUND_ATTACK",
-        "value": 50
-      },
-      {
-        "name": "AE_CL_CREATE_PARTICLE_BRASS",
-        "value": 51
       }
     ],
     "description": "https://developer.valvesoftware.com/wiki/Animation_Events#Server_events"
@@ -12466,6 +12365,10 @@
         "value": 0
       },
       {
+        "name": "SECONDARY_EMPTY",
+        "value": 1
+      },
+      {
         "name": "SINGLE_SHOT",
         "value": 2
       },
@@ -12486,6 +12389,14 @@
         "value": 6
       },
       {
+        "name": "MELEE_HIT_PLAYER",
+        "value": 7
+      },
+      {
+        "name": "MELEE_HIT_NPC",
+        "value": 8
+      },
+      {
         "name": "SPECIAL1",
         "value": 9
       },
@@ -12496,6 +12407,10 @@
       {
         "name": "SPECIAL3",
         "value": 11
+      },
+      {
+        "name": "NEARLYEMPTY",
+        "value": 12
       }
     ],
     "description": "https://developer.valvesoftware.com/wiki/Weapon_script#SoundData"

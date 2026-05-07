@@ -480,6 +480,16 @@ apiTypesDeclarations.push({
 
 apiTypesDeclarations.push({
   kind: 'object',
+  name: 'ModifierTargetEvent',
+  fields: [
+    // { name: 'new_pos', types: ['Vector'] },
+    { name: 'order_type', types: ['dotaunitorder_t'] },
+    { name: 'target', types: ['CDOTA_BaseNPC'] },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
   name: 'ModifierAbilityEvent',
   extend: ['ModifierUnitEvent'],
   fields: [
