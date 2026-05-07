@@ -1,13 +1,13 @@
-ClientVersion=6784
-ServerVersion=6784
+ClientVersion=6785
+ServerVersion=6785
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10638648
+SourceRevision=10639843
 VersionDate=May 06 2026
-VersionTime=14:47:00
+VersionTime=22:07:51
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34793,14 +34793,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1806
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_CAST4_STATUE",
     "value":1807
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_CAST5_STATUE",
+    "name":"ACT_DOTA_CAST4_STATUE",
     "value":1808
   },{
     "kind":"constant",
@@ -34917,7 +34913,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1804
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -35105,7 +35101,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1791
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -35238,6 +35234,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_IDLE_SLEEPING_END",
     "value":1639
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_IDLE_STATUE",
+    "value":1791
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
@@ -35505,7 +35505,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1801
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35545,7 +35545,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1802
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35557,7 +35557,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1803
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35577,7 +35577,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1796
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35665,7 +35665,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1805
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35833,7 +35833,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1792
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45437,19 +45437,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1797
-  },{
-    "kind":"constant",
-    "name":"muerta_debut_satyr_b",
     "value":1798
   },{
     "kind":"constant",
-    "name":"muerta_debut_satyr_c",
+    "name":"muerta_debut_satyr_b",
     "value":1799
   },{
     "kind":"constant",
-    "name":"radiant_melee_mars_shieldbash",
+    "name":"muerta_debut_satyr_c",
     "value":1800
+  },{
+    "kind":"constant",
+    "name":"radiant_melee_mars_shieldbash",
+    "value":1801
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
