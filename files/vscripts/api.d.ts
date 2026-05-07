@@ -48,6 +48,7 @@ declare namespace api {
   
   export interface ClassMethod extends FunctionDeclaration {
     abstract?: true;
+    broken?: true;
   }
   
   export type ClassMember = ClassMethod | Field;

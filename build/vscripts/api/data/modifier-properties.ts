@@ -1,6 +1,14 @@
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
 import { DumpConstant, serverDump } from '../../dump';
 import * as apiTypes from '../types';
 import { binaryBoolean } from './utils';
+
+// Load modifier_properties.json to know which modifier functions are broken (false = not working)
+const modifierPropertiesPath = join(__dirname, '../../../../files/vscripts/modifier_properties.json');
+const modifierProperties: Record<string, boolean> = existsSync(modifierPropertiesPath)
+  ? (JSON.parse(readFileSync(modifierPropertiesPath, 'utf8')) as Record<string, boolean>)
+  : {};
 
 type ArgumentType =
   | null
@@ -290,6 +298,7 @@ export function modifierFunctionMethods(): apiTypes.ClassMethod[] {
         description,
         args,
         returns,
+        ...(x.name in modifierProperties && modifierProperties[x.name] === false ? { broken: true as const } : {}),
       };
     });
 }
