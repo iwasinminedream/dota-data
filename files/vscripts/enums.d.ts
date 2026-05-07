@@ -23,6 +23,7 @@ declare namespace enums {
     description?: string;
     value: number;
     overflow?: true;
+    broken?: true;
   }
 }
 

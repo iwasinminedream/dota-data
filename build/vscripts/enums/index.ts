@@ -1,4 +1,6 @@
 import assert from 'assert';
+import { readFileSync, existsSync } from 'fs';
+import { join } from 'path';
 import _ from 'lodash';
 import { getEnumDescription } from '../api/data/modifier-properties';
 import { clientDump, DumpConstant, serverDump } from '../dump';
@@ -169,8 +171,16 @@ export function generateEnumDeclarations(): EnumResult {
     });
   });
 
+  const modifierPropertiesPath = join(__dirname, '../../../files/vscripts/modifier_properties.json');
+  const modifierProperties: Record<string, boolean> = existsSync(modifierPropertiesPath)
+    ? (JSON.parse(readFileSync(modifierPropertiesPath, 'utf8')) as Record<string, boolean>)
+    : {};
+
   for (const member of enums.find((x) => x.name === 'modifierfunction')!.members) {
     member.description = getEnumDescription(member.description);
+    if (member.name in modifierProperties && modifierProperties[member.name] === false) {
+      member.broken = true;
+    }
   }
 
   enums.sort((a, b) => a.name.localeCompare(b.name, 'en'));
