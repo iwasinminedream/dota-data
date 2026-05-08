@@ -1,13 +1,13 @@
-ClientVersion=6785
-ServerVersion=6785
+ClientVersion=6786
+ServerVersion=6786
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10639843
-VersionDate=May 06 2026
-VersionTime=22:07:51
+SourceRevision=10642105
+VersionDate=May 07 2026
+VersionTime=16:43:13
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -53166,7 +53166,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3799             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3804             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -54440,7 +54440,7 @@ dota_ui_armory_build_on_demand                                                  
 dota_ui_armory_is_category_view                                                  : true             : cl, a, per_user                  : 
 dota_ui_armory_item_duplicate                                                    : 1                : cl                               : 
 dota_ui_give_item_indicator_max_range                                            : 1200             : cl                               : 
-dota_ui_give_item_indicator_min_ping_distance                                    : 150              : cl                               : 
+dota_ui_give_item_indicator_min_ping_distance                                    : 300              : cl                               : 
 dota_ui_give_item_indicator_no_destroy                                           : false            : cl                               : 
 dota_ui_give_item_indicator_receiver_animation_duration                          : 0.2              : cl                               : 
 dota_ui_give_item_indicator_receiver_animation_offset                            : 30               : cl                               : 

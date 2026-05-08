@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3799",
+    "default": "3804",
     "flags": [
       "cl",
       "a",
@@ -18851,7 +18851,7 @@
     "description": ""
   },
   "dota_ui_give_item_indicator_min_ping_distance": {
-    "default": "150",
+    "default": "300",
     "flags": [
       "cl"
     ],
