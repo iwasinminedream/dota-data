@@ -5107,7 +5107,7 @@
       },
       {
         "name": "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
-        "description": "Method Name: `GEtModifierSlowResistance_Unique`",
+        "description": "Method Name: `GetModifierSlowResistance_Unique`",
         "value": 303
       },
       {
@@ -5332,7 +5332,7 @@
       },
       {
         "name": "MODIFIER_PROPERTY_PSEUDORANDOM_BONUS",
-        "description": "Method Name: `GetModofierPropertyPseudoRandomBonus`",
+        "description": "Method Name: `GetModifierPropertyPseudoRandomBonus`",
         "value": 348
       },
       {

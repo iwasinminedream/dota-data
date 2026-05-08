@@ -446,9 +446,10 @@ const dumpNameCorrections: Record<string, string> = {
   GEtModifierSlowResistance_Unique: 'GetModifierSlowResistance_Unique',
 };
 
-export function getEnumDescription(functionName?: string) {
-  if (!functionName || functionName === 'Unused') return undefined;
+export function getEnumDescription(rawFunctionName?: string) {
+  if (!rawFunctionName || rawFunctionName === 'Unused') return undefined;
 
+  const functionName = dumpNameCorrections[rawFunctionName] ?? rawFunctionName;
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const description = modifiersData[functionName]?.[2];
   return description
