@@ -1,0 +1,2103 @@
+{
+  "version": "6787",
+  "date": "May 12 2026",
+  "time": "13:38:56",
+  "changes": {
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_axe",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "axe_counter_helix",
+                  "new": "axe_counter_helix"
+                },
+                "2": {
+                  "old": "axe_berserkers_call",
+                  "new": "axe_berserkers_call"
+                },
+                "3": {
+                  "old": "axe_counter_helix",
+                  "new": "axe_counter_helix"
+                },
+                "4": {
+                  "old": "axe_berserkers_call",
+                  "new": "axe_berserkers_call"
+                },
+                "5": {
+                  "old": "axe_counter_helix",
+                  "new": "axe_counter_helix"
+                },
+                "6": {
+                  "old": "axe_culling_blade",
+                  "new": "axe_culling_blade"
+                },
+                "7": {
+                  "old": "axe_counter_helix",
+                  "new": "axe_counter_helix"
+                },
+                "8": {
+                  "old": "axe_berserkers_call",
+                  "new": "axe_berserkers_call"
+                },
+                "9": {
+                  "old": "axe_berserkers_call",
+                  "new": "axe_berserkers_call"
+                },
+                "10": {
+                  "old": "special_bonus_unique_axe_8",
+                  "new": "special_bonus_unique_axe_8"
+                },
+                "11": {
+                  "old": "axe_battle_hunger",
+                  "new": "axe_battle_hunger"
+                },
+                "12": {
+                  "old": "axe_culling_blade",
+                  "new": "axe_culling_blade"
+                },
+                "13": {
+                  "old": "axe_battle_hunger",
+                  "new": "axe_battle_hunger"
+                },
+                "14": {
+                  "old": "axe_battle_hunger",
+                  "new": "axe_battle_hunger"
+                },
+                "15": {
+                  "old": "special_bonus_unique_axe_6",
+                  "new": "special_bonus_unique_axe_7"
+                },
+                "16": {
+                  "old": "axe_battle_hunger",
+                  "new": "axe_battle_hunger"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "axe_culling_blade",
+                  "new": "axe_culling_blade"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_axe_5",
+                  "new": "special_bonus_unique_axe_5"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_axe",
+                  "new": "special_bonus_unique_axe"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_bloodseeker",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "bloodseeker_bloodrage",
+                  "new": "bloodseeker_bloodrage"
+                },
+                "2": {
+                  "old": "bloodseeker_thirst",
+                  "new": "bloodseeker_thirst"
+                },
+                "3": {
+                  "old": "bloodseeker_blood_bath",
+                  "new": "bloodseeker_blood_bath"
+                },
+                "4": {
+                  "old": "bloodseeker_bloodrage",
+                  "new": "bloodseeker_bloodrage"
+                },
+                "5": {
+                  "old": "bloodseeker_thirst",
+                  "new": "bloodseeker_thirst"
+                },
+                "6": {
+                  "old": "bloodseeker_rupture",
+                  "new": "bloodseeker_rupture"
+                },
+                "7": {
+                  "old": "bloodseeker_thirst",
+                  "new": "bloodseeker_thirst"
+                },
+                "8": {
+                  "old": "bloodseeker_blood_bath",
+                  "new": "bloodseeker_blood_bath"
+                },
+                "9": {
+                  "old": "bloodseeker_blood_bath",
+                  "new": "bloodseeker_blood_bath"
+                },
+                "10": {
+                  "old": "special_bonus_hp_175",
+                  "new": "special_bonus_hp_200"
+                },
+                "11": {
+                  "old": "bloodseeker_thirst",
+                  "new": "bloodseeker_thirst"
+                },
+                "12": {
+                  "old": "bloodseeker_rupture",
+                  "new": "bloodseeker_rupture"
+                },
+                "13": {
+                  "old": "bloodseeker_blood_bath",
+                  "new": "bloodseeker_blood_bath"
+                },
+                "14": {
+                  "old": "bloodseeker_bloodrage",
+                  "new": "bloodseeker_bloodrage"
+                },
+                "15": {
+                  "old": "special_bonus_unique_bloodseeker_7",
+                  "new": "special_bonus_unique_bloodseeker_7"
+                },
+                "16": {
+                  "old": "bloodseeker_bloodrage",
+                  "new": "bloodseeker_bloodrage"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "bloodseeker_rupture",
+                  "new": "bloodseeker_rupture"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_bloodseeker",
+                  "new": "special_bonus_unique_bloodseeker"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_bloodseeker_rupture_charges",
+                  "new": "special_bonus_unique_bloodseeker_7"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_crystal_maiden",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "crystal_maiden_frostbite",
+                  "new": "crystal_maiden_frostbite"
+                },
+                "2": {
+                  "old": "crystal_maiden_brilliance_aura",
+                  "new": "crystal_maiden_brilliance_aura"
+                },
+                "3": {
+                  "old": "crystal_maiden_frostbite",
+                  "new": "crystal_maiden_frostbite"
+                },
+                "4": {
+                  "old": "crystal_maiden_brilliance_aura",
+                  "new": "crystal_maiden_brilliance_aura"
+                },
+                "5": {
+                  "old": "crystal_maiden_frostbite",
+                  "new": "crystal_maiden_frostbite"
+                },
+                "6": {
+                  "old": "crystal_maiden_freezing_field",
+                  "new": "crystal_maiden_freezing_field"
+                },
+                "7": {
+                  "old": "crystal_maiden_frostbite",
+                  "new": "crystal_maiden_frostbite"
+                },
+                "8": {
+                  "old": "crystal_maiden_brilliance_aura",
+                  "new": "crystal_maiden_brilliance_aura"
+                },
+                "9": {
+                  "old": "crystal_maiden_brilliance_aura",
+                  "new": "crystal_maiden_brilliance_aura"
+                },
+                "10": {
+                  "old": "special_bonus_intelligence_12",
+                  "new": "special_bonus_intelligence_12"
+                },
+                "11": {
+                  "old": "crystal_maiden_crystal_nova",
+                  "new": "crystal_maiden_crystal_nova"
+                },
+                "12": {
+                  "old": "crystal_maiden_freezing_field",
+                  "new": "crystal_maiden_freezing_field"
+                },
+                "13": {
+                  "old": "crystal_maiden_crystal_nova",
+                  "new": "crystal_maiden_crystal_nova"
+                },
+                "14": {
+                  "old": "crystal_maiden_crystal_nova",
+                  "new": "crystal_maiden_crystal_nova"
+                },
+                "15": {
+                  "old": "special_bonus_unique_crystal_maiden_frostbite_castrange",
+                  "new": "special_bonus_unique_crystal_maiden_frostbite_castrange"
+                },
+                "16": {
+                  "old": "crystal_maiden_crystal_nova",
+                  "new": "crystal_maiden_crystal_nova"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "crystal_maiden_freezing_field",
+                  "new": "crystal_maiden_freezing_field"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_crystal_maiden_cold_comfort_base_active_armor",
+                  "new": "special_bonus_unique_crystal_maiden_glacial_guard_mana_multiplier"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_crystal_maiden_1",
+                  "new": "special_bonus_unique_crystal_maiden_1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_mirana",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "mirana_arrow",
+                  "new": "mirana_arrow"
+                },
+                "2": {
+                  "old": "mirana_leap",
+                  "new": "mirana_leap"
+                },
+                "3": {
+                  "old": "mirana_starfall",
+                  "new": "mirana_starfall"
+                },
+                "4": {
+                  "old": "mirana_starfall",
+                  "new": "mirana_starfall"
+                },
+                "5": {
+                  "old": "mirana_starfall",
+                  "new": "mirana_starfall"
+                },
+                "6": {
+                  "old": "mirana_invis",
+                  "new": "mirana_invis"
+                },
+                "7": {
+                  "old": "mirana_starfall",
+                  "new": "mirana_starfall"
+                },
+                "8": {
+                  "old": "mirana_leap",
+                  "new": "mirana_leap"
+                },
+                "9": {
+                  "old": "mirana_leap",
+                  "new": "mirana_leap"
+                },
+                "10": {
+                  "old": "special_bonus_unique_mirana_3",
+                  "new": "special_bonus_unique_mirana_3"
+                },
+                "11": {
+                  "old": "mirana_leap",
+                  "new": "mirana_leap"
+                },
+                "12": {
+                  "old": "mirana_invis",
+                  "new": "mirana_invis"
+                },
+                "13": {
+                  "old": "mirana_arrow",
+                  "new": "mirana_arrow"
+                },
+                "14": {
+                  "old": "mirana_arrow",
+                  "new": "mirana_arrow"
+                },
+                "15": {
+                  "old": "special_bonus_unique_mirana_1",
+                  "new": "special_bonus_unique_mirana_1"
+                },
+                "16": {
+                  "old": "mirana_arrow",
+                  "new": "mirana_arrow"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "mirana_invis",
+                  "new": "mirana_invis"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_attack_base_damage_35",
+                  "new": "special_bonus_unique_mirana_quiver_damage"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_mirana_2",
+                  "new": "special_bonus_unique_mirana_2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_razor",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "razor_static_link",
+                  "new": "razor_static_link"
+                },
+                "2": {
+                  "old": "razor_plasma_field",
+                  "new": "razor_plasma_field"
+                },
+                "3": {
+                  "old": "razor_static_link",
+                  "new": "razor_static_link"
+                },
+                "4": {
+                  "old": "razor_plasma_field",
+                  "new": "razor_plasma_field"
+                },
+                "5": {
+                  "old": "razor_plasma_field",
+                  "new": "razor_plasma_field"
+                },
+                "6": {
+                  "old": "razor_unstable_current",
+                  "new": "razor_unstable_current"
+                },
+                "7": {
+                  "old": "razor_plasma_field",
+                  "new": "razor_plasma_field"
+                },
+                "8": {
+                  "old": "razor_eye_of_the_storm",
+                  "new": "razor_eye_of_the_storm"
+                },
+                "9": {
+                  "old": "razor_static_link",
+                  "new": "razor_static_link"
+                },
+                "10": {
+                  "old": "special_bonus_spell_lifesteal_10",
+                  "new": "special_bonus_armor_4"
+                },
+                "11": {
+                  "old": "razor_static_link",
+                  "new": "razor_static_link"
+                },
+                "12": {
+                  "old": "razor_eye_of_the_storm",
+                  "new": "razor_eye_of_the_storm"
+                },
+                "13": {
+                  "old": "razor_unstable_current",
+                  "new": "razor_unstable_current"
+                },
+                "14": {
+                  "old": "razor_unstable_current",
+                  "new": "razor_unstable_current"
+                },
+                "15": {
+                  "old": "special_bonus_unique_razor",
+                  "new": "special_bonus_unique_razor"
+                },
+                "16": {
+                  "old": "razor_unstable_current",
+                  "new": "razor_unstable_current"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "razor_eye_of_the_storm",
+                  "new": "razor_eye_of_the_storm"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_razor_2",
+                  "new": "special_bonus_unique_razor_2"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_razor_plasmafield_second_ring",
+                  "new": "special_bonus_unique_razor_plasmafield_second_ring"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_tiny",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "tiny_avalanche",
+                  "new": "tiny_avalanche"
+                },
+                "2": {
+                  "old": "tiny_toss",
+                  "new": "tiny_toss"
+                },
+                "3": {
+                  "old": "tiny_avalanche",
+                  "new": "tiny_avalanche"
+                },
+                "4": {
+                  "old": "tiny_toss",
+                  "new": "tiny_toss"
+                },
+                "5": {
+                  "old": "tiny_toss",
+                  "new": "tiny_toss"
+                },
+                "6": {
+                  "old": "tiny_grow",
+                  "new": "tiny_grow"
+                },
+                "7": {
+                  "old": "tiny_toss",
+                  "new": "tiny_toss"
+                },
+                "8": {
+                  "old": "tiny_avalanche",
+                  "new": "tiny_avalanche"
+                },
+                "9": {
+                  "old": "tiny_avalanche",
+                  "new": "tiny_avalanche"
+                },
+                "10": {
+                  "old": "special_bonus_strength_8",
+                  "new": "special_bonus_unique_tiny_4"
+                },
+                "11": {
+                  "old": "tiny_tree_grab",
+                  "new": "tiny_tree_grab"
+                },
+                "12": {
+                  "old": "tiny_grow",
+                  "new": "tiny_grow"
+                },
+                "13": {
+                  "old": "tiny_tree_grab",
+                  "new": "tiny_tree_grab"
+                },
+                "14": {
+                  "old": "tiny_tree_grab",
+                  "new": "tiny_tree_grab"
+                },
+                "15": {
+                  "old": "special_bonus_unique_tiny",
+                  "new": "special_bonus_unique_tiny"
+                },
+                "16": {
+                  "old": "tiny_tree_grab",
+                  "new": "tiny_tree_grab"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "tiny_grow",
+                  "new": "tiny_grow"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_tiny_5",
+                  "new": "special_bonus_unique_tiny_5"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_tiny_3",
+                  "new": "special_bonus_unique_tiny_3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_windrunner",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "windrunner_windrun",
+                  "new": "windrunner_windrun"
+                },
+                "2": {
+                  "old": "windrunner_powershot",
+                  "new": "windrunner_powershot"
+                },
+                "3": {
+                  "old": "windrunner_powershot",
+                  "new": "windrunner_powershot"
+                },
+                "4": {
+                  "old": "windrunner_shackleshot",
+                  "new": "windrunner_shackleshot"
+                },
+                "5": {
+                  "old": "windrunner_powershot",
+                  "new": "windrunner_powershot"
+                },
+                "6": {
+                  "old": "windrunner_focusfire",
+                  "new": "windrunner_focusfire"
+                },
+                "7": {
+                  "old": "windrunner_powershot",
+                  "new": "windrunner_powershot"
+                },
+                "8": {
+                  "old": "windrunner_shackleshot",
+                  "new": "windrunner_shackleshot"
+                },
+                "9": {
+                  "old": "windrunner_shackleshot",
+                  "new": "windrunner_shackleshot"
+                },
+                "10": {
+                  "old": "special_bonus_all_stats_4",
+                  "new": "special_bonus_unique_windranger_powershot_slow"
+                },
+                "11": {
+                  "old": "windrunner_shackleshot",
+                  "new": "windrunner_shackleshot"
+                },
+                "12": {
+                  "old": "windrunner_focusfire",
+                  "new": "windrunner_focusfire"
+                },
+                "13": {
+                  "old": "windrunner_windrun",
+                  "new": "windrunner_windrun"
+                },
+                "14": {
+                  "old": "windrunner_windrun",
+                  "new": "windrunner_windrun"
+                },
+                "15": {
+                  "old": "special_bonus_unique_windranger_4",
+                  "new": "special_bonus_unique_windranger_5"
+                },
+                "16": {
+                  "old": "windrunner_windrun",
+                  "new": "windrunner_windrun"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "windrunner_focusfire",
+                  "new": "windrunner_focusfire"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_windranger_8",
+                  "new": "special_bonus_unique_windranger_8"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_windranger_2",
+                  "new": "special_bonus_unique_windranger_2"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_zuus",
+          "changes": {
+            "Bot": {
+              "Loadout": {
+                "item_tango": {
+                  "old": "ITEM_CONSUMABLE | ITEM_SELLABLE",
+                  "new": "ITEM_CONSUMABLE | ITEM_SELLABLE"
+                },
+                "item_clarity": {
+                  "old": "ITEM_CONSUMABLE | ITEM_SELLABLE",
+                  "new": "ITEM_CONSUMABLE | ITEM_SELLABLE"
+                },
+                "item_boots": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_sobi_mask": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_recipe_ring_of_basilius": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_ring_of_basilius": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_recipe_arcane_boots": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_arcane_boots": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_blink": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_staff_of_wizardry": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_robe": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_recipe_kaya": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_kaya": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_void_stone": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_voodoo_mask": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_vitality_booster": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_energy_booster": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_point_booster": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_soul_booster": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_recipe_bloodstone": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_bloodstone": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_recipe_aether_lens": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_aether_lens": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_cornucopia": {
+                  "old": "ITEM_EXTENSION",
+                  "new": null
+                },
+                "item_ring_of_tarrasque": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_tiara_of_selemene": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_recipe_refresher": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_refresher": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                }
+              },
+              "Build": {
+                "1": {
+                  "old": "zuus_arc_lightning",
+                  "new": "zuus_arc_lightning"
+                },
+                "2": {
+                  "old": "zuus_heavenly_jump",
+                  "new": "zuus_heavenly_jump"
+                },
+                "3": {
+                  "old": "zuus_lightning_bolt",
+                  "new": "zuus_lightning_bolt"
+                },
+                "4": {
+                  "old": "zuus_lightning_bolt",
+                  "new": "zuus_lightning_bolt"
+                },
+                "5": {
+                  "old": "zuus_lightning_bolt",
+                  "new": "zuus_lightning_bolt"
+                },
+                "6": {
+                  "old": "zuus_thundergods_wrath",
+                  "new": "zuus_thundergods_wrath"
+                },
+                "7": {
+                  "old": "zuus_lightning_bolt",
+                  "new": "zuus_lightning_bolt"
+                },
+                "8": {
+                  "old": "zuus_arc_lightning",
+                  "new": "zuus_arc_lightning"
+                },
+                "9": {
+                  "old": "zuus_arc_lightning",
+                  "new": "zuus_arc_lightning"
+                },
+                "10": {
+                  "old": "special_bonus_hp_200",
+                  "new": "special_bonus_hp_200"
+                },
+                "11": {
+                  "old": "zuus_arc_lightning",
+                  "new": "zuus_arc_lightning"
+                },
+                "12": {
+                  "old": "zuus_thundergods_wrath",
+                  "new": "zuus_thundergods_wrath"
+                },
+                "13": {
+                  "old": "zuus_heavenly_jump",
+                  "new": "zuus_heavenly_jump"
+                },
+                "14": {
+                  "old": "zuus_heavenly_jump",
+                  "new": "zuus_heavenly_jump"
+                },
+                "15": {
+                  "old": "special_bonus_unique_zeus_6",
+                  "new": "special_bonus_unique_zeus_6"
+                },
+                "16": {
+                  "old": "zuus_heavenly_jump",
+                  "new": "zuus_heavenly_jump"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "zuus_thundergods_wrath",
+                  "new": "zuus_thundergods_wrath"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_zeus_2",
+                  "new": "special_bonus_unique_zeus_2"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_zeus_static_field_dmg",
+                  "new": "special_bonus_unique_zeus_jump_charges"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_lich",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "lich_frost_shield",
+                  "new": "lich_frost_shield"
+                },
+                "2": {
+                  "old": "lich_frost_nova",
+                  "new": "lich_frost_nova"
+                },
+                "3": {
+                  "old": "lich_frost_shield",
+                  "new": "lich_frost_shield"
+                },
+                "4": {
+                  "old": "lich_frost_nova",
+                  "new": "lich_frost_nova"
+                },
+                "5": {
+                  "old": "lich_sinister_gaze",
+                  "new": "lich_sinister_gaze"
+                },
+                "6": {
+                  "old": "lich_chain_frost",
+                  "new": "lich_chain_frost"
+                },
+                "7": {
+                  "old": "lich_frost_shield",
+                  "new": "lich_frost_shield"
+                },
+                "8": {
+                  "old": "lich_frost_nova",
+                  "new": "lich_frost_nova"
+                },
+                "9": {
+                  "old": "lich_frost_nova",
+                  "new": "lich_frost_nova"
+                },
+                "10": {
+                  "old": "special_bonus_unique_lich_8",
+                  "new": "special_bonus_unique_lich_8"
+                },
+                "11": {
+                  "old": "lich_frost_shield",
+                  "new": "lich_frost_shield"
+                },
+                "12": {
+                  "old": "lich_chain_frost",
+                  "new": "lich_chain_frost"
+                },
+                "13": {
+                  "old": "lich_sinister_gaze",
+                  "new": "lich_sinister_gaze"
+                },
+                "14": {
+                  "old": "lich_sinister_gaze",
+                  "new": "lich_sinister_gaze"
+                },
+                "15": {
+                  "old": "special_bonus_unique_lich_3",
+                  "new": "special_bonus_unique_lich_3"
+                },
+                "16": {
+                  "old": "lich_sinister_gaze",
+                  "new": "lich_sinister_gaze"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "lich_chain_frost",
+                  "new": "lich_chain_frost"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_lich_7",
+                  "new": "special_bonus_unique_lich_7"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_lich_jump_damage",
+                  "new": "special_bonus_unique_lich_5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_tidehunter",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "tidehunter_gush",
+                  "new": "tidehunter_gush"
+                },
+                "2": {
+                  "old": "tidehunter_kraken_shell",
+                  "new": "tidehunter_kraken_shell"
+                },
+                "3": {
+                  "old": "tidehunter_anchor_smash",
+                  "new": "tidehunter_anchor_smash"
+                },
+                "4": {
+                  "old": "tidehunter_kraken_shell",
+                  "new": "tidehunter_kraken_shell"
+                },
+                "5": {
+                  "old": "tidehunter_anchor_smash",
+                  "new": "tidehunter_anchor_smash"
+                },
+                "6": {
+                  "old": "tidehunter_ravage",
+                  "new": "tidehunter_ravage"
+                },
+                "7": {
+                  "old": "tidehunter_anchor_smash",
+                  "new": "tidehunter_anchor_smash"
+                },
+                "8": {
+                  "old": "tidehunter_kraken_shell",
+                  "new": "tidehunter_kraken_shell"
+                },
+                "9": {
+                  "old": "tidehunter_kraken_shell",
+                  "new": "tidehunter_kraken_shell"
+                },
+                "10": {
+                  "old": "special_bonus_unique_tidehunter_9",
+                  "new": "special_bonus_unique_tidehunter_5"
+                },
+                "11": {
+                  "old": "tidehunter_anchor_smash",
+                  "new": "tidehunter_anchor_smash"
+                },
+                "12": {
+                  "old": "tidehunter_ravage",
+                  "new": "tidehunter_ravage"
+                },
+                "13": {
+                  "old": "tidehunter_gush",
+                  "new": "tidehunter_gush"
+                },
+                "14": {
+                  "old": "tidehunter_gush",
+                  "new": "tidehunter_gush"
+                },
+                "15": {
+                  "old": "special_bonus_unique_tidehunter_3",
+                  "new": "special_bonus_unique_tidehunter_2"
+                },
+                "16": {
+                  "old": "tidehunter_gush",
+                  "new": "tidehunter_gush"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "tidehunter_ravage",
+                  "new": "tidehunter_ravage"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_tidehunter_10",
+                  "new": "special_bonus_unique_tidehunter"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_tidehunter_7",
+                  "new": "special_bonus_unique_tidehunter_7"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_witch_doctor",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "witch_doctor_paralyzing_cask",
+                  "new": "witch_doctor_paralyzing_cask"
+                },
+                "2": {
+                  "old": "witch_doctor_maledict",
+                  "new": "witch_doctor_maledict"
+                },
+                "3": {
+                  "old": "witch_doctor_paralyzing_cask",
+                  "new": "witch_doctor_paralyzing_cask"
+                },
+                "4": {
+                  "old": "witch_doctor_maledict",
+                  "new": "witch_doctor_maledict"
+                },
+                "5": {
+                  "old": "witch_doctor_paralyzing_cask",
+                  "new": "witch_doctor_paralyzing_cask"
+                },
+                "6": {
+                  "old": "witch_doctor_death_ward",
+                  "new": "witch_doctor_death_ward"
+                },
+                "7": {
+                  "old": "witch_doctor_paralyzing_cask",
+                  "new": "witch_doctor_paralyzing_cask"
+                },
+                "8": {
+                  "old": "witch_doctor_maledict",
+                  "new": "witch_doctor_maledict"
+                },
+                "9": {
+                  "old": "witch_doctor_maledict",
+                  "new": "witch_doctor_maledict"
+                },
+                "10": {
+                  "old": "special_bonus_unique_witch_doctor_4",
+                  "new": "special_bonus_unique_witch_doctor_4"
+                },
+                "11": {
+                  "old": "witch_doctor_voodoo_restoration",
+                  "new": "witch_doctor_voodoo_restoration"
+                },
+                "12": {
+                  "old": "witch_doctor_death_ward",
+                  "new": "witch_doctor_death_ward"
+                },
+                "13": {
+                  "old": "witch_doctor_voodoo_restoration",
+                  "new": "witch_doctor_voodoo_restoration"
+                },
+                "14": {
+                  "old": "witch_doctor_voodoo_restoration",
+                  "new": "witch_doctor_voodoo_restoration"
+                },
+                "15": {
+                  "old": "special_bonus_unique_witch_doctor_3",
+                  "new": "special_bonus_unique_witch_doctor_3"
+                },
+                "16": {
+                  "old": "witch_doctor_voodoo_restoration",
+                  "new": "witch_doctor_voodoo_restoration"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "witch_doctor_death_ward",
+                  "new": "witch_doctor_death_ward"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_witch_doctor_1",
+                  "new": "special_bonus_unique_witch_doctor_2"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_witch_doctor_5",
+                  "new": "special_bonus_unique_witch_doctor_5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_riki",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "riki_tricks_of_the_trade",
+                  "new": "riki_tricks_of_the_trade"
+                },
+                "2": {
+                  "old": "riki_blink_strike",
+                  "new": "riki_blink_strike"
+                },
+                "3": {
+                  "old": "riki_tricks_of_the_trade",
+                  "new": "riki_tricks_of_the_trade"
+                },
+                "4": {
+                  "old": "riki_smoke_screen",
+                  "new": "riki_smoke_screen"
+                },
+                "5": {
+                  "old": "riki_tricks_of_the_trade",
+                  "new": "riki_tricks_of_the_trade"
+                },
+                "6": {
+                  "old": "riki_backstab",
+                  "new": "riki_backstab"
+                },
+                "7": {
+                  "old": "riki_tricks_of_the_trade",
+                  "new": "riki_tricks_of_the_trade"
+                },
+                "8": {
+                  "old": "riki_blink_strike",
+                  "new": "riki_blink_strike"
+                },
+                "9": {
+                  "old": "riki_blink_strike",
+                  "new": "riki_blink_strike"
+                },
+                "10": {
+                  "old": "special_bonus_unique_riki_7",
+                  "new": "special_bonus_unique_riki_7"
+                },
+                "11": {
+                  "old": "riki_blink_strike",
+                  "new": "riki_blink_strike"
+                },
+                "12": {
+                  "old": "riki_backstab",
+                  "new": "riki_backstab"
+                },
+                "13": {
+                  "old": "riki_smoke_screen",
+                  "new": "riki_smoke_screen"
+                },
+                "14": {
+                  "old": "riki_smoke_screen",
+                  "new": "riki_smoke_screen"
+                },
+                "15": {
+                  "old": "special_bonus_unique_riki_2",
+                  "new": "special_bonus_unique_riki_3"
+                },
+                "16": {
+                  "old": "riki_smoke_screen",
+                  "new": "riki_smoke_screen"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "riki_backstab",
+                  "new": "riki_backstab"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_riki_1",
+                  "new": "special_bonus_unique_riki_1"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_riki_5",
+                  "new": "special_bonus_unique_riki_5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_necrolyte",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "necrolyte_heartstopper_aura",
+                  "new": "necrolyte_heartstopper_aura"
+                },
+                "2": {
+                  "old": "necrolyte_death_pulse",
+                  "new": "necrolyte_death_pulse"
+                },
+                "3": {
+                  "old": "necrolyte_death_pulse",
+                  "new": "necrolyte_death_pulse"
+                },
+                "4": {
+                  "old": "necrolyte_ghost_shroud",
+                  "new": "necrolyte_ghost_shroud"
+                },
+                "5": {
+                  "old": "necrolyte_death_pulse",
+                  "new": "necrolyte_death_pulse"
+                },
+                "6": {
+                  "old": "necrolyte_reapers_scythe",
+                  "new": "necrolyte_reapers_scythe"
+                },
+                "7": {
+                  "old": "necrolyte_death_pulse",
+                  "new": "necrolyte_death_pulse"
+                },
+                "8": {
+                  "old": "necrolyte_ghost_shroud",
+                  "new": "necrolyte_ghost_shroud"
+                },
+                "9": {
+                  "old": "necrolyte_ghost_shroud",
+                  "new": "necrolyte_ghost_shroud"
+                },
+                "10": {
+                  "old": "special_bonus_unique_necrophos_heartstopper_regen_duration",
+                  "new": "special_bonus_unique_necrophos_heartstopper_regen_duration"
+                },
+                "11": {
+                  "old": "necrolyte_ghost_shroud",
+                  "new": "necrolyte_ghost_shroud"
+                },
+                "12": {
+                  "old": "necrolyte_reapers_scythe",
+                  "new": "necrolyte_reapers_scythe"
+                },
+                "13": {
+                  "old": "necrolyte_heartstopper_aura",
+                  "new": "necrolyte_heartstopper_aura"
+                },
+                "14": {
+                  "old": "necrolyte_heartstopper_aura",
+                  "new": "necrolyte_heartstopper_aura"
+                },
+                "15": {
+                  "old": "special_bonus_unique_necrophos_4",
+                  "new": "special_bonus_unique_necrophos_4"
+                },
+                "16": {
+                  "old": "necrolyte_heartstopper_aura",
+                  "new": "necrolyte_heartstopper_aura"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "necrolyte_reapers_scythe",
+                  "new": "necrolyte_reapers_scythe"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_necrophos_sadist_heal_bonus",
+                  "new": "special_bonus_unique_necrophos_5"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_necrophos",
+                  "new": "special_bonus_unique_necrophos"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_warlock",
+          "changes": {
+            "Bot": {
+              "Loadout": {
+                "item_tango": {
+                  "old": "ITEM_CONSUMABLE | ITEM_SELLABLE",
+                  "new": "ITEM_CONSUMABLE | ITEM_SELLABLE"
+                },
+                "item_crown": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_boots": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_sobi_mask": {
+                  "old": "ITEM_CORE",
+                  "new": "ITEM_CORE"
+                },
+                "item_recipe_ring_of_basilius": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_ring_of_basilius": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_recipe_arcane_boots": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_arcane_boots": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_helm_of_iron_will": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_recipe_veil_of_discord": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_veil_of_discord": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_point_booster": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_ogre_axe": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_staff_of_wizardry": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_blade_of_alacrity": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_ultimate_scepter": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_cornucopia": {
+                  "old": "ITEM_EXTENSION",
+                  "new": null
+                },
+                "item_ring_of_tarrasque": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_tiara_of_selemene": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_recipe_refresher": {
+                  "old": "ITEM_EXTENSION",
+                  "new": "ITEM_EXTENSION"
+                },
+                "item_refresher": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                },
+                "item_platemail": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_recipe_shivas_guard": {
+                  "old": "ITEM_LUXURY",
+                  "new": "ITEM_LUXURY"
+                },
+                "item_shivas_guard": {
+                  "old": "ITEM_DERIVED",
+                  "new": "ITEM_DERIVED"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_skeleton_king",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "skeleton_king_hellfire_blast",
+                  "new": "skeleton_king_hellfire_blast"
+                },
+                "2": {
+                  "old": "",
+                  "new": ""
+                },
+                "3": {
+                  "old": "skeleton_king_hellfire_blast",
+                  "new": "skeleton_king_hellfire_blast"
+                },
+                "4": {
+                  "old": "skeleton_king_mortal_strike",
+                  "new": "skeleton_king_mortal_strike"
+                },
+                "5": {
+                  "old": "skeleton_king_hellfire_blast",
+                  "new": "skeleton_king_hellfire_blast"
+                },
+                "6": {
+                  "old": "skeleton_king_reincarnation",
+                  "new": "skeleton_king_reincarnation"
+                },
+                "7": {
+                  "old": "skeleton_king_hellfire_blast",
+                  "new": "skeleton_king_hellfire_blast"
+                },
+                "8": {
+                  "old": "skeleton_king_mortal_strike",
+                  "new": "skeleton_king_mortal_strike"
+                },
+                "9": {
+                  "old": "skeleton_king_mortal_strike",
+                  "new": "skeleton_king_mortal_strike"
+                },
+                "10": {
+                  "old": "special_bonus_unique_wraith_king_2",
+                  "new": "special_bonus_unique_wraith_king_2"
+                },
+                "11": {
+                  "old": "skeleton_king_mortal_strike",
+                  "new": "skeleton_king_mortal_strike"
+                },
+                "12": {
+                  "old": "skeleton_king_reincarnation",
+                  "new": "skeleton_king_reincarnation"
+                },
+                "13": {
+                  "old": "",
+                  "new": ""
+                },
+                "14": {
+                  "old": "",
+                  "new": ""
+                },
+                "15": {
+                  "old": "special_bonus_hp_400",
+                  "new": "special_bonus_hp_300"
+                },
+                "16": {
+                  "old": "",
+                  "new": ""
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "skeleton_king_reincarnation",
+                  "new": "skeleton_king_reincarnation"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_attack_speed_60",
+                  "new": "special_bonus_attack_speed_50"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_wraith_king_4",
+                  "new": "special_bonus_unique_wraith_king_4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_death_prophet",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "death_prophet_spirit_siphon",
+                  "new": "death_prophet_spirit_siphon"
+                },
+                "2": {
+                  "old": "death_prophet_carrion_swarm",
+                  "new": "death_prophet_carrion_swarm"
+                },
+                "3": {
+                  "old": "death_prophet_spirit_siphon",
+                  "new": "death_prophet_spirit_siphon"
+                },
+                "4": {
+                  "old": "death_prophet_carrion_swarm",
+                  "new": "death_prophet_carrion_swarm"
+                },
+                "5": {
+                  "old": "death_prophet_spirit_siphon",
+                  "new": "death_prophet_spirit_siphon"
+                },
+                "6": {
+                  "old": "death_prophet_exorcism",
+                  "new": "death_prophet_exorcism"
+                },
+                "7": {
+                  "old": "death_prophet_spirit_siphon",
+                  "new": "death_prophet_spirit_siphon"
+                },
+                "8": {
+                  "old": "death_prophet_carrion_swarm",
+                  "new": "death_prophet_carrion_swarm"
+                },
+                "9": {
+                  "old": "death_prophet_carrion_swarm",
+                  "new": "death_prophet_carrion_swarm"
+                },
+                "10": {
+                  "old": "special_bonus_magic_resistance_12",
+                  "new": "special_bonus_unique_death_prophet_silence_aoe"
+                },
+                "11": {
+                  "old": "death_prophet_silence",
+                  "new": "death_prophet_silence"
+                },
+                "12": {
+                  "old": "death_prophet_exorcism",
+                  "new": "death_prophet_exorcism"
+                },
+                "13": {
+                  "old": "death_prophet_silence",
+                  "new": "death_prophet_silence"
+                },
+                "14": {
+                  "old": "death_prophet_silence",
+                  "new": "death_prophet_silence"
+                },
+                "15": {
+                  "old": "special_bonus_unique_death_prophet_silence_aoe",
+                  "new": "special_bonus_unique_death_prophet_2"
+                },
+                "16": {
+                  "old": "death_prophet_silence",
+                  "new": "death_prophet_silence"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "death_prophet_exorcism",
+                  "new": "death_prophet_exorcism"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_hp_400",
+                  "new": "special_bonus_unique_death_prophet_3"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_death_prophet",
+                  "new": "special_bonus_unique_death_prophet_5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_luna",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "luna_lunar_blessing",
+                  "new": "luna_lunar_blessing"
+                },
+                "2": {
+                  "old": "luna_lucent_beam",
+                  "new": "luna_lucent_beam"
+                },
+                "3": {
+                  "old": "luna_lucent_beam",
+                  "new": "luna_lucent_beam"
+                },
+                "4": {
+                  "old": "luna_lunar_blessing",
+                  "new": "luna_lunar_blessing"
+                },
+                "5": {
+                  "old": "luna_lucent_beam",
+                  "new": "luna_lucent_beam"
+                },
+                "6": {
+                  "old": "luna_eclipse",
+                  "new": "luna_eclipse"
+                },
+                "7": {
+                  "old": "luna_lucent_beam",
+                  "new": "luna_lucent_beam"
+                },
+                "8": {
+                  "old": "luna_moon_glaive",
+                  "new": "luna_moon_glaive"
+                },
+                "9": {
+                  "old": "luna_moon_glaive",
+                  "new": "luna_moon_glaive"
+                },
+                "10": {
+                  "old": "special_bonus_unique_luna_7",
+                  "new": "special_bonus_unique_luna_7"
+                },
+                "11": {
+                  "old": "luna_moon_glaive",
+                  "new": "luna_moon_glaive"
+                },
+                "12": {
+                  "old": "luna_eclipse",
+                  "new": "luna_eclipse"
+                },
+                "13": {
+                  "old": "luna_moon_glaive",
+                  "new": "luna_moon_glaive"
+                },
+                "14": {
+                  "old": "luna_lunar_blessing",
+                  "new": "luna_lunar_blessing"
+                },
+                "15": {
+                  "old": "special_bonus_unique_luna_6",
+                  "new": "special_bonus_unique_luna_1"
+                },
+                "16": {
+                  "old": "luna_lunar_blessing",
+                  "new": "luna_lunar_blessing"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "luna_eclipse",
+                  "new": "luna_eclipse"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_luna_2",
+                  "new": "special_bonus_unique_luna_6"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_luna_5",
+                  "new": "special_bonus_unique_luna_5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_omniknight",
+          "changes": {
+            "Bot": {
+              "Build": {
+                "1": {
+                  "old": "omniknight_purification",
+                  "new": "omniknight_purification"
+                },
+                "2": {
+                  "old": "omniknight_martyr",
+                  "new": "omniknight_martyr"
+                },
+                "3": {
+                  "old": "omniknight_purification",
+                  "new": "omniknight_purification"
+                },
+                "4": {
+                  "old": "omniknight_hammer_of_purity",
+                  "new": "omniknight_hammer_of_purity"
+                },
+                "5": {
+                  "old": "omniknight_purification",
+                  "new": "omniknight_purification"
+                },
+                "6": {
+                  "old": "omniknight_guardian_angel",
+                  "new": "omniknight_guardian_angel"
+                },
+                "7": {
+                  "old": "omniknight_purification",
+                  "new": "omniknight_purification"
+                },
+                "8": {
+                  "old": "omniknight_martyr",
+                  "new": "omniknight_martyr"
+                },
+                "9": {
+                  "old": "omniknight_martyr",
+                  "new": "omniknight_martyr"
+                },
+                "10": {
+                  "old": "special_bonus_unique_omniknight_5",
+                  "new": "special_bonus_unique_omniknight_2"
+                },
+                "11": {
+                  "old": "omniknight_martyr",
+                  "new": "omniknight_martyr"
+                },
+                "12": {
+                  "old": "omniknight_guardian_angel",
+                  "new": "omniknight_guardian_angel"
+                },
+                "13": {
+                  "old": "omniknight_hammer_of_purity",
+                  "new": "omniknight_hammer_of_purity"
+                },
+                "14": {
+                  "old": "omniknight_hammer_of_purity",
+                  "new": "omniknight_hammer_of_purity"
+                },
+                "15": {
+                  "old": "special_bonus_unique_omniknight_7",
+                  "new": "special_bonus_unique_omniknight_7"
+                },
+                "16": {
+                  "old": "omniknight_hammer_of_purity",
+                  "new": "omniknight_hammer_of_purity"
+                },
+                "17": {
+                  "old": "",
+                  "new": ""
+                },
+                "18": {
+                  "old": "omniknight_guardian_angel",
+                  "new": "omniknight_guardian_angel"
+                },
+                "19": {
+                  "old": "",
+                  "new": ""
+                },
+                "20": {
+                  "old": "special_bonus_unique_omniknight_guardian_angel_duration",
+                  "new": "special_bonus_unique_omniknight_6"
+                },
+                "21": {
+                  "old": "",
+                  "new": ""
+                },
+                "22": {
+                  "old": "",
+                  "new": ""
+                },
+                "23": {
+                  "old": "",
+                  "new": ""
+                },
+                "24": {
+                  "old": "",
+                  "new": ""
+                },
+                "25": {
+                  "old": "special_bonus_unique_omniknight_1",
+                  "new": "special_bonus_unique_omniknight_1"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

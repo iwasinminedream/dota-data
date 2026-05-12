@@ -1,13 +1,13 @@
-ClientVersion=6786
-ServerVersion=6786
+ClientVersion=6787
+ServerVersion=6787
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10642105
-VersionDate=May 07 2026
-VersionTime=16:43:13
+SourceRevision=10650439
+VersionDate=May 12 2026
+VersionTime=13:38:56
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -53166,7 +53166,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3804             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3848             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53426,7 +53426,7 @@ dota_hero_demo_default_enemy                                                    
 dota_hero_demo_default_enemy_variant                                             : 0                : cl, a                            : 
 dota_hero_demo_is_hosting                                                        : false            : cl                               : 
 dota_hero_demo_join_permissions                                                  : 0                : cl, a, per_user                  : Determines how someone can join this demo mode session. 0 means invite only, 1 means any friend can join.
-dota_hero_demo_map                                                               : 0                : cl, a, per_user                  : 
+dota_hero_demo_map                                                               : 1                : cl, a, per_user                  : 
 dota_hero_demo_spawn_creeps_enabled                                              : false            : cl, a                            : 
 dota_hero_demo_towers_enabled                                                    : true             : cl, a                            : 
 dota_hero_god_mode                                                               : false            : sv, cheat                        : 
@@ -53638,7 +53638,7 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 128              : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_automatic                                                       : 4                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
 dota_matchgroups_new                                                             : 0                : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 107              : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
@@ -54219,7 +54219,7 @@ dota_spectator_hudshow                                                          
 dota_spectator_increasereplayspeed                                               : cmd              : cl                               : Increase replay speed
 dota_spectator_inventory_snapshot_interval                                       : 30               : sv                               : Seconds between inventory snapshots
 dota_spectator_minimum_spawn_delay                                               : 1.5              : cl                               : Hero spawning takes at least this long so that we can move the camera and play the particle effect
-dota_spectator_mode                                                              : 1                : cl                               : Toggles the spectator mode: 0=Directed - 1=Free Cam - 2=Hero Chase - 3=PlayerView
+dota_spectator_mode                                                              : 0                : cl                               : Toggles the spectator mode: 0=Directed - 1=Free Cam - 2=Hero Chase - 3=PlayerView
 dota_spectator_options_autohide                                                  : true             : cl, a                            : 
 dota_spectator_options_enabled                                                   : true             : cl                               : 
 dota_spectator_pause_on_slow_frame_threshold                                     : 0                : cl                               : 
@@ -55989,7 +55989,7 @@ r_grass_alpha_test                                                              
 r_grass_density_mode                                                             : 0                :                                  : 0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1
 r_grass_end_fade                                                                 : 3000             :                                  : 
 r_grass_max_brightness_change                                                    : 75               :                                  : 
-r_grass_quality                                                                  : 2                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
+r_grass_quality                                                                  : 1                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
 r_grass_start_fade                                                               : 2000             :                                  : 
 r_grass_vertex_lighting                                                          : 0                :                                  : 
 r_hair_ao                                                                        : true             :                                  : 
@@ -56662,7 +56662,7 @@ soundscape_fadetime                                                             
 soundscape_flush                                                                 : cmd              : sv                               : Flushes the server & client side soundscapes
 soundscape_message                                                               : false            : cl                               : 
 soundscape_radius_debug                                                          : false            : cl, cheat                        : Prints current volume of radius sounds
-soundsystem_device_used                                                          : Динамики (FIFINE K670 Microphone) :                                  : Sound device in use (changing this does not change the soundsystem).
+soundsystem_device_used                                                          : Наушники (WH-1000XM6) :                                  : Sound device in use (changing this does not change the soundsystem).
 soundsystem_update_async                                                         : true             :                                  : 
 soundsysteminfo                                                                  : cmd              :                                  : Describe the current sound device without an active voice list.
 spawn_group_activate                                                             : cmd              : sv, cheat                        : Activate specified spawngroup.

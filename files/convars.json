@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3804",
+    "default": "3848",
     "flags": [
       "cl",
       "a",
@@ -11093,7 +11093,7 @@
     "description": "Determines how someone can join this demo mode session. 0 means invite only, 1 means any friend can join."
   },
   "dota_hero_demo_map": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -17194,7 +17194,7 @@
     "description": "Hero spawning takes at least this long so that we can move the camera and play the particle effect"
   },
   "dota_spectator_mode": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -30106,7 +30106,7 @@
     "description": ""
   },
   "r_grass_quality": {
-    "default": "2",
+    "default": "1",
     "flags": [],
     "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
   },
@@ -34501,7 +34501,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (FIFINE K670 Microphone)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
