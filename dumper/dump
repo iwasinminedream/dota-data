@@ -1,13 +1,13 @@
-ClientVersion=6787
-ServerVersion=6787
+ClientVersion=6788
+ServerVersion=6788
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10650439
-VersionDate=May 12 2026
-VersionTime=13:38:56
+SourceRevision=10652844
+VersionDate=May 13 2026
+VersionTime=09:45:24
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -53166,7 +53166,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3848             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3853             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -54219,7 +54219,7 @@ dota_spectator_hudshow                                                          
 dota_spectator_increasereplayspeed                                               : cmd              : cl                               : Increase replay speed
 dota_spectator_inventory_snapshot_interval                                       : 30               : sv                               : Seconds between inventory snapshots
 dota_spectator_minimum_spawn_delay                                               : 1.5              : cl                               : Hero spawning takes at least this long so that we can move the camera and play the particle effect
-dota_spectator_mode                                                              : 0                : cl                               : Toggles the spectator mode: 0=Directed - 1=Free Cam - 2=Hero Chase - 3=PlayerView
+dota_spectator_mode                                                              : 1                : cl                               : Toggles the spectator mode: 0=Directed - 1=Free Cam - 2=Hero Chase - 3=PlayerView
 dota_spectator_options_autohide                                                  : true             : cl, a                            : 
 dota_spectator_options_enabled                                                   : true             : cl                               : 
 dota_spectator_pause_on_slow_frame_threshold                                     : 0                : cl                               : 
