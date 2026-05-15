@@ -19759,7 +19759,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a"

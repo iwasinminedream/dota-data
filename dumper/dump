@@ -1,13 +1,13 @@
-ClientVersion=6788
-ServerVersion=6788
+ClientVersion=6789
+ServerVersion=6789
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10652844
-VersionDate=May 13 2026
-VersionTime=09:45:24
+SourceRevision=10658371
+VersionDate=May 14 2026
+VersionTime=15:43:36
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34793,11 +34793,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1807
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1808
+    "value":1794
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_CAST5_STATUE",
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34913,7 +34917,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1805
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -35069,7 +35073,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1793
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35241,7 +35245,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1794
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35505,7 +35509,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1802
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35545,7 +35549,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1803
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35557,7 +35561,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1804
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35577,7 +35581,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1797
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35665,7 +35669,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1806
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35768,10 +35772,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_TORRENT",
-    "value":1795
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -35833,7 +35833,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1796
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45437,19 +45437,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1798
+    "value":1802
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1799
+    "value":1803
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1800
+    "value":1804
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1801
+    "value":1799
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -54562,7 +54562,7 @@ dota_watch_live_request_period                                                  
 dota_watch_pause_at_the_end_of_all_replays                                       : true             : cl                               : Pause at the end of replays
 dota_wearables_clientside                                                        : false            : sv, cl, rep                      : 
 dota_weekend_tourney_debug                                                       : cmd              : cl                               : Prints local weekend tourney object(s), if any
-dota_weekend_tourney_selected_division                                           : 2                : cl, a                            : Default division ID to show for weekend leagues and such
+dota_weekend_tourney_selected_division                                           : 0                : cl, a                            : Default division ID to show for weekend leagues and such
 dota_will_purchase_gold_remaining_max_remaining                                  : 1000             : cl                               : On the 'I will purchase <item>' alert, the maximum amount of gold remaining when showing the remaining gold cost
 dota_will_purchase_gold_remaining_min_cost                                       : 2000             : cl                               : On the 'I will purchase <item>' alert, the minimum cost of an item to show the remaining gold cost
 dota_windrunner_arcana_disable_hud_display                                       : false            : cl, a                            : 

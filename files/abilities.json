@@ -11334,9 +11334,6 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_NO",
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3",
     "AbilityCastGestureSlot": "DEFAULT",
-    "AbilityDraftExtraAbilities": {
-      "brewmaster_primal_companion": "scepter"
-    },
     "AbilityCooldown": 0,
     "AbilityManaCost": 0,
     "AbilityValues": {

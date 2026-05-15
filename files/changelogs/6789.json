@@ -1,0 +1,37 @@
+{
+  "version": "6789",
+  "date": "May 14 2026",
+  "time": "15:43:36",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1795
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "brewmaster_drunken_brawler",
+          "changes": {
+            "AbilityDraftExtraAbilities": {
+              "brewmaster_primal_companion": {
+                "old": "scepter",
+                "new": null
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
