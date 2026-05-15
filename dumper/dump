@@ -1,13 +1,13 @@
-ClientVersion=6789
-ServerVersion=6789
+ClientVersion=6790
+ServerVersion=6790
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10658371
-VersionDate=May 14 2026
-VersionTime=15:43:36
+SourceRevision=10659841
+VersionDate=May 15 2026
+VersionTime=09:24:30
 $> dump_panorama_css_properties
 === align ===
 &lt;Needs a description&gt;
@@ -34793,15 +34793,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -34917,7 +34913,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1798
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -35073,7 +35069,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1807
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -35245,7 +35241,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1808
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -35509,7 +35505,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1800
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -35549,7 +35545,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1796
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -35561,7 +35557,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1797
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -35581,7 +35577,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1805
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -35669,7 +35665,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1801
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -35772,6 +35768,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_TORRENT",
+    "value":1806
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -35833,7 +35833,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1806
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -45437,19 +45437,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1802
+    "value":1799
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1803
+    "value":1800
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1804
+    "value":1801
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1799
+    "value":1797
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52790,7 +52790,7 @@ dota_alt_show_neutral_stack_times_and_arrow                                     
 dota_alt_show_rune_spawn_times                                                   : true             : cl, a                            : 
 dota_alt_show_ward_suggestions                                                   : true             : cl, a                            : 
 dota_alt_shows_neutral_spawn_boxes                                               : true             : cl, a, per_user                  : 
-dota_alt_shows_tower_attack_range                                                : true             : cl, a, per_user                  : 
+dota_alt_shows_tower_attack_range                                                : false            : cl, a, per_user                  : 
 dota_always_show_hero_finder                                                     : false            : cl, a, per_user                  : Always display the hero finder.
 dota_ambient_cloth                                                               : true             : cl                               : 
 dota_ambient_creatures                                                           : true             : cl                               : 
@@ -53166,7 +53166,7 @@ dota_cycle_selected                                                             
 dota_damage_flash                                                                : true             : sv, a                            : Flash when enemies take damage from the player
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 3853             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 3860             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -54518,8 +54518,8 @@ dota_video_config.DeviceID                                                      
 dota_video_config.setting.aspectratiomode                                        : 1                : cl                               : 
 dota_video_config.setting.coop_fullscreen                                        : 0                : cl                               : 
 dota_video_config.setting.cpu_level                                              : 2                : cl                               : 
-dota_video_config.setting.defaultres                                             : 1920             : cl                               : 
-dota_video_config.setting.defaultresheight                                       : 1080             : cl                               : 
+dota_video_config.setting.defaultres                                             : 2560             : cl                               : 
+dota_video_config.setting.defaultresheight                                       : 1440             : cl                               : 
 dota_video_config.setting.dota_ambient_cloth                                     : true             : cl                               : 
 dota_video_config.setting.dota_ambient_creatures                                 : true             : cl                               : 
 dota_video_config.setting.dota_cheap_water                                       : false            : cl                               : 
@@ -55989,7 +55989,7 @@ r_grass_alpha_test                                                              
 r_grass_density_mode                                                             : 0                :                                  : 0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1
 r_grass_end_fade                                                                 : 3000             :                                  : 
 r_grass_max_brightness_change                                                    : 75               :                                  : 
-r_grass_quality                                                                  : 1                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
+r_grass_quality                                                                  : 0                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
 r_grass_start_fade                                                               : 2000             :                                  : 
 r_grass_vertex_lighting                                                          : 0                :                                  : 
 r_hair_ao                                                                        : true             :                                  : 

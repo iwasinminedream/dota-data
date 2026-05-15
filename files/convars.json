@@ -6243,7 +6243,7 @@
     "description": ""
   },
   "dota_alt_shows_tower_attack_range": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3853",
+    "default": "3860",
     "flags": [
       "cl",
       "a",
@@ -19459,14 +19459,14 @@
     "description": ""
   },
   "dota_video_config.setting.defaultres": {
-    "default": "1920",
+    "default": "2560",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.defaultresheight": {
-    "default": "1080",
+    "default": "1440",
     "flags": [
       "cl"
     ],
@@ -30106,7 +30106,7 @@
     "description": ""
   },
   "r_grass_quality": {
-    "default": "1",
+    "default": "0",
     "flags": [],
     "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
   },
