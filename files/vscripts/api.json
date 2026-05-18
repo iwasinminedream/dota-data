@@ -33804,13 +33804,12 @@
   {
     "kind": "class",
     "name": "CScriptHTTPRequest",
-    "clientName": "CScriptHTTPRequest",
     "description": "Note: Actual `CScriptHTTPRequest` global exists only after CreateHTTPRequest is called.",
     "members": [
       {
         "kind": "function",
         "name": "Send",
-        "available": "both",
+        "available": "server",
         "description": "Send a HTTP request.",
         "returns": [
           "bool"
@@ -33840,7 +33839,7 @@
       {
         "kind": "function",
         "name": "SetHTTPRequestAbsoluteTimeoutMS",
-        "available": "both",
+        "available": "server",
         "description": "Set the total timeout on the request.",
         "returns": [
           "bool"
@@ -33857,7 +33856,7 @@
       {
         "kind": "function",
         "name": "SetHTTPRequestGetOrPostParameter",
-        "available": "both",
+        "available": "server",
         "description": "Set a POST or GET parameter on the request.",
         "returns": [
           "bool"
@@ -33880,7 +33879,7 @@
       {
         "kind": "function",
         "name": "SetHTTPRequestHeaderValue",
-        "available": "both",
+        "available": "server",
         "description": "Set a header value on the request.",
         "returns": [
           "bool"
@@ -33903,7 +33902,7 @@
       {
         "kind": "function",
         "name": "SetHTTPRequestNetworkActivityTimeout",
-        "available": "both",
+        "available": "server",
         "description": "Set the network timeout on the request - this timer is reset when any data is received.",
         "returns": [
           "bool"
@@ -33920,7 +33919,7 @@
       {
         "kind": "function",
         "name": "SetHTTPRequestRawPostBody",
-        "available": "both",
+        "available": "server",
         "description": "Set the literal body of a post - invalid after setting a post parameter.",
         "returns": [
           "bool"

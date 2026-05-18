@@ -1,0 +1,37 @@
+{
+  "version": "6791",
+  "date": "May 18 2026",
+  "time": "13:58:31",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1794
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.aspectratiomode"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.monitor_index"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.useadvanced"
+        }
+      ],
+      "changed": []
+    }
+  }
+}
