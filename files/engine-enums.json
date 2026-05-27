@@ -1794,6 +1794,10 @@
         "shortName": "DOTA_KINETIC_FIELD"
       },
       {
+        "name": "ACT_DOTA_LARGO_ULT_STRUM_FAIL",
+        "shortName": "DOTA_LARGO_ULT_STRUM_FAIL"
+      },
+      {
         "name": "ACT_DOTA_LARGO_ULT_STRUM_SUCCESS",
         "shortName": "DOTA_LARGO_ULT_STRUM_SUCCESS"
       },

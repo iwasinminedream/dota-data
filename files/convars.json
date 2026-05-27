@@ -6071,7 +6071,7 @@
     "description": "If set, brings Dota to the foreground when unpaused"
   },
   "dota_active_play_section_new": {
-    "default": "1",
+    "default": "8",
     "flags": [
       "cl",
       "a",
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3917",
+    "default": "3950",
     "flags": [
       "cl",
       "a",
@@ -12605,7 +12605,7 @@
     "description": ""
   },
   "dota_lobby_settings_advanced_visible": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -13308,7 +13308,7 @@
     "description": "If enabled, mouse will be locked to the window when in game and spectating in a mode that doesn't give camera control"
   },
   "dota_mouse_window_lock": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -21688,7 +21688,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "119.712",
+    "default": "120.361",
     "flags": [
       "a",
       "release"
@@ -22674,7 +22674,7 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "-971898879",
+    "default": "443930951",
     "flags": [
       "release"
     ],
@@ -30106,7 +30106,7 @@
     "description": ""
   },
   "r_grass_quality": {
-    "default": "1",
+    "default": "0",
     "flags": [],
     "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
   },
