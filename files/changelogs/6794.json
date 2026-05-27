@@ -1,0 +1,19 @@
+{
+  "version": "6794",
+  "date": "May 27 2026",
+  "time": "09:32:11",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1805
+        }
+      ],
+      "changed": []
+    }
+  }
+}
