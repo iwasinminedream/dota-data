@@ -32668,8 +32668,8 @@
         "SlotText": "#LoadoutSlot_head_Accessory",
         "TextureWidth": 512,
         "TextureHeight": 512,
-        "MaxPolygonsLOD0": 3000,
-        "MaxPolygonsLOD1": 1200
+        "MaxPolygonsLOD0": 3500,
+        "MaxPolygonsLOD1": 1400
       },
       "1": {
         "SlotIndex": 1,
@@ -32677,8 +32677,8 @@
         "SlotText": "#LoadoutSlot_Shoulder",
         "TextureWidth": 256,
         "TextureHeight": 256,
-        "MaxPolygonsLOD0": 2000,
-        "MaxPolygonsLOD1": 800
+        "MaxPolygonsLOD0": 3500,
+        "MaxPolygonsLOD1": 1400
       },
       "2": {
         "SlotIndex": 2,
@@ -32686,26 +32686,26 @@
         "SlotText": "#LoadoutSlot_Arms",
         "TextureWidth": 256,
         "TextureHeight": 256,
-        "MaxPolygonsLOD0": 2000,
-        "MaxPolygonsLOD1": 800
+        "MaxPolygonsLOD0": 2500,
+        "MaxPolygonsLOD1": 1000
       },
       "3": {
         "SlotIndex": 3,
         "SlotName": "back",
         "SlotText": "#LoadoutSlot_Armor",
-        "TextureWidth": 256,
-        "TextureHeight": 256,
-        "MaxPolygonsLOD0": 2500,
-        "MaxPolygonsLOD1": 1000
+        "TextureWidth": 512,
+        "TextureHeight": 512,
+        "MaxPolygonsLOD0": 5000,
+        "MaxPolygonsLOD1": 2000
       },
       "4": {
         "SlotIndex": 4,
         "SlotName": "ability_ultimate",
         "SlotText": "#LoadoutSlot_LoneDruid_TrueForm",
         "TextureWidth": 1024,
-        "TextureHeight": 512,
-        "MaxPolygonsLOD0": 5000,
-        "MaxPolygonsLOD1": 3000,
+        "TextureHeight": 1024,
+        "MaxPolygonsLOD0": 10000,
+        "MaxPolygonsLOD1": 4000,
         "LoadoutPreviewMode": "transformation",
         "no_import": 1
       },
@@ -32715,8 +32715,8 @@
         "SlotText": "#LoadoutSlot_LoneDruid_SpiritBear",
         "TextureWidth": 512,
         "TextureHeight": 512,
-        "MaxPolygonsLOD0": 4500,
-        "MaxPolygonsLOD1": 3000,
+        "MaxPolygonsLOD0": 8000,
+        "MaxPolygonsLOD1": 3200,
         "no_import": 1,
         "GeneratesUnits": {
           "0": "npc_dota_lone_druid_bear"
@@ -32728,8 +32728,8 @@
         "SlotText": "#LoadoutSlot_Weapon",
         "TextureWidth": 256,
         "TextureHeight": 256,
-        "MaxPolygonsLOD0": 1000,
-        "MaxPolygonsLOD1": 500
+        "MaxPolygonsLOD0": 2000,
+        "MaxPolygonsLOD1": 800
       },
       "7": {
         "SlotIndex": 7,

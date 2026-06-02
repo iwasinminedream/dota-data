@@ -6327,10 +6327,6 @@
         "shortName": "ALLIES_YES_ENEMIES_NO"
       },
       {
-        "name": "SPELL_IMMUNITY_ENEMIES_NO",
-        "shortName": "ENEMIES_NO"
-      },
-      {
         "name": "SPELL_IMMUNITY_ENEMIES_YES",
         "shortName": "ENEMIES_YES"
       },

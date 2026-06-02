@@ -1913,7 +1913,7 @@
     "description": ""
   },
   "chat_wheel_phrase_1": {
-    "default": "1",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3950",
+    "default": "3970",
     "flags": [
       "cl",
       "a",
@@ -12725,7 +12725,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "65668",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -21688,7 +21688,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "120.361",
+    "default": "60",
     "flags": [
       "a",
       "release"
@@ -33092,7 +33092,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.04638",
+    "default": "0.322731",
     "flags": [
       "a"
     ],
