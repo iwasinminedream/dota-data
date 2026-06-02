@@ -46,6 +46,17 @@ async function buildUnits() {
 
   const count = Object.keys(result).length;
   console.log(`✔ Extracted ${count} units/heroes → ${outPath}`);
+
+  const heroes: KVObject = {};
+  for (const [key, value] of Object.entries(result)) {
+    if (key.startsWith('npc_dota_hero_')) {
+      heroes[key] = value;
+    }
+  }
+
+  const heroesPath = join('files', 'heroes.json');
+  writeFileSync(heroesPath, JSON.stringify(heroes, null, 2), 'utf8');
+  console.log(`✔ Extracted ${Object.keys(heroes).length} heroes → ${heroesPath}`);
 }
 
 function parseNumbersRecursive(object: KVObject) {
