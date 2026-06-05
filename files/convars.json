@@ -27,13 +27,6 @@
     ],
     "description": "Opens the second chatwheel menu while held"
   },
-  "+dota_ability_execute": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "+dota_camera_center_on_hero": {
     "default": "cmd",
     "flags": [
@@ -1904,7 +1897,7 @@
     "description": ""
   },
   "chat_wheel_phrase_0": {
-    "default": "8",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -1922,7 +1915,7 @@
     "description": ""
   },
   "chat_wheel_phrase_10": {
-    "default": "62",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -1976,7 +1969,7 @@
     "description": ""
   },
   "chat_wheel_phrase_2": {
-    "default": "2",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -1985,7 +1978,7 @@
     "description": ""
   },
   "chat_wheel_phrase_3": {
-    "default": "3",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -2003,7 +1996,7 @@
     "description": ""
   },
   "chat_wheel_phrase_5": {
-    "default": "5",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -2012,7 +2005,7 @@
     "description": ""
   },
   "chat_wheel_phrase_6": {
-    "default": "6",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -2021,7 +2014,7 @@
     "description": ""
   },
   "chat_wheel_phrase_7": {
-    "default": "7",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -2030,7 +2023,7 @@
     "description": ""
   },
   "chat_wheel_phrase_8": {
-    "default": "54",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -2039,7 +2032,7 @@
     "description": ""
   },
   "chat_wheel_phrase_9": {
-    "default": "52",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -5947,6 +5940,13 @@
     ],
     "description": "Dumps the modifier refcounts of all hero abilities"
   },
+  "dota_ability_execute": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_ability_frogrock_show_fixed_hud": {
     "default": "true",
     "flags": [
@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3970",
+    "default": "3980",
     "flags": [
       "cl",
       "a",
@@ -11093,7 +11093,7 @@
     "description": "Determines how someone can join this demo mode session. 0 means invite only, 1 means any friend can join."
   },
   "dota_hero_demo_map": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -34501,7 +34501,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (WH-1000XM6)",
+    "default": "Динамики (FIFINE K670 Microphone)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
