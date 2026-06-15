@@ -6333,6 +6333,10 @@
       {
         "name": "SPELL_IMMUNITY_ENEMIES_YES",
         "shortName": "ENEMIES_YES"
+      },
+      {
+        "name": "SPELL_IMMUNITY_NONE",
+        "shortName": "NONE"
       }
     ]
   },
@@ -6350,10 +6354,6 @@
       {
         "name": "DAMAGE_TYPE_ArmorPhysical",
         "shortName": "ArmorPhysical"
-      },
-      {
-        "name": "DAMAGE_TYPE_HP_REMOVAL",
-        "shortName": "HP_REMOVAL"
       },
       {
         "name": "DAMAGE_TYPE_MAGICAL",

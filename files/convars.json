@@ -9103,7 +9103,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "3980",
+    "default": "3992",
     "flags": [
       "cl",
       "a",
@@ -11436,7 +11436,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "34930089341",
+    "default": "35331799293",
     "flags": [
       "cl",
       "a",
@@ -30106,7 +30106,7 @@
     "description": ""
   },
   "r_grass_quality": {
-    "default": "0",
+    "default": "1",
     "flags": [],
     "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
   },

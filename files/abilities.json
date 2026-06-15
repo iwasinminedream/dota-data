@@ -17263,8 +17263,7 @@
         "affected_by_aoe_increase": 1
       },
       "bonus_attack_speed": {
-        "value": 0,
-        "special_bonus_unique_faceless_void": "+100"
+        "value": 0
       },
       "bonus_move_speed": {
         "value": 50
@@ -26267,7 +26266,7 @@
     "AbilityValues": {
       "stack_collection_range": 925,
       "spell_amp_per_stack": 1,
-      "max_stacks_tooltip": {
+      "max_stacks": {
         "value": 5,
         "hero_levelup": "+1"
       }

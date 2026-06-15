@@ -1,0 +1,88 @@
+{
+  "version": "6807",
+  "date": "Jun 15 2026",
+  "time": "14:46:05",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1803
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "SpellImmunityType",
+          "name": "SPELL_IMMUNITY_NONE"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "DamageType",
+          "name": "DAMAGE_TYPE_HP_REMOVAL"
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "faceless_void_time_zone",
+          "changes": {
+            "AbilityValues": {
+              "bonus_attack_speed": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_faceless_void": {
+                  "old": "+100",
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "muerta_supernatural",
+          "changes": {
+            "AbilityValues": {
+              "max_stacks_tooltip": {
+                "value": {
+                  "old": 5,
+                  "new": null
+                },
+                "hero_levelup": {
+                  "old": "+1",
+                  "new": null
+                }
+              },
+              "max_stacks": {
+                "value": {
+                  "old": null,
+                  "new": 5
+                },
+                "hero_levelup": {
+                  "old": null,
+                  "new": "+1"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
