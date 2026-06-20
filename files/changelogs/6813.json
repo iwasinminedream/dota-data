@@ -1,0 +1,48 @@
+{
+  "version": "6813",
+  "date": "Jun 19 2026",
+  "time": "15:44:04",
+  "changes": {
+    "Lua API": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        
+      ]
+    },
+    "Lua Types": {
+      "added": [
+
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DamageType",
+          "name": "DAMAGE_TYPE_HP_REMOVAL"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Localization": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_special_bonus_unique_wisp",
+          "changes": {
+            "value": {
+              "old": "+{s:bonus_hero_damage} Spirits Hero Damage",
+              "new": "+{s:bonus_hero_damage}% Spirits Damage"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

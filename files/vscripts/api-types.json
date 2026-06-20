@@ -1427,7 +1427,7 @@
   },
   {
     "kind": "object",
-    "name": "ModifierUnitEvent",
+    "name": "ModifierUnitOrderEvent",
     "fields": [
       {
         "name": "order_type",
@@ -1435,6 +1435,18 @@
           "dotaunitorder_t"
         ]
       },
+      {
+        "name": "unit",
+        "types": [
+          "CDOTA_BaseNPC"
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "object",
+    "name": "ModifierUnitEvent",
+    "fields": [
       {
         "name": "unit",
         "types": [
@@ -1457,6 +1469,18 @@
         "name": "target",
         "types": [
           "CDOTA_BaseNPC"
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "object",
+    "name": "ModifierItemTargetEvent",
+    "fields": [
+      {
+        "name": "target",
+        "types": [
+          "CDOTA_Item"
         ]
       }
     ]

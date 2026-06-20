@@ -484,6 +484,72 @@ function compareStates(prev, curr) {
   return changes;
 }
 
+// Escape control characters to their KV-file form so multi-line strings stay on one
+// changelog row (matches how the localization page renders values).
+function escapeLoc(v) {
+  return typeof v === 'string'
+    ? v.replace(/\r/g, '\\r').replace(/\n/g, '\\n').replace(/\t/g, '\\t')
+    : v;
+}
+
+// Build the "Localization" category by diffing the previous committed english.json
+// (git HEAD) against the current working-tree english.json. Kept out of the state
+// snapshots (which would bloat by several MB); English is the canonical source.
+function buildLocalizationChanges() {
+  const { execSync } = require('child_process');
+  const englishPath = path.join(filesDir, 'localization', 'english.json');
+  if (!fs.existsSync(englishPath)) return null;
+
+  let current;
+  try {
+    current = JSON.parse(fs.readFileSync(englishPath, 'utf8'));
+  } catch {
+    return null;
+  }
+
+  let previous = null;
+  try {
+    const prevText = execSync('git show HEAD:files/localization/english.json', {
+      cwd: path.join(__dirname, '..'),
+      maxBuffer: 512 * 1024 * 1024,
+    }).toString('utf8');
+    previous = JSON.parse(prevText);
+  } catch {
+    // No committed english.json available (no git, or first commit).
+  }
+
+  // Without a previous baseline every token would look "added", which is noise rather
+  // than a changelog — skip the category entirely in that case.
+  if (!previous || Object.keys(previous).length === 0) return null;
+
+  const added = [];
+  const removed = [];
+  const changed = [];
+  const prevKeys = new Set(Object.keys(previous));
+
+  for (const [name, value] of Object.entries(current)) {
+    if (!prevKeys.has(name)) {
+      added.push({ type: 'localization', name, value: escapeLoc(value) });
+    } else if (previous[name] !== value) {
+      changed.push({
+        type: 'localization',
+        name,
+        changes: { value: { old: escapeLoc(previous[name]), new: escapeLoc(value) } },
+      });
+    }
+  }
+  for (const name of prevKeys) {
+    if (!(name in current)) {
+      removed.push({ type: 'localization', name, value: escapeLoc(previous[name]) });
+    }
+  }
+
+  if (added.length || removed.length || changed.length) {
+    return { added, removed, changed };
+  }
+  return null;
+}
+
 // Load previous state
 function loadPreviousState(version) {
   const statePath = path.join(statesDir, `${version}.json`);
@@ -519,6 +585,13 @@ if (!prevState && prevVersion) {
 }
 
 const changes = compareStates(prevState, currState);
+
+// Localization is diffed straight from git (previous commit vs working tree) rather
+// than the state snapshots, then merged in as its own category.
+const localizationChanges = buildLocalizationChanges();
+if (localizationChanges) {
+  changes['Localization'] = localizationChanges;
+}
 
 // Count changes
 let addedCount = 0, removedCount = 0, changedCount = 0;

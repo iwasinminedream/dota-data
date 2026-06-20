@@ -13,7 +13,9 @@ const modifierProperties: Record<string, boolean> = existsSync(modifierPropertie
 type ArgumentType =
   | null
   | 'ModifierUnitEvent'
+  | 'ModifierUnitOrderEvent'
   | 'ModifierTargetEvent'
+  | 'ModifierItemTargetEvent'
   | 'ModifierAbilityEvent'
   | 'ModifierAttackEvent'
   | 'ModifierInstanceEvent'
@@ -195,7 +197,7 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   GetModifierSpellsRequireHP: [null, anyNumber],
   GetModifierStackingRespawnTime: [null, anyNumber],
   GetModifierStatusResistance: [null, anyNumber],
-  GetModifierStatusResistanceCaster: ['ModifierUnitEvent', anyNumber],
+  GetModifierStatusResistanceCaster: ['ModifierUnitOrderEvent', anyNumber],
   GetModifierStatusResistanceStacking: [null, anyNumber],
   GetModifierSuperIllusion: [null, binaryBoolean],
   GetModifierSuperIllusionWithUltimate: [null, binaryBoolean],
@@ -237,17 +239,17 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   OnDamageCalculated: ['ModifierAttackEvent', ['nil']],
   OnDeath: ['ModifierInstanceEvent', ['nil']],
   OnDeathCompleted: ['ModifierInstanceEvent', ['nil']],
-  OnDominated: ['ModifierUnitEvent', ['nil']],
+  OnDominated: ['ModifierUnitOrderEvent', ['nil']],
   OnHealReceived: ['ModifierHealEvent', ['nil']],
   OnHealthGained: ['ModifierHealEvent', ['nil']],
   OnHeroKilled: ['ModifierAttackEvent', ['nil']],
-  OnManaGained: ['ModifierUnitEvent', ['nil']],
-  OnModelChanged: ['ModifierUnitEvent', ['nil']],
+  OnManaGained: ['ModifierUnitOrderEvent', ['nil']],
+  OnModelChanged: ['ModifierUnitOrderEvent', ['nil']],
   OnModifierAdded: ['ModifierAddedEvent', ['nil']],
-  OnOrder: ['ModifierUnitEvent', ['nil']],
+  OnOrder: ['ModifierUnitOrderEvent', ['nil']],
   OnProjectileDodge: ['ModifierAttackEvent', ['nil']],
-  OnRespawn: ['ModifierUnitEvent', ['nil']],
-  OnSetLocation: ['ModifierUnitEvent', ['nil']],
+  OnRespawn: ['ModifierUnitOrderEvent', ['nil']],
+  OnSetLocation: ['ModifierUnitOrderEvent', ['nil']],
   OnSpellAppliedSuccessfully: ['ModifierAbilityEvent', ['nil']],
   OnSpellTargetReady: [null, ['nil']],
   OnSpentHealth: ['ModifierAbilityEvent', ['nil']],
@@ -255,11 +257,11 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   OnStateChanged: ['ModifierUnitEvent', ['nil']],
   OnTakeDamage: ['ModifierInstanceEvent', ['nil']],
   OnTakeDamageKillCredit: ['ModifierAttackEvent', ['nil']],
-  OnTeleported: ['ModifierUnitEvent', ['nil']],
-  OnTeleporting: ['ModifierUnitEvent', ['nil']],
+  OnTeleported: ['ModifierUnitOrderEvent', ['nil']],
+  OnTeleporting: ['ModifierUnitOrderEvent', ['nil']],
   OnTooltip: [null, anyNumber],
   OnTooltip2: [null, anyNumber],
-  OnUnitMoved: ['ModifierUnitEvent', ['nil']],
+  OnUnitMoved: ['ModifierUnitOrderEvent', ['nil']],
   PreserveParticlesOnModelChanged: [null, binaryBoolean],
   ReincarnateTime: [null, anyNumber],
 
@@ -320,7 +322,7 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   GetModifierInventorySlotRestricted: ['ModifierTargetEvent', anyNumber],
   GetModifierInvisibilityAttackBehaviorException: [null, binaryBoolean],
   GetModifierIsPackRat: [null, binaryBoolean],
-  GetModifierItemSellbackCost: [null, anyNumber],
+  GetModifierItemSellbackCost: ['ModifierItemTargetEvent', anyNumber],
   GetModifierKillStreakBonusGoldPercentage: [null, anyNumber],
   GetModifierKnockbackAmplification_Percentage: [null, anyNumber],
   GetModifierLifestealRegenAmplify_Percentage: ['ModifierAttackEvent', anyNumber],
@@ -415,9 +417,9 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   OnDamagePrevented: ['ModifierAttackEvent', ['nil']],
   OnDayStarted: [null, ['nil']],
   OnForceProcMagicStick: [null, ['nil']],
-  OnFoWTeamChanged: ['ModifierUnitEvent', ['nil']],
+  OnFoWTeamChanged: ['ModifierUnitOrderEvent', ['nil']],
   OnHeroBeginDying: ['ModifierInstanceEvent', ['nil']],
-  OnIllusionCreated: ['ModifierUnitEvent', ['nil']],
+  OnIllusionCreated: ['ModifierUnitOrderEvent', ['nil']],
   OnKill: ['ModifierAttackEvent', ['nil']],
   OnMagicDamageCalculated: ['ModifierInstanceEvent', ['nil']],
   OnModifierRefreshed: ['ModifierInstanceEvent', ['nil']],
@@ -428,15 +430,15 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   OnProcessCleave: ['ModifierAttackEvent', ['nil']],
   OnProjectileObstructionHit: ['ModifierAttackEvent', ['nil']],
   OnPureDamageCalculated: ['ModifierAttackEvent', ['nil']],
-  OnPurged: ['ModifierUnitEvent', ['nil']],
+  OnPurged: ['ModifierUnitOrderEvent', ['nil']],
   OnRedirectHealthGain: [null, ['nil']],
-  OnRuneSpawn: ['ModifierUnitEvent', ['nil']],
+  OnRuneSpawn: ['ModifierUnitOrderEvent', ['nil']],
   OnScepterUpgradeSelected: [null, ['nil']],
   OnShardUpgradeSelected: [null, ['nil']],
   OnSpentItemCharge: [null, ['nil']],
   OnTakeDamagePostUnavoidableBlock: [null, ['nil']],
   OnTierTokenRerolled: [null, ['nil']],
-  OnTreeCutDown: [null, ['nil']],
+  OnTreeCutDown: ['ModifierUnitEvent', ['nil']],
   ReincarnateSuppressFX: [null, binaryBoolean],
 };
 

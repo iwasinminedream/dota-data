@@ -6356,6 +6356,10 @@
         "shortName": "ArmorPhysical"
       },
       {
+        "name": "DAMAGE_TYPE_HP_REMOVAL",
+        "shortName": "HP_REMOVAL"
+      },
+      {
         "name": "DAMAGE_TYPE_MAGICAL",
         "shortName": "MAGICAL"
       },

@@ -16858,7 +16858,14 @@
         "name": "GetModifierItemSellbackCost",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierItemTargetEvent"
+            ]
+          }
+        ],
         "returns": [
           "float"
         ]
@@ -18578,7 +18585,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19601,7 +19608,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19629,7 +19636,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19714,7 +19721,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19765,7 +19772,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19782,7 +19789,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19865,7 +19872,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19961,7 +19968,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -19989,7 +19996,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -20006,7 +20013,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -20034,7 +20041,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -20196,7 +20203,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -20213,7 +20220,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
@@ -20257,7 +20264,14 @@
         "name": "OnTreeCutDown",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierUnitEvent"
+            ]
+          }
+        ],
         "returns": [
           "nil"
         ]
@@ -20271,7 +20285,7 @@
           {
             "name": "event",
             "types": [
-              "ModifierUnitEvent"
+              "ModifierUnitOrderEvent"
             ]
           }
         ],
