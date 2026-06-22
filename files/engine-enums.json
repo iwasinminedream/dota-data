@@ -442,10 +442,6 @@
       {
         "name": "DOTA_ATTRIBUTE_STRENGTH_HP",
         "shortName": "STRENGTH_HP"
-      },
-      {
-        "name": "DOTA_ATTRIBUTE_STRENGTH_HP_REGEN",
-        "shortName": "STRENGTH_HP_REGEN"
       }
     ]
   },

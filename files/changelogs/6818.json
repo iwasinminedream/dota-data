@@ -1,0 +1,90 @@
+{
+  "version": "6818",
+  "date": "Jun 22 2026",
+  "time": "15:30:36",
+  "changes": {
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Attribute",
+          "name": "DOTA_ATTRIBUTE_STRENGTH_HP_REGEN"
+        }
+      ],
+      "changed": []
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_ringmaster",
+          "changes": {
+            "RandomEnabled": {
+              "old": 0,
+              "new": 1
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_kez",
+          "changes": {
+            "RandomEnabled": {
+              "old": 0,
+              "new": 1
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_largo",
+          "changes": {
+            "RandomEnabled": {
+              "old": 0,
+              "new": 1
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_dota_foreboding_modifier",
+          "value": "Sense of Foreboding"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_dota_foreboding_modifier_Description",
+          "value": "Axe's Sense of Foreboding increased by 1."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_dota_foreboding_modifier2",
+          "value": "Hmmmmm"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_dota_foreboding_modifier2_Description",
+          "value": "Everything seems fine."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TrophyDesc_MonsterHunter_HeroAtlas",
+          "value": "Awarded for unlocking entries in the Hero Atlas during the Monster Hunter event."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Axe_Missing",
+          "value": "Axe is missing and cannot participate"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
