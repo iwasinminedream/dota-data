@@ -1,2 +1,4 @@
 node_modules
 /lib
+# vConsole raw capture (DUMP_DEBUG=1 debug artifact)
+dumper/console-raw.log

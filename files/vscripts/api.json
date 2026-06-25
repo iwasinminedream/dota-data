@@ -6373,7 +6373,14 @@
         "returns": [
           "float"
         ],
-        "args": []
+        "args": [
+          {
+            "name": "ignoreModifiers",
+            "types": [
+              "bool"
+            ]
+          }
+        ]
       },
       {
         "kind": "function",
@@ -15009,7 +15016,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15152,18 +15159,32 @@
         "args": [],
         "returns": [
           "string"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
         "name": "GetAllowEtherealAttack",
         "available": "both",
         "abstract": true,
-        "args": [],
-        "returns": [
-          "nil"
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
         ],
-        "broken": true
+        "returns": [
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -15180,16 +15201,31 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
         "name": "GetAlwaysAutoAttackWhileHoldPosition",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15277,7 +15313,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15286,9 +15322,23 @@
         "name": "GetConvertAttackPhysicalToPure",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15297,9 +15347,16 @@
         "name": "GetCriticalStrikeBonus",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15344,9 +15401,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -15407,9 +15470,16 @@
         "name": "GetMagicalArmorPiercingPercentageTarget",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15457,7 +15527,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15478,7 +15548,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15497,7 +15567,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -15506,7 +15577,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15632,7 +15703,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -15642,7 +15714,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -15773,7 +15846,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15784,7 +15857,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15869,7 +15942,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15880,7 +15960,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15891,7 +15978,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15902,7 +15996,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -15911,9 +16012,16 @@
         "name": "GetModifierBonusDamageOutgoing_Percentage",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15944,7 +16052,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15965,7 +16073,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -15986,7 +16094,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16007,7 +16115,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16026,7 +16134,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -16050,9 +16159,16 @@
         "name": "GetModifierCastRangeBonusPercentage",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16093,6 +16209,16 @@
       {
         "kind": "function",
         "name": "GetModifierChangeAbilityValue",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierConstantCasttime",
         "available": "both",
         "abstract": true,
         "args": [],
@@ -16269,7 +16395,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16280,7 +16406,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16333,7 +16459,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -16389,7 +16516,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16440,7 +16567,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16451,7 +16578,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16472,9 +16599,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -16526,7 +16659,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -16543,9 +16677,16 @@
         "name": "GetModifierHealthcostReduction_Constant",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16633,9 +16774,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -16783,7 +16930,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16794,7 +16941,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -16849,7 +17003,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -16868,7 +17029,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -16887,7 +17049,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16932,7 +17094,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16960,7 +17122,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -16971,7 +17133,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17043,7 +17205,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17064,7 +17226,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17290,7 +17452,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -17382,8 +17545,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -17417,7 +17579,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -17552,7 +17715,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17580,9 +17743,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -17606,9 +17768,16 @@
         "name": "GetModifierPercentageCooldownOngoing",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17725,7 +17894,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -17781,9 +17951,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -17810,7 +17979,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -17847,7 +18017,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17892,7 +18062,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17903,7 +18073,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17941,7 +18111,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -17994,7 +18164,8 @@
         ],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18003,9 +18174,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -18024,7 +18194,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18035,7 +18205,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -18063,7 +18240,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18108,7 +18285,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -18146,7 +18330,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18167,7 +18351,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18178,7 +18362,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18224,6 +18408,36 @@
         "args": [],
         "returns": [
           "float"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierPropertyCustom1",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierPropertyCustom2",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierPropertyCustom3",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
         ]
       },
       {
@@ -18352,9 +18566,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18380,9 +18600,19 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
+      },
+      {
+        "kind": "function",
+        "name": "GetModifierReplaceAttack",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
       },
       {
         "kind": "function",
@@ -18410,9 +18640,15 @@
         "description": "Applies shard when this property is active",
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18439,7 +18675,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18448,7 +18685,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18459,9 +18696,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18487,7 +18730,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18542,9 +18785,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -18610,9 +18852,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18621,7 +18869,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -18657,7 +18912,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18674,7 +18930,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18700,7 +18957,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18783,7 +19040,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18792,7 +19050,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18803,9 +19061,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18831,9 +19095,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -18881,7 +19151,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18890,7 +19161,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ],
         "broken": true
       },
@@ -18902,7 +19173,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -18926,7 +19198,8 @@
             "kind": "literal",
             "value": 1
           }
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -19001,11 +19274,24 @@
         "name": "GetSuppressCleave",
         "available": "both",
         "abstract": true,
-        "args": [],
-        "returns": [
-          "nil"
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAttackEvent"
+            ]
+          }
         ],
-        "broken": true
+        "returns": [
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -19014,7 +19300,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -19066,9 +19359,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -19077,9 +19369,15 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
+        ]
       },
       {
         "kind": "function",
@@ -19099,7 +19397,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -19128,7 +19427,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -19149,9 +19455,8 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
-        ],
-        "broken": true
+          "float"
+        ]
       },
       {
         "kind": "function",
@@ -19485,7 +19790,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -19500,6 +19806,36 @@
             ]
           }
         ],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "OnCustom1",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "OnCustom2",
+        "available": "both",
+        "abstract": true,
+        "args": [],
+        "returns": [
+          "nil"
+        ]
+      },
+      {
+        "kind": "function",
+        "name": "OnCustom3",
+        "available": "both",
+        "abstract": true,
+        "args": [],
         "returns": [
           "nil"
         ]
@@ -19536,7 +19872,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -19839,8 +20176,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -19888,8 +20224,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -19906,7 +20241,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -19984,8 +20320,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -20085,7 +20420,8 @@
         "args": [],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -20112,8 +20448,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -20164,7 +20499,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -20191,8 +20527,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -20226,7 +20561,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -20236,8 +20572,7 @@
         "args": [],
         "returns": [
           "nil"
-        ],
-        "broken": true
+        ]
       },
       {
         "kind": "function",
@@ -20247,7 +20582,8 @@
         "args": [],
         "returns": [
           "float"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",
@@ -20291,7 +20627,8 @@
         ],
         "returns": [
           "nil"
-        ]
+        ],
+        "broken": true
       },
       {
         "kind": "function",

@@ -442,6 +442,10 @@
       {
         "name": "DOTA_ATTRIBUTE_STRENGTH_HP",
         "shortName": "STRENGTH_HP"
+      },
+      {
+        "name": "DOTA_ATTRIBUTE_STRENGTH_HP_REGEN",
+        "shortName": "STRENGTH_HP_REGEN"
       }
     ]
   },
@@ -5891,10 +5895,6 @@
     "name": "FieldType",
     "members": [
       {
-        "name": "FIELD_AI_SCHEDULE_BITS",
-        "shortName": "AI_SCHEDULE_BITS"
-      },
-      {
         "name": "FIELD_AMMO_INDEX",
         "shortName": "AMMO_INDEX"
       },
@@ -6063,12 +6063,20 @@
         "shortName": "NETWORK_ORIGIN_CELL_QUANTIZED_VECTOR"
       },
       {
+        "name": "FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTORWS",
+        "shortName": "NETWORK_ORIGIN_CELL_QUANTIZED_VECTORWS"
+      },
+      {
         "name": "FIELD_NETWORK_QUANTIZED_FLOAT",
         "shortName": "NETWORK_QUANTIZED_FLOAT"
       },
       {
         "name": "FIELD_NETWORK_QUANTIZED_VECTOR",
         "shortName": "NETWORK_QUANTIZED_VECTOR"
+      },
+      {
+        "name": "FIELD_NETWORK_QUANTIZED_VECTORWS",
+        "shortName": "NETWORK_QUANTIZED_VECTORWS"
       },
       {
         "name": "FIELD_POSITION_VECTOR",
@@ -6451,6 +6459,10 @@
       {
         "name": "DOTA_ABILITY_BEHAVIOR_FREE_DRAW_TARGETING",
         "shortName": "FREE_DRAW_TARGETING"
+      },
+      {
+        "name": "DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI",
+        "shortName": "HAS_DETAILS_UI"
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_HIDDEN",

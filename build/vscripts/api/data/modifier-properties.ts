@@ -474,8 +474,14 @@ export function modifierFunctionMethods(): apiTypes.ClassMethod[] {
 
       const isBroken = x.name in modifierProperties && modifierProperties[x.name] === false;
 
+      // Keep the documented type (args + returns) even when the property is
+      // currently "broken" — the type is documentation, and `broken` already
+      // flags that it doesn't work in this build. Stripping the type to nil made
+      // the method's signature flip every time the modifier test result changed,
+      // producing phantom Lua API changelog churn. The broken/working transition
+      // itself is tracked in the "Properties Fixed" category instead.
       const args: apiTypes.FunctionParameter[] = [];
-      if (argumentType !== null && !isBroken) {
+      if (argumentType !== null) {
         args.push({ name: 'event', types: [argumentType] });
       }
 
@@ -486,7 +492,7 @@ export function modifierFunctionMethods(): apiTypes.ClassMethod[] {
         abstract: true,
         description,
         args,
-        returns: isBroken ? ['nil'] : returns,
+        returns,
         ...(isBroken ? { broken: true as const } : {}),
       };
     });

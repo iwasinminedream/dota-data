@@ -4755,6 +4755,17 @@
         "description": "Is the control button pressed?"
       },
       {
+        "name": "IsKeyDown",
+        "args": [
+          {
+            "name": "nButtonNum",
+            "type": "number"
+          }
+        ],
+        "returns": "boolean",
+        "description": "Is this key pressed?"
+      },
+      {
         "name": "GetClickBehaviors",
         "args": [],
         "returns": "number",
@@ -6524,6 +6535,26 @@
         "returns": "void"
       },
       {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
         "name": "Data",
         "args": [
           {
@@ -7526,6 +7557,26 @@
           },
           {
             "name": "_arg_3",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
             "type": "number"
           }
         ],
@@ -8569,6 +8620,26 @@
         "returns": "void"
       },
       {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
         "name": "Data",
         "args": [
           {
@@ -9571,6 +9642,26 @@
           },
           {
             "name": "_arg_3",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
             "type": "number"
           }
         ],
@@ -10625,6 +10716,26 @@
         "returns": "void"
       },
       {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
         "name": "Data",
         "args": [
           {
@@ -11653,6 +11764,26 @@
         "returns": "void"
       },
       {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
         "name": "Data",
         "args": [
           {
@@ -12655,6 +12786,26 @@
           },
           {
             "name": "_arg_3",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
             "type": "number"
           }
         ],
@@ -13693,6 +13844,26 @@
           },
           {
             "name": "_arg_3",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetWidthInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
+            "type": "number"
+          }
+        ],
+        "returns": "void"
+      },
+      {
+        "name": "SetHeightInPixels",
+        "args": [
+          {
+            "name": "_arg_1",
             "type": "number"
           }
         ],

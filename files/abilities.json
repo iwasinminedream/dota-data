@@ -8259,6 +8259,107 @@
       "movement_speed": 10
     }
   },
+  "seasonal_dark_carnival_balloon": {
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE",
+    "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_BOTH",
+    "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC",
+    "AbilityCastAnimation": "ACT_INVALID",
+    "MaxLevel": 1,
+    "AssociatedLevelItemDef": 34475,
+    "AbilityTextureName": "consumables/dark_carnival_balloon",
+    "AbilityCastRange": 800,
+    "AbilityCastPoint": 0.2,
+    "AbilityCharges": "5 10",
+    "AbilityChargeRestoreTime": 0,
+    "AbilityCooldown": "60 60 40 40",
+    "AbilityDamage": 0,
+    "AbilityManaCost": 0,
+    "AbilityValues": {
+      "speed": {
+        "value": 1500
+      },
+      "min_distance_before_bounce": {
+        "value": 300
+      },
+      "drag": {
+        "value": 7
+      },
+      "duration": {
+        "value": 20
+      },
+      "max_height": {
+        "value": 300
+      },
+      "max_vertical_move_time": {
+        "value": 0.5
+      },
+      "bounce_turn_angle": {
+        "value": 45
+      },
+      "bounce_turn_angle_tree": {
+        "value": 30
+      },
+      "bounce_delay": {
+        "value": 0.6
+      },
+      "multi_spawn": {
+        "value": "0 0 0 0 1"
+      },
+      "different_types": "0 0 1",
+      "additional_charges_after_max_level": 5
+    }
+  },
+  "seasonal_dark_carnival_firework": {
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE",
+    "AbilityCastAnimation": "ACT_INVALID",
+    "MaxLevel": 1,
+    "AssociatedLevelItemDef": 34476,
+    "AbilityTextureName": "consumables/dark_carnival_fireworks",
+    "AbilityCastRange": 1200,
+    "AbilityCastPoint": 0,
+    "AbilityCharges": "5 10",
+    "AbilityChargeRestoreTime": 0,
+    "AbilityCooldown": "60 60 40 40",
+    "AbilityDamage": 0,
+    "AbilityManaCost": 0,
+    "AbilityValues": {
+      "radius": {
+        "value": 600
+      },
+      "speed": {
+        "value": 1200
+      },
+      "linger_duration": {
+        "value": 5
+      },
+      "explosion_type": "1 1 2 2 3",
+      "additional_charges_after_max_level": 5
+    }
+  },
+  "seasonal_dark_carnival_pie": {
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE",
+    "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_BOTH",
+    "AbilityUnitTargetType": "DOTA_UNIT_TARGET_HERO",
+    "AbilityCastAnimation": "ACT_INVALID",
+    "MaxLevel": 1,
+    "AssociatedLevelItemDef": 34479,
+    "AbilityTextureName": "consumables/dark_carnival_pie",
+    "AbilityCastRange": 1200,
+    "AbilityCastPoint": 0,
+    "AbilityCharges": "5 10",
+    "AbilityChargeRestoreTime": 0,
+    "AbilityCooldown": "60 60 60 40",
+    "AbilityDamage": 0,
+    "AbilityManaCost": 0,
+    "AbilityValues": {
+      "projectile_speed": {
+        "value": 1100
+      },
+      "golden_pie": "0 0 0 0 1",
+      "bounce": "0 0 1",
+      "additional_charges_after_max_level": 5
+    }
+  },
   "abaddon_death_coil": {
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET",
     "AbilityUnitTargetTeam": "DOTA_UNIT_TARGET_TEAM_BOTH",
@@ -8418,10 +8519,6 @@
       },
       "ally_threshold_scepter": {
         "special_bonus_scepter": 550
-      },
-      "redirect_range_scepter": {
-        "special_bonus_scepter": 900,
-        "affected_by_aoe_increase": 1
       },
       "immolate_damage": {
         "special_bonus_unique_abaddon_immolation": "+100"
@@ -8783,7 +8880,7 @@
     "MaxLevel": 1,
     "FightRecapLevel": 1,
     "IsGrantedByShard": 1,
-    "HasShardUpgrade": 1,
+    "TooltipSummaryProperties": "duration;attack_speed;hp_regen;move_speed",
     "AbilityCastRange": 800,
     "AbilityCastPoint": 0.2,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
@@ -8804,6 +8901,7 @@
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE",
     "AbilityUnitDamageType": "DAMAGE_TYPE_PHYSICAL",
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
+    "TooltipSummaryProperties": "duration;armor_reduction;damage",
     "AbilityCastPoint": 0.1,
     "AbilityCastRange": 900,
     "AbilityCooldown": 21,
@@ -8837,15 +8935,28 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
     "FightRecapLevel": 1,
     "AbilitySound": "Hero_Alchemist.UnstableConcoction.Fuse",
+    "TooltipSummaryProperties": "brew_explosion;#DOTA_Tooltip_ability_alchemist_unstable_concoction___max_effects;move_speed",
     "AbilityCastRange": 775,
     "AbilityCastPoint": 0,
     "AbilityCooldown": 17,
     "AbilityManaCost": 100,
     "AbilityValues": {
-      "brew_time": 5,
-      "brew_explosion": 5.5,
-      "min_stun": 0.25,
-      "max_stun": "1.7 2.2 2.7 3.2",
+      "brew_time": {
+        "value": 5,
+        "display_type": "kDuration"
+      },
+      "brew_explosion": {
+        "value": 5.5,
+        "display_type": "kDuration"
+      },
+      "min_stun": {
+        "value": 0.25,
+        "display_type": "kDebuffDuration"
+      },
+      "max_stun": {
+        "value": "1.7 2.2 2.7 3.2",
+        "display_type": "kDebuffDuration"
+      },
       "min_damage": 0,
       "max_damage": {
         "value": "150 220 290 360",
@@ -8943,6 +9054,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_NO",
     "FightRecapLevel": 2,
     "AbilitySound": "Hero_Alchemist.ChemicalRage.Cast",
+    "TooltipSummaryProperties": "duration;base_attack_time;bonus_health_regen;bonus_movespeed",
     "AbilityDraftExtraAbilities": {
       "alchemist_berserk_potion": "shard"
     },
@@ -8974,6 +9086,8 @@
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "AbilitySound": "Hero_Meepo.Geostrike",
     "IsBreakable": 1,
+    "FakeSubAbilityNames": "alchemist_attack;alchemist_acid_spray;alchemist_unstable_concoction",
+    "TooltipSummaryProperties": "#DOTA_Tooltip_ability_alchemist_corrosive_weaponry___stacks;slow_per_stack;attack_dmg_per_stack",
     "AbilityValues": {
       "max_stacks": "7 10 13 16",
       "debuff_duration": 4,
@@ -11210,7 +11324,7 @@
     }
   },
   "bounty_hunter_big_game_hunter": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI | DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI",
     "MaxLevel": 1,
     "Innate": 1,
     "AbilityValues": {
@@ -22564,6 +22678,7 @@
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "FightRecapLevel": 1,
     "AbilitySound": "Hero_Lina.DragonSlave",
+    "TooltipSummaryProperties": "dragon_slave_damage",
     "AbilityCastRange": 1075,
     "AbilityCastPoint": 0.35,
     "AbilityDuration": "0.6875 0.6875 0.6875 0.6875",
@@ -22596,6 +22711,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES_STRONG",
     "FightRecapLevel": 1,
     "AbilitySound": "Ability.LightStrikeArray",
+    "TooltipSummaryProperties": "light_strike_array_delay_time;light_strike_array_damage;light_strike_array_stun_duration",
     "AbilityCastRange": 700,
     "AbilityCastPoint": "0.45 0.45 0.45 0.45",
     "AbilityCooldown": "13 11 9 7",
@@ -22605,7 +22721,10 @@
         "value": 250,
         "affected_by_aoe_increase": 1
       },
-      "light_strike_array_delay_time": 0.5,
+      "light_strike_array_delay_time": {
+        "value": 0.5,
+        "display_type": "kDuration"
+      },
       "light_strike_array_stun_duration": "1.2 1.6 2.0 2.4",
       "light_strike_array_damage": {
         "value": "80 125 170 215",
@@ -22618,6 +22737,7 @@
     "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
     "SpellDispellableType": "SPELL_DISPELLABLE_NO",
     "IsBreakable": 1,
+    "TooltipSummaryProperties": "fiery_soul_attack_speed_bonus;fiery_soul_move_speed_bonus;fiery_soul_stack_duration",
     "AbilityValues": {
       "fiery_soul_attack_speed_bonus": {
         "value": "8 16 24 32",
@@ -22625,7 +22745,8 @@
       },
       "fiery_soul_move_speed_bonus": {
         "value": "1.0 1.5 2 2.5",
-        "special_bonus_unique_lina_2": "+1"
+        "special_bonus_unique_lina_2": "+1",
+        "display_type": "kBuffPercentage"
       },
       "fiery_soul_magic_resist": {
         "special_bonus_unique_lina_4": "+5"
@@ -22643,13 +22764,20 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_NO",
     "IsGrantedByScepter": 1,
     "MaxLevel": 1,
+    "TooltipSummaryProperties": "flame_cloak_duration;spell_amp;magic_resistance",
     "AbilityCooldown": 25,
     "AbilityCastPoint": 0,
     "AbilityManaCost": 50,
     "AbilityValues": {
       "flame_cloak_duration": 7,
-      "magic_resistance": 35,
-      "spell_amp": 35,
+      "magic_resistance": {
+        "value": 35,
+        "display_type": "kBuffPercentage"
+      },
+      "spell_amp": {
+        "value": 35,
+        "display_type": "kBuffPercentage"
+      },
       "visualzdelta": 100,
       "zchangespeed": 350
     },
@@ -22666,6 +22794,7 @@
     "FightRecapLevel": 2,
     "AbilitySound": "Ability.LagunaBladeImpact",
     "HasShardUpgrade": 1,
+    "TooltipSummaryProperties": "damage",
     "AbilityDraftExtraAbilities": {
       "lina_flame_cloak": "scepter"
     },
@@ -25806,7 +25935,7 @@
     }
   },
   "monkey_king_transfiguration": {
-    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES ",
+    "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES ",
     "AbilityCastAnimation": "ACT_DOTA_OVERRIDE_ABILITY_4",
     "AbilityCastGestureSlot": "DEFAULT",
     "AbilityCastPoint": 0.3,
@@ -26098,8 +26227,8 @@
       "move_speed_per_agi": 15,
       "cast_range_per_str": 25,
       "slow_resist_per_str": 25,
-      "model_scale_min": -20,
-      "model_scale_max": 40
+      "model_scale_min": 0,
+      "model_scale_max": 20
     }
   },
   "muerta_dead_shot": {
@@ -34324,9 +34453,6 @@
       "require_target": {
         "value": 0
       },
-      "no_reveal": {
-        "value": 0
-      },
       "attack_speed": {
         "value": 0,
         "special_bonus_unique_sniper_6": "+45"
@@ -34785,10 +34911,6 @@
       "knockback_height": {
         "value": 50,
         "special_bonus_scepter": "+30"
-      },
-      "projectile_body_vision": {
-        "value": 175,
-        "affected_by_aoe_increase": 1
       },
       "bonus_knockback_multiplier": {
         "value": 2,
@@ -35299,6 +35421,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "SpellImmunityType": "SPELL_IMMUNITY_ENEMIES_NO",
     "AbilityType": "ABILITY_TYPE_ULTIMATE",
+    "TooltipSummaryProperties": "damage;activation_delay;#DOTA_Tooltip_ability_techies_land_mines___aoe_debuff",
     "AbilityCastRange": 450,
     "AbilityCastPoint": 0,
     "AbilityCooldown": 0,
@@ -35313,10 +35436,14 @@
       "damage": {
         "value": "400 550 700"
       },
-      "building_damage_pct": 30,
+      "building_damage_pct": {
+        "value": 30,
+        "display_type": "kMagicalDamagePercentage"
+      },
       "activation_delay": {
         "value": 1,
-        "special_bonus_unique_techies_4": -0.8
+        "special_bonus_unique_techies_4": -0.8,
+        "display_type": "kDuration"
       },
       "cast_range_scepter_bonus": {
         "special_bonus_scepter": 300
@@ -35328,7 +35455,10 @@
       "outer_damage": 50,
       "min_distance": 150,
       "placement_radius": 350,
-      "mres_reduction": "15 20 25",
+      "mres_reduction": {
+        "value": "15 20 25",
+        "display_type": "kDebuffPercentage"
+      },
       "burn_duration": 4
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_1"
@@ -35408,6 +35538,7 @@
     "AbilityUnitDamageType": "DAMAGE_TYPE_MAGICAL",
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "FightRecapLevel": 1,
+    "TooltipSummaryProperties": "#DOTA_Tooltip_ability_techies_suicide___explosion;stun_duration;hp_cost",
     "AbilityCastRange": 1000,
     "AbilityCastPoint": 1,
     "AbilityManaCost": "100 125 150 175",
@@ -35428,14 +35559,14 @@
       "hp_cost": {
         "value": 20,
         "DamageTypeTooltip": "DAMAGE_TYPE_PURE",
-        "CalculateSpellDamageTooltip": 0
+        "CalculateSpellDamageTooltip": 0,
+        "display_type": "kHealthPercentageAsPureDamage"
       },
       "hp_dmg": {
         "value": 0,
         "DamageTypeTooltip": "DAMAGE_TYPE_PURE",
         "CalculateSpellDamageTooltip": 0
-      },
-      "duration": 0.75
+      }
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
   },
@@ -35446,6 +35577,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "FightRecapLevel": 1,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_6",
+    "TooltipSummaryProperties": "slow;#DOTA_Tooltip_ability_techies_sticky_bomb___explosion;#DOTA_Tooltip_ability_techies_sticky_bomb___explosion_slow",
     "AbilityCastRange": 1000,
     "AbilityCastPoint": 0.1,
     "AbilityCooldown": "16 13 10 7",
@@ -35453,7 +35585,10 @@
     "AbilityModifierSupportValue": 0.25,
     "AbilityValues": {
       "duration": 1.2,
-      "countdown": 2,
+      "countdown": {
+        "value": 2,
+        "display_type": "kDuration"
+      },
       "radius": {
         "value": 300,
         "affected_by_aoe_increase": 1
@@ -35462,8 +35597,14 @@
         "value": "95 170 245 320",
         "special_bonus_unique_techies_2": "+160"
       },
-      "slow": "25 35 45 55",
-      "secondary_slow": "15 25 35 45",
+      "slow": {
+        "value": "25 35 45 55",
+        "display_type": "kDebuffPercentage"
+      },
+      "secondary_slow": {
+        "value": "15 25 35 45",
+        "display_type": "kDebuffPercentage"
+      },
       "secondary_slow_duration": 3,
       "explosion_radius": {
         "value": 350,
@@ -35484,6 +35625,7 @@
     "SpellDispellableType": "SPELL_DISPELLABLE_YES",
     "FightRecapLevel": 1,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_2",
+    "TooltipSummaryProperties": "#DOTA_Tooltip_ability_techies_reactive_tazer___allies;#DOTA_Tooltip_ability_techies_reactive_tazer___explosion;disarm_duration",
     "AbilityCastPoint": 0.1,
     "AbilityCastRange": 600,
     "AbilityCooldown": "26 22 18 14",
@@ -35498,7 +35640,10 @@
         "value": "2.25 2.5 2.75 3.0",
         "special_bonus_unique_techies_tazer_duration": "+25%"
       },
-      "bonus_ms": "18 22 26 30",
+      "bonus_ms": {
+        "value": "18 22 26 30",
+        "display_type": "kBuffPercentage"
+      },
       "explosion_radius": {
         "value": 400,
         "affected_by_aoe_increase": 1
@@ -35596,6 +35741,7 @@
     "AbilityUnitDamageType": "DAMAGE_TYPE_NONE",
     "MaxLevel": 1,
     "IsGrantedByScepter": 1,
+    "TooltipSummaryProperties": "bonus_mine_damage_pct;#DOTA_Tooltip_ability_techies_minefield_sign___minefield;#DOTA_Tooltip_ability_techies_minefield_sign___minefield_damage",
     "AbilityCastRange": 10,
     "AbilityCastPoint": 1.25,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_5",
@@ -35606,15 +35752,24 @@
         "value": 1000,
         "affected_by_aoe_increase": 1
       },
-      "lifetime": 240,
+      "lifetime": {
+        "value": 240,
+        "display_type": "kDuration"
+      },
       "minefield_duration": 10,
       "trigger_radius": {
         "value": 200,
         "affected_by_aoe_increase": 1
       },
-      "scepter_move_damage": 300,
+      "scepter_move_damage": {
+        "value": 300,
+        "display_type": "kMagicalDamage"
+      },
       "scepter_move_amt": 200,
-      "bonus_mine_damage_pct": 15
+      "bonus_mine_damage_pct": {
+        "value": 15,
+        "display_type": "kMagicalDamagePercentage"
+      }
     }
   },
   "techies_squees_scope": {
@@ -35642,10 +35797,12 @@
     "MaxLevel": 1,
     "HasShardUpgrade": 1,
     "AbilityCastPoint": 1,
+    "TooltipSummaryProperties": "bonus_mana_as_mana_regen;#DOTA_Tooltip_ability_techies_mutually_assured_destruction___damage",
     "AbilityValues": {
       "bonus_mana_as_mana_regen": {
         "value": 0.1,
-        "hero_levelup": "+0.01"
+        "hero_levelup": "+0.01",
+        "display_type": "kBuffPercentage"
       },
       "radius": {
         "value": 400,
@@ -35654,7 +35811,8 @@
       "base_damage": 50,
       "max_mana_pct_as_damage": {
         "value": 30,
-        "special_bonus_shard": "+10"
+        "special_bonus_shard": "+10",
+        "display_type": "kMagicalDamagePercentage"
       },
       "current_mana_regen": {
         "dynamic_value": "true"
@@ -35662,7 +35820,10 @@
       "current_damage": {
         "dynamic_value": "true"
       },
-      "explosion_delay": 1.5,
+      "explosion_delay": {
+        "value": 1.5,
+        "display_type": "kDuration"
+      },
       "AbilityCooldown": {
         "value": 0,
         "special_bonus_shard": "+30"

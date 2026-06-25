@@ -58,8 +58,52 @@ export async function execute(socket: net.Socket, command: string): Promise<void
 
 export type MessageCallback = (type: string, channel: number | undefined, message: string) => void;
 export function onMessage(socket: net.Socket, cb: MessageCallback): void {
+  // The vConsole protocol is a continuous TCP byte stream of length-prefixed
+  // packets. A single 'data' event is NOT guaranteed to contain whole packets:
+  // for a multi-megabyte dump, packets are routinely split across several
+  // events. We therefore accumulate bytes and only decode a packet once all of
+  // it has arrived, keeping any partial tail for the next event. (The previous
+  // implementation parsed each 'data' event from offset 0, which desynced on a
+  // split packet and could read a zero length → infinite loop that blocked the
+  // event loop, stalled the socket, and froze Dota.)
+  let acc: Buffer = Buffer.alloc(0);
+
   socket.on('data', (buffer) => {
-    decodeChunk(buffer, cb);
+    acc = acc.length === 0 ? buffer : Buffer.concat([acc, buffer]);
+
+    let offset = 0;
+    while (acc.length - offset >= 12) {
+      const length = (acc[offset + 8] << 8) + acc[offset + 9];
+
+      // A valid packet is at least its 12-byte header. A smaller length means
+      // we are not on a real packet boundary; skip one byte to try to resync
+      // instead of spinning forever on a zero/garbage length.
+      if (length < 12) {
+        offset += 1;
+        continue;
+      }
+
+      // The full packet has not arrived yet — wait for the next data event.
+      if (acc.length - offset < length) break;
+
+      const type = acc.toString('utf8', offset, offset + 4);
+      if (type === 'PRNT') {
+        const channelId =
+          (acc[offset + 12] << 24) +
+          (acc[offset + 13] << 16) +
+          (acc[offset + 14] << 8) +
+          acc[offset + 15];
+        const textStart = offset + 40;
+        const textEnd = offset + length - 1; // drop the trailing null terminator
+        const msg = textEnd > textStart ? acc.toString('utf8', textStart, textEnd) : '';
+        cb(type, channelId, msg);
+      }
+
+      offset += length;
+    }
+
+    // Retain the unparsed tail (a partial packet) for the next data event.
+    acc = offset >= acc.length ? Buffer.alloc(0) : acc.subarray(offset);
   });
 }
 
@@ -70,27 +114,6 @@ export async function disconnect(socket: net.Socket): Promise<void> {
     });
     socket.destroy();
   });
-}
-
-function decodeChunk(data: Buffer, messageCallback: MessageCallback) {
-  let chunkOffset = 0;
-
-  while (chunkOffset < data.length) {
-    const chunk = data.slice(chunkOffset);
-
-    const header = chunk.slice(0, 12);
-    const type = header.toString(undefined, 0, 4);
-    const length = (header[8] << 8) + header[9];
-    const content = chunk.slice(12, length + 12);
-
-    chunkOffset += length; // Move index to next chunk or end of buffer
-
-    if (type === 'PRNT') {
-      const channelId = (content[0] << 24) + (content[1] << 16) + (content[2] << 8) + content[3];
-      const msg = content.toString(undefined, 28, length - 12 - 1);
-      messageCallback(type, channelId, msg);
-    }
-  }
 }
 
 function encodeUint16(v: number): number[] {

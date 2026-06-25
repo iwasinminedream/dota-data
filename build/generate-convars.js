@@ -42,5 +42,21 @@ Object.keys(convars).sort().forEach(key => {
   sortedConvars[key] = convars[key];
 });
 
-fs.writeFileSync(outputPath, JSON.stringify(sortedConvars, null, 2));
+// build:static already wrote convars.json moments ago; on Windows the file can
+// still be briefly locked (AV/indexer scanning the fresh write), which surfaces
+// as a transient EBUSY/EPERM/UNKNOWN error. Retry a few times before failing.
+function writeFileSyncWithRetry(filePath, data, retries = 8) {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      fs.writeFileSync(filePath, data);
+      return;
+    } catch (err) {
+      const transient = ['EBUSY', 'EPERM', 'EACCES', 'UNKNOWN'].includes(err.code);
+      if (!transient || attempt >= retries) throw err;
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 200 * (attempt + 1));
+    }
+  }
+}
+
+writeFileSyncWithRetry(outputPath, JSON.stringify(sortedConvars, null, 2));
 console.log('Generated convars.json with', Object.keys(sortedConvars).length, 'entries');

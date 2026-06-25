@@ -814,57 +814,57 @@ local previous_state = {
 
 function modifier_test_properties:OnCreated()
     if not IsServer() then return end
-    self.index = 1
-    self.new_state_lines = {}
-    self.diffs = {}
+    -- Defer one frame so the modifier is fully registered before HasFunction is
+    -- queried, then run the whole test in a single pass.
     self:StartIntervalThink(FrameTime())
 end
 
 function modifier_test_properties:OnIntervalThink()
     if not IsServer() then return end
+    self:StartIntervalThink(-1)
 
-    local entry = ALL_MODIFIER_FUNCTIONS[self.index]
-    if not entry then
-        -- print new state for next time
-        print("local previous_state = {")
-        for _, line in ipairs(self.new_state_lines) do
-            print(line)
-        end
-        print("}")
+    -- Step through every modifier function in ONE pass. (Previously this did one
+    -- entry per frame across ~400 frames, which could exceed the dump window at
+    -- low framerates and never finish — leaving the test output empty.)
+    local new_state_lines = {}
+    local diffs = {}
+    for _, entry in ipairs(ALL_MODIFIER_FUNCTIONS) do
+        local has = self:HasFunction(entry.val)
+        table.insert(new_state_lines, '    ["' .. entry.name .. '"] = ' .. tostring(has) .. ",")
 
-        -- print diff
-        local changed = false
-        for _, diff in ipairs(self.diffs) do
-            if not changed then
-                print("")
-                print("=== CHANGES (false -> true) ===")
-                changed = true
-            end
-            print(diff)
+        local prev = previous_state[entry.name]
+        if prev == false and has == true then
+            table.insert(diffs, entry.name .. ": false -> true")
+        elseif prev == true and has == false then
+            table.insert(diffs, entry.name .. ": true -> false")
+        elseif prev == nil then
+            table.insert(diffs, entry.name .. ": NEW = " .. tostring(has))
         end
+    end
+
+    -- print new state for next time
+    print("local previous_state = {")
+    for _, line in ipairs(new_state_lines) do
+        print(line)
+    end
+    print("}")
+
+    -- print diff
+    local changed = false
+    for _, diff in ipairs(diffs) do
         if not changed then
             print("")
-            print("=== NO CHANGES ===")
+            print("=== CHANGES (false -> true) ===")
+            changed = true
         end
-
-        print("===ENDOFMODIFIERTEST")
-        self:StartIntervalThink(-1)
-        return
+        print(diff)
+    end
+    if not changed then
+        print("")
+        print("=== NO CHANGES ===")
     end
 
-    local has = self:HasFunction(entry.val)
-    table.insert(self.new_state_lines, '    ["' .. entry.name .. '"] = ' .. tostring(has) .. ",")
-
-    local prev = previous_state[entry.name]
-    if prev == false and has == true then
-        table.insert(self.diffs, entry.name .. ": false -> true")
-    elseif prev == true and has == false then
-        table.insert(self.diffs, entry.name .. ": true -> false")
-    elseif prev == nil then
-        table.insert(self.diffs, entry.name .. ": NEW = " .. tostring(has))
-    end
-
-    self.index = self.index + 1
+    print("===ENDOFMODIFIERTEST")
 end
 
 function modifier_test_properties:DeclareFunctions()

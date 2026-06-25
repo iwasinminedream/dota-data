@@ -6,6 +6,13 @@
     ],
     "description": "Start recording bug voice attachment."
   },
+  "+camdistance": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "+cammousemove": {
     "default": "cmd",
     "flags": [
@@ -132,7 +139,7 @@
     ],
     "description": ""
   },
-  "-camdistance": {
+  "-dota_ability_execute": {
     "default": "cmd",
     "flags": [
       "cl"
@@ -453,6 +460,15 @@
     ],
     "description": ""
   },
+  "animgraph2_serialize_pose_recipe_in_pre_pack_entities": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
   "animgraph_debug": {
     "default": "false",
     "flags": [
@@ -566,24 +582,6 @@
   "animgraph_enable_dirty_netvar_optimization": {
     "default": "true",
     "flags": [
-      "rep"
-    ],
-    "description": ""
-  },
-  "animgraph_enable_parallel_op_evaluation": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cl",
-      "rep"
-    ],
-    "description": ""
-  },
-  "animgraph_enable_parallel_update": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cl",
       "rep"
     ],
     "description": ""
@@ -716,16 +714,6 @@
       "cl"
     ],
     "description": ""
-  },
-  "animgraph_record_all": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cl",
-      "rep",
-      "cheat"
-    ],
-    "description": "Automatically start recording AnimGraphs when they get created, and save them to disk when they are destroyed"
   },
   "animgraph_slope_draw_raycasts": {
     "default": "false",
@@ -904,16 +892,6 @@
     ],
     "description": "auto_bug : create non-interactive bug report."
   },
-  "automatically_open_saved_animgraph_recording": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cl",
-      "a",
-      "rep"
-    ],
-    "description": ""
-  },
   "autosave": {
     "default": "cmd",
     "flags": [
@@ -959,13 +937,6 @@
     "default": "cmd",
     "flags": [],
     "description": "Add an IP address to the ban list."
-  },
-  "battery_saver": {
-    "default": "false",
-    "flags": [
-      "a"
-    ],
-    "description": "OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on"
   },
   "benchframe": {
     "default": "cmd",
@@ -1553,19 +1524,12 @@
     ],
     "description": "Emits a closed caption"
   },
-  "cc_findsound": {
-    "default": "cmd",
+  "cc_force_combine_chatter": {
+    "default": "true",
     "flags": [
       "cl"
     ],
-    "description": "Searches for soundname which emits specified text."
-  },
-  "cc_flush": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Flushes async'd captions."
+    "description": ""
   },
   "cc_lang": {
     "default": "0",
@@ -1589,35 +1553,6 @@
       "cl"
     ],
     "description": "Log caption names and contents (0 = off, 1 = found captions, 2 = unfound captions, 3 = all captions)"
-  },
-  "cc_norepeat": {
-    "default": "5",
-    "flags": [
-      "sv"
-    ],
-    "description": "In multiplayer games, don't repeat captions more often than this many seconds."
-  },
-  "cc_random": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Emits a random caption"
-  },
-  "cc_showblocks": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Toggles showing which blocks are pending/loaded async."
-  },
-  "cc_showmissing": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "rep"
-    ],
-    "description": "Show missing closecaption entries."
   },
   "cc_spectator_only": {
     "default": "false",
@@ -2072,13 +2007,6 @@
     "description": ""
   },
   "cl_anim_queue_changes": {
-    "default": "true",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "cl_animgraph_history_force_temporal_consistency": {
     "default": "true",
     "flags": [
       "cl"
@@ -2727,14 +2655,6 @@
       "cheat"
     ],
     "description": "Displays debug draws about the given entity(ies) animgraph  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
-  },
-  "cl_ent_animgraph_record": {
-    "default": "cmd",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": "Toggles recording of animgraph replay of the given entity(s)  Arguments: entityName automaticallyOpenInAnimgraphEditor  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
   "cl_ent_attachment_filter_substrings": {
     "default": "0",
@@ -3943,7 +3863,7 @@
     "flags": [
       "cl"
     ],
-    "description": "Describe datamap_t for entindex"
+    "description": "Describe PredictionMap_t for entindex"
   },
   "cl_predictioncopy_print": {
     "default": "cmd",
@@ -4056,22 +3976,6 @@
       "cheat"
     ],
     "description": "Print all response rules"
-  },
-  "cl_rr_reloadresponsesystems": {
-    "default": "cmd",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": "Reload all response system scripts."
-  },
-  "cl_save_animgraph_recording": {
-    "default": "cmd",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": "Saves all active animgraph recordings to disk  Arguments: automaticallyOpenInAnimgraphEditor"
   },
   "cl_sceneentity_debug": {
     "default": "false",
@@ -4412,14 +4316,6 @@
     "default": "true",
     "flags": [
       "cl"
-    ],
-    "description": ""
-  },
-  "cl_skel_constraints_enable": {
-    "default": "true",
-    "flags": [
-      "rep",
-      "cheat"
     ],
     "description": ""
   },
@@ -5212,13 +5108,6 @@
     ],
     "description": ""
   },
-  "csm_split_log_scalar": {
-    "default": "0.85",
-    "flags": [
-      "cheat"
-    ],
-    "description": ""
-  },
   "csm_sst_max_visible_dist": {
     "default": "2000",
     "flags": [
@@ -5247,15 +5136,16 @@
     ],
     "description": ""
   },
-  "csm_viewdir_shadow_bias": {
-    "default": "0",
+  "csm_sst_shadow_focus_region_thin_compensation": {
+    "default": "1500",
     "flags": [
+      "cl",
       "cheat"
     ],
     "description": ""
   },
-  "csm_viewmodel_farz": {
-    "default": "30",
+  "csm_viewdir_shadow_bias": {
+    "default": "0",
     "flags": [
       "cheat"
     ],
@@ -5400,11 +5290,6 @@
     ],
     "description": "Cycle through specified convar values."
   },
-  "d3d_max_feature_level": {
-    "default": "11_1",
-    "flags": [],
-    "description": "Report the maximum D3D feature level available."
-  },
   "dbghist_addline": {
     "default": "cmd",
     "flags": [
@@ -5525,6 +5410,13 @@
     ],
     "description": ""
   },
+  "debugoverlay_circle_verts": {
+    "default": "24",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
   "debugoverlay_cycle_domain": {
     "default": "cmd",
     "flags": [
@@ -5548,6 +5440,13 @@
       "cheat"
     ],
     "description": "Makes the debug overlay dashboard visible."
+  },
+  "debugoverlay_enable_dotted_dashed": {
+    "default": "true",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Toggle the use of dotted/dashed debugoverlay lines to indicate source"
   },
   "debugoverlay_force_respect_ttl": {
     "default": "false",
@@ -5939,13 +5838,6 @@
       "sv"
     ],
     "description": "Dumps the modifier refcounts of all hero abilities"
-  },
-  "dota_ability_execute": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "dota_ability_frogrock_show_fixed_hud": {
     "default": "true",
@@ -6489,7 +6381,7 @@
     "description": ""
   },
   "dota_armory_last_selected_hero_id": {
-    "default": "30",
+    "default": "6",
     "flags": [
       "cl",
       "a"
@@ -9086,6 +8978,22 @@
     ],
     "description": "Flash when enemies take damage from the player"
   },
+  "dota_dark_carnival_fortune_teller_time_between_welcome_backs": {
+    "default": "10",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_dark_carnival_visual_novel_enable_auto_advance": {
+    "default": "true",
+    "flags": [
+      "cl",
+      "a",
+      "per_user"
+    ],
+    "description": ""
+  },
   "dota_dashboard_enable_mouse_history": {
     "default": "false",
     "flags": [
@@ -9103,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4020",
+    "default": "4034",
     "flags": [
       "cl",
       "a",
@@ -9383,6 +9291,15 @@
       "cl"
     ],
     "description": ""
+  },
+  "dota_disable_external_application_hotkeys": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a",
+      "per_user"
+    ],
+    "description": "Disable external application hotkeys."
   },
   "dota_disable_lan_lobby_broadcast": {
     "default": "false",
@@ -10143,6 +10060,13 @@
     ],
     "description": ""
   },
+  "dota_force_treasure_page_oversized": {
+    "default": "true",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_force_upload_match_stats": {
     "default": "false",
     "flags": [
@@ -10899,6 +10823,20 @@
     ],
     "description": ""
   },
+  "dota_health_bar_madness": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_health_bar_madness_vertical_scale": {
+    "default": "0.8",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_health_bar_pips": {
     "default": "true",
     "flags": [
@@ -10907,6 +10845,13 @@
     "description": ""
   },
   "dota_health_bar_shields": {
+    "default": "true",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_health_bar_soul_ring_mana": {
     "default": "true",
     "flags": [
       "cl"
@@ -11436,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35370274973",
+    "default": "35415242469",
     "flags": [
       "cl",
       "a",
@@ -11495,7 +11440,7 @@
     "description": ""
   },
   "dota_hltv_camera_override_pos": {
-    "default": "0.000000 0.000000",
+    "default": "0 0",
     "flags": [
       "cl"
     ],
@@ -12432,7 +12377,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "0",
+    "default": "54",
     "flags": [
       "cl",
       "a"
@@ -12449,8 +12394,15 @@
     ],
     "description": "Launch a custom game"
   },
+  "dota_league_force_all_public": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_league_force_public": {
-    "default": "15438, 15475, 15689, 15690, 15691, 15692, 15693, 15694, 15728, 16844, 16935, 18324",
+    "default": "15438, 15475, 15689, 15690, 15691, 15692, 15693, 15694, 15728, 16844, 16935, 18324, 19719",
     "flags": [
       "cl"
     ],
@@ -12581,7 +12533,7 @@
     "description": ""
   },
   "dota_loadout_test_pet_offset": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "cl",
       "cheat"
@@ -12725,7 +12677,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "4",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -13889,7 +13841,7 @@
     "description": ""
   },
   "dota_overworld_test_pre_game": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl"
     ],
@@ -15992,7 +15944,7 @@
     "description": "[output_file] [-binary] [-nopretty] save scenario of the game currently being spectated"
   },
   "dota_saved_camera_pos_1": {
-    "default": "-2230.000000 1630.000000 0.000000",
+    "default": "-2230 1630 0",
     "flags": [
       "cl",
       "a",
@@ -16001,7 +15953,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_10": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "cl",
       "a",
@@ -16010,7 +15962,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_2": {
-    "default": "2800.000000 -2345.000000 0.000000",
+    "default": "2800 -2345 0",
     "flags": [
       "cl",
       "a",
@@ -16019,7 +15971,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_3": {
-    "default": "3870.000000 -1930.000000 0.000000",
+    "default": "3870 -1930 0",
     "flags": [
       "cl",
       "a",
@@ -16028,7 +15980,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_4": {
-    "default": "-6220.000000 3645.000000 0.000000",
+    "default": "-6220 3645 0",
     "flags": [
       "cl",
       "a",
@@ -16037,7 +15989,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_5": {
-    "default": "-530.000000 -400.000000 0.000000",
+    "default": "-530 -400 0",
     "flags": [
       "cl",
       "a",
@@ -16046,7 +15998,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_6": {
-    "default": "6145.000000 -2840.000000 0.000000",
+    "default": "6145 -2840 0",
     "flags": [
       "cl",
       "a",
@@ -16055,7 +16007,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_7": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "cl",
       "a",
@@ -16064,7 +16016,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_8": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "cl",
       "a",
@@ -16073,7 +16025,7 @@
     "description": ""
   },
   "dota_saved_camera_pos_9": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "cl",
       "a",
@@ -16349,13 +16301,6 @@
       "sv"
     ],
     "description": ""
-  },
-  "dota_set_fantasy_role": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "<account_id> <fantasy_role> Set the fantasy role for a player on public"
   },
   "dota_settings_healthbar_boss_creep_height_offset": {
     "default": "-4",
@@ -16958,6 +16903,13 @@
     ],
     "description": ""
   },
+  "dota_spectate_next_ability_cast": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Go to next ability cast"
+  },
   "dota_spectate_pause_advance_frames": {
     "default": "5",
     "flags": [
@@ -17515,7 +17467,7 @@
     "description": "If enabled, server will spew connected player GC updates"
   },
   "dota_splash_ad_acknowledged_id": {
-    "default": "148",
+    "default": "149",
     "flags": [
       "cl",
       "a",
@@ -17625,48 +17577,6 @@
     ],
     "description": ""
   },
-  "dota_stickerbook_collision_offset": {
-    "default": "-0.0001",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_stickerbook_decal_depth": {
-    "default": "10",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_stickerbook_min_distance": {
-    "default": "440",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_stickerbook_raycast_length": {
-    "default": "1000",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_stickerbook_scale_max": {
-    "default": "3",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_stickerbook_scale_min": {
-    "default": "0.8",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_sticky_ping_wheel": {
     "default": "false",
     "flags": [
@@ -17766,7 +17676,7 @@
     "description": ""
   },
   "dota_suggest_learn_item_sequence_disliked_multiplier": {
-    "default": "-1000000.000000",
+    "default": "-1000000",
     "flags": [
       "sv"
     ],
@@ -18380,7 +18290,7 @@
     "description": ""
   },
   "dota_time_of_day_rate": {
-    "default": "0.001667",
+    "default": "0.00166667",
     "flags": [
       "sv",
       "cl",
@@ -19743,7 +19653,7 @@
     "description": "Pause at the end of replays"
   },
   "dota_wearables_clientside": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "sv",
       "cl",
@@ -20318,16 +20228,6 @@
     "flags": [],
     "description": "Rendersystem option requested (changing this does not change the rendersystem)."
   },
-  "engine_rendersystem_meets_min_dx_110": {
-    "default": "Yes (111)",
-    "flags": [],
-    "description": "Rendersystem meets min DX110 feature level (changing this does not change the shader model)."
-  },
-  "engine_rendersystem_meets_min_dx_110_simple": {
-    "default": "Yes",
-    "flags": [],
-    "description": "Rendersystem meets min DX110 feature level (changing this does not change the shader model)."
-  },
   "engine_rendersystem_shader_model": {
     "default": "111",
     "flags": [],
@@ -20422,22 +20322,6 @@
       "cheat"
     ],
     "description": "Displays debug draws about the given entity(ies) animgraph  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
-  },
-  "ent_animgraph_record": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Toggles recording of animgraph replay of the given entity(s)  Arguments: entityName automaticallyOpenInAnimgraphEditor  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
-  },
-  "ent_animgraph_setvar": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Sets a variable on the animgraph of the given entity(s)  Arguments:   <varname>=<value> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>"
   },
   "ent_attachment_filter_substrings": {
     "default": "0",
@@ -21335,7 +21219,7 @@
     "description": "Switch to firstperson camera."
   },
   "fog_color": {
-    "default": "-1.000000 -1.000000 -1.000000",
+    "default": "-1 -1 -1",
     "flags": [
       "cl",
       "cheat"
@@ -21343,7 +21227,7 @@
     "description": ""
   },
   "fog_colorskybox": {
-    "default": "-1.000000 -1.000000 -1.000000",
+    "default": "-1 -1 -1",
     "flags": [
       "cl",
       "cheat"
@@ -21911,6 +21795,13 @@
     ],
     "description": ""
   },
+  "func_mover_force_transition_start_direction": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "func_mover_get_speed_override": {
     "default": "0",
     "flags": [
@@ -21925,8 +21816,22 @@
     ],
     "description": ""
   },
+  "func_mover_run_parallel": {
+    "default": "true",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "func_rotator_debug": {
     "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "func_rotator_run_parallel": {
+    "default": "true",
     "flags": [
       "sv"
     ],
@@ -22751,6 +22656,7 @@
     "default": "0.02",
     "flags": [
       "sv",
+      "cl",
       "rep"
     ],
     "description": "Should we try to straighten two faces connected to this edge? (tangent)"
@@ -22759,6 +22665,7 @@
     "default": "0",
     "flags": [
       "sv",
+      "cl",
       "rep"
     ],
     "description": "Should we straighten face island if the displacement is this much? (inches)"
@@ -22767,6 +22674,7 @@
     "default": "0.04",
     "flags": [
       "sv",
+      "cl",
       "rep"
     ],
     "description": "Should we try to straighten an island of faces deviating from their average normal (tangent)?"
@@ -22775,6 +22683,7 @@
     "default": "3",
     "flags": [
       "sv",
+      "cl",
       "rep"
     ],
     "description": ""
@@ -23123,11 +23032,6 @@
     "default": "120",
     "flags": [],
     "description": "Maximum amount of minutes to save history (0 is unlimited)."
-  },
-  "instant_replay_history_limit_low": {
-    "default": "10",
-    "flags": [],
-    "description": "Maximum amount of minutes to save history on low memory (32 bit) systems (0 is unlimited)."
   },
   "instant_replay_live": {
     "default": "cmd",
@@ -23796,7 +23700,7 @@
     "description": "If lb_csm_override_staticgeo_cascades, override value used to determine which cascades render static objects"
   },
   "lb_csm_receiver_plane_depth_bias": {
-    "default": "0.000015",
+    "default": "1.526e-05",
     "flags": [],
     "description": "Shader depth bias applied to shadow receiver (Note this conflicts with renderstate depth bias, both now default to 0)"
   },
@@ -24058,6 +23962,15 @@
     ],
     "description": "Set the verbosity of a logging channel."
   },
+  "logic_entity_analyzer_debug": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "rep",
+      "cheat"
+    ],
+    "description": ""
+  },
   "logic_npc_counter_debug": {
     "default": "false",
     "flags": [
@@ -24189,13 +24102,6 @@
     ],
     "description": ""
   },
-  "mat_async_shader_load": {
-    "default": "false",
-    "flags": [
-      "release"
-    ],
-    "description": ""
-  },
   "mat_clearshadercache": {
     "default": "cmd",
     "flags": [],
@@ -24276,7 +24182,7 @@
     "description": "Visualize overdraw"
   },
   "mat_overdraw_color": {
-    "default": "0.075000 0.150000 0.300000",
+    "default": "0.075 0.15 0.3",
     "flags": [
       "cheat"
     ],
@@ -24380,7 +24286,7 @@
     "description": "Visualize shading complexity"
   },
   "mat_shading_complexity_color": {
-    "default": "1.000000 0.500000 0.250000",
+    "default": "1 0.5 0.25",
     "flags": [
       "cheat"
     ],
@@ -24674,27 +24580,6 @@
       "cheat"
     ],
     "description": "Does a bunch of work to create a minimap"
-  },
-  "mobile_fps_increase_during_charging": {
-    "default": "false",
-    "flags": [
-      "a"
-    ],
-    "description": "MOBILE_FPS_CONTROL: If true we increase framerate limit while charging"
-  },
-  "mobile_fps_increase_during_touch": {
-    "default": "true",
-    "flags": [
-      "a"
-    ],
-    "description": "MOBILE_FPS_CONTROL: If true we increase framerate limit during touch"
-  },
-  "mobile_fps_limit": {
-    "default": "30",
-    "flags": [
-      "a"
-    ],
-    "description": "MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60"
   },
   "model_combiner_dumpstats": {
     "default": "cmd",
@@ -25078,7 +24963,7 @@
     "description": "Create a connection between the current 'from' and 'to' locations."
   },
   "nav_create_indirect_connection_set_from": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "sv",
       "cheat"
@@ -25094,7 +24979,7 @@
     "description": "Set the 'from' location of an indirect connection to be the current edit pos of nav_edit."
   },
   "nav_create_indirect_connection_set_to": {
-    "default": "0.000000 0.000000 0.000000",
+    "default": "0 0 0",
     "flags": [
       "sv",
       "cheat"
@@ -25188,6 +25073,14 @@
       "rep"
     ],
     "description": "The offset of the nav drag volume bottom from center"
+  },
+  "nav_draw_area_color_by_game_attribute": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
   },
   "nav_draw_area_connections": {
     "default": "false",
@@ -25412,6 +25305,14 @@
       "cheat"
     ],
     "description": "Set to one to interactively edit the Navigation Mesh. Set to zero to leave edit mode."
+  },
+  "nav_edit_draw_navlinks": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
   },
   "nav_edit_use_camera": {
     "default": "true",
@@ -25718,7 +25619,7 @@
     "description": ""
   },
   "nav_gen_opt_to_quads_se_limit_start": {
-    "default": "0.000010",
+    "default": "1e-05",
     "flags": [
       "sv",
       "cheat"
@@ -26858,14 +26759,6 @@
     ],
     "description": "Calculate and draw a path from player/camera position to the test position."
   },
-  "nav_test_path_expansion_search": {
-    "default": "0",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Extend nav_test_path by doing an expansion search on that path.  Convar value defines dist."
-  },
   "nav_test_path_lock_goal": {
     "default": "false",
     "flags": [
@@ -26991,6 +26884,14 @@
       "cheat"
     ],
     "description": "Activate the 'boundary edges only' constraint when testing the 'on path' search mode for tactical searches."
+  },
+  "nav_test_search_on_path_setgoal": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Test the 'on path' search mode for tactical searches using SetGoal w/ possible path clipping (flips between 2 searches). Requires a selected NPC."
   },
   "nav_test_smooth": {
     "default": "false",
@@ -27668,11 +27569,6 @@
     ],
     "description": "Shows current network status"
   },
-  "net_use_delta_property_fastpath": {
-    "default": "1",
-    "flags": [],
-    "description": ""
-  },
   "net_use_packet_compression": {
     "default": "true",
     "flags": [],
@@ -28171,6 +28067,13 @@
     "flags": [],
     "description": "Show the filesystem path."
   },
+  "path_mover_enable_high_resolution_debug_rendering": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "pause": {
     "default": "cmd",
     "flags": [
@@ -28179,12 +28082,17 @@
     "description": "Toggle the server pause state."
   },
   "pet_preview_gravity": {
-    "default": "0.000000 0.000000 -800.000000",
+    "default": "0 0 -800",
     "flags": [],
     "description": ""
   },
   "pet_preview_underwater": {
     "default": "false",
+    "flags": [],
+    "description": ""
+  },
+  "pet_preview_wind": {
+    "default": "0 0 0",
     "flags": [],
     "description": ""
   },
@@ -28468,16 +28376,6 @@
       "sv",
       "cl",
       "rep"
-    ],
-    "description": ""
-  },
-  "phys_visualize_traces": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cl",
-      "rep",
-      "cheat"
     ],
     "description": ""
   },
@@ -29015,7 +28913,9 @@
   },
   "r_add_views_in_pre_output": {
     "default": "false",
-    "flags": [],
+    "flags": [
+      "cl"
+    ],
     "description": ""
   },
   "r_allow_all_objects_to_refract": {
@@ -29055,32 +28955,32 @@
     "description": ""
   },
   "r_aoproxy_default_light_cone_angles": {
-    "default": "0.300000 0.300000 0.300000 1.000000",
+    "default": "0.3 0.3 0.3 1",
     "flags": [],
     "description": ""
   },
   "r_aoproxy_default_light_cone_strengths": {
-    "default": "3.000000 8.000000 1.000000 4.000000",
+    "default": "3 8 1 4",
     "flags": [],
     "description": ""
   },
   "r_aoproxy_default_light_position_0": {
-    "default": "0.816497 0.000000 0.577350",
+    "default": "0.8164966 0 0.57735026",
     "flags": [],
     "description": ""
   },
   "r_aoproxy_default_light_position_1": {
-    "default": "-0.408248 0.707107 0.577350",
+    "default": "-0.4082483 0.70710677 0.57735026",
     "flags": [],
     "description": ""
   },
   "r_aoproxy_default_light_position_2": {
-    "default": "-0.408248 -0.707107 0.577350",
+    "default": "-0.4082483 -0.70710677 0.57735026",
     "flags": [],
     "description": ""
   },
   "r_aoproxy_default_light_position_3": {
-    "default": "0.000000 0.000000 1.000000",
+    "default": "0 0 1",
     "flags": [],
     "description": ""
   },
@@ -29133,7 +29033,7 @@
     "description": ""
   },
   "r_dac_particle_desat_color": {
-    "default": "1.000000 1.000000 1.000000",
+    "default": "1 1 1",
     "flags": [
       "cl"
     ],
@@ -30028,13 +29928,6 @@
     ],
     "description": ""
   },
-  "r_flush_on_pooled_ib_resize": {
-    "default": "true",
-    "flags": [
-      "release"
-    ],
-    "description": ""
-  },
   "r_force_engine_render_frame": {
     "default": "cmd",
     "flags": [],
@@ -30455,7 +30348,7 @@
     "description": "The maximum detail level of particle to create"
   },
   "r_particle_max_draw_distance": {
-    "default": "1000000.000000",
+    "default": "1000000",
     "flags": [
       "cheat"
     ],
@@ -30729,11 +30622,6 @@
     ],
     "description": ""
   },
-  "r_suppress_redundant_state_changes": {
-    "default": "true",
-    "flags": [],
-    "description": ""
-  },
   "r_test_econ_item_isolate_view": {
     "default": "false",
     "flags": [
@@ -30802,11 +30690,6 @@
     "default": "0",
     "flags": [],
     "description": "Biases the mip level the texture streaming system choses to stream for each texture."
-  },
-  "r_texture_stream_resolution_bias": {
-    "default": "1",
-    "flags": [],
-    "description": ""
   },
   "r_texture_stream_resolution_bias_decrease_rate": {
     "default": "0.1",
@@ -30899,6 +30782,11 @@
     ],
     "description": "Enable rendering of translucent geometry"
   },
+  "r_ui_update_parallel_with_server": {
+    "default": "false",
+    "flags": [],
+    "description": ""
+  },
   "r_update_particles_on_render_only_frames": {
     "default": "false",
     "flags": [
@@ -30937,7 +30825,7 @@
     "description": ""
   },
   "r_world_wind_dir": {
-    "default": "0.707000 0.707000 0.000000",
+    "default": "0.707 0.707 0",
     "flags": [],
     "description": ""
   },
@@ -30952,7 +30840,7 @@
     "description": ""
   },
   "r_world_wind_offset_speed": {
-    "default": "0.250000 0.300000 0.200000",
+    "default": "0.25 0.3 0.2",
     "flags": [],
     "description": ""
   },
@@ -31510,14 +31398,6 @@
     ],
     "description": "fire a response concept directly at a given character. USAGE: rr_forceconcept <target name or index> <concept> 'criteria1:value1,criteria2:value2,...' criteria values are optional."
   },
-  "rr_reloadresponsesystems": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Reload all response system scripts."
-  },
   "rr_thenany_score_slop": {
     "default": "0",
     "flags": [
@@ -31562,14 +31442,6 @@
       "norecord"
     ],
     "description": "Save Game"
-  },
-  "save_animgraph_recording": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Saves all active animgraph recordings to disk  Arguments: automaticallyOpenInAnimgraphEditor"
   },
   "save_async": {
     "default": "true",
@@ -31664,15 +31536,6 @@
     ],
     "description": ""
   },
-  "save_version": {
-    "default": "2",
-    "flags": [
-      "sv",
-      "cl",
-      "rep"
-    ],
-    "description": "0: (V0) Legacy save format, 1: (V1) KeyValues3 save format, 2: (V2) KV3Transfer saves"
-  },
   "save_watchclass": {
     "default": "cmd",
     "flags": [
@@ -31716,11 +31579,6 @@
     "description": "Toggles GPU culling of aggregate meshes"
   },
   "sc_aggregate_gpu_occlusion_culling": {
-    "default": "true",
-    "flags": [],
-    "description": ""
-  },
-  "sc_aggregate_gpu_vis_culling": {
     "default": "true",
     "flags": [],
     "description": ""
@@ -31942,11 +31800,6 @@
     "flags": [],
     "description": "Bias for LOD selection of instanced meshes in shadowmaps"
   },
-  "sc_instanced_mesh_mesh_shader": {
-    "default": "true",
-    "flags": [],
-    "description": "Toggles mesh shader rendering for instanced meshes"
-  },
   "sc_instanced_mesh_motion_vectors": {
     "default": "true",
     "flags": [],
@@ -32000,6 +31853,31 @@
     "description": ""
   },
   "sc_mesh_backface_culling": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "sc_mesh_gpu_occlusion_culling": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "sc_mesh_gpu_volume_culling": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "sc_mesh_mesh_shaders": {
+    "default": "false",
+    "flags": [],
+    "description": ""
+  },
+  "sc_mesh_shadows_batch_across_materials": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "sc_mesh_use_pmb": {
     "default": "true",
     "flags": [],
     "description": ""
@@ -32123,20 +32001,6 @@
       "rep"
     ],
     "description": "Do client side flex animation."
-  },
-  "scene_coordinator_add_request": {
-    "default": "cmd",
-    "flags": [
-      "sv"
-    ],
-    "description": "Add a request to the scene coordinator"
-  },
-  "scene_maxcaptionradius": {
-    "default": "1200",
-    "flags": [
-      "sv"
-    ],
-    "description": "Only show closed captions if recipient is within this many units of speaking actor (0==disabled)."
   },
   "scene_playvcd": {
     "default": "cmd",
@@ -32874,12 +32738,12 @@
     ],
     "description": ""
   },
-  "snd_arrangement_start": {
+  "snd__beatpattern_stop_track": {
     "default": "cmd",
     "flags": [
       "cheat"
     ],
-    "description": "Starts the specified arrangement."
+    "description": "Stops the specified track"
   },
   "snd_async_flush": {
     "default": "cmd",
@@ -32910,6 +32774,76 @@
     "default": "true",
     "flags": [
       "a"
+    ],
+    "description": ""
+  },
+  "snd_beatpattern_flush": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Purge and reload all beat pattern data and files."
+  },
+  "snd_beatpattern_print_activetracks": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "List all active tracks"
+  },
+  "snd_beatpattern_print_patterns": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "List all available beat patterns"
+  },
+  "snd_beatpattern_set_track_bpm": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Sets the tempo of the specified track"
+  },
+  "snd_beatpattern_set_track_transpose": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Sets the transposition of the specified track"
+  },
+  "snd_beatpattern_show_bpm": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
+  "snd_beatpattern_show_events": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
+  "snd_beatpattern_show_quantize_queue": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
+  "snd_beatpattern_stop_all_tracks": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Stops all currently playing patterns"
+  },
+  "snd_beatpattern_use_lookahead": {
+    "default": "false",
+    "flags": [
+      "cheat"
     ],
     "description": ""
   },
@@ -33353,83 +33287,6 @@
     ],
     "description": "Stop a note from a specified sampler"
   },
-  "snd_sequencer_print_activetracks": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "List all active tracks"
-  },
-  "snd_sequencer_print_arrangements": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "List all available sequence arrangments"
-  },
-  "snd_sequencer_print_sequences": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "List all available midi sequences"
-  },
-  "snd_sequencer_set_track_bpm": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Sets the tempo of the specified track"
-  },
-  "snd_sequencer_set_track_transpose": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Sets the transposition of the specified track"
-  },
-  "snd_sequencer_show_bpm": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": ""
-  },
-  "snd_sequencer_show_events": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": ""
-  },
-  "snd_sequencer_show_quantize_queue": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": ""
-  },
-  "snd_sequencer_stop_all_tracks": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Stops all currently playing sequences"
-  },
-  "snd_sequencer_stop_track": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Stops the specified track"
-  },
-  "snd_sequencer_vmidi_flush": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Purge and reload all vmidi data and files."
-  },
   "snd_set_physics_surface_properties": {
     "default": "cmd",
     "flags": [
@@ -33455,6 +33312,11 @@
     "default": "cmd",
     "flags": [],
     "description": "Specifies the position (in degrees) of the virtual rear left/right speakers."
+  },
+  "snd_sos_beatpattern_show_operator_updates": {
+    "default": "false",
+    "flags": [],
+    "description": ""
   },
   "snd_sos_block_global_stack": {
     "default": "false",
@@ -33608,6 +33470,13 @@
     "description": ""
   },
   "snd_sos_print_fps": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
+  "snd_sos_print_frametime": {
     "default": "false",
     "flags": [
       "cheat"
@@ -34054,6 +33923,11 @@
     ],
     "description": ""
   },
+  "snd_steamaudio_ambisonics_correction_type": {
+    "default": "1",
+    "flags": [],
+    "description": "0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs."
+  },
   "snd_steamaudio_baked_data_stats": {
     "default": "cmd",
     "flags": [
@@ -34067,6 +33941,42 @@
       "cheat"
     ],
     "description": "0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2"
+  },
+  "snd_steamaudio_baked_occlusion_pathing_deviation_slope": {
+    "default": "0.1",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Adjust how much occlusion goes does with deviation angle."
+  },
+  "snd_steamaudio_baked_occlusion_pathing_exponent": {
+    "default": "0.1",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Adjust scaling of pathing energy by exponentiall scaling with pathing delta."
+  },
+  "snd_steamaudio_baked_occlusion_reflection_factor": {
+    "default": "1",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Adjust scaling for reflection energy when combining it to calculate occlusion value."
+  },
+  "snd_steamaudio_display_dimension_data_inside": {
+    "default": "true",
+    "flags": [],
+    "description": "When visualizing dimensions data at runtime, draw the inside direction."
+  },
+  "snd_steamaudio_display_dimension_data_outside": {
+    "default": "true",
+    "flags": [],
+    "description": "When visualizing dimensions data at runtime, draw the outisde direction."
+  },
+  "snd_steamaudio_display_dimension_data_size": {
+    "default": "true",
+    "flags": [],
+    "description": "When visualizing dimensions data at runtime, draw the size of the space."
   },
   "snd_steamaudio_display_probes": {
     "default": "cmd",
@@ -34086,6 +33996,16 @@
     "default": "false",
     "flags": [],
     "description": "Enable custom HRTF loading."
+  },
+  "snd_steamaudio_enable_occlusion_caching": {
+    "default": "true",
+    "flags": [],
+    "description": "Continue using previous occlusion if probe lookup for occlusion fails."
+  },
+  "snd_steamaudio_enable_ordertruncated_ambisonics_hrtf": {
+    "default": "false",
+    "flags": [],
+    "description": "Enable order-truncated Ambisonics HRTF loading."
   },
   "snd_steamaudio_enable_pathing": {
     "default": "false",
@@ -34114,10 +34034,10 @@
     ],
     "description": "Enable Steam Audio Reverb processor."
   },
-  "snd_steamaudio_enable_reverb_probe_caching_for_missing_probes": {
+  "snd_steamaudio_enable_reverb_caching": {
     "default": "true",
     "flags": [],
-    "description": "Continue using previous prrobes if probe lookup for reverb fails."
+    "description": "Continue using previous reverb if probe lookup for reverb fails."
   },
   "snd_steamaudio_enable_spatial_blend_fix": {
     "default": "cmd",
@@ -34191,6 +34111,11 @@
     "default": "true",
     "flags": [],
     "description": "If set, baked reverb data is loaded. Reset it to zero during an format changes of baked data until all data is updated."
+  },
+  "snd_steamaudio_max_ambisonics_order": {
+    "default": "3",
+    "flags": [],
+    "description": "Maximum order for Ambisonics binaural rendering and Ambisonics panning."
   },
   "snd_steamaudio_max_convolution_sources": {
     "default": "4",
@@ -34345,6 +34270,11 @@
     "flags": [],
     "description": "Enable real-time pathing validation against dynamic geometry."
   },
+  "snd_steamaudio_use_soundblocking_shapes_only": {
+    "default": "false",
+    "flags": [],
+    "description": "If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries."
+  },
   "snd_stereo_speaker_pan_exponent": {
     "default": "cmd",
     "flags": [],
@@ -34388,13 +34318,6 @@
     ],
     "description": "If set > 0, overrides how long the decay time is on all mix graphs (in seconds)."
   },
-  "snd_vmix_show_input_updates": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": "If set to 1, show all incoming updates to vmix inputs."
-  },
   "snd_voipvolume": {
     "default": "1",
     "flags": [
@@ -34426,7 +34349,7 @@
     "description": ""
   },
   "sound_device_override": {
-    "default": "Source2SDLDefaultDevice",
+    "default": "0",
     "flags": [
       "a",
       "release"
@@ -34821,6 +34744,13 @@
     "flags": [],
     "description": "Route voice between splitscreen players on same system."
   },
+  "start_rec_mic": {
+    "default": "cmd",
+    "flags": [
+      "linked"
+    ],
+    "description": "Start recording to a desired wav."
+  },
   "startdemos": {
     "default": "cmd",
     "flags": [
@@ -35012,6 +34942,20 @@
     ],
     "description": "Finish recording demo."
   },
+  "stop_rec_mic": {
+    "default": "cmd",
+    "flags": [
+      "linked"
+    ],
+    "description": "Stop recording to a desired wav."
+  },
+  "stop_rec_mic_all": {
+    "default": "cmd",
+    "flags": [
+      "linked"
+    ],
+    "description": "Stop recording all mic streams."
+  },
   "stopdemos": {
     "default": "cmd",
     "flags": [
@@ -35068,13 +35012,6 @@
       "nf",
       "rep",
       "release"
-    ],
-    "description": ""
-  },
-  "sv_ag2_low_skel_lod": {
-    "default": "false",
-    "flags": [
-      "sv"
     ],
     "description": ""
   },
@@ -35412,13 +35349,6 @@
     ],
     "description": "Allow alternate baseline system, set to 2 for debugging spew."
   },
-  "sv_enable_delta_packing": {
-    "default": "true",
-    "flags": [
-      "release"
-    ],
-    "description": "When enabled, this allows for entity packing to use the property changes for building up the data. This is many times faster, but can be disabled for error checking."
-  },
   "sv_enable_removearrayelementsoutsidemetadatabounds": {
     "default": "false",
     "flags": [
@@ -35433,13 +35363,6 @@
       "cheat"
     ],
     "description": ""
-  },
-  "sv_ents_write_alarm": {
-    "default": "0",
-    "flags": [
-      "release"
-    ],
-    "description": "Print callstack every time CNetworkGameServerBase::WriteEntityUpdate takes more than this amount of milliseconds"
   },
   "sv_extra_client_connect_time": {
     "default": "15",
@@ -35828,13 +35751,6 @@
     ],
     "description": "Track individual field offset changes, rather than a single dirty flag for the whole entity."
   },
-  "sv_networkvar_validate": {
-    "default": "false",
-    "flags": [
-      "release"
-    ],
-    "description": "Validate each StateChanged against known offsets."
-  },
   "sv_noclipaccelerate": {
     "default": "5",
     "flags": [
@@ -35888,20 +35804,6 @@
       "rep"
     ],
     "description": ""
-  },
-  "sv_pack_entities_really_verbose": {
-    "default": "false",
-    "flags": [
-      "release"
-    ],
-    "description": "Increase verbosity for entity packing"
-  },
-  "sv_pack_entities_verbose_entidx": {
-    "default": "-1",
-    "flags": [
-      "release"
-    ],
-    "description": "Verbose output for entity packing, set to the entindex of the entity you want verbose output for."
   },
   "sv_packstats": {
     "default": "cmd",
@@ -36098,13 +36000,6 @@
     "default": "30",
     "flags": [],
     "description": "Number of seconds to track failed rcon authentications"
-  },
-  "sv_recipients_check": {
-    "default": "true",
-    "flags": [
-      "release"
-    ],
-    "description": "When packing entities, check that recipient bits match for fast path packing."
   },
   "sv_recvbuf_messages": {
     "default": "1024",
@@ -36333,6 +36228,13 @@
     "flags": [],
     "description": "Collect CPU usage stats"
   },
+  "sv_steamauth_correct": {
+    "default": "false",
+    "flags": [
+      "release"
+    ],
+    "description": "Correct behavior"
+  },
   "sv_steamauth_enforce": {
     "default": "2",
     "flags": [
@@ -36498,14 +36400,6 @@
       "release"
     ],
     "description": ""
-  },
-  "sv_watchtransmit": {
-    "default": "-2",
-    "flags": [
-      "sv",
-      "release"
-    ],
-    "description": "Watch NetworkStateChanged info for this entity index."
   },
   "sv_wateraccelerate": {
     "default": "10",
@@ -36799,12 +36693,16 @@
   },
   "timedemo_end": {
     "default": "-1",
-    "flags": [],
+    "flags": [
+      "release"
+    ],
     "description": "Ends timedemo on given tick."
   },
   "timedemo_start": {
     "default": "-1",
-    "flags": [],
+    "flags": [
+      "release"
+    ],
     "description": "Starts timedemo on given tick."
   },
   "timedemoquit": {
@@ -38126,6 +38024,11 @@
     "flags": [
       "sv"
     ],
+    "description": ""
+  },
+  "vt_sim_streaming_delay_ms": {
+    "default": "500",
+    "flags": [],
     "description": ""
   },
   "vtune": {

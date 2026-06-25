@@ -47,10 +47,30 @@ const currentVersion = {
 
 console.log(`Processing version ${currentVersion.version}...`);
 
+// Render an api Type (a plain string, or a structured object like a literal /
+// array / table) as a readable string. Without this, structured types stringify
+// to "[object Object]" when joined.
+function typeToStr(t) {
+  if (t == null) return 'nil';
+  if (typeof t === 'string') return t;
+  if (typeof t !== 'object') return String(t);
+  if (t.kind === 'literal') return typeof t.value === 'string' ? `"${t.value}"` : String(t.value);
+  if (t.kind === 'array') return `(${typesToStr(t.types)})[]`;
+  if (t.kind === 'table') {
+    return `table<${t.key ? typeToStr(t.key) : 'any'}, ${t.value ? typeToStr(t.value) : 'any'}>`;
+  }
+  if (t.kind === 'function') return 'function';
+  if (typeof t.name === 'string') return t.name;
+  return JSON.stringify(t);
+}
+function typesToStr(types) {
+  return (types || []).map(typeToStr).join(' | ');
+}
+
 // Format function signature with typed args
 function formatSignature(func) {
   if (!func.args || !func.args.length) return `${func.name}()`;
-  const args = func.args.map(a => `${a.name}: ${(a.types || []).join(' | ')}`).join(', ');
+  const args = func.args.map(a => `${a.name}: ${typesToStr(a.types)}`).join(', ');
   return `${func.name}(${args})`;
 }
 
@@ -70,8 +90,9 @@ function extractApiItems(content) {
               class: item.name,
               name: m.name,
               signature: formatSignature(m),
-              returns: (m.returns || []).join(' | '),
+              returns: typesToStr(m.returns),
               description: m.description || '',
+              abstract: !!m.abstract,
             });
           }
         }
@@ -81,7 +102,7 @@ function extractApiItems(content) {
         type: 'function',
         name: item.name,
         signature: formatSignature(item),
-        returns: (item.returns || []).join(' | '),
+        returns: typesToStr(item.returns),
         description: item.description || '',
       });
     } else if (item.kind === 'constant') {
@@ -300,17 +321,28 @@ function extractCssProperties(content) {
   return Object.keys(content).map(k => ({ type: 'property', name: k }));
 }
 
-// Build current state
-function buildCurrentState() {
+// Build a tracked-file state. `readFile(relPath)` returns the file's text content,
+// or null if it doesn't exist in that source (current working tree or a git ref).
+function buildState(readFile) {
   const state = {};
-  
+  const cache = new Map();
+  const read = (rel) => {
+    if (!cache.has(rel)) cache.set(rel, readFile(rel));
+    return cache.get(rel);
+  };
+
   for (const tracked of trackedFiles) {
-    const filePath = path.join(filesDir, tracked.file);
-    if (!fs.existsSync(filePath)) continue;
-    
-    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const raw = read(tracked.file);
+    if (raw == null) continue;
+
+    let content;
+    try {
+      content = JSON.parse(raw);
+    } catch {
+      continue;
+    }
     let items = [];
-    
+
     switch (tracked.type) {
       case 'api':
         items = extractApiItems(content);
@@ -358,8 +390,36 @@ function buildCurrentState() {
     
     state[tracked.type] = { name: tracked.name, items };
   }
-  
+
   return state;
+}
+
+// Current working-tree state.
+function buildCurrentState() {
+  return buildState((rel) => {
+    const filePath = path.join(filesDir, rel);
+    return fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : null;
+  });
+}
+
+// State of the files as committed at a git ref (e.g. HEAD). Used as the "previous"
+// baseline so the diff is always consistent with what was actually published —
+// unlike state snapshots, which can drift from the committed data and then show
+// every item as added or surface phantom type "regressions".
+function buildStateFromGit(ref) {
+  const { execSync } = require('child_process');
+  const cwd = path.join(__dirname, '..');
+  return buildState((rel) => {
+    try {
+      return execSync(`git show ${ref}:files/${rel}`, {
+        cwd,
+        maxBuffer: 512 * 1024 * 1024,
+        stdio: ['pipe', 'pipe', 'ignore'],
+      }).toString('utf8');
+    } catch {
+      return null;
+    }
+  });
 }
 
 // Create item key for comparison
@@ -438,6 +498,12 @@ function compareStates(prev, curr) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
         const prevItem = prevMap.get(k);
 
+        // Abstract methods (e.g. the modifier function handlers on
+        // CDOTA_Modifier_Lua) are hand-maintained interface declarations, not
+        // dump-derived API. Their availability is tracked in "Properties Fixed";
+        // don't also report their signature/return flips as Lua API changes.
+        if (currItem.abstract || prevItem.abstract) continue;
+
         if (kvTypes.has(currItem.type)) {
           // Deep KV diff for abilities and units
           // Skip if previous state lacks structured data (old format migration)
@@ -492,10 +558,10 @@ function escapeLoc(v) {
     : v;
 }
 
-// Build the "Localization" category by diffing the previous committed english.json
-// (git HEAD) against the current working-tree english.json. Kept out of the state
-// snapshots (which would bloat by several MB); English is the canonical source.
-function buildLocalizationChanges() {
+// Build the "Localization" category by diffing the previous version's english.json
+// (at git ref `prevRef`) against the current working-tree english.json. Kept out of
+// the state snapshots (which would bloat by several MB); English is the canonical source.
+function buildLocalizationChanges(prevRef) {
   const { execSync } = require('child_process');
   const englishPath = path.join(filesDir, 'localization', 'english.json');
   if (!fs.existsSync(englishPath)) return null;
@@ -508,14 +574,17 @@ function buildLocalizationChanges() {
   }
 
   let previous = null;
-  try {
-    const prevText = execSync('git show HEAD:files/localization/english.json', {
-      cwd: path.join(__dirname, '..'),
-      maxBuffer: 512 * 1024 * 1024,
-    }).toString('utf8');
-    previous = JSON.parse(prevText);
-  } catch {
-    // No committed english.json available (no git, or first commit).
+  if (prevRef) {
+    try {
+      const prevText = execSync(`git show ${prevRef}:files/localization/english.json`, {
+        cwd: path.join(__dirname, '..'),
+        maxBuffer: 512 * 1024 * 1024,
+        stdio: ['pipe', 'pipe', 'ignore'],
+      }).toString('utf8');
+      previous = JSON.parse(prevText);
+    } catch {
+      // No committed english.json at that ref (no git, or first commit).
+    }
   }
 
   // Without a previous baseline every token would look "added", which is noise rather
@@ -550,45 +619,92 @@ function buildLocalizationChanges() {
   return null;
 }
 
-// Load previous state
-function loadPreviousState(version) {
-  const statePath = path.join(statesDir, `${version}.json`);
-  if (fs.existsSync(statePath)) {
-    return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+// Walk back through git history to find the most recent commit whose dump is a
+// DIFFERENT version than the current one. That commit's files are the correct
+// "previous version" baseline — this works whether the current version is still
+// in the working tree (HEAD is the previous version) or already committed (HEAD is
+// the current version, so we need HEAD~1). Returns { ref, version }.
+function findPreviousRef(currentVer) {
+  const { execSync } = require('child_process');
+  const cwd = path.join(__dirname, '..');
+  let shas = [];
+  try {
+    shas = execSync('git rev-list --max-count=60 HEAD', { cwd, stdio: ['pipe', 'pipe', 'ignore'] })
+      .toString()
+      .trim()
+      .split('\n')
+      .filter(Boolean);
+  } catch {
+    return { ref: null, version: null };
   }
-  return null;
-}
-
-// Get previous version from index
-function getPreviousVersion() {
-  if (!fs.existsSync(changelogIndexPath)) return null;
-  
-  const index = JSON.parse(fs.readFileSync(changelogIndexPath, 'utf8'));
-  for (const entry of index) {
-    if (entry.version !== currentVersion.version) {
-      return entry.version;
+  for (const sha of shas) {
+    try {
+      const dump = execSync(`git show ${sha}:dumper/dump`, {
+        cwd,
+        maxBuffer: 512 * 1024 * 1024,
+        stdio: ['pipe', 'pipe', 'ignore'],
+      }).toString('utf8');
+      const m = dump.match(/ClientVersion=(\d+)/);
+      if (m && m[1] !== currentVer) return { ref: sha, version: m[1] };
+    } catch {
+      // dumper/dump not present in this commit — keep walking back.
     }
   }
-  return null;
+  return { ref: null, version: null };
 }
 
 // Main
 const currState = buildCurrentState();
 
-const prevVersion = getPreviousVersion();
-console.log(`Previous version: ${prevVersion || 'none'}`);
+// Diff against the previous version's COMMITTED data — the last published version —
+// rather than a state snapshot. Snapshots can drift out of sync with the committed
+// files, which is what produced both the bogus "everything is new" changelog and
+// the phantom type "regressions" (e.g. Vector -> unknown, float -> nil).
+const prev = findPreviousRef(currentVersion.version);
+const prevVersion = prev.version;
+console.log(`Previous version: ${prevVersion || 'none'} (git ${prev.ref ? prev.ref.slice(0, 8) : 'n/a'})`);
 
-const prevState = prevVersion ? loadPreviousState(prevVersion) : null;
+const prevState = prev.ref ? buildStateFromGit(prev.ref) : {};
 
-if (!prevState && prevVersion) {
-  console.log(`Warning: No state file for ${prevVersion}`);
+// Safety net: if we found a previous commit but read none of its tracked files,
+// refuse to emit a changelog that marks everything as new.
+if (prev.ref && Object.keys(prevState).length === 0) {
+  console.error('Could not read previous state from git — aborting to avoid a bogus "everything is new" changelog.');
+  process.exit(1);
 }
 
 const changes = compareStates(prevState, currState);
 
+// "Properties Fixed" tracks modifier-property availability (only `true` values are
+// stored in the state). A property becoming available shows up as "added" and one
+// becoming unavailable as "removed". Re-render those as explicit value flips so the
+// changelog reads e.g. `MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT: true -> false`
+// (and the reverse) instead of bare add/remove rows.
+const propsFixed = changes['Properties Fixed'];
+if (propsFixed) {
+  const flips = [
+    ...(propsFixed.added || []).map(it => ({
+      type: 'modifier_property',
+      name: it.name,
+      changes: { value: { old: 'false', new: 'true' } },
+    })),
+    ...(propsFixed.removed || []).map(it => ({
+      type: 'modifier_property',
+      name: it.name,
+      changes: { value: { old: 'true', new: 'false' } },
+    })),
+  ];
+  if (flips.length > 0) {
+    flips.sort((a, b) => a.name.localeCompare(b.name));
+    propsFixed.added = [];
+    propsFixed.removed = [];
+    propsFixed.changed = [...(propsFixed.changed || []), ...flips];
+  }
+}
+
 // Localization is diffed straight from git (previous commit vs working tree) rather
 // than the state snapshots, then merged in as its own category.
-const localizationChanges = buildLocalizationChanges();
+const localizationChanges = buildLocalizationChanges(prev.ref);
 if (localizationChanges) {
   changes['Localization'] = localizationChanges;
 }
