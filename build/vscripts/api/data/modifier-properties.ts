@@ -440,6 +440,16 @@ const modifiersData: Record<string, [ArgumentType, apiTypes.Type[], string?]> = 
   OnTierTokenRerolled: [null, ['nil']],
   OnTreeCutDown: ['ModifierUnitEvent', ['nil']],
   ReincarnateSuppressFX: [null, binaryBoolean],
+
+  // Added: custom modifier events and properties
+  GetModifierConstantCasttime: ['ModifierAbilityEvent', anyNumber],
+  GetModifierPropertyCustom1: [null, anyNumber],
+  GetModifierPropertyCustom2: [null, anyNumber],
+  GetModifierPropertyCustom3: [null, anyNumber],
+  GetModifierReplaceAttack: [null, binaryBoolean],
+  OnCustom1: [null, ['nil']],
+  OnCustom2: [null, ['nil']],
+  OnCustom3: [null, ['nil']],
 };
 
 // Typo corrections for function names as they appear in the dump

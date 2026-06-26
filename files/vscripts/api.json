@@ -16221,9 +16221,16 @@
         "name": "GetModifierConstantCasttime",
         "available": "both",
         "abstract": true,
-        "args": [],
+        "args": [
+          {
+            "name": "event",
+            "types": [
+              "ModifierAbilityEvent"
+            ]
+          }
+        ],
         "returns": [
-          "nil"
+          "float"
         ]
       },
       {
@@ -18417,7 +18424,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ]
       },
       {
@@ -18427,7 +18434,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ]
       },
       {
@@ -18437,7 +18444,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ]
       },
       {
@@ -18611,7 +18618,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ]
       },
       {

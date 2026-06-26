@@ -4759,7 +4759,7 @@
         "args": [
           {
             "name": "nButtonNum",
-            "type": "number"
+            "type": "ButtonCode_t"
           }
         ],
         "returns": "boolean",

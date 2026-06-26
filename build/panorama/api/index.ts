@@ -1,4 +1,5 @@
 import { readDump } from '../../util';
+import { override } from './data';
 import { PanoramaApiFunction, PanoramaApiFunctionArg, PanoramaApiInterface } from './types';
 
 export { types as apiTypes } from './types';
@@ -84,6 +85,7 @@ export function generatePanoramaApi(): PanoramaApiInterface[] {
       });
     }
   }
-  
+
+  override(interfaces);
   return interfaces;
 }

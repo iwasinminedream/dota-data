@@ -1,0 +1,763 @@
+{
+  "version": "6835",
+  "date": "Jun 25 2026",
+  "time": "23:29:37",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1805
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama API": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "method",
+          "name": "IsKeyDown",
+          "class": "CDOTA_PanoramaScript_GameUI",
+          "changes": {
+            "signature": {
+              "old": "IsKeyDown(nButtonNum: number)",
+              "new": "IsKeyDown(nButtonNum: ButtonCode_t)"
+            }
+          }
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum",
+          "name": "ButtonCode_t"
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_0",
+          "value": 1
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_1",
+          "value": 2
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_2",
+          "value": 3
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_3",
+          "value": 4
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_4",
+          "value": 5
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_5",
+          "value": 6
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_6",
+          "value": 7
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_7",
+          "value": 8
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_8",
+          "value": 9
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_9",
+          "value": 10
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_a",
+          "value": 11
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_b",
+          "value": 12
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_c",
+          "value": 13
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_d",
+          "value": 14
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_e",
+          "value": 15
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f",
+          "value": 16
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_g",
+          "value": 17
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_h",
+          "value": 18
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_i",
+          "value": 19
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_j",
+          "value": 20
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_k",
+          "value": 21
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_l",
+          "value": 22
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_m",
+          "value": 23
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_n",
+          "value": 24
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_o",
+          "value": 25
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_p",
+          "value": 26
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_q",
+          "value": 27
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_r",
+          "value": 28
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_s",
+          "value": 29
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_t",
+          "value": 30
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_u",
+          "value": 31
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_v",
+          "value": 32
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_w",
+          "value": 33
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_x",
+          "value": 34
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_y",
+          "value": 35
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_z",
+          "value": 36
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_0",
+          "value": 37
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_1",
+          "value": 38
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_2",
+          "value": 39
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_3",
+          "value": 40
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_4",
+          "value": 41
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_5",
+          "value": 42
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_6",
+          "value": 43
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_7",
+          "value": 44
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_8",
+          "value": 45
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_9",
+          "value": 46
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_divide",
+          "value": 47
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_multiply",
+          "value": 48
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_minus",
+          "value": 49
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_plus",
+          "value": 50
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_enter",
+          "value": 51
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_decimal",
+          "value": 52
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pad_equal",
+          "value": 53
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_lbracket",
+          "value": 54
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_rbracket",
+          "value": 55
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_semicolon",
+          "value": 56
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_apostrophe",
+          "value": 57
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_backquote",
+          "value": 58
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_comma",
+          "value": 59
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_period",
+          "value": 60
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_slash",
+          "value": 61
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_backslash",
+          "value": 62
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_minus",
+          "value": 63
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_equal",
+          "value": 64
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_enter",
+          "value": 65
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_space",
+          "value": 66
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_backspace",
+          "value": 67
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_tab",
+          "value": 68
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_capslock",
+          "value": 69
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_numlock",
+          "value": 70
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_escape",
+          "value": 71
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_scrolllock",
+          "value": 72
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_insert",
+          "value": 73
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_delete",
+          "value": 74
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_home",
+          "value": 75
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_end",
+          "value": 76
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pageup",
+          "value": 77
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_pagedown",
+          "value": 78
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_break",
+          "value": 79
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_lshift",
+          "value": 80
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_rshift",
+          "value": 81
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_lalt",
+          "value": 82
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_ralt",
+          "value": 83
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_lcontrol",
+          "value": 84
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_rcontrol",
+          "value": 85
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_lwin",
+          "value": 86
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_rwin",
+          "value": 87
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_app",
+          "value": 88
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_up",
+          "value": 89
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_left",
+          "value": 90
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_down",
+          "value": 91
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_right",
+          "value": 92
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f1",
+          "value": 93
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f2",
+          "value": 94
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f3",
+          "value": 95
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f4",
+          "value": 96
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f5",
+          "value": 97
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f6",
+          "value": 98
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f7",
+          "value": 99
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f8",
+          "value": 100
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f9",
+          "value": 101
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f10",
+          "value": 102
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f11",
+          "value": 103
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "key_f12",
+          "value": 104
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "mouse_4",
+          "value": 320
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "mouse_5",
+          "value": 321
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "mouse_left",
+          "value": 317
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "mouse_middle",
+          "value": 319
+        },
+        {
+          "type": "enum_member",
+          "enum": "ButtonCode_t",
+          "name": "mouse_right",
+          "value": 318
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI"
+        }
+      ],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnivalNotification_MissingPostGameTickets",
+          "value": "Your account was affected by a Dark Carnival bug: You didn't receive post-game tickets when you should've. The bug has been fixed, tickets have been retroactively granted."
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_CandyShop_CandySackInfo_Crownfall",
+          "changes": {
+            "value": {
+              "old": "Unlock Crownfall map locations to earn candy.",
+              "new": "Unlock Dark Carnival map locations to earn candy."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Store_AutomatonPersona_SalesDescription_Bristleback",
+          "changes": {
+            "value": {
+              "old": "Automaton Bristlecack runs only on the purest of cask-strength, first-press machine oils, but he wouldn't say no to the occasional bottom-shelf crankcase runoff, if you were going to pour it out anyway. It's perfectly good, innit, give it 'ere.",
+              "new": "Automaton Bristleback runs only on the purest of cask-strength, first-press machine oils, but he wouldn't say no to the occasional bottom-shelf crankcase runoff, if you were going to pour it out anyway. It's perfectly good, innit, give it 'ere."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "dota_tip_universal_62",
+          "changes": {
+            "value": {
+              "old": "Bounty runes will spawn when the game begins and respawn every 3 minutes.",
+              "new": "Bounty runes will spawn when the game begins and respawn every 4 minutes."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "dota_tip_beginner_57",
+          "changes": {
+            "value": {
+              "old": "There are Bounty Rune locations in each jungle. They spawn every 3 minutes starting at 00:00. On first spawn, they also appear in both the river's Power Rune spots.",
+              "new": "There are Bounty Rune locations in each jungle. They spawn every 4 minutes starting at 00:00. On first spawn, they also appear in both the river's Power Rune spots."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

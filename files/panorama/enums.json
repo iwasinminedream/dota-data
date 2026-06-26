@@ -7522,5 +7522,446 @@
         "value": 8
       }
     ]
+  },
+  {
+    "name": "ButtonCode_t",
+    "members": [
+      {
+        "name": "key_0",
+        "value": 1
+      },
+      {
+        "name": "key_1",
+        "value": 2
+      },
+      {
+        "name": "key_2",
+        "value": 3
+      },
+      {
+        "name": "key_3",
+        "value": 4
+      },
+      {
+        "name": "key_4",
+        "value": 5
+      },
+      {
+        "name": "key_5",
+        "value": 6
+      },
+      {
+        "name": "key_6",
+        "value": 7
+      },
+      {
+        "name": "key_7",
+        "value": 8
+      },
+      {
+        "name": "key_8",
+        "value": 9
+      },
+      {
+        "name": "key_9",
+        "value": 10
+      },
+      {
+        "name": "key_a",
+        "value": 11
+      },
+      {
+        "name": "key_b",
+        "value": 12
+      },
+      {
+        "name": "key_c",
+        "value": 13
+      },
+      {
+        "name": "key_d",
+        "value": 14
+      },
+      {
+        "name": "key_e",
+        "value": 15
+      },
+      {
+        "name": "key_f",
+        "value": 16
+      },
+      {
+        "name": "key_g",
+        "value": 17
+      },
+      {
+        "name": "key_h",
+        "value": 18
+      },
+      {
+        "name": "key_i",
+        "value": 19
+      },
+      {
+        "name": "key_j",
+        "value": 20
+      },
+      {
+        "name": "key_k",
+        "value": 21
+      },
+      {
+        "name": "key_l",
+        "value": 22
+      },
+      {
+        "name": "key_m",
+        "value": 23
+      },
+      {
+        "name": "key_n",
+        "value": 24
+      },
+      {
+        "name": "key_o",
+        "value": 25
+      },
+      {
+        "name": "key_p",
+        "value": 26
+      },
+      {
+        "name": "key_q",
+        "value": 27
+      },
+      {
+        "name": "key_r",
+        "value": 28
+      },
+      {
+        "name": "key_s",
+        "value": 29
+      },
+      {
+        "name": "key_t",
+        "value": 30
+      },
+      {
+        "name": "key_u",
+        "value": 31
+      },
+      {
+        "name": "key_v",
+        "value": 32
+      },
+      {
+        "name": "key_w",
+        "value": 33
+      },
+      {
+        "name": "key_x",
+        "value": 34
+      },
+      {
+        "name": "key_y",
+        "value": 35
+      },
+      {
+        "name": "key_z",
+        "value": 36
+      },
+      {
+        "name": "key_pad_0",
+        "value": 37
+      },
+      {
+        "name": "key_pad_1",
+        "value": 38
+      },
+      {
+        "name": "key_pad_2",
+        "value": 39
+      },
+      {
+        "name": "key_pad_3",
+        "value": 40
+      },
+      {
+        "name": "key_pad_4",
+        "value": 41
+      },
+      {
+        "name": "key_pad_5",
+        "value": 42
+      },
+      {
+        "name": "key_pad_6",
+        "value": 43
+      },
+      {
+        "name": "key_pad_7",
+        "value": 44
+      },
+      {
+        "name": "key_pad_8",
+        "value": 45
+      },
+      {
+        "name": "key_pad_9",
+        "value": 46
+      },
+      {
+        "name": "key_pad_divide",
+        "value": 47
+      },
+      {
+        "name": "key_pad_multiply",
+        "value": 48
+      },
+      {
+        "name": "key_pad_minus",
+        "value": 49
+      },
+      {
+        "name": "key_pad_plus",
+        "value": 50
+      },
+      {
+        "name": "key_pad_enter",
+        "value": 51
+      },
+      {
+        "name": "key_pad_decimal",
+        "value": 52
+      },
+      {
+        "name": "key_pad_equal",
+        "value": 53
+      },
+      {
+        "name": "key_lbracket",
+        "value": 54
+      },
+      {
+        "name": "key_rbracket",
+        "value": 55
+      },
+      {
+        "name": "key_semicolon",
+        "value": 56
+      },
+      {
+        "name": "key_apostrophe",
+        "value": 57
+      },
+      {
+        "name": "key_backquote",
+        "value": 58
+      },
+      {
+        "name": "key_comma",
+        "value": 59
+      },
+      {
+        "name": "key_period",
+        "value": 60
+      },
+      {
+        "name": "key_slash",
+        "value": 61
+      },
+      {
+        "name": "key_backslash",
+        "value": 62
+      },
+      {
+        "name": "key_minus",
+        "value": 63
+      },
+      {
+        "name": "key_equal",
+        "value": 64
+      },
+      {
+        "name": "key_enter",
+        "value": 65
+      },
+      {
+        "name": "key_space",
+        "value": 66
+      },
+      {
+        "name": "key_backspace",
+        "value": 67
+      },
+      {
+        "name": "key_tab",
+        "value": 68
+      },
+      {
+        "name": "key_capslock",
+        "value": 69
+      },
+      {
+        "name": "key_numlock",
+        "value": 70
+      },
+      {
+        "name": "key_escape",
+        "value": 71
+      },
+      {
+        "name": "key_scrolllock",
+        "value": 72
+      },
+      {
+        "name": "key_insert",
+        "value": 73
+      },
+      {
+        "name": "key_delete",
+        "value": 74
+      },
+      {
+        "name": "key_home",
+        "value": 75
+      },
+      {
+        "name": "key_end",
+        "value": 76
+      },
+      {
+        "name": "key_pageup",
+        "value": 77
+      },
+      {
+        "name": "key_pagedown",
+        "value": 78
+      },
+      {
+        "name": "key_break",
+        "value": 79
+      },
+      {
+        "name": "key_lshift",
+        "value": 80
+      },
+      {
+        "name": "key_rshift",
+        "value": 81
+      },
+      {
+        "name": "key_lalt",
+        "value": 82
+      },
+      {
+        "name": "key_ralt",
+        "value": 83
+      },
+      {
+        "name": "key_lcontrol",
+        "value": 84
+      },
+      {
+        "name": "key_rcontrol",
+        "value": 85
+      },
+      {
+        "name": "key_lwin",
+        "value": 86
+      },
+      {
+        "name": "key_rwin",
+        "value": 87
+      },
+      {
+        "name": "key_app",
+        "value": 88
+      },
+      {
+        "name": "key_up",
+        "value": 89
+      },
+      {
+        "name": "key_left",
+        "value": 90
+      },
+      {
+        "name": "key_down",
+        "value": 91
+      },
+      {
+        "name": "key_right",
+        "value": 92
+      },
+      {
+        "name": "key_f1",
+        "value": 93
+      },
+      {
+        "name": "key_f2",
+        "value": 94
+      },
+      {
+        "name": "key_f3",
+        "value": 95
+      },
+      {
+        "name": "key_f4",
+        "value": 96
+      },
+      {
+        "name": "key_f5",
+        "value": 97
+      },
+      {
+        "name": "key_f6",
+        "value": 98
+      },
+      {
+        "name": "key_f7",
+        "value": 99
+      },
+      {
+        "name": "key_f8",
+        "value": 100
+      },
+      {
+        "name": "key_f9",
+        "value": 101
+      },
+      {
+        "name": "key_f10",
+        "value": 102
+      },
+      {
+        "name": "key_f11",
+        "value": 103
+      },
+      {
+        "name": "key_f12",
+        "value": 104
+      },
+      {
+        "name": "mouse_4",
+        "value": 320
+      },
+      {
+        "name": "mouse_5",
+        "value": 321
+      },
+      {
+        "name": "mouse_left",
+        "value": 317
+      },
+      {
+        "name": "mouse_middle",
+        "value": 319
+      },
+      {
+        "name": "mouse_right",
+        "value": 318
+      }
+    ]
   }
 ]
