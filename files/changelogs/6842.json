@@ -1,0 +1,124 @@
+{
+  "version": "6842",
+  "date": "Jun 29 2026",
+  "time": "17:22:36",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1805
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "techies_suicide",
+          "changes": {
+            "AbilityValues": {
+              "duration": {
+                "old": null,
+                "new": 0.75
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "winter_wyvern_cold_embrace",
+          "changes": {
+            "AbilityValues": {
+              "shard_splinter_range": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_conjurers_catalyst",
+          "changes": {
+            "AbilityValues": {
+              "damage_aoe": {
+                "value": {
+                  "old": 300,
+                  "new": 300
+                },
+                "affected_by_aoe_incrase": {
+                  "old": 1,
+                  "new": null
+                },
+                "affected_by_aoe_increase": {
+                  "old": null,
+                  "new": 1
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_ember_spirit_fire_remnant_Description",
+          "changes": {
+            "value": {
+              "old": "Sends a Fire Remnant that runs to the target location at %speed_multiplier%%% Ember Spirit's speed.  Using Activate Fire Remnant, Ember Spirit will dash out to all active Fire Remnants, destroying them and dealing damage in an area and then moving to the nearest Remnant.  Ember Spirit will end at the Remnant closest to the targeted location.",
+              "new": "Sends a Fire Remnant that runs to the target location at %speed_multiplier%%% Ember Spirit's speed. Using Activate Fire Remnant, Ember Spirit will dash out to all active Fire Remnants, destroying them and dealing damage in an area and then moving to the nearest Remnant.  Ember Spirit will end at the Remnant closest to the targeted location."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_ember_spirit_fire_remnant_shard_description",
+          "changes": {
+            "value": {
+              "old": "If an enemy hero dies near Ember Spirit, a Fire Remnant charge will be replenished.",
+              "new": "If an enemy hero dies near Ember Spirit, a Fire Remnant charge will be replenished. Additionally, when Ember Spirit dies a Fire Remnant is spawned at his location."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnivalNotification_MissingPostGameTickets",
+          "changes": {
+            "value": {
+              "old": "Your account was affected by a Dark Carnival bug: You didn't receive post-game tickets when you should've. The bug has been fixed, tickets have been retroactively granted.",
+              "new": "Your account was affected by a Dark Carnival bug: You didn't receive post-game tickets when you should've. The bug has been fixed, and tickets have been retroactively granted."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

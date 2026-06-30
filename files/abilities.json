@@ -35566,7 +35566,8 @@
         "value": 0,
         "DamageTypeTooltip": "DAMAGE_TYPE_PURE",
         "CalculateSpellDamageTooltip": 0
-      }
+      },
+      "duration": 0.75
     },
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_3"
   },
@@ -40551,8 +40552,7 @@
         "special_bonus_shard": 4
       },
       "shard_splinter_range": {
-        "value": 0,
-        "affected_by_aoe_increase": 1
+        "value": 0
       },
       "tick_interval": 0.25,
       "can_target_buildings": {
@@ -50147,7 +50147,7 @@
       "damage_threshold": 200,
       "damage_aoe": {
         "value": 300,
-        "affected_by_aoe_incrase": 1
+        "affected_by_aoe_increase": 1
       },
       "damage": {
         "value": 80,

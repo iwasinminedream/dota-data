@@ -6461,6 +6461,10 @@
         "shortName": "FREE_DRAW_TARGETING"
       },
       {
+        "name": "DOTA_ABILITY_BEHAVIOR_HAS_DETAILS_UI",
+        "shortName": "HAS_DETAILS_UI"
+      },
+      {
         "name": "DOTA_ABILITY_BEHAVIOR_HIDDEN",
         "shortName": "HIDDEN"
       },

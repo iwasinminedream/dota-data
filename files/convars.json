@@ -5963,7 +5963,7 @@
     "description": "If set, brings Dota to the foreground when unpaused"
   },
   "dota_active_play_section_new": {
-    "default": "8",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -6135,7 +6135,7 @@
     "description": ""
   },
   "dota_alt_shows_tower_attack_range": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8633,7 +8633,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "5969",
+    "default": "5984",
     "flags": [
       "cl",
       "a",
@@ -8986,7 +8986,7 @@
     "description": ""
   },
   "dota_dark_carnival_visual_novel_enable_auto_advance": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9011,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4038",
+    "default": "4072",
     "flags": [
       "cl",
       "a",
@@ -11381,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35415242469",
+    "default": "35452390373",
     "flags": [
       "cl",
       "a",
@@ -12637,7 +12637,7 @@
     "description": ""
   },
   "dota_match_game_modes": {
-    "default": "0",
+    "default": "8388608",
     "flags": [
       "cl",
       "a"
@@ -12685,7 +12685,7 @@
     "description": "Bit mask of match groups to search in for matchmaking if automatic detection is enabled"
   },
   "dota_matchgroups_new": {
-    "default": "0",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -13260,7 +13260,7 @@
     "description": "If enabled, mouse will be locked to the window when in game and spectating in a mode that doesn't give camera control"
   },
   "dota_mouse_window_lock": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -18545,7 +18545,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "119",
+    "default": "138",
     "flags": [
       "cl",
       "a",
@@ -33026,7 +33026,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.322731",
+    "default": "0.134436",
     "flags": [
       "a"
     ],
@@ -37871,7 +37871,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.059955",
+    "default": "0.952078",
     "flags": [
       "a"
     ],
