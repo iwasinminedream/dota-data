@@ -6505,10 +6505,6 @@
         "shortName": "IS_FAKE_ITEM"
       },
       {
-        "name": "DOTA_ABILITY_BEHAVIOR_ITEM",
-        "shortName": "ITEM"
-      },
-      {
         "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
         "shortName": "ITEM_IMBUE"
       },

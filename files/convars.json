@@ -5793,7 +5793,7 @@
     "description": ""
   },
   "dota_ability_contribution_assert_minimum": {
-    "default": "100",
+    "default": "30",
     "flags": [
       "sv"
     ],
@@ -8633,7 +8633,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "5984",
+    "default": "5999",
     "flags": [
       "cl",
       "a",
@@ -9011,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4072",
+    "default": "4105",
     "flags": [
       "cl",
       "a",
@@ -11381,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35452390373",
+    "default": "35555144813",
     "flags": [
       "cl",
       "a",
@@ -12677,7 +12677,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "4",
+    "default": "73730",
     "flags": [
       "cl",
       "a"
@@ -12685,7 +12685,7 @@
     "description": "Bit mask of match groups to search in for matchmaking if automatic detection is enabled"
   },
   "dota_matchgroups_new": {
-    "default": "4",
+    "default": "388",
     "flags": [
       "cl",
       "a"
@@ -18482,7 +18482,7 @@
     "description": ""
   },
   "dota_track_ability_and_item_contributions": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "sv"
     ],
@@ -18545,7 +18545,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "138",
+    "default": "152",
     "flags": [
       "cl",
       "a",

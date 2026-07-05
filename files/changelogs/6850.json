@@ -1,0 +1,157 @@
+{
+  "version": "6850",
+  "date": "Jul 03 2026",
+  "time": "09:36:20",
+  "changes": {
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_ITEM"
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "shadow_shaman_mass_serpent_ward",
+          "changes": {
+            "HasShardUpgrade": {
+              "old": 1,
+              "new": null
+            },
+            "AbilityValues": {
+              "mega_ward_multiplier_damage": {
+                "value": {
+                  "old": 0,
+                  "new": 4
+                },
+                "special_bonus_shard": {
+                  "old": 4,
+                  "new": null
+                }
+              },
+              "mega_ward_multiplier_health": {
+                "value": {
+                  "old": 0,
+                  "new": 4
+                },
+                "special_bonus_shard": {
+                  "old": 4,
+                  "new": null
+                }
+              },
+              "mega_ward_health_tooltip": {
+                "value": {
+                  "old": 0,
+                  "new": 8
+                },
+                "special_bonus_shard": {
+                  "old": "=8",
+                  "new": null
+                },
+                "special_bonus_unique_shadow_shaman_1": {
+                  "old": "50%",
+                  "new": "50%"
+                }
+              },
+              "mega_ward_damage_tooltip": {
+                "value": {
+                  "old": "0 0 0",
+                  "new": "200 340 480"
+                },
+                "special_bonus_shard": {
+                  "old": "200 340 480",
+                  "new": null
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Play_RR_HighDemandAtLeastOne",
+          "value": "At least one high-demand role has been selected. Select all roles to earn more Role Queue games."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Overworld_Inventory_ScrapToken",
+          "value": "Earn <b>{s:scrap_token_name}</b> tokens for every game you play, win or lose.<br>They can be traded at the <b>Token Trader</b> for a hero token of your choice."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TalentContent_RejectReason_PhotoAI",
+          "value": "Your photo was made or edited using Generative AI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TalentContent_RejectReason_AutoAI",
+          "value": "Your autograph was made using Generative AI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TalentContent_RejectReason_VoiceAI",
+          "value": "Voiceline {d:voiceline_number} was made using Generative AI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Token_CarnivalScrap",
+          "value": "Scrap"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_HeroHighlightTooltip_TicketsNeeded",
+          "value": "Tickets Needed"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_HeroHighlightTooltip_NoTicketsNeeded",
+          "value": "No Tickets Needed"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_RR_SoloHighDemand",
+          "changes": {
+            "value": {
+              "old": "You have selected all high-demand roles.  Select the remainder of the roles if you wish to earn additional Role Queue games for future use.",
+              "new": "You have selected a high-demand role. Select the remainder of the roles if you wish to earn additional Role Queue games for future use."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_RR_HighDemandRole_Description",
+          "changes": {
+            "value": {
+              "old": "This role is in high demand. If your party queues for all high demand roles, you won't need Role Queue games to play Ranked Roles.",
+              "new": "This role is in high demand. If you queue for a high demand role (or if your party queues for all high demand roles), you won't need Role Queue games to play Ranked Roles."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HeroGrid_Overworld_Description",
+          "changes": {
+            "value": {
+              "old": "Highlight and show tickets for heroes that unlock the active paths on your Dark Carnival map. ",
+              "new": "Highlight heroes that unlock paths on your Dark Carnival map."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

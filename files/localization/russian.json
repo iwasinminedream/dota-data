@@ -57382,7 +57382,7 @@
   "DOTA_DarkCarnival_TimeUntilNextChapter": "{s:next_chapter_name} через {s:time_until_next_unlock}",
   "DOTA_DarkCarnival_ChapterLocked": "Откроется через {s:time_until_unlock}",
   "DOTA_DarkCarnival_ChapterReleaseDate": "{t:l:release_date}",
-  "DOTA_DarkCarnival_ChapterReleaseDate_TrainCar": "Будет доступно с {t:l:release_date}",
+  "DOTA_DarkCarnival_ChapterReleaseDate_TrainCar": "Дата выпуска: {t:l:release_date}",
   "DOTA_DarkCarnival_ChapterComplete": "Пройдено",
   "DOTA_DarkCarnival_ChapterNotYetReleased": "Скоро",
   "DOTA_DarkCarnival_TooltipOverworldPath_Requirement_Token:f": "{count} {count, plural, one{билет} few {билета} other{билетов}} <span class=\"TokenName\">«{name}»</span>",

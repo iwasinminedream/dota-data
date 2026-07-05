@@ -1,13 +1,13 @@
-ClientVersion=6842
-ServerVersion=6842
+ClientVersion=6850
+ServerVersion=6850
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10785734
-VersionDate=Jun 29 2026
-VersionTime=17:22:36
+SourceRevision=10797369
+VersionDate=Jul 03 2026
+VersionTime=09:36:20
 $> script_reload
 Initializing script VM...
 ...done
@@ -52976,7 +52976,7 @@ dota_1v1_skip_strategy                                                          
 dota_aa_test_reduce_playtime_remaining                                           : cmd              : cl                               : Limit available remaining playtime.  Requires -antiaddiction_test.
 dota_ability_amphibian_rhapsody_hear_click_track                                 : true             : cl, a, per_user                  : Whether you hear a click track for the beat.
 dota_ability_autocast                                                            : cmd              : cl                               : 
-dota_ability_contribution_assert_minimum                                         : 100              : sv                               : Minimum threshold for ability contribution delta before triggering asserts.
+dota_ability_contribution_assert_minimum                                         : 30               : sv                               : Minimum threshold for ability contribution delta before triggering asserts.
 dota_ability_debug                                                               : false            : sv, cheat                        : 
 dota_ability_draft_dump_heroes                                                   : cmd              : sv                               : wtf
 dota_ability_draft_force_gamemode_flag                                           : false            : sv, cl, rep, cheat               : 
@@ -53349,7 +53349,7 @@ dota_compendium_2024_predictions_results_popup_state                            
 dota_compendium_2025_predictions_main_event_results_shown                        : false            : cl, a                            : 
 dota_compendium_2025_predictions_rtti_results_shown                              : false            : cl, a                            : 
 dota_competitive_game_modes                                                      : 4194304          : cl, a                            : Bit masks of game modes to search for in ranked matchmaking
-dota_conduct_scorecard_latest_ack_seq_num                                        : 5984             : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
+dota_conduct_scorecard_latest_ack_seq_num                                        : 5999             : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
 dota_contest_schema_do_contest_validation                                        : true             : cl                               : 
 dota_context_aware_voice_change_window_minutes                                   : 2                : sv, cl, rep, cheat               : 
 dota_context_aware_voice_networth_change_threshold                               : 0.025            : sv, cl, rep, cheat               : 
@@ -53397,7 +53397,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4072             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4105             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53703,7 +53703,7 @@ dota_hide_frontpage_video                                                       
 dota_hide_spectator_player_names                                                 : false            : cl                               : 
 dota_hide_tips_on_loading_screens                                                : false            : cl, a, per_user                  : 
 dota_hide_wearables                                                              : false            : sv, cl, rep, cheat               : If set, wearables (default body parts) will be hidden. This is for the item icon editor.
-dota_highest_seen_item_id                                                        : 35452390373      : cl, a, per_user                  : 
+dota_highest_seen_item_id                                                        : 35555144813      : cl, a, per_user                  : 
 dota_highlight_reel                                                              : false            : cl                               : 
 dota_highlight_reel_debug                                                        : false            : cl, cheat                        : 
 dota_highlight_reel_leadin_seconds                                               : 13               : cl                               : 
@@ -53875,8 +53875,8 @@ dota_match_languages                                                            
 dota_match_signout_timeout                                                       : 10               : sv, cheat                        : 
 dota_match_solo_fast_queue                                                       : true             : cl, a, per_user                  : Search for solo queue competitive games for ranked roles.
 dota_match_steam_group_account_id                                                : 0                : cl                               : Steam Group to use when searching for matchmaking
-dota_matchgroups_automatic                                                       : 4                : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
-dota_matchgroups_new                                                             : 4                : cl, a                            : Bit masks of match groups to search in for matchmaking
+dota_matchgroups_automatic                                                       : 73730            : cl, a                            : Bit mask of match groups to search in for matchmaking if automatic detection is enabled
+dota_matchgroups_new                                                             : 388              : cl, a                            : Bit masks of match groups to search in for matchmaking
 dota_matchgroups_random_data                                                     : false            : cl                               : 
 dota_matchgroups_version                                                         : 107              : cl, a                            : Last known match groups version.  GC will bump this version to trigger confirmation of any manual user selections
 dota_max_disconnected_time                                                       : 300              : sv                               : How long a player needs to be disconnected before he counts as a leaver and gets punished.
@@ -54636,7 +54636,7 @@ dota_tormentor_daynight_teleport_telegraph_duration                             
 dota_tormentor_desired_location_override                                         : 0                : sv, cl, rep, cheat               : Override tormentor location, 1 is bottom, 2 is top
 dota_tormentor_spawn                                                             : cmd              : sv, cheat                        : Spawn a tormentor if one doesn't exist
 dota_tormentor_upgrade_rate                                                      : 60               : sv, cl, rep, cheat               : 
-dota_track_ability_and_item_contributions                                        : false            : sv                               : Whether all attacks/heals attribute ability contributions into the damage contribution log
+dota_track_ability_and_item_contributions                                        : true             : sv                               : Whether all attacks/heals attribute ability contributions into the damage contribution log
 dota_track_chat_mutes                                                            : false            : sv, cheat                        : Track chat prior to a mute happening in sql?
 dota_tree_try_to_make_solid                                                      : cmd              : cl                               : 
 dota_treerespawn                                                                 : cmd              : sv                               : Respawns all trees on the map.
@@ -54644,7 +54644,7 @@ dota_trivia_autoplay_sounds                                                     
 dota_trivia_chat_enabled2                                                        : false            : cl, a                            : 
 dota_trophies_cache_duration                                                     : 300              : cl                               : 
 dota_turbo_courier_default_auto_deliver                                          : true             : cl, a, user, per_user, release   : Whether courier auto mode is on in Turbo.
-dota_turbo_matches_played                                                        : 138              : cl, a, per_user                  : 
+dota_turbo_matches_played                                                        : 152              : cl, a, per_user                  : 
 dota_tutorial_actionpanel                                                        : true             : sv, cl, rep                      : 
 dota_tutorial_camera_location_dist                                               : 500              : sv, rep                          : 
 dota_tutorial_debug                                                              : true             : sv, rep                          : 
