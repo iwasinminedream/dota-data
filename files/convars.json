@@ -139,13 +139,6 @@
     ],
     "description": ""
   },
-  "-dota_ability_execute": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "Test_Checkpoint": {
     "default": "cmd",
     "flags": [],
@@ -5839,6 +5832,13 @@
     ],
     "description": "Dumps the modifier refcounts of all hero abilities"
   },
+  "dota_ability_execute": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_ability_frogrock_show_fixed_hud": {
     "default": "true",
     "flags": [
@@ -9011,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4105",
+    "default": "4153",
     "flags": [
       "cl",
       "a",
@@ -11381,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35555144813",
+    "default": "35648357957",
     "flags": [
       "cl",
       "a",
@@ -12677,7 +12677,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "73730",
+    "default": "128",
     "flags": [
       "cl",
       "a"
@@ -18545,7 +18545,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "152",
+    "default": "154",
     "flags": [
       "cl",
       "a",
@@ -19669,7 +19669,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a"

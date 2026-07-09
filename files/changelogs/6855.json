@@ -1,0 +1,718 @@
+{
+  "version": "6855",
+  "date": "Jul 09 2026",
+  "time": "13:39:41",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1799
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "dota_ability_execute"
+        }
+      ],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "-dota_ability_execute"
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_ITEM"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_NONE"
+        }
+      ],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Hud_Paused_Spectating_Local",
+          "value": "Playback Paused"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_FriendGifting_NoNeed",
+          "value": "Your friend doesn't need any tickets right now"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_FriendGifting_NoFriendSelected",
+          "value": "Select a friend to see the tickets they need"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_SecretAdmirer_CannotSendAnymore",
+          "value": "You cannot send any more gifts today"
+        },
+        {
+          "type": "localization",
+          "name": "dota_chatwheel_translation_darkcarnival_its_not_that_funny",
+          "value": "It's not that funny."
+        },
+        {
+          "type": "localization",
+          "name": "dota_chatwheel_translation_darkcarnival_im_sorry_who_are_you_again",
+          "value": "I'm... sorry, who are you again?"
+        },
+        {
+          "type": "localization",
+          "name": "dota_chatwheel_source_cogliacci",
+          "value": "Cogliacci"
+        },
+        {
+          "type": "localization",
+          "name": "dota_chatwheel_source_lorenzo",
+          "value": "Lorenzo"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_CrateDrop",
+          "value": "Automaton Assembly"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_CrateDrop_Description",
+          "value": "Catch the crates!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_BlimpJump",
+          "value": "Blimp Jump"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_BlimpJump_Description",
+          "value": "Get to the Blimp!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Overworld_EncounterShortcut_blimp_jump",
+          "value": "Blimp Jump"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Overworld_EncounterShortcut_crate_drop",
+          "value": "Automaton Assembly"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Title",
+          "value": "Automaton Assembly"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_GameDesc",
+          "value": "Help Tinker catch the crates of automaton parts for assembly"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Play",
+          "value": "Play"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_HowToPlay",
+          "value": "How To Play"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_HowToPlayInstructions",
+          "value": "Catch the crates of automaton parts onto the platform, while avoiding the bombs. Drop too many crates and lose!<br><br> Use Arrow Keys to move and Space to store the crates already caught."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_CratesRemaining",
+          "value": "Remaining"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Score",
+          "value": "Score : {d:current_score}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Level",
+          "value": "Level"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelComplete",
+          "value": "Level Complete!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_StartingLevel",
+          "value": "Level {u:level}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LostCrates",
+          "value": "Lost"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Score_Label",
+          "value": "Score"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_CurrentMultiplier",
+          "value": "Multiplier : {f:current_multiplier}x"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_GameOver",
+          "value": "Game Over"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_GameWon",
+          "value": "You Won!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_GameLost",
+          "value": "You lost too many parts!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_PotentialScoreLabel",
+          "value": "Points"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_TotalCratesCaught",
+          "value": "Total Crates Caught"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_TotalCratesLost",
+          "value": "Total Crates Lost"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_MaxHeight",
+          "value": "Tallest stack of crates height"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_HighScores",
+          "value": "High Scores"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_PlayAgain",
+          "value": "Play Again"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_HeightBonus",
+          "value": "Height Bonus"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_CratesRequired",
+          "value": "Required For Next Level:\\n {d:crates_required}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Failed",
+          "value": "Failed"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_TryAgainButton",
+          "value": "Try Again"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Help_Move",
+          "value": "Move"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Help_Move_Details",
+          "value": "Move the platform with the left and right arrow keys, and switch tracks with up and down arrow keys."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Help_Ability",
+          "value": "Assemble"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Help_Ability_Description",
+          "value": "Use Space to instantly transport caught crates to the assemblers, scoring points for each part."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Scoring",
+          "value": "Scoring"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Scoring_Desc",
+          "value": "Every crate that was caught and collected with the Assemble ability grants 100,150 or 200 points, based on it's size and shape.\\n\\nIncrease the score multiplier by stacking crates as high as you can!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Tutorial_1",
+          "value": "Move Tinker's Platform left and right to catch crates full of Automaton Parts!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Tutorial_2",
+          "value": "Use Up and Down to warp and catch the crates on the opposite track."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Tutorial_3",
+          "value": "Use Space Bar to collect the caught crates and score points!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_Tutorial_4",
+          "value": " "
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText1",
+          "value": "Use the Space Bar when the crates are stacked high to get a greater multiplier!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText2",
+          "value": "Beware of hazards that can explode if touched!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText3",
+          "value": "Catch the Defense Matrix powerup to deflect bombs!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText4",
+          "value": "Beware of bombs that disintigrate all crates!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText5",
+          "value": "Restore lost lives with the Repair powerup!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_CrateDrop_LevelIntroText6",
+          "value": "Barrels full of goop will slow you down!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Title",
+          "value": "Blimp Jump"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Subtitle",
+          "value": "Get to the Blimp!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PostGame_Title_Won",
+          "value": "You win!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PostGame_Title_Lost",
+          "value": "Game Over"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Won",
+          "value": "You reached the Blimp."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_Lost",
+          "value": "You lost."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PostGame_Subtitle_LostStoryMode",
+          "value": "You did not reach the blimp."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_EncounterStatus_BlimpJump",
+          "value": "Dark Carnival: Blimp Jump"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Scoring",
+          "value": "Only in Infinite mode.<br>Earn points by going higher and higher."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_PlayAgain",
+          "value": "Try Again [Space]"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_BlimpJump_ReachTheBlimpRewardTitle",
+          "value": "Reach the Blimp"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_InfiniteModeLocked",
+          "value": "Unlock by completing Story Mode."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_GoInfinite",
+          "value": "Go Infinite"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_LeaveEncounter",
+          "value": "Leave Encounter"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Controls_Move",
+          "value": "Move"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Controls_Move_Details",
+          "value": "Move Slark Left and Right"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv",
+          "value": "Throw Shiv"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Controls_ThrowShiv_Details",
+          "value": "Throw Slark's Shiv"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Modes_StoryMode",
+          "value": "Play Story"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Modes_StoryMode_Details",
+          "value": "Reach the Blimp at the top."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode",
+          "value": "Play Infinite"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Modes_InfiniteMode_Details",
+          "value": "Go as high as you can, shoot for the stars!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_BlimpJump_Resume",
+          "value": "Resume [ESC]"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Agnes__Story_Showcase_Decoration",
+          "value": "Agnes - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bex_Excited__Story_Showcase_Decoration",
+          "value": "Bex Excited - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bex_Holding_Doll__Story_Showcase_Decoration",
+          "value": "Bex Holding Doll - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bex_Shrug__Story_Showcase_Decoration",
+          "value": "Bex Shrug - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bex__Story_Showcase_Decoration",
+          "value": "Bex - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bogg_Happy__Story_Showcase_Decoration",
+          "value": "Bogg Happy - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Bogg__Story_Showcase_Decoration",
+          "value": "Bogg - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Agnes__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Automaton_Axe__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Bex_Shocked__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Bex_Shrug__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Bex__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Bogg_Happy__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Copy_of_Hoodwink_Determined__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Ezzelweth__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Fish_Witch__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Hoodwink_Defeated__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Hoodwink_Determined__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Lorenzo_Hopeful__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Lorenzo_Ingot__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Lorenzo_Picture_It__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Lorenzo_Sad__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Lorenzo__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Ringmaster_Stareyed__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Ringmaster__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Tinker_Cry__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Tinker_Goat__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Tinker_Science__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Tinker_Shocked__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Tinker__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ezzelweth__Story_Showcase_Decoration",
+          "value": "Ezzelweth - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Defeated__Story_Showcase_Decoration",
+          "value": "Hoodwink Defeated - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Determined_2__Story_Showcase_Decoration",
+          "value": "Hoodwink Determined 2 - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Determined__Story_Showcase_Decoration",
+          "value": "Hoodwink Determined - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Lorenzo_Hopeful__Story_Showcase_Decoration",
+          "value": "Lorenzo Hopeful - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Lorenzo_Ingot__Story_Showcase_Decoration",
+          "value": "Lorenzo Ingot - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Lorenzo_Picture_It__Story_Showcase_Decoration",
+          "value": "Lorenzo Picture It - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Lorenzo_Sad__Story_Showcase_Decoration",
+          "value": "Lorenzo Sad - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Lorenzo__Story_Showcase_Decoration",
+          "value": "Lorenzo - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ringmaster_Stareyed__Story_Showcase_Decoration",
+          "value": "Ringmaster Star-eyed - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ringmaster_Yikes__Story_Showcase_Decoration",
+          "value": "Ringmaster Yikes - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ringmaster__Story_Showcase_Decoration",
+          "value": "Ringmaster - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tinker_Cry__Story_Showcase_Decoration",
+          "value": "Tinker Cry - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tinker_Goat__Story_Showcase_Decoration",
+          "value": "Tinker Goat - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tinker_Science__Story_Showcase_Decoration",
+          "value": "Tinker Science - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tinker_Shocked__Story_Showcase_Decoration",
+          "value": "Tinker Shocked - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tinker__Story_Showcase_Decoration",
+          "value": "Tinker - Story Showcase Decoration"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Overworld_Inventory_ScrapToken",
+          "changes": {
+            "value": {
+              "old": "Earn <b>{s:scrap_token_name}</b> tokens for every game you play, win or lose.<br>They can be traded at the <b>Token Trader</b> for a hero token of your choice.",
+              "new": "Earn <b>{s:scrap_token_name}</b> tickets for every game you play, win or lose.<br>They can be traded at the <b>Ticket Trader</b> for a ticket of your choice."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TalentContent_PartialApproved",
+          "changes": {
+            "value": {
+              "old": "Your bundle submission has issues that prevent a full bundle being approved for your fans. See the below issues that were found during review. You may resubmit your bundle and view full content guidelines at <a href=\"https://dota2.com/proregistration/talent/\">https://dota2.com/proregistration/talent/</a>. The deadline for submissions is August 12th at 11:00AM PST.<br>",
+              "new": "Your bundle submission has issues that prevent a full bundle being approved for your fans. See the below issues that were found during review. You may resubmit your bundle and view full content guidelines at <a href=\"https://dota2.com/proregistration/talent/\">https://dota2.com/proregistration/talent/</a>. The deadline for submissions is July 21st at 11:00AM PST.<br>"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_FriendGifting",
+          "changes": {
+            "value": {
+              "old": "Friend Gifting",
+              "new": "Inconvenient Materials Exchange"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

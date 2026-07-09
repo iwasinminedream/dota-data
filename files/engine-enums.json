@@ -6505,6 +6505,10 @@
         "shortName": "IS_FAKE_ITEM"
       },
       {
+        "name": "DOTA_ABILITY_BEHAVIOR_ITEM",
+        "shortName": "ITEM"
+      },
+      {
         "name": "DOTA_ABILITY_BEHAVIOR_ITEM_IMBUE",
         "shortName": "ITEM_IMBUE"
       },
@@ -6515,10 +6519,6 @@
       {
         "name": "DOTA_ABILITY_BEHAVIOR_NO_TARGET",
         "shortName": "NO_TARGET"
-      },
-      {
-        "name": "DOTA_ABILITY_BEHAVIOR_NONE",
-        "shortName": "NONE"
       },
       {
         "name": "DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN",
