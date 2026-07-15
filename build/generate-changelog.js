@@ -763,6 +763,15 @@ if (addedCount > 0 || removedCount > 0 || changedCount > 0) {
     const a = ch.added?.length || 0;
     const r = ch.removed?.length || 0;
     const c = ch.changed?.length || 0;
-    if (a > 0 || r > 0 || c > 0) console.log(`  ${cat}: +${a} -${r} ~${c}`);
+    if (a === 0 && r === 0 && c === 0) continue;
+    if (cat === 'Properties Fixed') {
+      // These are availability flips rendered as `changed` value flips (false->true =
+      // fixed, true->false = broke), so `+0 -0 ~N` hides the split. Print it explicitly.
+      const fixed = (ch.changed || []).filter(f => f.changes?.value?.new === 'true').length;
+      const broke = (ch.changed || []).filter(f => f.changes?.value?.new === 'false').length;
+      console.log(`  ${cat}: ${fixed} fixed, ${broke} broke`);
+    } else {
+      console.log(`  ${cat}: +${a} -${r} ~${c}`);
+    }
   }
 }

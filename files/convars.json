@@ -8633,7 +8633,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "5999",
+    "default": "6014",
     "flags": [
       "cl",
       "a",
@@ -9011,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4153",
+    "default": "4193",
     "flags": [
       "cl",
       "a",
@@ -11381,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35648357957",
+    "default": "35750696325",
     "flags": [
       "cl",
       "a",
@@ -12677,7 +12677,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "128",
+    "default": "65542",
     "flags": [
       "cl",
       "a"
@@ -18545,7 +18545,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "154",
+    "default": "168",
     "flags": [
       "cl",
       "a",
@@ -19669,7 +19669,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "0",
+    "default": "2",
     "flags": [
       "cl",
       "a"
@@ -37871,7 +37871,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.952078",
+    "default": "0.497455",
     "flags": [
       "a"
     ],

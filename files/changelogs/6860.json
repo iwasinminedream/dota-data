@@ -1,0 +1,18 @@
+{
+  "version": "6860",
+  "date": "Jul 14 2026",
+  "time": "08:56:10",
+  "changes": {
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "#DOTA_DarkCarnival_EncounterStatus_BlimpJump",
+          "value": "Dark Carnival: Blimp Jump"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
