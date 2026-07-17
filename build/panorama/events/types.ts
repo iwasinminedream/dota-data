@@ -5,6 +5,10 @@ export interface PanoramaEvent {
   description: string;
   panelEvent: boolean;
   args: PanoramaEventArgument[];
+  /** Real usage of this event quoted from Valve's UI code. */
+  example?: string;
+  /** Path of the Valve layout/script file the example is quoted from. */
+  exampleSource?: string;
 }
 
 export interface PanoramaEventArgument {

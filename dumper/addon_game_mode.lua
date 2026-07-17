@@ -92,6 +92,7 @@ SCRIPT = [[
   clear
   echoln ===SACRIFICE
   cvarlist
+  cvarlist
   echoln $> script_reload
   script_reload
   echoln $> cl_script_reload
@@ -104,6 +105,8 @@ SCRIPT = [[
   cl_panorama_script_help *
   echoln $> cl_dump_modifier_list
   cl_dump_modifier_list
+  echoln $> panorama_generate_layout_xsd
+  panorama_generate_layout_xsd
   echoln $> cvarlist
   cvarlist
   echoln $> cl_panorama_typescript_declarations

@@ -1,4 +1,4 @@
-import { readDump } from '../../util';
+import { readDump, tryReadDump } from '../../util';
 import { override } from './data';
 import { PanoramaApiFunction, PanoramaApiFunctionArg, PanoramaApiInterface } from './types';
 
@@ -39,20 +39,27 @@ function parseFunction(line: string): PanoramaApiFunction | null {
 
 export function generatePanoramaApi(): PanoramaApiInterface[] {
   const dump = readDump('cl_panorama_typescript_declarations');
-  
+  // Panel type declarations captured by the dumper's panel phase (one interface
+  // per panel type from the layout XSD, minus the fully inherited ones).
+  const panelsDump = tryReadDump('panel_typescript_declarations');
+  const fullDump = panelsDump === undefined ? dump : `${dump}\n${panelsDump}`;
+
   const interfaces: PanoramaApiInterface[] = [];
-  
+  const seenNames = new Set<string>();
+
   // Split by interface declarations
-  const interfaceBlocks = dump.split(/(?=^interface\s+)/m);
-  
+  const interfaceBlocks = fullDump.split(/(?=^interface\s+)/m);
+
   for (const block of interfaceBlocks) {
     if (!block.trim().startsWith('interface')) continue;
-    
+
     // Extract interface name (\w+ or $ for the global $ namespace)
     const nameMatch = block.match(/^interface\s+([\w$]+)/);
     if (!nameMatch) continue;
-    
+
     const interfaceName = nameMatch[1];
+    if (seenNames.has(interfaceName)) continue;
+    seenNames.add(interfaceName);
     const members: PanoramaApiFunction[] = [];
     
     // Parse lines within the interface

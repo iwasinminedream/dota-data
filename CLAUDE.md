@@ -33,7 +33,14 @@ Dota 2 Installation
     ├── cl_panorama_typescript_declarations → Panorama JS API
     ├── dump_panorama_css_properties      → Panorama CSS
     ├── cl_panorama_script_help *         → Panorama Enums
-    └── dump_panorama_events             → Panorama Events
+    ├── dump_panorama_events             → Panorama Events
+    ├── panorama_panels                  → Panorama Panels (digest of panorama_generate_layout_xsd:
+    │                                      panel type → base type + own XML attributes; the raw XSD
+    │                                      lands on the clipboard, the dumper reads it back and
+    │                                      writes this compact JSON section instead)
+    └── panel_typescript_declarations    → per-panel-type JS interfaces (dumper phase 2: panel type
+                                           names come from the XSD; interfaces identical to their
+                                           base type are omitted)
          ↓ (build/index.ts orchestrates all generators)
 files/ (generated JSON + .d.ts)
          ↓ (tsc compiles src/ → lib/)
@@ -109,7 +116,8 @@ dota-data/
 │   │   ├── api.json / .d.ts    # Panorama JS interfaces
 │   │   ├── css.json / .d.ts    # Panorama CSS properties
 │   │   ├── enums.json / .d.ts  # Panorama enums
-│   │   └── events.json / .d.ts # Panorama events
+│   │   ├── events.json / .d.ts # Panorama events
+│   │   └── panels.json / .d.ts # Panorama panel types + XML attributes (from layout XSD)
 │   └── vscripts/
 │       ├── api.json / .d.ts    # Lua API declarations
 │       ├── api-types.json / .d.ts # Type definitions (Object, Nominal, Primitive)
@@ -173,7 +181,9 @@ npm run dev          # Watch mode for both static + tsc
 npm run auto-dump    # Launches Dota 2, captures console dumps → dumper/dump
 ```
 
-The `dumper/dump` file is a monolithic text file with sections delimited by `$> section_name`. Each section contains the raw output of a Dota 2 console command.
+The `dumper/dump` file is a monolithic text file with sections delimited by `$> section_name`. Each section contains the raw output of a Dota 2 console command, with two exceptions produced by the dumper itself: `panorama_panels` (compact JSON digest of the layout XSD that `panorama_generate_layout_xsd` puts on the clipboard) and `panel_typescript_declarations` (phase 2: after the main dump and modifier test, the dumper sends `cl_panorama_typescript_declarations <type>` over vConsole for every panel type found in the XSD and stores the interfaces that differ from their base type).
+
+The engine only exposes TypeScript declarations for panel types that have been *instantiated*, so the dumper installs a custom-game UI (`dumper/panorama/` → `content/dota_addons/dumper/panorama/layout/custom_game/`, compiled by the `-tools` launch) that `$.CreatePanel`s every known creatable panel type on load — this makes their JS classes visible to phase 2.
 
 ### Testing
 

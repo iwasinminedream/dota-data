@@ -22,6 +22,7 @@ const trackedFiles = [
   { file: 'panorama/css.json', type: 'panorama_css', name: 'Panorama CSS' },
   { file: 'panorama/events.json', type: 'panorama_events', name: 'Panorama Events' },
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
+  { file: 'panorama/panels.json', type: 'panorama_panels', name: 'Panorama Panels' },
   { file: 'vscripts/modifier_properties.json', type: 'modifier_properties', name: 'Properties Fixed' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
   { file: 'engine-enums.json', type: 'engine_enums', name: 'Engine Enums' },
@@ -137,6 +138,26 @@ function extractPanoramaApiItems(content) {
           description: m.description || '',
         });
       }
+    }
+  }
+  return items;
+}
+
+// Extract Panorama panel types (array of {name, base?, attributes: [{name, description?}]})
+function extractPanoramaPanels(content) {
+  const items = [];
+  if (!Array.isArray(content)) return items;
+
+  for (const p of content) {
+    if (!p.name) continue;
+    items.push({ type: 'panel', name: p.name, fieldsDetail: p.base || '' });
+    for (const a of p.attributes || []) {
+      items.push({
+        type: 'panel_attribute',
+        panel: p.name,
+        name: a.name,
+        description: a.description || '',
+      });
     }
   }
   return items;
@@ -350,6 +371,9 @@ function buildState(readFile) {
       case 'panorama_api':
         items = extractPanoramaApiItems(content);
         break;
+      case 'panorama_panels':
+        items = extractPanoramaPanels(content);
+        break;
       case 'types':
         items = extractTypes(content);
         break;
@@ -427,6 +451,7 @@ function itemKey(item) {
   if (item.type === 'method') return `method:${item.class}.${item.name}`;
   if (item.type === 'enum_member') return `enum_member:${item.enum}.${item.name}`;
   if (item.type === 'modifier') return `modifier:${item.category}:${item.name}`;
+  if (item.type === 'panel_attribute') return `panel_attribute:${item.panel}.${item.name}`;
   return `${item.type}:${item.name}`;
 }
 
@@ -492,7 +517,7 @@ function compareStates(prev, curr) {
     
     // Detect changes in items that exist in both states
     const changed = [];
-    const trackableTypes = new Set(['function', 'method', 'ability', 'unit']);
+    const trackableTypes = new Set(['function', 'method', 'ability', 'unit', 'panel']);
     const kvTypes = new Set(['ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {

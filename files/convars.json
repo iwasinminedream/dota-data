@@ -6381,7 +6381,7 @@
     "description": ""
   },
   "dota_armory_last_selected_hero_id": {
-    "default": "6",
+    "default": "13",
     "flags": [
       "cl",
       "a"
@@ -9011,7 +9011,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4193",
+    "default": "4203",
     "flags": [
       "cl",
       "a",
@@ -11381,7 +11381,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35750696325",
+    "default": "35772094381",
     "flags": [
       "cl",
       "a",
@@ -12677,7 +12677,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "65542",
+    "default": "4",
     "flags": [
       "cl",
       "a"
@@ -17872,7 +17872,7 @@
     "description": ""
   },
   "dota_summoned_units_auto_attack_mode_2": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -18545,7 +18545,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "168",
+    "default": "173",
     "flags": [
       "cl",
       "a",

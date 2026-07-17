@@ -5,17 +5,26 @@ export * from './export-types';
 export * from './normalization';
 
 const dump = fs.readFileSync(path.join(__dirname, '../../dumper/dump'), 'utf8');
-export function readDump(name: string) {
-  const [, ...groups] = dump.split(/\$> (.+)/g);
-  let value = groups[groups.indexOf(name) + 1];
+const [, ...dumpGroups] = dump.split(/\$> (.+)/g);
+
+export function tryReadDump(name: string): string | undefined {
+  const index = dumpGroups.indexOf(name);
+  if (index === -1) return undefined;
+  let value = dumpGroups[index + 1];
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (value == null) return undefined;
   if (value.trim().startsWith('Initializing')) {
     // Cut off initializing scripting VM line
     value = value.slice(value.indexOf('['));
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (value == null) throw new Error(`Couldn't find dump "${name}"`);
   return value.trim();
+}
+
+export function readDump(name: string) {
+  const value = tryReadDump(name);
+  if (value === undefined) throw new Error(`Couldn't find dump "${name}"`);
+  return value;
 }
 
 const FILES = path.join(__dirname, '../../files');

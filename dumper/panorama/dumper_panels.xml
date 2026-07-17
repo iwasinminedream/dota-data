@@ -1,0 +1,7 @@
+<root>
+  <styles></styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/dumper_panels.js" />
+  </scripts>
+  <Panel hittest="false" />
+</root>
