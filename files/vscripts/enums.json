@@ -9123,8 +9123,12 @@
         "value": 1778
       },
       {
-        "name": "ACT_DOTA_CAST5_STATUE",
-        "value": 1795
+        "name": "ACT_DOTA_CAST_RAZE_STATUE",
+        "value": 1781
+      },
+      {
+        "name": "ACT_DOTA_CAST_REQUIEM_STATUE",
+        "value": 1782
       }
     ]
   },

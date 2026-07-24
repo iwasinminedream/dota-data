@@ -3074,6 +3074,11 @@
     "attributes": []
   },
   {
+    "name": "DOTADarkCarnivalEncounterWhackAMole",
+    "base": "DOTADarkCarnivalEncounterMinigamePopup",
+    "attributes": []
+  },
+  {
     "name": "DOTADarkCarnivalFortuneTellerPage",
     "base": "DOTABPDarkCarnivalBasePage",
     "attributes": []
@@ -9021,6 +9026,11 @@
   },
   {
     "name": "DOTAWeeklyQuest_International2022",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAWhackAMoleWordPanel",
     "base": "Panel",
     "attributes": []
   },

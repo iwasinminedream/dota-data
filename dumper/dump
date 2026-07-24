@@ -1,13 +1,13 @@
-ClientVersion=6860
-ServerVersion=6860
+ClientVersion=6866
+ServerVersion=6866
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10821778
-VersionDate=Jul 14 2026
-VersionTime=08:56:10
+SourceRevision=10848776
+VersionDate=Jul 23 2026
+VersionTime=17:03:29
 $> script_reload
 Initializing script VM...
 ...done
@@ -3206,6 +3206,10 @@ Initializing script VM...
     "name":"ACT_DOTA_ATTACK_SPECIAL",
     "value":1758
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_ATTACK_STATUE",
+    "value":1783
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_AW_MAGNETIC_FIELD",
@@ -3476,10 +3480,18 @@ Initializing script VM...
     "name":"ACT_DOTA_CAST_LIFE_BREAK_START",
     "value":1563
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_CAST_RAZE_STATUE",
+    "value":1781
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_CAST_REFRACTION",
     "value":1597
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_CAST_REQUIEM_STATUE",
+    "value":1782
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -3691,6 +3703,10 @@ Initializing script VM...
     "name":"ACT_DOTA_FLAIL",
     "value":1508
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_FLAIL_STATUE",
+    "value":1785
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_FLEE",
@@ -3705,6 +3721,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_FORCESTAFF_END",
     "value":1602
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_FORCESTAFF_STATUE",
+    "value":1788
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -3810,6 +3830,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_IDLE_SLEEPING_END",
     "value":1639
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_IDLE_STATUE",
+    "value":1780
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -4216,6 +4240,10 @@ Initializing script VM...
     "name":"ACT_DOTA_RUN_RARE",
     "value":1761
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_RUN_STATUE",
+    "value":1779
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_SAND_KING_BURROW_IN",
@@ -4296,6 +4324,10 @@ Initializing script VM...
     "name":"ACT_DOTA_SPAWN",
     "value":1534
   },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPAWN_STATUE",
+    "value":1786
+  },{
     "enum":"GameActivity_t",
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_END",
@@ -4315,6 +4347,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_STATIC_STORM",
     "value":1680
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_STUN_STATUE",
+    "value":1784
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -4385,6 +4421,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_START",
     "value":1753
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_TELEPORT_STATUE",
+    "value":1787
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -4470,6 +4510,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_VICTORY_START",
     "value":1710
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_VICTORY_STATUE",
+    "value":1789
   },{
     "enum":"GameActivity_t",
     "kind":"constant",
@@ -31528,7 +31572,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_ATTACK_STATUE",
-    "value":1786
+    "value":1783
   },{
     "kind":"constant",
     "name":"ACT_DOTA_AW_MAGNETIC_FIELD",
@@ -31600,23 +31644,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST1_STATUE",
-    "value":1780
+    "value":1791
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST2_STATUE",
-    "value":1781
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31732,7 +31772,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1808
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31771,8 +31811,16 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1563
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_CAST_RAZE_STATUE",
+    "value":1781
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_CAST_REFRACTION",
     "value":1597
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_CAST_REQUIEM_STATUE",
+    "value":1782
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_SUN_STRIKE",
@@ -31888,7 +31936,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1796
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -31920,7 +31968,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1792
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -31952,7 +32000,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLAIL_STATUE",
-    "value":1783
+    "value":1785
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FLEE",
@@ -31968,7 +32016,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FORCESTAFF_STATUE",
-    "value":1787
+    "value":1788
   },{
     "kind":"constant",
     "name":"ACT_DOTA_FRUSTRATION",
@@ -32056,11 +32104,11 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IDLE_STATUE",
-    "value":1791
+    "value":1780
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1797
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32324,7 +32372,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1805
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32364,7 +32412,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1806
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32376,7 +32424,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1807
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32396,7 +32444,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1800
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32472,7 +32520,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPAWN_STATUE",
-    "value":1784
+    "value":1786
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_END",
@@ -32481,6 +32529,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32492,7 +32544,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STUN_STATUE",
-    "value":1782
+    "value":1784
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SWIM",
@@ -32548,7 +32600,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_END_STATUE",
-    "value":1785
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_REACT",
@@ -32560,7 +32612,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TELEPORT_STATUE",
-    "value":1788
+    "value":1787
   },{
     "kind":"constant",
     "name":"ACT_DOTA_THIRST",
@@ -32584,7 +32636,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1798
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -32648,7 +32700,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1799
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42365,7 +42417,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1804
+    "value":1798
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52208,7 +52260,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.124067
+Time: 0.140377
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -53352,7 +53404,7 @@ dota_compendium_2024_predictions_results_popup_state                            
 dota_compendium_2025_predictions_main_event_results_shown                        : false            : cl, a                            : 
 dota_compendium_2025_predictions_rtti_results_shown                              : false            : cl, a                            : 
 dota_competitive_game_modes                                                      : 4194304          : cl, a                            : Bit masks of game modes to search for in ranked matchmaking
-dota_conduct_scorecard_latest_ack_seq_num                                        : 6014             : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
+dota_conduct_scorecard_latest_ack_seq_num                                        : 6057             : cl, a, per_user                  : Sequence number of latest conduct summary that has been acknowledged.
 dota_contest_schema_do_contest_validation                                        : true             : cl                               : 
 dota_context_aware_voice_change_window_minutes                                   : 2                : sv, cl, rep, cheat               : 
 dota_context_aware_voice_networth_change_threshold                               : 0.025            : sv, cl, rep, cheat               : 
@@ -53400,7 +53452,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4203             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4231             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -53665,7 +53717,7 @@ dota_hero_demo_default_enemy                                                    
 dota_hero_demo_default_enemy_variant                                             : 0                : cl, a                            : 
 dota_hero_demo_is_hosting                                                        : false            : cl                               : 
 dota_hero_demo_join_permissions                                                  : 0                : cl, a, per_user                  : Determines how someone can join this demo mode session. 0 means invite only, 1 means any friend can join.
-dota_hero_demo_map                                                               : 1                : cl, a, per_user                  : 
+dota_hero_demo_map                                                               : 0                : cl, a, per_user                  : 
 dota_hero_demo_spawn_creeps_enabled                                              : false            : cl, a                            : 
 dota_hero_demo_towers_enabled                                                    : true             : cl, a                            : 
 dota_hero_god_mode                                                               : false            : sv, cheat                        : 
@@ -53706,7 +53758,7 @@ dota_hide_frontpage_video                                                       
 dota_hide_spectator_player_names                                                 : false            : cl                               : 
 dota_hide_tips_on_loading_screens                                                : false            : cl, a, per_user                  : 
 dota_hide_wearables                                                              : false            : sv, cl, rep, cheat               : If set, wearables (default body parts) will be hidden. This is for the item icon editor.
-dota_highest_seen_item_id                                                        : 35772094381      : cl, a, per_user                  : 
+dota_highest_seen_item_id                                                        : 35872822629      : cl, a, per_user                  : 
 dota_highlight_reel                                                              : false            : cl                               : 
 dota_highlight_reel_debug                                                        : false            : cl, cheat                        : 
 dota_highlight_reel_leadin_seconds                                               : 13               : cl                               : 
@@ -53836,7 +53888,7 @@ dota_lane_selection_midlane                                                     
 dota_lane_selection_offlane                                                      : true             : cl, a                            : 
 dota_lane_selection_safelane                                                     : true             : cl, a                            : 
 dota_lane_selection_soft_support                                                 : true             : cl, a                            : 
-dota_last_acknowledged_plus_status                                               : 2                : cl, a, per_user                  : 
+dota_last_acknowledged_plus_status                                               : 1                : cl, a, per_user                  : 
 dota_last_event_id                                                               : 31               : cl, a, per_user                  : 
 dota_last_hit_multiple_kill_time                                                 : 8                : sv                               : 
 dota_last_primary_event_id                                                       : 54               : cl, a                            : 
@@ -54396,7 +54448,7 @@ dota_show_monster_hunter_status                                                 
 dota_show_nav_obstructions                                                       : false            : sv, cheat                        : 
 dota_show_nearby_tower_attack_range                                              : true             : cl, a                            : 
 dota_show_object_obstructions                                                    : false            : sv, cheat                        : 
-dota_show_plus_assistant_violator                                                : true             : cl, a                            : 
+dota_show_plus_assistant_violator                                                : false            : cl, a                            : 
 dota_show_popular_items                                                          : true             : cl, a, per_user                  : 
 dota_show_quick_stats_damage_breakdown_enabled                                   : true             : cl, a                            : 
 dota_show_range_finder_on_quickcast_down                                         : false            : cl, a, per_user                  : 
@@ -54647,7 +54699,7 @@ dota_trivia_autoplay_sounds                                                     
 dota_trivia_chat_enabled2                                                        : false            : cl, a                            : 
 dota_trophies_cache_duration                                                     : 300              : cl                               : 
 dota_turbo_courier_default_auto_deliver                                          : true             : cl, a, user, per_user, release   : Whether courier auto mode is on in Turbo.
-dota_turbo_matches_played                                                        : 173              : cl, a, per_user                  : 
+dota_turbo_matches_played                                                        : 202              : cl, a, per_user                  : 
 dota_tutorial_actionpanel                                                        : true             : sv, cl, rep                      : 
 dota_tutorial_camera_location_dist                                               : 500              : sv, rep                          : 
 dota_tutorial_debug                                                              : true             : sv, rep                          : 
@@ -55109,7 +55161,6 @@ gameinstructor_teach_lesson                                                     
 gameinstructor_verbose                                                           : 0                : cl, cheat                        : Set to 1 for standard debugging or 2 (in combo with gameinstructor_verbose_lesson) to show update actions.
 gameinstructor_verbose_lesson                                                    : 0                : cl, cheat                        : Display more verbose information for lessons have this name.
 gameui_hide                                                                      : cmd              : release                          : Hides the game UI
-gc_secret_key                                                                    : 0                : sv, prot                         : Secret key for authenticating with the GC 
 generate_null_container                                                          : cmd              : linked                           : Generated a nulled out container.
 generate_trash_synth                                                             : cmd              : linked                           : Args: [Asset directory Path]
 getpos                                                                           : cmd              : cl, cheat                        : dump position and angles to the console
@@ -56702,7 +56753,7 @@ snd_mixahead                                                                    
 snd_mixer_master_dsp                                                             : 1                : cheat                            : 
 snd_mixer_master_level                                                           : 1                : cheat                            : 
 snd_musicvolume                                                                  : 0                : a                                : Music volume
-snd_mute_losefocus                                                               : true             : a                                : 
+snd_mute_losefocus                                                               : false            : a                                : 
 snd_new_visualize                                                                : false            : sv, cheat                        : Displays soundevent name played at it's 3d position
 snd_occlusion_bounces                                                            : 1                : rep, cheat                       : 
 snd_occlusion_debug                                                              : false            : sv, cl, rep, cheat               : 
@@ -57433,7 +57484,7 @@ writeip                                                                         
 writekeybindings                                                                 : cmd              : release                          : Saves current key bindings to disk.
 zoom_sensitivity_ratio                                                           : 1                : cl, a, per_user                  : Additional mouse sensitivity scale factor applied when FOV is zoomed in.
 --------------
-5219 total convars/concommands
+5218 total convars/concommands
 $> cl_panorama_typescript_declarations
 interface CPanoramaScript_GameEvents
 {
@@ -64740,6 +64791,11 @@ $> panorama_panels
     "attributes": []
   },
   {
+    "name": "DOTADarkCarnivalEncounterWhackAMole",
+    "base": "DOTADarkCarnivalEncounterMinigamePopup",
+    "attributes": []
+  },
+  {
     "name": "DOTADarkCarnivalFortuneTellerPage",
     "base": "DOTABPDarkCarnivalBasePage",
     "attributes": []
@@ -70687,6 +70743,11 @@ $> panorama_panels
   },
   {
     "name": "DOTAWeeklyQuest_International2022",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAWhackAMoleWordPanel",
     "base": "Panel",
     "attributes": []
   },

@@ -1,0 +1,4241 @@
+{
+  "version": "6866",
+  "date": "Jul 23 2026",
+  "time": "17:03:29",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST_RAZE_STATUE",
+          "value": 1781
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST_REQUIEM_STATUE",
+          "value": 1782
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1795
+        }
+      ],
+      "changed": []
+    },
+    "Panorama Panels": {
+      "added": [
+        {
+          "type": "panel",
+          "name": "DOTADarkCarnivalEncounterWhackAMole",
+          "fieldsDetail": "DOTADarkCarnivalEncounterMinigamePopup"
+        },
+        {
+          "type": "panel",
+          "name": "DOTAWhackAMoleWordPanel",
+          "fieldsDetail": "Panel"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "gc_secret_key"
+        }
+      ],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_NONE"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_StoryComplete",
+          "value": "Act 1 Complete"
+        },
+        {
+          "type": "localization",
+          "name": "dota_chatwheel_translation_darkcarnival_look_at_me_i_quit",
+          "value": "Look at me! I quit."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_BotAttack",
+          "value": "Automaton Attack"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_Encounter_BotAttack_Description",
+          "value": "Defend Hoodwink!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Overworld_EncounterShortcut_whack_a_mole",
+          "value": "Automaton Attack"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Desc",
+          "value": "Defend Hoodwink from automatons!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Type",
+          "value": "Type"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HowToPlay",
+          "value": "Type the words that appear on the incoming enemies to defeat them before they attack Hoodwink!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Scoring",
+          "value": "Type the incoming words correctly to score points.  Score more points for longer words.<br><br>Each word completed increases the score multiplier - but beware that failing even a single word will reset the multiplier back to 1.<br><br>Spaces and punctuation can be skipped when typing."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Rewards",
+          "value": "Rewards"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_Score",
+          "value": "SCORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_Time",
+          "value": "TIME"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_Multiplier",
+          "value": "x{s:score_multiplier}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_HighScore",
+          "value": "HIGH SCORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_GameOver",
+          "value": "GAME OVER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HUD_GameOver_Score",
+          "value": "FINAL SCORE: {d:score}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Play",
+          "value": "Play"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_PlayAgain",
+          "value": "Play Again"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_Exit",
+          "value": "Exit"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel1",
+          "value": "LION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget1",
+          "value": "LION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel2",
+          "value": "HUSKAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget2",
+          "value": "HUSKAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel3",
+          "value": "KUNKKA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget3",
+          "value": "KUNKKA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel4",
+          "value": "ORACLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget4",
+          "value": "ORACLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel5",
+          "value": "PUDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget5",
+          "value": "PUDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel6",
+          "value": "BANE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget6",
+          "value": "BANE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel7",
+          "value": "SVEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget7",
+          "value": "SVEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel8",
+          "value": "AXE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget8",
+          "value": "AXE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel9",
+          "value": "RAZOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget9",
+          "value": "RAZOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel10",
+          "value": "ZEUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget10",
+          "value": "ZEUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel11",
+          "value": "TINY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget11",
+          "value": "TINY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel12",
+          "value": "PUCK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget12",
+          "value": "PUCK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel13",
+          "value": "LINA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget13",
+          "value": "LINA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel14",
+          "value": "MIRANA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget14",
+          "value": "MIRANA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel15",
+          "value": "SLARDAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget15",
+          "value": "SLARDAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel16",
+          "value": "LICH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget16",
+          "value": "LICH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel17",
+          "value": "RIKI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget17",
+          "value": "RIKI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel18",
+          "value": "ENIGMA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget18",
+          "value": "ENIGMA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel19",
+          "value": "TINKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget19",
+          "value": "TINKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel20",
+          "value": "SNIPER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget20",
+          "value": "SNIPER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel21",
+          "value": "WARLOCK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget21",
+          "value": "WARLOCK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel22",
+          "value": "PUGNA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget22",
+          "value": "PUGNA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel23",
+          "value": "VIPER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget23",
+          "value": "VIPER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel24",
+          "value": "LUNA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget24",
+          "value": "LUNA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel25",
+          "value": "DAZZLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget25",
+          "value": "DAZZLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel26",
+          "value": "LESHRAC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget26",
+          "value": "LESHRAC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel27",
+          "value": "LIFESTEALER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget27",
+          "value": "LIFESTEALER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel28",
+          "value": "CLINKZ"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget28",
+          "value": "CLINKZ"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel29",
+          "value": "WEAVER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget29",
+          "value": "WEAVER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel30",
+          "value": "JAKIRO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget30",
+          "value": "JAKIRO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel31",
+          "value": "BATRIDER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget31",
+          "value": "BATRIDER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel32",
+          "value": "CHEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget32",
+          "value": "CHEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel33",
+          "value": "SPECTRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget33",
+          "value": "SPECTRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel34",
+          "value": "DOOM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget34",
+          "value": "DOOM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel35",
+          "value": "URSA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget35",
+          "value": "URSA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel36",
+          "value": "INVOKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget36",
+          "value": "INVOKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel37",
+          "value": "SILENCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget37",
+          "value": "SILENCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel38",
+          "value": "LYCAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget38",
+          "value": "LYCAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel39",
+          "value": "BREWMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget39",
+          "value": "BREWMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel40",
+          "value": "MEEPO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget40",
+          "value": "MEEPO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel41",
+          "value": "UNDYING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget41",
+          "value": "UNDYING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel42",
+          "value": "RUBICK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget42",
+          "value": "RUBICK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel43",
+          "value": "IO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget43",
+          "value": "IO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel44",
+          "value": "VISAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget44",
+          "value": "VISAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel45",
+          "value": "SLARK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget45",
+          "value": "SLARK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel46",
+          "value": "MEDUSA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget46",
+          "value": "MEDUSA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel47",
+          "value": "MAGNUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget47",
+          "value": "MAGNUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel48",
+          "value": "TIMBERSAW"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget48",
+          "value": "TIMBERSAW"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel49",
+          "value": "TUSK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget49",
+          "value": "TUSK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel50",
+          "value": "ABADDON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget50",
+          "value": "ABADDON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel51",
+          "value": "TECHIES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget51",
+          "value": "TECHIES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel52",
+          "value": "MARS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget52",
+          "value": "MARS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel53",
+          "value": "SNAPFIRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget53",
+          "value": "SNAPFIRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel54",
+          "value": "HOODWINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget54",
+          "value": "HOODWINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel55",
+          "value": "MARCI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget55",
+          "value": "MARCI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel56",
+          "value": "MUERTA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget56",
+          "value": "MUERTA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel57",
+          "value": "KEZ"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget57",
+          "value": "KEZ"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel58",
+          "value": "LARGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget58",
+          "value": "LARGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel59",
+          "value": "RADIANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget59",
+          "value": "RADIANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel60",
+          "value": "SKULL BASHER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget60",
+          "value": "SKULL BASHER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel61",
+          "value": "BLADE MAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget61",
+          "value": "BLADE MAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel62",
+          "value": "BLOODSTONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget62",
+          "value": "BLOODSTONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel63",
+          "value": "BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget63",
+          "value": "BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel64",
+          "value": "BOTTLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget64",
+          "value": "BOTTLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel65",
+          "value": "BRACER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget65",
+          "value": "BRACER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel66",
+          "value": "BROADSWORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget66",
+          "value": "BROADSWORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel67",
+          "value": "BUCKLER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget67",
+          "value": "BUCKLER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel68",
+          "value": "BUTTERFLY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget68",
+          "value": "BUTTERFLY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel69",
+          "value": "CHAINMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget69",
+          "value": "CHAINMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel70",
+          "value": "CIRCLET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget70",
+          "value": "CIRCLET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel71",
+          "value": "CROWN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget71",
+          "value": "CROWN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel72",
+          "value": "CLARITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget72",
+          "value": "CLARITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel73",
+          "value": "SHAWL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget73",
+          "value": "SHAWL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel74",
+          "value": "CLOAK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget74",
+          "value": "CLOAK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel75",
+          "value": "BANANA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget75",
+          "value": "BANANA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel76",
+          "value": "CLAYMORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget76",
+          "value": "CLAYMORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel77",
+          "value": "NULLIFIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget77",
+          "value": "NULLIFIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel78",
+          "value": "KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget78",
+          "value": "KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel79",
+          "value": "IMPERIA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget79",
+          "value": "IMPERIA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel80",
+          "value": "ROSHAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget80",
+          "value": "ROSHAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel81",
+          "value": "BAKEET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget81",
+          "value": "BAKEET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel82",
+          "value": "GRALLA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget82",
+          "value": "GRALLA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel83",
+          "value": "SCREEAUK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget83",
+          "value": "SCREEAUK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel84",
+          "value": "DAGON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget84",
+          "value": "DAGON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel85",
+          "value": "DESOLATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget85",
+          "value": "DESOLATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel86",
+          "value": "EAGLESONG"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget86",
+          "value": "EAGLESONG"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel87",
+          "value": "DAEDALUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget87",
+          "value": "DAEDALUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel88",
+          "value": "HEADDRESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget88",
+          "value": "HEADDRESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel89",
+          "value": "HYPERSTONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget89",
+          "value": "HYPERSTONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel90",
+          "value": "JAVELIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget90",
+          "value": "JAVELIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel91",
+          "value": "CRYSTALYS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget91",
+          "value": "CRYSTALYS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel92",
+          "value": "MAELSTROM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget92",
+          "value": "MAELSTROM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel93",
+          "value": "MEKANSM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget93",
+          "value": "MEKANSM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel94",
+          "value": "MJOLLNIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget94",
+          "value": "MJOLLNIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel95",
+          "value": "BLOODTHORN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget95",
+          "value": "BLOODTHORN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel96",
+          "value": "PLATEMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget96",
+          "value": "PLATEMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel97",
+          "value": "TOWER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget97",
+          "value": "TOWER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel98",
+          "value": "REAVER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget98",
+          "value": "REAVER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel99",
+          "value": "SPLINTMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget99",
+          "value": "SPLINTMAIL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel100",
+          "value": "CHEESE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget100",
+          "value": "CHEESE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel101",
+          "value": "SANGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget101",
+          "value": "SANGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel102",
+          "value": "SATANIC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget102",
+          "value": "SATANIC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel103",
+          "value": "TANGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget103",
+          "value": "TANGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel104",
+          "value": "VANGUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget104",
+          "value": "VANGUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel105",
+          "value": "YASHA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget105",
+          "value": "YASHA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel106",
+          "value": "PARASMA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget106",
+          "value": "PARASMA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel107",
+          "value": "HARPOON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget107",
+          "value": "HARPOON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel108",
+          "value": "KHANDA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget108",
+          "value": "KHANDA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyLabel109",
+          "value": "DIADEM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_EasyTarget109",
+          "value": "DIADEM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel1",
+          "value": "EARTHSHAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget1",
+          "value": "EARTHSHAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel2",
+          "value": "BLOODSEEKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget2",
+          "value": "BLOODSEEKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel3",
+          "value": "PHANTOM LANCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget3",
+          "value": "PHANTOM LANCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel4",
+          "value": "MORPHLING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget4",
+          "value": "MORPHLING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel5",
+          "value": "STORMCRAFTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget5",
+          "value": "STORMCRAFTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel6",
+          "value": "SHADOW SHAMAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget6",
+          "value": "SHADOW SHAMAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel7",
+          "value": "QUEEN OF PAIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget7",
+          "value": "QUEEN OF PAIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel8",
+          "value": "ANTI-MAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget8",
+          "value": "ANTI MAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel9",
+          "value": "PHANTOM ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget9",
+          "value": "PHANTOM ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel10",
+          "value": "CRYSTAL MAIDEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget10",
+          "value": "CRYSTAL MAIDEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel11",
+          "value": "DROW RANGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget11",
+          "value": "DROW RANGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel12",
+          "value": "JUGGERNAUT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget12",
+          "value": "JUGGERNAUT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel13",
+          "value": "SHADOW FIEND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget13",
+          "value": "SHADOW FIEND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel14",
+          "value": "SAND KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget14",
+          "value": "SAND KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel15",
+          "value": "STORM SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget15",
+          "value": "STORM SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel16",
+          "value": "VENGEFUL SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget16",
+          "value": "VENGEFUL SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel17",
+          "value": "WIND RANGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget17",
+          "value": "WIND RANGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel18",
+          "value": "TIDEHUNTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget18",
+          "value": "TIDEHUNTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel19",
+          "value": "WITCH DOCTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget19",
+          "value": "WITCH DOCTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel20",
+          "value": "NECROPHOS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget20",
+          "value": "NECROPHOS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel21",
+          "value": "BEASTMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget21",
+          "value": "BEASTMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel22",
+          "value": "VENOMANCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget22",
+          "value": "VENOMANCER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel23",
+          "value": "FACELESS VOID"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget23",
+          "value": "FACELESS VOID"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel24",
+          "value": "WRAITH KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget24",
+          "value": "WRAITH KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel25",
+          "value": "DEATH PROPHET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget25",
+          "value": "DEATH PROPHET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel26",
+          "value": "TEMPLAR ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget26",
+          "value": "TEMPLAR ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel27",
+          "value": "DRAGON KNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget27",
+          "value": "DRAGON KNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel28",
+          "value": "OMNIKNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget28",
+          "value": "OMNIKNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel29",
+          "value": "CLOCKWERK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget29",
+          "value": "CLOCKWERK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel30",
+          "value": "NATURE'S PROPHET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget30",
+          "value": "NATURES PROPHET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel31",
+          "value": "DARK SEER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget31",
+          "value": "DARK SEER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel32",
+          "value": "ENCHANTRESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget32",
+          "value": "ENCHANTRESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel33",
+          "value": "NIGHT STALKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget33",
+          "value": "NIGHT STALKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel34",
+          "value": "BROODMOTHER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget34",
+          "value": "BROODMOTHER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel35",
+          "value": "BOUNTY HUNTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget35",
+          "value": "BOUNTY HUNTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel36",
+          "value": "ANCIENT APPARITION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget36",
+          "value": "ANCIENT APPARITION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel37",
+          "value": "SPIRIT BREAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget37",
+          "value": "SPIRIT BREAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel38",
+          "value": "GYROCOPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget38",
+          "value": "GYROCOPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel39",
+          "value": "ALCHEMIST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget39",
+          "value": "ALCHEMIST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel40",
+          "value": "OUTWORLD DESTROYER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget40",
+          "value": "OUTWORLD DESTROYER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel41",
+          "value": "SPIRIT BEAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget41",
+          "value": "SPIRIT BEAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel42",
+          "value": "SHADOW DEMON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget42",
+          "value": "SHADOW DEMON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel43",
+          "value": "LONE DRUID"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget43",
+          "value": "LONE DRUID"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel44",
+          "value": "CHAOS KNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget44",
+          "value": "CHAOS KNIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel45",
+          "value": "TREANT PROTECTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget45",
+          "value": "TREANT PROTECTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel46",
+          "value": "OGRE MAGI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget46",
+          "value": "OGRE MAGI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel47",
+          "value": "DISRUPTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget47",
+          "value": "DISRUPTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel48",
+          "value": "NYX ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget48",
+          "value": "NYX ASSASSIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel49",
+          "value": "NAGA SIREN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget49",
+          "value": "NAGA SIREN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel50",
+          "value": "TROLL WARLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget50",
+          "value": "TROLL WARLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel51",
+          "value": "CENTAUR WARRUNNER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget51",
+          "value": "CENTAUR WARRUNNER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel52",
+          "value": "BRISTLEBACK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget52",
+          "value": "BRISTLEBACK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel53",
+          "value": "SKYWRATH MAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget53",
+          "value": "SKYWRATH MAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel54",
+          "value": "ELDER TITAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget54",
+          "value": "ELDER TITAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel55",
+          "value": "LEGION COMMANDER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget55",
+          "value": "LEGION COMMANDER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel56",
+          "value": "EMBER SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget56",
+          "value": "EMBER SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel57",
+          "value": "EARTH SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget57",
+          "value": "EARTH SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel58",
+          "value": "TERRORBLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget58",
+          "value": "TERRORBLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel59",
+          "value": "PHOENIX"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget59",
+          "value": "PHOENIX"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel60",
+          "value": "WINTER WYVERN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget60",
+          "value": "WINTER WYVERN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel61",
+          "value": "ARC WARDEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget61",
+          "value": "ARC WARDEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel62",
+          "value": "UNDERLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget62",
+          "value": "UNDERLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel63",
+          "value": "MONKEY KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget63",
+          "value": "MONKEY KING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel64",
+          "value": "PANGOLIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget64",
+          "value": "PANGOLIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel65",
+          "value": "DARK WILLOW"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget65",
+          "value": "DARK WILLOW"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel66",
+          "value": "GRIMSTROKE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget66",
+          "value": "GRIMSTROKE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel67",
+          "value": "VOID SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget67",
+          "value": "VOID SPIRIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel68",
+          "value": "DAWNBREAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget68",
+          "value": "DAWNBREAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel69",
+          "value": "PRIMAL BEAST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget69",
+          "value": "PRIMAL BEAST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel70",
+          "value": "RINGMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget70",
+          "value": "RINGMASTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel71",
+          "value": "QUELLING BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget71",
+          "value": "QUELLING BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel72",
+          "value": "DIVINE RAPIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget72",
+          "value": "DIVINE RAPIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel73",
+          "value": "ABYSSAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget73",
+          "value": "ABYSSAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel74",
+          "value": "ASSAULT CUIRASS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget74",
+          "value": "ASSAULT CUIRASS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel75",
+          "value": "BELT OF STRENGTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget75",
+          "value": "BELT OF STRENGTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel76",
+          "value": "BATTLE FURY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget76",
+          "value": "BATTLE FURY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel77",
+          "value": "BLINK DAGGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget77",
+          "value": "BLINK DAGGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel78",
+          "value": "BOOTS OF SPEED"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget78",
+          "value": "BOOTS OF SPEED"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel79",
+          "value": "IRON BRANCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget79",
+          "value": "IRON BRANCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel80",
+          "value": "FAERIE FIRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget80",
+          "value": "FAERIE FIRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel81",
+          "value": "INFUSED RAINDROPS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget81",
+          "value": "INFUSED RAINDROPS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel82",
+          "value": "WIND LACE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget82",
+          "value": "WIND LACE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel83",
+          "value": "DRAGON LANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget83",
+          "value": "DRAGON LANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel84",
+          "value": "AETHER LENS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget84",
+          "value": "AETHER LENS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel85",
+          "value": "METEOR HAMMER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget85",
+          "value": "METEOR HAMMER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel86",
+          "value": "AEON DISK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget86",
+          "value": "AEON DISK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel87",
+          "value": "SPIRIT VESSEL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget87",
+          "value": "SPIRIT VESSEL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel88",
+          "value": "ESSENCE DISTILLER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget88",
+          "value": "ESSENCE DISTILLER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel89",
+          "value": "CRIMSON GUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget89",
+          "value": "CRIMSON GUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel90",
+          "value": "CONSECRATED WRAPS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget90",
+          "value": "CONSECRATED WRAPS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel91",
+          "value": "ANIMAL COURIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget91",
+          "value": "ANIMAL COURIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel92",
+          "value": "CRELLA'S CROZIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget92",
+          "value": "CRELLAS CROZIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel93",
+          "value": "FLYING COURIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget93",
+          "value": "FLYING COURIER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel94",
+          "value": "WIND WAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget94",
+          "value": "WIND WAKER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel95",
+          "value": "DEMON EDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget95",
+          "value": "DEMON EDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel96",
+          "value": "DIFFUSAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget96",
+          "value": "DIFFUSAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel97",
+          "value": "ENERGY BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget97",
+          "value": "ENERGY BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel98",
+          "value": "ETHEREAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget98",
+          "value": "ETHEREAL BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel99",
+          "value": "HEALING SALVE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget99",
+          "value": "HEALING SALVE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel100",
+          "value": "FORCE STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget100",
+          "value": "FORCE STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel101",
+          "value": "GAUNTLETS OF STRENGTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget101",
+          "value": "GAUNTLETS OF STRENGTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel102",
+          "value": "GHOST SCEPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget102",
+          "value": "GHOST SCEPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel103",
+          "value": "GLOVES OF HASTE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget103",
+          "value": "GLOVES OF HASTE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel104",
+          "value": "HAND OF MIDAS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget104",
+          "value": "HAND OF MIDAS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel105",
+          "value": "ETERNAL SHROUD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget105",
+          "value": "ETERNAL SHROUD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel106",
+          "value": "SHADOW BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget106",
+          "value": "SHADOW BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel107",
+          "value": "SILVER EDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget107",
+          "value": "SILVER EDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel108",
+          "value": "GLIMMER CAPE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget108",
+          "value": "GLIMMER CAPE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel109",
+          "value": "OCTARINE CORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget109",
+          "value": "OCTARINE CORE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel110",
+          "value": "IRON TALON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget110",
+          "value": "IRON TALON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel111",
+          "value": "ENCHANTED MANGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget111",
+          "value": "ENCHANTED MANGO"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel112",
+          "value": "HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget112",
+          "value": "HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel113",
+          "value": "LOTUS ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget113",
+          "value": "LOTUS ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel114",
+          "value": "GUARDIAN GREAVES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget114",
+          "value": "GUARDIAN GREAVES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel115",
+          "value": "SOLAR CREST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget115",
+          "value": "SOLAR CREST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel116",
+          "value": "MORBID MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget116",
+          "value": "MORBID MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel117",
+          "value": "VOODOO MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget117",
+          "value": "VOODOO MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel118",
+          "value": "LINKEN'S SPHERE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget118",
+          "value": "LINKENS SPHERE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel119",
+          "value": "MAGIC STICK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget119",
+          "value": "MAGIC STICK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel120",
+          "value": "MAGIC WAND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget120",
+          "value": "MAGIC WAND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel121",
+          "value": "MANTA STYLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget121",
+          "value": "MANTA STYLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel122",
+          "value": "MASK OF MADNESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget122",
+          "value": "MASK OF MADNESS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel123",
+          "value": "MITHRIL HAMMER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget123",
+          "value": "MITHRIL HAMMER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel124",
+          "value": "MONKEY KING BAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget124",
+          "value": "MONKEY KING BAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel125",
+          "value": "MYSTIC STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget125",
+          "value": "MYSTIC STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel126",
+          "value": "NECRONOMICON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget126",
+          "value": "NECRONOMICON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel127",
+          "value": "NULL TALISMAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget127",
+          "value": "NULL TALISMAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel128",
+          "value": "HURRICANE PIKE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget128",
+          "value": "HURRICANE PIKE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel129",
+          "value": "OBLIVION STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget129",
+          "value": "OBLIVION STAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel130",
+          "value": "WITCH BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget130",
+          "value": "WITCH BLADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel131",
+          "value": "OGRE AXE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget131",
+          "value": "OGRE AXE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel132",
+          "value": "OGRE CLUB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget132",
+          "value": "OGRE CLUB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel133",
+          "value": "PERSEVERANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget133",
+          "value": "PERSEVERANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel134",
+          "value": "PHASE BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget134",
+          "value": "PHASE BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel135",
+          "value": "PIPE OF INSIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget135",
+          "value": "PIPE OF INSIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel136",
+          "value": "POINT BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget136",
+          "value": "POINT BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel137",
+          "value": "QUARTERSTAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget137",
+          "value": "QUARTERSTAFF"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel138",
+          "value": "BLITZ KNUCKLES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget138",
+          "value": "BLITZ KNUCKLES"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel139",
+          "value": "ECHO SABRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget139",
+          "value": "ECHO SABRE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel140",
+          "value": "GIANT'S RING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget140",
+          "value": "GIANTS RING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel141",
+          "value": "REFRESHER ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget141",
+          "value": "REFRESHER ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel142",
+          "value": "REFRESHER SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget142",
+          "value": "REFRESHER SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel143",
+          "value": "SACRED RELIC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget143",
+          "value": "SACRED RELIC"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel144",
+          "value": "RING OF BASILIUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget144",
+          "value": "RING OF BASILIUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel145",
+          "value": "HOLY LOCKET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget145",
+          "value": "HOLY LOCKET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel146",
+          "value": "RING OF HEALTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget146",
+          "value": "RING OF HEALTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel147",
+          "value": "RING OF PROTECTION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget147",
+          "value": "RING OF PROTECTION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel148",
+          "value": "RING OF REGEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget148",
+          "value": "RING OF REGEN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel149",
+          "value": "SAGE'S MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget149",
+          "value": "SAGES MASK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel150",
+          "value": "POWER TREADS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget150",
+          "value": "POWER TREADS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel151",
+          "value": "SOUL BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget151",
+          "value": "SOUL BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel152",
+          "value": "SOUL RING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget152",
+          "value": "SOUL RING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel153",
+          "value": "STAFF OF WIZARDRY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget153",
+          "value": "STAFF OF WIZARDRY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel154",
+          "value": "STOUT SHIELD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget154",
+          "value": "STOUT SHIELD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel155",
+          "value": "MOON SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget155",
+          "value": "MOON SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel156",
+          "value": "ULTIMATE ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget156",
+          "value": "ULTIMATE ORB"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel157",
+          "value": "WIZARD HAT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget157",
+          "value": "WIZARD HAT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel158",
+          "value": "FLUFFY HAT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget158",
+          "value": "FLUFFY HAT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel159",
+          "value": "MAGE SLAYER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget159",
+          "value": "MAGE SLAYER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel160",
+          "value": "SWIFT BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget160",
+          "value": "SWIFT BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel161",
+          "value": "ARCANE BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget161",
+          "value": "ARCANE BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel162",
+          "value": "WRAITH PACT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget162",
+          "value": "WRAITH PACT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel163",
+          "value": "VOID STONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget163",
+          "value": "VOID STONE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel164",
+          "value": "OBSERVER WARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget164",
+          "value": "OBSERVER WARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel165",
+          "value": "SENTRY WARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget165",
+          "value": "SENTRY WARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel166",
+          "value": "WRAITH BAND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget166",
+          "value": "WRAITH BAND"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel167",
+          "value": "ARCANE BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget167",
+          "value": "ARCANE BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel168",
+          "value": "RING OF AQUILA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget168",
+          "value": "RING OF AQUILA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel169",
+          "value": "SHADOW AMULET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget169",
+          "value": "SHADOW AMULET"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel170",
+          "value": "MANGO TREE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget170",
+          "value": "MANGO TREE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel171",
+          "value": "GLEIPNIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget171",
+          "value": "GLEIPNIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel172",
+          "value": "DISPERSER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget172",
+          "value": "DISPERSER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel173",
+          "value": "PHYLACTERY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget173",
+          "value": "PHYLACTERY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel174",
+          "value": "BLOOD GRENADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget174",
+          "value": "BLOOD GRENADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumLabel175",
+          "value": "ROSHAN'S BANNER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_MediumTarget175",
+          "value": "ROSHANS BANNER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel1",
+          "value": "KEEPER OF THE LIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget1",
+          "value": "KEEPER OF THE LIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel2",
+          "value": "FINGER OF DEATH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget2",
+          "value": "FINGER OF DEATH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel3",
+          "value": "VOODOO RESTORATION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget3",
+          "value": "VOODOO RESTORATION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel4",
+          "value": "REQUIEM OF SOULS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget4",
+          "value": "REQUIEM OF SOULS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel5",
+          "value": "HYPOTHERMIA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget5",
+          "value": "HYPOTHERMIA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel6",
+          "value": "TRICKS OF THE TRADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget6",
+          "value": "TRICKS OF THE TRADE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel7",
+          "value": "SUFFER IN SILENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget7",
+          "value": "SUFFER IN SILENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel8",
+          "value": "THEY WILL FALL BEFORE ME."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget8",
+          "value": "THEY WILL FALL BEFORE ME"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel9",
+          "value": "AXE LIKES THIS VERY MUCH."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget9",
+          "value": "AXE LIKES THIS VERY MUCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel10",
+          "value": "I SAID GOOD DAY, SIR!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget10",
+          "value": "I SAID GOOD DAY SIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel11",
+          "value": "BANE OF YOUR EXISTENCE."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget11",
+          "value": "BANE OF YOUR EXISTENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel12",
+          "value": "DON'T BE NEGATIVE...BE POSITIVE."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget12",
+          "value": "DONT BE NEGATIVE BE POSITIVE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel13",
+          "value": "YOU'LL MAKE A NICE SNOW ANGEL."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget13",
+          "value": "YOULL MAKE A NICE SNOW ANGEL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel14",
+          "value": "YOU WERE TOO NOISY TO LIVE."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget14",
+          "value": "YOU WERE TOO NOISY TO LIVE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel15",
+          "value": "LET'S SHAKE THINGS UP!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget15",
+          "value": "LETS SHAKE THINGS UP"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel16",
+          "value": "YOU'RE IN OVER YOUR HEAD."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget16",
+          "value": "YOURE IN OVER YOUR HEAD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel17",
+          "value": "YOU CAN RUN. YOU SHOULD RUN."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget17",
+          "value": "YOU CAN RUN YOU SHOULD RUN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel18",
+          "value": "TOLD YOU A STORM WAS COMING!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget18",
+          "value": "TOLD YOU A STORM WAS COMING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel19",
+          "value": "HA HA I COULD EAT A WALRUS."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget19",
+          "value": "HA HA I COULD EAT A WALRUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel20",
+          "value": "SAY GOODBYE TO YOUR HEAD!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget20",
+          "value": "SAY GOODBYE TO YOUR HEAD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabe22",
+          "value": "AH, SWEET TOXICITY!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget22",
+          "value": "AH SWEET TOXICITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel23",
+          "value": "SO WHAT IF I SWAGGER?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget23",
+          "value": "SO WHAT IF I SWAGGER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel24",
+          "value": "HOW MANY DAGGERS AM I HOLDING UP?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget24",
+          "value": "HOW MANY DAGGERS AM I HOLDING UP"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel25",
+          "value": "NYX, NYX, NYX, NYX."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget25",
+          "value": "NYX NYX NYX NYX"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel26",
+          "value": "MILDLY IMPRESSED WHISTLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget26",
+          "value": "MILDLY IMPRESSED WHISTLE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel27",
+          "value": "ARMLET OF MORDIGGIAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget27",
+          "value": "ARMLET OF MORDIGGIAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel28",
+          "value": "BLACK KING BAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget28",
+          "value": "BLACK KING BAR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel29",
+          "value": "BLADES OF ATTACK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget29",
+          "value": "BLADES OF ATTACK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel30",
+          "value": "BLADE OF ALACRITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget30",
+          "value": "BLADE OF ALACRITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel31",
+          "value": "BAND OF ELVENSKIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget31",
+          "value": "BAND OF ELVENSKIN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel32",
+          "value": "TOME OF KNOWLEDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget32",
+          "value": "TOME OF KNOWLEDGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel33",
+          "value": "ORB OF BLIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget33",
+          "value": "ORB OF BLIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel34",
+          "value": "KAYA AND SANGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget34",
+          "value": "KAYA AND SANGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel35",
+          "value": "YASHA AND KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget35",
+          "value": "YASHA AND KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel36",
+          "value": "EUL'S SCEPTER OF DIVINITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget36",
+          "value": "EULS SCEPTER OF DIVINITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel37",
+          "value": "DUST OF APPEARANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget37",
+          "value": "DUST OF APPEARANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel38",
+          "value": "GEM OF TRUE SIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget38",
+          "value": "GEM OF TRUE SIGHT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel39",
+          "value": "HEART OF TARRASQUE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget39",
+          "value": "HEART OF TARRASQUE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel40",
+          "value": "HELM OF IRON WILL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget40",
+          "value": "HELM OF IRON WILL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel41",
+          "value": "HELM OF THE DOMINATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget41",
+          "value": "HELM OF THE DOMINATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel42",
+          "value": "HELM OF THE OVERLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget42",
+          "value": "HELM OF THE OVERLORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel43",
+          "value": "HOOD OF DEFIANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget43",
+          "value": "HOOD OF DEFIANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel44",
+          "value": "GREAT HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget44",
+          "value": "GREAT HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel45",
+          "value": "GREATER HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget45",
+          "value": "GREATER HEALING LOTUS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel46",
+          "value": "MANTLE OF INTELLIGENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget46",
+          "value": "MANTLE OF INTELLIGENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel47",
+          "value": "ORCHID MALEVOLENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget47",
+          "value": "ORCHID MALEVOLENCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel48",
+          "value": "POOR MAN'S SHIELD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget48",
+          "value": "POOR MANS SHIELD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel49",
+          "value": "AEGIS OF THE IMMORTAL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget49",
+          "value": "AEGIS OF THE IMMORTAL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel50",
+          "value": "RING OF TARRASQUE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget50",
+          "value": "RING OF TARRASQUE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel51",
+          "value": "ROBE OF THE MAGI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget51",
+          "value": "ROBE OF THE MAGI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel52",
+          "value": "ROD OF ATOS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget52",
+          "value": "ROD OF ATOS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel53",
+          "value": "HEAVEN'S HALBERD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget53",
+          "value": "HEAVENS HALBERD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel54",
+          "value": "SANGE AND YASHA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget54",
+          "value": "SANGE AND YASHA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel55",
+          "value": "SCYTHE OF VYSE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget55",
+          "value": "SCYTHE OF VYSE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel56",
+          "value": "SHIVA'S GUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget56",
+          "value": "SHIVAS GUARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel57",
+          "value": "EYE OF SKADI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget57",
+          "value": "EYE OF SKADI"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel58",
+          "value": "SLIPPERS OF AGILITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget58",
+          "value": "SLIPPERS OF AGILITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel59",
+          "value": "TALISMAN OF EVASION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget59",
+          "value": "TALISMAN OF EVASION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel60",
+          "value": "TOWN PORTAL SCROLL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget60",
+          "value": "TOWN PORTAL SCROLL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel61",
+          "value": "BOOTS OF BEARING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget61",
+          "value": "BOOTS OF BEARING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel62",
+          "value": "TRANQUIL BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget62",
+          "value": "TRANQUIL BOOTS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel63",
+          "value": "BOOTS OF TRAVEL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget63",
+          "value": "BOOTS OF TRAVEL"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel64",
+          "value": "AGHANIM'S SCEPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget64",
+          "value": "AGHANIMS SCEPTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel65",
+          "value": "AGHANIM'S BLESSING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget65",
+          "value": "AGHANIMS BLESSING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel66",
+          "value": "AGHANIM'S CURSE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget66",
+          "value": "AGHANIMS CURSE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel67",
+          "value": "AGHANIM'S FAVOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget67",
+          "value": "AGHANIMS FAVOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel68",
+          "value": "AGHANIM'S TOME"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget68",
+          "value": "AGHANIMS TOME"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel69",
+          "value": "AGHANIM'S POCKETWATCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget69",
+          "value": "AGHANIMS POCKETWATCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel70",
+          "value": "AGHANIM'S SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget70",
+          "value": "AGHANIMS SHARD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel71",
+          "value": "URN OF SHADOWS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget71",
+          "value": "URN OF SHADOWS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel72",
+          "value": "OVERWHELMING BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget72",
+          "value": "OVERWHELMING BLINK"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel73",
+          "value": "VITALITY BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget73",
+          "value": "VITALITY BOOSTER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel74",
+          "value": "VLADMIR'S OFFERING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget74",
+          "value": "VLADMIRS OFFERING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel75",
+          "value": "ORB OF VENOM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget75",
+          "value": "ORB OF VENOM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel76",
+          "value": "MEDALLION OF COURAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget76",
+          "value": "MEDALLION OF COURAGE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel77",
+          "value": "DRUM OF ENDURANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget77",
+          "value": "DRUM OF ENDURANCE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel78",
+          "value": "TIARA OF SELEMENE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget78",
+          "value": "TIARA OF SELEMENE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel79",
+          "value": "SMOKE OF DECEIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget79",
+          "value": "SMOKE OF DECEIT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel80",
+          "value": "VEIL OF DISCORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget80",
+          "value": "VEIL OF DISCORD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel81",
+          "value": "REVENANT'S BROOCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget81",
+          "value": "REVENANTS BROOCH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel82",
+          "value": "POCKET TOWER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget82",
+          "value": "POCKET TOWER"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel83",
+          "value": "POCKET ROSHAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget83",
+          "value": "POCKET ROSHAN"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardLabel84",
+          "value": "HELM OF THE UNDYING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_HardTarget84",
+          "value": "HELM OF THE UNDYING"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel1",
+          "value": "OBSTREPEROUS DISSIMILATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget1",
+          "value": "OBSTREPEROUS DISSIMILATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel2",
+          "value": "OBSEQUIOUS DELIBERATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget2",
+          "value": "OBSEQUIOUS DELIBERATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel3",
+          "value": "ORNERY DECONSTRUCTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget3",
+          "value": "ORNERY DECONSTRUCTOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel4",
+          "value": "OBNUBILATED DELINEATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget4",
+          "value": "OBNUBILATED DELINEATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel5",
+          "value": "OMNISCIENT DESIDERATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget5",
+          "value": "OMNISCIENT DESIDERATOR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel6",
+          "value": "THERE'S A FINE LINE BETWEEN BRAVERY AND STUPIDITY."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget6",
+          "value": "THERES A FINE LINE BETWEEN BRAVERY AND STUPIDITY"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel7",
+          "value": "HOW MANY BLADES AM I HOLDING UP?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget7",
+          "value": "HOW MANY BLADES AM I HOLDING UP"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel8",
+          "value": "RUN LIKE THE DOGS YOU ARE!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget8",
+          "value": "RUN LIKE THE DOGS YOU ARE"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel9",
+          "value": "A BEAUTIFUL SOUL FOR MY COLLECTION."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget9",
+          "value": "A BEAUTIFUL SOUL FOR MY COLLECTION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel10",
+          "value": "WE HAVE MORE WHERE THAT CAME FROM."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget10",
+          "value": "WE HAVE MORE WHERE THAT CAME FROM"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel11",
+          "value": "THE GREATEST TRAGEDY OF OUR EON."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget11",
+          "value": "THE GREATEST TRAGEDY OF OUR EON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel12",
+          "value": "YOU'LL LOOK GOOD WITH AN APPLE IN YER MOUTH!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget12",
+          "value": "YOULL LOOK GOOD WITH AN APPLE IN YER MOUTH"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel13",
+          "value": "COULD BE WORSE. OH, WAIT, NO IT COULDN'T."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget13",
+          "value": "COULD BE WORSE OH WAIT NO IT COULDNT"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel14",
+          "value": "DID YOU THINK YOU COULD HIDE FROM A GOD?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget14",
+          "value": "DID YOU THINK YOU COULD HIDE FROM A GOD"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel15",
+          "value": "IT'S NOT THE HEAT, IT'S THE HUMILIATION."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget15",
+          "value": "ITS NOT THE HEAT ITS THE HUMILIATION"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel16",
+          "value": "WOMEN AND CHILDREN AND KUNKKA FIRST."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget16",
+          "value": "WOMEN AND CHILDREN AND KUNKKA FIRST"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel17",
+          "value": "LIVE BY THE SWORD, DIE BY THE DRAGON."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget17",
+          "value": "LIVE BY THE SWORD DIE BY THE DRAGON"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel18",
+          "value": "GAZE UPON MEDUSA'S BEAUTY, AND DESPAIR!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget18",
+          "value": "GAZE UPON MEDUSAS BEAUTY AND DESPAIR"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertLabel19",
+          "value": "SANGE AND YASHA AND KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ExpertTarget19",
+          "value": "SANGE AND YASHA AND KAYA"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ImmortalLabel1",
+          "value": "FROM THE GHASTLY EYRIE I CAN SEE TO THE ENDS OF THE WORLD, AND FROM THIS VANTAGE POINT I DECLARE WITH UTTER CERTAINTY THAT THIS ONE IS IN THE BAG!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_DarkCarnival_WhackAMole_ImmortalTarget1",
+          "value": "FROM THE GHASTLY EYRIE I CAN SEE TO THE ENDS OF THE WORLD AND FROM THIS VANTAGE POINT I DECLARE WITH UTTER CERTAINTY THAT THIS ONE IS IN THE BAG"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Announcer_Ringmaster",
+          "value": "Announcer: Ringmaster"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe_Carry__Story_Showcase_Decoration",
+          "value": "Axe Carry - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe_Hug__Story_Showcase_Decoration",
+          "value": "Axe Hug - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe_Smash_1__Story_Showcase_Decoration",
+          "value": "Axe Smash 1 - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe_Smash_2__Story_Showcase_Decoration",
+          "value": "Axe Smash 2 - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe_Smash_3__Story_Showcase_Decoration",
+          "value": "Axe Smash 3 - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Axe__Story_Showcase_Decoration",
+          "value": "Axe - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci_Finale__Story_Showcase_Decoration",
+          "value": "Cogliacci Finale - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci_Frustrated__Story_Showcase_Decoration",
+          "value": "Cogliacci Frustrated - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci_Pleased__Story_Showcase_Decoration",
+          "value": "Cogliacci Pleased - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci_Welcome__Story_Showcase_Decoration",
+          "value": "Cogliacci Welcome - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci_Yorick__Story_Showcase_Decoration",
+          "value": "Cogliacci Yorick - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cogliacci__Story_Showcase_Decoration",
+          "value": "Cogliacci - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Announcer_Ringmaster",
+          "value": "This item replaces the Default announcer with the humble observations of your one and only Ringmaster."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Automaton_Axe_Carry__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Automaton_Axe_Hug__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Axe_Carry__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Axe_Smash_1__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Axe_Smash_2__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Cogliacci_Finale__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Cogliacci_Frustrated__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Cogliacci_Pleased__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Cogliacci_Yorick__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Cogliacci__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Hoodwink_Get_Me_Down__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Hoodwink_Grabbed__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Hoodwink_Nervous__Story_Showcase_Decoration",
+          "value": "This item can be used to decorate your Profile Showcase or Mini Showcase."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_MegaKills_Ringmaster",
+          "value": "This item replaces the Mega-Kills announcer with the humble observations of your one and only Ringmaster."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Get_Me_Down__Story_Showcase_Decoration",
+          "value": "Hoodwink Get Me Down - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Grabbed_Eyes_Closed__Story_Showcase_Decoration",
+          "value": "Hoodwink Grabbed Eyes Closed - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Grabbed__Story_Showcase_Decoration",
+          "value": "Hoodwink Grabbed - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Looking__Story_Showcase_Decoration",
+          "value": "Hoodwink Looking - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hoodwink_Nervous__Story_Showcase_Decoration",
+          "value": "Hoodwink Nervous - Story Showcase Decoration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MegaKills_Ringmaster",
+          "value": "Mega-Kills: Ringmaster"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Play_RR_SoloMissingQP",
+          "changes": {
+            "value": {
+              "old": "You must select at least both high-demand roles.",
+              "new": "You must select at least one high-demand role."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Play_RR_SoloMissingQP_Tooltip",
+          "changes": {
+            "value": {
+              "old": "Selecting both high-demand roles will let you play Ranked Roles this match.  Selecting all roles will allow you to earn Role Queue games for future use as any role.",
+              "new": "Selecting at least one high-demand role will let you play Ranked Roles this match.  Selecting all roles will allow you to earn Role Queue games for future use as any role."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Play_RR_PartyMissingQP_Tooltip",
+          "changes": {
+            "value": {
+              "old": "If your party selects both Support roles, you can play Ranked Roles.  Selecting all roles will allow you to earn Role Queue games for future use as any role.",
+              "new": "If your party selects both high-demand roles, you can play Ranked Roles.  Selecting all roles will allow you to earn Role Queue games for future use as any role."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
