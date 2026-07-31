@@ -678,7 +678,6 @@
     "modifier_item_hyperstone",
     "modifier_item_illusionsts_cape",
     "modifier_item_illusionsts_cape_aura",
-    "modifier_item_imbue_choice",
     "modifier_item_imp_claw",
     "modifier_item_infused_raindrop",
     "modifier_item_invisibility_edge",
@@ -1114,6 +1113,7 @@
     "modifier_stacked_neutral",
     "modifier_stacking_exp_rate_boost",
     "modifier_stacking_gold_rate_boost",
+    "modifier_suppress_cleave",
     "modifier_target_dummy_unkillable",
     "modifier_teamshowcase_global",
     "modifier_teamshowcase_showcase",
@@ -2690,6 +2690,7 @@
     "modifier_underlord_portal_fire",
     "modifier_underlord_portal_fire_effect",
     "modifier_underlord_portal_fx",
+    "modifier_underlord_portal_phased_check",
     "modifier_underlord_portal_warp_channel",
     "modifier_underlord_underling_autoattack"
   ],

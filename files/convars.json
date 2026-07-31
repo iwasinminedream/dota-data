@@ -8624,6 +8624,22 @@
     ],
     "description": ""
   },
+  "dota_compendium_2026_predictions_main_event_results_shown": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": ""
+  },
+  "dota_compendium_2026_predictions_rtti_results_shown": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": ""
+  },
   "dota_competitive_game_modes": {
     "default": "4194304",
     "flags": [
@@ -8633,7 +8649,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "6057",
+    "default": "6072",
     "flags": [
       "cl",
       "a",
@@ -9011,7 +9027,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4231",
+    "default": "4269",
     "flags": [
       "cl",
       "a",
@@ -9862,6 +9878,14 @@
     ],
     "description": ""
   },
+  "dota_fantasy_2026_tutorial_state": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": ""
+  },
   "dota_fantasy_craft_tutorial_state": {
     "default": "0",
     "flags": [
@@ -10503,6 +10527,13 @@
     ],
     "description": "Print current game state"
   },
+  "dota_gametime_notch_slider_overlay_items_merge_threshold": {
+    "default": "30",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_get_team_info": {
     "default": "cmd",
     "flags": [
@@ -10797,13 +10828,6 @@
       "cl",
       "a",
       "per_user"
-    ],
-    "description": ""
-  },
-  "dota_health_bar_hovered_always_top": {
-    "default": "true",
-    "flags": [
-      "cl"
     ],
     "description": ""
   },
@@ -11381,7 +11405,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "35872822629",
+    "default": "36028154965",
     "flags": [
       "cl",
       "a",
@@ -15564,6 +15588,14 @@
     ],
     "description": ""
   },
+  "dota_ranked_role_queue_automatically_select_all": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": "Automatically select all roles when out of role queue games."
+  },
   "dota_rare_line_click_count": {
     "default": "5",
     "flags": [
@@ -16342,7 +16374,7 @@
     "description": ""
   },
   "dota_settings_reborn_dismissed_new_settings": {
-    "default": "16,",
+    "default": "17,16,",
     "flags": [
       "cl",
       "a"
@@ -16373,6 +16405,14 @@
     ],
     "description": ""
   },
+  "dota_settings_reborn_last_selected_neutral_unit": {
+    "default": "npc_dota_neutral_default",
+    "flags": [
+      "cl",
+      "per_user"
+    ],
+    "description": ""
+  },
   "dota_settings_reborn_last_selected_unit_type": {
     "default": "0",
     "flags": [
@@ -16396,7 +16436,7 @@
     "description": ""
   },
   "dota_settings_reborn_seen_new_settings": {
-    "default": "16,",
+    "default": "17,16,",
     "flags": [
       "cl",
       "a"
@@ -16563,15 +16603,6 @@
       "a"
     ],
     "description": "Show ability videos in tooltips while not in game."
-  },
-  "dota_show_accept_match_details": {
-    "default": "true",
-    "flags": [
-      "cl",
-      "a",
-      "per_user"
-    ],
-    "description": ""
   },
   "dota_show_cast_range": {
     "default": "true",
@@ -18545,7 +18576,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "202",
+    "default": "224",
     "flags": [
       "cl",
       "a",
@@ -18761,7 +18792,7 @@
     "description": ""
   },
   "dota_ui_give_item_indicator_min_ping_distance": {
-    "default": "300",
+    "default": "400",
     "flags": [
       "cl"
     ],
@@ -19837,7 +19868,7 @@
     "description": ""
   },
   "dota_write_ability_contributions_to_match": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "sv"
     ],
@@ -21114,6 +21145,13 @@
     "description": "Resets the user back to the base tutorial state"
   },
   "fantasy_craft_reset_2025_tutorial": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Resets the user back to the base tutorial state"
+  },
+  "fantasy_craft_reset_2026_tutorial": {
     "default": "cmd",
     "flags": [
       "cl"
@@ -36647,6 +36685,15 @@
     "description": "Avoid spoilers for frontpage matches"
   },
   "ti14_live_video_spoilers_blocked": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a",
+      "per_user"
+    ],
+    "description": "Avoid spoilers for frontpage matches"
+  },
+  "ti15_live_video_spoilers_blocked": {
     "default": "false",
     "flags": [
       "cl",

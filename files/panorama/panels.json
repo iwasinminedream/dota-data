@@ -1255,6 +1255,11 @@
     "attributes": []
   },
   {
+    "name": "DOTABPInternational2026TalentBundlesPopup",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
     "name": "DOTABPMonsterHunterMaterialsReceivedPopup",
     "base": "Popup",
     "attributes": []
@@ -1306,6 +1311,11 @@
   },
   {
     "name": "DOTABackgroundInternational2025",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTABackgroundInternational2026",
     "base": "Panel",
     "attributes": []
   },
@@ -2259,6 +2269,11 @@
   },
   {
     "name": "DOTAContextMenuTeamPicker",
+    "base": "ContextMenuBase",
+    "attributes": []
+  },
+  {
+    "name": "DOTAContextMenuUnitPicker",
     "base": "ContextMenuBase",
     "attributes": []
   },
@@ -3966,7 +3981,17 @@
     ]
   },
   {
+    "name": "DOTAFrontpageCellDarkCarnival",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTAFrontpageCellInternational2025",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAFrontpageCellInternational2026",
     "base": "Panel",
     "attributes": []
   },
@@ -4350,6 +4375,15 @@
     "attributes": [
       {
         "name": "draggable_items"
+      }
+    ]
+  },
+  {
+    "name": "DOTAGameTimeNotchedRangeSlider",
+    "base": "Panel",
+    "attributes": [
+      {
+        "name": "notch-increment-seconds"
       }
     ]
   },
@@ -4784,6 +4818,11 @@
   },
   {
     "name": "DOTAHUDShop",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAHUDShopPinnedItems",
     "base": "Panel",
     "attributes": []
   },
@@ -5491,6 +5530,106 @@
   {
     "name": "DOTAInternational2025TalentPage",
     "base": "DOTAInternational2025BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026AegisPopup",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026BasePage",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026Button",
+    "base": "TextButton",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026CommunityBundlesPopup",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026EffigyPreviewPanel",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026FantasyCraftTablet",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026FantasyPage",
+    "base": "DOTAInternational2026BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026FantasyPeriod",
+    "base": "TabContents",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026ItemClaimPage",
+    "base": "DOTAInternational2026BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026ItemClaimPopup",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026Page",
+    "base": "DOTAInternational2026BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PopupFantasyCraftChoice",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PopupFantasyCraftHelp",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PopupFantasyCraftTitle",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PredictionMainEvent",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PredictionRankings",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026PredictionsPage",
+    "base": "DOTAInternational2026BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026SupportersClub",
+    "base": "DOTAInternational2026BasePage",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026Tabs",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAInternational2026TalentPage",
+    "base": "DOTAInternational2026BasePage",
     "attributes": []
   },
   {
@@ -7885,6 +8024,9 @@
       },
       {
         "name": "teamtooltipstyle"
+      },
+      {
+        "name": "use_special_logo"
       }
     ]
   },
@@ -7929,6 +8071,11 @@
   },
   {
     "name": "DOTATooltip2025Score",
+    "base": "TooltipBase",
+    "attributes": []
+  },
+  {
+    "name": "DOTATooltip2026Score",
     "base": "TooltipBase",
     "attributes": []
   },
@@ -8008,6 +8155,16 @@
     "attributes": []
   },
   {
+    "name": "DOTATooltipDamageContributionDetails",
+    "base": "TooltipBase",
+    "attributes": []
+  },
+  {
+    "name": "DOTATooltipDamageMitigationByTypeDetails",
+    "base": "TooltipBase",
+    "attributes": []
+  },
+  {
     "name": "DOTATooltipDarkCarnivalFortuneTellerStoryNode",
     "base": "TooltipBase",
     "attributes": []
@@ -8049,6 +8206,11 @@
   },
   {
     "name": "DOTATooltipFantasy2025Title",
+    "base": "TooltipBase",
+    "attributes": []
+  },
+  {
+    "name": "DOTATooltipFantasy2026Title",
     "base": "TooltipBase",
     "attributes": []
   },
@@ -8691,9 +8853,6 @@
     "attributes": [
       {
         "name": "double-click-to-select"
-      },
-      {
-        "name": "facet-select-popup"
       }
     ]
   },
@@ -8769,6 +8928,11 @@
   },
   {
     "name": "DOTAUITalentDisplay",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAUIUnitPicker",
     "base": "Panel",
     "attributes": []
   },
@@ -9678,6 +9842,11 @@
   },
   {
     "name": "International2025PopupPredictionsHelp",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
+    "name": "International2026PopupPredictionsHelp",
     "base": "Popup",
     "attributes": []
   },

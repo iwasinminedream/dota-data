@@ -1,3 +1,8 @@
+-- Test modifier that declares every modifier function this Dota build knows about
+-- and reports which of them the engine actually calls back into (HasFunction).
+-- The captured output becomes files/vscripts/modifier_properties.json, which is what
+-- marks the "broken" modifier functions in the generated API and enum docs.
+
 modifier_test_properties = class({})
 function modifier_test_properties:IsHidden() return true end
 function modifier_test_properties:IsDebuff() return false end
@@ -7,417 +12,33 @@ function modifier_test_properties:IsStunDebuff() return false end
 function modifier_test_properties:RemoveOnDeath() return false end
 function modifier_test_properties:DestroyOnExpire() return false end
 
-local ALL_MODIFIER_FUNCTIONS = {
-    { name = "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE", val = 0 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET", val = 1 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC", val = 2 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT", val = 3 },
-    { name = "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE", val = 4 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL", val = 5 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_CONVERT_PHYSICAL_TO_MAGICAL", val = 6 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL", val = 7 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE", val = 8 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET", val = 9 },
-    { name = "MODIFIER_PROPERTY_PROCATTACK_FEEDBACK", val = 10 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ATTACK_DAMAGE", val = 11 },
-    { name = "MODIFIER_PROPERTY_PRE_ATTACK", val = 12 },
-    { name = "MODIFIER_PROPERTY_INVISIBILITY_LEVEL", val = 13 },
-    { name = "MODIFIER_PROPERTY_INVISIBILITY_ATTACK_BEHAVIOR_EXCEPTION", val = 14 },
-    { name = "MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY", val = 15 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT", val = 16 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE", val = 17 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_MIN_OVERRIDE", val = 18 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_MAX_OVERRIDE", val = 19 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE", val = 20 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE", val = 21 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE", val = 22 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE_2", val = 23 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT_UNIQUE", val = 24 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT_UNIQUE_2", val = 25 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE", val = 26 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN", val = 27 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX", val = 28 },
-    { name = "MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT", val = 29 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_LIMIT", val = 30 },
-    { name = "MODIFIER_PROPERTY_ATTACKSPEED_BASE_OVERRIDE", val = 31 },
-    { name = "MODIFIER_PROPERTY_FIXED_ATTACK_RATE", val = 32 },
-    { name = "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT", val = 33 },
-    { name = "MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT", val = 34 },
-    { name = "MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT", val = 35 },
-    { name = "MODIFIER_PROPERTY_MANACOST_REDUCTION_CONSTANT", val = 36 },
-    { name = "MODIFIER_PROPERTY_HEALTHCOST_REDUCTION_CONSTANT", val = 37 },
-    { name = "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT", val = 38 },
-    { name = "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST", val = 39 },
-    { name = "MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE", val = 40 },
-    { name = "MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT", val = 41 },
-    { name = "MODIFIER_PROPERTY_BONUSDAMAGEOUTGOING_PERCENTAGE", val = 42 },
-    { name = "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE", val = 43 },
-    { name = "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION", val = 44 },
-    { name = "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION_AMPLIFY", val = 45 },
-    { name = "MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE", val = 46 },
-    { name = "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE", val = 47 },
-    { name = "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE", val = 48 },
-    { name = "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET", val = 49 },
-    { name = "MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE", val = 50 },
-    { name = "MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET", val = 51 },
-    { name = "MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE", val = 52 },
-    { name = "MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE", val = 53 },
-    { name = "MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE", val = 54 },
-    { name = "MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE_UNIQUE", val = 55 },
-    { name = "MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE", val = 56 },
-    { name = "MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE_UNIQUE", val = 57 },
-    { name = "MODIFIER_PROPERTY_MANA_DRAIN_AMPLIFY_PERCENTAGE", val = 58 },
-    { name = "MODIFIER_PROPERTY_MP_RESTORE_AMPLIFY_PERCENTAGE", val = 59 },
-    { name = "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE", val = 60 },
-    { name = "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE", val = 61 },
-    { name = "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE", val = 62 },
-    { name = "MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE", val = 63 },
-    { name = "MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT", val = 64 },
-    { name = "MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT", val = 65 },
-    { name = "MODIFIER_PROPERTY_EVASION_CONSTANT", val = 66 },
-    { name = "MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT", val = 67 },
-    { name = "MODIFIER_PROPERTY_STATUS_RESISTANCE", val = 68 },
-    { name = "MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING", val = 69 },
-    { name = "MODIFIER_PROPERTY_STATUS_RESISTANCE_CASTER", val = 70 },
-    { name = "MODIFIER_PROPERTY_AVOID_DAMAGE", val = 71 },
-    { name = "MODIFIER_PROPERTY_AVOID_SPELL", val = 72 },
-    { name = "MODIFIER_PROPERTY_MISS_PERCENTAGE", val = 73 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BASE_PERCENTAGE", val = 74 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_TOTAL_PERCENTAGE", val = 75 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS", val = 76 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE", val = 77 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE", val = 78 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_POST", val = 79 },
-    { name = "MODIFIER_PROPERTY_MIN_PHYSICAL_ARMOR", val = 80 },
-    { name = "MODIFIER_PROPERTY_IGNORE_PHYSICAL_ARMOR", val = 81 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BASE_REDUCTION", val = 82 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION", val = 83 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS", val = 84 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_ILLUSIONS", val = 85 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_UNIQUE", val = 86 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE", val = 87 },
-    { name = "MODIFIER_PROPERTY_BASE_MANA_REGEN", val = 88 },
-    { name = "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT", val = 89 },
-    { name = "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE", val = 90 },
-    { name = "MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE", val = 91 },
-    { name = "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT", val = 92 },
-    { name = "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE", val = 93 },
-    { name = "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE_UNIQUE", val = 94 },
-    { name = "MODIFIER_PROPERTY_HEALTH_BONUS", val = 95 },
-    { name = "MODIFIER_PROPERTY_MANA_BONUS", val = 96 },
-    { name = "MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS", val = 97 },
-    { name = "MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS", val = 98 },
-    { name = "MODIFIER_PROPERTY_EXTRA_MANA_BONUS", val = 99 },
-    { name = "MODIFIER_PROPERTY_EXTRA_MANA_BONUS_PERCENTAGE", val = 100 },
-    { name = "MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE", val = 101 },
-    { name = "MODIFIER_PROPERTY_EXTRA_MANA_PERCENTAGE", val = 102 },
-    { name = "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS", val = 103 },
-    { name = "MODIFIER_PROPERTY_STATS_AGILITY_BONUS", val = 104 },
-    { name = "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS", val = 105 },
-    { name = "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE", val = 106 },
-    { name = "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE", val = 107 },
-    { name = "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE", val = 108 },
-    { name = "MODIFIER_PROPERTY_STATS_INTELLECT_NONE", val = 109 },
-    { name = "MODIFIER_PROPERTY_CAST_RANGE_BONUS", val = 110 },
-    { name = "MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE", val = 111 },
-    { name = "MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET", val = 112 },
-    { name = "MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING", val = 113 },
-    { name = "MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE", val = 114 },
-    { name = "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS", val = 115 },
-    { name = "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE", val = 116 },
-    { name = "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE", val = 117 },
-    { name = "MODIFIER_PROPERTY_MAX_ATTACK_RANGE", val = 118 },
-    { name = "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS", val = 119 },
-    { name = "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE", val = 120 },
-    { name = "MODIFIER_PROPERTY_PROJECTILE_NAME", val = 121 },
-    { name = "MODIFIER_PROPERTY_REINCARNATION", val = 122 },
-    { name = "MODIFIER_PROPERTY_REINCARNATION_SUPPRESS_FX", val = 123 },
-    { name = "MODIFIER_PROPERTY_RESPAWNTIME", val = 124 },
-    { name = "MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE", val = 125 },
-    { name = "MODIFIER_PROPERTY_RESPAWNTIME_STACKING", val = 126 },
-    { name = "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE", val = 127 },
-    { name = "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING", val = 128 },
-    { name = "MODIFIER_PROPERTY_CASTTIME_PERCENTAGE", val = 129 },
-    { name = "MODIFIER_PROPERTY_CASTTIME_CONSTANT", val = 130 },
-    { name = "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE", val = 131 },
-    { name = "MODIFIER_PROPERTY_MANACOST_PERCENTAGE", val = 132 },
-    { name = "MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING", val = 133 },
-    { name = "MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE", val = 134 },
-    { name = "MODIFIER_PROPERTY_HEALTHCOST_PERCENTAGE_STACKING", val = 135 },
-    { name = "MODIFIER_PROPERTY_DEATHGOLDCOST", val = 136 },
-    { name = "MODIFIER_PROPERTY_PERCENTAGE_DEATHGOLDCOST", val = 137 },
-    { name = "MODIFIER_PROPERTY_EXP_RATE_BOOST", val = 138 },
-    { name = "MODIFIER_PROPERTY_GOLD_RATE_BOOST", val = 139 },
-    { name = "MODIFIER_PROPERTY_KILL_ASSIST_GOLD_BOOST", val = 140 },
-    { name = "MODIFIER_PROPERTY_CONVERT_EXP_TO_GOLD_PCT", val = 141 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE", val = 142 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE", val = 143 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK", val = 144 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK", val = 145 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_SPECIAL", val = 146 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_BONUS", val = 147 },
-    { name = "MODIFIER_PROPERTY_INNATE_DAMAGE_BLOCK_PCT_OVERRIDE", val = 148 },
-    { name = "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR", val = 149 },
-    { name = "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK", val = 150 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ANIMATION", val = 151 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE", val = 152 },
-    { name = "MODIFIER_PROPERTY_ABSORB_SPELL", val = 153 },
-    { name = "MODIFIER_PROPERTY_REFLECT_SPELL", val = 154 },
-    { name = "MODIFIER_PROPERTY_DISABLE_AUTOATTACK", val = 155 },
-    { name = "MODIFIER_PROPERTY_BONUS_DAY_VISION", val = 156 },
-    { name = "MODIFIER_PROPERTY_BONUS_DAY_VISION_PERCENTAGE", val = 157 },
-    { name = "MODIFIER_PROPERTY_BONUS_NIGHT_VISION", val = 158 },
-    { name = "MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE", val = 159 },
-    { name = "MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE", val = 160 },
-    { name = "MODIFIER_PROPERTY_FIXED_DAY_VISION", val = 161 },
-    { name = "MODIFIER_PROPERTY_FIXED_NIGHT_VISION", val = 162 },
-    { name = "MODIFIER_PROPERTY_MIN_HEALTH", val = 163 },
-    { name = "MODIFIER_PROPERTY_MIN_MANA", val = 164 },
-    { name = "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL", val = 165 },
-    { name = "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL", val = 166 },
-    { name = "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE", val = 167 },
-    { name = "MODIFIER_PROPERTY_IS_ILLUSION", val = 168 },
-    { name = "MODIFIER_PROPERTY_ILLUSION_LABEL", val = 169 },
-    { name = "MODIFIER_PROPERTY_STRONG_ILLUSION", val = 170 },
-    { name = "MODIFIER_PROPERTY_SUPER_ILLUSION", val = 171 },
-    { name = "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ULTIMATE", val = 172 },
-    { name = "MODIFIER_PROPERTY_XP_DURING_DEATH", val = 173 },
-    { name = "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE", val = 174 },
-    { name = "MODIFIER_PROPERTY_TURN_RATE_OVERRIDE", val = 175 },
-    { name = "MODIFIER_PROPERTY_DISABLE_HEALING", val = 176 },
-    { name = "MODIFIER_PROPERTY_DISABLE_MANA_GAIN", val = 177 },
-    { name = "MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK", val = 178 },
-    { name = "MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK", val = 179 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL", val = 180 },
-    { name = "MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH", val = 181 },
-    { name = "MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER", val = 182 },
-    { name = "MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER", val = 183 },
-    { name = "MODIFIER_PROPERTY_UNIT_DISALLOW_UPGRADING", val = 184 },
-    { name = "MODIFIER_PROPERTY_DODGE_PROJECTILE", val = 185 },
-    { name = "MODIFIER_PROPERTY_TRIGGER_COSMETIC_AND_END_ATTACK", val = 186 },
-    { name = "MODIFIER_PROPERTY_PRIMARY_STAT_DAMAGE_MULTIPLIER", val = 187 },
-    { name = "MODIFIER_PROPERTY_PREATTACK_DEADLY_BLOW", val = 188 },
-    { name = "MODIFIER_PROPERTY_ALWAYS_AUTOATTACK_WHILE_HOLD_POSITION", val = 189 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_ARMOR_PIERCING_PERCENTAGE_TARGET", val = 190 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_ARMOR_PIERCING_PERCENTAGE_TARGET", val = 191 },
-    { name = "MODIFIER_PROPERTY_CRITICAL_STRIKE_BONUS", val = 192 },
-    { name = "MODIFIER_PROPERTY_CONVERT_ATTACK_PHYSICAL_TO_PURE", val = 193 },
-    { name = "MODIFIER_PROPERTY_BUFF_AMPLIFICATION", val = 194 },
-    { name = "MODIFIER_EVENT_ON_SPELL_TARGET_READY", val = 195 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_RECORD", val = 196 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_START", val = 197 },
-    { name = "MODIFIER_EVENT_ON_ATTACK", val = 198 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_LANDED", val = 199 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_FAIL", val = 200 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_ALLIED", val = 201 },
-    { name = "MODIFIER_EVENT_ON_PROJECTILE_DODGE", val = 202 },
-    { name = "MODIFIER_EVENT_ON_ORDER", val = 203 },
-    { name = "MODIFIER_EVENT_ON_ORDER_RECEIVED", val = 204 },
-    { name = "MODIFIER_EVENT_ON_UNIT_MOVED", val = 205 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_START", val = 206 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_EXECUTED", val = 207 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_FULLY_CAST", val = 208 },
-    { name = "MODIFIER_EVENT_ON_BREAK_INVISIBILITY", val = 209 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_END_CHANNEL", val = 210 },
-    { name = "MODIFIER_EVENT_ON_PROCESS_UPGRADE", val = 211 },
-    { name = "MODIFIER_EVENT_ON_REFRESH", val = 212 },
-    { name = "MODIFIER_EVENT_ON_TAKEDAMAGE", val = 213 },
-    { name = "MODIFIER_EVENT_ON_DEATH_PREVENTED", val = 214 },
-    { name = "MODIFIER_EVENT_ON_STATE_CHANGED", val = 215 },
-    { name = "MODIFIER_EVENT_ON_ORB_EFFECT", val = 216 },
-    { name = "MODIFIER_EVENT_ON_PROCESS_CLEAVE", val = 217 },
-    { name = "MODIFIER_EVENT_ON_DAMAGE_CALCULATED", val = 218 },
-    { name = "MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED", val = 219 },
-    { name = "MODIFIER_EVENT_ON_ATTACKED", val = 220 },
-    { name = "MODIFIER_EVENT_ON_DEATH", val = 221 },
-    { name = "MODIFIER_EVENT_ON_DEATH_COMPLETED", val = 222 },
-    { name = "MODIFIER_EVENT_ON_RESPAWN", val = 223 },
-    { name = "MODIFIER_EVENT_ON_SPENT_MANA", val = 224 },
-    { name = "MODIFIER_EVENT_ON_SPENT_HEALTH", val = 225 },
-    { name = "MODIFIER_EVENT_ON_SPENT_ITEM_CHARGE", val = 226 },
-    { name = "MODIFIER_EVENT_ON_TELEPORTING", val = 227 },
-    { name = "MODIFIER_EVENT_ON_TELEPORTED", val = 228 },
-    { name = "MODIFIER_EVENT_ON_SET_LOCATION", val = 229 },
-    { name = "MODIFIER_EVENT_ON_HEALTH_GAINED", val = 230 },
-    { name = "MODIFIER_EVENT_ON_MANA_GAINED", val = 231 },
-    { name = "MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT", val = 232 },
-    { name = "MODIFIER_EVENT_ON_HERO_KILLED", val = 233 },
-    { name = "MODIFIER_EVENT_ON_HEAL_RECEIVED", val = 234 },
-    { name = "MODIFIER_EVENT_ON_REDIRECT_HEALTH_GAIN", val = 235 },
-    { name = "MODIFIER_EVENT_ON_BUILDING_KILLED", val = 236 },
-    { name = "MODIFIER_EVENT_ON_MODEL_CHANGED", val = 237 },
-    { name = "MODIFIER_EVENT_ON_MODIFIER_ADDED", val = 238 },
-    { name = "MODIFIER_EVENT_ON_MODIFIER_REMOVED", val = 239 },
-    { name = "MODIFIER_EVENT_ON_SCEPTER_UPGRADE_SELECTED", val = 240 },
-    { name = "MODIFIER_EVENT_ON_SHARD_UPGRADE_SELECTED", val = 241 },
-    { name = "MODIFIER_PROPERTY_TOOLTIP", val = 242 },
-    { name = "MODIFIER_PROPERTY_MODEL_CHANGE", val = 243 },
-    { name = "MODIFIER_PROPERTY_MODEL_SCALE", val = 244 },
-    { name = "MODIFIER_PROPERTY_MODEL_SCALE_ANIMATE_TIME", val = 245 },
-    { name = "MODIFIER_PROPERTY_MODEL_SCALE_USE_IN_OUT_EASE", val = 246 },
-    { name = "MODIFIER_PROPERTY_MODEL_SCALE_CONSTANT", val = 247 },
-    { name = "MODIFIER_PROPERTY_IS_SCEPTER", val = 248 },
-    { name = "MODIFIER_PROPERTY_IS_SHARD", val = 249 },
-    { name = "MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION", val = 250 },
-    { name = "MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS", val = 251 },
-    { name = "MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND", val = 252 },
-    { name = "MODIFIER_PROPERTY_LIFETIME_FRACTION", val = 253 },
-    { name = "MODIFIER_PROPERTY_PROVIDES_FOW_POSITION", val = 254 },
-    { name = "MODIFIER_PROPERTY_SPELLS_REQUIRE_HP", val = 255 },
-    { name = "MODIFIER_PROPERTY_CONVERT_MANA_COST_TO_HEALTH_COST", val = 256 },
-    { name = "MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP", val = 257 },
-    { name = "MODIFIER_PROPERTY_DISABLE_TURNING", val = 258 },
-    { name = "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE", val = 259 },
-    { name = "MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE", val = 260 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL", val = 261 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE", val = 262 },
-    { name = "MODIFIER_PROPERTY_ABILITY_LAYOUT", val = 263 },
-    { name = "MODIFIER_EVENT_ON_DOMINATED", val = 264 },
-    { name = "MODIFIER_EVENT_ON_KILL", val = 265 },
-    { name = "MODIFIER_EVENT_ON_ASSIST", val = 266 },
-    { name = "MODIFIER_PROPERTY_TEMPEST_DOUBLE", val = 267 },
-    { name = "MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE", val = 268 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_FINISHED", val = 269 },
-    { name = "MODIFIER_PROPERTY_IGNORE_COOLDOWN", val = 270 },
-    { name = "MODIFIER_PROPERTY_CAN_ATTACK_TREES", val = 271 },
-    { name = "MODIFIER_PROPERTY_VISUAL_Z_DELTA", val = 272 },
-    { name = "MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE", val = 273 },
-    { name = "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION", val = 274 },
-    { name = "MODIFIER_PROPERTY_DONT_GIVE_VISION_OF_ATTACKER", val = 275 },
-    { name = "MODIFIER_PROPERTY_TOOLTIP2", val = 276 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY", val = 277 },
-    { name = "MODIFIER_EVENT_ON_PROJECTILE_OBSTRUCTION_HIT", val = 278 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_TELEPORT", val = 279 },
-    { name = "MODIFIER_EVENT_ON_ATTACK_CANCELLED", val = 280 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_CLEAVE", val = 281 },
-    { name = "MODIFIER_PROPERTY_BOT_ATTACK_SCORE_BONUS", val = 282 },
-    { name = "MODIFIER_PROPERTY_ATTACKSPEED_REDUCTION_PERCENTAGE", val = 283 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_REDUCTION_PERCENTAGE", val = 284 },
-    { name = "MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET", val = 285 },
-    { name = "MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE", val = 286 },
-    { name = "MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE", val = 287 },
-    { name = "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING", val = 288 },
-    { name = "MODIFIER_PROPERTY_SPELL_REDIRECT_TARGET", val = 289 },
-    { name = "MODIFIER_PROPERTY_TURN_RATE_CONSTANT", val = 290 },
-    { name = "MODIFIER_PROPERTY_PACK_RAT", val = 291 },
-    { name = "MODIFIER_PROPERTY_PHYSICALDAMAGEOUTGOING_PERCENTAGE", val = 292 },
-    { name = "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE", val = 293 },
-    { name = "MODIFIER_PROPERTY_HEALTHBAR_PIPS", val = 294 },
-    { name = "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT", val = 295 },
-    { name = "MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY", val = 296 },
-    { name = "MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS", val = 297 },
-    { name = "MODIFIER_PROPERTY_FAIL_ATTACK", val = 298 },
-    { name = "MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT", val = 299 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_FULLSCREEN_DEATH_FX", val = 300 },
-    { name = "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST", val = 301 },
-    { name = "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE", val = 302 },
-    { name = "MODIFIER_PROPERTY_TICK_GOLD_MULTIPLIER", val = 303 },
-    { name = "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE", val = 304 },
-    { name = "MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING", val = 305 },
-    { name = "MODIFIER_PROPERTY_SLOW_RESISTANCE_APPLIES_TO_ATTACKS", val = 306 },
-    { name = "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE", val = 307 },
-    { name = "MODIFIER_PROPERTY_PROJECTILE_SPEED", val = 308 },
-    { name = "MODIFIER_PROPERTY_PROJECTILE_SPEED_TARGET", val = 309 },
-    { name = "MODIFIER_PROPERTY_BECOME_STRENGTH", val = 310 },
-    { name = "MODIFIER_PROPERTY_BECOME_AGILITY", val = 311 },
-    { name = "MODIFIER_PROPERTY_BECOME_INTELLIGENCE", val = 312 },
-    { name = "MODIFIER_PROPERTY_BECOME_UNIVERSAL", val = 313 },
-    { name = "MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK", val = 314 },
-    { name = "MODIFIER_EVENT_ON_DAMAGE_HPLOSS", val = 315 },
-    { name = "MODIFIER_PROPERTY_SHARE_XPRUNE", val = 316 },
-    { name = "MODIFIER_PROPERTY_XP_FOUNTAIN_COUNTDOWN_TIME_OVERRIDE", val = 317 },
-    { name = "MODIFIER_PROPERTY_NO_FREE_TP_SCROLL_ON_DEATH", val = 318 },
-    { name = "MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_CHOICE", val = 319 },
-    { name = "MODIFIER_PROPERTY_HAS_BONUS_NEUTRAL_ITEM_PASSIVE", val = 320 },
-    { name = "MODIFIER_PROPERTY_PRESERVE_NEUTRAL_ITEM_PASSIVES", val = 321 },
-    { name = "MODIFIER_PROPERTY_FORCE_MAX_HEALTH", val = 322 },
-    { name = "MODIFIER_PROPERTY_FORCE_MAX_MANA", val = 323 },
-    { name = "MODIFIER_PROPERTY_AOE_BONUS_CONSTANT", val = 324 },
-    { name = "MODIFIER_PROPERTY_AOE_BONUS_CONSTANT_STACKING", val = 325 },
-    { name = "MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK", val = 326 },
-    { name = "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES", val = 327 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_CRIT", val = 328 },
-    { name = "MODIFIER_PROPERTY_ABILITY_POINTS", val = 329 },
-    { name = "MODIFIER_PROPERTY_BUYBACK_PENALTY_PERCENT", val = 330 },
-    { name = "MODIFIER_PROPERTY_ITEM_SELLBACK_COST", val = 331 },
-    { name = "MODIFIER_PROPERTY_DISASSEMBLE_ANYTHING", val = 332 },
-    { name = "MODIFIER_PROPERTY_FIXED_MANA_REGEN", val = 333 },
-    { name = "MODIFIER_PROPERTY_BONUS_UPHILL_MISS_CHANCE", val = 334 },
-    { name = "MODIFIER_PROPERTY_CREEP_DENY_PERCENT", val = 335 },
-    { name = "MODIFIER_PROPERTY_ATTACKSPEED_ABSOLUTE_MAX", val = 336 },
-    { name = "MODIFIER_PROPERTY_FOW_TEAM", val = 337 },
-    { name = "MODIFIER_EVENT_ON_HERO_BEGIN_DYING", val = 338 },
-    { name = "MODIFIER_PROPERTY_BONUS_LOTUS_HEAL", val = 339 },
-    { name = "MODIFIER_PROPERTY_BASE_HP_REGEN_PER_STR_BONUS_PERCENTAGE", val = 340 },
-    { name = "MODIFIER_PROPERTY_BASE_ARMOR_PER_AGI_BONUS_PERCENTAGE", val = 341 },
-    { name = "MODIFIER_PROPERTY_BASE_ATTACKSPEED_PER_AGI_BONUS_PERCENTAGE", val = 342 },
-    { name = "MODIFIER_PROPERTY_BASE_MP_REGEN_PER_INT_BONUS_PERCENTAGE", val = 343 },
-    { name = "MODIFIER_PROPERTY_BASE_MRES_PER_INT_BONUS_PERCENTAGE", val = 344 },
-    { name = "MODIFIER_EVENT_ON_DAY_STARTED", val = 345 },
-    { name = "MODIFIER_EVENT_ON_NIGHT_STARTED", val = 346 },
-    { name = "MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_CHANCE", val = 347 },
-    { name = "MODIFIER_PROPERTY_CREATE_BONUS_ILLUSION_COUNT", val = 348 },
-    { name = "MODIFIER_PROPERTY_PSEUDORANDOM_BONUS", val = 349 },
-    { name = "MODIFIER_PROPERTY_ATTACK_HEIGHT_BONUS", val = 350 },
-    { name = "MODIFIER_PROPERTY_SKIP_ATTACK_REGULATOR", val = 351 },
-    { name = "MODIFIER_PROPERTY_MISS_PERCENTAGE_TARGET", val = 352 },
-    { name = "MODIFIER_PROPERTY_ADDITIONAL_NEUTRAL_ITEM_DROPS", val = 353 },
-    { name = "MODIFIER_PROPERTY_KILL_STREAK_BONUS_GOLD_PERCENTAGE", val = 354 },
-    { name = "MODIFIER_PROPERTY_HP_REGEN_MULTIPLIER_PRE_AMPLIFICATION", val = 355 },
-    { name = "MODIFIER_PROPERTY_HEROFACET_OVERRIDE", val = 356 },
-    { name = "MODIFIER_EVENT_ON_TREE_CUT_DOWN", val = 357 },
-    { name = "MODIFIER_EVENT_ON_CLEAVE_ATTACK_LANDED", val = 358 },
-    { name = "MODIFIER_PROPERTY_MIN_ATTRIBUTE_LEVEL", val = 359 },
-    { name = "MODIFIER_PROPERTY_TIER_TOKEN_REROLL", val = 360 },
-    { name = "MODIFIER_PROPERTY_VISION_DEGREES_RESTRICTION", val = 361 },
-    { name = "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_STACKING", val = 362 },
-    { name = "MODIFIER_PROPERTY_INVENTORY_SLOT_RESTRICTED", val = 363 },
-    { name = "MODIFIER_EVENT_ON_TIER_TOKEN_REROLLED", val = 364 },
-    { name = "MODIFIER_PROPERTY_REDIRECT_SPELL", val = 365 },
-    { name = "MODIFIER_PROPERTY_BASEATTACK_POSTBONUS", val = 366 },
-    { name = "MODIFIER_EVENT_ON_FOW_TEAM_CHANGED", val = 367 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_ATTACK_PROCS", val = 368 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_TOGGLED", val = 369 },
-    { name = "MODIFIER_PROPERTY_AVOID_ATTACK_PROCS", val = 370 },
-    { name = "MODIFIER_EVENT_ON_RUNE_SPAWN", val = 371 },
-    { name = "MODIFIER_PROPERTY_PHYSICAL_LIFESTEAL", val = 372 },
-    { name = "MODIFIER_PROPERTY_MAGICAL_LIFESTEAL", val = 373 },
-    { name = "MODIFIER_EVENT_ON_PURE_DAMAGE_CALCULATED", val = 374 },
-    { name = "MODIFIER_EVENT_NEUTRAL_TRINKET_OPTIONS", val = 375 },
-    { name = "MODIFIER_EVENT_NEUTRAL_ENHANCEMENT_OPTIONS", val = 376 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT", val = 377 },
-    { name = "MODIFIER_PROPERTY_MOVESPEED_POST_MULTIPLIER_BONUS_CONSTANT", val = 378 },
-    { name = "MODIFIER_PROPERTY_FORBID_ILLUSIONS", val = 379 },
-    { name = "MODIFIER_PROPERTY_MANACOST_OVERRIDE", val = 380 },
-    { name = "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION", val = 381 },
-    { name = "MODIFIER_PROPERTY_RESTORATION_AMPLIFICATION_UNIQUE", val = 382 },
-    { name = "MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE_UNIQUE", val = 383 },
-    { name = "MODIFIER_PROPERTY_REDIRECT_HEALTH_GAIN", val = 384 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_INCOMING_CRIT", val = 385 },
-    { name = "MODIFIER_PROPERTY_UPGRADE_NEUTRAL_ARTIFACTS", val = 386 },
-    { name = "MODIFIER_PROPERTY_SUPPRESS_INVALID_MOVE_ATTACK_ORDERS", val = 387 },
-    { name = "MODIFIER_PROPERTY_CONSUMABLE_USE_SPEED", val = 388 },
-    { name = "MODIFIER_PROPERTY_REQUIRED_LEVEL", val = 389 },
-    { name = "MODIFIER_EVENT_ON_MODIFIER_REFRESHED", val = 390 },
-    { name = "MODIFIER_EVENT_ON_ABILITY_SWAPPED", val = 391 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_CREEP_BOUNTY", val = 392 },
-    { name = "MODIFIER_PROPERTY_OVERRIDE_BASE_DAMAGE", val = 393 },
-    { name = "MODIFIER_PROPERTY_UNTARGETABLE_FROM", val = 394 },
-    { name = "MODIFIER_PROPERTY_UNTARGETABLE_TO", val = 395 },
-    { name = "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ITEMS", val = 396 },
-    { name = "MODIFIER_EVENT_ON_PURGE", val = 397 },
-    { name = "MODIFIER_EVENT_ON_ILLUSION_CREATED", val = 398 },
-    { name = "MODIFIER_PROPERTY_HEROLEVELSCALE", val = 399 },
-    { name = "MODIFIER_PROPERTY_REPLACE_ATTACK", val = 400 },
-    { name = "MODIFIER_PROPERTY_CUSTOM1", val = 401 },
-    { name = "MODIFIER_PROPERTY_CUSTOM2", val = 402 },
-    { name = "MODIFIER_PROPERTY_CUSTOM3", val = 403 },
-    { name = "MODIFIER_EVENT_ON_CUSTOM1", val = 404 },
-    { name = "MODIFIER_EVENT_ON_CUSTOM2", val = 405 },
-    { name = "MODIFIER_EVENT_ON_CUSTOM3", val = 406 },
-}
+-- The functions to test are read from the engine's own globals instead of a
+-- hardcoded list: every `modifierfunction` member is a numeric global named
+-- MODIFIER_PROPERTY_* / MODIFIER_EVENT_*, and the only two members that are not
+-- (MODIFIER_FUNCTION_LAST / MODIFIER_FUNCTION_INVALID) are sentinels.
+-- A hardcoded name -> value list silently corrupts the entire test as soon as Valve
+-- inserts a value in the middle of the enum: every entry after the insertion point
+-- is then tested under the name of its predecessor.
+local function collectModifierFunctions()
+    local last = type(MODIFIER_FUNCTION_LAST) == "number" and MODIFIER_FUNCTION_LAST or nil
+    local functions = {}
+    for name, value in pairs(_G) do
+        if type(name) == "string" and type(value) == "number"
+            and (string.find(name, "^MODIFIER_PROPERTY_") or string.find(name, "^MODIFIER_EVENT_"))
+            and value >= 0 and (last == nil or value < last)
+        then
+            table.insert(functions, { name = name, val = value })
+        end
+    end
+    table.sort(functions, function(a, b) return a.val < b.val end)
+    return functions
+end
 
+local ALL_MODIFIER_FUNCTIONS = collectModifierFunctions()
 
+-- State of the previous dump, used only to report what changed. Rewritten
+-- automatically by dumper/start-dumper.mts after every successful dump.
+-- BASELINE START
 local previous_state = {
     ["MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"] = true,
     ["MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_TARGET"] = true,
@@ -468,6 +89,7 @@ local previous_state = {
     ["MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE"] = true,
     ["MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"] = true,
     ["MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE"] = true,
+    ["MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE_2"] = true,
     ["MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_TARGET"] = false,
     ["MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_SOURCE"] = true,
     ["MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET"] = true,
@@ -826,7 +448,9 @@ local previous_state = {
     ["MODIFIER_EVENT_ON_CUSTOM1"] = false,
     ["MODIFIER_EVENT_ON_CUSTOM2"] = false,
     ["MODIFIER_EVENT_ON_CUSTOM3"] = false,
+    ["MODIFIER_PROPERTY_IGNORE_FORCE_ATTACK_TARGET"] = false,
 }
+-- BASELINE END
 
 function modifier_test_properties:OnCreated()
     if not IsServer() then return end
@@ -839,24 +463,41 @@ function modifier_test_properties:OnIntervalThink()
     if not IsServer() then return end
     self:StartIntervalThink(-1)
 
+    if #ALL_MODIFIER_FUNCTIONS == 0 then
+        -- Should never happen; without this the dumper would wait out its grace
+        -- period instead of being told the test produced nothing.
+        print("=== ERROR: no MODIFIER_PROPERTY_/MODIFIER_EVENT_ globals found ===")
+        print("===ENDOFMODIFIERTEST")
+        return
+    end
+
     -- Step through every modifier function in ONE pass. (Previously this did one
     -- entry per frame across ~400 frames, which could exceed the dump window at
     -- low framerates and never finish — leaving the test output empty.)
     local new_state_lines = {}
-    local diffs = {}
+    local changes = {}
+    local added = {}
+    local removed = {}
+    local seen = {}
     for _, entry in ipairs(ALL_MODIFIER_FUNCTIONS) do
         local has = self:HasFunction(entry.val)
+        seen[entry.name] = true
         table.insert(new_state_lines, '    ["' .. entry.name .. '"] = ' .. tostring(has) .. ",")
 
         local prev = previous_state[entry.name]
-        if prev == false and has == true then
-            table.insert(diffs, entry.name .. ": false -> true")
-        elseif prev == true and has == false then
-            table.insert(diffs, entry.name .. ": true -> false")
-        elseif prev == nil then
-            table.insert(diffs, entry.name .. ": NEW = " .. tostring(has))
+        if prev == nil then
+            table.insert(added, entry.name .. " = " .. entry.val .. " (" .. tostring(has) .. ")")
+        elseif prev ~= has then
+            table.insert(changes, entry.name .. ": " .. tostring(prev) .. " -> " .. tostring(has))
         end
     end
+
+    for name in pairs(previous_state) do
+        if not seen[name] then
+            table.insert(removed, name)
+        end
+    end
+    table.sort(removed)
 
     -- print new state for next time
     print("local previous_state = {")
@@ -866,20 +507,47 @@ function modifier_test_properties:OnIntervalThink()
     print("}")
 
     -- print diff
-    local changed = false
-    for _, diff in ipairs(diffs) do
-        if not changed then
-            print("")
-            print("=== CHANGES (false -> true) ===")
-            changed = true
+    print("")
+    if #changes > 0 then
+        print("=== CHANGES ===")
+        for _, change in ipairs(changes) do
+            print(change)
         end
-        print(diff)
-    end
-    if not changed then
-        print("")
+    else
         print("=== NO CHANGES ===")
     end
 
+    -- Added/removed entries mean this Dota build changed the modifierfunction enum
+    -- itself. The dumper reacts to this by rewriting its baseline and asking for the
+    -- dump to be repeated.
+    if #added > 0 then
+        print("")
+        print("=== NEW MODIFIER FUNCTIONS (" .. #added .. ") ===")
+        for _, name in ipairs(added) do
+            print(name)
+        end
+    end
+
+    if #removed > 0 then
+        print("")
+        print("=== REMOVED MODIFIER FUNCTIONS (" .. #removed .. ") ===")
+        for _, name in ipairs(removed) do
+            print(name)
+        end
+    end
+
+    -- MODIFIER_FUNCTION_LAST is the size of the enum, so a different count means a
+    -- member of it is not exposed as a global (or the globals are not contiguous)
+    -- and something was silently left untested.
+    if type(MODIFIER_FUNCTION_LAST) == "number" and #ALL_MODIFIER_FUNCTIONS ~= MODIFIER_FUNCTION_LAST then
+        print("")
+        print("=== WARNING: found " .. #ALL_MODIFIER_FUNCTIONS ..
+            " modifier functions, but MODIFIER_FUNCTION_LAST = " .. MODIFIER_FUNCTION_LAST .. " ===")
+    end
+
+    print("")
+    print("===MODIFIERFUNCTIONS total=" .. #ALL_MODIFIER_FUNCTIONS ..
+        " added=" .. #added .. " removed=" .. #removed)
     print("===ENDOFMODIFIERTEST")
 end
 

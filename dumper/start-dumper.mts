@@ -8,6 +8,7 @@ import { Socket } from 'net';
 import * as path from 'path';
 
 import { findSteamAppById } from '@moddota/find-steam-app';
+import { reportBaselineChange, syncModifierBaseline } from './modifier-baseline.mts';
 import * as vConsole from './vconsole.mts';
 
 const ADDON_NAME = 'dumper';
@@ -161,6 +162,11 @@ if (!succeeded) {
 }
 
 console.log('\nSaved dump + modifier test — dumper finished successfully.');
+
+// Fold this dump's modifier state back into the dumper, and say so at the very end
+// if the modifier function list itself changed in this Dota build.
+reportBaselineChange(syncModifierBaseline());
+
 process.exit(0);
 
 // --------------------------------------------------------------------------

@@ -8,6 +8,8 @@
   "include": [
     "start-dumper.mts",
     "vconsole.mts",
+    "modifier-baseline.mts",
+    "build-modifier-properties.ts",
     "build-modifiers.ts",
     "build-abilities.ts",
     "build-units.ts"

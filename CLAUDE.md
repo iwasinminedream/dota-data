@@ -185,6 +185,12 @@ The `dumper/dump` file is a monolithic text file with sections delimited by `$> 
 
 The engine only exposes TypeScript declarations for panel types that have been *instantiated*, so the dumper installs a custom-game UI (`dumper/panorama/` → `content/dota_addons/dumper/panorama/layout/custom_game/`, compiled by the `-tools` launch) that `$.CreatePanel`s every known creatable panel type on load — this makes their JS classes visible to phase 2.
 
+#### Modifier properties
+
+`dumper/modifier_test_properties.lua` is a modifier that declares every modifier function and reports which of them the engine actually calls (`HasFunction`) → `dumper/modifier_test_output.txt` → `files/vscripts/modifier_properties.json` (`false` = the function is `broken` in the generated docs). The function list is read from the engine's own `MODIFIER_PROPERTY_*` / `MODIFIER_EVENT_*` globals at runtime — never hardcode it, because `modifierfunction` values are positional and a value inserted in the middle of the enum shifts every later result onto the previous name.
+
+The `-- BASELINE START/END` block in that file holds the previous dump's state, used only to report what changed; `dumper/modifier-baseline.mts` rewrites it after every successful dump and, when the enum itself gained or lost members, prints a "REPEAT THE DUMP" notice at the end of `npm run auto-dump`. `build:modifier-properties` independently cross-checks the test output against the `modifierfunction` enum in `dumper/dump` and refuses to overwrite the JSON when they disagree.
+
 ### Testing
 
 ```bash
