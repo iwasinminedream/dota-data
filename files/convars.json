@@ -9027,7 +9027,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4269",
+    "default": "4282",
     "flags": [
       "cl",
       "a",
@@ -9309,7 +9309,7 @@
     "description": ""
   },
   "dota_disable_external_application_hotkeys": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -10085,7 +10085,7 @@
     "description": ""
   },
   "dota_force_treasure_page_oversized": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -11405,7 +11405,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "36028154965",
+    "default": "36062656925",
     "flags": [
       "cl",
       "a",
@@ -12701,7 +12701,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "4",
+    "default": "598016",
     "flags": [
       "cl",
       "a"
@@ -18576,7 +18576,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "224",
+    "default": "230",
     "flags": [
       "cl",
       "a",
@@ -19700,7 +19700,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "2",
+    "default": "3",
     "flags": [
       "cl",
       "a"

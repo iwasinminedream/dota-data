@@ -1,0 +1,937 @@
+{
+  "version": "6902",
+  "date": "Aug 14 2026",
+  "time": "13:25:17",
+  "changes": {
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "silencer",
+          "name": "modifier_silencer_brain_drain_permanent_debuff"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "ancient_apparition_ice_blast",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "50.0 55.0 40.0",
+              "new": "50.0 45.0 40.0"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear",
+          "changes": {
+            "AbilityValues": {
+              "bear_armor": {
+                "value": {
+                  "old": null,
+                  "new": -1
+                },
+                "show_absolute_values": {
+                  "old": null,
+                  "new": 0
+                },
+                "_value": {
+                  "old": 0,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "omniknight_hammer_of_purity",
+          "changes": {
+            "AbilityValues": {
+              "total_ticks": {
+                "old": null,
+                "new": 4
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_venomancer",
+          "changes": {
+            "ItemSlots": {
+              "0": {
+                "SlotIndex": {
+                  "old": 0,
+                  "new": 0
+                },
+                "SlotName": {
+                  "old": "shoulder",
+                  "new": "shoulder"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Shoulder",
+                  "new": "#LoadoutSlot_Shoulder"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": 512,
+                  "new": 512
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 3000,
+                  "new": 4500
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1400,
+                  "new": 1800
+                }
+              },
+              "1": {
+                "SlotIndex": {
+                  "old": 1,
+                  "new": 1
+                },
+                "SlotName": {
+                  "old": "head",
+                  "new": "head"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Head_Accessory",
+                  "new": "#LoadoutSlot_Head_Accessory"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": 512,
+                  "new": 512
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 3000,
+                  "new": 3500
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1200,
+                  "new": 1800
+                }
+              },
+              "2": {
+                "SlotIndex": {
+                  "old": 2,
+                  "new": 2
+                },
+                "SlotName": {
+                  "old": "tail",
+                  "new": "tail"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Tail",
+                  "new": "#LoadoutSlot_Tail"
+                },
+                "TextureWidth": {
+                  "old": 256,
+                  "new": 256
+                },
+                "TextureHeight": {
+                  "old": 256,
+                  "new": 256
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 2000,
+                  "new": 2500
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 800,
+                  "new": 1000
+                }
+              },
+              "3": {
+                "SlotIndex": {
+                  "old": 3,
+                  "new": 3
+                },
+                "SlotName": {
+                  "old": "arms",
+                  "new": "arms"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Venomancer_StingerLimbs",
+                  "new": "#LoadoutSlot_Venomancer_StingerLimbs"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": 256,
+                  "new": 256
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 3000,
+                  "new": 3200
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1200,
+                  "new": 1280
+                }
+              },
+              "6": {
+                "SlotIndex": {
+                  "old": 6,
+                  "new": 6
+                },
+                "SlotName": {
+                  "old": "ability3",
+                  "new": "ability3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Venomancer_PlagueWard",
+                  "new": "#LoadoutSlot_Venomancer_PlagueWard"
+                },
+                "TextureWidth": {
+                  "old": 256,
+                  "new": 256
+                },
+                "TextureHeight": {
+                  "old": 256,
+                  "new": 256
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 2500,
+                  "new": 3200
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1000,
+                  "new": 1280
+                },
+                "no_import": {
+                  "old": 1,
+                  "new": 1
+                },
+                "GeneratesUnits": {
+                  "old": {
+                    "0": "npc_dota_venomancer_plague_ward"
+                  },
+                  "new": {
+                    "0": "npc_dota_venomancer_plague_ward"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Neutrals",
+          "value": "NEUTRALS"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Lobby_Settings_Dota_TV_Delay_1_Minute",
+          "value": "1 Minute"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TeamFanContent_EffigyExtraInfo",
+          "value": "Global Effigies automatically replace your regular effigy in all matches, allowing you to show your team support! Team Logo Effigies will last until the end of September and will expire along with the rest of the temporary content."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TeamFanContent_NoFavorite",
+          "value": "No Team"
+        },
+        {
+          "type": "localization",
+          "name": "Notification_International26_LGD",
+          "value": "LGD Gaming's TaiLung will no longer be competing at The International. He has been replaced with Topias 'Topson' Taavitsainen. Fantasy rosters have been automatically updated."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Aspect_of_Oscilla_of_the_Crimson_Witness",
+          "value": "Aspect of Oscilla of the Crimson Witness"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Aspect_of_Oscilla",
+          "value": "Though the Orbs of Oscilla had garnered intense study and spurred divisive debate spanning entire epochs of arcane methodology, Nortrom was the first to posit that these artifacts were no mere items of power, but astral appendages of some great creature, each of which might be used to locate further pieces of a terrifying whole."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_FullBore_Bonanza",
+          "value": "Of all the memories from his homeland that Kardel Sharpeye revels in during rare quiet nights, tales from the midsummer carnivals and their requisite target galleries are first to pass his lips. At least, they would be, were any of his folk around with which he might share the tale.\\r\\n\\t<br><br>\\r\\n\\tImmortal items cannot be traded or marketed through The International 2018, but can still be gifted once. "
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Merry_Wanderers_Brush",
+          "value": "Beneath the magic moonless night sprout sights rare-seen by mortal man: the swaying sweep of faerie flight unfurls to gorgeous shimmering span. And from this beauteous wonder light of shifting hue there might be spied, yet those who seek such perilous views may oft then find their lives denied."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Primal_Paean",
+          "value": "Long after their escape from the court of Slom, the white stag remained companion to young Karroch and his ever-growing animal tribe. Beastmaster depends still on the wisdom and strength of his departed friend, and bears the stag's crown upon his shoulders not as trophy, but tribute."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Sylvan_Vedette",
+          "value": "Though the battle prowess of a tested ranger is never in doubt, it is the reconnaissance upon which one's tactics are based that allows for survival into yet another day."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_FullBore_Bonanza_of_the_Crimson_Witness",
+          "value": "Full-Bore Bonanza of the Crimson Witness"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Merry_Wanderers_Brush_of_the_Crimson_Witness",
+          "value": "Merry Wanderer's Brush of the Crimson Witness"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Primal_Paean_of_the_Crimson_Witness",
+          "value": "Primal Paean of the Crimson Witness"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sylvan_Vedette_of_the_Crimson_Witness",
+          "value": "Sylvan Vedette of the Crimson Witness"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_101054160",
+          "value": "Imperius Talent Sticker - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_101054160_desc",
+          "value": "Talent sticker for Imperius."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_256125365",
+          "value": "Purge Talent Sticker - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_256125365_desc",
+          "value": "Talent sticker for Purge."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_90137663",
+          "value": "Zhou Talent Sticker - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_90137663_desc",
+          "value": "Talent sticker for Zhou."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_98887913",
+          "value": "xiao8 Talent Sticker - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_98887913_desc",
+          "value": "Talent sticker for xiao8."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Treasure_of_the_Crimson_Witness_2026",
+          "value": "Treasure of the Crimson Witness 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier1",
+          "value": "Imperius Standard Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier1_Desc",
+          "value": "Talent bundle for Imperius for The International 2026. Includes: Standard Sticker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier2",
+          "value": "Imperius Glitter Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier2_Desc",
+          "value": "Talent bundle for Imperius for The International 2026. Includes: Glitter Sticker, Chat Wheel \"Ay, se quebraron tus deditos\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier3",
+          "value": "Imperius Holo Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier3_Desc",
+          "value": "Talent bundle for Imperius for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"Ay, se quebraron tus deditos\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier4",
+          "value": "Imperius Gold Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_101054160_Bundle_Tier4_Desc",
+          "value": "Talent bundle for Imperius for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Ay, se quebraron tus deditos\", Chat Wheel \"¡Asustado te veo!\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier1",
+          "value": "Purge Standard Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier1_Desc",
+          "value": "Talent bundle for Purge for The International 2026. Includes: Standard Sticker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier2",
+          "value": "Purge Glitter Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier2_Desc",
+          "value": "Talent bundle for Purge for The International 2026. Includes: Glitter Sticker, Chat Wheel \"Give me your money!\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier3",
+          "value": "Purge Holo Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier3_Desc",
+          "value": "Talent bundle for Purge for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"Give me your money!\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier4",
+          "value": "Purge Gold Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_256125365_Bundle_Tier4_Desc",
+          "value": "Talent bundle for Purge for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Give me your money!\", Chat Wheel \"55 Tangoes, 55 Healing Salves, 55 Sentries, 55 Mangoes!\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier1",
+          "value": "Zhou Standard Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier1_Desc",
+          "value": "Talent bundle for Zhou for The International 2026. Includes: Standard Sticker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier2",
+          "value": "Zhou Glitter Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier2_Desc",
+          "value": "Talent bundle for Zhou for The International 2026. Includes: Glitter Sticker, Chat Wheel \"有味有味有味！\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier3",
+          "value": "Zhou Holo Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier3_Desc",
+          "value": "Talent bundle for Zhou for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"有味有味有味！\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier4",
+          "value": "Zhou Gold Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_90137663_Bundle_Tier4_Desc",
+          "value": "Talent bundle for Zhou for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"有味有味有味！\", Chat Wheel \"哎哟喂，吃力呀\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier1",
+          "value": "xiao8 Standard Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier1_Desc",
+          "value": "Talent bundle for xiao8 for The International 2026. Includes: Standard Sticker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier2",
+          "value": "xiao8 Glitter Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier2_Desc",
+          "value": "Talent bundle for xiao8 for The International 2026. Includes: Glitter Sticker, Chat Wheel \"每一把都当最后一把，然后就也不要怕输\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier3",
+          "value": "xiao8 Holo Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier3_Desc",
+          "value": "Talent bundle for xiao8 for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"每一把都当最后一把，然后就也不要怕输\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier4",
+          "value": "xiao8 Gold Talent Sticker Bundle - TI 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_98887913_Bundle_Tier4_Desc",
+          "value": "Talent bundle for xiao8 for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"每一把都当最后一把，然后就也不要怕输\", Chat Wheel \"加油加油加油！出门小心点，出门小心点\""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_ns_art_voice_3",
+          "value": "Now it's just you and me, handsome!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_107803494_voice_1",
+          "value": "Don't gank me! I wanna go back to base!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_107803494_voice_2",
+          "value": "Tsk, what are you doing here?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_343774159_voice_2",
+          "value": "Thank you, fans. This is for you! Yeah!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_256125365_voice_1",
+          "value": "Give me your money!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_256125365_voice_2",
+          "value": "55 Tangoes, 55 Healing Salves, 55 Sentries, 55 Mangoes!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_101054160_voice_1",
+          "value": "Oh, your little fingers broke"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_101054160_voice_2",
+          "value": "I see you look scared!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_125455301_voice_2",
+          "value": "Let me cook. I'm the chef"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_90137663_voice_1",
+          "value": "Now that's spicy, spicy, spicy!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_90137663_voice_2",
+          "value": "Oh boy, that's rough!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_98887913_voice_1",
+          "value": "Play every game like it's your last, and don't be afraid to lose"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_98887913_voice_2",
+          "value": "Let's go go go! Be careful out there, be careful out there"
+        }
+      ],
+      "removed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_EveryoneElse",
+          "value": "0th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_25",
+          "value": "25th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_50",
+          "value": "50th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_75",
+          "value": "75th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_90",
+          "value": "90th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_99",
+          "value": "99th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_95",
+          "value": "95th Percentile ({d:score} Points)"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyPlacement_999",
+          "value": "99.9th Percentile ({d:score} Points)"
+        }
+      ],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_sandking_epicenter_shard_description",
+          "changes": {
+            "value": {
+              "old": "Increases Epicenter damage per pulse. Every %shard_interval%s causes a small single Epicenter Pulse around Sand King.",
+              "new": "Every %shard_interval%s causes a small single Epicenter Pulse around Sand King."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_item_consecrated_wraps_Note0",
+          "changes": {
+            "value": {
+              "old": "Charges cannot be gained for %stack_gain_time%s after you take damage from a player-controlled source or Roshan.",
+              "new": "Charges cannot be gained for %AbilityChargeRestoreTime%s after you take damage from a player-controlled source or Roshan."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyRTTI",
+          "changes": {
+            "value": {
+              "old": "<b>Road to TI Fantasy</b>: {s:fantasy_rtti_score}",
+              "new": "<b>Group Stage Fantasy</b> Percentile: {s:rtti_percentile_string}"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_FantasyTI",
+          "changes": {
+            "value": {
+              "old": "<b>The International Fantasy</b>: {s:fantasy_ti_score}",
+              "new": "<b>The International Fantasy</b> Percentile: {s:ti_percentile_string}"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_PredictionsRTTI",
+          "changes": {
+            "value": {
+              "old": "<b>Road to TI Predictions</b>: {d:correct_predictions_rtti} Correct Predictions ({d:predictions_rtti_score} Points)",
+              "new": "<b>Group Stage Predictions</b> {d:correct_predictions_rtti} Correct Predictions"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Score2026_PredictionsTI",
+          "changes": {
+            "value": {
+              "old": "<b>The International Predictions</b>: {d:correct_predictions_ti} Correct Predictions ({d:predictions_ti_score} Points)",
+              "new": "<b>The International Predictions</b> {d:correct_predictions_ti} Correct Predictions"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_121604932",
+          "changes": {
+            "value": {
+              "old": "Aaron Galvez Tapayuri Talent Sticker - TI 2026",
+              "new": "Maverick Talent Sticker - TI 2026"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TalentSticker_Season13_121604932_desc",
+          "changes": {
+            "value": {
+              "old": "Talent sticker for Aaron Galvez Tapayuri.",
+              "new": "Talent sticker for Maverick."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_107803494_Bundle_Tier2_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Ori for The International 2026. Includes: Glitter Sticker",
+              "new": "Talent bundle for Ori for The International 2026. Includes: Glitter Sticker, Chat Wheel \"别抓我，我想回家\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_107803494_Bundle_Tier3_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Ori for The International 2026. Includes: Holo Sticker, Autograph Rune",
+              "new": "Talent bundle for Ori for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"别抓我，我想回家\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_107803494_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Ori for The International 2026. Includes: Gold Sticker, Autograph Rune",
+              "new": "Talent bundle for Ori for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"别抓我，我想回家\", Chat Wheel \"啧，你来干嘛呀\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier1",
+          "changes": {
+            "value": {
+              "old": "Aaron Galvez Tapayuri Standard Talent Sticker Bundle - TI 2026",
+              "new": "Maverick Standard Talent Sticker Bundle - TI 2026"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier1_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Aaron Galvez Tapayuri for The International 2026. Includes: Standard Sticker",
+              "new": "Talent bundle for Maverick for The International 2026. Includes: Standard Sticker"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier2",
+          "changes": {
+            "value": {
+              "old": "Aaron Galvez Tapayuri Glitter Talent Sticker Bundle - TI 2026",
+              "new": "Maverick Glitter Talent Sticker Bundle - TI 2026"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier2_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Aaron Galvez Tapayuri for The International 2026. Includes: Glitter Sticker, Chat Wheel \"No tengo sencillo, hijito\"",
+              "new": "Talent bundle for Maverick for The International 2026. Includes: Glitter Sticker, Chat Wheel \"No tengo sencillo, hijito\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier3",
+          "changes": {
+            "value": {
+              "old": "Aaron Galvez Tapayuri Holo Talent Sticker Bundle - TI 2026",
+              "new": "Maverick Holo Talent Sticker Bundle - TI 2026"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier3_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Aaron Galvez Tapayuri for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"No tengo sencillo, hijito\"",
+              "new": "Talent bundle for Maverick for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"No tengo sencillo, hijito\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier4",
+          "changes": {
+            "value": {
+              "old": "Aaron Galvez Tapayuri Gold Talent Sticker Bundle - TI 2026",
+              "new": "Maverick Gold Talent Sticker Bundle - TI 2026"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_121604932_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Aaron Galvez Tapayuri for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"No tengo sencillo, hijito\", Chat Wheel \"Es el Dota, el Dota que me merezco\"",
+              "new": "Talent bundle for Maverick for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"No tengo sencillo, hijito\", Chat Wheel \"Es el Dota, el Dota que me merezco\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_125455301_Bundle_Tier2_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for MiHawk for The International 2026. Includes: Glitter Sticker, Chat Wheel \"Sorry for that match\"",
+              "new": "Talent bundle for MiHawk for The International 2026. Includes: Glitter Sticker, Chat Wheel \"Sorry for that much\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_125455301_Bundle_Tier3_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for MiHawk for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"Sorry for that match\"",
+              "new": "Talent bundle for MiHawk for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"Sorry for that much\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_125455301_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for MiHawk for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Sorry for that match\"",
+              "new": "Talent bundle for MiHawk for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Sorry for that much\", Chat Wheel \"Déjenme cocinar. Yo soy el chef\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_176565294_Bundle_Tier2_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for YoloSergio for The International 2026. Includes: Glitter Sticker, Chat Wheel \"La rugatimba\"",
+              "new": "Talent bundle for YoloSergio for The International 2026. Includes: Glitter Sticker, Chat Wheel \"La rica timba\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_176565294_Bundle_Tier3_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for YoloSergio for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"La rugatimba\"",
+              "new": "Talent bundle for YoloSergio for The International 2026. Includes: Holo Sticker, Autograph Rune, Chat Wheel \"La rica timba\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_176565294_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for YoloSergio for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"La rugatimba\", Chat Wheel \"Piu, piu, piu. Adiós.\"",
+              "new": "Talent bundle for YoloSergio for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"La rica timba\", Chat Wheel \"Piu, piu, piu. Adiós.\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_193079821_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Umi Hyu for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Oh no, ¿Qué pasó, mi rey?\", Chat Wheel \"Mmm, pero que gozo\"",
+              "new": "Talent bundle for Umi Hyu for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"Oh no, ¿Qué pasó, mi rey?\", Chat Wheel \"Mmm, ¡pero qué gosu!\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Talent_13_343774159_Bundle_Tier4_Desc",
+          "changes": {
+            "value": {
+              "old": "Talent bundle for Polaris for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"¡Tum, tum, row! ¡Tum, tum, row!\"",
+              "new": "Talent bundle for Polaris for The International 2026. Includes: Gold Sticker, Autograph Rune, Chat Wheel \"¡Tum, tum, row! ¡Tum, tum, row!\", Chat Wheel \"Muchas gracias, afición. Esto es para vosotros. ¡Síii!\""
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_176565294_voice_1",
+          "changes": {
+            "value": {
+              "old": "La rugatimba",
+              "new": "The great timba"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_193079821_voice_2",
+          "changes": {
+            "value": {
+              "old": "Mmm, how delightful",
+              "new": "Wow, you’re so good!"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_talent_chatwheel_message_13_125455301_voice_1",
+          "changes": {
+            "value": {
+              "old": "Sorry for that match",
+              "new": "Sorry for that much"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

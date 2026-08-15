@@ -2565,6 +2565,7 @@
   ],
   "silencer": [
     "modifier_silencer_brain_drain",
+    "modifier_silencer_brain_drain_permanent_debuff",
     "modifier_silencer_curse_of_the_silent",
     "modifier_silencer_curse_of_the_silent_intrinsic",
     "modifier_silencer_glaives_of_wisdom",

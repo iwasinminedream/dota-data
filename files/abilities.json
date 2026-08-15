@@ -9228,7 +9228,7 @@
     "AbilityCastPoint": "0.01 0.01 0.01",
     "AbilityCastRange": 0,
     "AbilityCastAnimation": "ACT_DOTA_CAST_ABILITY_4",
-    "AbilityCooldown": "50.0 55.0 40.0",
+    "AbilityCooldown": "50.0 45.0 40.0",
     "AbilityManaCost": 175,
     "AbilityDamage": "250 325 400",
     "AbilityValues": {
@@ -22998,7 +22998,10 @@
       "bear_bat": {
         "value": 1.5
       },
-      "bear_armor": 0,
+      "bear_armor": {
+        "value": -1,
+        "show_absolute_values": 0
+      },
       "backlash_damage": {
         "value": 20
       },
@@ -27997,6 +28000,7 @@
         "value": 40
       },
       "heal_duration": 4,
+      "total_ticks": 4,
       "attack_cooldown": {
         "value": -1
       },
