@@ -1,0 +1,216 @@
+{
+  "version": "6924",
+  "date": "Sep 04 2026",
+  "time": "14:21:17",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1799
+        }
+      ],
+      "changed": []
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "dota_steamlearn_match_state_interval"
+        }
+      ],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "dota_upload_item_purchase_history_duration_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "dota_upload_item_purchase_history_mmr_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "dota_upload_match_state_history_duration_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "dota_upload_match_state_history_interval"
+        },
+        {
+          "type": "convar",
+          "name": "dota_upload_neutral_item_equip_history_duration_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "dota_upload_neutral_item_equip_history_mmr_threshold"
+        }
+      ],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "dota_region_us_south_central",
+          "value": "US South Central"
+        },
+        {
+          "type": "localization",
+          "name": "dota_region_us_north_central",
+          "value": "US North Central"
+        },
+        {
+          "type": "localization",
+          "name": "dota_region_warsaw",
+          "value": "Warsaw"
+        },
+        {
+          "type": "localization",
+          "name": "TI15_Winner",
+          "value": "Team Spirit"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HoF_not_me",
+          "value": "Alexey Kosmynin"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HoF_rue",
+          "value": "Alexander Filin"
+        },
+        {
+          "type": "localization",
+          "name": "Notification_International26_Yatoro",
+          "value": "Team Spirit's plea did not fall on deaf ears: All TI competitors have been granted a complimentary Tyrian Regalia!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HudSpectator_Buffering",
+          "value": "Buffering..."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Companion26_FreeTyrian",
+          "value": "Congratulations, cartographer! Because you already own every terrain, we've granted you a bonus Tyrian Regalia."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Companion26_FreeTyrian_PopupTitle",
+          "value": "Congratulations!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Companion26_FreeTyrian_PopupBody",
+          "value": "You already own every terrain and so we've granted you a bonus Tyrian Regalia. You can still claim a duplicate terrain."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Armory_InventoryCapacityLimit",
+          "value": "Your inventory is at <b>{d:backpack_filled_percent}%</b> capacity"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Armory_InventoryCapacityLimit_Tooltip",
+          "value": "When you're over capacity, you won't be able to obtain Dota items through Steam community features like the Market or Trading. You will still be able to purchase and earn items in Dota."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Champion_Sticker_Capsule__The_International_2026",
+          "value": "Champion Sticker Capsule - The International 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Champion_Sticker_Capsule__The_International_2026",
+          "value": "A sticker capsule container 1 sticker from the champion of The International 2026: Team Spirit"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_106305042",
+          "value": "Larl Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_106305042_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Larl"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_218231587",
+          "value": "not_me Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_218231587_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for not_me"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_302214028",
+          "value": "Collapse Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_302214028_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Collapse"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_321580662",
+          "value": "Yatoro Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_321580662_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Yatoro"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_847565596",
+          "value": "rue Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_847565596_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for rue"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TeamStickerChampion_Season13_7119388",
+          "value": "Team Spirit Team Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TeamStickerChampion_Season13_7119388_desc",
+          "value": "TI 2026 Champion Team Spirit Team Sticker"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_International2026_EventFinished_Dashboard_Title",
+          "changes": {
+            "value": {
+              "old": "Congratulations Team Thunderhide!",
+              "new": "Congratulations Team Spirit!"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_International2026_Champion_Sticker_Description",
+          "changes": {
+            "value": {
+              "old": "Commemorate Team Thunderhide's victory in The International 2025.",
+              "new": "Commemorate Team Spirit's victory in The International 2026."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

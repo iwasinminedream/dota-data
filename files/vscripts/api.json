@@ -18488,7 +18488,14 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          {
+            "kind": "literal",
+            "value": 0
+          },
+          {
+            "kind": "literal",
+            "value": 1
+          }
         ],
         "broken": true
       },
@@ -18786,7 +18793,7 @@
         "abstract": true,
         "args": [],
         "returns": [
-          "nil"
+          "float"
         ]
       },
       {

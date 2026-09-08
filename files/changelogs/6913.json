@@ -1,0 +1,109 @@
+{
+  "version": "6913",
+  "date": "Aug 24 2026",
+  "time": "18:09:44",
+  "changes": {
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_HudSpectator_Buffering",
+          "value": "Buffering..."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Champion_Sticker_Capsule__The_International_2026",
+          "value": "Champion Sticker Capsule - The International 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Champion_Sticker_Capsule__The_International_2026",
+          "value": "A sticker capsule container 1 sticker from the champion of The International 2026: Team Spirit"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_106305042",
+          "value": "Larl Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_106305042_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Larl"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_218231587",
+          "value": "not_me Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_218231587_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for not_me"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_302214028",
+          "value": "Collapse Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_302214028_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Collapse"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_321580662",
+          "value": "Yatoro Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_321580662_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for Yatoro"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_847565596",
+          "value": "rue Player Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_PlayerStickerChampion_Season13_847565596_desc",
+          "value": "TI 2026 Champion Team Spirit Player Sticker for rue"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TeamStickerChampion_Season13_7119388",
+          "value": "Team Spirit Team Sticker - TI 2026 Champion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_TeamStickerChampion_Season13_7119388_desc",
+          "value": "TI 2026 Champion Team Spirit Team Sticker"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_International2026_EventFinished_Dashboard_Title",
+          "changes": {
+            "value": {
+              "old": "Congratulations Team Thunderhide!",
+              "new": "Congratulations Team Spirit!"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_International2026_Champion_Sticker_Description",
+          "changes": {
+            "value": {
+              "old": "Commemorate Team Thunderhide's victory in The International 2025.",
+              "new": "Commemorate Team Spirit's victory in The International 2025."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
