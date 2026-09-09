@@ -1,4 +1,186 @@
 {
+  "+bugvoice": {
+    "default": "cmd",
+    "flags": [
+      "norecord"
+    ],
+    "description": "Start recording bug voice attachment."
+  },
+  "+camdistance": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+cammousemove": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+chatwheel": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Opens chatwheel menu while held"
+  },
+  "+chatwheel2": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Opens the second chatwheel menu while held"
+  },
+  "+dota_camera_center_on_hero": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_camera_follow": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_control_group": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_filter_ally": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_filter_enemy": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_filter_hero": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_filter_non_hero": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_hud_overlaymap_inputkey": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_hud_toggle_overlaymap": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_stop": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+dota_unit_movetodirection": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+herochatwheel": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Opens hero chatwheel menu while held"
+  },
+  "+midi_note": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+showitems": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "+showscores": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "Test_Checkpoint": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Indicate to a test script that a checkpoint has been reached"
+  },
+  "Test_ExitProcess": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Test_ExitProcess <exit code> - immediately kill the process."
+  },
+  "Test_Loop": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Test_Loop <loop name> - loop back to the specified loop start point unconditionally."
+  },
+  "Test_LoopCount": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Test_LoopCount <loop name> <count> - loop back to the specified loop start point the specified # of times."
+  },
+  "Test_LoopForNumSeconds": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Test_LoopForNumSeconds <loop name> <time> - loop back to the specified start point for the specified # of seconds."
+  },
+  "Test_RandomChance": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Test_RandomChance <percent chance, 0-100> <token1> <token2...> - Roll the dice and maybe run the command following the percentage chance."
+  },
+  "Test_StartLoop": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Test_StartLoop <loop name> - Denote the start of a loop. Really just defines a named point you can jump to."
+  },
+  "Test_StartScript": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Start a test script running.."
+  },
   "_fov": {
     "default": "0",
     "flags": [
@@ -992,13 +1174,6 @@
     ],
     "description": ""
   },
-  "+bugvoice": {
-    "default": "cmd",
-    "flags": [
-      "norecord"
-    ],
-    "description": "Start recording bug voice attachment."
-  },
   "bugvoice_clear": {
     "default": "cmd",
     "flags": [
@@ -1203,13 +1378,6 @@
     ],
     "description": ""
   },
-  "+camdistance": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "camerazoomin": {
     "default": "cmd",
     "flags": [
@@ -1218,13 +1386,6 @@
     "description": ""
   },
   "camerazoomout": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "+cammousemove": {
     "default": "cmd",
     "flags": [
       "cl"
@@ -1807,20 +1968,6 @@
     ],
     "description": ""
   },
-  "+chatwheel": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Opens chatwheel menu while held"
-  },
-  "+chatwheel2": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Opens the second chatwheel menu while held"
-  },
   "chatwheel_say": {
     "default": "cmd",
     "flags": [
@@ -1832,6 +1979,13 @@
     "default": "cmd",
     "flags": [],
     "description": "Print the current number of FDs reported by getrlimit"
+  },
+  "cl_ShowBoneSetupEnts": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": "Show which entities are having their bones setup each frame."
   },
   "cl_aggregate_particles": {
     "default": "false",
@@ -4075,13 +4229,6 @@
     ],
     "description": "Show the (client) animation state for the specified entity (-1 for none)."
   },
-  "cl_ShowBoneSetupEnts": {
-    "default": "false",
-    "flags": [
-      "cl"
-    ],
-    "description": "Show which entities are having their bones setup each frame."
-  },
   "cl_showdemooverlay": {
     "default": "0",
     "flags": [],
@@ -5816,7 +5963,7 @@
     "description": "If set, brings Dota to the foreground when unpaused"
   },
   "dota_active_play_section_new": {
-    "default": "8",
+    "default": "3",
     "flags": [
       "cl",
       "a",
@@ -6144,31 +6291,6 @@
     ],
     "description": ""
   },
-  "dota_armory_all_items_group_by_type": {
-    "default": "false",
-    "flags": [
-      "cl",
-      "a"
-    ],
-    "description": ""
-  },
-  "dota_armory_all_items_sort_option": {
-    "default": "0",
-    "flags": [
-      "cl",
-      "a"
-    ],
-    "description": ""
-  },
-  "dota_armory_automatically_add_new_item_to_collection": {
-    "default": "false",
-    "flags": [
-      "cl",
-      "a",
-      "per_user"
-    ],
-    "description": ""
-  },
   "dota_armory_CustomTagDisplayName_1": {
     "default": "Tag 1",
     "flags": [
@@ -6230,6 +6352,31 @@
     "flags": [
       "cl",
       "a"
+    ],
+    "description": ""
+  },
+  "dota_armory_all_items_group_by_type": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": ""
+  },
+  "dota_armory_all_items_sort_option": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": ""
+  },
+  "dota_armory_automatically_add_new_item_to_collection": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a",
+      "per_user"
     ],
     "description": ""
   },
@@ -7393,13 +7540,6 @@
     ],
     "description": ""
   },
-  "+dota_camera_center_on_hero": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_camera_deatheffect": {
     "default": "false",
     "flags": [
@@ -7549,13 +7689,6 @@
     "flags": [
       "cl",
       "cheat"
-    ],
-    "description": ""
-  },
-  "+dota_camera_follow": {
-    "default": "cmd",
-    "flags": [
-      "cl"
     ],
     "description": ""
   },
@@ -8584,13 +8717,6 @@
     ],
     "description": ""
   },
-  "+dota_control_group": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_courier_autodeliver": {
     "default": "false",
     "flags": [
@@ -8901,7 +9027,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4350",
+    "default": "4362",
     "flags": [
       "cl",
       "a",
@@ -9846,34 +9972,6 @@
     "flags": [
       "cl",
       "a"
-    ],
-    "description": ""
-  },
-  "+dota_filter_ally": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "+dota_filter_enemy": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "+dota_filter_hero": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "+dota_filter_non_hero": {
-    "default": "cmd",
-    "flags": [
-      "cl"
     ],
     "description": ""
   },
@@ -11633,13 +11731,6 @@
     ],
     "description": "Enable new query panel"
   },
-  "+dota_hud_overlaymap_inputkey": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_hud_popup_battlecup_fade_delay": {
     "default": "3",
     "flags": [
@@ -11800,13 +11891,6 @@
       "cl"
     ],
     "description": "Enable HUD skins on the panorama HUD"
-  },
-  "+dota_hud_toggle_overlaymap": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "dota_hud_unit_info": {
     "default": "false",
@@ -17539,13 +17623,6 @@
     ],
     "description": ""
   },
-  "+dota_stop": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_store_available_items_duration": {
     "default": "600",
     "flags": [
@@ -18979,13 +19056,6 @@
     ],
     "description": ""
   },
-  "+dota_unit_movetodirection": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_unit_relative_move_bounce": {
     "default": "1",
     "flags": [
@@ -19254,6 +19324,20 @@
     ],
     "description": ""
   },
+  "dota_video_config.VendorID": {
+    "default": "4318",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_video_config.Version": {
+    "default": "0",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_video_config.setting.aspectratiomode": {
     "default": "1",
     "flags": [
@@ -19438,20 +19522,6 @@
   },
   "dota_video_config.setting.version": {
     "default": "1",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.VendorID": {
-    "default": "4318",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.Version": {
-    "default": "0",
     "flags": [
       "cl"
     ],
@@ -22422,13 +22492,6 @@
     ],
     "description": ""
   },
-  "+herochatwheel": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": "Opens hero chatwheel menu while held"
-  },
   "hide_sf_shop": {
     "default": "cmd",
     "flags": [
@@ -23794,6 +23857,14 @@
     ],
     "description": ""
   },
+  "listRecentNPCSpeech": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "norecord"
+    ],
+    "description": "Displays a list of the last 5 lines of speech from NPCs."
+  },
   "listdemo": {
     "default": "cmd",
     "flags": [
@@ -23810,14 +23881,6 @@
     "default": "cmd",
     "flags": [],
     "description": "List IP addresses on the ban list."
-  },
-  "listRecentNPCSpeech": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "norecord"
-    ],
-    "description": "Displays a list of the last 5 lines of speech from NPCs."
   },
   "load": {
     "default": "cmd",
@@ -24464,13 +24527,6 @@
       "cl"
     ],
     "description": "Attempt to open a connection on the passed port ( or 0 if not specfied ). Will close existing connection"
-  },
-  "+midi_note": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "midi_release": {
     "default": "cmd",
@@ -28765,13 +28821,6 @@
     ],
     "description": "Quit the game"
   },
-  "r_add_views_in_pre_output": {
-    "default": "false",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "r_AirboatViewDampenDamp": {
     "default": "1",
     "flags": [
@@ -28802,6 +28851,60 @@
       "nf",
       "rep",
       "cheat"
+    ],
+    "description": ""
+  },
+  "r_JeepViewDampenDamp": {
+    "default": "1",
+    "flags": [
+      "sv",
+      "cl",
+      "nf",
+      "rep",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "r_JeepViewDampenFreq": {
+    "default": "7",
+    "flags": [
+      "sv",
+      "cl",
+      "nf",
+      "rep",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "r_JeepViewZHeight": {
+    "default": "10",
+    "flags": [
+      "sv",
+      "cl",
+      "nf",
+      "rep",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "r_RainAllowInSplitScreen": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": "Allows rain in splitscreen"
+  },
+  "r_RainParticleDensity": {
+    "default": "1",
+    "flags": [
+      "cl"
+    ],
+    "description": "Density of Particle Rain 0-1"
+  },
+  "r_add_views_in_pre_output": {
+    "default": "false",
+    "flags": [
+      "cl"
     ],
     "description": ""
   },
@@ -29991,39 +30094,6 @@
     ],
     "description": "Set to use indirect lighting"
   },
-  "r_JeepViewDampenDamp": {
-    "default": "1",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_JeepViewDampenFreq": {
-    "default": "7",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_JeepViewZHeight": {
-    "default": "10",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
   "r_late_particle_job_sync": {
     "default": "false",
     "flags": [
@@ -30375,20 +30445,6 @@
       "cl"
     ],
     "description": "Maximum visible distance"
-  },
-  "r_RainAllowInSplitScreen": {
-    "default": "false",
-    "flags": [
-      "cl"
-    ],
-    "description": "Allows rain in splitscreen"
-  },
-  "r_RainParticleDensity": {
-    "default": "1",
-    "flags": [
-      "cl"
-    ],
-    "description": "Density of Particle Rain 0-1"
   },
   "r_render_coordination_state": {
     "default": "cmd",
@@ -31576,6 +31632,13 @@
     "flags": [],
     "description": "Screen-size where clutter will be gone"
   },
+  "sc_disableThreading": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
   "sc_disable_baked_lighting": {
     "default": "false",
     "flags": [],
@@ -31610,13 +31673,6 @@
     "description": ""
   },
   "sc_disable_world_materials": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": ""
-  },
-  "sc_disableThreading": {
     "default": "false",
     "flags": [
       "cheat"
@@ -32448,20 +32504,6 @@
       "cheat"
     ],
     "description": "Dump entity list to console."
-  },
-  "+showitems": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "+showscores": {
-    "default": "cmd",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "showtriggers": {
     "default": "cmd",
@@ -34372,7 +34414,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (UGREEN USB MIC-CM769)",
+    "default": "Наушники (Pixel Buds Pro 2)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
@@ -34848,15 +34890,15 @@
     ],
     "description": "If we should spew how long inferences take to complete"
   },
-  "sticker_opening_particle_emission_min": {
-    "default": "0.3",
+  "sticker_opening_particle_emissionB_min": {
+    "default": "0",
     "flags": [
       "cl"
     ],
     "description": ""
   },
-  "sticker_opening_particle_emissionB_min": {
-    "default": "0",
+  "sticker_opening_particle_emission_min": {
+    "default": "0.3",
     "flags": [
       "cl"
     ],
@@ -36421,11 +36463,6 @@
     ],
     "description": ""
   },
-  "Test_Checkpoint": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Indicate to a test script that a checkpoint has been reached"
-  },
   "test_compendium_endgame_stats": {
     "default": "cmd",
     "flags": [
@@ -36456,13 +36493,6 @@
     ],
     "description": "Test command that drops an entity blocker out in front of the player."
   },
-  "Test_ExitProcess": {
-    "default": "cmd",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Test_ExitProcess <exit code> - immediately kill the process."
-  },
   "test_gameend": {
     "default": "cmd",
     "flags": [
@@ -36478,21 +36508,6 @@
     ],
     "description": "test-list entities"
   },
-  "Test_Loop": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Test_Loop <loop name> - loop back to the specified loop start point unconditionally."
-  },
-  "Test_LoopCount": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Test_LoopCount <loop name> <count> - loop back to the specified loop start point the specified # of times."
-  },
-  "Test_LoopForNumSeconds": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Test_LoopForNumSeconds <loop name> <time> - loop back to the specified start point for the specified # of seconds."
-  },
   "test_prediction_results": {
     "default": "cmd",
     "flags": [
@@ -36500,27 +36515,12 @@
     ],
     "description": ""
   },
-  "Test_RandomChance": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Test_RandomChance <percent chance, 0-100> <token1> <token2...> - Roll the dice and maybe run the command following the percentage chance."
-  },
   "test_shipping_assert": {
     "default": "cmd",
     "flags": [
       "release"
     ],
     "description": "Generate an assert to test shipping assertion code"
-  },
-  "Test_StartLoop": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Test_StartLoop <loop name> - Denote the start of a loop. Really just defines a named point you can jump to."
-  },
-  "Test_StartScript": {
-    "default": "cmd",
-    "flags": [],
-    "description": "Start a test script running.."
   },
   "test_voice_container_nesting": {
     "default": "cmd",
@@ -36765,20 +36765,6 @@
     ],
     "description": ""
   },
-  "treasure_opening_particle_emission_max": {
-    "default": "2",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "treasure_opening_particle_emission_min": {
-    "default": "0.3",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "treasure_opening_particle_emissionB_max": {
     "default": "1",
     "flags": [
@@ -36788,6 +36774,20 @@
   },
   "treasure_opening_particle_emissionB_min": {
     "default": "0",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "treasure_opening_particle_emission_max": {
+    "default": "2",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "treasure_opening_particle_emission_min": {
+    "default": "0.3",
     "flags": [
       "cl"
     ],

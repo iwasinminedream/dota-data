@@ -1,0 +1,35 @@
+{
+  "version": "6925",
+  "date": "Sep 08 2026",
+  "time": "14:46:47",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1808
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Custom_Game_Dedicated_Servers_Unavailable",
+          "value": "Player-Hosted"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Custom_Game_Dedicated_Servers_Unavailable_I",
+          "value": "Dedicated servers are currently fully allocated for other matches. This match will be hosted by one of the players."
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
