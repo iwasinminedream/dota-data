@@ -6473,10 +6473,6 @@
         "shortName": "IGNORE_BACKSWING"
       },
       {
-        "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL",
-        "shortName": "IGNORE_CHANNEL"
-      },
-      {
         "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_INVISIBLE",
         "shortName": "IGNORE_INVISIBLE"
       },

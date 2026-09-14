@@ -9027,7 +9027,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4362",
+    "default": "4369",
     "flags": [
       "cl",
       "a",
@@ -11405,7 +11405,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "36478936461",
+    "default": "36657987157",
     "flags": [
       "cl",
       "a",
@@ -17498,7 +17498,7 @@
     "description": "If enabled, server will spew connected player GC updates"
   },
   "dota_splash_ad_acknowledged_id": {
-    "default": "149",
+    "default": "150",
     "flags": [
       "cl",
       "a",
@@ -34414,7 +34414,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Наушники (Pixel Buds Pro 2)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },

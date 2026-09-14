@@ -1,0 +1,290 @@
+{
+  "version": "6932",
+  "date": "Sep 11 2026",
+  "time": "17:49:03",
+  "changes": {
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        }
+      ],
+      "changed": []
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Plus_Fall2026_Update_Title",
+          "value": "Fall 2026 Season Update"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_PlusSeason_SeasonFall2026_Name",
+          "value": "Fall 2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_PlusSeason_SeasonFall2026_Quests",
+          "value": "Fall 2026 Quests"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ashswarm_Trunk",
+          "value": "Ashswarm Trunk"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Barrow_Roots",
+          "value": "Barrow Roots"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Blighted_Boughs",
+          "value": "Blighted Boughs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Burning_Boughs",
+          "value": "Burning Boughs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Chronoforge_Shogun",
+          "value": "Chronoforge Shogun"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Cinderwood_Sentinel",
+          "value": "Cinderwood Sentinel"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clockplate_Kabuto",
+          "value": "Clockplate Kabuto"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Crown_of_Tines",
+          "value": "Crown of Tines"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Quarteros_Fall_2026_Antique",
+          "value": "Right click and redeem this item to exchange it for an item"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Quarteros_Fall_2026_Extra_SuperDuper_Special_Antique",
+          "value": "Right click and redeem this item to exchange it for an item"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Ember_Roots",
+          "value": "Ember Roots"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hartwarden",
+          "value": "Hartwarden"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hartwarden_Mantle",
+          "value": "Hartwarden Mantle"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Heartwood_Bow",
+          "value": "Heartwood Bow"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hollow_Crown",
+          "value": "Hollow Crown"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Mainspring_Warframe",
+          "value": "Mainspring Warframe"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Overclock_Warhead",
+          "value": "Overclock Warhead"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Power_Post",
+          "value": "Power Post"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Quarteros_Fall_2026_Antique",
+          "value": "Quartero's Fall 2026 Antique"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Quarteros_Fall_2026_Extra_SuperDuper_Special_Antique",
+          "value": "Quartero's Fall 2026 Extra Super-Duper Special Antique"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Smoldering_Crown",
+          "value": "Smoldering Crown"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Spine_of_the_Westwood",
+          "value": "Spine of the Westwood"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stormsheaf",
+          "value": "Stormsheaf"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Swarmbark_Trunk",
+          "value": "Swarmbark Trunk"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Voltcoil_Tetsubo",
+          "value": "Voltcoil Tetsubo"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Wraithwood_Revenant",
+          "value": "Wraithwood Revenant"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Chronoforge_Shogun",
+          "value": "Chronoforge Shogun"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Cinderwood_Sentinel",
+          "value": "Cinderwood Sentinel"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Hartwarden",
+          "value": "Hartwarden"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Wraithwood_Revenant",
+          "value": "Wraithwood Revenant"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Tab_Current",
+          "value": "Current"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Tab_Summer2026",
+          "value": "Summer '26"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Tab_Spring2026",
+          "value": "Spring '26"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Tab_Winter2025",
+          "value": "Winter '25"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Tab_Fall2025",
+          "value": "Fall '25"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Backstory",
+          "value": "Catch up on the backstory"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_PreviousSeasons",
+          "value": "Previous seasons:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_01",
+          "value": "\"Our story so far! Master thief Blake Sextus found out an evil sorcerer named Galdron had a vault full of priceless treasure!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_02",
+          "value": "So! He hired yours truly and my sister Quintessa to help him steal it!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_03",
+          "value": "Did it go well? Ha ha! No. No it did not."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_04",
+          "value": "Galdron locked Blake and Quintessa in his vault!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_05",
+          "value": "Now they're about to run out of water, and air, and all those other things you tend to run out of in a sealed vault."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_06",
+          "value": "If all that sounds confusing, don't worry! It just means you're not a lunatic and you didn't play ten thousand hours of Dota to unlock all that nonsense."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_07",
+          "value": "If you DID play ten thousand hours of Dota and DID unlock all that, forget what I said about you being a lunatic. I was just trying to make these lazy bums feel better."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_08",
+          "value": "There's a hundred and twenty-seven heroes in Dota! But you're the REAL one!"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Seasonal_Fall_2026_q05_intro_09",
+          "value": "Anyway, you can now go back and listen through previous seasons any time you like!\""
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Seasonal_Reward_Line_Fall_2025_Effects",
+          "changes": {
+            "value": {
+              "old": "Seasonal Reward Line Fall 2025 Effects",
+              "new": "Seasonal Reward Line Fall 2026 Effects"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Past_Seasonal_Event_Claim_Text",
+          "changes": {
+            "value": {
+              "old": "Spend Dota+ Shards to <b>claim past rewards</b>",
+              "new": "<panel class=\"ShardsIcon\" />Spend Dota+ Shards to <b>claim past rewards</b>"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
