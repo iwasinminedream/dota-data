@@ -40,16 +40,22 @@ async function buildAbilities() {
       const text = gameVpk.getFile(filePath).toString();
       const heroParsed = deserialize(text);
       const heroRoot = heroParsed[Object.keys(heroParsed)[0]] as KVObject;
-      if (heroRoot && typeof heroRoot === 'object') {
-        for (const [key, value] of Object.entries(heroRoot)) {
-          if (key === 'Version') continue;
-          root[key] = value;
-          if (heroName) abilityHeroMap[key] = heroName;
-        }
+      for (const [key, value] of Object.entries(getHeroAbilities(heroRoot))) {
+        root[key] = value;
+        if (heroName) abilityHeroMap[key] = heroName;
       }
     } catch (e) {
       console.warn(`  Warning: failed to parse ${filePath}: ${e}`);
     }
+  }
+
+  const heroAbilityCount = Object.keys(abilityHeroMap).length;
+  console.log(`Found ${heroAbilityCount} hero abilities`);
+  if (heroAbilityCount < 1000) {
+    throw new Error(
+      `Only ${heroAbilityCount} hero abilities found in ${heroFiles.length} files – ` +
+        'the hero KV layout has probably changed again, check getHeroAbilities()',
+    );
   }
 
   // Extract items.txt
@@ -79,6 +85,27 @@ async function buildAbilities() {
   const count = Object.keys(root).length;
   console.log(`✔ Extracted ${count} abilities + items → ${outPath}`);
   console.log(`✔ Hero map: ${Object.keys(abilityHeroMap).length} abilities → ${mapPath}`);
+}
+
+// Since 6933 a hero file is "DOTAHeroes" -> npc_dota_hero_<name> -> hero KV, and the
+// abilities live in that hero's "AbilityDefinitions" block. Before that the abilities
+// sat directly at the root of a "DOTAAbilities" file, which is still handled here.
+function getHeroAbilities(heroRoot: KVObject): KVObject {
+  if (!isKvObject(heroRoot)) return {};
+
+  const abilities: KVObject = {};
+  for (const [key, value] of Object.entries(heroRoot)) {
+    if (key === 'Version') continue;
+
+    if (key.startsWith('npc_dota_hero_')) {
+      const definitions = isKvObject(value) ? value.AbilityDefinitions : undefined;
+      if (definitions && isKvObject(definitions)) Object.assign(abilities, definitions);
+    } else {
+      abilities[key] = value;
+    }
+  }
+
+  return abilities;
 }
 
 function parseNumbersRecursive(object: KVObject) {

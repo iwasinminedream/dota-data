@@ -25,16 +25,34 @@ async function buildUnits() {
   delete unitsRoot.Version;
   Object.assign(result, unitsRoot);
 
-  // Extract npc_heroes.txt
-  console.log('Extracting npc_heroes.txt...');
-  try {
-    const heroesText = gameVpk.getFile('scripts/npc/npc_heroes.txt').toString();
-    const heroesParsed = deserialize(heroesText);
-    const heroesRoot = heroesParsed[Object.keys(heroesParsed)[0]] as KVObject;
-    delete heroesRoot.Version;
-    Object.assign(result, heroesRoot);
-  } catch (e) {
-    console.warn(`Warning: failed to parse npc_heroes.txt: ${e}`);
+  // Extract heroes. Since 6933 npc_heroes.txt only holds the #base include list –
+  // every hero lives in its own scripts/npc/heroes/*.txt and carries its abilities
+  // in an AbilityDefinitions block, which belongs in abilities.json, not here.
+  console.log('Extracting heroes...');
+  const heroFiles = resolveHeroFiles(gameVpk);
+  console.log(`Found ${heroFiles.length} hero files`);
+
+  let heroCount = 0;
+  for (const filePath of heroFiles) {
+    try {
+      const heroesParsed = deserialize(gameVpk.getFile(filePath).toString());
+      const heroesRoot = heroesParsed[Object.keys(heroesParsed)[0]] as KVObject;
+      for (const [key, value] of Object.entries(heroesRoot)) {
+        if (key === 'Version') continue;
+        if (isKvObject(value)) delete value.AbilityDefinitions;
+        result[key] = value;
+        heroCount++;
+      }
+    } catch (e) {
+      console.warn(`  Warning: failed to parse ${filePath}: ${e}`);
+    }
+  }
+
+  if (heroCount < 100) {
+    throw new Error(
+      `Only ${heroCount} heroes found in ${heroFiles.length} files – ` +
+        'the hero KV layout has probably changed again, check resolveHeroFiles()',
+    );
   }
 
   parseNumbersRecursive(result);
@@ -57,6 +75,28 @@ async function buildUnits() {
   const heroesPath = join('files', 'heroes.json');
   writeFileSync(heroesPath, JSON.stringify(heroes, null, 2), 'utf8');
   console.log(`✔ Extracted ${Object.keys(heroes).length} heroes → ${heroesPath}`);
+}
+
+// npc_heroes.txt lists the hero files in the order the engine loads them ("#base order
+// below sets hero order, which InitUnitNameDict relies on"), so follow it and only fall
+// back to the raw VPK listing for files it does not mention.
+function resolveHeroFiles(gameVpk: VPK): string[] {
+  const available: string[] = gameVpk.files.filter(
+    (f: string) => f.startsWith('scripts/npc/heroes/') && f.endsWith('.txt'),
+  );
+
+  const ordered: string[] = [];
+  try {
+    const indexText = gameVpk.getFile('scripts/npc/npc_heroes.txt').toString();
+    for (const [, relativePath] of indexText.matchAll(/^\s*#base\s+"([^"]+)"/gm)) {
+      const filePath = `scripts/npc/${relativePath.replace(/\\/g, '/')}`;
+      if (available.includes(filePath) && !ordered.includes(filePath)) ordered.push(filePath);
+    }
+  } catch (e) {
+    console.warn(`Warning: failed to read npc_heroes.txt: ${e}`);
+  }
+
+  return [...ordered, ...available.filter((f) => !ordered.includes(f))];
 }
 
 function parseNumbersRecursive(object: KVObject) {

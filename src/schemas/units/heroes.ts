@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import * as s from '../../schema-builder';
 import { resourcePatterns } from '../resources';
+import { baseAbility } from '../abilities/base';
 import { baseUnit } from './units';
 
 const baseHero = () =>
@@ -49,6 +50,9 @@ const baseHero = () =>
       ['AbilityDraftIgnoreCount', s.int().max(25)],
       ['AbilityDraftAbilities', s.obj().rest(s.str(), /^Ability\d+$/)],
       ['AbilityDraftUniqueAbilities', s.obj().rest(s.str(), /^Ability\d+$/)],
+
+      // Since 6933 each hero declares its own abilities here instead of in npc_abilities.txt.
+      ['AbilityDefinitions', s.map(baseAbility('HeroAbility'), 'AbilityDefinitions')],
     ])
 
     .field(

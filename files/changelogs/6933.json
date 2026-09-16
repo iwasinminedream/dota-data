@@ -1,0 +1,1622 @@
+{
+  "version": "6933",
+  "date": "Sep 15 2026",
+  "time": "11:10:47",
+  "changes": {
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "abyssal_underlord_pit_of_malice",
+          "changes": {
+            "HasScepterUpgrade": {
+              "old": 1,
+              "new": null
+            },
+            "AbilityValues": {
+              "radius": {
+                "value": {
+                  "old": 400,
+                  "new": 400
+                },
+                "special_bonus_scepter": {
+                  "old": "+100",
+                  "new": null
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "abyssal_underlord_dark_portal",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "110 105 100",
+                  "new": "110 105 100"
+                },
+                "special_bonus_scepter": {
+                  "old": -10,
+                  "new": -20
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "antimage_mana_break",
+          "changes": {
+            "AbilityValues": {
+              "percent_damage_per_burn": {
+                "value": {
+                  "old": 60,
+                  "new": 65
+                },
+                "display_type": {
+                  "old": "kDebuffPercentage",
+                  "new": "kDebuffPercentage"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bounty_hunter_shuriken_toss",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "value": {
+                  "old": "100 170 240 310",
+                  "new": "100 170 240 310"
+                },
+                "special_bonus_unique_bounty_hunter_2": {
+                  "old": "+250",
+                  "new": "+190"
+                }
+              },
+              "slow_duration": {
+                "value": {
+                  "old": 0.35,
+                  "new": 0.35
+                },
+                "special_bonus_unique_bounty_hunter_5": {
+                  "old": "+0.6",
+                  "new": "+0.35"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bounty_hunter_track",
+          "changes": {
+            "AbilityValues": {
+              "bonus_gold_self": {
+                "value": {
+                  "old": "130 225 320",
+                  "new": "80 160 240"
+                },
+                "special_bonus_unique_bounty_hunter_3": {
+                  "old": "+50",
+                  "new": "+50"
+                }
+              },
+              "bonus_gold": {
+                "value": {
+                  "old": "50 90 130",
+                  "new": "40 80 120"
+                },
+                "special_bonus_unique_bounty_hunter_3": {
+                  "old": "+50",
+                  "new": "+50"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "broodmother_insatiable_hunger",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 80,
+              "new": 70
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "centaur_mount",
+          "changes": {
+            "AbilityCastRange": {
+              "old": 250,
+              "new": 200
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "chen_zealot",
+          "changes": {
+            "AbilityValues": {
+              "zealot_respawn_time": {
+                "value": {
+                  "old": null,
+                  "new": 60
+                },
+                "hero_levelup": {
+                  "old": null,
+                  "new": -1
+                },
+                "_value": {
+                  "old": 60,
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "earth_spirit_rolling_boulder",
+          "changes": {
+            "AbilityValues": {
+              "damage_str": {
+                "value": {
+                  "old": 100,
+                  "new": 100
+                },
+                "special_bonus_unique_earth_spirit": {
+                  "old": "+175",
+                  "new": "+250"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "earth_spirit_geomagnetic_grip",
+          "changes": {
+            "AbilityValues": {
+              "rock_damage": {
+                "value": {
+                  "old": "75 150 225 300",
+                  "new": "75 150 225 300"
+                },
+                "special_bonus_unique_earth_spirit_5": {
+                  "old": "+250",
+                  "new": "+200"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "earth_spirit_stone_caller",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCharges": {
+                "value": {
+                  "old": 7,
+                  "new": 7
+                },
+                "hero_levelup": {
+                  "old": "+1",
+                  "new": "+1"
+                },
+                "levelup_interval": {
+                  "old": 4,
+                  "new": 5
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "earth_spirit_magnetize",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_second": {
+                "value": {
+                  "old": "45 90 135",
+                  "new": "45 90 135"
+                },
+                "special_bonus_unique_earth_spirit_8": {
+                  "old": "+25%",
+                  "new": "+35"
+                }
+              },
+              "damage_duration": {
+                "value": {
+                  "old": 6,
+                  "new": 6
+                },
+                "special_bonus_unique_earth_spirit_8": {
+                  "old": "+25%",
+                  "new": null
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_NONE",
+                  "new": "DAMAGE_TYPE_NONE"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "enigma_demonic_conversion",
+          "changes": {
+            "AbilityValues": {
+              "eidolon_bonus_damage": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_enigma_3": {
+                  "old": "+40",
+                  "new": "+30"
+                }
+              },
+              "eidolon_attack_range": {
+                "old": "425 450 475 500",
+                "new": "380 420 460 500"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "enigma_black_hole",
+          "changes": {
+            "AbilityValues": {
+              "scepter_drag_speed": {
+                "special_bonus_scepter": {
+                  "old": 175,
+                  "new": 150
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_cold_snap",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            },
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 18,
+                  "new": 19
+                },
+                "special_bonus_unique_invoker_9": {
+                  "old": -6,
+                  "new": -6
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_ghost_walk",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_tornado",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_emp",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_alacrity",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_chaos_meteor",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_sun_strike",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_forge_spirit",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_ice_wall",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "invoker_deafening_blast",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "keeper_of_the_light_chakra_magic",
+          "changes": {
+            "AbilityValues": {
+              "cooldown_reduction": {
+                "old": "3 4 5 6",
+                "new": "2.5 3.5 4.5 5.5"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "keeper_of_the_light_spirit_form",
+          "changes": {
+            "AbilityValues": {
+              "illuminate_heal": {
+                "value": {
+                  "old": 70,
+                  "new": 60
+                },
+                "special_bonus_shard": {
+                  "old": "+30",
+                  "new": "+40"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_kazurai_katana",
+          "changes": {
+            "AbilityValues": {
+              "katana_bleed_attack_damage_pct": {
+                "value": {
+                  "old": "3 6 9 12",
+                  "new": "3 6 9 12"
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                },
+                "special_bonus_unique_kez_kazura_katana_bleed_damage": {
+                  "old": "+4.0",
+                  "new": "+3.5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_falcon_rush",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_talon_toss",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_shodo_sai",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            },
+            "AbilityValues": {
+              "parry_only_heroes": {
+                "old": null,
+                "new": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_ravens_veil",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            },
+            "AbilityValues": {
+              "mark_only_heroes": {
+                "old": null,
+                "new": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_song_fight_song",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_song_double_time",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_song_good_vibrations",
+          "changes": {
+            "AbilityBehavior": {
+              "old": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES",
+              "new": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+            },
+            "AbilityValues": {
+              "heal_burst": {
+                "value": {
+                  "old": "34 56 78",
+                  "new": "30 55 80"
+                },
+                "special_bonus_unique_largo_7": {
+                  "old": "+30%",
+                  "new": "+30%"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "life_stealer_rage",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "20 19 18 17",
+              "new": "21 20 19 18"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "life_stealer_infest",
+          "changes": {
+            "AbilityValues": {
+              "infest_duration_enemy": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_scepter": {
+                  "old": "+5",
+                  "new": "+4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lina_fiery_soul",
+          "changes": {
+            "AbilityValues": {
+              "fiery_soul_attack_speed_bonus": {
+                "value": {
+                  "old": "8 16 24 32",
+                  "new": "7 14 21 28"
+                },
+                "special_bonus_unique_lina_2": {
+                  "old": "+10",
+                  "new": "+10"
+                }
+              },
+              "fiery_soul_stack_duration": {
+                "old": 18,
+                "new": 16
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear_entangle",
+          "changes": {
+            "AbilityValues": {
+              "counter_duration": {
+                "old": 10,
+                "new": "7 8 9 10"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_entangle",
+          "changes": {
+            "AbilityValues": {
+              "counter_duration": {
+                "old": 10,
+                "new": "7 8 9 10"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "marci_companion_run",
+          "changes": {
+            "AbilityValues": {
+              "ally_movespeed_pct": {
+                "value": {
+                  "old": "15 20 25 30",
+                  "new": 25
+                },
+                "special_bonus_unique_marci_lunge_movespeed": {
+                  "old": "+10",
+                  "new": null
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_arrow",
+          "changes": {
+            "AbilityValues": {
+              "arrow_max_stun": {
+                "old": "2.6 3.4 4.2 5.0",
+                "new": "2.3 3.2 4.1 5.0"
+              },
+              "pierce_units": {
+                "old": null,
+                "new": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_solar_flare",
+          "changes": {
+            "SpellImmunityType": {
+              "old": "SPELL_IMMUNITY_ALLIES_YES",
+              "new": null
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_starfall",
+          "changes": {
+            "AbilityValues": {
+              "secondary_targets": {
+                "value": {
+                  "old": null,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "mirana_celestial_quiver",
+          "changes": {
+            "AbilityChargeRestoreTime": {
+              "old": 6,
+              "new": 7
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "necrolyte_sadist",
+          "changes": {
+            "AbilityValues": {
+              "hero_multiplier": {
+                "old": 6,
+                "new": 4
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "necrolyte_ghost_shroud",
+          "changes": {
+            "AbilityValues": {
+              "heal_bonus": {
+                "value": {
+                  "old": "55 65 75 85",
+                  "new": "45 55 65 75"
+                },
+                "display_type": {
+                  "old": "kBuffPercentage",
+                  "new": "kBuffPercentage"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze1",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_soul": {
+                "old": 3,
+                "new": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze2",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_soul": {
+                "old": 3,
+                "new": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_shadowraze3",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_soul": {
+                "old": 3,
+                "new": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_necromastery",
+          "changes": {
+            "AbilityValues": {
+              "necromastery_damage_per_soul": {
+                "value": {
+                  "old": 1.35,
+                  "new": 1
+                },
+                "hero_levelup": {
+                  "old": "+0.15",
+                  "new": "+0.8"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                },
+                "levelup_interval": {
+                  "old": null,
+                  "new": 6
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nevermore_dark_lord",
+          "changes": {
+            "AbilityValues": {
+              "presence_armor_reduction": {
+                "value": {
+                  "old": "-2.5 -4 -5.5 -7",
+                  "new": "-2.5 -4 -5.5 -7"
+                },
+                "special_bonus_unique_nevermore_3": {
+                  "old": -2,
+                  "new": -1.5
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "rattletrap_power_cogs",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 75,
+              "new": 90
+            },
+            "AbilityValues": {
+              "push_duration": {
+                "old": 0.8,
+                "new": 0.7
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "slardar_slithereen_crush",
+          "changes": {
+            "AbilityValues": {
+              "crush_damage": {
+                "value": {
+                  "old": "75 150 225 300",
+                  "new": "60 140 220 300"
+                },
+                "special_bonus_unique_slardar": {
+                  "old": "+125",
+                  "new": "+125"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "spectre_desolate",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "value": {
+                  "old": 23,
+                  "new": 23.5
+                },
+                "hero_levelup": {
+                  "old": "+2",
+                  "new": "+1.5"
+                },
+                "special_bonus_unique_spectre_2": {
+                  "old": "+12",
+                  "new": "+12"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "treant_natures_guise",
+          "changes": {
+            "AbilityValues": {
+              "grace_time": {
+                "old": 2,
+                "new": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "treant_leech_seed",
+          "changes": {
+            "AbilityValues": {
+              "leech_heal": {
+                "value": {
+                  "old": 20,
+                  "new": "10 15 20 25"
+                },
+                "special_bonus_unique_treant_3": {
+                  "old": "+10",
+                  "new": "+10"
+                }
+              }
+            },
+            "AbilityManaCost": {
+              "old": null,
+              "new": 35
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "treant_living_armor",
+          "changes": {
+            "AbilityValues": {
+              "heal_per_second": {
+                "value": {
+                  "old": "4 7 10 13",
+                  "new": "4 7 10 13"
+                },
+                "special_bonus_unique_treant_8": {
+                  "old": "+3",
+                  "new": null
+                }
+              },
+              "duration": {
+                "value": {
+                  "old": null,
+                  "new": 12
+                },
+                "special_bonus_unique_treant_8": {
+                  "old": null,
+                  "new": "+3"
+                },
+                "_value": {
+                  "old": 12,
+                  "new": null
+                }
+              },
+              "damage_block_threshold": {
+                "old": 20,
+                "new": 10
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "undying_decay",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 100,
+              "new": 110
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "ursa_maul",
+          "changes": {
+            "AbilityValues": {
+              "health_as_damage_pct": {
+                "value": {
+                  "old": 1.25,
+                  "new": 1.75
+                },
+                "special_bonus_unique_ursa_maul_health": {
+                  "old": "+0.5",
+                  "new": "+0.5"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "venomancer_plague_ward",
+          "changes": {
+            "AbilityUnitTargetTeam": {
+              "old": "DOTA_UNIT_TARGET_TEAM_FRIENDLY",
+              "new": null
+            },
+            "AbilityUnitTargetType": {
+              "old": "DOTA_UNIT_TARGET_HERO",
+              "new": null
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "winter_wyvern_arctic_burn",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "26 24 22 20",
+              "new": "29 26 23 20"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "winter_wyvern_cold_embrace",
+          "changes": {
+            "AbilityValues": {
+              "heal_percentage": {
+                "old": "2.25 3 3.75 4.5",
+                "new": "1.5 2.5 3.5 4.5"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "wisp_spirits",
+          "changes": {
+            "AbilityValues": {
+              "creep_damage": {
+                "value": {
+                  "old": "12 18 24 30",
+                  "new": "12 18 24 30"
+                },
+                "special_bonus_unique_wisp": {
+                  "old": "+50%",
+                  "new": "+40%"
+                }
+              },
+              "hero_damage": {
+                "value": {
+                  "old": "30 50 70 90",
+                  "new": "30 50 70 90"
+                },
+                "special_bonus_unique_wisp": {
+                  "old": "+50%",
+                  "new": "+40%"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_infused_raindrop",
+          "changes": {
+            "AbilityValues": {
+              "mana_regen": {
+                "old": 0.8,
+                "new": 0.6
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_hurricane_pike",
+          "changes": {
+            "ItemCost": {
+              "old": 4450,
+              "new": 4550
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_heart",
+          "changes": {
+            "ItemCost": {
+              "old": 700,
+              "new": 800
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_heart",
+          "changes": {
+            "ItemCost": {
+              "old": 5200,
+              "new": 5300
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_shivas_guard",
+          "changes": {
+            "AbilityValues": {
+              "blast_damage": {
+                "old": 260,
+                "new": 225
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_essence_distiller",
+          "changes": {
+            "AbilityValues": {
+              "mana_regen": {
+                "old": 1.75,
+                "new": 1.5
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_greater_crit",
+          "changes": {
+            "ItemCost": {
+              "old": 900,
+              "new": 1000
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_greater_crit",
+          "changes": {
+            "ItemCost": {
+              "old": 5100,
+              "new": 5200
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_bfury",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 4,
+              "new": 3
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_manta",
+          "changes": {
+            "AbilityValues": {
+              "images_do_damage_percent_ranged": {
+                "old": -72,
+                "new": -75
+              },
+              "tooltip_damage_outgoing_ranged": {
+                "old": 28,
+                "new": 25
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_dragon_lance",
+          "changes": {
+            "ItemCost": {
+              "old": 450,
+              "new": 550
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_dragon_lance",
+          "changes": {
+            "ItemCost": {
+              "old": 1900,
+              "new": 2000
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_silver_edge",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 22,
+              "new": 23
+            },
+            "AbilityValues": {
+              "windwalk_movement_speed": {
+                "old": 22,
+                "new": 20
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_satanic",
+          "changes": {
+            "AbilityValues": {
+              "lifesteal_percent": {
+                "old": 30,
+                "new": 25
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_mjollnir",
+          "changes": {
+            "AbilityValues": {
+              "static_duration": {
+                "old": 15,
+                "new": 12
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_mask_of_madness",
+          "changes": {
+            "AbilityValues": {
+              "lifesteal_percent": {
+                "old": 24,
+                "new": 22
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_octarine_core",
+          "changes": {
+            "ItemCost": {
+              "old": 200,
+              "new": 400
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_octarine_core",
+          "changes": {
+            "ItemCost": {
+              "old": 4900,
+              "new": 5100
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_heavens_halberd",
+          "changes": {
+            "ItemCost": {
+              "old": 450,
+              "new": 350
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_heavens_halberd",
+          "changes": {
+            "ItemCost": {
+              "old": 3400,
+              "new": 3300
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_enhancement_greedy",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "old": "-30 -60",
+                "new": "-35 -70"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_hydras_breath",
+          "changes": {
+            "ItemCost": {
+              "old": 1100,
+              "new": 1000
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_bane",
+          "changes": {
+            "ArmorPhysical": {
+              "old": 1,
+              "new": 0
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_drow_ranger",
+          "changes": {
+            "ItemSlots": {
+              "12": {
+                "SlotIndex": {
+                  "old": 12,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_lina",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 30,
+              "new": 28
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_slardar",
+          "changes": {
+            "StatusHealthRegen": {
+              "old": 0.5,
+              "new": 0.25
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_warlock",
+          "changes": {
+            "BaseAttackSpeed": {
+              "old": 90,
+              "new": 95
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_life_stealer",
+          "changes": {
+            "Ability11": {
+              "old": "special_bonus_movement_speed_20",
+              "new": "special_bonus_movement_speed_15"
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_huskar",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 23,
+              "new": 22
+            },
+            "AttributeStrengthGain": {
+              "old": 3.3,
+              "new": 3.4
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_bounty_hunter",
+          "changes": {
+            "Ability14": {
+              "old": "special_bonus_unique_bounty_hunter_8",
+              "new": "special_bonus_unique_bounty_hunter_2"
+            },
+            "Ability16": {
+              "old": "special_bonus_unique_bounty_hunter_2",
+              "new": "special_bonus_unique_bounty_hunter_8"
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_batrider",
+          "changes": {
+            "AttributeIntelligenceGain": {
+              "old": 2.9,
+              "new": 3.2
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_chen",
+          "changes": {
+            "AttributeStrengthGain": {
+              "old": 2,
+              "new": 2.2
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_treant",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 20,
+              "new": 17
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_undying",
+          "changes": {
+            "StatusHealthRegen": {
+              "old": -0.25,
+              "new": -0.5
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_disruptor",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 20,
+              "new": 21
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_keeper_of_the_light",
+          "changes": {
+            "BaseAttackSpeed": {
+              "old": null,
+              "new": 90
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_centaur",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 36,
+              "new": 34
+            },
+            "AttackDamageMax": {
+              "old": 38,
+              "new": 36
+            },
+            "MovementSpeed": {
+              "old": 300,
+              "new": 295
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_ember_spirit",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 22,
+              "new": 21
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_earth_spirit",
+          "changes": {
+            "Ability15": {
+              "old": "special_bonus_unique_earth_spirit",
+              "new": "special_bonus_unique_earth_spirit_5"
+            },
+            "Ability17": {
+              "old": "special_bonus_unique_earth_spirit_5",
+              "new": "special_bonus_unique_earth_spirit"
+            },
+            "BaseAttackSpeed": {
+              "old": null,
+              "new": 95
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_mars",
+          "changes": {
+            "ArmorPhysical": {
+              "old": -1,
+              "new": 0
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_hoodwink",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 17,
+              "new": 16
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_kez",
+          "changes": {
+            "AttackDamageMin": {
+              "old": 23,
+              "new": 22
+            },
+            "AttackDamageMax": {
+              "old": 29,
+              "new": 28
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_Ability_chen_zealot_zealot_respawn_time",
+          "value": "ZEALOT RESPAWN TIME:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_741f_Update",
+          "value": "7.41f Gameplay Update"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Compendium2026_AegisCell_Year",
+          "value": "2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Compendium2026_AegisCell_Title",
+          "value": "Physical Aegis"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Compendium2026_AegisCell_Description",
+          "value": "Purchase The International 2026 Physical Aegis before Sep 23rd. Remember to use any discount before then!"
+        }
+      ],
+      "removed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_abyssal_underlord_pit_of_malice_scepter_description",
+          "value": "Increases radius of the Pit of Malice."
+        }
+      ],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_Ability_chen_zealot_Description",
+          "changes": {
+            "value": {
+              "old": "Whenever Chen respawns, he is joined by a Zealot, a melee warrior creep with the ability to sacrifice itself to heal or deal damage to an enemy.  The Zealot receives Holy Persuasion's benefits and scales up with other lane melee creeps as game time increases and gains extra base damage.  The Zealot respawns next to Chen after %zealot_respawn_time%s.<br><br>Zealot may be activated to teleport a unit under your control to Chen after a %teleport_delay% second delay.  If Chen is targeted, it will teleport all units you control. Taking damage from enemy heroes or their units will cancel the teleport.",
+              "new": "Whenever Chen respawns, he is joined by a Zealot, a melee warrior creep with the ability to sacrifice itself to heal or deal damage to an enemy.  The Zealot receives Holy Persuasion's benefits and scales up with other lane melee creeps as game time increases and gains extra base damage.  The Zealot respawns next to Chen.<br><br>Zealot may be activated to teleport a unit under your control to Chen after a %teleport_delay% second delay.  If Chen is targeted, it will teleport all units you control. Taking damage from enemy heroes or their units will cancel the teleport."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_invoker_ghost_walk_shard_description",
+          "changes": {
+            "value": {
+              "old": "Ghost Walk now also applies the Ice Wall Damage Per Second to enemies in its area of effect.",
+              "new": "Ghost Walk now also applies the Ice Wall Damage Per Second to enemy heroes in its area of effect."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_kez_ravens_veil_Description",
+          "changes": {
+            "value": {
+              "old": "Kez releases a wave of smoke that applies his Mark to nearby enemies, briefly reducing their vision. Kez receives a basic dispel and gains bonus movement speed and invisibility until he attacks or casts a spell.",
+              "new": "Kez releases a wave of smoke that applies his Mark to nearby enemy heroes, briefly reducing their vision. Kez receives a basic dispel and gains bonus movement speed and invisibility until he attacks or casts a spell."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_special_bonus_unique_treant_8",
+          "changes": {
+            "value": {
+              "old": "+{s:bonus_heal_per_second} Living Armor Heal Per Second",
+              "new": "+{s:bonus_duration}s Living Armor Duration"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_special_bonus_unique_earth_spirit_8",
+          "changes": {
+            "value": {
+              "old": "+{s:bonus_damage_duration}% Magnetize Damage & Duration",
+              "new": "+{s:bonus_damage_per_second} Magnetize Damage Per Second"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
