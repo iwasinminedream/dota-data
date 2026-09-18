@@ -1,0 +1,26 @@
+name: Notify dota2-mcp
+
+# Tells iwasinminedream/mcp_test that the dumps changed; its update-dota-data
+# workflow then copies the fresh files/ into vendor/dota-data and commits them.
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - 'files/**'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    name: Notify mcp_test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dispatch dota-data-updated to mcp_test
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.MODDOTA_DISPATCH_TOKEN }}
+          repository: iwasinminedream/mcp_test
+          event-type: dota-data-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
