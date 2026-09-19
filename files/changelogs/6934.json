@@ -1,0 +1,69 @@
+{
+  "version": "6934",
+  "date": "Sep 18 2026",
+  "time": "15:36:51",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Ability_Lua",
+          "name": "OnOtherAbilityUpgraded",
+          "signature": "OnOtherAbilityUpgraded()",
+          "returns": "nil",
+          "description": "Other ability gained a level.",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Ability_Lua",
+          "name": "RefreshAbilityValues",
+          "signature": "RefreshAbilityValues()",
+          "returns": "nil",
+          "description": "Refreshes ability values, if any.",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Item_Lua",
+          "name": "OnOtherAbilityUpgraded",
+          "signature": "OnOtherAbilityUpgraded()",
+          "returns": "nil",
+          "description": "Other ability gained a level.",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Item_Lua",
+          "name": "RefreshAbilityValues",
+          "signature": "RefreshAbilityValues()",
+          "returns": "nil",
+          "description": "Refreshes ability values, if any.",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CDOTABaseAbility",
+          "name": "RefreshAbilityValues",
+          "signature": "RefreshAbilityValues()",
+          "returns": "nil",
+          "description": "",
+          "abstract": false
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_TOGGLE"
+        }
+      ],
+      "changed": []
+    }
+  }
+}

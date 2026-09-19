@@ -1,13 +1,13 @@
-ClientVersion=6933
-ServerVersion=6933
+ClientVersion=6934
+ServerVersion=6934
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=10999813
-VersionDate=Sep 15 2026
-VersionTime=11:10:47
+SourceRevision=11015183
+VersionDate=Sep 18 2026
+VersionTime=15:36:51
 $> script_reload
 Initializing script VM...
 ...done
@@ -18010,6 +18010,10 @@ Initializing script VM...
         "returns":"bool"
       },{
         "args":[],
+        "name":"RefreshAbilityValues",
+        "returns":"void"
+      },{
+        "args":[],
         "name":"RefreshCharges",
         "returns":"void"
       },{
@@ -21210,6 +21214,11 @@ Initializing script VM...
         "returns":"void"
       },{
         "args":[],
+        "description":"Other ability gained a level.",
+        "name":"OnOtherAbilityUpgraded",
+        "returns":"void"
+      },{
+        "args":[],
         "description":"Caster died.",
         "name":"OnOwnerDied",
         "returns":"void"
@@ -21326,6 +21335,11 @@ Initializing script VM...
         "description":"Returns true if this ability will generate magic stick charges for nearby enemies.",
         "name":"ProcsMagicStick",
         "returns":"bool"
+      },{
+        "args":[],
+        "description":"Refreshes ability values, if any",
+        "name":"RefreshAbilityValues",
+        "returns":"void"
       },{
         "args":[],
         "description":"Does this ability need the caster to face the target before executing?",
@@ -25443,6 +25457,11 @@ Initializing script VM...
         "returns":"void"
       },{
         "args":[],
+        "description":"Other ability gained a level.",
+        "name":"OnOtherAbilityUpgraded",
+        "returns":"void"
+      },{
+        "args":[],
         "description":"Caster died.",
         "name":"OnOwnerDied",
         "returns":"void"
@@ -25503,6 +25522,11 @@ Initializing script VM...
         "description":"Returns true if this ability will generate magic stick charges for nearby enemies.",
         "name":"ProcsMagicStick",
         "returns":"bool"
+      },{
+        "args":[],
+        "description":"Refreshes ability values, if any",
+        "name":"RefreshAbilityValues",
+        "returns":"void"
       },{
         "args":[],
         "description":"Return the type of speech used.",
@@ -31624,15 +31648,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31748,7 +31772,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1808
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31904,7 +31928,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1796
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -31936,7 +31960,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1792
+    "value":1791
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -32071,12 +32095,8 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1639
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_IDLE_STATUE",
-    "value":1791
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1797
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32340,7 +32360,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1805
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32380,7 +32400,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1806
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32392,7 +32412,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1807
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32412,7 +32432,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1800
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32497,6 +32517,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32600,7 +32624,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1798
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -32664,7 +32688,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1799
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42381,19 +42405,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1801
+    "value":1797
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1802
+    "value":1798
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1803
+    "value":1799
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1804
+    "value":1800
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52242,7 +52266,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.127913
+Time: 0.130950
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -53436,7 +53460,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4370             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4379             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
