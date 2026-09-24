@@ -3434,7 +3434,7 @@
     "description": "Perform server side lag compensation of weapon firing events."
   },
   "cl_language": {
-    "default": "english",
+    "default": "russian",
     "flags": [],
     "description": "Language"
   },
@@ -6431,6 +6431,13 @@
     ],
     "description": ""
   },
+  "dota_audio_language_storage": {
+    "default": "8",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_auto_connect": {
     "default": "0",
     "flags": [
@@ -9027,7 +9034,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4379",
+    "default": "4397",
     "flags": [
       "cl",
       "a",
@@ -20247,7 +20254,7 @@
     "description": "turn on sse4.2 optimizations in the engine"
   },
   "english": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "user"
@@ -34414,7 +34421,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (UGREEN USB MIC-CM769)",
+    "default": "Наушники (WH-1000XM6)",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
@@ -37708,7 +37715,7 @@
     "description": "Draw all players' voice icons"
   },
   "voice_always_sample_mic": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "a"
     ],

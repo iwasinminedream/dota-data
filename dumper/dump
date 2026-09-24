@@ -1,13 +1,13 @@
-ClientVersion=6934
-ServerVersion=6934
+ClientVersion=6938
+ServerVersion=6938
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11015183
-VersionDate=Sep 18 2026
-VersionTime=15:36:51
+SourceRevision=11030660
+VersionDate=Sep 23 2026
+VersionTime=16:06:57
 $> script_reload
 Initializing script VM...
 ...done
@@ -31648,15 +31648,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1806
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1807
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1808
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31772,7 +31772,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1804
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31928,7 +31928,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1793
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -31960,7 +31960,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1791
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -32095,8 +32095,12 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1639
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_IDLE_STATUE",
+    "value":1791
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1794
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32360,7 +32364,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1801
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32400,7 +32404,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1802
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32412,7 +32416,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1803
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32432,7 +32436,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1796
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32520,7 +32524,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_SPWN",
-    "value":1805
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32623,10 +32627,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_TORRENT",
-    "value":1795
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -32688,7 +32688,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1792
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42405,19 +42405,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1797
+    "value":1802
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1798
+    "value":1803
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1799
+    "value":1804
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1800
+    "value":1799
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52266,7 +52266,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.130950
+Time: 0.136047
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -52710,7 +52710,7 @@ cl_interpolate_report                                                           
 cl_jitter_bad_threshold_up                                                       : 76.6667          : user                             : When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually
 cl_joystick_enabled                                                              : true             : a                                : Enable joystick input
 cl_lagcompensation                                                               : true             : cl, user                         : Perform server side lag compensation of weapon firing events.
-cl_language                                                                      : english          :                                  : Language
+cl_language                                                                      : russian          :                                  : Language
 cl_latch_report                                                                  : false            : cl, a                            : Enable to output stats about latching
 cl_leveloverview                                                                 : 0                : cl, cheat                        : 
 cl_lightquery_debug                                                              : false            : cl, cheat                        : 
@@ -53118,6 +53118,7 @@ dota_armory_stickers_quality_filter_option                                      
 dota_armory_stickers_quality_type_option                                         : 0                : cl                               : 
 dota_assisted_camera_operator_pure_interp_multiplier                             : 16               : cl                               : 
 dota_attack_timer_buffer_ticks                                                   : 3                : sv, cheat                        : 
+dota_audio_language_storage                                                      : 8                : cl                               : 
 dota_auto_connect                                                                : 0                : cl                               : Automatically connect to the specified server forever
 dota_auto_courier_auto_burst                                                     : false            : cl, a, user, per_user, release   : Whether courier automatically uses Speed Burst when auto-mode is on.
 dota_auto_courier_deliver_visible_only                                           : false            : cl, a, user, per_user, release   : Whether courier delivers only while you're visible when auto-mode is on.
@@ -53460,7 +53461,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4379             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4397             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -54939,7 +54940,7 @@ engine_rendersystem_used                                                        
 engine_show_frame_pacing                                                         : false            : release                          : 
 engine_show_frame_ticks                                                          : false            :                                  : 
 engine_sse42                                                                     : true             :                                  : turn on sse4.2 optimizations in the engine
-english                                                                          : true             : cl, user                         : If set to 1, running the english language set of assets.
+english                                                                          : false            : cl, user                         : If set to 1, running the english language set of assets.
 ent_absbox                                                                       : cmd              : sv, cheat                        : Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 ent_actornames                                                                   : cmd              : sv, cheat                        : Displays the entity name for all entities that have ShouldDisplayInActorNames true in code
 ent_actornames_font                                                              : Consolas         : sv, cl, rep, cheat               : ent_actornames font name
@@ -56957,7 +56958,7 @@ soundscape_fadetime                                                             
 soundscape_flush                                                                 : cmd              : sv                               : Flushes the server & client side soundscapes
 soundscape_message                                                               : false            : cl                               : 
 soundscape_radius_debug                                                          : false            : cl, cheat                        : Prints current volume of radius sounds
-soundsystem_device_used                                                          : Динамики (UGREEN USB MIC-CM769) :                                  : Sound device in use (changing this does not change the soundsystem).
+soundsystem_device_used                                                          : Наушники (WH-1000XM6) :                                  : Sound device in use (changing this does not change the soundsystem).
 soundsystem_update_async                                                         : true             :                                  : 
 soundsysteminfo                                                                  : cmd              :                                  : Describe the current sound device without an active voice list.
 spawn_group_activate                                                             : cmd              : sv, cheat                        : Activate specified spawngroup.
@@ -57422,7 +57423,7 @@ vmix_debug_list                                                                 
 vmix_input                                                                       : cmd              : cheat                            : Set an input mix value
 vmix_output                                                                      : cmd              : cheat                            : Dump main graph control output values
 voice_all_icons                                                                  : false            : cl                               : Draw all players' voice icons
-voice_always_sample_mic                                                          : false            : a                                : When enabled, open the voip audio input stream when the application launches.
+voice_always_sample_mic                                                          : true             : a                                : When enabled, open the voip audio input stream when the application launches.
 voice_chat_bubble_show_volume                                                    : true             : cl, a                            : Visualize the volume transmitted with the icon displaying speech.
 voice_chat_bubbles                                                               : true             : cl, a                            : Whether to draw chat bubbles int the UI or not
 voice_clientdebug                                                                : 0                : cl                               : 
@@ -57491,7 +57492,7 @@ writeip                                                                         
 writekeybindings                                                                 : cmd              : release                          : Saves current key bindings to disk.
 zoom_sensitivity_ratio                                                           : 1                : cl, a, per_user                  : Additional mouse sensitivity scale factor applied when FOV is zoomed in.
 --------------
-5219 total convars/concommands
+5220 total convars/concommands
 $> cl_panorama_typescript_declarations
 interface CPanoramaScript_GameEvents
 {
