@@ -1,0 +1,40 @@
+{
+  "version": "6939",
+  "date": "Sep 24 2026",
+  "time": "16:01:31",
+  "changes": {
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_drop_burst"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_drop_rate"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_warn_burst"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_warn_rate"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_TOGGLE"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}

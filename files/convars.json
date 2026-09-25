@@ -9034,7 +9034,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4397",
+    "default": "4404",
     "flags": [
       "cl",
       "a",
@@ -35740,6 +35740,26 @@
       "rep"
     ],
     "description": "The capsule pogo stick frequency [hz]."
+  },
+  "sv_net_client_message_process_time_ms_drop_burst": {
+    "default": "200",
+    "flags": [],
+    "description": "Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)"
+  },
+  "sv_net_client_message_process_time_ms_drop_rate": {
+    "default": "20",
+    "flags": [],
+    "description": "Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate)"
+  },
+  "sv_net_client_message_process_time_ms_warn_burst": {
+    "default": "50",
+    "flags": [],
+    "description": "Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)"
+  },
+  "sv_net_client_message_process_time_ms_warn_rate": {
+    "default": "5",
+    "flags": [],
+    "description": "Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate)"
   },
   "sv_networkvar_perfieldtracking": {
     "default": "true",

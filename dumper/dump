@@ -1,13 +1,13 @@
-ClientVersion=6938
-ServerVersion=6938
+ClientVersion=6939
+ServerVersion=6939
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11030660
-VersionDate=Sep 23 2026
-VersionTime=16:06:57
+SourceRevision=11035840
+VersionDate=Sep 24 2026
+VersionTime=16:01:31
 $> script_reload
 Initializing script VM...
 ...done
@@ -31648,15 +31648,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1794
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1795
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31772,7 +31772,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1798
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31928,7 +31928,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1807
+    "value":1793
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32100,7 +32100,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1808
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32364,7 +32364,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1800
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32404,7 +32404,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1796
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32416,7 +32416,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1797
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32436,7 +32436,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1805
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32521,10 +32521,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_SPWN",
-    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32627,6 +32623,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_TORRENT",
+    "value":1795
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -32688,7 +32688,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1806
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42405,19 +42405,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1802
+    "value":1797
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1803
+    "value":1798
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1804
+    "value":1799
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1799
+    "value":1807
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52266,7 +52266,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.136047
+Time: 0.142952
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -53461,7 +53461,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4397             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4404             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -57139,6 +57139,10 @@ sv_minupdaterate                                                                
 sv_mover_maxslope                                                                : 0.7              : sv, cl, nf, rep                  : The maximum slope the player can overcome [-]
 sv_mover_pogodampingratio                                                        : 1                : sv, cl, nf, rep                  : The capsule pogo stick damping ratio [-]
 sv_mover_pogofrequency                                                           : 10               : sv, cl, nf, rep                  : The capsule pogo stick frequency [hz].
+sv_net_client_message_process_time_ms_drop_burst                                 : 200              :                                  : Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)
+sv_net_client_message_process_time_ms_drop_rate                                  : 20               :                                  : Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate)
+sv_net_client_message_process_time_ms_warn_burst                                 : 50               :                                  : Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)
+sv_net_client_message_process_time_ms_warn_rate                                  : 5                :                                  : Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate)
 sv_networkvar_perfieldtracking                                                   : true             : release                          : Track individual field offset changes, rather than a single dirty flag for the whole entity.
 sv_noclipaccelerate                                                              : 5                : sv, cl, a, nf, rep               : 
 sv_noclipduringpause                                                             : false            : sv, cl, rep, cheat               : If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.).
@@ -57492,7 +57496,7 @@ writeip                                                                         
 writekeybindings                                                                 : cmd              : release                          : Saves current key bindings to disk.
 zoom_sensitivity_ratio                                                           : 1                : cl, a, per_user                  : Additional mouse sensitivity scale factor applied when FOV is zoomed in.
 --------------
-5220 total convars/concommands
+5224 total convars/concommands
 $> cl_panorama_typescript_declarations
 interface CPanoramaScript_GameEvents
 {
