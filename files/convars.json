@@ -9034,7 +9034,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4434",
+    "default": "4470",
     "flags": [
       "cl",
       "a",
@@ -20195,7 +20195,7 @@
     "description": "Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time."
   },
   "engine_no_focus_sleep": {
-    "default": "0",
+    "default": "20",
     "flags": [
       "a"
     ],
@@ -33023,7 +33023,7 @@
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.134436",
+    "default": "0.461538",
     "flags": [
       "a"
     ],
@@ -37897,7 +37897,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.497455",
+    "default": "0.53733",
     "flags": [
       "a"
     ],

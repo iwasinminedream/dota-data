@@ -1,13 +1,13 @@
-ClientVersion=6942
-ServerVersion=6942
+ClientVersion=6944
+ServerVersion=6944
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11055158
-VersionDate=Sep 29 2026
-VersionTime=11:34:03
+SourceRevision=11085649
+VersionDate=Oct 05 2026
+VersionTime=12:47:18
 $> script_reload
 Initializing script VM...
 ...done
@@ -31648,11 +31648,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1807
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1808
+    "value":1798
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_CAST5_STATUE",
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31768,7 +31772,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1805
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -32360,7 +32364,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1802
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32400,7 +32404,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1803
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32412,7 +32416,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1804
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32432,7 +32436,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1797
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32517,10 +32521,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_SPWN",
-    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -42405,19 +42405,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1798
+    "value":1801
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1799
+    "value":1802
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1800
+    "value":1803
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1801
+    "value":1804
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52266,7 +52266,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.130554
+Time: 0.126559
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -53461,7 +53461,7 @@ dota_dark_carnival_fortune_teller_time_between_welcome_backs                    
 dota_dark_carnival_visual_novel_enable_auto_advance                              : false            : cl, a, per_user                  : 
 dota_dashboard_enable_mouse_history                                              : false            : cl, a, per_user                  : Enables Mouse4/Mouse5 to navigate dashboard history.
 dota_dashboard_force_background                                                  : 0                : cl                               : 
-dota_dashboard_launch_count                                                      : 4434             : cl, a, per_user                  : 
+dota_dashboard_launch_count                                                      : 4470             : cl, a, per_user                  : 
 dota_data_teams_max_network_changes                                              : 256              : sv, release                      : 
 dota_dawnbreaker_attack_combo_cooldown_time                                      : 5                : sv, cl, rep                      : Adjust the amount of time the combo animation state persists after an attack starts. Set to -1 to disable attack combos entirely.
 dota_dawnbreaker_attack_combo_step_time                                          : 0.3              : sv, cl, rep                      : We won't advance the combo state faster than this time, so stutter stepping doesn't advance the combo anim.
@@ -54929,7 +54929,7 @@ engine_frametime_warnings_enable                                                
 engine_low_latency_sleep_after_client_tick                                       : false            : release                          : When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation.
 engine_max_resource_system_update_time                                           : 5                :                                  : 
 engine_max_ticks_to_simulate                                                     : -1               :                                  : Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time.
-engine_no_focus_sleep                                                            : 0                : a                                : 
+engine_no_focus_sleep                                                            : 20               : a                                : 
 engine_no_focus_sleep_vconsole_suppress                                          : true             :                                  : When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior
 engine_ostype                                                                    : Windows 11       :                                  : OS type the engine is running on.
 engine_platform_name_extended                                                    : pc64             :                                  : Platform the engine is running on.
@@ -56745,7 +56745,7 @@ snd_gain                                                                        
 snd_gain_max                                                                     : 1                : cheat                            : 
 snd_gain_min                                                                     : 0.01             : cheat                            : 
 snd_gamevoicevolume                                                              : 0                : a                                : Game v.o. volume
-snd_gamevolume                                                                   : 0.134436         : a                                : Game volume
+snd_gamevolume                                                                   : 0.461538         : a                                : Game volume
 snd_get_physics_surface_properties                                               : cmd              : cheat                            : Get physics surface properties for all the materials.
 snd_group_cluster_debug                                                          : false            : rep, cheat                       : 
 snd_group_priority_debug                                                         : false            : rep, cheat                       : 
@@ -57451,7 +57451,7 @@ voice_stall_ms                                                                  
 voice_threshold                                                                  : -59              : cl, a                            : decibel threshold for how loud the talker's input signal is before we think they are talking.
 voice_vox                                                                        : 0                : cl, a, per_user                  : Voice chat uses a vox-style always on
 voice_vox_current_peak                                                           : 0                : cl                               : Current peak value (out of 64k) of the incoming voice stream
-volume                                                                           : 0.497455         : a                                : Sound volume
+volume                                                                           : 0.53733          : a                                : Sound volume
 volume_fog_debug_volumes                                                         : false            : cheat                            : 
 volume_fog_depth                                                                 : 128              :                                  : Depth of volume fog texture
 volume_fog_depth_warp                                                            : 7                :                                  : 
