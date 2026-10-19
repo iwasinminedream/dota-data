@@ -96,6 +96,21 @@ auto_dump() {
     fi
 }
 
+# The test rewrites every files/*.json; a killed run leaves them truncated. Never commit that.
+json_ok() {
+    node -e '
+const fs = require("fs"), path = require("path");
+let bad = 0;
+(function walk(d) {
+  for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    const p = path.join(d, e.name);
+    if (e.isDirectory()) walk(p);
+    else if (p.endsWith(".json")) try { JSON.parse(fs.readFileSync(p, "utf8")); } catch { bad++; console.log("invalid JSON:", p); }
+  }
+})("files");
+process.exit(bad ? 1 : 0);'
+}
+
 restore() {
     git checkout -q -- . && git clean -q -fd -- files dumper so-changes
 }
@@ -114,7 +129,8 @@ if [[ $DUMPED != "$INSTALLED" || $FORCE == 1 ]]; then
         if ! { step=auto-dump && auto_dump &&
                step=version && [[ $(inf ClientVersion dumper/dump) == "$INSTALLED" ]] &&
                step=build && npm run build &&
-               step=test && npx jest test/files_match_dump.spec.ts --testTimeout=600000; }; then
+               step=test && npx jest test/files_match_dump.spec.ts --testTimeout=600000 &&
+               step=json && json_ok; }; then
             say "failed at: $step — restoring the worktree"
             echo "$(date '+%F %T') $step" >"$FAILED_MARK"
             restore
