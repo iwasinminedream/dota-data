@@ -16,6 +16,12 @@ Data from this package is available on [ModDota API](http://moddota.com/api) pag
 4. Commit changes
 5. Create a pull request
 
+#### On Linux
+
+`npm run auto-dump` also works with the Linux client (no Workshop Tools there); set `DOTA2_DIR` to the
+install. For a server without a display or GPU, see "Capturing on Linux" in `CLAUDE.md`;
+`automation/` dumps and pushes automatically whenever the server's Dota build changes.
+
 #### If you are updating the API manually
 
 1. Edit the corresponding `.ts` files (i.e. `modifier-properties.ts`)

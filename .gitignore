@@ -2,3 +2,9 @@ node_modules
 /lib
 # vConsole raw capture (DUMP_DEBUG=1 debug artifact)
 dumper/console-raw.log
+
+# dumper: attempts in progress; Linux: compiled LD_PRELOAD hook, client output of the last run
+dumper/linux/.build
+dumper/linux/client.log
+dumper/*.partial
+__pycache__/

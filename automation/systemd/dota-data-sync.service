@@ -1,0 +1,16 @@
+[Unit]
+Description=dota-data: dump the installed Dota 2 build, push it to GitHub, report .so changes
+Documentation=file:///root/dota-data/automation/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/dota-data/automation/dota-data-sync.sh
+Environment=HOME=/root
+# The headless client takes ~2 cores and 5-10 GB for ~10 minutes; lobbies come first.
+Nice=10
+IOSchedulingClass=idle
+CPUQuota=400%
+MemoryHigh=12G
+TimeoutStartSec=4h

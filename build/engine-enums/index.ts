@@ -1,16 +1,14 @@
 import _ from 'lodash';
 import * as fs from 'fs';
-import * as path from 'path';
 import { outputFile, outputJson } from '../util';
+import { findServerBinary } from '../util/dota-dir';
 import { extracted, additionalEnums } from './data';
 import { EngineEnum, EngineEnumMember, types } from './types';
 
 const identity = <T>(value: T) => value;
 
 export async function generateEngineEnums(dota2Dir: string) {
-  const strings: string[] = scanFileForStrings(
-    path.join(dota2Dir, 'game', 'dota', 'bin', 'win64', 'server.dll'),
-  );
+  const strings: string[] = scanFileForStrings(findServerBinary(dota2Dir));
 
   const usedStrings = new Map<string, string>();
   const enums = extracted.map(

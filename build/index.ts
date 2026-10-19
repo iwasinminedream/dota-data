@@ -1,10 +1,9 @@
-import { findSteamAppById } from '@moddota/find-steam-app';
-
 import { generateEvents } from './events';
 import { generateEngineEnums } from './engine-enums';
 import { generatePanorama } from './panorama';
 import { generateVScripts } from './vscripts';
 import { generateConvars } from './convars';
+import { findDota2Dir } from './util/dota-dir';
 
 import { validateApi } from './vscripts/api';
 import { validateApiTypes } from './vscripts/api-types';
@@ -15,13 +14,8 @@ import {
 import { validateEnums } from './vscripts/enums';
 
 (async () => {
-  const dota2Dir = await findSteamAppById(570);
-
-  if (!dota2Dir) {
-    throw 'Could not locate a dota 2 installation';
-  } else {
-    console.log(`Found DotA 2 installation: ${dota2Dir}`);
-  }
+  const dota2Dir = await findDota2Dir();
+  console.log(`Found DotA 2 installation: ${dota2Dir}`);
 
   console.log('Generating events from VPKs...');
 

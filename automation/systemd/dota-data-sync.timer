@@ -1,0 +1,10 @@
+[Unit]
+Description=dota-data: periodic dota-data-sync (snapshot the installed build, retry pushes)
+
+[Timer]
+OnBootSec=20min
+OnUnitInactiveSec=1h
+Unit=dota-data-sync.service
+
+[Install]
+WantedBy=timers.target

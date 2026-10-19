@@ -1,0 +1,9 @@
+[Unit]
+Description=dota-data: run dota-data-sync when the Dota 2 install changes version
+
+[Path]
+PathChanged=/home/steam/dota2/game/dota/steam.inf
+Unit=dota-data-sync.service
+
+[Install]
+WantedBy=paths.target

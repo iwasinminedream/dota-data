@@ -1,47 +1,44 @@
 /*
  * Utility script that automatically starts dota with the dumper addon.
- * npm run start:dumper
+ * npm run auto-dump
+ *
+ * Windows: dota2.exe -tools, output read over vConsole (port 29000).
+ * Linux: the Linux client (no Workshop Tools there) with dumper/linux/dumper_hook.so preloaded,
+ * output read from its -condebug console.log. See dumper/linux/ and the Linux section of CLAUDE.md.
  */
-import { execSync, spawn } from 'child_process';
+import { execSync, spawn, spawnSync, ChildProcess } from 'child_process';
 import * as fs from 'fs';
-import { Socket } from 'net';
 import * as path from 'path';
 
-import { findSteamAppById } from '@moddota/find-steam-app';
+// CommonJS module (build/ is not ESM): named imports are not visible from .mts.
+import dotaDir from '../build/util/dota-dir';
 import { reportBaselineChange, syncModifierBaseline } from './modifier-baseline.mts';
+import { extractInterfaces, parseLayoutXsd, PanelInfo } from './panels.mts';
 import * as vConsole from './vconsole.mts';
+import { carryForward } from './linux/carry-forward.mts';
+import { followConsoleLog } from './linux/console-log.mts';
+import { hookEnvironment } from './linux/hook.mts';
 
 const ADDON_NAME = 'dumper';
+const IS_LINUX = process.platform === 'linux';
 
-const dota2Dir = await findSteamAppById(570);
+const dota2Dir = await dotaDir.findDota2Dir();
+console.log(`Found DotA 2 installation: ${dota2Dir}`);
 
-if (!dota2Dir) {
-  throw 'Could not locate a dota 2 installation';
-} else {
-  console.log(`Found DotA 2 installation: ${dota2Dir}`);
-}
+// Where the client sees its game directory for writing: the install itself, or the upper dir of an
+// overlay when a launcher keeps the install untouched (dumper/linux/headless-launch.sh).
+const gameDir = process.env.DUMPER_GAME_DIR || path.join(dota2Dir, 'game');
 
 console.log('Copying dumper addon...');
 
-const addonPath = path.join(dota2Dir, 'game', 'dota_addons', ADDON_NAME);
-if (!fs.existsSync(addonPath)) {
-  fs.mkdirSync(addonPath);
-}
-
+const addonPath = path.join(gameDir, 'dota_addons', ADDON_NAME);
 const vscriptsPath = path.join(addonPath, 'scripts', 'vscripts');
-if (!fs.existsSync(vscriptsPath)) {
-  fs.mkdirSync(vscriptsPath, { recursive: true });
-}
+fs.mkdirSync(vscriptsPath, { recursive: true });
 fs.copyFileSync(
   path.join('dumper', 'addon_game_mode.lua'),
   path.join(vscriptsPath, 'addon_game_mode.lua'),
 );
 fs.copyFileSync(path.join('dumper', 'addon_init.lua'), path.join(vscriptsPath, 'addon_init.lua'));
-
-const modifiersPath = path.join(vscriptsPath, 'modifiers');
-if (!fs.existsSync(modifiersPath)) {
-  fs.mkdirSync(modifiersPath, { recursive: true });
-}
 fs.copyFileSync(
   path.join('dumper', 'modifier_test_properties.lua'),
   path.join(vscriptsPath, 'modifier_test_properties.lua'),
@@ -50,77 +47,115 @@ fs.copyFileSync(
 // Custom-game UI that instantiates known panel types, so their JS classes are
 // registered by the time the panel declarations phase runs (the engine only
 // has cl_panorama_typescript_declarations data for instantiated types).
-const contentPanoramaPath = path.join(
-  dota2Dir,
-  'content',
-  'dota_addons',
-  ADDON_NAME,
-  'panorama',
-);
-const contentLayoutPath = path.join(contentPanoramaPath, 'layout', 'custom_game');
-const contentScriptsPath = path.join(contentPanoramaPath, 'scripts', 'custom_game');
-fs.mkdirSync(contentLayoutPath, { recursive: true });
-fs.mkdirSync(contentScriptsPath, { recursive: true });
-for (const layoutFile of ['custom_ui_manifest.xml', 'dumper_panels.xml']) {
-  fs.copyFileSync(
-    path.join('dumper', 'panorama', layoutFile),
-    path.join(contentLayoutPath, layoutFile),
-  );
-}
-fs.copyFileSync(
-  path.join('dumper', 'panorama', 'dumper_panels.js'),
-  path.join(contentScriptsPath, 'dumper_panels.js'),
-);
+// dumper/panorama/compiled keeps the resourcecompiler output, refreshed by every Windows run and
+// used as-is on Linux, which has no resource compiler.
+const COMPILED_UI: [file: string, dir: string][] = [
+  ['custom_ui_manifest.vxml_c', path.join('layout', 'custom_game')],
+  ['dumper_panels.vxml_c', path.join('layout', 'custom_game')],
+  ['dumper_panels.vjs_c', path.join('scripts', 'custom_game')],
+];
+const compiledUiDir = path.join('dumper', 'panorama', 'compiled');
+const addonPanoramaPath = path.join(addonPath, 'panorama');
 
-// The -tools launch does not compile the custom UI on its own, so compile it
-// explicitly (compiling the manifest also compiles the layout and script it
-// references). If this fails, the dump still works — the panel phase just
-// captures fewer per-type interfaces.
-try {
-  execSync(
-    `"${path.join(dota2Dir, 'game', 'bin', 'win64', 'resourcecompiler.exe')}" -i "${path.join(
-      contentLayoutPath,
-      'custom_ui_manifest.xml',
-    )}"`,
-    { stdio: 'ignore' },
+if (IS_LINUX) {
+  for (const [file, dir] of COMPILED_UI) {
+    fs.mkdirSync(path.join(addonPanoramaPath, dir), { recursive: true });
+    fs.copyFileSync(path.join(compiledUiDir, file), path.join(addonPanoramaPath, dir, file));
+  }
+  const compiledJs = resourceDataBlock(path.join(compiledUiDir, 'dumper_panels.vjs_c'));
+  const sourceJs = fs.readFileSync(path.join('dumper', 'panorama', 'dumper_panels.js'));
+  if (!compiledJs || !compiledJs.equals(sourceJs)) {
+    console.warn(
+      'dumper/panorama/compiled is older than dumper/panorama/dumper_panels.js — run the dumper ' +
+        'once on Windows to recompile it. Using the old compiled UI.',
+    );
+  }
+} else {
+  const contentPanoramaPath = path.join(dota2Dir, 'content', 'dota_addons', ADDON_NAME, 'panorama');
+  const contentLayoutPath = path.join(contentPanoramaPath, 'layout', 'custom_game');
+  const contentScriptsPath = path.join(contentPanoramaPath, 'scripts', 'custom_game');
+  fs.mkdirSync(contentLayoutPath, { recursive: true });
+  fs.mkdirSync(contentScriptsPath, { recursive: true });
+  for (const layoutFile of ['custom_ui_manifest.xml', 'dumper_panels.xml']) {
+    fs.copyFileSync(
+      path.join('dumper', 'panorama', layoutFile),
+      path.join(contentLayoutPath, layoutFile),
+    );
+  }
+  fs.copyFileSync(
+    path.join('dumper', 'panorama', 'dumper_panels.js'),
+    path.join(contentScriptsPath, 'dumper_panels.js'),
   );
-  console.log('Compiled dumper custom-game UI.');
-} catch (err) {
-  console.warn('Failed to compile the dumper custom-game UI:', err);
+
+  // The -tools launch does not compile the custom UI on its own, so compile it
+  // explicitly (compiling the manifest also compiles the layout and script it
+  // references). If this fails, the dump still works — the panel phase just
+  // captures fewer per-type interfaces.
+  try {
+    execSync(
+      `"${path.join(dota2Dir, 'game', 'bin', 'win64', 'resourcecompiler.exe')}" -i "${path.join(
+        contentLayoutPath,
+        'custom_ui_manifest.xml',
+      )}"`,
+      { stdio: 'ignore' },
+    );
+    console.log('Compiled dumper custom-game UI.');
+    for (const [file, dir] of COMPILED_UI) {
+      fs.copyFileSync(path.join(addonPanoramaPath, dir, file), path.join(compiledUiDir, file));
+    }
+  } catch (err) {
+    console.warn('Failed to compile the dumper custom-game UI:', err);
+  }
 }
 
 console.log('Starting dumper...');
-
-const dotaBinDir = path.join(dota2Dir, 'game', 'bin', 'win64');
-const dotaExe = path.join(dotaBinDir, 'dota2.exe');
-const args = [
-  '-novid',
-  '-tools',
-  '-addon',
-  ADDON_NAME,
-  `+dota_launch_custom_game ${ADDON_NAME} dota`,
-];
 
 const steamInfPath = path.join(dota2Dir, 'game', 'dota', 'steam.inf');
 const steamInfContent = fs.readFileSync(steamInfPath);
 
 // --- Tunables -------------------------------------------------------------
+// The Linux client renders in software at 1-3 fps: loading takes minutes and
+// game time runs ~5x slower than real time, so every wait is longer there.
 const CONNECT_PORT = 29000;
 const STARTUP_DELAY_MS = 5000; // give Dota a moment before connecting to vConsole
-const DUMP_TIMEOUT_MS = 8 * 60 * 1000; // hard cap from connect to the end of all phases
-const INACTIVITY_TIMEOUT_MS = 120 * 1000; // no console output this long => Dota frozen
+const DUMP_TIMEOUT_MS = (IS_LINUX ? 40 : 8) * 60 * 1000; // hard cap from launch to the end of all phases
+const INACTIVITY_TIMEOUT_MS = (IS_LINUX ? 300 : 120) * 1000; // no console output this long => Dota frozen
 // (must exceed the gap between connecting and the match reaching GAME_IN_PROGRESS,
 // when the dump fires — otherwise a slow load looks like a freeze)
-const MODIFIER_GRACE_MS = 45 * 1000; // after the dump, wait this long for the modifier test
-// (the modifier test is currently disabled in addon_game_mode.lua, so this is
-// just the upper bound the dumper waits before finishing on the dump alone)
-const PANELS_INACTIVITY_MS = 60 * 1000; // no output during the panel phase => keep partial capture
-const HEARTBEAT_MS = 10 * 1000;
+const MODIFIER_GRACE_MS = (IS_LINUX ? 480 : 45) * 1000; // after the dump, wait this long for the modifier test
+// (the modifier test runs 25 game seconds into the match; this is the upper
+// bound the dumper waits before finishing on the dump alone)
+const PANELS_INACTIVITY_MS = (IS_LINUX ? 120 : 60) * 1000; // no output during the panel phase => keep partial capture
+const HEARTBEAT_MS = (IS_LINUX ? 30 : 10) * 1000;
 const MAX_ATTEMPTS = 3;
+const LINUX_PANEL_CHUNK = 100; // commands per cfg file (one exec of all of them overflows the buffer)
+const LINUX_PANEL_SLOTS = 64; // chunk cfg files created before launch (see consoleLogSource)
+
+// Linux client files: console log and panel phase cfgs in its game dir, the clipboard text in a
+// temp dir the Steam Runtime container shares with the host.
+const linuxCfgDir = path.join(gameDir, 'dota', 'cfg');
+const linuxConsoleLog = path.join(gameDir, 'dota', 'console.log');
+const linuxTmpDir = path.join(process.env.DUMPER_TMP_DIR || '/tmp', `dota-dumper-${process.pid}`);
+const linuxClipboardFile = path.join(linuxTmpDir, 'clipboard.xsd');
+const LINUX_MARKER = '-dumper_client';
+
+// The panel phase cfgs exist (empty) before the client starts and are only ever rewritten in
+// place: with an overlay launcher the client caches "no such file" for a name it looked up, and
+// does not see a file replaced by rename, when the upper dir is changed from outside the mount.
+const linuxPanelCfgs = [
+  'dumper_panels.cfg',
+  ...Array.from({ length: LINUX_PANEL_SLOTS }, (_, i) => `dumper_panels_${i}.cfg`),
+];
 
 // The script_reload relay disruption can silently drop a whole section from the
 // capture (the sacrificial cvarlist usually absorbs it, but not always), so a
 // "successful" attempt still has to prove every expected section actually landed.
+const DUMP_FILE = 'dumper/dump';
+const MODIFIER_FILE = 'dumper/modifier_test_output.txt';
+// Attempts write here; the real files are only replaced by a complete dump.
+const DUMP_PARTIAL = `${DUMP_FILE}.partial`;
+const MODIFIER_PARTIAL = `${MODIFIER_FILE}.partial`;
+
 const REQUIRED_SECTIONS = [
   'script_reload',
   'cl_script_reload',
@@ -132,11 +167,32 @@ const REQUIRED_SECTIONS = [
   'cvarlist',
   'cl_panorama_typescript_declarations',
   'panorama_panels',
+  // On Windows the panel phase may fail without failing the dump; the unattended Linux run retries.
+  ...(IS_LINUX ? ['panel_typescript_declarations'] : []),
 ];
 
 function findMissingSections(): string[] {
-  const content = fs.readFileSync('dumper/dump', 'utf8');
+  const content = fs.readFileSync(DUMP_PARTIAL, 'utf8');
   return REQUIRED_SECTIONS.filter((section) => !content.includes(`$> ${section}`));
+}
+
+function removePartials() {
+  fs.rmSync(DUMP_PARTIAL, { force: true });
+  fs.rmSync(MODIFIER_PARTIAL, { force: true });
+}
+
+// On Linux the previous dump is the source of what a retail client cannot dump (see
+// dumper/linux/carry-forward.mts).
+const previousDump = fs.readFileSync(DUMP_FILE, 'utf8');
+
+// Killing the dumper must not leave a headless client running (it holds ~2 cores and several GB).
+let runningLinuxClient: ChildProcess | null = null;
+for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP'] as const) {
+  process.on(signal, () => {
+    if (runningLinuxClient) killLinuxClient(runningLinuxClient);
+    removePartials();
+    process.exit(128 + (signal === 'SIGINT' ? 2 : signal === 'SIGTERM' ? 15 : 1));
+  });
 }
 
 let succeeded = false;
@@ -158,8 +214,20 @@ for (let attempt = 1; attempt <= MAX_ATTEMPTS && !succeeded; attempt++) {
 
 if (!succeeded) {
   console.error(`Failed to capture a complete dump after ${MAX_ATTEMPTS} attempts.`);
+  removePartials();
   process.exit(1);
 }
+
+if (IS_LINUX) {
+  const { dump, report } = carryForward(fs.readFileSync(DUMP_PARTIAL, 'utf8'), previousDump);
+  fs.writeFileSync(DUMP_PARTIAL, dump);
+  console.log(
+    `Carried over from the previous dump: ${report.convars} tools-only convars, ` +
+      `${report.typedMembers} declaration lines with argument types.`,
+  );
+}
+fs.renameSync(DUMP_PARTIAL, DUMP_FILE);
+fs.renameSync(MODIFIER_PARTIAL, MODIFIER_FILE);
 
 console.log('\nSaved dump + modifier test — dumper finished successfully.');
 
@@ -179,23 +247,159 @@ function streamEnd(stream: fs.WriteStream): Promise<void> {
   return new Promise((resolve) => stream.end(() => resolve()));
 }
 
+/** DATA block of a compiled resource (for .vjs_c it is the JavaScript source). */
+function resourceDataBlock(file: string): Buffer | null {
+  const data = fs.readFileSync(file);
+  const blockOffset = data.readUInt32LE(8);
+  const blockCount = data.readUInt32LE(12);
+  for (let i = 0, pos = 8 + blockOffset; i < blockCount; i++, pos += 12) {
+    if (data.toString('latin1', pos, pos + 4) !== 'DATA') continue;
+    const start = pos + 4 + data.readUInt32LE(pos + 4);
+    return data.subarray(start, start + data.readUInt32LE(pos + 8));
+  }
+  return null;
+}
+
+/** Where the client's output comes from and how the panel phase commands reach it. */
+interface DumpSource {
+  onMessage(cb: (message: string) => void): void;
+  runPanelCommands(commands: string[]): Promise<void>;
+  close(): Promise<void>;
+}
+
+function vConsoleSource(socket: import('net').Socket): DumpSource {
+  return {
+    onMessage(cb) {
+      vConsole.onMessage(socket, (type, _channel, message) => {
+        if (type === 'PRNT') cb(message);
+      });
+    },
+    async runPanelCommands(commands) {
+      for (const [index, command] of commands.entries()) {
+        await vConsole.execute(socket, command);
+        // Give the console queue room to drain between bursts.
+        if (index % 50 === 49) await delay(50);
+      }
+    },
+    async close() {
+      await vConsole.disconnect(socket);
+    },
+  };
+}
+
+// --- Linux client -----------------------------------------------------------
+
+function resetLinuxPanelCfgs() {
+  fs.mkdirSync(linuxCfgDir, { recursive: true });
+  for (const file of linuxPanelCfgs) fs.writeFileSync(path.join(linuxCfgDir, file), '');
+}
+
+function consoleLogSource(): DumpSource {
+  let follower: ReturnType<typeof followConsoleLog> | null = null;
+  return {
+    onMessage(cb) {
+      follower = followConsoleLog(linuxConsoleLog, 0, (_channel, message) => cb(message));
+    },
+    // The addon execs cfg/dumper_panels.cfg until it exists, then one chunk per think
+    // (addon_game_mode.lua); the last chunk ends with the ===ENDOFPANELS marker.
+    async runPanelCommands(commands) {
+      const size = Math.max(LINUX_PANEL_CHUNK, Math.ceil(commands.length / LINUX_PANEL_SLOTS));
+      const chunks: string[][] = [];
+      for (let i = 0; i < commands.length; i += size) chunks.push(commands.slice(i, i + size));
+      chunks.forEach((chunk, i) =>
+        fs.writeFileSync(path.join(linuxCfgDir, `dumper_panels_${i}.cfg`), `${chunk.join('\n')}\n`),
+      );
+      fs.writeFileSync(
+        path.join(linuxCfgDir, 'dumper_panels.cfg'),
+        `dumper_panels_begin ${chunks.length}\n`,
+      );
+    },
+    async close() {
+      follower?.stop();
+      resetLinuxPanelCfgs();
+    },
+  };
+}
+
+function spawnLinuxClient(): ChildProcess {
+  const launcher = process.env.DUMPER_LAUNCH || path.join(dota2Dir, 'game', 'dota.sh');
+  const args = [
+    LINUX_MARKER,
+    '-novid',
+    '-nosound',
+    '-console',
+    '-condebug',
+    '-addon',
+    ADDON_NAME,
+    '+sv_cheats',
+    '1',
+    '+dota_launch_custom_game',
+    ADDON_NAME,
+    'dota',
+  ];
+
+  fs.rmSync(linuxTmpDir, { recursive: true, force: true });
+  fs.mkdirSync(linuxTmpDir, { recursive: true });
+  resetLinuxPanelCfgs();
+  fs.mkdirSync(path.dirname(linuxConsoleLog), { recursive: true });
+  fs.writeFileSync(linuxConsoleLog, '');
+
+  const clientLog = fs.openSync(path.join('dumper', 'linux', 'client.log'), 'w');
+  console.log('Spawning Dota:', launcher, args.join(' '));
+  return spawn(launcher, args, {
+    cwd: path.dirname(launcher),
+    env: { ...process.env, ...hookEnvironment(dota2Dir, linuxClipboardFile) },
+    detached: true,
+    stdio: ['ignore', clientLog, clientLog],
+  });
+}
+
+function killLinuxClient(p: ChildProcess) {
+  try {
+    if (p.pid) process.kill(-p.pid, 'SIGKILL');
+  } catch {}
+  // The Steam Runtime container may move the game out of our process group.
+  spawnSync('pkill', ['-9', '-f', `linuxsteamrt64/dota2 .*${LINUX_MARKER}`]);
+}
+
+// --------------------------------------------------------------------------
+
 async function runAttempt(): Promise<boolean> {
   const attemptStartTime = Date.now();
-  const dumpWriteStream = fs.createWriteStream('dumper/dump');
+  const dumpWriteStream = fs.createWriteStream(DUMP_PARTIAL);
   dumpWriteStream.write(steamInfContent);
-  const modifierWriteStream = fs.createWriteStream('dumper/modifier_test_output.txt');
+  const modifierWriteStream = fs.createWriteStream(MODIFIER_PARTIAL);
 
-  console.log('Spawning Dota:', dotaExe, args.join(' '));
-  const p1 = spawn(dotaExe, args, { cwd: dotaBinDir });
+  let p1: ChildProcess;
+  if (IS_LINUX) {
+    p1 = spawnLinuxClient();
+    runningLinuxClient = p1;
+  } else {
+    const dotaBinDir = path.join(dota2Dir, 'game', 'bin', 'win64');
+    const dotaExe = path.join(dotaBinDir, 'dota2.exe');
+    const args = [
+      '-novid',
+      '-tools',
+      '-addon',
+      ADDON_NAME,
+      `+dota_launch_custom_game ${ADDON_NAME} dota`,
+    ];
+    console.log('Spawning Dota:', dotaExe, args.join(' '));
+    p1 = spawn(dotaExe, args, { cwd: dotaBinDir });
+  }
 
   let dotaExited = false;
-  p1.on('error', (err) => console.error('Failed to spawn dota2.exe:', err));
+  p1.on('error', (err) => console.error('Failed to spawn Dota:', err));
   p1.on('exit', (code, signal) => {
     dotaExited = true;
-    console.log(`dota2.exe exited with code=${code} signal=${signal}`);
+    console.log(`Dota exited with code=${code} signal=${signal}`);
   });
 
   const killDota = () => {
+    if (IS_LINUX) {
+      killLinuxClient(p1);
+      return;
+    }
     if (dotaExited) return;
     // In -tools mode Dota spawns child processes; kill the whole tree so a
     // frozen instance can't linger and hold the vConsole port for the retry.
@@ -207,23 +411,26 @@ async function runAttempt(): Promise<boolean> {
     } catch {}
   };
 
+  let source: DumpSource | null = null;
   try {
-    await delay(STARTUP_DELAY_MS);
-
-    let dotaConsole: Socket;
-    try {
-      dotaConsole = await vConsole.connect(CONNECT_PORT);
-    } catch (err) {
-      console.error('Could not connect to vConsole after launching Dota:', err);
-      return false;
+    if (IS_LINUX) {
+      source = consoleLogSource();
+      console.log(`Following ${linuxConsoleLog}...`);
+    } else {
+      await delay(STARTUP_DELAY_MS);
+      try {
+        source = vConsoleSource(await vConsole.connect(CONNECT_PORT));
+      } catch (err) {
+        console.error('Could not connect to vConsole after launching Dota:', err);
+        return false;
+      }
+      console.log('Connected! Waiting for dump...');
     }
-
-    console.log('Connected! Waiting for dump...');
 
     let ok = false;
     try {
       ok = await readDump(
-        dotaConsole,
+        source,
         dumpWriteStream,
         modifierWriteStream,
         () => dotaExited,
@@ -233,108 +440,31 @@ async function runAttempt(): Promise<boolean> {
       console.error('Error while reading dump:', err);
       ok = false;
     }
-
-    try {
-      await vConsole.disconnect(dotaConsole);
-    } catch {}
-
     return ok;
   } finally {
+    try {
+      await source?.close();
+    } catch {}
     await streamEnd(dumpWriteStream);
     await streamEnd(modifierWriteStream);
     killDota();
   }
 }
 
-// The panel declarations phase is driven from here (not from the addon SCRIPT)
-// because the list of panel types is only known after the dump has produced the
-// layout XSD — we parse it, then ask Dota for per-type TypeScript declarations.
-interface PanelAttribute {
-  name: string;
-  description?: string;
-}
-
-interface PanelInfo {
-  name: string;
-  base?: string;
-  attributes: PanelAttribute[];
-}
-
-function decodeXmlEntities(text: string): string {
-  return text
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&amp;/g, '&');
-}
-
-// The XSD lists every panel type as a complexType with all attributes flattened
-// down the inheritance chain; each attribute's documentation records the class
-// that declared it ("(from X)") and the type header records the parent
-// ("derived from X"). Keeping only the attributes declared by the type itself
-// loses nothing — the full set is rebuilt by walking `base`.
-function parseLayoutXsd(xsd: string): PanelInfo[] {
-  const panels: PanelInfo[] = [];
-  const blocks = xsd.split(/(?=<xs:complexType name=")/).slice(1);
-  for (const block of blocks) {
-    const typeMatch = block.match(/^<xs:complexType name="([\w.-]+)Type"/);
-    if (!typeMatch) continue;
-    const header = block.match(/&lt;b&gt;([\w.-]+)&lt;\/b&gt;(?: \(derived from ([\w.-]+)\))?/);
-    const name = header?.[1] ?? typeMatch[1];
-    if (name.startsWith('Internal_')) continue;
-
-    const attributes: PanelAttribute[] = [];
-    const seen = new Set<string>();
-    for (const attr of block.matchAll(
-      /<xs:attribute name="([\w.-]+)"[^>]*>\s*<xs:annotation><xs:documentation[^>]*>&lt;b&gt;[\w.-]+&lt;\/b&gt; \(from ([\w.-]+)\)&lt;br \/&gt;&lt;br \/&gt;([^<]*)</g,
-    )) {
-      const [, attrName, from, rawDescription] = attr;
-      if (from !== name || seen.has(attrName)) continue;
-      seen.add(attrName);
-      const description = decodeXmlEntities(rawDescription.trim());
-      attributes.push(description ? { name: attrName, description } : { name: attrName });
-    }
-    attributes.sort((a, b) => (a.name < b.name ? -1 : 1));
-
-    const base = header?.[2];
-    panels.push(base ? { name, base, attributes } : { name, attributes });
-  }
-  panels.sort((a, b) => (a.name < b.name ? -1 : 1));
-  return panels;
-}
-
 // panorama_generate_layout_xsd prints "Layout XSD contents copied to clipboard."
-// — the schema itself never reaches the console, so read it back via PowerShell.
+// — the schema itself never reaches the console, so read it back via PowerShell
+// (on Linux dumper_hook.so writes the clipboard text to a file instead).
 function readClipboardXsd(): string | null {
   try {
-    const clip = execSync('powershell -NoProfile -Command "Get-Clipboard -Raw"', {
-      maxBuffer: 256 * 1024 * 1024,
-    }).toString('utf8');
+    const clip = IS_LINUX
+      ? fs.readFileSync(linuxClipboardFile, 'utf8')
+      : execSync('powershell -NoProfile -Command "Get-Clipboard -Raw"', {
+          maxBuffer: 256 * 1024 * 1024,
+        }).toString('utf8');
     return clip.includes('<xs:schema') ? clip : null;
   } catch {
     return null;
   }
-}
-
-// Split captured `cl_panorama_typescript_declarations <type>` output into
-// interface blocks. Tolerates unrelated console lines between blocks.
-function extractInterfaces(text: string): Map<string, string[]> {
-  const result = new Map<string, string[]>();
-  const lines = text.split(/\r?\n/);
-  for (let i = 0; i < lines.length; i++) {
-    const match = lines[i].match(/^interface ([\w$]+)$/);
-    if (!match || lines[i + 1]?.trim() !== '{') continue;
-    const body: string[] = [];
-    let j = i + 2;
-    while (j < lines.length && lines[j].trim() !== '}') {
-      body.push(lines[j].trim());
-      j++;
-    }
-    result.set(match[1], body);
-    i = j;
-  }
-  return result;
 }
 
 // panorama_generate_layout_xsd may write its result to disk instead of the
@@ -355,19 +485,20 @@ function findFreshXsdFile(attemptStartTime: number): string | null {
       } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.xsd')) {
         try {
           const stat = fs.statSync(entryPath);
-          if (stat.mtimeMs >= attemptStartTime) found.push({ file: entryPath, mtime: stat.mtimeMs });
+          if (stat.mtimeMs >= attemptStartTime)
+            found.push({ file: entryPath, mtime: stat.mtimeMs });
         } catch {}
       }
     }
   };
-  walk(path.join(dota2Dir!, 'game'));
-  walk(path.join(dota2Dir!, 'content'));
+  walk(gameDir);
+  walk(path.join(dota2Dir, 'content'));
   found.sort((a, b) => b.mtime - a.mtime);
   return found.length > 0 ? found[0].file : null;
 }
 
 async function readDump(
-  dota: Socket,
+  source: DumpSource,
   dumpStream: fs.WriteStream,
   modifierStream: fs.WriteStream,
   isDotaExited: () => boolean,
@@ -393,7 +524,9 @@ async function readDump(
 
     // Optional raw capture of every console message (set DUMP_DEBUG=1) for
     // diagnosing what Dota actually prints and in what order.
-    const rawStream = process.env.DUMP_DEBUG ? fs.createWriteStream('dumper/console-raw.log') : null;
+    const rawStream = process.env.DUMP_DEBUG
+      ? fs.createWriteStream('dumper/console-raw.log')
+      : null;
 
     const overall = setTimeout(() => {
       console.warn('Timed out waiting for the dump to complete.');
@@ -498,12 +631,10 @@ async function readDump(
         console.log(`Found ${panelData.length} panel types, dumping TypeScript declarations...`);
         panelsCapturing = true;
         lastActivity = Date.now();
-        for (const [index, panel] of panelData.entries()) {
-          await vConsole.execute(dota, `cl_panorama_typescript_declarations ${panel.name}`);
-          // Give the console queue room to drain between bursts.
-          if (index % 50 === 49) await delay(50);
-        }
-        await vConsole.execute(dota, 'echoln ===ENDOFPANELS');
+        await source.runPanelCommands([
+          ...panelData.map((panel) => `cl_panorama_typescript_declarations ${panel.name}`),
+          'echoln ===ENDOFPANELS',
+        ]);
       } catch (err) {
         console.warn('Panel declarations phase failed:', err);
         settle(dumpDone);
@@ -539,8 +670,9 @@ async function readDump(
       settle(true);
     }
 
-    vConsole.onMessage(dota, (type, _channel, message) => {
-      if (type !== 'PRNT') return;
+    source.onMessage((message) => {
+      // The Linux addon's "exec dumper_panels" polling is not a sign of progress.
+      if (message.startsWith("exec: couldn't exec")) return;
       sawAnyMessage = true;
       messageCount++;
       lastActivity = Date.now();

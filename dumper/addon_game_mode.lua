@@ -88,7 +88,12 @@ local panoramaScopes = {
 -- the good types from the first/only reload AND captures its full output.
 -- The panorama dump commands are listed AFTER the reload so the disruption can't
 -- drop them either.
+-- `log_flags Console -ConsoleOnly`: output of console commands (cvarlist, the panorama help and
+-- declaration commands) goes to the "Console" logging channel, which by default is shown only in the
+-- console window. vConsole receives it either way; the Linux dumper reads the -condebug console.log
+-- instead, and that file only gets the channel once the flag is cleared.
 SCRIPT = [[
+  log_flags Console -ConsoleOnly
   clear
   echoln ===SACRIFICE
   cvarlist
@@ -142,6 +147,10 @@ function Activate()
     DUMP_TRIGGERED = true
     SendToServerConsole(SCRIPT)
   end, "", 0)
+
+  Convars:RegisterCommand("dumper_panels_begin", function(_, count)
+    PANEL_CHUNKS = tonumber(count)
+  end, "", 0)
 end
 
 GameMode = {}
@@ -168,5 +177,27 @@ function GameMode:OnGameRulesStateChange()
       end
       return nil
     end, 25)
+
+    -- Linux (no -tools, so no vConsole): the dumper cannot send the panel declarations phase
+    -- itself. Once it has parsed the layout XSD it writes the commands to cfg/dumper_panels_<i>.cfg
+    -- and cfg/dumper_panels.cfg (`dumper_panels_begin <count>`); until then this exec only reports
+    -- a missing file. One chunk per think, because a single exec of all ~1600 commands overflows
+    -- the command buffer ("Command buffer full... ignoring!").
+    if not IsInToolsMode() then
+      GameRules:GetGameModeEntity():SetContextThink("dumper_panels", function()
+        if PANEL_CHUNKS == nil then
+          SendToServerConsole("exec dumper_panels")
+          return 1
+        end
+        if PANEL_NEXT < PANEL_CHUNKS then
+          SendToServerConsole("exec dumper_panels_" .. PANEL_NEXT)
+          PANEL_NEXT = PANEL_NEXT + 1
+          return 0.5
+        end
+        return nil
+      end, 5)
+    end
   end
 end
+
+PANEL_NEXT = PANEL_NEXT or 0

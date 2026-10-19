@@ -10,7 +10,7 @@
 - `npm run build:tsc` – compile `src/` → `lib/` (runtime helpers + schemas)
 - `npm run dev` – watch mode: `build:static` + `tsc --watch` in parallel
 - `npm test` – Jest tests
-- `npm run auto-dump` – launches Dota 2 to capture new dump data
+- `npm run auto-dump` – launches Dota 2 to capture new dump data (Windows `-tools`, or the Linux client: see "Capturing on Linux")
 
 **Critical conventions**:
 - **Dump parsing**: Raw data comes from the monolithic `dumper/dump` file, split by `$> <section_name>` markers → parsed by `readDump(name)` in `build/util/index.ts`
@@ -183,13 +183,26 @@ npm run auto-dump    # Launches Dota 2, captures console dumps → dumper/dump
 
 The `dumper/dump` file is a monolithic text file with sections delimited by `$> section_name`. Each section contains the raw output of a Dota 2 console command, with two exceptions produced by the dumper itself: `panorama_panels` (compact JSON digest of the layout XSD that `panorama_generate_layout_xsd` puts on the clipboard) and `panel_typescript_declarations` (phase 2: after the main dump and modifier test, the dumper sends `cl_panorama_typescript_declarations <type>` over vConsole for every panel type found in the XSD and stores the interfaces that differ from their base type).
 
-The engine only exposes TypeScript declarations for panel types that have been *instantiated*, so the dumper installs a custom-game UI (`dumper/panorama/` → `content/dota_addons/dumper/panorama/layout/custom_game/`, compiled by the `-tools` launch) that `$.CreatePanel`s every known creatable panel type on load — this makes their JS classes visible to phase 2.
+The engine only exposes TypeScript declarations for panel types that have been *instantiated*, so the dumper installs a custom-game UI (`dumper/panorama/` → `content/dota_addons/dumper/panorama/layout/custom_game/`, compiled by the `-tools` launch) that `$.CreatePanel`s every known creatable panel type on load — this makes their JS classes visible to phase 2. Every Windows run copies the compiled files back into `dumper/panorama/compiled/`, which is what Linux uses (there is no resource compiler on Linux; the dumper warns when the compiled JS no longer matches `dumper_panels.js`).
 
 #### Modifier properties
 
 `dumper/modifier_test_properties.lua` is a modifier that declares every modifier function and reports which of them the engine actually calls (`HasFunction`) → `dumper/modifier_test_output.txt` → `files/vscripts/modifier_properties.json` (`false` = the function is `broken` in the generated docs). The function list is read from the engine's own `MODIFIER_PROPERTY_*` / `MODIFIER_EVENT_*` globals at runtime — never hardcode it, because `modifierfunction` values are positional and a value inserted in the middle of the enum shifts every later result onto the previous name.
 
 The `-- BASELINE START/END` block in that file holds the previous dump's state, used only to report what changed; `dumper/modifier-baseline.mts` rewrites it after every successful dump and, when the enum itself gained or lost members, prints a "REPEAT THE DUMP" notice at the end of `npm run auto-dump`. `build:modifier-properties` independently cross-checks the test output against the `modifierfunction` enum in `dumper/dump` and refuses to overwrite the JSON when they disagree.
+
+### Capturing on Linux
+
+`npm run auto-dump` also runs on Linux, with the Linux client (Workshop Tools exist only on Windows). `dumper/start-dumper.mts` branches on `process.platform`; everything Linux-only is in `dumper/linux/`:
+
+- **Launch**: `DUMPER_LAUNCH` (default `game/dota.sh`) gets `-dumper_client -novid -nosound -console -condebug -addon dumper +sv_cheats 1 +dota_launch_custom_game dumper dota`, a listen server with the forced hero. `DOTA2_DIR` names the install (`build/util/dota-dir.ts`, also used by the build). `dumper/linux/headless-launch.sh` is a launcher for servers without a display or GPU: Xvfb (`DUMPER_XVFB_DISPLAY`), the Steam Runtime (`STEAM_RUNTIME_ENTRY`) and an overlay over `game/` whose upper dir is `DUMPER_GAME_DIR` (the install stays untouched, `gameinfo.gi` without Metamod). The dumper writes the addon, reads the console log and writes the panel cfgs under `DUMPER_GAME_DIR` (default: `game/` of the install).
+- **`dumper_hook.so`** (`dumper_hook.c`, built with gcc on first use into `dumper/linux/.build/`, LD_PRELOAD). Outside tools mode `libvscript.so` never creates the `FDesc`/`CDesc`/`EDesc` tables `addon_init.lua` reads; the hook patches the "tools mode?" checks guarding them in memory when the engine loads the library (`vscript-patch.mts` finds them by pattern: the `VApplication001` interface slot followed by `call [rax+0xd0]`). It also makes `SDL_SetClipboardText` write the layout XSD to a file: SDL3 on X11 cannot hand 22 MB over the clipboard and the client dies.
+- **Output**: no vConsole on Linux. `console-log.mts` follows the `-condebug` console.log (Dota recreates it at start) and strips the `MM/DD HH:MM:SS ` and `[Channel] ` prefixes of message-start lines. The addon SCRIPT starts with `log_flags Console -ConsoleOnly`, without which console commands' output (cvarlist, panorama help/declarations) is not written to the file.
+- **Panel phase**: the addon execs `cfg/dumper_panels.cfg` until the dumper has written `dumper_panels_begin <n>` there, then one `dumper_panels_<i>.cfg` chunk per think (one exec of ~1600 commands overflows the command buffer). The cfgs are created empty before launch and rewritten in place (an overlay hides files added to or renamed in the upper dir from outside).
+- **Carry-forward** (`carry-forward.mts`): a retail client registers only ~2600 of the ~5200 convars; the missing (development) entries of `cvarlist` are copied from the previous dump, which only a Windows `-tools` dump can refresh. 64-bit integer arguments come without a TS type on Linux (`SetDialogVariableTime`); those lines are taken from the previous dump when it has the same member with types.
+- The client renders in software at 1-3 fps: a run takes about 10 minutes and game time runs ~5x slower than real time; the timeouts are longer on Linux. Attempts write `dumper/dump.partial`; `dumper/dump` is replaced only by a complete dump.
+
+`automation/` keeps a Linux server's clone in step with the installed Dota build (dump, build, test, commit, push, plus a Claude Haiku report of what changed in the `.so` files → `so-changes/<version>.md`); see `automation/README.md`.
 
 ### Testing
 

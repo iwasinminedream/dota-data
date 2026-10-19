@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
-import { findSteamAppById } from '@moddota/find-steam-app';
+import { findDota2Dir } from '../build/util/dota-dir';
 import VPK from '../build/util/vpk';
 
 // ============================================================================
@@ -153,10 +153,7 @@ const EXTRA_NEUTRAL_TOKENS = [
 // ============================================================================
 
 async function buildModifiers() {
-  const dota2Dir = await findSteamAppById(570);
-  if (!dota2Dir) {
-    throw new Error('Could not locate a Dota 2 installation');
-  }
+  const dota2Dir = await findDota2Dir();
   console.log(`Found Dota 2: ${dota2Dir}`);
 
   console.log('Opening game VPK...');
@@ -283,7 +280,11 @@ async function buildModifiers() {
   // ---------------------------------------------------------------------------
   const dumpTxt = readFileSync(join('dumper', 'dump'), 'utf8');
   const allModifiers = Array.from(
-    new Set(dumpTxt.split(/\r?\n/).filter((l) => l.startsWith('modifier_') && l !== 'modifier_test_properties')),
+    new Set(
+      dumpTxt
+        .split(/\r?\n/)
+        .filter((l) => l.startsWith('modifier_') && l !== 'modifier_test_properties'),
+    ),
   );
 
   const SpecCheckFilter = ['roshan', 'rune', 'special_bonus'];
