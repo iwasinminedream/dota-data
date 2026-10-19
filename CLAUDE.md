@@ -10,7 +10,7 @@
 - `npm run build:tsc` – compile `src/` → `lib/` (runtime helpers + schemas)
 - `npm run dev` – watch mode: `build:static` + `tsc --watch` in parallel
 - `npm test` – Jest tests
-- `npm run auto-dump` – launches Dota 2 to capture new dump data (Windows `-tools`, or the Linux client: see "Capturing on Linux")
+- `npm run auto-dump` – launches Dota 2 to capture new dump data (Windows `-tools`; on Linux the Windows client under Wine or the Linux client: see "Capturing on Linux")
 
 **Critical conventions**:
 - **Dump parsing**: Raw data comes from the monolithic `dumper/dump` file, split by `$> <section_name>` markers → parsed by `readDump(name)` in `build/util/index.ts`
@@ -193,7 +193,15 @@ The `-- BASELINE START/END` block in that file holds the previous dump's state, 
 
 ### Capturing on Linux
 
-`npm run auto-dump` also runs on Linux, with the Linux client (Workshop Tools exist only on Windows). `dumper/start-dumper.mts` branches on `process.platform`; everything Linux-only is in `dumper/linux/`:
+`npm run auto-dump` also runs on Linux, two ways. Everything Linux-only is in `dumper/linux/`.
+
+**Windows client + Workshop Tools under Wine (preferred, `DUMPER_WINE_LAUNCH=dumper/linux/wine-launch.sh`)**: a real `-tools` dump, identical in content to a Windows one. `start-dumper.mts` then takes the Windows path (vConsole on port 29000, the same arguments) and only launches/stops the Linux way.
+
+- Files: steamcmd `+@sSteamCmdForcePlatformType windows +download_depot 570 373302 / 373303 / 381450` (DX11 shaders, binaries, Workshop Tools) and `+download_depot 1007 1004` (Steamworks redist: `steamclient64.dll`, without which the listen server's Steamworks init is fatal). The launcher lays the depots over the Linux install in an overlay (`DUMPER_WIN_DEPOTS`, upper dir = `dirname DUMPER_GAME_DIR`), so the shared VPKs are not downloaded twice.
+- Wine prefix (`WINEPREFIX`), prepared by the launcher: `winsqlite3.c` stands in for Windows 10's `winsqlite3.dll` (the tools import it, Wine lacks it), the Steamworks DLLs go to `C:\Program Files (x86)\Steam` with `HKCU\Software\Valve\Steam\ActiveProcess\SteamClientDll64`. Rendering: `-vulkan` through winevulkan to the host driver (lavapipe works). `-language` from `DUMPER_LANGUAGE`.
+- The layout XSD is read from the Wine clipboard by `getclip.c` (instead of PowerShell). The tools' "Stall detected." message, frequent under Wine, is dropped from the capture. `DOTA_SERVER_BINARY` points `build/engine-enums` at the depot's `server.dll`.
+
+**Linux client** (fallback): `dumper/start-dumper.mts` branches on `process.platform`:
 
 - **Launch**: `DUMPER_LAUNCH` (default `game/dota.sh`) gets `-dumper_client -novid -nosound -console -condebug -addon dumper +sv_cheats 1 +dota_launch_custom_game dumper dota`, a listen server with the forced hero. `DOTA2_DIR` names the install (`build/util/dota-dir.ts`, also used by the build). `dumper/linux/headless-launch.sh` is a launcher for servers without a display or GPU: Xvfb (`DUMPER_XVFB_DISPLAY`), the Steam Runtime (`STEAM_RUNTIME_ENTRY`) and an overlay over `game/` whose upper dir is `DUMPER_GAME_DIR` (the install stays untouched, `gameinfo.gi` without Metamod). The dumper writes the addon, reads the console log and writes the panel cfgs under `DUMPER_GAME_DIR` (default: `game/` of the install).
 - **`dumper_hook.so`** (`dumper_hook.c`, built with gcc on first use into `dumper/linux/.build/`, LD_PRELOAD). Outside tools mode `libvscript.so` never creates the `FDesc`/`CDesc`/`EDesc` tables `addon_init.lua` reads; the hook patches the "tools mode?" checks guarding them in memory when the engine loads the library (`vscript-patch.mts` finds them by pattern: the `VApplication001` interface slot followed by `call [rax+0xd0]`). It also makes `SDL_SetClipboardText` write the layout XSD to a file: SDL3 on X11 cannot hand 22 MB over the clipboard and the client dies.
@@ -202,7 +210,7 @@ The `-- BASELINE START/END` block in that file holds the previous dump's state, 
 - **Carry-forward** (`carry-forward.mts`): a retail client registers only ~2600 of the ~5200 convars; the missing (development) entries of `cvarlist` are copied from the previous dump, which only a Windows `-tools` dump can refresh. 64-bit integer arguments come without a TS type on Linux (`SetDialogVariableTime`); those lines are taken from the previous dump when it has the same member with types.
 - The client renders in software at 1-3 fps: a run takes about 10 minutes and game time runs ~5x slower than real time; the timeouts are longer on Linux. Attempts write `dumper/dump.partial`; `dumper/dump` is replaced only by a complete dump.
 
-`automation/` keeps a Linux server's clone in step with the installed Dota build (dump, build, test, commit, push, plus a Claude Haiku report of what changed in the `.so` files → `so-changes/<version>.md`); see `automation/README.md`.
+`automation/` keeps a Linux server's clone in step with the installed Dota build (Wine dump with the Linux client as fallback, a control dump of the same build to expose dumper noise → `dump-checks/<version>.md`, build, test, commit, push, plus a Claude Haiku report of what changed in the `.so` files → `so-changes/<version>.md`); see `automation/README.md`. `automation/dump-diff.py A B` compares two raw dumps section by section.
 
 ### Testing
 

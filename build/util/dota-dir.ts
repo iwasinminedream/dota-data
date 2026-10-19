@@ -20,8 +20,12 @@ export async function findDota2Dir(): Promise<string> {
   return found;
 }
 
-/** The server module of whichever platform build is installed (Windows first on Windows). */
+/**
+ * The server module of whichever platform build is installed (Windows first on Windows).
+ * `DOTA_SERVER_BINARY` overrides it, e.g. server.dll from a Windows depot on a Linux machine.
+ */
 export function findServerBinary(dota2Dir: string): string {
+  if (process.env.DOTA_SERVER_BINARY) return process.env.DOTA_SERVER_BINARY;
   const bin = path.join(dota2Dir, 'game', 'dota', 'bin');
   const candidates = [
     path.join(bin, 'win64', 'server.dll'),

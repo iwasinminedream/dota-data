@@ -4,7 +4,9 @@
  *
  * Windows: dota2.exe -tools, output read over vConsole (port 29000).
  * Linux: the Linux client (no Workshop Tools there) with dumper/linux/dumper_hook.so preloaded,
- * output read from its -condebug console.log. See dumper/linux/ and the Linux section of CLAUDE.md.
+ * output read from its -condebug console.log; or, with DUMPER_WINE_LAUNCH, the Windows client and
+ * Workshop Tools under Wine, which works like Windows (vConsole). See dumper/linux/ and the Linux
+ * section of CLAUDE.md.
  */
 import { execSync, spawn, spawnSync, ChildProcess } from 'child_process';
 import * as fs from 'fs';
@@ -18,9 +20,15 @@ import * as vConsole from './vconsole.mts';
 import { carryForward } from './linux/carry-forward.mts';
 import { followConsoleLog } from './linux/console-log.mts';
 import { hookEnvironment } from './linux/hook.mts';
+import { killWine, readWineClipboard } from './linux/wine.mts';
 
 const ADDON_NAME = 'dumper';
 const IS_LINUX = process.platform === 'linux';
+// Windows client with -tools under Wine: Windows behaviour (vConsole, a full -tools dump), started
+// and stopped the Linux way.
+const IS_WINE = IS_LINUX && !!process.env.DUMPER_WINE_LAUNCH;
+// The Linux client: hook, console.log, cfg-driven panel phase, carry-forward.
+const LINUX_CLIENT = IS_LINUX && !IS_WINE;
 
 const dota2Dir = await dotaDir.findDota2Dir();
 console.log(`Found DotA 2 installation: ${dota2Dir}`);
@@ -190,6 +198,7 @@ let runningLinuxClient: ChildProcess | null = null;
 for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP'] as const) {
   process.on(signal, () => {
     if (runningLinuxClient) killLinuxClient(runningLinuxClient);
+    if (IS_WINE) killWine();
     if (IS_LINUX) fs.rmSync(linuxTmpDir, { recursive: true, force: true });
     removePartials();
     process.exit(128 + (signal === 'SIGINT' ? 2 : signal === 'SIGTERM' ? 15 : 1));
@@ -219,7 +228,7 @@ if (!succeeded) {
   process.exit(1);
 }
 
-if (IS_LINUX) {
+if (LINUX_CLIENT) {
   const { dump, report } = carryForward(fs.readFileSync(DUMP_PARTIAL, 'utf8'), previousDump);
   fs.writeFileSync(DUMP_PARTIAL, dump);
   console.log(
@@ -357,6 +366,45 @@ function spawnLinuxClient(): ChildProcess {
   });
 }
 
+function spawnWineClient(): ChildProcess {
+  const launcher = process.env.DUMPER_WINE_LAUNCH!;
+  // Same arguments as on Windows; the launcher adds -vulkan.
+  const args = [
+    LINUX_MARKER,
+    '-novid',
+    '-tools',
+    '-condebug',
+    '-console',
+    '-addon',
+    ADDON_NAME,
+    `+dota_launch_custom_game ${ADDON_NAME} dota`,
+  ];
+  killWine();
+  spawnSync('pkill', ['-9', '-f', `dota2\\.exe .*${LINUX_MARKER}`]);
+  fs.rmSync(linuxTmpDir, { recursive: true, force: true });
+  fs.mkdirSync(linuxTmpDir, { recursive: true });
+
+  const clientLog = fs.openSync(path.join('dumper', 'linux', 'client.log'), 'w');
+  console.log('Spawning Dota (Wine):', launcher, args.join(' '));
+  return spawn(launcher, args, {
+    cwd: path.dirname(launcher),
+    env: process.env,
+    detached: true,
+    stdio: ['ignore', clientLog, clientLog],
+  });
+}
+
+/** vConsole opens once the Windows client has loaded under Wine, which takes a while. */
+async function connectVConsole(deadline: number): Promise<import('net').Socket> {
+  for (;;) {
+    try {
+      return await vConsole.connect(CONNECT_PORT);
+    } catch (err) {
+      if (Date.now() > deadline) throw err;
+    }
+  }
+}
+
 function killLinuxClient(p: ChildProcess) {
   try {
     if (p.pid) process.kill(-p.pid, 'SIGKILL');
@@ -374,8 +422,11 @@ async function runAttempt(): Promise<boolean> {
   const modifierWriteStream = fs.createWriteStream(MODIFIER_PARTIAL);
 
   let p1: ChildProcess;
-  if (IS_LINUX) {
+  if (LINUX_CLIENT) {
     p1 = spawnLinuxClient();
+    runningLinuxClient = p1;
+  } else if (IS_WINE) {
+    p1 = spawnWineClient();
     runningLinuxClient = p1;
   } else {
     const dotaBinDir = path.join(dota2Dir, 'game', 'bin', 'win64');
@@ -401,6 +452,7 @@ async function runAttempt(): Promise<boolean> {
   const killDota = () => {
     if (IS_LINUX) {
       killLinuxClient(p1);
+      if (IS_WINE) killWine();
       return;
     }
     if (dotaExited) return;
@@ -416,13 +468,17 @@ async function runAttempt(): Promise<boolean> {
 
   let source: DumpSource | null = null;
   try {
-    if (IS_LINUX) {
+    if (LINUX_CLIENT) {
       source = consoleLogSource();
       console.log(`Following ${linuxConsoleLog}...`);
     } else {
       await delay(STARTUP_DELAY_MS);
       try {
-        source = vConsoleSource(await vConsole.connect(CONNECT_PORT));
+        source = vConsoleSource(
+          IS_WINE
+            ? await connectVConsole(Date.now() + 10 * 60 * 1000)
+            : await vConsole.connect(CONNECT_PORT),
+        );
       } catch (err) {
         console.error('Could not connect to vConsole after launching Dota:', err);
         return false;
@@ -457,10 +513,13 @@ async function runAttempt(): Promise<boolean> {
 
 // panorama_generate_layout_xsd prints "Layout XSD contents copied to clipboard."
 // — the schema itself never reaches the console, so read it back via PowerShell
-// (on Linux dumper_hook.so writes the clipboard text to a file instead).
+// (on Linux dumper_hook.so writes the clipboard text to a file instead, and under Wine
+// dumper/linux/getclip.c reads the Wine clipboard).
 function readClipboardXsd(): string | null {
   try {
-    const clip = IS_LINUX
+    const clip = IS_WINE
+      ? readWineClipboard(linuxClipboardFile) ?? ''
+      : IS_LINUX
       ? fs.readFileSync(linuxClipboardFile, 'utf8')
       : execSync('powershell -NoProfile -Command "Get-Clipboard -Raw"', {
           maxBuffer: 256 * 1024 * 1024,
@@ -677,6 +736,9 @@ async function readDump(
     source.onMessage((message) => {
       // The Linux addon's "exec dumper_panels" polling is not a sign of progress.
       if (message.startsWith("exec: couldn't exec")) return;
+      // The tools' stall monitor fires when the main thread is slow (Wine, software rendering) and
+      // its message would land in the middle of a section (e.g. inside the script_reload JSON).
+      if (message.trim() === 'Stall detected.') return;
       sawAnyMessage = true;
       messageCount++;
       lastActivity = Date.now();
