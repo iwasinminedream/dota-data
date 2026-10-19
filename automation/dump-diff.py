@@ -49,8 +49,10 @@ def main():
         added = sum(1 for d in diff if d.startswith('+'))
         removed = sum(1 for d in diff if d.startswith('-'))
         rows.append((name, f'+{added} / -{removed}', len(la)))
-        shown = [d[:200] for d in diff if not d.startswith('@@')][:SHOW_LINES]
-        details.append((name, shown, len(diff)))
+        # With two lines of context, e.g. the "name" of a JSON constant whose "value" changed.
+        context = [d for d in difflib.unified_diff(la, lb, lineterm='', n=2) if not d.startswith(('---', '+++'))]
+        shown = [d[:200] for d in context if not d.startswith('@@')][:SHOW_LINES * 2]
+        details.append((name, shown, len(context)))
 
     if not rows:
         print('identical')

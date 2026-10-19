@@ -163,6 +163,7 @@ control_dump() {
     cp dumper/modifier_test_output.txt "$modfirst"
     say "control dump ($DUMP_MODE)"
     if { if [[ $DUMP_MODE == wine ]]; then dump_wine; else dump_linux; fi; }; then
+        cp dumper/dump "$STATE/dump-control"
         if python3 automation/dump-diff.py "$first" dumper/dump --out "$report" \
             --title "Dota $INSTALLED (build $BUILD): control dump"; then
             CONTROL_NOTE="Control dump ($DUMP_MODE): identical."
