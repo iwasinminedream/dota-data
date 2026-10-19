@@ -1,0 +1,4994 @@
+{
+  "version": "6962",
+  "date": "Oct 15 2026",
+  "time": "14:39:03",
+  "changes": {
+    "Lua API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "GetModifierMinAttackRange",
+          "signature": "GetModifierMinAttackRange()",
+          "returns": "nil",
+          "description": "",
+          "abstract": true
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnDamageHPLossSelf",
+          "signature": "OnDamageHPLossSelf()",
+          "returns": "nil",
+          "description": "",
+          "abstract": true
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Modifier_Lua",
+          "name": "OnTreePlanted",
+          "signature": "OnTreePlanted()",
+          "returns": "nil",
+          "description": "",
+          "abstract": true
+        }
+      ],
+      "removed": [
+        {
+          "type": "class",
+          "name": "CDOTA_Ability_Aghanim_Spear"
+        },
+        {
+          "type": "method",
+          "class": "CDOTA_Ability_Aghanim_Spear",
+          "name": "LaunchSpear",
+          "signature": "LaunchSpear(target: Vector, start: Vector)",
+          "returns": "nil",
+          "description": "Launch Spear to a target position from a source position.",
+          "abstract": false
+        }
+      ],
+      "changed": []
+    },
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND",
+          "value": 9007199254740992
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_1_PERSONA_1",
+          "value": 68
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_2_PERSONA_1",
+          "value": 69
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_3_PERSONA_1",
+          "value": 70
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_4_PERSONA_1",
+          "value": 71
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_5_PERSONA_1",
+          "value": 72
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_6_PERSONA_1",
+          "value": 73
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_7_PERSONA_1",
+          "value": 74
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_8_PERSONA_1",
+          "value": 75
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_9_PERSONA_1",
+          "value": 76
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_DEFEAT_STATUE",
+          "value": 1794
+        },
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CHANNEL_STATUE",
+          "value": 1795
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_ATTACK_RANGE",
+          "value": 119
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TREE_PLANTED",
+          "value": 410
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_DAMAGE_HP_LOSS_SELF",
+          "value": 411
+        },
+        {
+          "type": "enum_member",
+          "enum": "SourceEngineAnimationEvent",
+          "name": "AE_STATE_CHANGE_IN_PROGRESS",
+          "value": 1
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Modifiers": {
+      "added": [
+        {
+          "type": "modifier",
+          "category": "tidehunter",
+          "name": "modifier_tidehunter_arcana"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama API": {
+      "added": [
+        {
+          "type": "method",
+          "class": "CDOTA_PanoramaScript_GameUI",
+          "name": "GetAbilityNameLocalizedForAbilityID",
+          "signature": "GetAbilityNameLocalizedForAbilityID(nAbilityID: number)",
+          "returns": "string",
+          "description": "Get the localized version of an ability's name by ability ID"
+        },
+        {
+          "type": "method",
+          "class": "DOTAHeroModelOverlay",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAPlay",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Panel",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Label",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "ToggleButton",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "TabButton",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Movie",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAAvatarImage",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CustomUIElement",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "AnimatedImageStrip",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Carousel",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "CircularProgressBar",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "ContextMenuScript",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Countdown",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAAbilityImage",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAEconItem",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAHUDOverlayMap",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAHeroImage",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAHeroMovie",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAItemImage",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTALeagueImage",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAParticleScenePanel",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAScenePanel",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAUserName",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DOTAUserRichPresence",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "DropDown",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "HTML",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Image",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "NumberEntry",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "ProgressBar",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "ProgressBarWithMiddle",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "RadioButton",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "RangeSlider",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "Slider",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "TextButton",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        },
+        {
+          "type": "method",
+          "class": "TextEntry",
+          "name": "WriteCompositionLayerJPEG",
+          "signature": "WriteCompositionLayerJPEG(_arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number)",
+          "returns": "void",
+          "description": ""
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAHeroModelOverlay",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAPlay",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Panel",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Label",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "ToggleButton",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "TabButton",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Movie",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAAvatarImage",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "CustomUIElement",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "AnimatedImageStrip",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Carousel",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "CircularProgressBar",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "ContextMenuScript",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Countdown",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "startTime",
+          "class": "Countdown",
+          "changes": {
+            "signature": {
+              "old": "startTime(_arg_1: number)",
+              "new": "startTime(_arg_1: unknown)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "endTime",
+          "class": "Countdown",
+          "changes": {
+            "signature": {
+              "old": "endTime(_arg_1: number)",
+              "new": "endTime(_arg_1: unknown)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAAbilityImage",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAEconItem",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAHUDOverlayMap",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAHeroImage",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAHeroMovie",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAItemImage",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTALeagueImage",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAParticleScenePanel",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SpawnHeroInScenePanelByHeroId",
+          "class": "DOTAParticleScenePanel",
+          "changes": {
+            "signature": {
+              "old": "SpawnHeroInScenePanelByHeroId(_arg_1: unknown, _arg_2: string, _arg_3: number)",
+              "new": "SpawnHeroInScenePanelByHeroId(_arg_1: unknown, _arg_2: string, _arg_3: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAScenePanel",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SpawnHeroInScenePanelByHeroId",
+          "class": "DOTAScenePanel",
+          "changes": {
+            "signature": {
+              "old": "SpawnHeroInScenePanelByHeroId(_arg_1: unknown, _arg_2: string, _arg_3: number)",
+              "new": "SpawnHeroInScenePanelByHeroId(_arg_1: unknown, _arg_2: string, _arg_3: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAUserName",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DOTAUserRichPresence",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "DropDown",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "HTML",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Image",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "NumberEntry",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "ProgressBar",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "ProgressBarWithMiddle",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "RadioButton",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "RangeSlider",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "Slider",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "TextButton",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WriteCompositionLayerPNG",
+          "class": "TextEntry",
+          "changes": {
+            "signature": {
+              "old": "WriteCompositionLayerPNG(_arg_1: string)",
+              "new": "WriteCompositionLayerPNG(_arg_1: string, _arg_2: string)"
+            }
+          }
+        }
+      ]
+    },
+    "Panorama Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "DOTA_ABILITY_BEHAVIOR",
+          "name": "DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND",
+          "value": 9007199254740992
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_1_PERSONA_1",
+          "value": 68
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_2_PERSONA_1",
+          "value": 69
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_3_PERSONA_1",
+          "value": 70
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_4_PERSONA_1",
+          "value": 71
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_5_PERSONA_1",
+          "value": 72
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_6_PERSONA_1",
+          "value": 73
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_7_PERSONA_1",
+          "value": 74
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_8_PERSONA_1",
+          "value": 75
+        },
+        {
+          "type": "enum_member",
+          "enum": "DOTASlotType_t",
+          "name": "DOTA_LOADOUT_TYPE_ABILITY_EFFECTS_9_PERSONA_1",
+          "value": 76
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_PROPERTY_MIN_ATTACK_RANGE",
+          "value": 119
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_TREE_PLANTED",
+          "value": 410
+        },
+        {
+          "type": "enum_member",
+          "enum": "modifierfunction",
+          "name": "MODIFIER_EVENT_ON_DAMAGE_HP_LOSS_SELF",
+          "value": 411
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Panorama Panels": {
+      "added": [
+        {
+          "type": "panel_attribute",
+          "panel": "Carousel",
+          "name": "focus-range-size",
+          "description": ""
+        },
+        {
+          "type": "panel",
+          "name": "DOTADBPopupPersonalOffer",
+          "fieldsDetail": "Popup"
+        },
+        {
+          "type": "panel",
+          "name": "DOTAHUDTidehunterArcana",
+          "fieldsDetail": "Panel"
+        },
+        {
+          "type": "panel",
+          "name": "DOTATreasureContentsList",
+          "fieldsDetail": "Panel"
+        },
+        {
+          "type": "panel_attribute",
+          "panel": "DOTAUIEconSetPreview",
+          "name": "unitindex",
+          "description": "Specify which unit index to use, like if we want an alternate Courier form."
+        },
+        {
+          "type": "panel",
+          "name": "DOTAVisualNovelDebugPage",
+          "fieldsDetail": "Panel"
+        },
+        {
+          "type": "panel",
+          "name": "GameMonitorPanel",
+          "fieldsDetail": "RenderPanel"
+        },
+        {
+          "type": "panel_attribute",
+          "panel": "GameMonitorPanel",
+          "name": "renderdecals",
+          "description": ""
+        },
+        {
+          "type": "panel_attribute",
+          "panel": "GameMonitorPanel",
+          "name": "rendershadows",
+          "description": ""
+        },
+        {
+          "type": "panel_attribute",
+          "panel": "GameMonitorPanel",
+          "name": "rendervolumetricfog",
+          "description": ""
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Properties Fixed": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "modifier_property",
+          "name": "MODIFIER_PROPERTY_MIN_ATTACK_RANGE",
+          "changes": {
+            "value": {
+              "old": "false",
+              "new": "true"
+            }
+          }
+        }
+      ]
+    },
+    "Console Variables": {
+      "added": [
+        {
+          "type": "convar",
+          "name": "cl_cleardraw"
+        },
+        {
+          "type": "convar",
+          "name": "cl_decryptdata_key"
+        },
+        {
+          "type": "convar",
+          "name": "cl_decryptdata_key_pub"
+        },
+        {
+          "type": "convar",
+          "name": "cl_frame_perf_sample_buffer_max"
+        },
+        {
+          "type": "convar",
+          "name": "cleardraw"
+        },
+        {
+          "type": "convar",
+          "name": "create_explosion_damage"
+        },
+        {
+          "type": "convar",
+          "name": "csm_sst_shadow_focus_region_caster_headroom"
+        },
+        {
+          "type": "convar",
+          "name": "csm_sst_vertical_depth_shear_enable"
+        },
+        {
+          "type": "convar",
+          "name": "dota_bits"
+        },
+        {
+          "type": "convar",
+          "name": "dota_hero_grid_show_persona_portraits"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tidehunter_arcana_max_fish_per_game"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tidehunter_arcana_max_ravages_per_game"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tidehunter_arcana_min_heroes"
+        },
+        {
+          "type": "convar",
+          "name": "dota_tidehunter_arcana_points_per_hero"
+        },
+        {
+          "type": "convar",
+          "name": "dumper_panels_begin"
+        },
+        {
+          "type": "convar",
+          "name": "ent_fire_delay"
+        },
+        {
+          "type": "convar",
+          "name": "ent_fire_output_delay"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_step_movement"
+        },
+        {
+          "type": "convar",
+          "name": "nav_edit_draw_navlink_ranges"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_arrival_enable"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_arrival_spline"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_arrival_spring"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_draw_arrival_calc"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_handle_scale"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_navlink_entry_enable"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_navlink_entry_spline"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_navlink_entry_spring"
+        },
+        {
+          "type": "convar",
+          "name": "navspace_create_water_surface_connections"
+        },
+        {
+          "type": "convar",
+          "name": "net_gather_child_fields_only"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_listen_max_message_size_kb"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_listen_recvbuffer_kb"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_listen_recvbuffer_msg"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_message_process_time_ms_drop_burst"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_message_process_time_ms_drop_rate"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_message_process_time_ms_warn_burst"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_message_process_time_ms_warn_rate"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_recv_chan_buffer_messages"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_recv_chan_msgs_per_frame"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_recv_max_frame_size_kb"
+        },
+        {
+          "type": "convar",
+          "name": "net_message_size_enforce"
+        },
+        {
+          "type": "convar",
+          "name": "r_allow_low_gpu_memory_mode"
+        },
+        {
+          "type": "convar",
+          "name": "r_animatable_mesh_shaders"
+        },
+        {
+          "type": "convar",
+          "name": "r_animatable_mesh_shaders_visualize_bounds"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_fullscreen_cycletime"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_fullscreen_weight_deuteranopia"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_fullscreen_weight_protanopia"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_fullscreen_weight_tritanopia"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_mode"
+        },
+        {
+          "type": "convar",
+          "name": "r_colorblindsim_rendermethod"
+        },
+        {
+          "type": "convar",
+          "name": "r_vma_defrag_threshold_mb"
+        },
+        {
+          "type": "convar",
+          "name": "r_vulkan_accurate_renderarea"
+        },
+        {
+          "type": "convar",
+          "name": "r_vulkan_sw_cmd_lists"
+        },
+        {
+          "type": "convar",
+          "name": "sc_aggregate_fragment_culling_boxes"
+        },
+        {
+          "type": "convar",
+          "name": "sc_cycleclassdebuglevel"
+        },
+        {
+          "type": "convar",
+          "name": "sc_fog_cull"
+        },
+        {
+          "type": "convar",
+          "name": "sc_instanced_mesh_gpu_culling_boxes"
+        },
+        {
+          "type": "convar",
+          "name": "snd_opvar_set_precipitation_debug"
+        },
+        {
+          "type": "convar",
+          "name": "snd_sos_capture_soundevent_overwrites"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_occlusion_reflection_regularization"
+        },
+        {
+          "type": "convar",
+          "name": "spec_stopsound"
+        },
+        {
+          "type": "convar",
+          "name": "sv_frame_perf_sample_buffer_max"
+        },
+        {
+          "type": "convar",
+          "name": "tv_encryptdata_key"
+        },
+        {
+          "type": "convar",
+          "name": "tv_encryptdata_key_pub"
+        },
+        {
+          "type": "convar",
+          "name": "tv_relaytextchat"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_link_time_optimize_libraries"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Engine Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "FieldType",
+          "name": "FIELD_xxxAvail1"
+        },
+        {
+          "type": "enum_member",
+          "enum": "FieldType",
+          "name": "FIELD_xxxAvail2"
+        },
+        {
+          "type": "enum_member",
+          "enum": "AbilityBehavior",
+          "name": "DOTA_ABILITY_BEHAVIOR_DIRECT_KEYBIND"
+        }
+      ],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "Team",
+          "name": "DOTA_TEAM_CUSTOM"
+        },
+        {
+          "type": "enum_member",
+          "enum": "FieldType",
+          "name": "FIELD_MATRIX3X4_WORLDSPACE"
+        },
+        {
+          "type": "enum_member",
+          "enum": "FieldType",
+          "name": "FIELD_VMATRIX_WORLDSPACE"
+        }
+      ],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "crystal_maiden_freezing_field",
+          "changes": {
+            "AbilityValues": {
+              "explosion_interval": {
+                "old": 0.1,
+                "new": null
+              },
+              "explosion_interval_tooltip": {
+                "old": null,
+                "new": 0.1
+              },
+              "num_explosions": {
+                "old": null,
+                "new": 100
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "earthshaker_fissure",
+          "changes": {
+            "AbilityValues": {
+              "free_pathing_application_radius": {
+                "old": 150,
+                "new": 0
+              },
+              "free_pathing_all_allies": {
+                "old": null,
+                "new": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "gyrocopter_flak_cannon",
+          "changes": {
+            "AbilityValues": {
+              "additional_targets": {
+                "old": null,
+                "new": 0
+              },
+              "proc_attack_modifiers": {
+                "old": null,
+                "new": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "hoodwink_sharpshooter",
+          "changes": {
+            "AbilityValues": {
+              "pierce_units": {
+                "old": null,
+                "new": 0
+              },
+              "pierce_hero_damage_reduction_pct": {
+                "old": null,
+                "new": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "legion_commander_overwhelming_odds",
+          "changes": {
+            "AbilityValues": {
+              "shield_counts_non_hero_damage": {
+                "old": null,
+                "new": 0
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "venomancer_plague_ward",
+          "changes": {
+            "AbilityValues": {
+              "ward_multiplier": {
+                "value": {
+                  "old": 1,
+                  "new": null
+                },
+                "special_bonus_unique_venomancer": {
+                  "old": "x2.5",
+                  "new": null
+                }
+              },
+              "ward_hp_tooltip": {
+                "value": {
+                  "old": "150 250 350 450",
+                  "new": null
+                },
+                "special_bonus_unique_venomancer": {
+                  "old": "x2.5",
+                  "new": null
+                }
+              },
+              "ward_damage_tooltip": {
+                "value": {
+                  "old": "16 24 32 40",
+                  "new": null
+                },
+                "special_bonus_unique_venomancer": {
+                  "old": "x2.5",
+                  "new": null
+                }
+              },
+              "ward_base_damage": {
+                "value": {
+                  "old": null,
+                  "new": "16 24 32 40"
+                },
+                "special_bonus_unique_venomancer": {
+                  "old": null,
+                  "new": "x2.5"
+                }
+              },
+              "ward_damage_spread": {
+                "value": {
+                  "old": null,
+                  "new": 2
+                }
+              },
+              "ward_max_health": {
+                "value": {
+                  "old": null,
+                  "new": "150 250 350 450"
+                },
+                "special_bonus_unique_venomancer": {
+                  "old": null,
+                  "new": "x2.5"
+                }
+              },
+              "ward_gold_bounty_min": {
+                "old": null,
+                "new": "10 14 18 22"
+              },
+              "ward_gold_bounty_max": {
+                "old": null,
+                "new": "10 14 18 22"
+              },
+              "magic_immune": {
+                "old": null,
+                "new": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_recipe_necronomicon",
+          "changes": {
+            "ItemRequirements": {
+              "01": {
+                "old": "item_sobi_mask;item_sobi_mask;item_belt_of_strength",
+                "new": "item_staff_of_wizardry;item_belt_of_strength"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_necronomicon",
+          "changes": {
+            "ItemCost": {
+              "old": 2050,
+              "new": 2700
+            },
+            "AbilityValues": {
+              "bonus_mana_regen": {
+                "old": "2 3 4",
+                "new": null
+              },
+              "bonus_intellect": {
+                "old": null,
+                "new": "15 20 25"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_necronomicon_2",
+          "changes": {
+            "ItemCost": {
+              "old": 3300,
+              "new": 3950
+            },
+            "AbilityValues": {
+              "bonus_mana_regen": {
+                "old": "2 3 4",
+                "new": null
+              },
+              "bonus_intellect": {
+                "old": null,
+                "new": "15 20 25"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_necronomicon_3",
+          "changes": {
+            "ItemCost": {
+              "old": 4550,
+              "new": 5200
+            },
+            "AbilityValues": {
+              "bonus_mana_regen": {
+                "old": "2 3 4",
+                "new": null
+              },
+              "bonus_intellect": {
+                "old": null,
+                "new": "15 20 25"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_consecrated_wraps",
+          "changes": {
+            "AbilityValues": {
+              "damage_must_be_player_owned_or_roshan": {
+                "old": null,
+                "new": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward",
+          "data": {
+            "BaseClass": "npc_dota_venomancer_plagueward",
+            "Model": "models/heroes/venomancer/venomancer_ward.vmdl",
+            "SoundSet": "Hero_VenomancerWard",
+            "Level": 1,
+            "ModelScale": 0.8,
+            "SelectionGroup": "Venomancer_Wards",
+            "UnitLabel": "plaguewards",
+            "wearable": 684,
+            "Ability1": "creep_piercing",
+            "Ability2": "",
+            "Ability3": "",
+            "Ability4": "",
+            "Ability5": "",
+            "ArmorPhysical": 0,
+            "MagicalResistance": 0,
+            "AttackCapabilities": "DOTA_UNIT_CAP_RANGED_ATTACK",
+            "AttackDamageMin": 14,
+            "AttackDamageMax": 18,
+            "AttackDamageType": "DAMAGE_TYPE_ArmorPhysical",
+            "AttackRate": 1.4,
+            "AttackAnimationPoint": 0.3,
+            "AttackAcquisitionRange": 600,
+            "AttackRange": 600,
+            "ProjectileModel": "particles/units/heroes/hero_venomancer/venomancer_plague_ward_projectile.vpcf",
+            "ProjectileSpeed": 1900,
+            "BoundsHullName": "DOTA_HULL_SIZE_HERO",
+            "HealthBarOffset": 170,
+            "MovementCapabilities": "DOTA_UNIT_CAP_MOVE_NONE",
+            "MovementSpeed": 0,
+            "MovementTurnRate": 0.5,
+            "BountyXP": 20,
+            "BountyGoldMin": 10,
+            "BountyGoldMax": 10,
+            "StatusHealth": 150,
+            "StatusHealthRegen": 0.25,
+            "StatusMana": 0,
+            "StatusManaRegen": 0,
+            "TeamName": "DOTA_TEAM_GOODGUYS",
+            "UnitRelationshipClass": "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD",
+            "VisionDaytimeRange": 800,
+            "VisionNighttimeRange": 800,
+            "HasInventory": 0,
+            "precache": {
+              "particle": "particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+            },
+            "party_hat_effects": {
+              "party_hat_effect_0": "particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+            }
+          }
+        }
+      ],
+      "removed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward_1",
+          "data": {
+            "BaseClass": "npc_dota_venomancer_plagueward",
+            "Model": "models/heroes/venomancer/venomancer_ward.vmdl",
+            "SoundSet": "Hero_VenomancerWard",
+            "Level": 1,
+            "ModelScale": 0.8,
+            "SelectionGroup": "Venomancer_Wards",
+            "UnitLabel": "plaguewards",
+            "wearable": 684,
+            "Ability1": "creep_piercing",
+            "Ability2": "",
+            "Ability3": "",
+            "Ability4": "",
+            "Ability5": "",
+            "ArmorPhysical": 0,
+            "MagicalResistance": 0,
+            "AttackCapabilities": "DOTA_UNIT_CAP_RANGED_ATTACK",
+            "AttackDamageMin": 14,
+            "AttackDamageMax": 18,
+            "AttackDamageType": "DAMAGE_TYPE_ArmorPhysical",
+            "AttackRate": 1.4,
+            "AttackAnimationPoint": 0.3,
+            "AttackAcquisitionRange": 600,
+            "AttackRange": 600,
+            "ProjectileModel": "particles/units/heroes/hero_venomancer/venomancer_plague_ward_projectile.vpcf",
+            "ProjectileSpeed": 1900,
+            "BoundsHullName": "DOTA_HULL_SIZE_HERO",
+            "HealthBarOffset": 170,
+            "MovementCapabilities": "DOTA_UNIT_CAP_MOVE_NONE",
+            "MovementSpeed": 0,
+            "MovementTurnRate": 0.5,
+            "BountyXP": 20,
+            "BountyGoldMin": 10,
+            "BountyGoldMax": 10,
+            "StatusHealth": 150,
+            "StatusHealthRegen": 0.25,
+            "StatusMana": 0,
+            "StatusManaRegen": 0,
+            "TeamName": "DOTA_TEAM_GOODGUYS",
+            "UnitRelationshipClass": "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD",
+            "VisionDaytimeRange": 800,
+            "VisionNighttimeRange": 800,
+            "HasInventory": 0,
+            "precache": {
+              "particle": "particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+            },
+            "party_hat_effects": {
+              "party_hat_effect_0": "particles/econ/events/anniversary_10th/anniversary_10th_hat_ambient_npc_dota_hero_venomancer_plague_ward.vpcf"
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward_2",
+          "data": {
+            "include_keys_from": "npc_dota_venomancer_plague_ward_1",
+            "AttackDamageMin": 22,
+            "AttackDamageMax": 26,
+            "BountyXP": 25,
+            "BountyGoldMin": 14,
+            "BountyGoldMax": 14,
+            "StatusHealth": 250
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward_3",
+          "data": {
+            "include_keys_from": "npc_dota_venomancer_plague_ward_1",
+            "AttackDamageMin": 30,
+            "AttackDamageMax": 34,
+            "BountyXP": 30,
+            "BountyGoldMin": 18,
+            "BountyGoldMax": 18,
+            "StatusHealth": 350
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward_4",
+          "data": {
+            "include_keys_from": "npc_dota_venomancer_plague_ward_1",
+            "AttackDamageMin": 38,
+            "AttackDamageMax": 42,
+            "BountyXP": 35,
+            "BountyGoldMin": 22,
+            "BountyGoldMax": 22,
+            "StatusHealth": 450
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_venomancer_plague_ward_5",
+          "data": {
+            "include_keys_from": "npc_dota_venomancer_plague_ward_1",
+            "AttackDamageMin": 44,
+            "AttackDamageMax": 48,
+            "BountyXP": 40,
+            "BountyGoldMin": 26,
+            "BountyGoldMax": 26,
+            "StatusHealth": 550
+          }
+        }
+      ],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_antimage",
+          "changes": {
+            "ItemSlots": {
+              "17": {
+                "SlotIndex": {
+                  "old": 17,
+                  "new": 17
+                },
+                "SlotName": {
+                  "old": "persona_selector",
+                  "new": "ability_effects_1_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Persona_Selector",
+                  "new": "antimage_mana_break"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "18": {
+                "SlotIndex": {
+                  "old": 18,
+                  "new": 18
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_2_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "antimage_blink"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "19": {
+                "SlotIndex": {
+                  "old": 19,
+                  "new": 19
+                },
+                "SlotName": {
+                  "old": "hero_effigy_persona_1",
+                  "new": "ability_effects_3_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "antimage_counterspell"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "20": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 20
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "antimage_mana_void"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "21": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 21
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "persona_selector"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Persona_Selector"
+                }
+              },
+              "22": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 22
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "23": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 23
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_drow_ranger",
+          "changes": {
+            "ItemSlots": {
+              "12": {
+                "SlotIndex": {
+                  "old": 13,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "#LoadoutSlot_Drow_Ranger_Base"
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_pudge",
+          "changes": {
+            "ItemSlots": {
+              "21": {
+                "SlotIndex": {
+                  "old": 21,
+                  "new": 21
+                },
+                "SlotName": {
+                  "old": "hero_base",
+                  "new": "ability_effects_1_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Pudge_Base",
+                  "new": "pudge_meat_hook"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "22": {
+                "SlotIndex": {
+                  "old": 22,
+                  "new": 22
+                },
+                "SlotName": {
+                  "old": "persona_selector",
+                  "new": "ability_effects_2_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Persona_Selector",
+                  "new": "pudge_rot"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "23": {
+                "SlotIndex": {
+                  "old": 23,
+                  "new": 23
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "pudge_flesh_heap"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "24": {
+                "SlotIndex": {
+                  "old": 24,
+                  "new": 24
+                },
+                "SlotName": {
+                  "old": "hero_effigy_persona_1",
+                  "new": "ability_effects_4_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "pudge_dismember"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "25": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 25
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Pudge_Base"
+                }
+              },
+              "26": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 26
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "persona_selector"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Persona_Selector"
+                }
+              },
+              "27": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 27
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "28": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 28
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_shadow_shaman",
+          "changes": {
+            "ItemSlots": {
+              "9": {
+                "SlotIndex": {
+                  "old": 9,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": "ability_effects_2",
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": "shadow_shaman_voodoo",
+                  "new": "shadow_shaman_voodoo"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                },
+                "LoadoutPreviewMode": {
+                  "old": null,
+                  "new": "hex_model"
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": 11,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "shadow_shaman_fowl_play"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_tidehunter",
+          "changes": {
+            "ItemSlots": {
+              "10": {
+                "SlotIndex": {
+                  "old": 10,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "#LoadoutSlot_Tidehunter_Base"
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            },
+            "AttackSpeedActivityModifiers": {
+              "fast": {
+                "old": null,
+                "new": 150
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_death_prophet",
+          "changes": {
+            "ItemSlots": {
+              "12": {
+                "SlotIndex": {
+                  "old": 12,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "death_prophet_spirit_siphon"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "death_prophet_exorcism"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "14": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 14
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_broodmother",
+          "changes": {
+            "ItemSlots": {
+              "8": {
+                "SlotIndex": {
+                  "old": 8,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "broodmother_insatiable_hunger"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "broodmother_incapacitating_bite"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "broodmother_sticky_snare"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "broodmother_spiders_milk"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_treant",
+          "changes": {
+            "ItemSlots": {
+              "7": {
+                "SlotIndex": {
+                  "old": 7,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": "ability_effects_3",
+                  "new": "ability_effects_1"
+                },
+                "SlotText": {
+                  "old": "treant_living_armor",
+                  "new": "treant_natures_grasp"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": 8,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": "ability_effects_4",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "treant_overgrowth",
+                  "new": "treant_living_armor"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": 9,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "treant_overgrowth"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "treant_leech_seed"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "treant_natures_guise"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_6"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "treant_eyes_in_the_forest"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_undying",
+          "changes": {
+            "ItemSlots": {
+              "9": {
+                "SlotIndex": {
+                  "old": 9,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "undying_bite"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "undying_ceaseless_dirge"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_nyx_assassin",
+          "changes": {
+            "ItemSlots": {
+              "6": {
+                "SlotIndex": {
+                  "old": 6,
+                  "new": 6
+                },
+                "SlotName": {
+                  "old": "ability_effects_3",
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": "nyx_assassin_spiked_carapace",
+                  "new": "nyx_assassin_jolt"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "7": {
+                "SlotIndex": {
+                  "old": 7,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "nyx_assassin_spiked_carapace"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "nyx_assassin_burrow"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "nyx_assassin_scarab_metabolism"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_6"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "nyx_assassin_vendetta"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Nyx_Assassin_Base"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_legion_commander",
+          "changes": {
+            "ItemSlots": {
+              "11": {
+                "SlotIndex": {
+                  "old": 11,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "legion_commander_moment_of_courage"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "legion_commander_outfight_them"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": 13,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": "weapon_persona_1",
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Weapon",
+                  "new": "legion_commander_duel"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "14": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 14
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "15": {
+                "SlotIndex": {
+                  "old": 15,
+                  "new": 15
+                },
+                "SlotName": {
+                  "old": "back_persona_1",
+                  "new": "weapon_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Back",
+                  "new": "#LoadoutSlot_Weapon"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": null
+                },
+                "TextureHeight": {
+                  "old": 512,
+                  "new": null
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 4000,
+                  "new": null
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1600,
+                  "new": null
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "19": {
+                "SlotIndex": {
+                  "old": 19,
+                  "new": 19
+                },
+                "SlotName": {
+                  "old": "misc_persona_1",
+                  "new": "back_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Misc_Persona_1",
+                  "new": "#LoadoutSlot_Back"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": 512,
+                  "new": 512
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 2800,
+                  "new": 4000
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1400,
+                  "new": 1600
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "20": {
+                "SlotIndex": {
+                  "old": 20,
+                  "new": null
+                },
+                "SlotName": {
+                  "old": "taunt_persona_1",
+                  "new": null
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Taunt",
+                  "new": null
+                },
+                "CanEquipFromSlotType": {
+                  "old": {
+                    "6": {
+                      "SlotTypeName": "taunt",
+                      "ItemDefExclusions": 0
+                    }
+                  },
+                  "new": null
+                },
+                "DisplayInLoadout": {
+                  "old": 1,
+                  "new": null
+                }
+              },
+              "21": {
+                "SlotIndex": {
+                  "old": 21,
+                  "new": 21
+                },
+                "SlotName": {
+                  "old": "hero_effigy_persona_1",
+                  "new": "misc_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "#LoadoutSlot_Misc_Persona_1"
+                },
+                "TextureWidth": {
+                  "old": null,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": null,
+                  "new": 512
+                },
+                "MaxPolygonsLOD0": {
+                  "old": null,
+                  "new": 2800
+                },
+                "MaxPolygonsLOD1": {
+                  "old": null,
+                  "new": 1400
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "22": {
+                "SlotIndex": {
+                  "old": 22,
+                  "new": 22
+                },
+                "SlotName": {
+                  "old": "persona_selector",
+                  "new": "taunt_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Persona_Selector",
+                  "new": "#LoadoutSlot_Taunt"
+                },
+                "CanEquipFromSlotType": {
+                  "old": null,
+                  "new": {
+                    "6": {
+                      "SlotTypeName": "taunt",
+                      "ItemDefExclusions": 0
+                    }
+                  }
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 1
+                }
+              },
+              "23": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 23
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "24": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 24
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Legion_Commander_Base"
+                }
+              },
+              "25": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 25
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "persona_selector"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Persona_Selector"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_terrorblade",
+          "changes": {
+            "ItemSlots": {
+              "7": {
+                "SlotIndex": {
+                  "old": 7,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": "ability_effects_4",
+                  "new": "ability_effects_1"
+                },
+                "SlotText": {
+                  "old": "terrorblade_sunder",
+                  "new": "terrorblade_reflection"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": 8,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "terrorblade_conjure_image"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "terrorblade_metamorphosis"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "terrorblade_sunder"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "terrorblade_demon_zeal"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_6"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "terrorblade_terror_wave"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_base"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Terrorblade_Base"
+                }
+              },
+              "14": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 14
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_oracle",
+          "changes": {
+            "ItemSlots": {
+              "7": {
+                "SlotIndex": {
+                  "old": 7,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": "ability_effects_3",
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": "oracle_purifying_flames",
+                  "new": "oracle_fates_edict"
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": 8,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "oracle_purifying_flames"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": 9,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": "costume",
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Costume",
+                  "new": "oracle_rain_of_destiny"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": 10,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": "weapon_persona_1",
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Weapon",
+                  "new": "oracle_diviners_deck"
+                },
+                "TextureWidth": {
+                  "old": 256,
+                  "new": null
+                },
+                "TextureHeight": {
+                  "old": 256,
+                  "new": null
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 2500,
+                  "new": null
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1000,
+                  "new": null
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_6"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "oracle_false_promise"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "12": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 12
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "13": {
+                "SlotIndex": {
+                  "old": 13,
+                  "new": 13
+                },
+                "SlotName": {
+                  "old": "back_persona_1",
+                  "new": "costume"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Back",
+                  "new": "#LoadoutSlot_Costume"
+                },
+                "TextureWidth": {
+                  "old": 512,
+                  "new": null
+                },
+                "TextureHeight": {
+                  "old": 512,
+                  "new": null
+                },
+                "MaxPolygonsLOD0": {
+                  "old": 2500,
+                  "new": null
+                },
+                "MaxPolygonsLOD1": {
+                  "old": 1000,
+                  "new": null
+                },
+                "DisplayInLoadout": {
+                  "old": 0,
+                  "new": null
+                }
+              },
+              "14": {
+                "SlotIndex": {
+                  "old": 14,
+                  "new": 14
+                },
+                "SlotName": {
+                  "old": "taunt_persona_1",
+                  "new": "weapon_persona_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Taunt",
+                  "new": "#LoadoutSlot_Weapon"
+                },
+                "CanEquipFromSlotType": {
+                  "old": {
+                    "4": {
+                      "SlotTypeName": "taunt",
+                      "ItemDefExclusions": 0
+                    }
+                  },
+                  "new": null
+                },
+                "DisplayInLoadout": {
+                  "old": 1,
+                  "new": 0
+                },
+                "TextureWidth": {
+                  "old": null,
+                  "new": 256
+                },
+                "TextureHeight": {
+                  "old": null,
+                  "new": 256
+                },
+                "MaxPolygonsLOD0": {
+                  "old": null,
+                  "new": 2500
+                },
+                "MaxPolygonsLOD1": {
+                  "old": null,
+                  "new": 1000
+                }
+              },
+              "15": {
+                "SlotIndex": {
+                  "old": 15,
+                  "new": null
+                },
+                "SlotName": {
+                  "old": "hero_effigy_persona_1",
+                  "new": null
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": null
+                }
+              },
+              "16": {
+                "SlotIndex": {
+                  "old": 16,
+                  "new": null
+                },
+                "SlotName": {
+                  "old": "persona_selector",
+                  "new": null
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_Persona_Selector",
+                  "new": null
+                }
+              },
+              "17": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 17
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "back_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Back"
+                },
+                "TextureWidth": {
+                  "old": null,
+                  "new": 512
+                },
+                "TextureHeight": {
+                  "old": null,
+                  "new": 512
+                },
+                "MaxPolygonsLOD0": {
+                  "old": null,
+                  "new": 2500
+                },
+                "MaxPolygonsLOD1": {
+                  "old": null,
+                  "new": 1000
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "18": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 18
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "taunt_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Taunt"
+                },
+                "CanEquipFromSlotType": {
+                  "old": null,
+                  "new": {
+                    "4": {
+                      "SlotTypeName": "taunt",
+                      "ItemDefExclusions": 0
+                    }
+                  }
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 1
+                }
+              },
+              "19": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 19
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy_persona_1"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              },
+              "20": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 20
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "persona_selector"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_Persona_Selector"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_marci",
+          "changes": {
+            "ItemSlots": {
+              "6": {
+                "SlotIndex": {
+                  "old": 6,
+                  "new": 6
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_1"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "marci_grapple"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "7": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "marci_companion_run"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "marci_bodyguard"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "marci_special_delivery"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "marci_unleash"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_primal_beast",
+          "changes": {
+            "ItemSlots": {
+              "6": {
+                "SlotIndex": {
+                  "old": 6,
+                  "new": 6
+                },
+                "SlotName": {
+                  "old": "hero_effigy",
+                  "new": "ability_effects_2"
+                },
+                "SlotText": {
+                  "old": "#LoadoutSlot_HeroEffigy",
+                  "new": "primal_beast_trample"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "7": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 7
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_3"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "primal_beast_uproar"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "8": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 8
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_4"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "primal_beast_rock_throw"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "9": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 9
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_5"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "primal_beast_pulverize"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "10": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 10
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "ability_effects_6"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "primal_beast_colossal"
+                },
+                "DisplayInLoadout": {
+                  "old": null,
+                  "new": 0
+                }
+              },
+              "11": {
+                "SlotIndex": {
+                  "old": null,
+                  "new": 11
+                },
+                "SlotName": {
+                  "old": null,
+                  "new": "hero_effigy"
+                },
+                "SlotText": {
+                  "old": null,
+                  "new": "#LoadoutSlot_HeroEffigy"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_venomancer_plague_ward_ward_max_health",
+          "value": "WARD HP:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_venomancer_plague_ward_ward_base_damage",
+          "value": "WARD DAMAGE:"
+        },
+        {
+          "type": "localization",
+          "name": "LoadoutSlot_Legion_Commander_Base",
+          "value": "Hero Base"
+        },
+        {
+          "type": "localization",
+          "name": "LoadoutSlot_Nyx_Assassin_Base",
+          "value": "Hero Base"
+        },
+        {
+          "type": "localization",
+          "name": "LoadoutSlot_Tidehunter_Base",
+          "value": "Hero Base"
+        },
+        {
+          "type": "localization",
+          "name": "LoadoutSlot_Drow_Ranger_Base",
+          "value": "Hero Base"
+        },
+        {
+          "type": "localization",
+          "name": "LoadoutSlot_Terrorblade_Base",
+          "value": "Hero Base"
+        },
+        {
+          "type": "localization",
+          "name": "Attrib_GiftableUntilDate",
+          "value": "Giftable until %s1"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Drow_Monster_Back_Style_0",
+          "value": "Helsing"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Drow_Monster_Back_Style_1",
+          "value": "Stealth"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Drow_Monster_Head_Style_0",
+          "value": "Helsing"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Drow_Monster_Head_Style_1",
+          "value": "Stealth"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Dreadhunt_0",
+          "value": "Blades"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Dreadhunt_1",
+          "value": "Manta Style"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Dreadhunt_2",
+          "value": "Eye of Skadi"
+        },
+        {
+          "type": "localization",
+          "name": "Crate_Tier",
+          "value": "Tier"
+        },
+        {
+          "type": "localization",
+          "name": "dota_settings_hero_grid",
+          "value": "Hero Grid"
+        },
+        {
+          "type": "localization",
+          "name": "dota_settings_show_persona_portraits",
+          "value": "Show Equipped Persona Portraits"
+        },
+        {
+          "type": "localization",
+          "name": "dota_settings_persona_portraits_new_setting_title",
+          "value": "Persona Portraits in Hero Grid"
+        },
+        {
+          "type": "localization",
+          "name": "dota_settings_persona_portraits_new_setting_description",
+          "value": "Enable displaying your equipped persona portraits in the hero grid."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Armory_ConflictingEquipment_Title",
+          "value": "Error"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Armory_ConflictingEquipment_Msg",
+          "value": "Conflicting items were equipped. Your {s:item_name_ejected} has been unequipped as a result."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_tooltip_econ_item_gift_restriction_until_date",
+          "value": "Giftable until: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_tooltip_econ_item_static_hero_base_model",
+          "value": "Hero Base Model"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_OpenFailed_NoResponse",
+          "value": "Failed to open treasure due to a connection problem. Please try again later."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_GiftingConfirm_Popup_Title",
+          "value": "Gifting Last Item"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_GiftingConfirm_Popup_Message",
+          "value": "This is your only copy of this set.  After gifting, you will no longer have any of the items in this bundle. Are you sure you want to continue?"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_GiftFriend_Tooltip_Limited",
+          "value": "Giftable until: {t:T:giftable_until_date_time} {t:s:giftable_until_date_time}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_NotMarketableAndGiftingLimited",
+          "value": "The contents of this treasure are not marketable or tradeable. Items can be gifted within 30 days of opening."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_MilestoneRewardsTitle",
+          "value": "Bonus rewards"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_MilestoneRewardsDescription",
+          "value": "Open chests to receive bonus rewards:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_MilestoneRewardsItemCount",
+          "value": "<b>{d:current_open_count}</b> / {d:target_open_count} chests opened"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_BonusRewardsTitle",
+          "value": "Bonus rewards received"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_Equipped",
+          "value": "Equipped"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_Arcana",
+          "value": "Arcana"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_ViewTreasureDetails",
+          "value": "View Details"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HideTreasureDetails",
+          "value": "Hide Details"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_Odds_Details_Specific_Title",
+          "value": "Escalating Odds for this <span class='TreasureItemInfoLabel TitleLabel'>{s:item_rarity_token}</span> Item"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_Odds_Details_BadLuckProtectionTooltip",
+          "value": "<b>Bad Luck Protection</b><br>You are guaranteed to receive this item if your Treasure Opening counter reaches this level."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_BadLuckProtectionTooltip",
+          "value": "<b>Bad Luck Protection</b><br>You are guaranteed to receive this item if your Treasure Opening counter reaches a certain level. Click for details."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_MonsterHoard2026_2026",
+          "value": "2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_MonsterHoard2026_TreasureTitle",
+          "value": "Trove of Terror"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_MonsterHoard2026_TreasureDescription",
+          "value": "Delve into a monstrous collection of immortal items, an Arcana-inclusive Drow Ranger set, an all-new toothy Tidehunter Arcana — and even bonus Tormentor and Roshan skins that you'll earn along the way."
+        },
+        {
+          "type": "localization",
+          "name": "Notification_Trove_Gifting",
+          "value": "<b>Trove of Terror Gifting Update</b><br/><br/>\\r\\nFunctionality that was intended to prevent exploitation of gift exchanges was instead mistakenly applied to all items coming out of the Trove of Terror, preventing any gifting from taking place.<br/><br/>\\r\\nThe vast majority of gifting between friends takes place right after opening a treasure. To support friend gifting while we continue to iterate on the anti-exploit code, we've re-enabled gifting for all Trove of Terror sets: Each set can be gifted to a friend once within thirty days. For sets already in your inventory, the thirty days start now. For newly opened Troves, they start when the Trove is opened.<br/><br/>\\r\\nAs some sets that would have been gifted if possible were instead recycled, we've granted everyone one new Trove of Terror per six recycling credits so far, rounded up."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Tidehunter_Arcana_0",
+          "value": "Maw of the Megalodon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Tidehunter_Arcana_1",
+          "value": "The Hammer of Maelrawn"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Style_Tidehunter_Arcana_2",
+          "value": "Unfathomable Hunger"
+        },
+        {
+          "type": "localization",
+          "name": "KillEaterEvent_Tidehunter_ArcanaProgress",
+          "value": "Heroes Caught in Multi-Hero Ravages"
+        },
+        {
+          "type": "localization",
+          "name": "KillEaterEvent_Tidehunter_ArcanaFishEaten",
+          "value": "Fish Eaten"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TidehunterArcana_Title",
+          "value": "Arcana Progress"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TidehunterArcana_Label",
+          "value": "Heroes Ravaged"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TidehunterArcana_Score",
+          "value": "{s:current_score}/{d:unlock_value}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TidehunterArcana_FishLabel",
+          "value": "Fish Eaten"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_TidehunterArcana_FishScore",
+          "value": "{s:fish_current_score}/{d:fish_unlock_value}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_Title",
+          "value": "The Hammer of Maelrawn"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_Subtitle",
+          "value": "Unlock the Hammer of Maelrawn alternate style"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_Description",
+          "value": "Unlock Hammer of Maelrawn by ravaging 3 or more enemy heroes at a time. Each hero caught in the ravage earns a point. Up to 25 points can be earned per game."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_Completion",
+          "value": "Heroes Ravaged"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_Fish_MiniGame_Title",
+          "value": "Unfathomable Hunger"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_Fish_MiniGame_Subtitle",
+          "value": "Unlock the Unfathomable Hunger alternate style"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_Fish_MiniGame_Description",
+          "value": "Unlock Unfathomable Hunger by eating fish dropped by enemy heroes. Up to 20 points can be earned per game."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_Fish_MiniGame_Completion",
+          "value": "Fish Eaten"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_ScoreboardRavages",
+          "value": "<b>{d:tidehunter_arcana_ravages}</b>/{d:tidehunter_arcana_ravages_max}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Arcana_Tidehunter_MiniGame_ScoreboardFish",
+          "value": "<b>{d:tidehunter_arcana_fish}</b>/{d:tidehunter_arcana_fish_max}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HUD_Scoreboard_TidehunterArcanaRavages",
+          "value": "Heroes caught in multi-hero Ravages this match."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HUD_Scoreboard_TidehunterArcanaFish",
+          "value": "Fish eaten this match."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Stinger_npc_dota_hero_tidehunter",
+          "value": ""
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Header_npc_dota_hero_tidehunter",
+          "value": "Maw of the Megalodon Styles"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Title_npc_dota_hero_tidehunter",
+          "value": "Unlock Progress"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_ProgressBar_npc_dota_hero_tidehunter",
+          "value": "Completed: {d:arcana_progress_current_score} / {d:arcana_progress_max_score}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter",
+          "value": "Heroes Ravaged"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter_0",
+          "value": "Heroes Ravaged"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Description_npc_dota_hero_tidehunter_1",
+          "value": "Fish Eaten"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_ArcanaProgress_Increment_npc_dota_hero_tidehunter",
+          "value": "+{s:arcana_progress_increment}"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_HUD_Scoreboard_TidehunterArcanaNeeded",
+          "value": "Heroes needed in a single Ravage to progress the second style unlock."
+        },
+        {
+          "type": "localization",
+          "name": "Notification_TideArcana_CNVO",
+          "value": "The bug causing Tidehunter Arcana's new VO to not play in Chinese has been fixed."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Compendium_Supporting",
+          "value": "Supporting"
+        },
+        {
+          "type": "localization",
+          "name": "dota_settings_additional_abilities_tooltip",
+          "value": "Show this Hero's additional abilities to bind hotkeys directly to them."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema",
+          "value": "Arachnid Anathema"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema__Back",
+          "value": "Arachnid Anathema - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema__Brood_Junior",
+          "value": "Arachnid Anathema - Brood Junior"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema__Head",
+          "value": "Arachnid Anathema - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema__Legs",
+          "value": "Arachnid Anathema - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Arachnid_Anathema__Misc",
+          "value": "Arachnid Anathema - Misc"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Baby_Rshan_the_Eternal",
+          "value": "Baby R'shan the Eternal"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Blades_of_Voth_Domosh__Bundle",
+          "value": "Blades of Voth Domosh - Bundle"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Blades_of_Voth_Domosh__Swords",
+          "value": "Blades of Voth Domosh - Swords"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clairvoyant_Configuration",
+          "value": "Clairvoyant Configuration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clairvoyant_Configuration__Armor",
+          "value": "Clairvoyant Configuration - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clairvoyant_Configuration__Back",
+          "value": "Clairvoyant Configuration - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clairvoyant_Configuration__Head",
+          "value": "Clairvoyant Configuration - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Clairvoyant_Configuration__Weapon",
+          "value": "Clairvoyant Configuration - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Creeping_Calabash",
+          "value": "Creeping Calabash"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Creeping_Calabash__Arms",
+          "value": "Creeping Calabash - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Creeping_Calabash__Head",
+          "value": "Creeping Calabash - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Creeping_Calabash__Legs",
+          "value": "Creeping Calabash - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Creeping_Calabash__Shoulder",
+          "value": "Creeping Calabash - Shoulder"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender",
+          "value": "Curse of the Wyrmbender"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Arms",
+          "value": "Curse of the Wyrmbender - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Belt",
+          "value": "Curse of the Wyrmbender - Belt"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Head",
+          "value": "Curse of the Wyrmbender - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Offhand_Weapon",
+          "value": "Curse of the Wyrmbender - Offhand Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Ward",
+          "value": "Curse of the Wyrmbender - Ward"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Curse_of_the_Wyrmbender__Weapon",
+          "value": "Curse of the Wyrmbender - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Daemon_Hunter",
+          "value": "Daemon Hunter"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Daemon_Hunter__Armor",
+          "value": "Daemon Hunter - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Daemon_Hunter__Head",
+          "value": "Daemon Hunter - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Daemon_Hunter__Offhand_Weapon",
+          "value": "Daemon Hunter - Offhand Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Daemon_Hunter__Weapon",
+          "value": "Daemon Hunter - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Copy_of_Taunt_Melon_Massacre",
+          "value": "Perfect for camouflage and target practice."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Monster_Roshan",
+          "value": "This custom Roshan replacement can be equipped in the World options of the Global Items loadout menu."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Sepulchral_Stalker__Bundle",
+          "value": "Contains \"Dread Retribution\" Drow Ranger Arcana set if you don't already own it."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Tidehunter_Arcana_Fish_Gem",
+          "value": "Tidehunter Arcana Fish Style Unlock Gem"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_Tidehunter_Arcana_Gem",
+          "value": "Tidehunter Arcana Ravage Style Unlock Gem"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_recycling_monster_treasure_2026",
+          "value": "Disassemble unbundled items for a treasure"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_recycling_monster_treasure_2026_rare",
+          "value": "Disassemble unbundled rare items for a treasure"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Desc_recycling_monster_treasure_2026_very_rare",
+          "value": "Disassemble unbundled very rare items for a treasure"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration",
+          "value": "Direstone Desecration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration__Armor",
+          "value": "Direstone Desecration - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration__Arms",
+          "value": "Direstone Desecration - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration__Flesh_Golem",
+          "value": "Direstone Desecration - Flesh Golem"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration__Head",
+          "value": "Direstone Desecration - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Direstone_Desecration__Tombstone",
+          "value": "Direstone Desecration - Tombstone"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Dread_Retribution__Weapon",
+          "value": "Dread Retribution - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Drows_Base",
+          "value": "Drow's Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Fractal_Horns_of_Inner_Abysm__Bundle",
+          "value": "Fractal Horns of Inner Abysm - Bundle"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Fractal_Horns_of_Inner_Abysm__Horns",
+          "value": "Fractal Horns of Inner Abysm - Horns"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster",
+          "value": "Greasepaint Gutbuster"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Arm",
+          "value": "Greasepaint Gutbuster - Arm"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Back",
+          "value": "Greasepaint Gutbuster - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Belt",
+          "value": "Greasepaint Gutbuster - Belt"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Head",
+          "value": "Greasepaint Gutbuster - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Offhand",
+          "value": "Greasepaint Gutbuster - Offhand"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Shoulder",
+          "value": "Greasepaint Gutbuster - Shoulder"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Greasepaint_Gutbuster__Weapon",
+          "value": "Greasepaint Gutbuster - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion",
+          "value": "Hell's Legion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion_Arms",
+          "value": "Hell's Legion- Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion__Back",
+          "value": "Hell's Legion - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion__Head",
+          "value": "Hell's Legion - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion__Legs",
+          "value": "Hell's Legion - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion__Shoulders",
+          "value": "Hell's Legion - Shoulders"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Hells_Legion__Weapon",
+          "value": "Hell's Legion - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Legion_Commanders_Base",
+          "value": "Legion Commander's Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon",
+          "value": "Maw of the Megalodon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Arms",
+          "value": "Maw of the Megalodon - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Base",
+          "value": "Maw of the Megalodon - Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Belt",
+          "value": "Maw of the Megalodon - Belt"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Cursor",
+          "value": "Maw of the Megalodon - Cursor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Offhand_Weapon",
+          "value": "Maw of the Megalodon - Offhand Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Maw_of_the_Megalodon__Weapon",
+          "value": "Maw of the Megalodon - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye",
+          "value": "Mesmer-Eye"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye__Back",
+          "value": "Mesmer-Eye - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye__Base",
+          "value": "Mesmer-Eye - Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye__Head",
+          "value": "Mesmer-Eye - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye__Misc",
+          "value": "Mesmer-Eye - Misc"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_MesmerEye__Weapon",
+          "value": "Mesmer-Eye - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Nyxs_Base",
+          "value": "Nyx's Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Obscene_Eye_Ball",
+          "value": "Obscene Eye Ball"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector",
+          "value": "Patchwork Protector"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector_Courier",
+          "value": "Patchwork Protector Courier"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector_Shoulder",
+          "value": "Patchwork Protector- Shoulder"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector__Armor",
+          "value": "Patchwork Protector - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector__Back",
+          "value": "Patchwork Protector - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Patchwork_Protector__Head",
+          "value": "Patchwork Protector - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper",
+          "value": "Rictus Ripper"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper__Armor",
+          "value": "Rictus Ripper - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper__Back",
+          "value": "Rictus Ripper - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper__Demon",
+          "value": "Rictus Ripper - Demon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper__Head",
+          "value": "Rictus Ripper - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rictus_Ripper__Weapon",
+          "value": "Rictus Ripper - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rshan_the_Eternal",
+          "value": "R'shan the Eternal"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Rshan_the_Eternal__Bundle",
+          "value": "R'shan the Eternal - Bundle"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker",
+          "value": "Sepulchral Stalker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Arms",
+          "value": "Sepulchral Stalker - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Arrowhead_Cursor",
+          "value": "Sepulchral Stalker - Arrowhead Cursor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Back",
+          "value": "Sepulchral Stalker - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Head",
+          "value": "Sepulchral Stalker - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Legs",
+          "value": "Sepulchral Stalker - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Misc",
+          "value": "Sepulchral Stalker - Misc"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Shoulder",
+          "value": "Sepulchral Stalker - Shoulder"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Sepulchral_Stalker__Weapon",
+          "value": "Sepulchral Stalker - Weapon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Shattered_Sanity",
+          "value": "Shattered Sanity"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Shattered_Sanity__Arms",
+          "value": "Shattered Sanity - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Shattered_Sanity__Head",
+          "value": "Shattered Sanity - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Shattered_Sanity__Shoulder",
+          "value": "Shattered Sanity - Shoulder"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Shattered_Sanity__Tail",
+          "value": "Shattered Sanity - Tail"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl",
+          "value": "Silken Sibyl"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl__Armor",
+          "value": "Silken Sibyl - Armor"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl__Belt",
+          "value": "Silken Sibyl - Belt"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl__Exorcism",
+          "value": "Silken Sibyl - Exorcism"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl__Head",
+          "value": "Silken Sibyl - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Silken_Sibyl__Legs",
+          "value": "Silken Sibyl - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strong_Boxhound",
+          "value": "Slobbering Strong Boxhound"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox",
+          "value": "Slobbering Strongbox"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox__Arms",
+          "value": "Slobbering Strongbox - Arms"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox__Back",
+          "value": "Slobbering Strongbox - Back"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox__Gold_Hoard_Ward",
+          "value": "Slobbering Strongbox - Gold Hoard Ward"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox__Head",
+          "value": "Slobbering Strongbox - Head"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Slobbering_Strongbox__Legs",
+          "value": "Slobbering Strongbox - Legs"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign",
+          "value": "Stoneback Sovereign"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign__Large",
+          "value": "Stoneback Sovereign - Large"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign__Medium",
+          "value": "Stoneback Sovereign - Medium"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign__Small",
+          "value": "Stoneback Sovereign - Small"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign__Tiny",
+          "value": "Stoneback Sovereign - Tiny"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Stoneback_Sovereign__Tree",
+          "value": "Stoneback Sovereign - Tree"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Taunt_Melon_Massacre__The_Revenge",
+          "value": "Taunt: Melon Massacre - The Revenge"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Taunt_Monster_Masher",
+          "value": "Taunt: Monster Masher"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Taunt_Shake_His_Booty",
+          "value": "Taunt: Shake His Booty"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Terrorblades_Base",
+          "value": "Terrorblade's Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tidehunter_Arcana_Fish_Gem",
+          "value": "Tidehunter Arcana Fish Gem"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tidehunter_Arcana_Gem",
+          "value": "Tidehunter Arcana Ravage Gem"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Tidehunters_Base",
+          "value": "Tidehunter's Base"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Trove_of_Terror",
+          "value": "Trove of Terror"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_recycling_monster_treasure_2026",
+          "value": "recycling_monster_treasure_2026"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_recycling_monster_treasure_2026_rare",
+          "value": "recycling_monster_treasure_2026_rare"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_recycling_monster_treasure_2026_very_rare",
+          "value": "recycling_monster_treasure_2026_very_rare"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Arachnid_Anathema",
+          "value": "Arachnid Anathema"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Clairvoyant_Configuration",
+          "value": "Clairvoyant Configuration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Creeping_Calabash",
+          "value": "Creeping Calabash"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Curse_of_the_Wyrmbender",
+          "value": "Curse of the Wyrmbender"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Daemon_Hunter",
+          "value": "Daemon Hunter"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Direstone_Desecration",
+          "value": "Direstone Desecration"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Greasepaint_Gutbuster",
+          "value": "Greasepaint Gutbuster"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Hells_Legion",
+          "value": "Hell's Legion"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Maw_of_the_Megalodon",
+          "value": "Maw of the Megalodon"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_MesmerEye",
+          "value": "Mesmer-Eye"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Patchwork_Protector",
+          "value": "Patchwork Protector"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Rictus_Ripper",
+          "value": "Rictus Ripper"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Sepulchral_Stalker",
+          "value": "Sepulchral Stalker"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Shattered_Sanity",
+          "value": "Shattered Sanity"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Silken_Sibyl",
+          "value": "Silken Sibyl"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Slobbering_Strongbox",
+          "value": "Slobbering Strongbox"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Set_Stoneback_Sovereign",
+          "value": "Stoneback Sovereign"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_WearableType_Serpent_Ward",
+          "value": "Serpent Ward"
+        }
+      ],
+      "removed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_venomancer_plague_ward_ward_hp_tooltip",
+          "value": "WARD HP:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_venomancer_plague_ward_ward_damage_tooltip",
+          "value": "WARD DAMAGE:"
+        }
+      ],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_crystal_maiden_freezing_field_Description",
+          "changes": {
+            "value": {
+              "old": "CHANNELED - Surrounds Crystal Maiden with 100 random icy explosions that slow enemies and deal massive damage. Lasts %abilitychanneltime% seconds.",
+              "new": "CHANNELED - Surrounds Crystal Maiden with %num_explosions% random icy explosions that slow enemies and deal massive damage. Lasts %abilitychanneltime% seconds."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_crystal_maiden_freezing_field_Note1",
+          "changes": {
+            "value": {
+              "old": "Explosions occur every %explosion_interval% seconds.",
+              "new": "Explosions occur every %explosion_interval_tooltip% seconds."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_special_bonus_unique_venomancer",
+          "changes": {
+            "value": {
+              "old": "{s:bonus_ward_hp_tooltip}x Plague Ward HP/Damage",
+              "new": "{s:bonus_ward_base_damage}x Plague Ward HP/Damage"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeader",
+          "changes": {
+            "value": {
+              "old": "Each treasure contains {d:items_per_treasure} of these items",
+              "new": "Each treasure contains {d:items_per_treasure} of these items."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderPW",
+          "changes": {
+            "value": {
+              "old": "This Item available from this treasure",
+              "new": "This Item available from this treasure."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderPWNotPurchasable",
+          "changes": {
+            "value": {
+              "old": "Not an item available from this treasure",
+              "new": "Not an item available from this treasure."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderPWZoomedOut",
+          "changes": {
+            "value": {
+              "old": "Item Available",
+              "new": "Item Available."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderPWZoomedOutPlural",
+          "changes": {
+            "value": {
+              "old": "Items Available",
+              "new": "Items Available."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderGrantsAll",
+          "changes": {
+            "value": {
+              "old": "Each treasure contains all of these items",
+              "new": "Each treasure contains all of these items."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_HelpHeaderUnusuals",
+          "changes": {
+            "value": {
+              "old": "Items in treasure have Unusual variants",
+              "new": "Items in treasure have Unusual variants."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_RecyclingTitle",
+          "changes": {
+            "value": {
+              "old": "Recycle Reward",
+              "new": "Recycling"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_RecyclingSubtitle_TreasureOnly",
+          "changes": {
+            "value": {
+              "old": "Recycle sets to receive a bonus treasure.",
+              "new": "Recycle sets to receive a bonus treasure:"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_RecyclingSubtitle_KeyAndTwoTreasures",
+          "changes": {
+            "value": {
+              "old": "Recycle sets to receive a bonus key and two more treasures.",
+              "new": "Recycle sets to receive a bonus key and two more treasures:"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_OpenTreasureTooltip_RareTitle",
+          "changes": {
+            "value": {
+              "old": "With a chance to receive bonus items",
+              "new": "With a chance to receive bonus items."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_PreviewContents",
+          "changes": {
+            "value": {
+              "old": "Preview Contents",
+              "new": "Jump to item"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_AndArcana",
+          "changes": {
+            "value": {
+              "old": "+ Arcana",
+              "new": "+Arcana"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Treasure_AndPersona",
+          "changes": {
+            "value": {
+              "old": "+ Persona",
+              "new": "+Persona"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Ability_Movie_Label",
+          "changes": {
+            "value": {
+              "old": "Custom Ability Effect",
+              "new": "Custom Ability Effects"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Immortal_Movie_Label",
+          "changes": {
+            "value": {
+              "old": "Immortal Ability Effect",
+              "new": "Immortal Ability Effects"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

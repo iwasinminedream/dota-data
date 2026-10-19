@@ -102,6 +102,9 @@
         "name": "focus-offset"
       },
       {
+        "name": "focus-range-size"
+      },
+      {
         "name": "focus-x-offset"
       },
       {
@@ -3004,6 +3007,11 @@
     "attributes": []
   },
   {
+    "name": "DOTADBPopupPersonalOffer",
+    "base": "Popup",
+    "attributes": []
+  },
+  {
     "name": "DOTADBPopupQuarteroItemClaimPopup",
     "base": "Popup",
     "attributes": []
@@ -4862,6 +4870,11 @@
   },
   {
     "name": "DOTAHUDTeleportTime",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTAHUDTidehunterArcana",
     "base": "Panel",
     "attributes": []
   },
@@ -8570,6 +8583,11 @@
     "attributes": []
   },
   {
+    "name": "DOTATreasureContentsList",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTATreasureDetailsPage",
     "base": "DOTAStorePage",
     "attributes": []
@@ -8796,6 +8814,10 @@
         "name": "suppress-intro-effects"
       },
       {
+        "name": "unitindex",
+        "description": "Specify which unit index to use, like if we want an alternate Courier form."
+      },
+      {
         "name": "yawaxis"
       },
       {
@@ -8990,6 +9012,11 @@
         "name": "name"
       }
     ]
+  },
+  {
+    "name": "DOTAVisualNovelDebugPage",
+    "base": "Panel",
+    "attributes": []
   },
   {
     "name": "DOTAVisualNovelPopup",
@@ -9604,6 +9631,21 @@
     "name": "FrontpageWeekendTourneyButton",
     "base": "Panel",
     "attributes": []
+  },
+  {
+    "name": "GameMonitorPanel",
+    "base": "RenderPanel",
+    "attributes": [
+      {
+        "name": "renderdecals"
+      },
+      {
+        "name": "rendershadows"
+      },
+      {
+        "name": "rendervolumetricfog"
+      }
+    ]
   },
   {
     "name": "GameScenePanel",

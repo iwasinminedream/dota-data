@@ -1825,7 +1825,7 @@
     "description": ""
   },
   "chat_wheel_phrase_0": {
-    "default": "4",
+    "default": "8",
     "flags": [
       "cl",
       "a",
@@ -1834,7 +1834,7 @@
     "description": ""
   },
   "chat_wheel_phrase_1": {
-    "default": "4",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -1843,7 +1843,7 @@
     "description": ""
   },
   "chat_wheel_phrase_10": {
-    "default": "4",
+    "default": "79",
     "flags": [
       "cl",
       "a",
@@ -1852,7 +1852,7 @@
     "description": ""
   },
   "chat_wheel_phrase_11": {
-    "default": "55",
+    "default": "66",
     "flags": [
       "cl",
       "a",
@@ -1861,7 +1861,7 @@
     "description": ""
   },
   "chat_wheel_phrase_12": {
-    "default": "231",
+    "default": "80",
     "flags": [
       "cl",
       "a",
@@ -1879,7 +1879,7 @@
     "description": ""
   },
   "chat_wheel_phrase_14": {
-    "default": "76",
+    "default": "62",
     "flags": [
       "cl",
       "a",
@@ -1897,7 +1897,7 @@
     "description": ""
   },
   "chat_wheel_phrase_2": {
-    "default": "4",
+    "default": "2",
     "flags": [
       "cl",
       "a",
@@ -1906,7 +1906,7 @@
     "description": ""
   },
   "chat_wheel_phrase_3": {
-    "default": "4",
+    "default": "3",
     "flags": [
       "cl",
       "a",
@@ -1924,7 +1924,7 @@
     "description": ""
   },
   "chat_wheel_phrase_5": {
-    "default": "4",
+    "default": "5",
     "flags": [
       "cl",
       "a",
@@ -1933,7 +1933,7 @@
     "description": ""
   },
   "chat_wheel_phrase_6": {
-    "default": "4",
+    "default": "6",
     "flags": [
       "cl",
       "a",
@@ -1942,7 +1942,7 @@
     "description": ""
   },
   "chat_wheel_phrase_7": {
-    "default": "4",
+    "default": "7",
     "flags": [
       "cl",
       "a",
@@ -1951,7 +1951,7 @@
     "description": ""
   },
   "chat_wheel_phrase_8": {
-    "default": "4",
+    "default": "65",
     "flags": [
       "cl",
       "a",
@@ -1960,7 +1960,7 @@
     "description": ""
   },
   "chat_wheel_phrase_9": {
-    "default": "4",
+    "default": "69",
     "flags": [
       "cl",
       "a",
@@ -2089,6 +2089,14 @@
     ],
     "description": "Check game code serializers"
   },
+  "cl_cleardraw": {
+    "default": "cmd",
+    "flags": [
+      "cl",
+      "cheat"
+    ],
+    "description": "Clears all lines drawn by drawline and drawcross"
+  },
   "cl_clock_correction": {
     "default": "true",
     "flags": [
@@ -2116,7 +2124,7 @@
     "description": "Number of seconds over which to spread retry attempts for P2P."
   },
   "cl_cq_min_queue": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "user"
     ],
@@ -2231,6 +2239,20 @@
       "cl"
     ],
     "description": "Shoots a client-side decal"
+  },
+  "cl_decryptdata_key": {
+    "default": "0",
+    "flags": [
+      "release"
+    ],
+    "description": "Key to decrypt encrypted GOTV messages"
+  },
+  "cl_decryptdata_key_pub": {
+    "default": "0",
+    "flags": [
+      "release"
+    ],
+    "description": "Key to decrypt public encrypted GOTV messages"
   },
   "cl_demo_steadycam_blendframes": {
     "default": "5",
@@ -2431,7 +2453,7 @@
     "description": ""
   },
   "cl_dota_preview_hero_vision": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -2455,7 +2477,7 @@
     "description": ""
   },
   "cl_dota_recent_games_include_event_games": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -3139,6 +3161,14 @@
     ],
     "description": "Force vcds to appear missing, and fall back to soundevents of the same name."
   },
+  "cl_frame_perf_sample_buffer_max": {
+    "default": "100",
+    "flags": [
+      "rep",
+      "release"
+    ],
+    "description": "If >0, enable random sampling of frames, and limit random sample buffer size to N.  Set to 0 to disable frame perf sampling entirely."
+  },
   "cl_frametime_summary_report_detailed": {
     "default": "true",
     "flags": [
@@ -3412,7 +3442,7 @@
     "description": "Enable to show interpolation profile timing"
   },
   "cl_jitter_bad_threshold_up": {
-    "default": "76.6667",
+    "default": "10",
     "flags": [
       "user"
     ],
@@ -4612,6 +4642,14 @@
     ],
     "description": "Clear console output from all views."
   },
+  "cleardraw": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Clears all lines drawn by drawline and drawcross"
+  },
   "cli_ent_attachments": {
     "default": "cmd",
     "flags": [
@@ -4671,7 +4709,8 @@
     "flags": [
       "cl",
       "a",
-      "user"
+      "user",
+      "per_user"
     ],
     "description": "Enable close captioning."
   },
@@ -4784,7 +4823,7 @@
     "description": ""
   },
   "con_enable": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "a",
       "per_user"
@@ -4957,6 +4996,14 @@
     ],
     "description": "Cause the engine to crash in a brand new non-main thread (Debug!!)"
   },
+  "create_explosion_damage": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage)."
+  },
   "create_radius_damage": {
     "default": "cmd",
     "flags": [
@@ -5115,6 +5162,14 @@
     ],
     "description": "default pushback"
   },
+  "csm_sst_shadow_focus_region_caster_headroom": {
+    "default": "256",
+    "flags": [
+      "cl",
+      "cheat"
+    ],
+    "description": ""
+  },
   "csm_sst_shadow_focus_region_maxz": {
     "default": "2000",
     "flags": [
@@ -5133,6 +5188,13 @@
     "default": "1500",
     "flags": [
       "cl",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "csm_sst_vertical_depth_shear_enable": {
+    "default": "true",
+    "flags": [
       "cheat"
     ],
     "description": ""
@@ -5672,7 +5734,7 @@
     "description": "<state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)"
   },
   "developer": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "release"
     ],
@@ -5906,7 +5968,7 @@
     "description": ""
   },
   "dota_ability_self_cast_timeout": {
-    "default": "0.252174",
+    "default": "0.6",
     "flags": [
       "cl",
       "a",
@@ -5931,7 +5993,7 @@
     "description": ""
   },
   "dota_activate_window_on_hero_picking_start": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -5939,7 +6001,7 @@
     "description": "If set, brings Dota to the foreground when hero picking starts"
   },
   "dota_activate_window_on_match_found": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -5947,7 +6009,7 @@
     "description": "If set, brings Dota to the foreground when match found"
   },
   "dota_activate_window_on_ready_check": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -5955,7 +6017,7 @@
     "description": "If set, brings Dota to the foreground on a ready check"
   },
   "dota_activate_window_on_unpause": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -5963,7 +6025,7 @@
     "description": "If set, brings Dota to the foreground when unpaused"
   },
   "dota_active_play_section_new": {
-    "default": "8",
+    "default": "11",
     "flags": [
       "cl",
       "a",
@@ -6135,7 +6197,7 @@
     "description": ""
   },
   "dota_alt_shows_tower_attack_range": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -6381,7 +6443,7 @@
     "description": ""
   },
   "dota_armory_last_selected_hero_id": {
-    "default": "13",
+    "default": "-1",
     "flags": [
       "cl",
       "a"
@@ -6556,7 +6618,7 @@
     "description": "Automatically create a proxy"
   },
   "dota_auto_mark_for_buy": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -6622,6 +6684,14 @@
     "default": "500",
     "flags": [
       "cl"
+    ],
+    "description": ""
+  },
+  "dota_bits": {
+    "default": "1",
+    "flags": [
+      "cl",
+      "a"
     ],
     "description": ""
   },
@@ -7000,7 +7070,7 @@
     "description": "Reloads all the bot scripts"
   },
   "dota_bot_script_index_mask": {
-    "default": "1",
+    "default": "15",
     "flags": [
       "cl",
       "a",
@@ -7069,7 +7139,7 @@
     "description": "Setup the frontpage takeover with some match data things."
   },
   "dota_bp_team_fandom_last_seen": {
-    "default": "1784703600",
+    "default": "1638320400",
     "flags": [
       "cl",
       "a"
@@ -7328,7 +7398,7 @@
     "description": ""
   },
   "dota_camera_accelerate": {
-    "default": "50",
+    "default": "49",
     "flags": [
       "cl",
       "a",
@@ -7548,7 +7618,7 @@
     "description": ""
   },
   "dota_camera_deatheffect": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8071,7 +8141,7 @@
     "description": ""
   },
   "dota_camera_speed": {
-    "default": "5972.41",
+    "default": "3000",
     "flags": [
       "cl",
       "a",
@@ -8248,7 +8318,7 @@
     "description": ""
   },
   "dota_chat_allow_global": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8272,7 +8342,7 @@
     "description": ""
   },
   "dota_chat_enable_whispers": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8354,7 +8424,7 @@
     "description": "Set fs_warning_level and fs_warning_mode to warn on synchronous file warnings."
   },
   "dota_client_first_session": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8389,7 +8459,7 @@
     "description": ""
   },
   "dota_clip_builder_bitrate": {
-    "default": "11",
+    "default": "30",
     "flags": [
       "cl",
       "a",
@@ -8616,7 +8686,7 @@
     "description": ""
   },
   "dota_compendium_2025_predictions_main_event_results_shown": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -8640,7 +8710,7 @@
     "description": ""
   },
   "dota_compendium_2026_predictions_rtti_results_shown": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -8648,7 +8718,7 @@
     "description": ""
   },
   "dota_competitive_game_modes": {
-    "default": "4194304",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8656,7 +8726,7 @@
     "description": "Bit masks of game modes to search for in ranked matchmaking"
   },
   "dota_conduct_scorecard_latest_ack_seq_num": {
-    "default": "6072",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -8725,7 +8795,7 @@
     "description": ""
   },
   "dota_courier_autodeliver": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -8842,7 +8912,7 @@
     "description": ""
   },
   "dota_crownfall_artillery_alert_state": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8859,7 +8929,7 @@
     "description": "Score data for Castle Carnage"
   },
   "dota_crownfall_intro_state": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8867,7 +8937,7 @@
     "description": ""
   },
   "dota_crownfall_intro_state_act_2": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8875,7 +8945,7 @@
     "description": ""
   },
   "dota_crownfall_intro_state_act_3": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8883,7 +8953,7 @@
     "description": ""
   },
   "dota_crownfall_intro_state_act_4": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -8899,7 +8969,7 @@
     "description": ""
   },
   "dota_custom_game_difficulty_mask": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -9009,7 +9079,7 @@
     "description": ""
   },
   "dota_dark_carnival_visual_novel_enable_auto_advance": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -9018,7 +9088,7 @@
     "description": ""
   },
   "dota_dashboard_enable_mouse_history": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -9034,7 +9104,7 @@
     "description": ""
   },
   "dota_dashboard_launch_count": {
-    "default": "4470",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -9316,7 +9386,7 @@
     "description": ""
   },
   "dota_disable_external_application_hotkeys": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9583,7 +9653,7 @@
     "description": "If non-zero, the time the creep spawner uses for deciding what to spawn"
   },
   "dota_enable_direct_quickcast_bindings": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9608,7 +9678,7 @@
     "description": "Enables simple shop mode"
   },
   "dota_enable_range_finder": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -9878,7 +9948,7 @@
     "description": ""
   },
   "dota_fantasy_2025_tutorial_state": {
-    "default": "32",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -9886,7 +9956,7 @@
     "description": ""
   },
   "dota_fantasy_2026_tutorial_state": {
-    "default": "63",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -9902,7 +9972,7 @@
     "description": ""
   },
   "dota_fantasy_league_region": {
-    "default": "3",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -9943,7 +10013,7 @@
     "description": "How often the server updates the GC with player fantasy stats"
   },
   "dota_featured_game_mode_splash_time": {
-    "default": "1666970777",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10012,7 +10082,7 @@
     "description": "Set automatically by matchmaking to fill slots with bots"
   },
   "dota_force_default_death_stinger": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -10066,7 +10136,7 @@
     "description": ""
   },
   "dota_force_right_click_attack": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10200,7 +10270,7 @@
     "description": "If true expands open party sub nav, if false minimizes it."
   },
   "dota_friends_pending_expanded": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -10578,7 +10648,7 @@
     "description": ""
   },
   "dota_global_item_shuffle_enabled_slots": {
-    "default": "393224",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -10587,7 +10657,7 @@
     "description": ""
   },
   "dota_global_item_shuffle_enabled_slots_upconverted": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -10784,7 +10854,7 @@
     "description": ""
   },
   "dota_guild_ignore_nonfriend_invites": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -10991,7 +11061,7 @@
     "description": ""
   },
   "dota_help_tips_enabled": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -11078,7 +11148,7 @@
     "description": ""
   },
   "dota_hero_demo_spawn_creeps_enabled": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -11107,6 +11177,14 @@
       "cl"
     ],
     "description": ""
+  },
+  "dota_hero_grid_show_persona_portraits": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a"
+    ],
+    "description": "Show equipped persona portraits in the hero grid."
   },
   "dota_hero_indicators_hide_distance": {
     "default": "1000",
@@ -11206,7 +11284,7 @@
     "description": ""
   },
   "dota_hero_overhead_names": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11412,7 +11490,7 @@
     "description": "If set, wearables (default body parts) will be hidden. This is for the item icon editor."
   },
   "dota_highest_seen_item_id": {
-    "default": "36657987157",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11529,7 +11607,7 @@
     "description": "Combine base and bonus move speed numbers on the HUD"
   },
   "dota_hud_contextual_tips_disable": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11560,7 +11638,7 @@
     "description": "If set, shows debug names for all entities."
   },
   "dota_hud_disable_damage_numbers": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11578,7 +11656,7 @@
     "description": "Show the overhead dispel effect."
   },
   "dota_hud_extra_large_minimap": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -11587,7 +11665,7 @@
     "description": "Set minimap to extra large size"
   },
   "dota_hud_flip": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -11722,7 +11800,7 @@
     "description": "Stuns lower than this will add UnitMiniStunned class to the HUD"
   },
   "dota_hud_netgraph": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -11877,7 +11955,7 @@
     "description": "Show/Hide the tooltip box that appears when you hover another hero."
   },
   "dota_hud_show_minimal_shop": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12025,7 +12103,7 @@
     "description": "If set, guild invites and team invites will be automatically rejected"
   },
   "dota_ignore_nonfriend_invites": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12383,7 +12461,7 @@
     "description": ""
   },
   "dota_last_acknowledged_plus_status": {
-    "default": "2",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -12392,7 +12470,7 @@
     "description": ""
   },
   "dota_last_event_id": {
-    "default": "31",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -12408,7 +12486,7 @@
     "description": ""
   },
   "dota_last_primary_event_id": {
-    "default": "54",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12588,7 +12666,7 @@
     "description": ""
   },
   "dota_lobby_settings_advanced_visible": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -12668,7 +12746,7 @@
     "description": ""
   },
   "dota_match_game_modes": {
-    "default": "8388608",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12676,7 +12754,7 @@
     "description": "Bit masks of game modes to search for in unranked matchmaking"
   },
   "dota_match_languages": {
-    "default": "4",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12692,7 +12770,7 @@
     "description": ""
   },
   "dota_match_solo_fast_queue": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12708,7 +12786,7 @@
     "description": "Steam Group to use when searching for matchmaking"
   },
   "dota_matchgroups_automatic": {
-    "default": "8",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12716,7 +12794,7 @@
     "description": "Bit mask of match groups to search in for matchmaking if automatic detection is enabled"
   },
   "dota_matchgroups_new": {
-    "default": "8",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12731,7 +12809,7 @@
     "description": ""
   },
   "dota_matchgroups_version": {
-    "default": "107",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -12798,7 +12876,7 @@
     "description": "Games required on a hero for average KDA to be valid and calibrated"
   },
   "dota_minimap_always_draw_hero_icons": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -12905,7 +12983,7 @@
     "description": ""
   },
   "dota_minimap_hero_size": {
-    "default": "913.055",
+    "default": "600",
     "flags": [
       "cl",
       "a",
@@ -12941,7 +13019,7 @@
     "description": "No longer used, please use dota_minimap_background_option instead."
   },
   "dota_minimap_misclick_time": {
-    "default": "0",
+    "default": "0.2",
     "flags": [
       "cl",
       "a",
@@ -12984,7 +13062,7 @@
     "description": ""
   },
   "dota_minimap_position_option": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -13000,7 +13078,7 @@
     "description": ""
   },
   "dota_minimap_primary_option": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -13108,7 +13186,7 @@
     "description": "Creates a test modifier on unit: dota_modifier_test <entityindex> <modifiername> <duration>"
   },
   "dota_monster_hunter_hero_codex_intro_state": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -13307,7 +13385,7 @@
     "description": ""
   },
   "dota_muerta_release_dont_show_ingame_event_description": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -13592,7 +13670,7 @@
     "description": ""
   },
   "dota_new_player_seen_learn_tab": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -14390,7 +14468,7 @@
     "description": ""
   },
   "dota_player_auto_repeat_right_mouse": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -14541,7 +14619,7 @@
     "description": ""
   },
   "dota_player_units_auto_attack_mode": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -15083,7 +15161,7 @@
     "description": ""
   },
   "dota_profile_hero_stats_sort_priorities": {
-    "default": "-9 10 -6 -5 -3 4 1",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -15091,7 +15169,7 @@
     "description": ""
   },
   "dota_profile_teammate_stats_sort_priorities": {
-    "default": "-2 -3 1",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -15777,7 +15855,7 @@
     "description": "Redeem a legacy Dota item code."
   },
   "dota_redirect_allies_voice_to_private_coaching_group": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -15876,7 +15954,7 @@
     "description": ""
   },
   "dota_reset_camera_on_spawn": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -15907,7 +15985,7 @@
     "description": "Disallow chat between certain partner types"
   },
   "dota_reverse_alt_detail_tooltip": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a"
@@ -15949,7 +16027,7 @@
     "description": ""
   },
   "dota_rp_hide_party_unless_open": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16132,7 +16210,7 @@
     "description": ""
   },
   "dota_screen_shake": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -16234,7 +16312,7 @@
     "description": ""
   },
   "dota_selection_groups": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -16363,7 +16441,7 @@
     "description": ""
   },
   "dota_settings_quick_move": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16372,7 +16450,7 @@
     "description": ""
   },
   "dota_settings_quick_target_attack": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -16381,7 +16459,7 @@
     "description": ""
   },
   "dota_settings_reborn_dismissed_new_settings": {
-    "default": "17,16,",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -16443,7 +16521,7 @@
     "description": ""
   },
   "dota_settings_reborn_seen_new_settings": {
-    "default": "17,16,",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -16635,7 +16713,7 @@
     "description": "<camera_file>"
   },
   "dota_show_facet_help": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -16726,7 +16804,7 @@
     "description": ""
   },
   "dota_show_plus_assistant_violator": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a"
@@ -17355,7 +17433,7 @@
     "description": "International 2012: for testing, override the team ID # for the radiant."
   },
   "dota_spectator_use_broadcaster_stats_panel": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -17505,7 +17583,7 @@
     "description": "If enabled, server will spew connected player GC updates"
   },
   "dota_splash_ad_acknowledged_id": {
-    "default": "150",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -17918,7 +17996,7 @@
     "description": ""
   },
   "dota_summoned_units_auto_attack_mode_2": {
-    "default": "1",
+    "default": "2",
     "flags": [
       "cl",
       "a",
@@ -17941,7 +18019,7 @@
     "description": "If enabled, a team will surrender if all players on that team disconnect"
   },
   "dota_survivors_difficulty_setting": {
-    "default": "7",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -17967,7 +18045,7 @@
     "description": ""
   },
   "dota_survivors_hero_select_setting": {
-    "default": "2",
+    "default": "1",
     "flags": [
       "cl",
       "a",
@@ -18335,6 +18413,38 @@
     ],
     "description": ""
   },
+  "dota_tidehunter_arcana_max_fish_per_game": {
+    "default": "20",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "dota_tidehunter_arcana_max_ravages_per_game": {
+    "default": "25",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "dota_tidehunter_arcana_min_heroes": {
+    "default": "3",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "dota_tidehunter_arcana_points_per_hero": {
+    "default": "1",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
   "dota_time_of_day_rate": {
     "default": "0.00166667",
     "flags": [
@@ -18355,7 +18465,7 @@
     "description": ""
   },
   "dota_toasts_show_foundneutralitems": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -18591,7 +18701,7 @@
     "description": "Whether courier auto mode is on in Turbo."
   },
   "dota_turbo_matches_played": {
-    "default": "231",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -19667,7 +19777,7 @@
     "description": "Prints local weekend tourney object(s), if any"
   },
   "dota_weekend_tourney_selected_division": {
-    "default": "3",
+    "default": "0",
     "flags": [
       "cl",
       "a"
@@ -20084,6 +20194,13 @@
     ],
     "description": ""
   },
+  "dumper_panels_begin": {
+    "default": "cmd",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "dumpparticlelist": {
     "default": "cmd",
     "flags": [
@@ -20254,7 +20371,7 @@
     "description": "turn on sse4.2 optimizations in the engine"
   },
   "english": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "user"
@@ -20446,7 +20563,16 @@
       "cheat",
       "vconsole_fuzzy"
     ],
-    "description": "Usage:    ent_fire <target> [action] [value] [delay]"
+    "description": "Usage:    ent_fire <target> [action] [value0] [value1] ... [valueN]"
+  },
+  "ent_fire_delay": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat",
+      "vconsole_fuzzy"
+    ],
+    "description": "Usage:    ent_fire_delay <target> [action] [value0] [value1] ... [valueN] [delay]"
   },
   "ent_fire_output": {
     "default": "cmd",
@@ -20455,7 +20581,16 @@
       "cheat",
       "vconsole_fuzzy"
     ],
-    "description": "Usage:    ent_fire_output <target> [output name] [value] [delay]"
+    "description": "Usage:    ent_fire_output <target> [output name] [value0] [value1] ... [valueN]"
+  },
+  "ent_fire_output_delay": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat",
+      "vconsole_fuzzy"
+    ],
+    "description": "Usage:    ent_fire_output_delay <target> [output name] [value0] [value1] ... [valueN] [delay]"
   },
   "ent_gib": {
     "default": "cmd",
@@ -21577,7 +21712,7 @@
     "description": "Toggle field path tracing to file"
   },
   "fps_max": {
-    "default": "60",
+    "default": "120",
     "flags": [
       "a",
       "release"
@@ -21825,6 +21960,14 @@
     "default": "true",
     "flags": [
       "sv"
+    ],
+    "description": ""
+  },
+  "func_mover_step_movement": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat"
     ],
     "description": ""
   },
@@ -22482,7 +22625,7 @@
     "description": "Find help about a convar/concommand."
   },
   "hero_grid_selected_config": {
-    "default": "0:#DOTA_Armory_Attributes",
+    "default": "0",
     "flags": [
       "cl",
       "a",
@@ -22491,7 +22634,7 @@
     "description": ""
   },
   "hero_grid_selected_rank_tier": {
-    "default": "6",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -22576,14 +22719,14 @@
     "description": "The HOST file to load."
   },
   "hostip": {
-    "default": "443930951",
+    "default": "99032158",
     "flags": [
       "release"
     ],
     "description": "Host game server ip"
   },
   "hostname": {
-    "default": "zavoz",
+    "default": "Dota 2",
     "flags": [
       "release"
     ],
@@ -22626,7 +22769,7 @@
     "description": "Reloads hud layout and animation scripts."
   },
   "hud_river_vial_ui_expanded": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl",
       "a",
@@ -24849,7 +24992,7 @@
     "description": "Multiply specified convar value."
   },
   "name": {
-    "default": "zavoz",
+    "default": "unnamed",
     "flags": [
       "a",
       "per_user"
@@ -25302,6 +25445,14 @@
       "cheat"
     ],
     "description": "Set to one to interactively edit the Navigation Mesh. Set to zero to leave edit mode."
+  },
+  "nav_edit_draw_navlink_ranges": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Add base metrics horizontal/vertical target range text to the navlink debug label when the movement defines one."
   },
   "nav_edit_draw_navlinks": {
     "default": "true",
@@ -26165,6 +26316,30 @@
     ],
     "description": "Show areas that are potentially visible from the current nav area"
   },
+  "nav_smooth_arrival_enable": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_arrival_spline": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_arrival_spring": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
   "nav_smooth_constrain_spline": {
     "default": "true",
     "flags": [
@@ -26191,6 +26366,14 @@
   },
   "nav_smooth_constrain_spring_relax": {
     "default": "0.01",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_draw_arrival_calc": {
+    "default": "false",
     "flags": [
       "sv",
       "cheat"
@@ -26239,6 +26422,38 @@
   },
   "nav_smooth_enable": {
     "default": "1",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_handle_scale": {
+    "default": "3",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_navlink_entry_enable": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_navlink_entry_spline": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_smooth_navlink_entry_spring": {
+    "default": "false",
     "flags": [
       "sv",
       "cheat"
@@ -27065,6 +27280,14 @@
     ],
     "description": ""
   },
+  "navspace_create_water_surface_connections": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
   "navspace_create_water_transition_connections": {
     "default": "true",
     "flags": [
@@ -27380,6 +27603,83 @@
     ],
     "description": "If SDR connectivity is possible with gameserver, then always use it, even if GC selected to use ordinary UDP for this match."
   },
+  "net_gather_child_fields_only": {
+    "default": "false",
+    "flags": [
+      "release"
+    ],
+    "description": "GatherSendProxyResults only walks struct and array fields, skipping scalar fields."
+  },
+  "net_limit_sv_listen_max_message_size_kb": {
+    "default": "3",
+    "flags": [
+      "release"
+    ],
+    "description": "Server: max SteamNetworkingSockets message size in kb accepted from a connection that does not yet have a netchan"
+  },
+  "net_limit_sv_listen_recvbuffer_kb": {
+    "default": "16",
+    "flags": [
+      "release"
+    ],
+    "description": "Server: SteamNetworkingSockets will not buffer more than N kb from a connection that does not yet have a netchan"
+  },
+  "net_limit_sv_listen_recvbuffer_msg": {
+    "default": "4",
+    "flags": [
+      "release"
+    ],
+    "description": "Server: SteamNetworkingSockets will not buffer more than N messages from a connection that does not yet have a netchan"
+  },
+  "net_limit_sv_message_process_time_ms_drop_burst": {
+    "default": "200",
+    "flags": [
+      "release"
+    ],
+    "description": "Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)"
+  },
+  "net_limit_sv_message_process_time_ms_drop_rate": {
+    "default": "100",
+    "flags": [
+      "release"
+    ],
+    "description": "Drop a client if processing their messages consumes more than N ms of CPU time *PER SECOND*, sustained (token bucket fill rate)"
+  },
+  "net_limit_sv_message_process_time_ms_warn_burst": {
+    "default": "50",
+    "flags": [
+      "release"
+    ],
+    "description": "Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)"
+  },
+  "net_limit_sv_message_process_time_ms_warn_rate": {
+    "default": "150",
+    "flags": [
+      "release"
+    ],
+    "description": "Warn if processing messages from a client consumes more than N ms of CPU time *PER SECOND*, sustained (token bucket fill rate)"
+  },
+  "net_limit_sv_recv_chan_buffer_messages": {
+    "default": "1000",
+    "flags": [
+      "release"
+    ],
+    "description": "Max number of source engine messages that can be queued in a netchan receive buffer for an ordinary connection from a client."
+  },
+  "net_limit_sv_recv_chan_msgs_per_frame": {
+    "default": "500",
+    "flags": [
+      "release"
+    ],
+    "description": "Max number of source engine messages an ordinary client connection may put in a single network frame.  Exceeding this disconnects the client."
+  },
+  "net_limit_sv_recv_max_frame_size_kb": {
+    "default": "64",
+    "flags": [
+      "release"
+    ],
+    "description": "Server will reject uncompressed Source engine frame larger than N kb.  Also sets limit on SteamNetworkingSockets message size"
+  },
   "net_limit_sv_recv_max_message_size_kb": {
     "default": "32",
     "flags": [
@@ -27392,21 +27692,21 @@
     "flags": [
       "release"
     ],
-    "description": "Server will reject packets with more than N segments"
+    "description": "Server: SteamNetworkingSockets will reject packets with more than N message segments"
   },
   "net_limit_sv_recvbuffer_kb": {
     "default": "128",
     "flags": [
       "release"
     ],
-    "description": "Server will not buffer more than N kb from connected clients"
+    "description": "Server: SteamNetworkingSockets will not buffer more than N kb from connected clients"
   },
   "net_limit_sv_recvbuffer_msg": {
     "default": "100",
     "flags": [
       "release"
     ],
-    "description": "Server will not buffer more than N messages from connected clients"
+    "description": "Server: SteamNetworkingSockets will not buffer more than N messages from connected clients"
   },
   "net_listallmessages": {
     "default": "cmd",
@@ -27434,6 +27734,13 @@
     "default": "5",
     "flags": [],
     "description": "Max polymorphic variants to spew when spewing a flattened serializer."
+  },
+  "net_message_size_enforce": {
+    "default": "1",
+    "flags": [
+      "release"
+    ],
+    "description": "Check declared engine message size limit, and either warn or reject.  Note that this is ignored in -tools mode.  0=ignore, 1=warn/log, 2=warn/assert, 3=reject"
   },
   "net_messageinfo": {
     "default": "cmd",
@@ -27823,7 +28130,7 @@
     "description": "Input toggle control"
   },
   "overwatch_help_shown_once": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -27844,7 +28151,7 @@
     "description": "Ping a peer."
   },
   "panorama_debugger_theme": {
-    "default": "Dark",
+    "default": "Light",
     "flags": [
       "cl",
       "a"
@@ -28016,7 +28323,7 @@
       "sv",
       "cheat"
     ],
-    "description": "Creates the named particle system where the player is looking.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
+    "description": "Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
   "particle_test_destroy": {
     "default": "cmd",
@@ -28051,7 +28358,7 @@
     "description": "Stops all particle systems on the selected entities.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
   "password": {
-    "default": "1139992684660696927",
+    "default": "0",
     "flags": [
       "a",
       "norecord",
@@ -28418,7 +28725,7 @@
     "description": ""
   },
   "ping_wheel_3": {
-    "default": "3",
+    "default": "-1",
     "flags": [
       "cl",
       "a",
@@ -28427,7 +28734,7 @@
     "description": ""
   },
   "ping_wheel_4": {
-    "default": "4",
+    "default": "8",
     "flags": [
       "cl",
       "a",
@@ -28436,7 +28743,7 @@
     "description": ""
   },
   "ping_wheel_5": {
-    "default": "5",
+    "default": "4",
     "flags": [
       "cl",
       "a",
@@ -28445,7 +28752,7 @@
     "description": ""
   },
   "ping_wheel_6": {
-    "default": "6",
+    "default": "5",
     "flags": [
       "cl",
       "a",
@@ -28454,7 +28761,7 @@
     "description": ""
   },
   "ping_wheel_7": {
-    "default": "1",
+    "default": "6",
     "flags": [
       "cl",
       "a",
@@ -28923,6 +29230,13 @@
     ],
     "description": ""
   },
+  "r_allow_low_gpu_memory_mode": {
+    "default": "true",
+    "flags": [
+      "release"
+    ],
+    "description": "Allow Low GPU Memory mode (i.e. when building maps)."
+  },
   "r_allow_onesweep_gpusort": {
     "default": "true",
     "flags": [],
@@ -28940,6 +29254,20 @@
     "default": "false",
     "flags": [],
     "description": "Always force all engine & tools to render"
+  },
+  "r_animatable_mesh_shaders": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
+  "r_animatable_mesh_shaders_visualize_bounds": {
+    "default": "false",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
   },
   "r_aoproxy_cull_dist": {
     "default": "12",
@@ -29014,6 +29342,54 @@
       "cl"
     ],
     "description": "Clears all decals"
+  },
+  "r_colorblindsim_fullscreen_cycletime": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "Cycle between deficiencies, holding at each for this many seconds"
+  },
+  "r_colorblindsim_fullscreen_weight_deuteranopia": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "Deuteranopia simulation weight. Affects ~6% of males & 0.39% of females."
+  },
+  "r_colorblindsim_fullscreen_weight_protanopia": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "Protanopia simulation weight. Affects ~2% of males & 0.04% of females."
+  },
+  "r_colorblindsim_fullscreen_weight_tritanopia": {
+    "default": "0",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "Tritanopia simulation weight. Affects ~0.002% of males & 0.001% of females."
+  },
+  "r_colorblindsim_mode": {
+    "default": "1",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "0 = off, 1 = fullscreen, 2 = mouse quadrants"
+  },
+  "r_colorblindsim_rendermethod": {
+    "default": "3",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "0 = disabled, 1 = render pipeline, 2 = render service, 3 = game ui service"
   },
   "r_cubemap_debug_colors": {
     "default": "0",
@@ -30460,7 +30836,9 @@
   },
   "r_render_to_cubemap_debug": {
     "default": "false",
-    "flags": [],
+    "flags": [
+      "cheat"
+    ],
     "description": ""
   },
   "r_render_world_node_bounds": {
@@ -30810,6 +31188,27 @@
     "default": "cmd",
     "flags": [],
     "description": "Slams viewport size to a specified value."
+  },
+  "r_vma_defrag_threshold_mb": {
+    "default": "256",
+    "flags": [
+      "release"
+    ],
+    "description": ""
+  },
+  "r_vulkan_accurate_renderarea": {
+    "default": "true",
+    "flags": [
+      "release"
+    ],
+    "description": "Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes."
+  },
+  "r_vulkan_sw_cmd_lists": {
+    "default": "true",
+    "flags": [
+      "release"
+    ],
+    "description": "Enable Software Command lists for Vulkan"
   },
   "r_wait_on_present": {
     "default": "false",
@@ -31570,6 +31969,13 @@
     ],
     "description": "Display player message to team"
   },
+  "sc_aggregate_fragment_culling_boxes": {
+    "default": "true",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Test aggregate fragments against culling boxes individually instead of per aggregate."
+  },
   "sc_aggregate_gpu_culling": {
     "default": "true",
     "flags": [],
@@ -31638,6 +32044,13 @@
     "default": "0.0035",
     "flags": [],
     "description": "Screen-size where clutter will be gone"
+  },
+  "sc_cycleclassdebuglevel": {
+    "default": "cmd",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Increment the debug level associated with an object class. sc_CycleClassDebugLevel <classname> <optional: max level>"
   },
   "sc_disableThreading": {
     "default": "false",
@@ -31736,6 +32149,13 @@
     ],
     "description": ""
   },
+  "sc_fog_cull": {
+    "default": "true",
+    "flags": [
+      "cheat"
+    ],
+    "description": ""
+  },
   "sc_force_lod_level": {
     "default": "-1",
     "flags": [
@@ -31771,6 +32191,13 @@
     "default": "true",
     "flags": [],
     "description": "Toggles GPU culling of instanced meshes"
+  },
+  "sc_instanced_mesh_gpu_culling_boxes": {
+    "default": "true",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Test instanced mesh instances against info_visibility_box culling boxes."
   },
   "sc_instanced_mesh_gpu_density_culling": {
     "default": "true",
@@ -33016,14 +33443,14 @@
     "description": ""
   },
   "snd_gamevoicevolume": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "a"
     ],
     "description": "Game v.o. volume"
   },
   "snd_gamevolume": {
-    "default": "0.461538",
+    "default": "1",
     "flags": [
       "a"
     ],
@@ -33117,7 +33544,7 @@
     "description": ""
   },
   "snd_musicvolume": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "a"
     ],
@@ -33204,6 +33631,16 @@
       "sv",
       "cl",
       "rep"
+    ],
+    "description": ""
+  },
+  "snd_opvar_set_precipitation_debug": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cl",
+      "rep",
+      "cheat"
     ],
     "description": ""
   },
@@ -33336,6 +33773,13 @@
       "cheat"
     ],
     "description": ""
+  },
+  "snd_sos_capture_soundevent_overwrites": {
+    "default": "true",
+    "flags": [
+      "a"
+    ],
+    "description": "When enabled, soundevent definitions overwritten while a game is active (e.g. by an addon) are captured and restored when the game deactivates."
   },
   "snd_sos_cl_soundevent_pause_last": {
     "default": "cmd",
@@ -33937,7 +34381,7 @@
     "flags": [
       "cheat"
     ],
-    "description": "0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2"
+    "description": "0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios. 7: no baked value - occlusion is traced per probe pair the way the calc_occlusion_info operator does, then interpolated like any other mode."
   },
   "snd_steamaudio_baked_occlusion_pathing_deviation_slope": {
     "default": "0.1",
@@ -33959,6 +34403,13 @@
       "cheat"
     ],
     "description": "Adjust scaling for reflection energy when combining it to calculate occlusion value."
+  },
+  "snd_steamaudio_baked_occlusion_reflection_regularization": {
+    "default": "0",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Ambient noise energy to serve as a floor for reflection energy."
   },
   "snd_steamaudio_display_dimension_data_inside": {
     "default": "true",
@@ -34346,7 +34797,7 @@
     "description": ""
   },
   "sound_device_override": {
-    "default": "Source2SDLDefaultDevice",
+    "default": "0",
     "flags": [
       "a",
       "release"
@@ -34695,6 +35146,14 @@
       "release"
     ],
     "description": "The trailing time, in seconds, of replay past the event, including fade-out"
+  },
+  "spec_stopsound": {
+    "default": "cmd",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": "(Spectators only) Stop all sounds"
   },
   "spec_track": {
     "default": "0",
@@ -35370,6 +35829,13 @@
     "default": "1",
     "flags": [],
     "description": "Set packet filtering by IP mode"
+  },
+  "sv_frame_perf_sample_buffer_max": {
+    "default": "100",
+    "flags": [
+      "release"
+    ],
+    "description": "Same as cl_frame_perf_sample_buffer_max, but for dedicated servers only."
   },
   "sv_friction": {
     "default": "4",
@@ -36569,7 +37035,7 @@
     "description": "Debug test scripts."
   },
   "think_limit": {
-    "default": "10",
+    "default": "0",
     "flags": [
       "sv",
       "cl",
@@ -36784,7 +37250,7 @@
     "description": "test top bar status message. usage: top_bar_message ['message here'] [scary: 0/1]"
   },
   "treasure_escalating_rares_popup_seen": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "a",
@@ -37134,6 +37600,20 @@
     ],
     "description": "When enabled, changes in tv_enable convars cause immediate startup or shutdown of hltv server"
   },
+  "tv_encryptdata_key": {
+    "default": "0",
+    "flags": [
+      "release"
+    ],
+    "description": "When set to a valid key communication messages will be encrypted for GOTV"
+  },
+  "tv_encryptdata_key_pub": {
+    "default": "0",
+    "flags": [
+      "release"
+    ],
+    "description": "When set to a valid key public communication messages will be encrypted for GOTV"
+  },
   "tv_extended_logging": {
     "default": "false",
     "flags": [],
@@ -37374,6 +37854,14 @@
       "release"
     ],
     "description": "SourceTV password for relay proxies"
+  },
+  "tv_relaytextchat": {
+    "default": "1",
+    "flags": [
+      "sv",
+      "release"
+    ],
+    "description": "Relay text chat data to GOTV: 0=off, 1=say, 2=say+say_team"
   },
   "tv_relayvoice": {
     "default": "true",
@@ -37735,7 +38223,7 @@
     "description": "Draw all players' voice icons"
   },
   "voice_always_sample_mic": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "a"
     ],
@@ -37784,7 +38272,7 @@
     "description": ""
   },
   "voice_device_override": {
-    "default": "#OS_Default_Device",
+    "default": "0",
     "flags": [
       "a",
       "release"
@@ -37873,7 +38361,7 @@
     "description": ""
   },
   "voice_threshold": {
-    "default": "-59",
+    "default": "-60",
     "flags": [
       "cl",
       "a"
@@ -37897,7 +38385,7 @@
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
   "volume": {
-    "default": "0.53733",
+    "default": "1",
     "flags": [
       "a"
     ],
@@ -38061,6 +38549,13 @@
     "default": "cmd",
     "flags": [],
     "description": "Controls VTune's sampling."
+  },
+  "vulkan_link_time_optimize_libraries": {
+    "default": "true",
+    "flags": [
+      "release"
+    ],
+    "description": ""
   },
   "watch_server": {
     "default": "cmd",
