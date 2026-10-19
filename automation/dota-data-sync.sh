@@ -87,11 +87,11 @@ python3 automation/so-report.py snapshot || say "snapshot of the .so files faile
 # When the modifier function list changed, the dumper updates itself and asks for a second run.
 auto_dump() {
     local log=$STATE/auto-dump.log
-    timeout 2h npm run auto-dump 2>&1 | tee "$log"
+    timeout 3h npm run auto-dump 2>&1 | tee "$log"
     (( PIPESTATUS[0] == 0 )) || return 1
     if grep -q 'REPEAT THE DUMP' "$log"; then
         say "the dumper changed (modifier functions) — dumping again"
-        timeout 2h npm run auto-dump 2>&1 | tee "$log"
+        timeout 3h npm run auto-dump 2>&1 | tee "$log"
         (( PIPESTATUS[0] == 0 )) || return 1
     fi
 }

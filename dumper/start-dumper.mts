@@ -190,6 +190,7 @@ let runningLinuxClient: ChildProcess | null = null;
 for (const signal of ['SIGINT', 'SIGTERM', 'SIGHUP'] as const) {
   process.on(signal, () => {
     if (runningLinuxClient) killLinuxClient(runningLinuxClient);
+    if (IS_LINUX) fs.rmSync(linuxTmpDir, { recursive: true, force: true });
     removePartials();
     process.exit(128 + (signal === 'SIGINT' ? 2 : signal === 'SIGTERM' ? 15 : 1));
   });
@@ -338,6 +339,8 @@ function spawnLinuxClient(): ChildProcess {
     'dota',
   ];
 
+  // A client orphaned by an earlier killed run would collide with this one.
+  spawnSync('pkill', ['-9', '-f', `linuxsteamrt64/dota2 .*${LINUX_MARKER}`]);
   fs.rmSync(linuxTmpDir, { recursive: true, force: true });
   fs.mkdirSync(linuxTmpDir, { recursive: true });
   resetLinuxPanelCfgs();
@@ -448,6 +451,7 @@ async function runAttempt(): Promise<boolean> {
     await streamEnd(dumpWriteStream);
     await streamEnd(modifierWriteStream);
     killDota();
+    if (IS_LINUX) fs.rmSync(linuxTmpDir, { recursive: true, force: true });
   }
 }
 
