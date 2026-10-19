@@ -132,7 +132,10 @@ def run_model(workspace, add_dirs):
         return None, str(e)
     if res.returncode != 0 or not res.stdout.strip():
         return None, (res.stderr or res.stdout).strip()[:500]
-    return res.stdout.strip(), None
+    text = res.stdout.strip()
+    # Drop any preamble before the first section ("Анализирую файлы...").
+    first = text.find('###')
+    return (text[first:] if first > 0 else text), None
 
 
 def previous_dump(version):
