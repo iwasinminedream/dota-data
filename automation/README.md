@@ -17,21 +17,31 @@ no GPU, no Steam client). When the installed Dota build changes it:
    no longer exist upstream and fail regardless);
 5. commits `<version>`; the commit body says which client dumped and how the control dump went;
 6. writes the update report `reports/<version>.md` (`update-report.py`, commit `report: <version>`)
-   and pushes to `origin/master`. The report has a summary by Claude Haiku 4.5 of the API changes
+   and pushes to `origin/master`. The report has a summary (Haiku draft, checked by Opus) of the API changes
    (`files/changelogs/<version>.json`, minus what the control dump marked as noise) and of the
    `.so` changes against the previous snapshot (sizes, code size, exports, strings from the
    read-only data and protobuf descriptors, Metamod plugin anchor strings that disappeared), plus
    tables computed without the model.
 
-## The model
+## The models
 
-Haiku runs through the `claude` CLI with the server's Claude Code login (`ANTHROPIC_API_KEY` in the
-env file would make the same CLI use the API instead), as a read-only agent in
-`/var/lib/dota-data/analysis/<version>/`: `--tools "Read Grep Glob Bash"`, `--permission-mode
-dontAsk`, the only allowed shell command `automation/so-query.py` (strings, exported symbols,
-code referencing a string, disassembly — of the two snapshots only), file access limited to the
-workspace, this repo, the snapshots and `/opt/<plugin>/src`, `--max-budget-usd 2`. Anything else
-(other commands, files elsewhere, writes) is refused without asking.
+Both run through the `claude` CLI with the server's Claude Code subscription login
+(`ANTHROPIC_API_KEY` in the env file would make the same CLI use the API instead), without a
+spending cap, in `/var/lib/dota-data/analysis/<version>/`:
+
+1. **Claude Haiku 4.5 — the bulk pass.** The whole changelog and the whole `.so` diff, uncapped, are
+   cut into chunks (by API category / library and string group, `REPORT_CHUNK_CHARS`, 60k
+   characters) and each chunk gets a detailed digest with the exact names (`REPORT_DRAFT_WORKERS`,
+   3 in parallel, no tools). `chunks/` and `digests/` stay in the workspace.
+2. **Claude Opus 5.5 — the check.** It reads every digest, verifies each claim that goes into the
+   report against the raw data, fixes and completes them and writes the report, ending with what it
+   corrected in Haiku's draft (`--effort high`). It is a read-only agent: `--tools "Read Grep Glob
+   Bash"`, `--permission-mode dontAsk`, the only allowed shell command `automation/so-query.py`
+   (strings, exported symbols, code referencing a string, disassembly — of the two snapshots only),
+   file access limited to the workspace, this repo, the snapshots and `/opt/<plugin>/src`. Anything
+   else (other commands, files elsewhere, writes) is refused without asking.
+
+Models and effort: `REPORT_DRAFT_MODEL`, `REPORT_FINAL_MODEL`, `REPORT_FINAL_EFFORT`.
 
 `dota-data-sync.sh --check` dumps the installed build once more and compares it with the committed
 dump without committing anything (report in `/var/lib/dota-data/checks/`): a quick way to see how

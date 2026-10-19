@@ -291,6 +291,30 @@ def model_input(old, new, files, anchor_hits):
     return '\n'.join(lines)
 
 
+def diff_blocks(old, new, files, anchor_hits):
+    """The whole diff, uncapped, as (title, lines) blocks: per library a header with sizes and
+    exports, then one block per direction and string group."""
+    blocks = []
+    for f in files:
+        if f['status'] != 'changed' or 'strings_added' not in f:
+            continue
+        head = [f"{f['rel']}: {fmt_size(f['old_size'])} -> {fmt_size(f['new_size'])}, "
+                f"код {f['text'][1] - f['text'][0]:+} байт, строки +{len(f['strings_added'])} "
+                f"-{len(f['strings_removed'])}, экспорт +{len(f['exports_added'])} -{len(f['exports_removed'])}"]
+        dem = demangle(sorted(f['exports_added'] | f['exports_removed']))
+        for label, items in (('экспорт добавлен', f['exports_added']), ('экспорт удалён', f['exports_removed'])):
+            head += [f'{label}: {dem.get(e, e)}' for e in sorted(items)]
+        blocks.append((f"{f['rel']}: размеры и экспорт", head))
+        for label, items in (('добавлено', f['strings_added']), ('удалено', f['strings_removed'])):
+            for key, bucket in classify(items).items():
+                if bucket:
+                    blocks.append((f"{f['rel']}: {label} — {BUCKET_TITLES[key]} ({len(bucket)})", bucket))
+    if anchor_hits:
+        blocks.append(('Строки, по которым наши Metamod-плагины ищут код, и которых больше нет',
+                       [f'"{s}" (плагины: {", ".join(p)}; было в {lib})' for s, p, lib in anchor_hits]))
+    return blocks
+
+
 SYSTEM_PROMPT = """Ты анализируешь обновление Dota 2 по диффу бинарников Linux (.so): какие строки из \
 секций данных и какие экспортируемые символы появились или исчезли в каждой библиотеке. По строкам видно \
 новые и удалённые консольные переменные, модификаторы, способности, предметы, сообщения, классы C++, \
