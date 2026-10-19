@@ -105,6 +105,11 @@ def chunk(blocks):
     return chunks
 
 
+def current_snapshot(version):
+    snaps = [s for s in so_report.list_snapshots() if s.split('-')[0] == str(version)]
+    return snaps[-1] if snaps else None
+
+
 def snapshot_pair(version):
     snaps = so_report.list_snapshots()
     new = [s for s in snaps if s.split('-')[0] == str(version)]
@@ -152,7 +157,9 @@ DRAFT_PROMPT = """Ты делаешь первый, черновой прохо�
 или изменилось (со старым и новым значением, если оно есть), и короткую трактовку, только если она \
 прямо следует из данных. Догадки помечай словом «возможно». Однотипную массу (например, сотни строк \
 локализации или похожих строк) своди в группу с подсчётом и примерами. Шум дампера — значения, \
-перечисленные во вводных как нестабильные, — изменениями не считай. Без вступления и заключения."""
+перечисленные во вводных как нестабильные, — изменениями не считай. Отдельным списком в конце выпиши \
+все новые свойства, события и методы (модификаторов, Lua API, Panorama) с точными именами и сигнатурами: \
+их потом разберут по коду игры. Без вступления и заключения."""
 
 FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об обновлении Dota 2 для разработчиков кастомных \
 игр. Пиши по-русски, Markdown.
@@ -166,21 +173,37 @@ FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об 
 dump-noise.md (если есть) — шум дампера: чем различаются два дампа одной сборки, это не изменения игры;
 - previous-dump.txt — сырой дамп прошлой версии; в репозитории dota-data — files/*.json (текущее API) \
 и dumper/dump (текущий сырой дамп);
+- в репозитории dota-data также files/localization/*.json (тексты игры, в том числе подсказки способностей и \
+предметов), files/abilities.json, files/units.json, files/heroes.json (KV), files/vscripts/*.json, \
+files/panorama/*.json (описания API);
 - команда `python3 /root/dota-data/automation/so-query.py` (без аргументов печатает справку) — строки, \
-символы, места использования строки в коде и дизассемблер обоих снимков .so. Других команд нет.
+символы, места использования строки в коде, строки вокруг этих мест и дизассемблер Linux-библиотек \
+установленной сборки («new»: libserver.so — серверная логика, libclient.so — клиент и интерфейс) и \
+прошлой сборки («old»), если её снимок есть. Других команд нет.
 
 Работа: прочитай все конспекты. Каждое утверждение, которое попадёт в отчёт, проверь по исходным \
 данным (Grep/Read по chunks, api-changes.txt, so-diff.txt, дампам; so-query для .so). Исправь \
 неверное, убери неподтверждённое, дополни важное, что Haiku пропустил (пробегись по крупным разделам \
 исходных частей).
 
+Новые свойства, события и методы (модификаторов, Lua API, Panorama, новые поведения и флаги способностей) \
+проверяй не только по дампу, но и по коду игры, и объясняй, что каждое делает. Источники: описание и \
+сигнатура в дампе; тексты локализации и KV способностей/юнитов/предметов, где оно встречается или \
+появилось вместе с ним; .so через so-query — есть ли имя в libserver.so/libclient.so, где оно \
+используется (xref), какие строки рядом (context) и что делает код (disasm): например, что значение \
+свойства сравнивается с дальностью атаки или что событие вызывается при посадке дерева. Учти результат \
+теста HasFunction (modifier_properties.json: false — движок эту Lua-функцию не вызывает). Для каждого \
+пиши, на чём основан вывод и насколько он надёжен; если код не нашёл — так и скажи, не придумывай.
+
 Отчёт (заголовки третьего уровня, ###):
 1. «Главное» — 3–8 пунктов: что по сути поменялось (контент, механики, системы).
-2. «Для разработчиков кастомок» — новое, удалённое и изменённое в Lua API, Panorama, событиях, \
+2. «Новые свойства и методы: что делают» — по каждому новому свойству, событию и методу: что делает, \
+как пользоваться в кастомке, доказательства (дамп / локализация / KV / код .so) и надёжность вывода.
+3. «Для разработчиков кастомок» — остальное новое, удалённое и изменённое в Lua API, Panorama, событиях, \
 модификаторах, консольных переменных; конкретные имена; что может сломать существующие аддоны.
-3. «Бинарники» — только если есть so-diff.txt: что видно по .so (движок, сеть, системы, что за \
+4. «Бинарники» — только если есть so-diff.txt: что видно по .so (движок, сеть, системы, что за \
 изменениями в API стоит в коде).
-4. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
+5. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
 Только подтверждённое данными; если смысл неясен — так и скажи. Серверные Metamod-плагины и их \
 проверку в отчёте не упоминай: это отдельная проверка на сервере. Без вступления и заключения. \
 Ответ — только сам отчёт."""
@@ -223,7 +246,7 @@ def run_final(workspace, add_dirs):
     for d in add_dirs:
         args += ['--add-dir', d]
     text, error = claude(args, 'Прочитай конспекты в digests/, проверь их по исходным данным и напиши отчёт.',
-                         workspace, 5400)
+                         workspace, 4 * 3600)
     if text:
         first = text.find('###')  # drop any preamble before the first section
         text = text[first:] if first > 0 else text
@@ -264,7 +287,14 @@ def main():
             f.write(prev)
 
     add_dirs = [REPO]
+    current = current_snapshot(version)
     pair = snapshot_pair(version)
+    if current:
+        # so-query on the installed build's libraries (and the build before, when there is a snapshot)
+        with open(os.path.join(workspace, 'so-query.json'), 'w') as f:
+            json.dump({'old': os.path.join(so_report.STORE, pair[0]) if pair else None,
+                       'new': os.path.join(so_report.STORE, current)}, f)
+        add_dirs.append(os.path.join(so_report.STORE, current))
     files = []
     if pair:
         old, new = pair
@@ -274,9 +304,7 @@ def main():
         with open(os.path.join(workspace, 'so-diff.txt'), 'w') as f:
             f.write(f'Снимки .so: {old} -> {new}\n\n' +
                     ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in so_blocks))
-        with open(os.path.join(workspace, 'so-query.json'), 'w') as f:
-            json.dump({'old': os.path.join(so_report.STORE, old), 'new': os.path.join(so_report.STORE, new)}, f)
-        add_dirs += [os.path.join(so_report.STORE, old), os.path.join(so_report.STORE, new)]
+        add_dirs.append(os.path.join(so_report.STORE, old))
 
     chunks = chunk(blocks)
     if args.no_ai:

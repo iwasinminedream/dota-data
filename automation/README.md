@@ -35,9 +35,13 @@ spending cap, in `/var/lib/dota-data/analysis/<version>/`:
    3 in parallel, no tools). `chunks/` and `digests/` stay in the workspace.
 2. **Claude Opus 5.5 — the check.** It reads every digest, verifies each claim that goes into the
    report against the raw data, fixes and completes them and writes the report, ending with what it
-   corrected in Haiku's draft (`--effort high`). It is a read-only agent: `--tools "Read Grep Glob
+   corrected in Haiku's draft (`--effort high`). Every new property, event and method is also looked
+   up in the game code (the installed build's `libserver.so` / `libclient.so`: where its name is
+   used, the strings around, the disassembly) and in localization / KV, and the report explains what
+   it does, with the evidence and how sure that is. It is a read-only agent: `--tools "Read Grep Glob
    Bash"`, `--permission-mode dontAsk`, the only allowed shell command `automation/so-query.py`
-   (strings, exported symbols, code referencing a string, disassembly — of the two snapshots only),
+   (strings, exported symbols, code referencing a string, the strings that code uses, disassembly —
+   of the installed build's snapshot and the one before only),
    file access limited to the workspace, this repo, the snapshots and `/opt/<plugin>/src`. Anything
    else (other commands, files elsewhere, writes) is refused without asking.
 
