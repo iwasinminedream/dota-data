@@ -319,17 +319,10 @@ def ask_haiku(text):
     return res.stdout.strip(), None
 
 
-def render(old, new, files, anchor_hits, summary, error):
-    oi, ni = steam_inf(os.path.join(STORE, old, 'steam.inf')), steam_inf(os.path.join(STORE, new, 'steam.inf'))
-    out = [f"# Dota 2 {oi.get('ClientVersion')} → {ni.get('ClientVersion')}: что изменилось в .so", '',
-           f"Сборки `{old}` ({oi.get('VersionDate')}) → `{new}` ({ni.get('VersionDate')}). "
-           f"Отчёт создан автоматически {datetime.date.today().isoformat()}; сводку написал Claude Haiku 4.5 "
-           'по диффу строк и экспортов, таблицы ниже посчитаны без модели.', '']
-    out.append('## Сводка')
-    out.append('')
-    out.append(summary if summary else f'_Сводку получить не удалось: {error}_')
-    out.append('')
-    out.append('## Якоря Metamod-плагинов')
+def render_binaries(files, anchor_hits, h='##'):
+    """The plugin anchor and file sections of a report (Markdown lines)."""
+    out = []
+    out.append(f'{h} Якоря Metamod-плагинов')
     out.append('')
     if anchor_hits:
         out.append('Исчезли строки, которые встречаются в исходниках плагинов (по ним ищется код):')
@@ -339,7 +332,7 @@ def render(old, new, files, anchor_hits, summary, error):
         out.append('Все строки из исходников плагинов, которые были в старых библиотеках, на месте.')
     out.append('')
     changed = [f for f in files if f['status'] != 'same']
-    out.append(f"## Файлы ({len(changed)} из {len(files)} изменились)")
+    out.append(f"{h} Файлы ({len(changed)} из {len(files)} изменились)")
     out.append('')
     out.append('| файл | размер | код (.text) | строки + / − | экспорт + / − |')
     out.append('|---|---|---|---|---|')
@@ -370,6 +363,20 @@ def render(old, new, files, anchor_hits, summary, error):
                 out.append('')
         out.append('</details>')
         out.append('')
+    return out
+
+
+def render(old, new, files, anchor_hits, summary, error):
+    oi, ni = steam_inf(os.path.join(STORE, old, 'steam.inf')), steam_inf(os.path.join(STORE, new, 'steam.inf'))
+    out = [f"# Dota 2 {oi.get('ClientVersion')} → {ni.get('ClientVersion')}: что изменилось в .so", '',
+           f"Сборки `{old}` ({oi.get('VersionDate')}) → `{new}` ({ni.get('VersionDate')}). "
+           f"Отчёт создан автоматически {datetime.date.today().isoformat()}; сводку написал Claude Haiku 4.5 "
+           'по диффу строк и экспортов, таблицы ниже посчитаны без модели.', '']
+    out.append('## Сводка')
+    out.append('')
+    out.append(summary if summary else f'_Сводку получить не удалось: {error}_')
+    out.append('')
+    out += render_binaries(files, anchor_hits)
     return '\n'.join(out).rstrip() + '\n'
 
 

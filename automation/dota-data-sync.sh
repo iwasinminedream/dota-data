@@ -10,8 +10,10 @@
 #      in dump-checks/<version>.md and in the commit message;
 #   4. npm run build and the files-match-dump test (the schema tests need network fixtures that are
 #      gone upstream); a rebuild that changes nothing in files/ is not committed;
-#   5. .so change report for the new build, summarised by Claude Haiku 4.5 -> so-changes/<version>.md;
-#   6. commit "<version>" and push. Commits that could not be pushed are pushed by the next run.
+#   5. commit "<version>";
+#   6. the update report reports/<version>.md: API changes from the dump and .so changes, summarised
+#      by Claude Haiku 4.5 with read-only tools (update-report.py); then push. Commits that could
+#      not be pushed are pushed by the next run.
 # Started by dota-data-sync.path when steam.inf changes (any Dota update: the panel button or a manual
 # steamcmd) and by dota-data-sync.timer as a fallback; see automation/README.md.
 #
@@ -195,7 +197,7 @@ process.exit(bad ? 1 : 0);'
 }
 
 restore() {
-    git checkout -q -- . && git clean -q -fd -- files dumper so-changes dump-checks
+    git checkout -q -- . && git clean -q -fd -- files dumper reports dump-checks
 }
 
 BUILD=$(grep -m1 -oP '"buildid"\s+"\K[0-9]+' "$APP_MANIFEST")
@@ -256,7 +258,10 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
             restore
         else
             message=$INSTALLED
-            [[ $DUMPED == "$INSTALLED" ]] && message="$INSTALLED (build $BUILD)"
+            if [[ $DUMPED == "$INSTALLED" ]]; then
+                message="$INSTALLED (build $BUILD)"
+                REPORT_ID=$INSTALLED-$BUILD
+            fi
             how="Linux client (tools-only convars and int64 types carried over from the previous dump)"
             [[ $DUMP_MODE == wine ]] && how="Windows client with Workshop Tools under Wine"
             git add -A
@@ -267,18 +272,20 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
     fi
 fi
 
-# .so report for the installed build (needs a snapshot of the build before it).
-REPORT=so-changes/$INSTALLED.md
-if [[ ! -e $REPORT ]] && (( $(python3 automation/so-report.py list | wc -l) >= 2 )); then
+# The update report: API (the dump's changelog) and .so changes, summarised by Claude Haiku 4.5
+# with read-only tools (automation/update-report.py). Retried by the next run if it fails.
+REPORT_ID=${REPORT_ID:-$INSTALLED}
+REPORT=reports/$REPORT_ID.md
+if [[ ! -e $REPORT && -e files/changelogs/$INSTALLED.json && $(inf ClientVersion dumper/dump) == "$INSTALLED" ]]; then
     rc=0
-    python3 automation/so-report.py latest --out-dir so-changes || rc=$?
+    python3 automation/update-report.py "$REPORT_ID" --out "$REPORT" || rc=$?
     if (( rc == 0 )) && [[ -e $REPORT ]]; then
         git add "$REPORT"
-        git commit -q -m "so-changes: $INSTALLED"
+        git commit -q -m "report: $REPORT_ID"
         say "committed $REPORT"
     else
         rm -f "$REPORT"
-        say ".so report not committed (so-report.py exit $rc), retried next run"
+        say "update report not committed (update-report.py exit $rc), retried next run"
     fi
 fi
 

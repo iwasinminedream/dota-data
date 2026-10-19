@@ -210,7 +210,7 @@ The `-- BASELINE START/END` block in that file holds the previous dump's state, 
 - **Carry-forward** (`carry-forward.mts`): a retail client registers only ~2600 of the ~5200 convars; the missing (development) entries of `cvarlist` are copied from the previous dump, which only a Windows `-tools` dump can refresh. 64-bit integer arguments come without a TS type on Linux (`SetDialogVariableTime`); those lines are taken from the previous dump when it has the same member with types.
 - The client renders in software at 1-3 fps: a run takes about 10 minutes and game time runs ~5x slower than real time; the timeouts are longer on Linux. Attempts write `dumper/dump.partial`; `dumper/dump` is replaced only by a complete dump.
 
-`automation/` keeps a Linux server's clone in step with the installed Dota build (Wine dump with the Linux client as fallback, a control dump of the same build to expose dumper noise → `dump-checks/<version>.md`, build, test, commit, push, plus a Claude Haiku report of what changed in the `.so` files → `so-changes/<version>.md`); see `automation/README.md`. `automation/dump-diff.py A B` compares two raw dumps section by section.
+`automation/` keeps a Linux server's clone in step with the installed Dota build (Wine dump with the Linux client as fallback, a control dump of the same build to expose dumper noise → `dump-checks/<version>.md`, build, test, commit, push, plus an update report → `reports/<version>.md`: API changes from the dump and `.so` changes, summarised by Claude Haiku as a read-only agent); see `automation/README.md`. `automation/dump-diff.py A B` compares two raw dumps section by section.
 
 ### Testing
 
