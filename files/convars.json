@@ -849,6 +849,11 @@
     "flags": [],
     "description": "Before triggering a resource reload, wait for input dependencies to stop being written"
   },
+  "assetsystem_recompile_dependents_as_needed": {
+    "default": "true",
+    "flags": [],
+    "description": "When an asset is being recompiled the dependents will be recompiled only as needed, otherwise the original recompile mode will be passed on."
+  },
   "assetsystem_reload_queue_requeue_pause": {
     "default": "1",
     "flags": [],
@@ -1517,13 +1522,6 @@
     ],
     "description": "Emits a closed caption"
   },
-  "cc_force_combine_chatter": {
-    "default": "true",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "cc_lang": {
     "default": "0",
     "flags": [
@@ -2124,7 +2122,7 @@
     "description": "Number of seconds over which to spread retry attempts for P2P."
   },
   "cl_cq_min_queue": {
-    "default": "0",
+    "default": "2",
     "flags": [
       "user"
     ],
@@ -2162,15 +2160,6 @@
       "release"
     ],
     "description": "Render debug overlays from server."
-  },
-  "cl_debug_precipitation_surface_graph": {
-    "default": "false",
-    "flags": [
-      "cl",
-      "rep",
-      "cheat"
-    ],
-    "description": "When true, use the surface graph to pass in positions for rainfall."
   },
   "cl_debugoverlay_cycle_domain": {
     "default": "cmd",
@@ -2253,34 +2242,6 @@
       "release"
     ],
     "description": "Key to decrypt public encrypted GOTV messages"
-  },
-  "cl_demo_steadycam_blendframes": {
-    "default": "5",
-    "flags": [
-      "cl"
-    ],
-    "description": "blend over this many frames"
-  },
-  "cl_demo_steadycam_deflection": {
-    "default": "5",
-    "flags": [
-      "cl"
-    ],
-    "description": "if camera orientation changes this much update orientation"
-  },
-  "cl_demo_steadycam_enable": {
-    "default": "0",
-    "flags": [
-      "cl"
-    ],
-    "description": "Stabilize camera orientation/position during demo playback.  1 == remove roll, 2 == steadycam"
-  },
-  "cl_demo_steadycam_radius": {
-    "default": "16",
-    "flags": [
-      "cl"
-    ],
-    "description": "if camera moves this much from last anchor update anchor"
   },
   "cl_demo_view_offset_left": {
     "default": "0",
@@ -3442,7 +3403,7 @@
     "description": "Enable to show interpolation profile timing"
   },
   "cl_jitter_bad_threshold_up": {
-    "default": "10",
+    "default": "76.6667",
     "flags": [
       "user"
     ],
@@ -3601,7 +3562,7 @@
     "description": ""
   },
   "cl_particle_fallback_base": {
-    "default": "0",
+    "default": "2",
     "flags": [],
     "description": "Base for falling back to cheaper effects under load."
   },
@@ -4006,13 +3967,6 @@
       "cl"
     ],
     "description": "Display all thinking scene entities and its data."
-  },
-  "cl_screenmessage_notifytime": {
-    "default": "8",
-    "flags": [
-      "cl"
-    ],
-    "description": "How long to display screen message text"
   },
   "cl_script_add_debug_filter": {
     "default": "cmd",
@@ -5184,14 +5138,6 @@
     ],
     "description": ""
   },
-  "csm_sst_shadow_focus_region_thin_compensation": {
-    "default": "1500",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
   "csm_sst_vertical_depth_shear_enable": {
     "default": "true",
     "flags": [
@@ -5734,7 +5680,7 @@
     "description": "<state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)"
   },
   "developer": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "release"
     ],
@@ -6215,14 +6161,14 @@
     "description": "Always display the hero finder."
   },
   "dota_ambient_cloth": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_ambient_creatures": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -8381,7 +8327,7 @@
     "description": ""
   },
   "dota_cheap_water": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "cl"
     ],
@@ -9222,13 +9168,6 @@
     ],
     "description": ""
   },
-  "dota_debug_npc_controller_entity_index": {
-    "default": "-1",
-    "flags": [
-      "sv"
-    ],
-    "description": "Entity index to report NPC Controller logging information for."
-  },
   "dota_debug_onstage_seats": {
     "default": "false",
     "flags": [
@@ -9274,6 +9213,20 @@
       "per_user"
     ],
     "description": "Avoid spoilers for league matches"
+  },
+  "dota_deferred_global_light_intensity_scale": {
+    "default": "1",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_deferred_global_light_saturation_scale": {
+    "default": "1",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
   },
   "dota_demo_hero": {
     "default": "cmd",
@@ -10938,6 +10891,13 @@
     ],
     "description": ""
   },
+  "dota_health_bar_max_health_cap": {
+    "default": "true",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_health_bar_pips": {
     "default": "true",
     "flags": [
@@ -11339,6 +11299,13 @@
       "sv"
     ],
     "description": "Maximum amount of zombies that can be spawned."
+  },
+  "dota_hero_world_light_scale": {
+    "default": "1",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
   },
   "dota_heropicker_ad_select_time": {
     "default": "10",
@@ -12696,6 +12663,20 @@
     "flags": [
       "sv",
       "cheat"
+    ],
+    "description": ""
+  },
+  "dota_madness_color": {
+    "default": "255 255 0",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_madness_color_cb": {
+    "default": "255 255 0",
+    "flags": [
+      "cl"
     ],
     "description": ""
   },
@@ -14156,13 +14137,6 @@
       "per_user"
     ],
     "description": "Disables per unit keybindings during custom games"
-  },
-  "dota_periodic_resource_cache_duration_s": {
-    "default": "600",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "dota_pet_aatest_threat": {
     "default": "-1",
@@ -15876,15 +15850,6 @@
       "sv"
     ],
     "description": "Causes the radiant team to win"
-  },
-  "dota_reload_event_schema": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cl",
-      "linked"
-    ],
-    "description": ""
   },
   "dota_reload_podseats": {
     "default": "cmd",
@@ -18958,6 +18923,13 @@
     ],
     "description": ""
   },
+  "dota_ui_language_storage": {
+    "default": "8",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_ui_popup_collectors_cache_available_voted_items": {
     "default": "0",
     "flags": [
@@ -19406,6 +19378,34 @@
     ],
     "description": ""
   },
+  "dota_use_experimental_npc_controller_creeps_only": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "dota_use_experimental_npc_controller_heroes_only": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "dota_use_experimental_npc_controller_pet": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "dota_use_experimental_npc_controller_roshan_only": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "dota_use_heightmap": {
     "default": "true",
     "flags": [
@@ -19435,14 +19435,14 @@
     "description": ""
   },
   "dota_video_config.DeviceID": {
-    "default": "11269",
+    "default": "0",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.VendorID": {
-    "default": "4318",
+    "default": "65541",
     "flags": [
       "cl"
     ],
@@ -19450,13 +19450,6 @@
   },
   "dota_video_config.Version": {
     "default": "0",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.setting.aspectratiomode": {
-    "default": "1",
     "flags": [
       "cl"
     ],
@@ -19477,42 +19470,42 @@
     "description": ""
   },
   "dota_video_config.setting.defaultres": {
-    "default": "1920",
+    "default": "1280",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.defaultresheight": {
-    "default": "1080",
+    "default": "720",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.dota_ambient_cloth": {
-    "default": "true",
+    "default": "0",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.dota_ambient_creatures": {
-    "default": "true",
+    "default": "0",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.dota_cheap_water": {
-    "default": "false",
+    "default": "1",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.dota_portrait_animate": {
-    "default": "true",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -19526,14 +19519,7 @@
     "description": ""
   },
   "dota_video_config.setting.fullscreen_min_on_focus_loss": {
-    "default": "0",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.setting.gpu_level": {
-    "default": "3",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -19561,14 +19547,14 @@
     "description": ""
   },
   "dota_video_config.setting.mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.mat_vsync": {
-    "default": "0",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -19576,13 +19562,6 @@
   },
   "dota_video_config.setting.mem_level": {
     "default": "2",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.setting.monitor_index": {
-    "default": "0",
     "flags": [
       "cl"
     ],
@@ -19596,14 +19575,14 @@
     "description": ""
   },
   "dota_video_config.setting.recommendedheight": {
-    "default": "2160",
+    "default": "800",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "dota_video_config.setting.recommendedwidth": {
-    "default": "1900",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -19624,20 +19603,6 @@
     "description": ""
   },
   "dota_video_config.setting.shaderquality": {
-    "default": "1",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.setting.useadvanced": {
-    "default": "1",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_video_config.setting.version": {
     "default": "1",
     "flags": [
       "cl"
@@ -20275,7 +20240,7 @@
     "description": ""
   },
   "engine_cpu_info_extended": {
-    "default": "16 CPUs (8 cores), Frequency: 4.7 GHz,  Features: F/M/S 26/68/0 AuthenticAMD 'AMD Ryzen 7 9800X3D 8-Core Processor           ' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 AVX512+VPCLMULQDQ MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process)",
+    "default": "8 CPUs, Frequency: 2.8 GHz,  Features: F/M/S 25/1/1 AuthenticAMD 'AMD EPYC 7543 32-Core Processor                ' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process)",
     "flags": [],
     "description": "CPU the engine is running on."
   },
@@ -20324,7 +20289,7 @@
     "description": "When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior"
   },
   "engine_ostype": {
-    "default": "Windows 11",
+    "default": "Windows 10",
     "flags": [],
     "description": "OS type the engine is running on."
   },
@@ -20339,17 +20304,17 @@
     "description": ""
   },
   "engine_rendersystem_init": {
-    "default": "-dx11",
+    "default": "-vulkan",
     "flags": [],
     "description": "Rendersystem option requested (changing this does not change the rendersystem)."
   },
   "engine_rendersystem_shader_model": {
-    "default": "111",
+    "default": "110",
     "flags": [],
     "description": "Rendersystem shader model in use (changing this does not change the shader model)."
   },
   "engine_rendersystem_used": {
-    "default": "-dx11",
+    "default": "-vulkan (from CL)",
     "flags": [],
     "description": "Rendersystem option in use (changing this does not change the rendersystem)."
   },
@@ -20371,7 +20336,7 @@
     "description": "turn on sse4.2 optimizations in the engine"
   },
   "english": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl",
       "user"
@@ -21131,6 +21096,15 @@
     "default": "10",
     "flags": [
       "cl"
+    ],
+    "description": ""
+  },
+  "event_reload_schema": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cl",
+      "linked"
     ],
     "description": ""
   },
@@ -21921,6 +21895,13 @@
     "description": ""
   },
   "func_mover_debug_verbose": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "func_mover_disable_movement": {
     "default": "false",
     "flags": [
       "sv"
@@ -23987,26 +23968,6 @@
     "flags": [],
     "description": ""
   },
-  "lightquery_debug_direct_lighting": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cl",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "lightquery_debug_indirect_lighting": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cl",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
   "listRecentNPCSpeech": {
     "default": "cmd",
     "flags": [
@@ -24368,6 +24329,16 @@
     "flags": [],
     "description": "Print supported rendering modes."
   },
+  "mat_print_non_virtual_textures": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Print textures that are neither procedural nor virtual, i.e. the ones the mip streaming system manages, in alphabetical order. Takes an optional substring as an argument."
+  },
+  "mat_print_procedural_textures": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Print procedural textures ( render targets, UAVs, atlases and other textures created by code ) in ascending in memory size order. Takes an optional substring as an argument."
+  },
   "mat_print_shader_info": {
     "default": "cmd",
     "flags": [],
@@ -24417,6 +24388,11 @@
     "default": "cmd",
     "flags": [],
     "description": "Force shader quality setting (valid values are 0 or 1)"
+  },
+  "mat_shader_asserts": {
+    "default": "false",
+    "flags": [],
+    "description": "Enables DebugDraw_AssertMsg() in Vulkan shaders (S_DEBUG_ASSERTS_ENABLED)."
   },
   "mat_shading_complexity": {
     "default": "false",
@@ -24571,7 +24547,7 @@
     "description": ""
   },
   "mat_viewportscale": {
-    "default": "0.999999",
+    "default": "1",
     "flags": [
       "cl"
     ],
@@ -24655,6 +24631,11 @@
       "cheat"
     ],
     "description": ""
+  },
+  "mesh_trace_data_memory_report": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Logs information about memory consumption by TraceDataForDraw_t/ToolsTraceData"
   },
   "mic_listen_while_nonfocused": {
     "default": "false",
@@ -25198,22 +25179,6 @@
     ],
     "description": "Deletes the currently highlighted Area."
   },
-  "nav_drag_selection_volume_zmax_offset": {
-    "default": "32",
-    "flags": [
-      "sv",
-      "rep"
-    ],
-    "description": "The offset of the nav drag volume top from center"
-  },
-  "nav_drag_selection_volume_zmin_offset": {
-    "default": "32",
-    "flags": [
-      "sv",
-      "rep"
-    ],
-    "description": "The offset of the nav drag volume bottom from center"
-  },
   "nav_draw_area_color_by_game_attribute": {
     "default": "false",
     "flags": [
@@ -25358,47 +25323,7 @@
     ],
     "description": ""
   },
-  "nav_draw_flow_map": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_draw_indirect_connections": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
   "nav_draw_jump_links": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_draw_limit": {
-    "default": "300",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "The maximum number of areas to draw in edit mode"
-  },
-  "nav_draw_link_alignment": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_draw_links": {
     "default": "false",
     "flags": [
       "sv",
@@ -26197,38 +26122,6 @@
     ],
     "description": "Remove current area from the selected set."
   },
-  "nav_select_allow_blocked": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "When selecting an area under nav_edit, allow area marked as blocked."
-  },
-  "nav_select_area_id": {
-    "default": "-1",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Select nav area with matching ID."
-  },
-  "nav_select_block_id": {
-    "default": "-1",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Select nav space block with matching ID."
-  },
-  "nav_select_hull": {
-    "default": "0",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Restrict area selection to areas that can support a hull of the given category"
-  },
   "nav_select_radius": {
     "default": "cmd",
     "flags": [
@@ -26252,62 +26145,6 @@
       "cheat"
     ],
     "description": "Set the movable mesh dormant flag (0=active, 1=dormant)"
-  },
-  "nav_show_area_connections": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Show connections to selected area when true"
-  },
-  "nav_show_area_verts": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Show area vertex positions"
-  },
-  "nav_show_area_water_info": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_show_elem_info": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_show_elem_info_font": {
-    "default": "Consolas",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_show_elem_info_font_size": {
-    "default": "-1",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_show_elem_info_font_voffset": {
-    "default": "-11",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
   },
   "nav_show_potentially_visible": {
     "default": "0",
@@ -26548,38 +26385,6 @@
     ],
     "description": ""
   },
-  "nav_smooth_spring_timestep_factor_accel": {
-    "default": "100",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_smooth_spring_timestep_factor_speed": {
-    "default": "100",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_smooth_spring_timestep_max": {
-    "default": "0.5",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_smooth_spring_timestep_min": {
-    "default": "0.1",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
   "nav_smooth_spring_yaw_rotation_speed": {
     "default": "50",
     "flags": [
@@ -26795,14 +26600,6 @@
     ],
     "description": ""
   },
-  "nav_test_detour": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
   "nav_test_find_nearest": {
     "default": "false",
     "flags": [
@@ -26915,14 +26712,6 @@
     ],
     "description": "Find entities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while."
   },
-  "nav_test_level_hull_move": {
-    "default": "cmd",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
   "nav_test_multi_connection": {
     "default": "false",
     "flags": [
@@ -26962,86 +26751,6 @@
       "cheat"
     ],
     "description": ""
-  },
-  "nav_test_path": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Calculate and draw a path from player/camera position to the test position."
-  },
-  "nav_test_path_lock_goal": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Lock the pathfinding goal to the current intersection point."
-  },
-  "nav_test_path_lock_start": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Lock the pathfinding start to the current intersection point."
-  },
-  "nav_test_path_move": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_test_path_opt": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Enable path optimization for nav_edit_path paths."
-  },
-  "nav_test_path_opt_transitions": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "nav_test_path_return": {
-    "default": "false",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Calculate a return path from cursor position to the path calculated by nav_test_path."
-  },
-  "nav_test_path_space": {
-    "default": "0",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground"
-  },
-  "nav_test_path_space_fly": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Test flight paths"
-  },
-  "nav_test_path_space_swim": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "cheat"
-    ],
-    "description": "Test swim paths"
   },
   "nav_test_pos_name": {
     "default": "0",
@@ -27680,13 +27389,6 @@
     ],
     "description": "Server will reject uncompressed Source engine frame larger than N kb.  Also sets limit on SteamNetworkingSockets message size"
   },
-  "net_limit_sv_recv_max_message_size_kb": {
-    "default": "32",
-    "flags": [
-      "release"
-    ],
-    "description": "Server will reject message larger than N kb"
-  },
   "net_limit_sv_recv_segments_per_packet": {
     "default": "50",
     "flags": [
@@ -28231,6 +27933,15 @@
     ],
     "description": ""
   },
+  "particle_cluster_bounds_debug": {
+    "default": "0",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
   "particle_cluster_debug": {
     "default": "0",
     "flags": [
@@ -28378,12 +28089,26 @@
     ],
     "description": ""
   },
+  "path_mover_entity_spawner_debug": {
+    "default": "false",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "pause": {
     "default": "cmd",
     "flags": [
       "release"
     ],
     "description": "Toggle the server pause state."
+  },
+  "periodic_resource_cache_duration_s": {
+    "default": "600",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
   },
   "pet_preview_gravity": {
     "default": "0 0 -800",
@@ -28601,6 +28326,11 @@
       "rep"
     ],
     "description": ""
+  },
+  "phys_softbody_continuous_world_collision": {
+    "default": "false",
+    "flags": [],
+    "description": "Use approximate continuous collision"
   },
   "phys_stressbodyweights": {
     "default": "5",
@@ -29050,6 +28780,11 @@
     "flags": [],
     "description": ""
   },
+  "proped_focus_logging": {
+    "default": "false",
+    "flags": [],
+    "description": ""
+  },
   "proped_sync_timings": {
     "default": "false",
     "flags": [],
@@ -29413,7 +29148,7 @@
     "description": ""
   },
   "r_dashboard_render_quality": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -29454,7 +29189,7 @@
     ],
     "description": ""
   },
-  "r_decals_max_on_deformables": {
+  "r_decals_max_triangle_anchored": {
     "default": "512",
     "flags": [
       "sv",
@@ -29471,6 +29206,15 @@
       "rep"
     ],
     "description": ""
+  },
+  "r_decals_triangle_max_stretch": {
+    "default": "1.25",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": "Max stretch (and 1/x compression) ratio a triangle-anchored decal may show relative to its shape at placement. 1 = rigid follow, <= 0 = unlimited."
   },
   "r_deferred_additive_pass": {
     "default": "true",
@@ -29494,14 +29238,14 @@
     "description": "0=off, 1=on, 2=debug visualization"
   },
   "r_deferred_specular": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
     "description": ""
   },
   "r_deferred_specular_bloom": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -29624,7 +29368,7 @@
     "description": ""
   },
   "r_dota_allow_parallax_mapping": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -29653,7 +29397,7 @@
     "description": "1 = force setup of refrect / refact pipelines even when using cheap water"
   },
   "r_dota_bloom_compute_shader": {
-    "default": "1",
+    "default": "0",
     "flags": [
       "cl"
     ],
@@ -29734,6 +29478,13 @@
     ],
     "description": ""
   },
+  "r_dota_force_dynamic_worldspace_texcoords": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "r_dota_framebuffer_refraction": {
     "default": "true",
     "flags": [
@@ -29757,14 +29508,14 @@
     "description": "RCAS sharpness when using FSR + RCAS upsample."
   },
   "r_dota_fsr_upsample": {
-    "default": "2",
+    "default": "0",
     "flags": [
       "cl"
     ],
     "description": "0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample"
   },
   "r_dota_fxaa": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -29807,7 +29558,7 @@
     "description": "0 = Force disable, 1 = use video settings, 2 = force enable"
   },
   "r_dota_normal_maps": {
-    "default": "true",
+    "default": "false",
     "flags": [
       "cl"
     ],
@@ -29969,11 +29720,6 @@
     "flags": [
       "cheat"
     ],
-    "description": ""
-  },
-  "r_draw_overlays": {
-    "default": "true",
-    "flags": [],
     "description": ""
   },
   "r_draw_particle_children_with_parents": {
@@ -30372,7 +30118,7 @@
     "description": ""
   },
   "r_grass_quality": {
-    "default": "1",
+    "default": "0",
     "flags": [],
     "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
   },
@@ -30594,6 +30340,11 @@
     "flags": [],
     "description": "Upper limit on texture pool size."
   },
+  "r_mipgen_compute_shader": {
+    "default": "true",
+    "flags": [],
+    "description": "Use compute shader for mipgen."
+  },
   "r_mixed_shadows_fade_in_time": {
     "default": "0.5",
     "flags": [
@@ -30803,6 +30554,11 @@
     ],
     "description": ""
   },
+  "r_prefer_loop_unrolling": {
+    "default": "true",
+    "flags": [],
+    "description": "Prefer shader loop unrolling."
+  },
   "r_print_buffers": {
     "default": "cmd",
     "flags": [
@@ -30841,13 +30597,6 @@
     ],
     "description": ""
   },
-  "r_render_world_node_bounds": {
-    "default": "false",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Render world node bounds"
-  },
   "r_renderdoc_auto_shader_pdbs": {
     "default": "true",
     "flags": [],
@@ -30864,6 +30613,11 @@
     "default": "true",
     "flags": [],
     "description": ""
+  },
+  "r_renderdoc_show_overlay": {
+    "default": "true",
+    "flags": [],
+    "description": "Show RenderDoc overlay"
   },
   "r_renderdoc_validation_error_capture_limit": {
     "default": "5",
@@ -30966,7 +30720,7 @@
     "description": ""
   },
   "r_ssao": {
-    "default": "true",
+    "default": "false",
     "flags": [],
     "description": "Set to use screen-space ambient occlusion"
   },
@@ -31052,7 +30806,7 @@
     "description": "Reduce texture memory pool size by this many MB / s when over budget."
   },
   "r_texture_pool_size": {
-    "default": "14971",
+    "default": "31026",
     "flags": [],
     "description": "Total size of the texture pool in MB"
   },
@@ -31062,7 +30816,7 @@
     "description": "Maximum resolution for top mip level in streaming textures"
   },
   "r_texture_stream_mip_bias": {
-    "default": "0",
+    "default": "1",
     "flags": [],
     "description": "Biases the mip level the texture streaming system choses to stream for each texture."
   },
@@ -31112,7 +30866,7 @@
     "description": "After hitting throttling limits for streamout, allow it to continue up to this number of milliseconds."
   },
   "r_texturefilteringquality": {
-    "default": "3",
+    "default": "1",
     "flags": [],
     "description": "0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x"
   },
@@ -31202,6 +30956,11 @@
       "release"
     ],
     "description": "Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes."
+  },
+  "r_vulkan_print_pipeline_compile_times": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out information on pipeline compile times."
   },
   "r_vulkan_sw_cmd_lists": {
     "default": "true",
@@ -31803,6 +31562,16 @@
     ],
     "description": "When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered."
   },
+  "rtx_allow_blas_compact": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "rtx_allow_blas_create": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
   "rtx_dynamic_blas": {
     "default": "true",
     "flags": [],
@@ -31817,6 +31586,11 @@
     "default": "false",
     "flags": [],
     "description": "Forces all ray traced geometry to use default hit shaders instead of specialized ones."
+  },
+  "rtx_preview_dynamic_bounce": {
+    "default": "true",
+    "flags": [],
+    "description": "Show dynamic bounce lights and real-time emissive as baked bounce in the Hammer GPU lighting preview."
   },
   "rtx_texture_resolution": {
     "default": "512",
@@ -31855,7 +31629,7 @@
     "description": ""
   },
   "save_debug_snapshots": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "sv",
       "cl",
@@ -32234,6 +32008,11 @@
     "flags": [],
     "description": "Toggles fade support for instanced meshes"
   },
+  "sc_instanced_mesh_shadows_batch_across_materials": {
+    "default": "false",
+    "flags": [],
+    "description": "Toggles whether mesh shader instanced can batch on reflectivity"
+  },
   "sc_instanced_mesh_size_cull_bias": {
     "default": "1.5",
     "flags": [],
@@ -32276,6 +32055,11 @@
     "flags": [],
     "description": ""
   },
+  "sc_mesh_allow_batch_across_primitives": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
   "sc_mesh_backface_culling": {
     "default": "true",
     "flags": [],
@@ -32297,11 +32081,6 @@
     "description": ""
   },
   "sc_mesh_shadows_batch_across_materials": {
-    "default": "true",
-    "flags": [],
-    "description": ""
-  },
-  "sc_mesh_use_pmb": {
     "default": "true",
     "flags": [],
     "description": ""
@@ -32449,20 +32228,6 @@
       "cl"
     ],
     "description": "Create a savegame before VCD playback"
-  },
-  "screenmessage_notifytime": {
-    "default": "8",
-    "flags": [
-      "sv"
-    ],
-    "description": "How long to display screen message text"
-  },
-  "screenmessage_show": {
-    "default": "-1",
-    "flags": [
-      "cheat"
-    ],
-    "description": "Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present"
   },
   "screenshot": {
     "default": "cmd",
@@ -33606,6 +33371,42 @@
     ],
     "description": ""
   },
+  "snd_opvar_set_dome_catchup_distance": {
+    "default": "64",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
+  "snd_opvar_set_dome_catchup_rate": {
+    "default": "1",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
+  "snd_opvar_set_dome_churn_fraction": {
+    "default": "0.25",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
+  "snd_opvar_set_dome_cluster_steps_per_think": {
+    "default": "32",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": ""
+  },
   "snd_opvar_set_point_debug": {
     "default": "false",
     "flags": [
@@ -34376,6 +34177,21 @@
     ],
     "description": "Display baked data stats for the current mod."
   },
+  "snd_steamaudio_baked_dimensions_probelookup_usealternate": {
+    "default": "false",
+    "flags": [],
+    "description": "Use alternate probe lookup algorithm to query dimensions for listener position based on kd-tree of probe points."
+  },
+  "snd_steamaudio_baked_dimensions_viz_inout_threshold": {
+    "default": "-1",
+    "flags": [],
+    "description": "Hammer only. Set between 0 and 1 to color dimensions probes and the smooth surface with a hard cut instead of the continuous ramp: inside / outside below the value is red, at or above is blue. Negative disables."
+  },
+  "snd_steamaudio_baked_occlusion_air_absorption_coefficient": {
+    "default": "0",
+    "flags": [],
+    "description": "Air absorption coefficient sued for baked occlusion calculation."
+  },
   "snd_steamaudio_baked_occlusion_mode": {
     "default": "0",
     "flags": [
@@ -34397,6 +34213,11 @@
     ],
     "description": "Adjust scaling of pathing energy by exponentiall scaling with pathing delta."
   },
+  "snd_steamaudio_baked_occlusion_probelookup_usealternate": {
+    "default": "false",
+    "flags": [],
+    "description": "Use alternate probe lookup algorithm to query occlusion for source and listener position based on kd-tree of probe points."
+  },
   "snd_steamaudio_baked_occlusion_reflection_factor": {
     "default": "1",
     "flags": [
@@ -34410,6 +34231,66 @@
       "cheat"
     ],
     "description": "Ambient noise energy to serve as a floor for reflection energy."
+  },
+  "snd_steamaudio_baked_occlusion_spatialfilter_mode": {
+    "default": "0",
+    "flags": [],
+    "description": "0: No spatial filtering. 1: bidirectional spatial filter."
+  },
+  "snd_steamaudio_baked_occlusion_spatialfilter_radius_factor": {
+    "default": "2",
+    "flags": [],
+    "description": "Radius factor to multiply the distance between probes with to get the radius withing which probes are averaged."
+  },
+  "snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled": {
+    "default": "true",
+    "flags": [],
+    "description": "Enable baking outside field for probes baking custom dimensions data."
+  },
+  "snd_steamaudio_custombake_dimensions_size_and_inout_bake_enabled": {
+    "default": "true",
+    "flags": [],
+    "description": "Enable baking size and inout data for probes when baking custom dimensions data."
+  },
+  "snd_steamaudio_custombake_dimensions_smallsizefield_bake_enabled": {
+    "default": "true",
+    "flags": [],
+    "description": "Enable baking insize size field for probes when baking custom dimensions data."
+  },
+  "snd_steamaudio_custombake_occlusion_bidirectional": {
+    "default": "false",
+    "flags": [],
+    "description": "Run simulation from both source and listner and average the results. Potential way to reduce noise."
+  },
+  "snd_steamaudio_custombake_occlusion_numsimulations": {
+    "default": "1",
+    "flags": [],
+    "description": "Number of reflection simulations to run when baking occlusion. Potential way to reduce noise."
+  },
+  "snd_steamaudio_customdata_dimensions_inout_mode": {
+    "default": "0",
+    "flags": [],
+    "description": "Inside / outside estimator used when baking dimensions. 0 - direct sky fraction, 1 - multi-bounce escape. Any other value bakes mode 0."
+  },
+  "snd_steamaudio_debug_cover_navmesh_probe_size_scale": {
+    "default": "1",
+    "flags": [],
+    "description": "Debug option to generate clustered probes of a scaled size for debug visualization."
+  },
+  "snd_steamaudio_diagnostic_baked_occlusion_single_probe": {
+    "default": "-1",
+    "flags": [],
+    "description": "Bake occlusion for a single source probe with the given probe id."
+  },
+  "snd_steamaudio_dimensions_grid_height_max": {
+    "default": "100",
+    "flags": [],
+    "description": "The maximum height (from the ground) we allow probes to be added above the initial layer. (meters)"
+  },
+  "snd_steamaudio_dimensions_max_ray_length": {
+    "default": "0",
+    "flags": [],
+    "description": "0 is disabled, but otherwise sets a limit the maximum ray size in the dimension size calculation. Used to model the enclosure algorithm. Game units"
   },
   "snd_steamaudio_display_dimension_data_inside": {
     "default": "true",
@@ -34439,6 +34320,11 @@
       "rep"
     ],
     "description": ""
+  },
+  "snd_steamaudio_enabe_append_probes_to_cover_navmesh": {
+    "default": "true",
+    "flags": [],
+    "description": "Flag to choose whether to append probes to cover nav mesh."
   },
   "snd_steamaudio_enable_custom_hrtf": {
     "default": "false",
@@ -34637,6 +34523,21 @@
     ],
     "description": "Sets the number of threads used for realtime reflection by Steam Audio."
   },
+  "snd_steamaudio_occlusionvisualization_sampleheight": {
+    "default": "1.5",
+    "flags": [],
+    "description": "Height to place samples to query occlusion for visualization."
+  },
+  "snd_steamaudio_occlusionvisualization_sampleradius": {
+    "default": "4",
+    "flags": [],
+    "description": "Query radius to find probes to interpolate occlusion for visualization."
+  },
+  "snd_steamaudio_occlusionvisualization_weighting_option": {
+    "default": "0",
+    "flags": [],
+    "description": "How to blend the probes around a sample. 0 - smooth falloff, 1 - inverse distance, as the runtime does."
+  },
   "snd_steamaudio_pathing_caching_threshold": {
     "default": "5",
     "flags": [
@@ -34717,11 +34618,6 @@
     "default": "false",
     "flags": [],
     "description": "Enable real-time pathing validation against dynamic geometry."
-  },
-  "snd_steamaudio_use_soundblocking_shapes_only": {
-    "default": "false",
-    "flags": [],
-    "description": "If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries."
   },
   "snd_stereo_speaker_pan_exponent": {
     "default": "cmd",
@@ -34872,7 +34768,7 @@
     "description": "Prints current volume of radius sounds"
   },
   "soundsystem_device_used": {
-    "default": "Динамики (UGREEN USB MIC-CM769)",
+    "default": "0",
     "flags": [],
     "description": "Sound device in use (changing this does not change the soundsystem)."
   },
@@ -35294,11 +35190,6 @@
       "release"
     ],
     "description": "Print status in JSON format"
-  },
-  "steamaudio_customdata_dimensions_numrays": {
-    "default": "32768",
-    "flags": [],
-    "description": "Number of rays to trace for estimating inside outside status of a probe."
   },
   "steamlearn_data_submit_enable": {
     "default": "true",
@@ -36039,13 +35930,6 @@
     ],
     "description": ""
   },
-  "sv_matchperfstats_maxclientperfsamples": {
-    "default": "100",
-    "flags": [
-      "sv"
-    ],
-    "description": "Don't retain more than N perf samples for any given client"
-  },
   "sv_max_queries_sec": {
     "default": "3",
     "flags": [
@@ -36206,26 +36090,6 @@
       "rep"
     ],
     "description": "The capsule pogo stick frequency [hz]."
-  },
-  "sv_net_client_message_process_time_ms_drop_burst": {
-    "default": "200",
-    "flags": [],
-    "description": "Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)"
-  },
-  "sv_net_client_message_process_time_ms_drop_rate": {
-    "default": "20",
-    "flags": [],
-    "description": "Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate)"
-  },
-  "sv_net_client_message_process_time_ms_warn_burst": {
-    "default": "50",
-    "flags": [],
-    "description": "Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)"
-  },
-  "sv_net_client_message_process_time_ms_warn_rate": {
-    "default": "5",
-    "flags": [],
-    "description": "Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate)"
   },
   "sv_networkvar_perfieldtracking": {
     "default": "true",
@@ -36483,11 +36347,6 @@
     "default": "30",
     "flags": [],
     "description": "Number of seconds to track failed rcon authentications"
-  },
-  "sv_recvbuf_messages": {
-    "default": "1024",
-    "flags": [],
-    "description": "Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client."
   },
   "sv_regeneration_force_on": {
     "default": "false",
@@ -37035,7 +36894,7 @@
     "description": "Debug test scripts."
   },
   "think_limit": {
-    "default": "0",
+    "default": "10",
     "flags": [
       "sv",
       "cl",
@@ -37543,11 +37402,6 @@
     ],
     "description": "Enable delta entity bit stream cache"
   },
-  "tv_demo_starttick": {
-    "default": "0",
-    "flags": [],
-    "description": ""
-  },
   "tv_dispatchmode": {
     "default": "1",
     "flags": [
@@ -37888,14 +37742,6 @@
       "release"
     ],
     "description": "Bypass secure challenge on TV port"
-  },
-  "tv_show_allchat": {
-    "default": "true",
-    "flags": [
-      "sv",
-      "release"
-    ],
-    "description": ""
   },
   "tv_snapshotrate": {
     "default": "20",
@@ -38540,6 +38386,11 @@
     ],
     "description": ""
   },
+  "vt_page_atlas_size": {
+    "default": "6",
+    "flags": [],
+    "description": "Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). Changing it evicts every virtual texture tile."
+  },
   "vt_sim_streaming_delay_ms": {
     "default": "500",
     "flags": [],
@@ -38550,6 +38401,26 @@
     "flags": [],
     "description": "Controls VTune's sampling."
   },
+  "vulkan_batch_size": {
+    "default": "500",
+    "flags": [],
+    "description": ""
+  },
+  "vulkan_batch_submits": {
+    "default": "true",
+    "flags": [],
+    "description": ""
+  },
+  "vulkan_dedicated_allocation_threshold": {
+    "default": "512",
+    "flags": [],
+    "description": "Size (in KBs) above which textures should be allocated in dedicated memory (NV-only)."
+  },
+  "vulkan_framebuffermgr_print": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out stats for the Vulkan Framebuffer manager"
+  },
   "vulkan_link_time_optimize_libraries": {
     "default": "true",
     "flags": [
@@ -38557,17 +38428,52 @@
     ],
     "description": ""
   },
+  "vulkan_memgr_fragmentation_print": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out detailed memory fragmentation stats for the Vulkan memory manager"
+  },
+  "vulkan_memgr_print": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out stats for the Vulkan memory manager"
+  },
+  "vulkan_pipeline_compile_spew": {
+    "default": "false",
+    "flags": [],
+    "description": ""
+  },
+  "vulkan_pipeline_compile_throttle_ms": {
+    "default": "0",
+    "flags": [],
+    "description": ""
+  },
+  "vulkan_pipelinemgr_print": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out stats for the Vulkan Pipeline manager"
+  },
+  "vulkan_shader_table_print": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Prints out stats for the Vulkan shader table"
+  },
+  "vulkan_vma_defrag": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Force defragmenting memory with VMA"
+  },
+  "vulkan_vma_gpu_mem_dump": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Dump .json file for use by GpuMemDumpVis.py"
+  },
   "watch_server": {
     "default": "cmd",
     "flags": [
       "cl"
     ],
     "description": "Watch a server steam id"
-  },
-  "wind_system_debug_volumes": {
-    "default": "false",
-    "flags": [],
-    "description": ""
   },
   "wind_system_default_resolution_xy": {
     "default": "256",

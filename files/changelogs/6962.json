@@ -116,13 +116,13 @@
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_DEFEAT_STATUE",
-          "value": 1794
+          "value": 1795
         },
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_CHANNEL_STATUE",
-          "value": 1795
+          "value": 1796
         },
         {
           "type": "enum_member",
@@ -620,28 +620,6 @@
         },
         {
           "type": "method",
-          "name": "startTime",
-          "class": "Countdown",
-          "changes": {
-            "signature": {
-              "old": "startTime(_arg_1: number)",
-              "new": "startTime(_arg_1: unknown)"
-            }
-          }
-        },
-        {
-          "type": "method",
-          "name": "endTime",
-          "class": "Countdown",
-          "changes": {
-            "signature": {
-              "old": "endTime(_arg_1: number)",
-              "new": "endTime(_arg_1: unknown)"
-            }
-          }
-        },
-        {
-          "type": "method",
           "name": "WriteCompositionLayerPNG",
           "class": "DOTAAbilityImage",
           "changes": {
@@ -1071,6 +1049,10 @@
       "added": [
         {
           "type": "convar",
+          "name": "assetsystem_recompile_dependents_as_needed"
+        },
+        {
+          "type": "convar",
           "name": "cl_cleardraw"
         },
         {
@@ -1107,7 +1089,31 @@
         },
         {
           "type": "convar",
+          "name": "dota_deferred_global_light_intensity_scale"
+        },
+        {
+          "type": "convar",
+          "name": "dota_deferred_global_light_saturation_scale"
+        },
+        {
+          "type": "convar",
+          "name": "dota_health_bar_max_health_cap"
+        },
+        {
+          "type": "convar",
           "name": "dota_hero_grid_show_persona_portraits"
+        },
+        {
+          "type": "convar",
+          "name": "dota_hero_world_light_scale"
+        },
+        {
+          "type": "convar",
+          "name": "dota_madness_color"
+        },
+        {
+          "type": "convar",
+          "name": "dota_madness_color_cb"
         },
         {
           "type": "convar",
@@ -1127,6 +1133,26 @@
         },
         {
           "type": "convar",
+          "name": "dota_ui_language_storage"
+        },
+        {
+          "type": "convar",
+          "name": "dota_use_experimental_npc_controller_creeps_only"
+        },
+        {
+          "type": "convar",
+          "name": "dota_use_experimental_npc_controller_heroes_only"
+        },
+        {
+          "type": "convar",
+          "name": "dota_use_experimental_npc_controller_pet"
+        },
+        {
+          "type": "convar",
+          "name": "dota_use_experimental_npc_controller_roshan_only"
+        },
+        {
+          "type": "convar",
           "name": "dumper_panels_begin"
         },
         {
@@ -1139,7 +1165,31 @@
         },
         {
           "type": "convar",
+          "name": "event_reload_schema"
+        },
+        {
+          "type": "convar",
+          "name": "func_mover_disable_movement"
+        },
+        {
+          "type": "convar",
           "name": "func_mover_step_movement"
+        },
+        {
+          "type": "convar",
+          "name": "mat_print_non_virtual_textures"
+        },
+        {
+          "type": "convar",
+          "name": "mat_print_procedural_textures"
+        },
+        {
+          "type": "convar",
+          "name": "mat_shader_asserts"
+        },
+        {
+          "type": "convar",
+          "name": "mesh_trace_data_memory_report"
         },
         {
           "type": "convar",
@@ -1231,6 +1281,26 @@
         },
         {
           "type": "convar",
+          "name": "particle_cluster_bounds_debug"
+        },
+        {
+          "type": "convar",
+          "name": "path_mover_entity_spawner_debug"
+        },
+        {
+          "type": "convar",
+          "name": "periodic_resource_cache_duration_s"
+        },
+        {
+          "type": "convar",
+          "name": "phys_softbody_continuous_world_collision"
+        },
+        {
+          "type": "convar",
+          "name": "proped_focus_logging"
+        },
+        {
+          "type": "convar",
           "name": "r_allow_low_gpu_memory_mode"
         },
         {
@@ -1267,6 +1337,30 @@
         },
         {
           "type": "convar",
+          "name": "r_decals_max_triangle_anchored"
+        },
+        {
+          "type": "convar",
+          "name": "r_decals_triangle_max_stretch"
+        },
+        {
+          "type": "convar",
+          "name": "r_dota_force_dynamic_worldspace_texcoords"
+        },
+        {
+          "type": "convar",
+          "name": "r_mipgen_compute_shader"
+        },
+        {
+          "type": "convar",
+          "name": "r_prefer_loop_unrolling"
+        },
+        {
+          "type": "convar",
+          "name": "r_renderdoc_show_overlay"
+        },
+        {
+          "type": "convar",
           "name": "r_vma_defrag_threshold_mb"
         },
         {
@@ -1275,7 +1369,23 @@
         },
         {
           "type": "convar",
+          "name": "r_vulkan_print_pipeline_compile_times"
+        },
+        {
+          "type": "convar",
           "name": "r_vulkan_sw_cmd_lists"
+        },
+        {
+          "type": "convar",
+          "name": "rtx_allow_blas_compact"
+        },
+        {
+          "type": "convar",
+          "name": "rtx_allow_blas_create"
+        },
+        {
+          "type": "convar",
+          "name": "rtx_preview_dynamic_bounce"
         },
         {
           "type": "convar",
@@ -1295,6 +1405,30 @@
         },
         {
           "type": "convar",
+          "name": "sc_instanced_mesh_shadows_batch_across_materials"
+        },
+        {
+          "type": "convar",
+          "name": "sc_mesh_allow_batch_across_primitives"
+        },
+        {
+          "type": "convar",
+          "name": "snd_opvar_set_dome_catchup_distance"
+        },
+        {
+          "type": "convar",
+          "name": "snd_opvar_set_dome_catchup_rate"
+        },
+        {
+          "type": "convar",
+          "name": "snd_opvar_set_dome_churn_fraction"
+        },
+        {
+          "type": "convar",
+          "name": "snd_opvar_set_dome_cluster_steps_per_think"
+        },
+        {
+          "type": "convar",
           "name": "snd_opvar_set_precipitation_debug"
         },
         {
@@ -1303,7 +1437,87 @@
         },
         {
           "type": "convar",
+          "name": "snd_steamaudio_baked_dimensions_probelookup_usealternate"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_dimensions_viz_inout_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_occlusion_air_absorption_coefficient"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_occlusion_probelookup_usealternate"
+        },
+        {
+          "type": "convar",
           "name": "snd_steamaudio_baked_occlusion_reflection_regularization"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_occlusion_spatialfilter_mode"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_baked_occlusion_spatialfilter_radius_factor"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_custombake_dimensions_size_and_inout_bake_enabled"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_custombake_dimensions_smallsizefield_bake_enabled"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_custombake_occlusion_bidirectional"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_custombake_occlusion_numsimulations"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_customdata_dimensions_inout_mode"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_debug_cover_navmesh_probe_size_scale"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_diagnostic_baked_occlusion_single_probe"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_dimensions_grid_height_max"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_dimensions_max_ray_length"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_enabe_append_probes_to_cover_navmesh"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_occlusionvisualization_sampleheight"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_occlusionvisualization_sampleradius"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_occlusionvisualization_weighting_option"
         },
         {
           "type": "convar",
@@ -1327,10 +1541,343 @@
         },
         {
           "type": "convar",
+          "name": "vt_page_atlas_size"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_batch_size"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_batch_submits"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_dedicated_allocation_threshold"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_framebuffermgr_print"
+        },
+        {
+          "type": "convar",
           "name": "vulkan_link_time_optimize_libraries"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_memgr_fragmentation_print"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_memgr_print"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_pipeline_compile_spew"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_pipeline_compile_throttle_ms"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_pipelinemgr_print"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_shader_table_print"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_vma_defrag"
+        },
+        {
+          "type": "convar",
+          "name": "vulkan_vma_gpu_mem_dump"
         }
       ],
-      "removed": [],
+      "removed": [
+        {
+          "type": "convar",
+          "name": "cc_force_combine_chatter"
+        },
+        {
+          "type": "convar",
+          "name": "cl_debug_precipitation_surface_graph"
+        },
+        {
+          "type": "convar",
+          "name": "cl_demo_steadycam_blendframes"
+        },
+        {
+          "type": "convar",
+          "name": "cl_demo_steadycam_deflection"
+        },
+        {
+          "type": "convar",
+          "name": "cl_demo_steadycam_enable"
+        },
+        {
+          "type": "convar",
+          "name": "cl_demo_steadycam_radius"
+        },
+        {
+          "type": "convar",
+          "name": "cl_screenmessage_notifytime"
+        },
+        {
+          "type": "convar",
+          "name": "csm_sst_shadow_focus_region_thin_compensation"
+        },
+        {
+          "type": "convar",
+          "name": "dota_debug_npc_controller_entity_index"
+        },
+        {
+          "type": "convar",
+          "name": "dota_periodic_resource_cache_duration_s"
+        },
+        {
+          "type": "convar",
+          "name": "dota_reload_event_schema"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.aspectratiomode"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.gpu_level"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.monitor_index"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.useadvanced"
+        },
+        {
+          "type": "convar",
+          "name": "dota_video_config.setting.version"
+        },
+        {
+          "type": "convar",
+          "name": "lightquery_debug_direct_lighting"
+        },
+        {
+          "type": "convar",
+          "name": "lightquery_debug_indirect_lighting"
+        },
+        {
+          "type": "convar",
+          "name": "nav_drag_selection_volume_zmax_offset"
+        },
+        {
+          "type": "convar",
+          "name": "nav_drag_selection_volume_zmin_offset"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_flow_map"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_indirect_connections"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_limit"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_link_alignment"
+        },
+        {
+          "type": "convar",
+          "name": "nav_draw_links"
+        },
+        {
+          "type": "convar",
+          "name": "nav_select_allow_blocked"
+        },
+        {
+          "type": "convar",
+          "name": "nav_select_area_id"
+        },
+        {
+          "type": "convar",
+          "name": "nav_select_block_id"
+        },
+        {
+          "type": "convar",
+          "name": "nav_select_hull"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_area_connections"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_area_verts"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_area_water_info"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_elem_info"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_elem_info_font"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_elem_info_font_size"
+        },
+        {
+          "type": "convar",
+          "name": "nav_show_elem_info_font_voffset"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_spring_timestep_factor_accel"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_spring_timestep_factor_speed"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_spring_timestep_max"
+        },
+        {
+          "type": "convar",
+          "name": "nav_smooth_spring_timestep_min"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_detour"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_level_hull_move"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_lock_goal"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_lock_start"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_move"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_opt"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_opt_transitions"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_return"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_space"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_space_fly"
+        },
+        {
+          "type": "convar",
+          "name": "nav_test_path_space_swim"
+        },
+        {
+          "type": "convar",
+          "name": "net_limit_sv_recv_max_message_size_kb"
+        },
+        {
+          "type": "convar",
+          "name": "r_decals_max_on_deformables"
+        },
+        {
+          "type": "convar",
+          "name": "r_draw_overlays"
+        },
+        {
+          "type": "convar",
+          "name": "r_render_world_node_bounds"
+        },
+        {
+          "type": "convar",
+          "name": "sc_mesh_use_pmb"
+        },
+        {
+          "type": "convar",
+          "name": "screenmessage_notifytime"
+        },
+        {
+          "type": "convar",
+          "name": "screenmessage_show"
+        },
+        {
+          "type": "convar",
+          "name": "snd_steamaudio_use_soundblocking_shapes_only"
+        },
+        {
+          "type": "convar",
+          "name": "steamaudio_customdata_dimensions_numrays"
+        },
+        {
+          "type": "convar",
+          "name": "sv_matchperfstats_maxclientperfsamples"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_drop_burst"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_drop_rate"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_warn_burst"
+        },
+        {
+          "type": "convar",
+          "name": "sv_net_client_message_process_time_ms_warn_rate"
+        },
+        {
+          "type": "convar",
+          "name": "sv_recvbuf_messages"
+        },
+        {
+          "type": "convar",
+          "name": "tv_demo_starttick"
+        },
+        {
+          "type": "convar",
+          "name": "tv_show_allchat"
+        },
+        {
+          "type": "convar",
+          "name": "wind_system_debug_volumes"
+        }
+      ],
       "changed": []
     },
     "Engine Enums": {
@@ -1352,11 +1899,6 @@
         }
       ],
       "removed": [
-        {
-          "type": "enum_member",
-          "enum": "Team",
-          "name": "DOTA_TEAM_CUSTOM"
-        },
         {
           "type": "enum_member",
           "enum": "FieldType",

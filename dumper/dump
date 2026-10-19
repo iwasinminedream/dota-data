@@ -29756,7 +29756,7 @@ Initializing script VM...
 $> cl_script_reload
 Initializing script VM...
 ...done
-LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
+LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
 [{
     "args":[{
         "type":"float"
@@ -31704,15 +31704,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1796
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1802
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31948,7 +31948,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CHANNEL_STATUE",
-    "value":1795
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CHILLING_TOUCH",
@@ -31988,7 +31988,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1803
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32008,7 +32008,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DEFEAT_STATUE",
-    "value":1794
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DIE",
@@ -32024,7 +32024,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1797
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -32164,7 +32164,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1804
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32428,7 +32428,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1807
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32500,7 +32500,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1801
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32688,7 +32688,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1805
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -32752,7 +32752,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1808
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42431,7 +42431,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"battlemaiden_debut_truncated",
-    "value":1792
+    "value":1793
   },{
     "enum":"DOTACustomCameraEventFlags_t",
     "kind":"constant",
@@ -42500,19 +42500,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 17,375,232 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1798
+    "value":1804
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1799
+    "value":1805
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1800
+    "value":1806
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1806
+    "value":1807
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -46377,7 +46377,7 @@ $> dump_panorama_events
 | Yes
 | Show a tooltip describing what will happen when an ability levels. Current level information comes from the entity specified by the entityIndex.
 |-
-| <code>DOTAShowAbilityShopItemTooltip(string abilityName, string guideName, int32 entityIndex, 11AbilityID_t nParentId)</code>
+| <code>DOTAShowAbilityShopItemTooltip(string abilityName, string guideName, int32 entityIndex, class AbilityID_t nParentId)</code>
 | Yes
 | Show tooltip for an item in the entityIndex NPC's shop.
 |-
@@ -46389,15 +46389,15 @@ $> dump_panorama_events
 | Yes
 | Show an ability tooltip. Level information comes from the entity specified by the entityIndex.
 |-
-| <code>DOTAShowAbilityTooltipForFacet(string abilityName, 15CUtlStringToken facetName, bool showVideo)</code>
+| <code>DOTAShowAbilityTooltipForFacet(string abilityName, class CUtlStringToken facetName, bool showVideo)</code>
 | Yes
 | Show an ability tooltip for a specific facet.
 |-
-| <code>DOTAShowAbilityTooltipForGuide(string abilityName, string guideName, 8HeroID_t, bool)</code>
+| <code>DOTAShowAbilityTooltipForGuide(string abilityName, string guideName, class HeroID_t, bool)</code>
 | Yes
 | Show an ability tooltip annotated with a particular guide's info.
 |-
-| <code>DOTAShowAbilityTooltipForHero(string abilityName, 8HeroID_t heroid, 13HeroFacetID_t heroVariant, bool, bool)</code>
+| <code>DOTAShowAbilityTooltipForHero(string abilityName, class HeroID_t heroid, class HeroFacetID_t heroVariant, bool, bool)</code>
 | Yes
 | Show an ability tooltip for the specified hero.
 |-
@@ -46409,11 +46409,11 @@ $> dump_panorama_events
 | Yes
 | Show a buff tooltip for the specified entityIndex + buff serial.
 |-
-| <code>DOTAShowEconItemTooltip(23item_definition_index_t itemDef, 13style_index_t styleIndex, 8HeroID_t heroID)</code>
+| <code>DOTAShowEconItemTooltip(class item_definition_index_t itemDef, class style_index_t styleIndex, class HeroID_t heroID)</code>
 | Yes
 | Show the econ item tooltip for a given item, style, and hero. Use 0 for the default style, and 0 for the default hero.
 |-
-| <code>DOTAShowFacetTooltip(14HeroFacetKey_t facetKey)</code>
+| <code>DOTAShowFacetTooltip(class HeroFacetKey_t facetKey)</code>
 | Yes
 | Shows a variant tooltip for the given hero facet key
 |-
@@ -46441,7 +46441,7 @@ $> dump_panorama_events
 | Yes
 | Show a tooltip with the given text. Also apply a CSS class named "style" to allow custom styling.
 |-
-| <code>DOTAShowTI10EventGameTooltip(PK26TI10EventGameTooltipInfo_t X)</code>
+| <code>DOTAShowTI10EventGameTooltip(struct TI10EventGameTooltipInfo_t const * __ptr64 X)</code>
 | Yes
 | Show a ti10 event game tooltip
 |-
@@ -48959,10 +48959,6 @@ declare enum DOTA_SHOP_TYPE
 }
 
 $> cl_dump_modifier_list
-modifier_dark_carnival_balloon_thinker
-modifier_dark_carnival_firework
-modifier_dark_carnival_pied
-modifier_item_bot_challenge_meteor_staff_land
 modifier_path_movespeed
 modifier_datadriven
 modifier_lua
@@ -52324,9 +52320,13 @@ modifier_special_bonus_spell_lifesteal
 modifier_special_bonus_exp_boost
 modifier_stacking_gold_rate_boost
 modifier_stacking_exp_rate_boost
+modifier_item_bot_challenge_meteor_staff_land
+modifier_dark_carnival_balloon_thinker
+modifier_dark_carnival_firework
+modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.407550
+Time: 0.459314
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -52425,6 +52425,7 @@ assetsystem_old_loop_algorithm                                                  
 assetsystem_quiet_inputs_before_recompile                                        : true             :                                  : Before triggering a resource recompile, wait for input dependencies to stop being written
 assetsystem_quiet_inputs_before_recompile_max_pause                              : 1000             :                                  : Max amount of time to wait (in ms) for input dependencies to stop being written before abandoning the compile
 assetsystem_quiet_inputs_before_reload                                           : true             :                                  : Before triggering a resource reload, wait for input dependencies to stop being written
+assetsystem_recompile_dependents_as_needed                                       : true             :                                  : When an asset is being recompiled the dependents will be recompiled only as needed, otherwise the original recompile mode will be passed on.
 assetsystem_reload_queue_requeue_pause                                           : 1                :                                  : Time (sec) to pause assetsystem reload behavior if a requeue is requested
 assetsystem_stats                                                                : cmd              : linked                           : Information about the current assetsystem database.
 assetsystem_test_resort                                                          : cmd              : linked                           : (Dev command - regenerate the asset sort indicies)
@@ -52518,7 +52519,6 @@ cavern_crawl_pregame_intro_shown                                                
 cc_captiontrace                                                                  : 1                : cl                               : Show missing closecaptions (0 = no, 1 = devconsole, 2 = show in hud)
 cc_delay_time                                                                    : 0.25             : cl, a                            : Close caption delay before showing caption.
 cc_emit                                                                          : cmd              : cl                               : Emits a closed caption
-cc_force_combine_chatter                                                         : true             : cl                               : 
 cc_lang                                                                          : 0                : cl, a                            : Current close caption language (emtpy = use game UI language)
 cc_linger_time                                                                   : 1                : cl, a                            : Close caption linger time.
 cc_log                                                                           : 0                : cl                               : Log caption names and contents (0 = off, 1 = found captions, 2 = unfound captions, 3 = all captions)
@@ -52596,13 +52596,12 @@ cl_clock_correction                                                             
 cl_clock_recvmargin_spew_interval                                                : 0                : release                          : 
 cl_clockdbg                                                                      : false            :                                  : 
 cl_connectionretrytime_p2p                                                       : 20               : release                          : Number of seconds over which to spread retry attempts for P2P.
-cl_cq_min_queue                                                                  : 0                : user                             : Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength
+cl_cq_min_queue                                                                  : 2                : user                             : Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength
 cl_cursor_scale                                                                  : 1                : a                                : Cursor size scaling factor.
 cl_debug_build_recvmargin_min                                                    : 2                :                                  : Min size of the recv margin queue when in tools/debug mode
 cl_debug_force_push_to_talk                                                      : false            : cl                               : 
 cl_debug_overlay_fullposition                                                    : false            : cl                               : 
 cl_debug_overlays_broadcast                                                      : false            : release                          : Render debug overlays from server.
-cl_debug_precipitation_surface_graph                                             : false            : cl, rep, cheat                   : When true, use the surface graph to pass in positions for rainfall. 
 cl_debugoverlay_cycle_domain                                                     : cmd              : cl, cheat                        : Toggles visibility of the debug overlay system.
 cl_debugoverlay_cycle_state                                                      : cmd              : cl, cheat                        : Toggles visibility of the debug overlay system.
 cl_debugoverlay_dashboard                                                        : cmd              : cl, cheat                        : Makes the debug overlay dashboard visible.
@@ -52614,10 +52613,6 @@ cl_decal_debug                                                                  
 cl_decal_shoot                                                                   : cmd              : cl                               : Shoots a client-side decal
 cl_decryptdata_key                                                               : 0                : release                          : Key to decrypt encrypted GOTV messages
 cl_decryptdata_key_pub                                                           : 0                : release                          : Key to decrypt public encrypted GOTV messages
-cl_demo_steadycam_blendframes                                                    : 5                : cl                               : blend over this many frames
-cl_demo_steadycam_deflection                                                     : 5                : cl                               : if camera orientation changes this much update orientation
-cl_demo_steadycam_enable                                                         : 0                : cl                               : Stabilize camera orientation/position during demo playback.  1 == remove roll, 2 == steadycam
-cl_demo_steadycam_radius                                                         : 16               : cl                               : if camera moves this much from last anchor update anchor
 cl_demo_view_offset_left                                                         : 0                : cl                               : View offset during demo playback (+/- 1.25 is a good default for human average left/right eye offset)
 cl_demoviewoverride                                                              : 0                : cl                               : Override view during demo playback
 cl_destroy_ragdolls                                                              : cmd              : cl                               : Destroys all client-side ragdolls
@@ -52771,7 +52766,7 @@ cl_interp_ratio                                                                 
 cl_interp_simulationvars                                                         : true             : cl                               : Interpolate LATCH_SIMULATION_BIT vars if interpolation interval is greater than animation interval
 cl_interp_threadmodeticks                                                        : 0                : cl                               : Additional interpolation ticks to use when interpolating with threaded engine mode set.
 cl_interpolate_report                                                            : false            : cl, a                            : Enable to show interpolation profile timing 
-cl_jitter_bad_threshold_up                                                       : 10               : user                             : When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually
+cl_jitter_bad_threshold_up                                                       : 76.6667          : user                             : When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually
 cl_joystick_enabled                                                              : true             : a                                : Enable joystick input
 cl_lagcompensation                                                               : true             : cl, user                         : Perform server side lag compensation of weapon firing events.
 cl_language                                                                      : russian          :                                  : Language
@@ -52794,7 +52789,7 @@ cl_panorama_typescript_declarations                                             
 cl_parallel_readpacketentities                                                   : true             :                                  : Set to 1 to use threading snapshot reading (if game supports and server is sending bitcounts).
 cl_parallel_readpacketentities_threshold                                         : 2                :                                  : Use parallel processing of snapshot reading if above this many entries.
 cl_particle_batch_mode                                                           : 1                :                                  : 
-cl_particle_fallback_base                                                        : 0                :                                  : Base for falling back to cheaper effects under load.
+cl_particle_fallback_base                                                        : 2                :                                  : Base for falling back to cheaper effects under load.
 cl_particle_fallback_multiplier                                                  : 0                :                                  : Multiplier for falling back to cheaper effects under load.
 cl_particle_log_creates                                                          : false            :                                  : Print debug message every time a particle collection is created
 cl_particle_max_count                                                            : 0                :                                  : 
@@ -52851,7 +52846,6 @@ cl_resetfps                                                                     
 cl_retire_low_priority_lights                                                    : false            : cl                               : Low priority dlights are replaced by high priority ones
 cl_rr_dump_rules                                                                 : cmd              : cl, cheat                        : Print all response rules
 cl_sceneentity_debug                                                             : false            : cl                               : Display all thinking scene entities and its data.
-cl_screenmessage_notifytime                                                      : 8                : cl                               : How long to display screen message text
 cl_script_add_debug_filter                                                       : cmd              : cl, cheat                        : Add a filter to the game debug overlay
 cl_script_add_watch                                                              : cmd              : cl, cheat                        : Add a watch to the game debug overlay
 cl_script_add_watch_pattern                                                      : cmd              : cl, cheat                        : Add a watch to the game debug overlay
@@ -53012,7 +53006,6 @@ csm_sst_pushback_distance                                                       
 csm_sst_shadow_focus_region_caster_headroom                                      : 256              : cl, cheat                        : 
 csm_sst_shadow_focus_region_maxz                                                 : 2000             : cheat                            : 
 csm_sst_shadow_focus_region_minz                                                 : -2000            : cheat                            : 
-csm_sst_shadow_focus_region_thin_compensation                                    : 1500             : cl, cheat                        : 
 csm_sst_vertical_depth_shear_enable                                              : true             : cheat                            : 
 csm_viewdir_shadow_bias                                                          : 0                : cheat                            : 
 csm_viewmodel_max_shadow_dist                                                    : 21               : cheat                            : 
@@ -53088,7 +53081,7 @@ dev_send_gc_message                                                             
 dev_send_gc_message_server                                                       : cmd              : sv                               : <msgid> Send a blank body message with a given ID to gc for routing tests
 dev_show_event_dungeon_leaderboards                                              : cmd              : cl                               : Show the Dungeon event leaderboards
 dev_simulate_gcdown                                                              : cmd              : cl                               : <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)
-developer                                                                        : 0                : release                          : Set developer message level.
+developer                                                                        : 1                : release                          : Set developer message level.
 diffcheck                                                                        : true             :                                  : Activate diffcheck system.
 diffcheck_playerslot                                                             : 0                :                                  : 
 diffcheck_spew                                                                   : true             :                                  : Actually show diffcheck results.
@@ -53150,8 +53143,8 @@ dota_alt_show_ward_suggestions                                                  
 dota_alt_shows_neutral_spawn_boxes                                               : true             : cl, a, per_user                  : 
 dota_alt_shows_tower_attack_range                                                : true             : cl, a, per_user                  : 
 dota_always_show_hero_finder                                                     : false            : cl, a, per_user                  : Always display the hero finder.
-dota_ambient_cloth                                                               : true             : cl                               : 
-dota_ambient_creatures                                                           : true             : cl                               : 
+dota_ambient_cloth                                                               : false            : cl                               : 
+dota_ambient_creatures                                                           : false            : cl                               : 
 dota_ambient_creatures_pop                                                       : false            : cl                               : 
 dota_animation_force_modifier                                                    : 0                : sv, cl, rep                      : 
 dota_animation_run                                                               : cmd              : sv                               : 
@@ -53439,7 +53432,7 @@ dota_chat_filter_settings                                                       
 dota_chat_filter_settings_apply_to_spectators                                    : false            : cl, a                            : Whether chat filtering applies to spectating as well or not.
 dota_chat_lines_always_create_new_label                                          : false            : cl                               : 
 dota_chat_scroll_step                                                            : 10               : cl                               : 
-dota_cheap_water                                                                 : false            : cl                               : 
+dota_cheap_water                                                                 : true             : cl                               : 
 dota_check_localization                                                          : cmd              : cl                               : Look over unit and ability data to verify that all the expected localization strings are present
 dota_cheers_enable_scene_reload                                                  : false            : cl, a                            : 
 dota_cl_projection_enabled                                                       : true             : cl                               : 
@@ -53545,13 +53538,14 @@ dota_debug_last_hit_particle_count                                              
 dota_debug_lasthit_timing                                                        : false            : sv, cl, rep                      : 
 dota_debug_location_x                                                            : 0.01             : sv                               : 
 dota_debug_location_y                                                            : 0.01             : sv                               : 
-dota_debug_npc_controller_entity_index                                           : -1               : sv                               : Entity index to report NPC Controller logging information for.
 dota_debug_onstage_seats                                                         : false            : cl                               : 
 dota_debug_so_cache                                                              : false            : cl                               : Log SO cache messages
 dota_debug_stuck                                                                 : false            : sv, cheat                        : 
 dota_debut_movie_volume                                                          : 0.6              : cl                               : 
 dota_default_gold                                                                : 600              : sv, cheat                        : 
 dota_default_spoilers_blocked                                                    : false            : cl, a, per_user                  : Avoid spoilers for league matches
+dota_deferred_global_light_intensity_scale                                       : 1                : cl                               : 
+dota_deferred_global_light_saturation_scale                                      : 1                : cl                               : 
 dota_demo_hero                                                                   : cmd              : cl, release, vconsole_fuzzy      : Enter demo mode with given hero. Usage: dota_demo_hero <hero_name> <optional: demo|fullmap>
 dota_destroy_player_effigy                                                       : cmd              : sv, cheat                        : 
 dota_dev                                                                         : cmd              : sv, cheat                        : DotA dev commands
@@ -53769,6 +53763,7 @@ dota_health_bar_hurt_effect                                                     
 dota_health_bar_ice_blast_shatter_threshold                                      : true             : cl                               : 
 dota_health_bar_madness                                                          : false            : cl                               : 
 dota_health_bar_madness_vertical_scale                                           : 0.8              : cl                               : 
+dota_health_bar_max_health_cap                                                   : true             : cl                               : 
 dota_health_bar_pips                                                             : true             : cl                               : 
 dota_health_bar_shields                                                          : true             : cl                               : 
 dota_health_bar_soul_ring_mana                                                   : true             : cl                               : 
@@ -53820,6 +53815,7 @@ dota_hero_ringmaster_dark_carnival_souvenir_force_illusion_scale_set            
 dota_hero_ringmaster_dark_carnival_souvenir_force_item                           : 0                : sv, cl, rep, cheat               : Force the output of the Carnival Souvenir ability to a specific item.
 dota_hero_selection_announcer_use_rr                                             : true             : cl                               : If enabled, use response rules for hero selection announcer lines
 dota_hero_undying_max_zombies                                                    : 64               : sv                               : Maximum amount of zombies that can be spawned.
+dota_hero_world_light_scale                                                      : 1                : cl                               : 
 dota_heropicker_ad_select_time                                                   : 10               : sv, cheat                        : 
 dota_heropicker_alldraft_banning_time                                            : 15               : sv, cl, rep, cheat               : 
 dota_heropicker_alldraft_random_time                                             : 11               : sv, cl, rep, cheat               : 
@@ -53999,6 +53995,8 @@ dota_lobby_settings_advanced_visible                                            
 dota_local_bot_match_difficulty                                                  : 1                : sv, cl, a, rep                   : Difficulty to play local bot matches against
 dota_local_bot_match_script_index                                                : 0                : cl, a                            : 
 dota_local_map_strategy_time                                                     : true             : sv, cheat                        : 
+dota_madness_color                                                               : 255 255 0        : cl                               : 
+dota_madness_color_cb                                                            : 255 255 0        : cl                               : 
 dota_mana_per_vertical_marker                                                    : 250              : cl                               : How much mana between each vertical line in the mana bars
 dota_map_lines_max_allowance                                                     : 30               : sv, cheat                        : 
 dota_map_lines_max_allowance_period_seconds                                      : 1                : sv, cheat                        : 
@@ -54186,7 +54184,6 @@ dota_pending_replay_force_failure                                               
 dota_pending_replay_num_retries                                                  : 30               : cl                               : 
 dota_pending_replay_retry_seconds                                                : 300              : cl                               : 
 dota_per_unit_keybindings_disabled_during_custom_games                           : true             : cl, a, per_user                  : Disables per unit keybindings during custom games
-dota_periodic_resource_cache_duration_s                                          : 600              : cl                               : 
 dota_pet_aatest_threat                                                           : -1               : sv, cheat                        : 
 dota_pet_allow_infront                                                           : true             : sv, cheat                        : 
 dota_pet_creepdist_maxthreat                                                     : 0.1              : sv, cheat                        : 
@@ -54411,7 +54408,6 @@ dota_redeem_item_code                                                           
 dota_redirect_allies_voice_to_private_coaching_group                             : true             : cl, a, per_user                  : 
 dota_ref_winner_dire                                                             : cmd              : sv                               : Causes the dire team to win
 dota_ref_winner_radiant                                                          : cmd              : sv                               : Causes the radiant team to win
-dota_reload_event_schema                                                         : cmd              : sv, cl, linked                   : 
 dota_reload_podseats                                                             : cmd              : cl                               : Reload ti_podseats.txt data
 dota_reload_text_chat_macros                                                     : cmd              : cl                               : Reload chat macros
 dota_remove_ability                                                              : cmd              : sv                               : Remove an ability from the player's hero. If no index is specified, remove all abilities except talents and stats.
@@ -54818,6 +54814,7 @@ dota_ui_give_item_indicator_receiver_animation_duration                         
 dota_ui_give_item_indicator_receiver_animation_offset                            : 30               : cl                               : 
 dota_ui_give_item_indicator_x_offset                                             : 64               : cl                               : 
 dota_ui_give_item_indicator_y_offset                                             : 135              : cl                               : 
+dota_ui_language_storage                                                         : 8                : cl                               : 
 dota_ui_popup_collectors_cache_available_voted_items                             : 0                : cl, a                            : 
 dota_ui_popup_collectors_cache_available_voted_items_timestamp                   : 0                : cl, a                            : 
 dota_ui_show_give_item_indicator                                                 : true             : cl                               : 
@@ -54876,39 +54873,38 @@ dota_update_gc_connection_check_time                                            
 dota_update_gc_server_info                                                       : 600              : sv, cheat                        : How often the server should check if it needs to update the GC in seconds
 dota_use_aghanims_postprocess_material                                           : true             : cl                               : 
 dota_use_experimental_npc_controller                                             : false            : sv                               : 
+dota_use_experimental_npc_controller_creeps_only                                 : false            : sv                               : 
+dota_use_experimental_npc_controller_heroes_only                                 : false            : sv                               : 
+dota_use_experimental_npc_controller_pet                                         : false            : sv                               : 
+dota_use_experimental_npc_controller_roshan_only                                 : false            : sv                               : 
 dota_use_heightmap                                                               : true             : cheat                            : Set to 0 to disable using heightmap when tracing vertical rays
 dota_use_occluded_click_particle_effects                                         : true             : cl                               : 
 dota_use_winter2022_postprocess_material                                         : true             : cl                               : 
 dota_versus_scene_disable_heroes                                                 : false            : cl                               : 
-dota_video_config.DeviceID                                                       : 11269            : cl                               : 
-dota_video_config.setting.aspectratiomode                                        : 1                : cl                               : 
+dota_video_config.DeviceID                                                       : 0                : cl                               : 
 dota_video_config.setting.coop_fullscreen                                        : 0                : cl                               : 
 dota_video_config.setting.cpu_level                                              : 2                : cl                               : 
-dota_video_config.setting.defaultres                                             : 1920             : cl                               : 
-dota_video_config.setting.defaultresheight                                       : 1080             : cl                               : 
-dota_video_config.setting.dota_ambient_cloth                                     : true             : cl                               : 
-dota_video_config.setting.dota_ambient_creatures                                 : true             : cl                               : 
-dota_video_config.setting.dota_cheap_water                                       : false            : cl                               : 
-dota_video_config.setting.dota_portrait_animate                                  : true             : cl                               : 
+dota_video_config.setting.defaultres                                             : 1280             : cl                               : 
+dota_video_config.setting.defaultresheight                                       : 720              : cl                               : 
+dota_video_config.setting.dota_ambient_cloth                                     : 0                : cl                               : 
+dota_video_config.setting.dota_ambient_creatures                                 : 0                : cl                               : 
+dota_video_config.setting.dota_cheap_water                                       : 1                : cl                               : 
+dota_video_config.setting.dota_portrait_animate                                  : 1                : cl                               : 
 dota_video_config.setting.fullscreen                                             : 0                : cl                               : 
-dota_video_config.setting.fullscreen_min_on_focus_loss                           : 0                : cl                               : 
-dota_video_config.setting.gpu_level                                              : 3                : cl                               : 
+dota_video_config.setting.fullscreen_min_on_focus_loss                           : 1                : cl                               : 
 dota_video_config.setting.gpu_mem_level                                          : 2                : cl                               : 
 dota_video_config.setting.high_dpi                                               : 0                : cl                               : 
 dota_video_config.setting.knowndevice                                            : 0                : cl                               : 
-dota_video_config.setting.mat_viewportscale                                      : 0.999999         : cl                               : 
-dota_video_config.setting.mat_vsync                                              : 0                : cl                               : 
+dota_video_config.setting.mat_viewportscale                                      : 1                : cl                               : 
+dota_video_config.setting.mat_vsync                                              : 1                : cl                               : 
 dota_video_config.setting.mem_level                                              : 2                : cl                               : 
-dota_video_config.setting.monitor_index                                          : 0                : cl                               : 
 dota_video_config.setting.nowindowborder                                         : 0                : cl                               : 
-dota_video_config.setting.recommendedheight                                      : 2160             : cl                               : 
-dota_video_config.setting.recommendedwidth                                       : 1900             : cl                               : 
+dota_video_config.setting.recommendedheight                                      : 800              : cl                               : 
+dota_video_config.setting.recommendedwidth                                       : 0                : cl                               : 
 dota_video_config.setting.refreshrate_denominator                                : 0                : cl                               : 
 dota_video_config.setting.refreshrate_numerator                                  : 0                : cl                               : 
 dota_video_config.setting.shaderquality                                          : 1                : cl                               : 
-dota_video_config.setting.useadvanced                                            : 1                : cl                               : 
-dota_video_config.setting.version                                                : 1                : cl                               : 
-dota_video_config.VendorID                                                       : 4318             : cl                               : 
+dota_video_config.VendorID                                                       : 65541            : cl                               : 
 dota_video_config.Version                                                        : 0                : cl                               : 
 dota_view_store_item_details                                                     : cmd              : cl                               : <itemdef>
 dota_wagering_info_cache_duration                                                : 600              : cl                               : 
@@ -54997,7 +54993,7 @@ engine_accurate_input_processing_delta_time                                     
 engine_allow_multiple_simulates_per_frame                                        : false            :                                  : When the client is catching up in low frame rate situations, should we run client simulate more than once a frame?
 engine_allow_multiple_ticks_per_frame                                            : true             :                                  : When the client is catching up in low frame rate situations, should we run tick more than once a frame?
 engine_client_tick_pad_enable                                                    : false            :                                  : 
-engine_cpu_info_extended                                                         : 16 CPUs (8 cores), Frequency: 4.7 GHz,  Features: F/M/S 26/68/0 AuthenticAMD 'AMD Ryzen 7 9800X3D 8-Core Processor           ' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 AVX512+VPCLMULQDQ MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process) :                                  : CPU the engine is running on.
+engine_cpu_info_extended                                                         : 8 CPUs, Frequency: 2.8 GHz,  Features: F/M/S 25/1/1 AuthenticAMD 'AMD EPYC 7543 32-Core Processor                ' SSE SSE2 SSE4.1 SSE4.2 AVX AVX2 MMX RDTSC RDTSCP CMOV FCMOV PCLMULQDQ (64-bit process) :                                  : CPU the engine is running on.
 engine_frametime_amnesty_debug                                                   : false            :                                  : Enable logging about events that disable frame time warnings
 engine_frametime_print_report                                                    : cmd              :                                  : Print a performance report from the current data in the vprof 'lite' profiler
 engine_frametime_warnings_enable                                                 : false            :                                  : Enable framerate-related warnings, such as sv_long_frame_ms.  Disabling warnings is useful when running in situations such a debug where a slow frame rate is expected
@@ -55006,16 +55002,16 @@ engine_max_resource_system_update_time                                          
 engine_max_ticks_to_simulate                                                     : -1               :                                  : Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time.
 engine_no_focus_sleep                                                            : 20               : a                                : 
 engine_no_focus_sleep_vconsole_suppress                                          : true             :                                  : When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior
-engine_ostype                                                                    : Windows 11       :                                  : OS type the engine is running on.
+engine_ostype                                                                    : Windows 10       :                                  : OS type the engine is running on.
 engine_platform_name_extended                                                    : pc64             :                                  : Platform the engine is running on.
 engine_render_only                                                               : false            :                                  : 
-engine_rendersystem_init                                                         : -dx11            :                                  : Rendersystem option requested (changing this does not change the rendersystem).
-engine_rendersystem_shader_model                                                 : 111              :                                  : Rendersystem shader model in use (changing this does not change the shader model).
-engine_rendersystem_used                                                         : -dx11            :                                  : Rendersystem option in use (changing this does not change the rendersystem).
+engine_rendersystem_init                                                         : -vulkan          :                                  : Rendersystem option requested (changing this does not change the rendersystem).
+engine_rendersystem_shader_model                                                 : 110              :                                  : Rendersystem shader model in use (changing this does not change the shader model).
+engine_rendersystem_used                                                         : -vulkan (from CL) :                                  : Rendersystem option in use (changing this does not change the rendersystem).
 engine_show_frame_pacing                                                         : false            : release                          : 
 engine_show_frame_ticks                                                          : false            :                                  : 
 engine_sse42                                                                     : true             :                                  : turn on sse4.2 optimizations in the engine
-english                                                                          : true             : cl, user                         : If set to 1, running the english language set of assets.
+english                                                                          : false            : cl, user                         : If set to 1, running the english language set of assets.
 ent_absbox                                                                       : cmd              : sv, cheat                        : Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 ent_actornames                                                                   : cmd              : sv, cheat                        : Displays the entity name for all entities that have ShouldDisplayInActorNames true in code
 ent_actornames_font                                                              : Consolas         : sv, cl, rep, cheat               : ent_actornames font name
@@ -55111,6 +55107,7 @@ entitysummary                                                                   
 ents                                                                             : cmd              : sv                               : List server entities, sorted by spawn group
 escape                                                                           : cmd              : release, clientcmd_can_execute   : Escape key pressed.
 event_points_activate_timeout                                                    : 10               : cl                               : 
+event_reload_schema                                                              : cmd              : sv, cl, linked                   : 
 exec                                                                             : cmd              : norecord, release                : Execute a cfg file
 exec_async                                                                       : cmd              : cheat, norecord                  : Execute a cfg file over time
 execifexists                                                                     : cmd              : norecord, release                : Execute a cfg file if file exists
@@ -55218,6 +55215,7 @@ func_mover_debug_follower                                                       
 func_mover_debug_parallel                                                        : false            : sv                               : 
 func_mover_debug_showtext                                                        : false            : sv                               : 
 func_mover_debug_verbose                                                         : false            : sv                               : 
+func_mover_disable_movement                                                      : false            : sv                               : 
 func_mover_enable_debug_all                                                      : cmd              : sv, cheat                        : 
 func_mover_force_transition_start_direction                                      : false            : sv                               : 
 func_mover_get_speed_override                                                    : 0                : sv                               : 
@@ -55527,8 +55525,6 @@ learn_refresh_item_sequence                                                     
 lightbinner_precompute                                                           : cmd              :                                  : 
 lightbinner_test_computespheresilhouette                                         : cmd              :                                  : 
 lightbinner_test_computesumsilhouette                                            : cmd              :                                  : 
-lightquery_debug_direct_lighting                                                 : true             : sv, cl, rep, cheat               : 
-lightquery_debug_indirect_lighting                                               : true             : sv, cl, rep, cheat               : 
 listdemo                                                                         : cmd              : release                          : List demo file contents.
 listid                                                                           : cmd              :                                  : Lists banned users.
 listip                                                                           : cmd              :                                  : List IP addresses on the ban list.
@@ -55583,6 +55579,8 @@ mat_print_materials                                                             
 mat_print_materials_last_frame                                                   : cmd              :                                  : Print materials used last frame
 mat_print_materials_unused                                                       : cmd              :                                  : Print materials that have never been used
 mat_print_modes                                                                  : cmd              :                                  : Print supported rendering modes.
+mat_print_non_virtual_textures                                                   : cmd              :                                  : Print textures that are neither procedural nor virtual, i.e. the ones the mip streaming system manages, in alphabetical order. Takes an optional substring as an argument.
+mat_print_procedural_textures                                                    : cmd              :                                  : Print procedural textures ( render targets, UAVs, atlases and other textures created by code ) in ascending in memory size order. Takes an optional substring as an argument.
 mat_print_shader_info                                                            : cmd              :                                  : Print detailed info about a single shader. Takes a shader name (hero.vfx) as an argument.
 mat_print_shader_quality                                                         : cmd              :                                  : Print current shader quality setting
 mat_print_shaders                                                                : cmd              :                                  : Print loaded shaders. Takes a substring as an argument.
@@ -55593,6 +55591,7 @@ mat_reinitmaterials                                                             
 mat_reloadshaders                                                                : cmd              :                                  : Reloads all shaders. Takes optional substrings of shader names to recompile as arguments.
 mat_reset_material_costs                                                         : cmd              :                                  : Reset material cost heuristic
 mat_set_shader_quality                                                           : cmd              :                                  : Force shader quality setting (valid values are 0 or 1)
+mat_shader_asserts                                                               : false            :                                  : Enables DebugDraw_AssertMsg() in Vulkan shaders (S_DEBUG_ASSERTS_ENABLED).
 mat_shading_complexity                                                           : false            : cheat                            : Visualize shading complexity
 mat_shading_complexity_color                                                     : 1 0.5 0.25       : cheat                            : 
 mat_shading_complexity_max_instruction_count                                     : 1024             : cheat                            : 
@@ -55615,7 +55614,7 @@ mat_tonemap_force_rate                                                          
 mat_tonemap_force_scale                                                          : 0                : cheat                            : 
 mat_tonemap_force_use_alpha                                                      : -1               : cheat                            : 
 mat_tonemap_uncap_exposure                                                       : 0                : cheat                            : 
-mat_viewportscale                                                                : 0.999999         : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
+mat_viewportscale                                                                : 1                : cl                               : Scale down the main viewport (to reduce GPU impact on CPU profiling)
 mat_wireframe                                                                    : 0                : cheat                            : 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe
 mem_compact                                                                      : cmd              :                                  : Compacts the heap
 mem_dump                                                                         : cmd              :                                  : Dump memory stats to text file or <stdout>.
@@ -55628,6 +55627,7 @@ memory                                                                          
 mesh_calculate_curvature_smooth_invert                                           : false            : sv, cl, rep, cheat               : 
 mesh_calculate_curvature_smooth_pass_count                                       : 3                : sv, cl, rep, cheat               : 
 mesh_calculate_curvature_smooth_weight                                           : 1                : sv, cl, rep, cheat               : 
+mesh_trace_data_memory_report                                                    : cmd              :                                  : Logs information about memory consumption by TraceDataForDraw_t/ToolsTraceData
 mic_listen_while_nonfocused                                                      : false            : cl                               : Enables the ability for the mic to remain open if the window loses focus such as when a caster tabs out to adjust settings
 midi_auto_connect_port                                                           : -1               : cl, a                            : On init, attempt to connect to the device on this port
 midi_connect_port                                                                : cmd              : cl                               : Attempt to open a connection on the passed port ( or 0 if not specfied ). Will close existing connection
@@ -55700,8 +55700,6 @@ nav_curve_set                                                                   
 nav_curve_step                                                                   : 0.02             : sv, cheat                        : 
 nav_debug_blocked                                                                : false            : sv, cheat                        : 
 nav_delete                                                                       : cmd              : sv, cheat                        : Deletes the currently highlighted Area.
-nav_drag_selection_volume_zmax_offset                                            : 32               : sv, rep                          : The offset of the nav drag volume top from center
-nav_drag_selection_volume_zmin_offset                                            : 32               : sv, rep                          : The offset of the nav drag volume bottom from center
 nav_draw_area_color_by_game_attribute                                            : false            : sv, cheat                        : 
 nav_draw_area_connections                                                        : false            : sv, cheat                        : 
 nav_draw_area_filled                                                             : true             : sv, cheat                        : 
@@ -55720,12 +55718,7 @@ nav_draw_boundary_areas                                                         
 nav_draw_connected_area_radius                                                   : 1000             : sv, cheat                        : 
 nav_draw_dormant_movable_meshes                                                  : false            : sv, cheat                        : Draw dormant movable meshes.
 nav_draw_externally_created                                                      : false            : sv, cheat                        : 
-nav_draw_flow_map                                                                : false            : sv, cheat                        : 
-nav_draw_indirect_connections                                                    : false            : sv, cheat                        : 
 nav_draw_jump_links                                                              : false            : sv, cheat                        : 
-nav_draw_limit                                                                   : 300              : sv, cheat                        : The maximum number of areas to draw in edit mode
-nav_draw_link_alignment                                                          : false            : sv, cheat                        : 
-nav_draw_links                                                                   : false            : sv, cheat                        : 
 nav_draw_markup                                                                  : true             : sv, cheat                        : 
 nav_draw_mesh                                                                    : true             : sv, cheat                        : 
 nav_draw_mesh_grid                                                               : false            : sv, cheat                        : Draw the mesh's spatial grid structure around the edit cursor position.
@@ -55825,20 +55818,9 @@ nav_raise_drag_volume_min                                                       
 nav_recall_selected_set                                                          : cmd              : sv, cheat                        : Re-selects the stored selected set.
 nav_recorder_enabled                                                             : true             : sv, cheat                        : 
 nav_remove_from_selected_set                                                     : cmd              : sv, cheat                        : Remove current area from the selected set.
-nav_select_allow_blocked                                                         : true             : sv, cheat                        : When selecting an area under nav_edit, allow area marked as blocked.
-nav_select_area_id                                                               : -1               : sv, cheat                        : Select nav area with matching ID.
-nav_select_block_id                                                              : -1               : sv, cheat                        : Select nav space block with matching ID.
-nav_select_hull                                                                  : 0                : sv, cheat                        : Restrict area selection to areas that can support a hull of the given category
 nav_select_radius                                                                : cmd              : sv, cheat                        : Adds all areas in a radius to the selection set
 nav_select_with_attribute                                                        : cmd              : sv, cheat                        : Selects areas with the given attribute.
 nav_set_movable_mesh_dormant_flag                                                : cmd              : sv, cheat                        : Set the movable mesh dormant flag (0=active, 1=dormant)
-nav_show_area_connections                                                        : true             : sv, cheat                        : Show connections to selected area when true
-nav_show_area_verts                                                              : true             : sv, cheat                        : Show area vertex positions
-nav_show_area_water_info                                                         : true             : sv, cheat                        : 
-nav_show_elem_info                                                               : true             : sv, cheat                        : 
-nav_show_elem_info_font                                                          : Consolas         : sv, cheat                        : 
-nav_show_elem_info_font_size                                                     : -1               : sv, cheat                        : 
-nav_show_elem_info_font_voffset                                                  : -11              : sv, cheat                        : 
 nav_show_potentially_visible                                                     : 0                : cheat                            : Show areas that are potentially visible from the current nav area
 nav_smooth_arrival_enable                                                        : false            : sv, cheat                        : 
 nav_smooth_arrival_spline                                                        : true             : sv, cheat                        : 
@@ -55869,10 +55851,6 @@ nav_smooth_spring_forward_dist_base                                             
 nav_smooth_spring_forward_dist_time_limit                                        : 1                : sv, cheat                        : 
 nav_smooth_spring_max_dist                                                       : 36               : sv, cheat                        : 
 nav_smooth_spring_tension_max_override                                           : -1               : sv, cheat                        : 
-nav_smooth_spring_timestep_factor_accel                                          : 100              : sv, cheat                        : 
-nav_smooth_spring_timestep_factor_speed                                          : 100              : sv, cheat                        : 
-nav_smooth_spring_timestep_max                                                   : 0.5              : sv, cheat                        : 
-nav_smooth_spring_timestep_min                                                   : 0.1              : sv, cheat                        : 
 nav_smooth_spring_yaw_rotation_speed                                             : 50               : sv, cheat                        : 
 nav_smooth_spring_yaw_threshold                                                  : 20               : sv, cheat                        : 
 nav_space_select_dist                                                            : 1000             : sv, cheat                        : 
@@ -55900,7 +55878,6 @@ nav_test_boundary_zone_rays_margin                                              
 nav_test_boundary_zone_rays_random                                               : false            : sv, cheat                        : 
 nav_test_boundary_zone_sphere                                                    : 0                : sv, cheat                        : 
 nav_test_curve_opt                                                               : 0                : sv, cheat                        : 
-nav_test_detour                                                                  : false            : sv, cheat                        : 
 nav_test_find_nearest                                                            : false            : sv, cheat                        : Calculate the nearest point on the navmesh to the trace point.  Uses selection from nav_select_hull.
 nav_test_find_nearest_clear                                                      : false            : sv, cheat                        : Calculate the nearest point on the navmesh to the trace point.  Uses selection from nav_select_hull.
 nav_test_find_random_connected                                                   : false            : sv, cheat                        : Demonstrates finding random points that are connected in the nav mesh to the start point.
@@ -55915,22 +55892,11 @@ nav_test_genrt_tile_removal_place                                               
 nav_test_getareaoverlapping_gravity                                              : false            : sv, cheat                        : 
 nav_test_getnearestnav_gravity                                                   : false            : sv, cheat                        : 
 nav_test_level_hull                                                              : cmd              : sv, cheat                        : Find entities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while.
-nav_test_level_hull_move                                                         : cmd              : sv, cheat                        : 
 nav_test_multi_connection                                                        : false            : sv, cheat                        : 
 nav_test_npc_area                                                                : 0                : sv, cheat                        : 
 nav_test_npc_collision                                                           : 0                : sv, cheat                        : 
 nav_test_npc_collision_range                                                     : 250              : sv, cheat                        : 
 nav_test_npc_collision_show_geometry                                             : false            : sv, cheat                        : 
-nav_test_path                                                                    : false            : sv, cheat                        : Calculate and draw a path from player/camera position to the test position.
-nav_test_path_lock_goal                                                          : false            : sv, cheat                        : Lock the pathfinding goal to the current intersection point.
-nav_test_path_lock_start                                                         : false            : sv, cheat                        : Lock the pathfinding start to the current intersection point.
-nav_test_path_move                                                               : false            : sv, cheat                        : 
-nav_test_path_opt                                                                : true             : sv, cheat                        : Enable path optimization for nav_edit_path paths.
-nav_test_path_opt_transitions                                                    : false            : sv, cheat                        : 
-nav_test_path_return                                                             : false            : sv, cheat                        : Calculate a return path from cursor position to the path calculated by nav_test_path.
-nav_test_path_space                                                              : 0                : sv, cheat                        : Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground
-nav_test_path_space_fly                                                          : true             : sv, cheat                        : Test flight paths
-nav_test_path_space_swim                                                         : true             : sv, cheat                        : Test swim paths
 nav_test_pos_name                                                                : 0                : sv                               : 
 nav_test_pos_place                                                               : -1               : sv                               : 
 nav_test_ray_space                                                               : 0                : sv, cheat                        : 
@@ -56015,7 +55981,6 @@ net_limit_sv_message_process_time_ms_warn_rate                                  
 net_limit_sv_recv_chan_buffer_messages                                           : 1000             : release                          : Max number of source engine messages that can be queued in a netchan receive buffer for an ordinary connection from a client.
 net_limit_sv_recv_chan_msgs_per_frame                                            : 500              : release                          : Max number of source engine messages an ordinary client connection may put in a single network frame.  Exceeding this disconnects the client.
 net_limit_sv_recv_max_frame_size_kb                                              : 64               : release                          : Server will reject uncompressed Source engine frame larger than N kb.  Also sets limit on SteamNetworkingSockets message size
-net_limit_sv_recv_max_message_size_kb                                            : 32               : release                          : Server will reject message larger than N kb
 net_limit_sv_recv_segments_per_packet                                            : 50               : release                          : Server: SteamNetworkingSockets will reject packets with more than N message segments
 net_limit_sv_recvbuffer_kb                                                       : 128              : release                          : Server: SteamNetworkingSockets will not buffer more than N kb from connected clients
 net_limit_sv_recvbuffer_msg                                                      : 100              : release                          : Server: SteamNetworkingSockets will not buffer more than N messages from connected clients
@@ -56098,6 +56063,7 @@ panorama_streaming_load_local_images                                            
 panorama_worldpanel_update_cull_distance                                         : 1000             : cl                               : 
 panorama_worldpanel_update_cull_size_threshold                                   : 5                : cl                               : 
 panorama_worldpanel_update_culling                                               : false            : cl                               : 
+particle_cluster_bounds_debug                                                    : 0                : sv, cl, rep                      : 
 particle_cluster_debug                                                           : 0                : sv, cl, rep                      : 
 particle_cluster_manager_search_dist                                             : 256              : sv, cl, rep                      : 
 particle_cluster_nodraw                                                          : false            : sv, cl, rep                      : 
@@ -56118,7 +56084,9 @@ particle_test_stop                                                              
 password                                                                         : 0                : a, norecord, server_cant_query   : Current server access password
 path                                                                             : cmd              :                                  : Show the filesystem path.
 path_mover_enable_high_resolution_debug_rendering                                : false            : sv                               : 
+path_mover_entity_spawner_debug                                                  : false            : sv                               : 
 pause                                                                            : cmd              : release                          : Toggle the server pause state.
+periodic_resource_cache_duration_s                                               : 600              : cl                               : 
 pet_preview_gravity                                                              : 0 0 -800         :                                  : 
 pet_preview_underwater                                                           : false            :                                  : 
 pet_preview_wind                                                                 : 0 0 0            :                                  : 
@@ -56148,6 +56116,7 @@ phys_shoot                                                                      
 phys_shoot_angular_speed                                                         : 3600             : sv                               : 
 phys_shoot_speed                                                                 : 250              : sv                               : 
 phys_show_stats                                                                  : false            : sv, cl, rep                      : 
+phys_softbody_continuous_world_collision                                         : false            :                                  : Use approximate continuous collision
 phys_stressbodyweights                                                           : 5                : sv                               : 
 phys_threaded_cloth_bone_update                                                  : false            : sv, cl, rep                      : 
 phys_threaded_kinematic_bone_update                                              : false            : sv, cl, rep                      : 
@@ -56209,6 +56178,7 @@ prop_physics_create                                                             
 proped_attr_logging                                                              : false            :                                  : 
 proped_debug_margin                                                              : 0                :                                  : 
 proped_debug_splitter                                                            : false            :                                  : 
+proped_focus_logging                                                             : false            :                                  : 
 proped_sync_timings                                                              : false            :                                  : 
 property_editor_use_overlay                                                      : true             :                                  : 
 props_break_max_pieces_perframe                                                  : 16               : sv, cl, rep                      : Maximum prop breakable piece count per frame (-1 = model default)
@@ -56255,18 +56225,19 @@ r_colorblindsim_rendermethod                                                    
 r_cubemap_debug_colors                                                           : 0                : cheat                            : 
 r_dac_particle_desat_amount                                                      : 1                : cl                               : 
 r_dac_particle_desat_color                                                       : 1 1 1            : cl                               : 
-r_dashboard_render_quality                                                       : true             : cl                               : 
+r_dashboard_render_quality                                                       : false            : cl                               : 
 r_debug_precipitation                                                            : false            : cl, cheat                        : Show precipitation volumes
 r_decals                                                                         : 2048             : sv, cl, rep                      : 
 r_decals_default_fade_duration                                                   : 3                : sv, cl, rep                      : 
 r_decals_default_start_fade                                                      : 30               : sv, cl, rep                      : 
-r_decals_max_on_deformables                                                      : 512              : sv, cl, rep                      : 
+r_decals_max_triangle_anchored                                                   : 512              : sv, cl, rep                      : 
 r_decals_overlap_threshold                                                       : 0                : sv, cl, rep                      : 
+r_decals_triangle_max_stretch                                                    : 1.25             : sv, cl, rep                      : Max stretch (and 1/x compression) ratio a triangle-anchored decal may show relative to its shape at placement. 1 = rigid follow, <= 0 = unlimited.
 r_deferred_additive_pass                                                         : true             : cl                               : 
 r_deferred_height_fog                                                            : true             : cl                               : 
 r_deferred_simple_light                                                          : 1                : cl                               : 0=off, 1=on, 2=debug visualization
-r_deferred_specular                                                              : true             : cl                               : 
-r_deferred_specular_bloom                                                        : true             : cl                               : 
+r_deferred_specular                                                              : false            : cl                               : 
+r_deferred_specular_bloom                                                        : false            : cl                               : 
 r_depth_of_field                                                                 : 1                : cl                               : 0 = off, 1 = Infinity Ward GPU Gems 3 ch 28, 2 = Gustafsson 2018 Reference, 3 = Gustafsson 2018 Precomputed Coc, 4 = Gustafsson 2018 Precomputed Coc and Depth
 r_directional_lightmaps                                                          : true             :                                  : 
 r_directlighting                                                                 : true             : cheat                            : Set to use direct lighting
@@ -56284,11 +56255,11 @@ r_dosta_allow_spotlight_shadows                                                 
 r_dota_allow_colorwarp                                                           : true             : cl                               : 
 r_dota_allow_desaturate_layers                                                   : true             : cl                               : 
 r_dota_allow_highquality_shadows                                                 : true             : cl, cheat                        : 
-r_dota_allow_parallax_mapping                                                    : true             : cl                               : 
+r_dota_allow_parallax_mapping                                                    : false            : cl                               : 
 r_dota_allow_particle_only_portraits                                             : true             : cl                               : 
 r_dota_allow_wind_on_trees                                                       : true             : cl                               : 
 r_dota_always_reflect_refract                                                    : false            : cl, cheat                        : 1 = force setup of refrect / refact pipelines even when using cheap water
-r_dota_bloom_compute_shader                                                      : 1                : cl                               : Use compute shader for Bloom downsample
+r_dota_bloom_compute_shader                                                      : 0                : cl                               : Use compute shader for Bloom downsample
 r_dota_caustic_fog_exclusion_radius                                              : 3000             : cl                               : 
 r_dota_caustic_fog_plane_min                                                     : -128             : cl                               : 
 r_dota_clouds                                                                    : true             : cl, cheat                        : 
@@ -56299,17 +56270,18 @@ r_dota_disable_portrait_world_renderer                                          
 r_dota_draw_overlays                                                             : true             : cl, cheat                        : 
 r_dota_draw_water                                                                : true             : cl, cheat                        : 
 r_dota_enabled_3d_skybox_postprocess                                             : true             : cl                               : 
+r_dota_force_dynamic_worldspace_texcoords                                        : false            : cl                               : 
 r_dota_framebuffer_refraction                                                    : true             : cl, cheat                        : 
 r_dota_fsr_enable_mip_bias                                                       : true             : cl                               : Apply negative mip bias when rendering with FSR.
 r_dota_fsr_rcas_sharpness                                                        : 0.25             : cl                               : RCAS sharpness when using FSR + RCAS upsample.
-r_dota_fsr_upsample                                                              : 2                : cl                               : 0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample
-r_dota_fxaa                                                                      : true             : cl                               : 
+r_dota_fsr_upsample                                                              : 0                : cl                               : 0 == bilinear upsampe, 1 == FSR upscample, 2 == FSR + RCAS upsample
+r_dota_fxaa                                                                      : false            : cl                               : 
 r_dota_height_fog_exclusion_radius                                               : 2200             : cl                               : 
 r_dota_height_fog_plane_height                                                   : 128              : cl                               : 
 r_dota_highlight_particle_only_portraits                                         : false            : cl                               : 
 r_dota_local_light_compute                                                       : false            : cl                               : 
 r_dota_lowend_objects                                                            : 1                : cl, cheat                        : 0 = Force disable, 1 = use video settings, 2 = force enable
-r_dota_normal_maps                                                               : true             : cl                               : 
+r_dota_normal_maps                                                               : false            : cl                               : 
 r_dota_reflection_min_far_plane                                                  : 5000             : cl, cheat                        : 
 r_dota_refract_heroes                                                            : false            : cl, a                            : 
 r_dota_render_2d_skybox                                                          : true             : cl                               : 
@@ -56331,7 +56303,6 @@ r_dota_wind_min_high_freq_strength                                              
 r_draw3dskybox                                                                   : true             : cl                               : 
 r_draw_first_tri_only                                                            : false            : cheat                            : 
 r_draw_instances                                                                 : true             : cheat                            : 
-r_draw_overlays                                                                  : true             :                                  : 
 r_draw_particle_children_with_parents                                            : -1               : cheat                            : Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes)
 r_draw_selected_ring                                                             : true             : cl, a                            : hides the selected_ring particle
 r_drawblankworld                                                                 : false            : cheat                            : Render blank instead of the game world
@@ -56386,7 +56357,7 @@ r_grass_alpha_test                                                              
 r_grass_density_mode                                                             : 0                :                                  : 0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1
 r_grass_end_fade                                                                 : 3000             :                                  : 
 r_grass_max_brightness_change                                                    : 75               :                                  : 
-r_grass_quality                                                                  : 1                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
+r_grass_quality                                                                  : 0                :                                  : 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra
 r_grass_start_fade                                                               : 2000             :                                  : 
 r_grass_vertex_lighting                                                          : 0                :                                  : 
 r_hair_ao                                                                        : true             :                                  : 
@@ -56426,6 +56397,7 @@ r_low_latency                                                                   
 r_low_latency_trigger_flash                                                      : true             :                                  : NVIDIA Low Latency Trigger Flash
 r_mapextents                                                                     : 1444             : cl, cheat                        : Set the max dimension for the map.  This determines the far clipping plane
 r_max_texture_pool_size                                                          : 0                :                                  : Upper limit on texture pool size.
+r_mipgen_compute_shader                                                          : true             :                                  : Use compute shader for mipgen.
 r_mixed_shadows_fade_in_time                                                     : 0.5              : sv, cl, rep                      : 
 r_mixed_shadows_fade_out_time                                                    : 0.5              : sv, cl, rep                      : 
 r_morphing_enabled                                                               : true             : cheat                            : 
@@ -56462,6 +56434,7 @@ r_pipeline_stats_present_flush                                                  
 r_pipeline_stats_use_flush_api                                                   : true             :                                  : Experimental: Set to 1 to use the ID3D11DeviceContext11::Flush() to flush the GPU pipeline instead of queries.
 r_pixelvisibility_partial                                                        : true             : cheat                            : 
 r_pixelvisibility_spew                                                           : false            : cheat                            : 
+r_prefer_loop_unrolling                                                          : true             :                                  : Prefer shader loop unrolling.
 r_print_buffers                                                                  : cmd              : linked                           : Print Vertex/Index/GPU buffers.
 r_print_texture_stats                                                            : cmd              :                                  : Texture stats
 r_printdecalinfo                                                                 : cmd              : cl                               : Prints info about decals currently in the scene
@@ -56470,10 +56443,10 @@ r_RainAllowInSplitScreen                                                        
 r_RainParticleDensity                                                            : 1                : cl                               : Density of Particle Rain 0-1
 r_render_coordination_state                                                      : cmd              :                                  : Prints out the current render coordination state.
 r_render_to_cubemap_debug                                                        : false            : cheat                            : 
-r_render_world_node_bounds                                                       : false            : cheat                            : Render world node bounds
 r_renderdoc_auto_shader_pdbs                                                     : true             :                                  : Automatically generate shader debug info on capture
 r_renderdoc_capture_frame                                                        : cmd              : linked                           : Triggers a RenderDoc capture
 r_renderdoc_open_captures                                                        : true             :                                  : 
+r_renderdoc_show_overlay                                                         : true             :                                  : Show RenderDoc overlay
 r_renderdoc_validation_error_capture_limit                                       : 5                :                                  : 
 r_rendersun                                                                      : true             : cheat                            : Render sun lighting
 r_replay_post_effect                                                             : -1               : cl, cheat                        : 
@@ -56489,7 +56462,7 @@ r_skinning_enabled                                                              
 r_skip_particle_light_bounds_in_forward                                          : true             : cl                               : 
 r_skip_precache_validation_check                                                 : false            :                                  : 
 r_smooth_morph_normals                                                           : true             : release                          : 
-r_ssao                                                                           : true             :                                  : Set to use screen-space ambient occlusion
+r_ssao                                                                           : false            :                                  : Set to use screen-space ambient occlusion
 r_ssao_bias                                                                      : 0.5              :                                  : 
 r_ssao_blur                                                                      : true             :                                  : 
 r_ssao_radius                                                                    : 30               :                                  : 
@@ -56505,9 +56478,9 @@ r_texture_lod_scale                                                             
 r_texture_nonstreaming_load                                                      : true             :                                  : Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency.
 r_texture_pool_increase_rate                                                     : 64               :                                  : Increase texture memory pool size by this many MB / s when under budget.
 r_texture_pool_reduce_rate                                                       : 256              :                                  : Reduce texture memory pool size by this many MB / s when over budget.
-r_texture_pool_size                                                              : 14971            :                                  : Total size of the texture pool in MB
+r_texture_pool_size                                                              : 31026            :                                  : Total size of the texture pool in MB
 r_texture_stream_max_resolution                                                  : 2147483647       :                                  : Maximum resolution for top mip level in streaming textures
-r_texture_stream_mip_bias                                                        : 0                :                                  : Biases the mip level the texture streaming system choses to stream for each texture.
+r_texture_stream_mip_bias                                                        : 1                :                                  : Biases the mip level the texture streaming system choses to stream for each texture.
 r_texture_stream_resolution_bias_decrease_rate                                   : 0.1              :                                  : 
 r_texture_stream_resolution_bias_increase_rate                                   : 0.05             :                                  : 
 r_texture_stream_resolution_bias_min                                             : 1                :                                  : 
@@ -56517,7 +56490,7 @@ r_texture_stream_throttle_count                                                 
 r_texture_stream_throttle_count_over_budget                                      : 1                :                                  : 
 r_texture_streaming_timesliced                                                   : true             :                                  : 
 r_texture_streamout_unthrottle_ms                                                : 0.2              :                                  : After hitting throttling limits for streamout, allow it to continue up to this number of milliseconds.
-r_texturefilteringquality                                                        : 3                :                                  : 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
+r_texturefilteringquality                                                        : 1                :                                  : 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x
 r_textures_evict_all                                                             : cmd              : linked                           : Evict all resident texture.
 r_threaded_particle_creation                                                     : true             :                                  : 
 r_threaded_particles                                                             : true             :                                  : 
@@ -56533,6 +56506,7 @@ r_vconsole_foregroundforcerender                                                
 r_viewport                                                                       : cmd              :                                  : Slams viewport size to a specified value.
 r_vma_defrag_threshold_mb                                                        : 256              : release                          : 
 r_vulkan_accurate_renderarea                                                     : true             : release                          : Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes.
+r_vulkan_print_pipeline_compile_times                                            : cmd              :                                  : Prints out information on pipeline compile times.
 r_vulkan_sw_cmd_lists                                                            : true             : release                          : Enable Software Command lists for Vulkan
 r_wait_on_present                                                                : false            :                                  : 
 r_world_frame_load_threshold_ms                                                  : 10               :                                  : 
@@ -56615,15 +56589,18 @@ rr_dump_rules                                                                   
 rr_followup_maxdist                                                              : 1800             : sv, cheat                        : 'then ANY' or 'then ALL' response followups will be dispatched only to characters within this distance.
 rr_forceconcept                                                                  : cmd              : sv, cheat                        : fire a response concept directly at a given character. USAGE: rr_forceconcept <target name or index> <concept> 'criteria1:value1,criteria2:value2,...' criteria values are optional. 
 rr_thenany_score_slop                                                            : 0                : sv, a, cheat                     : When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered.
+rtx_allow_blas_compact                                                           : true             :                                  : 
+rtx_allow_blas_create                                                            : true             :                                  : 
 rtx_dynamic_blas                                                                 : true             :                                  : Allow dynamic BLAS creation for geometry going through the compute shader skinning path.
 rtx_dynamic_blas_caching                                                         : true             :                                  : Cache dynamic BLAS if geometry has not changed
 rtx_force_default_hitgroup                                                       : false            :                                  : Forces all ray traced geometry to use default hit shaders instead of specialized ones.
+rtx_preview_dynamic_bounce                                                       : true             :                                  : Show dynamic bounce lights and real-time emissive as baked bounce in the Hammer GPU lighting preview.
 rtx_texture_resolution                                                           : 512              :                                  : Sets the texture resolution the raytracer will mark to stream in
 run_perftest                                                                     : cmd              : cheat, norecord                  : Execute perftest.cfg
 save                                                                             : cmd              : sv, norecord                     : Save Game
 save_async                                                                       : true             : sv                               : 
 save_clear_subdirectory                                                          : cmd              : sv, rep                          : 
-save_debug_snapshots                                                             : false            : sv, cl, rep                      : Save/Load debug snapshot data
+save_debug_snapshots                                                             : true             : sv, cl, rep                      : Save/Load debug snapshot data
 save_fake_hitch                                                                  : 0                : sv                               : Force a busy wait for the specified number of milliseconds during save to simulate a hitch
 save_finish_async                                                                : cmd              : sv                               : 
 save_history_count                                                               : 1                : sv                               : Keep this many old copies in history of autosaves and quicksaves.
@@ -56683,6 +56660,7 @@ sc_instanced_mesh_lod_bias                                                      
 sc_instanced_mesh_lod_bias_shadow                                                : 1.75             :                                  : Bias for LOD selection of instanced meshes in shadowmaps
 sc_instanced_mesh_motion_vectors                                                 : true             :                                  : Toggles motion vector support for instanced meshes
 sc_instanced_mesh_opaque_fade                                                    : true             :                                  : Toggles fade support for instanced meshes
+sc_instanced_mesh_shadows_batch_across_materials                                 : false            :                                  : Toggles whether mesh shader instanced can batch on reflectivity
 sc_instanced_mesh_size_cull_bias                                                 : 1.5              :                                  : Bias for size culling of instanced meshes
 sc_instanced_mesh_size_cull_bias_shadow                                          : 2                :                                  : Bias for size culling instanced meshes in shadowmaps
 sc_keep_all_layers                                                               : false            :                                  : 
@@ -56691,12 +56669,12 @@ sc_layer_batch_threshold_fullsort                                               
 sc_list_extradata_allocations                                                    : cmd              :                                  : Prints out the overall extra data allocation counts
 sc_listworlds                                                                    : cmd              : cheat                            : List all the active sceneworlds
 sc_max_framebuffer_copies_per_layer                                              : 1                :                                  : 
+sc_mesh_allow_batch_across_primitives                                            : true             :                                  : 
 sc_mesh_backface_culling                                                         : true             :                                  : 
 sc_mesh_gpu_occlusion_culling                                                    : true             :                                  : 
 sc_mesh_gpu_volume_culling                                                       : true             :                                  : 
 sc_mesh_mesh_shaders                                                             : false            :                                  : 
 sc_mesh_shadows_batch_across_materials                                           : true             :                                  : 
-sc_mesh_use_pmb                                                                  : true             :                                  : 
 sc_no_cull                                                                       : false            :                                  : 
 sc_no_vis                                                                        : false            :                                  : 
 sc_only_render_opaque                                                            : false            : cheat                            : 
@@ -56720,8 +56698,6 @@ scene_clientflex                                                                
 scene_playvcd                                                                    : cmd              : sv, cheat                        : Play the given VCD as an instanced scripted scene.
 scene_print                                                                      : 0                : sv, cl, rep                      : When playing back a scene, print timing and event info to console.
 scene_vcdautosave                                                                : false            : cl                               : Create a savegame before VCD playback
-screenmessage_notifytime                                                         : 8                : sv                               : How long to display screen message text
-screenmessage_show                                                               : -1               : cheat                            : Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present
 screenshot                                                                       : cmd              :                                  : Take a screenshot: screenshot [filename]
 screenshot_height                                                                : -1               :                                  : Screenshot height. -1 for screen height.
 screenshot_prefix                                                                : shot             :                                  : Set the screenshot auto naming prefix.
@@ -56883,6 +56859,10 @@ snd_occlusion_debug                                                             
 snd_occlusion_min_wall_thickness                                                 : 4                : rep, cheat                       : 
 snd_occlusion_rays                                                               : 4                : rep, cheat                       : 
 snd_op_test_convar                                                               : 720              : cheat                            : 
+snd_opvar_set_dome_catchup_distance                                              : 64               : sv, cl, rep                      : 
+snd_opvar_set_dome_catchup_rate                                                  : 1                : sv, cl, rep                      : 
+snd_opvar_set_dome_churn_fraction                                                : 0.25             : sv, cl, rep                      : 
+snd_opvar_set_dome_cluster_steps_per_think                                       : 32               : sv, cl, rep                      : 
 snd_opvar_set_point_debug                                                        : false            : sv, cl, rep, cheat               : 
 snd_opvar_set_point_update_interval                                              : 0.2              : sv, cl, rep                      : 
 snd_opvar_set_point_update_interval_fast                                         : 0.0333           : sv, cl, rep                      : 
@@ -56998,16 +56978,33 @@ snd_soundmixer_version                                                          
 snd_spatialize_lerp                                                              : 0                : a, release                       : 
 snd_steamaudio_ambisonics_correction_type                                        : 1                :                                  : 0: Use order-truncated Ambisonics HRTF without correction. 1: Use diffuse field equalization to correct order-truncated Ambisonics HRTFs.
 snd_steamaudio_baked_data_stats                                                  : cmd              : cheat                            : Display baked data stats for the current mod.
+snd_steamaudio_baked_dimensions_probelookup_usealternate                         : false            :                                  : Use alternate probe lookup algorithm to query dimensions for listener position based on kd-tree of probe points.
+snd_steamaudio_baked_dimensions_viz_inout_threshold                              : -1               :                                  : Hammer only. Set between 0 and 1 to color dimensions probes and the smooth surface with a hard cut instead of the continuous ramp: inside / outside below the value is red, at or above is blue. Negative disables.
+snd_steamaudio_baked_occlusion_air_absorption_coefficient                        : 0                :                                  : Air absorption coefficient sued for baked occlusion calculation.
 snd_steamaudio_baked_occlusion_mode                                              : 0                : cheat                            : 0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios. 7: no baked value - occlusion is traced per probe pair the way the calc_occlusion_info operator does, then interpolated like any other mode.
 snd_steamaudio_baked_occlusion_pathing_deviation_slope                           : 0.1              : cheat                            : Adjust how much occlusion goes does with deviation angle.
 snd_steamaudio_baked_occlusion_pathing_exponent                                  : 0.1              : cheat                            : Adjust scaling of pathing energy by exponentiall scaling with pathing delta.
+snd_steamaudio_baked_occlusion_probelookup_usealternate                          : false            :                                  : Use alternate probe lookup algorithm to query occlusion for source and listener position based on kd-tree of probe points.
 snd_steamaudio_baked_occlusion_reflection_factor                                 : 1                : cheat                            : Adjust scaling for reflection energy when combining it to calculate occlusion value.
 snd_steamaudio_baked_occlusion_reflection_regularization                         : 0                : cheat                            : Ambient noise energy to serve as a floor for reflection energy.
+snd_steamaudio_baked_occlusion_spatialfilter_mode                                : 0                :                                  : 0: No spatial filtering. 1: bidirectional spatial filter.
+snd_steamaudio_baked_occlusion_spatialfilter_radius_factor                       : 2                :                                  : Radius factor to multiply the distance between probes with to get the radius withing which probes are averaged.
+snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled                   : true             :                                  : Enable baking outside field for probes baking custom dimensions data.
+snd_steamaudio_custombake_dimensions_size_and_inout_bake_enabled                 : true             :                                  : Enable baking size and inout data for probes when baking custom dimensions data.
+snd_steamaudio_custombake_dimensions_smallsizefield_bake_enabled                 : true             :                                  : Enable baking insize size field for probes when baking custom dimensions data.
+snd_steamaudio_custombake_occlusion_bidirectional                                : false            :                                  : Run simulation from both source and listner and average the results. Potential way to reduce noise.
+snd_steamaudio_custombake_occlusion_numsimulations                               : 1                :                                  : Number of reflection simulations to run when baking occlusion. Potential way to reduce noise.
+snd_steamaudio_customdata_dimensions_inout_mode                                  : 0                :                                  : Inside / outside estimator used when baking dimensions. 0 - direct sky fraction, 1 - multi-bounce escape. Any other value bakes mode 0.
+snd_steamaudio_debug_cover_navmesh_probe_size_scale                              : 1                :                                  : Debug option to generate clustered probes of a scaled size for debug visualization.
+snd_steamaudio_diagnostic_baked_occlusion_single_probe                           : -1               :                                  : Bake occlusion for a single source probe with the given probe id.
+snd_steamaudio_dimensions_grid_height_max                                        : 100              :                                  : The maximum height (from the ground) we allow probes to be added above the initial layer. (meters)
+snd_steamaudio_dimensions_max_ray_length                                         : 0                :                                  : 0 is disabled, but otherwise sets a limit the maximum ray size in the dimension size calculation. Used to model the enclosure algorithm. Game units
 snd_steamaudio_display_dimension_data_inside                                     : true             :                                  : When visualizing dimensions data at runtime, draw the inside direction.
 snd_steamaudio_display_dimension_data_outside                                    : true             :                                  : When visualizing dimensions data at runtime, draw the outisde direction.
 snd_steamaudio_display_dimension_data_size                                       : true             :                                  : When visualizing dimensions data at runtime, draw the size of the space.
 snd_steamaudio_display_probes                                                    : cmd              :                                  : Load all the probes from a file and display probes based on the passed on arguments.
 snd_steamaudio_dynamicpathing_max_samples                                        : 16               : sv, cl, rep                      : 
+snd_steamaudio_enabe_append_probes_to_cover_navmesh                              : true             :                                  : Flag to choose whether to append probes to cover nav mesh.
 snd_steamaudio_enable_custom_hrtf                                                : false            :                                  : Enable custom HRTF loading.
 snd_steamaudio_enable_occlusion_caching                                          : true             :                                  : Continue using previous occlusion if probe lookup for occlusion fails.
 snd_steamaudio_enable_ordertruncated_ambisonics_hrtf                             : false            :                                  : Enable order-truncated Ambisonics HRTF loading.
@@ -57042,6 +57039,9 @@ snd_steamaudio_num_bounces                                                      
 snd_steamaudio_num_diffuse_samples                                               : 2048             : cheat                            : The number of directions considered for ray bounce by Steam Audio.
 snd_steamaudio_num_rays                                                          : 65536            : cheat                            : The number of rays to trace for reflection modeling by Steam Audio.
 snd_steamaudio_num_threads                                                       : 2                : cheat                            : Sets the number of threads used for realtime reflection by Steam Audio.
+snd_steamaudio_occlusionvisualization_sampleheight                               : 1.5              :                                  : Height to place samples to query occlusion for visualization.
+snd_steamaudio_occlusionvisualization_sampleradius                               : 4                :                                  : Query radius to find probes to interpolate occlusion for visualization.
+snd_steamaudio_occlusionvisualization_weighting_option                           : 0                :                                  : How to blend the probes around a sample. 0 - smooth falloff, 1 - inverse distance, as the runtime does.
 snd_steamaudio_pathing_caching_threshold                                         : 5                : sv, cl, rep                      : 
 snd_steamaudio_pathing_enable_caching                                            : true             : sv, cl, rep                      : 
 snd_steamaudio_pathing_enable_source_probe_interp                                : false            :                                  : If set, all the probes near a source withing probe range are used to find paths instead of nearest probe.
@@ -57055,7 +57055,6 @@ snd_steamaudio_reverb_update_rate                                               
 snd_steamaudio_source_pathing_debug                                              : false            : a                                : Enable path visualization for steam_audio_source operator.
 snd_steamaudio_source_pathing_debug_duration                                     : 0.01             :                                  : Duration for which path remains visible. Should be close to update rate of the sound operator stack.
 snd_steamaudio_source_pathing_enable_validation                                  : false            :                                  : Enable real-time pathing validation against dynamic geometry.
-snd_steamaudio_use_soundblocking_shapes_only                                     : false            :                                  : If set, OBJ export and Hammer visualization only shows sound blocking geometry used for baking simulation and runtime queries.
 snd_stereo_speaker_pan_exponent                                                  : cmd              :                                  : Specifies the exponent for the pan xfade from speaker to speaker if the 'exp' pan law is being used.
 snd_stereo_speaker_pan_radial_weight                                             : cmd              :                                  : Apply cos(angle) * weight before pan law
 snd_surround_speaker_pan_exponent                                                : cmd              :                                  : Specifies the exponent for the pan xfade from speaker to speaker if the 'exp' pan law is being used.
@@ -57077,7 +57076,7 @@ soundscape_fadetime                                                             
 soundscape_flush                                                                 : cmd              : sv                               : Flushes the server & client side soundscapes
 soundscape_message                                                               : false            : cl                               : 
 soundscape_radius_debug                                                          : false            : cl, cheat                        : Prints current volume of radius sounds
-soundsystem_device_used                                                          : Динамики (UGREEN USB MIC-CM769) :                                  : Sound device in use (changing this does not change the soundsystem).
+soundsystem_device_used                                                          : 0                :                                  : Sound device in use (changing this does not change the soundsystem).
 soundsystem_update_async                                                         : true             :                                  : 
 soundsysteminfo                                                                  : cmd              :                                  : Describe the current sound device without an active voice list.
 spawn_group_activate                                                             : cmd              : sv, cheat                        : Activate specified spawngroup.
@@ -57139,7 +57138,6 @@ stats_print                                                                     
 stats_print_gpu                                                                  : cmd              :                                  : Prints out GPU perf statistics to the console.  Requires stats_display > 0, and stats_collect_gpu = true.  Optional argument of CSV filename
 status                                                                           : cmd              : release                          : Print connection status
 status_json                                                                      : cmd              : release                          : Print status in JSON format
-steamaudio_customdata_dimensions_numrays                                         : 32768            :                                  : Number of rays to trace for estimating inside outside status of a probe.
 steamlearn_data_submit_enable                                                    : true             : sv                               : Whether we should be submitting data to SteamLearn
 steamlearn_inference_http                                                        : false            : sv                               : If we should use HTTP for inference queries
 steamlearn_max_in_flight                                                         : 100              : sv                               : Maximum number of steamlearn requests that we can have in flight at once
@@ -57239,7 +57237,6 @@ sv_logflush                                                                     
 sv_logsdir                                                                       : logs             : a, release                       : Folder in the game directory where server logs will be stored.
 sv_long_frame_ms                                                                 : 0                :                                  : If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable.
 sv_massreport                                                                    : false            : sv                               : 
-sv_matchperfstats_maxclientperfsamples                                           : 100              : sv                               : Don't retain more than N perf samples for any given client
 sv_max_queries_sec                                                               : 3                : release                          : Maximum queries per second to respond to from a single IP address.
 sv_max_queries_sec_global                                                        : 60               : release                          : Maximum queries per second to respond to from anywhere.
 sv_max_queries_window                                                            : 30               : release                          : Window over which to average queries per second averages.
@@ -57260,10 +57257,6 @@ sv_minupdaterate                                                                
 sv_mover_maxslope                                                                : 0.7              : sv, cl, nf, rep                  : The maximum slope the player can overcome [-]
 sv_mover_pogodampingratio                                                        : 1                : sv, cl, nf, rep                  : The capsule pogo stick damping ratio [-]
 sv_mover_pogofrequency                                                           : 10               : sv, cl, nf, rep                  : The capsule pogo stick frequency [hz].
-sv_net_client_message_process_time_ms_drop_burst                                 : 200              :                                  : Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)
-sv_net_client_message_process_time_ms_drop_rate                                  : 20               :                                  : Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate)
-sv_net_client_message_process_time_ms_warn_burst                                 : 50               :                                  : Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)
-sv_net_client_message_process_time_ms_warn_rate                                  : 5                :                                  : Warn if processing messages from a client consumes more than N ms of CPU time per second, sustained (token bucket fill rate)
 sv_networkvar_perfieldtracking                                                   : true             : release                          : Track individual field offset changes, rather than a single dirty flag for the whole entity.
 sv_noclipaccelerate                                                              : 5                : sv, cl, a, nf, rep               : 
 sv_noclipduringpause                                                             : false            : sv, cl, rep, cheat               : If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.).
@@ -57297,7 +57290,6 @@ sv_rcon_log                                                                     
 sv_rcon_maxfailures                                                              : 10               :                                  : Max number of times a user can fail rcon authentication before being banned
 sv_rcon_minfailures                                                              : 5                :                                  : Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned
 sv_rcon_minfailuretime                                                           : 30               :                                  : Number of seconds to track failed rcon authentications
-sv_recvbuf_messages                                                              : 1024             :                                  : Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client.
 sv_regeneration_force_on                                                         : false            : sv, cheat                        : Cheat to test regenerative health systems
 sv_regeneration_wait_time                                                        : 1                : sv, rep                          : 
 sv_region                                                                        : -1               : release                          : The region of the world to report this server in.
@@ -57379,7 +57371,7 @@ Test_StartScript                                                                
 test_voice_container_nesting                                                     : cmd              : linked                           : Test nesting voice containers.
 test_voice_containers                                                            : cmd              : linked                           : Quick example for how we'd derive traits from voice containers.
 testscript_debug                                                                 : false            :                                  : Debug test scripts.
-think_limit                                                                      : 0                : sv, cl, rep, release             : Maximum think time in milliseconds, warning is printed if this is exceeded.
+think_limit                                                                      : 10               : sv, cl, rep, release             : Maximum think time in milliseconds, warning is printed if this is exceeded.
 thirdperson                                                                      : cmd              : cl, cheat, execute_per_tick      : Switch to thirdperson camera.
 thirdperson_mayamode                                                             : cmd              : cl, cheat                        : Switch to thirdperson Maya-like camera controls.
 thirdpersonshoulder                                                              : cmd              : cl                               : Switch to thirdperson-shoulder camera.
@@ -57449,7 +57441,6 @@ tv_debug                                                                        
 tv_delay                                                                         : 120              : sv, release                      : SourceTV broadcast delay in seconds
 tv_delay1                                                                        : 15               : sv, release                      : SourceTV[instance 1] broadcast delay in seconds
 tv_deltacache                                                                    : 2                : release                          : Enable delta entity bit stream cache
-tv_demo_starttick                                                                : 0                :                                  : 
 tv_dispatchmode                                                                  : 1                : release                          : Dispatch clients to relay proxies: 0=never, 1=if appropriate, 2=always
 tv_dota_auto_record                                                              : false            : sv                               : If enabled, a demo will automatically be recorded for every game
 tv_dota_auto_record_stressbots                                                   : false            : sv                               : If enabled, a demo will automatically be recorded for stressbot games
@@ -57500,7 +57491,6 @@ tv_relayvoice                                                                   
 tv_retry                                                                         : cmd              : release                          : Reconnects the SourceTV relay proxy.
 tv_secret_code                                                                   : true             :                                  : When enabled, this will use a uniquely generated server code to authenticate relay connections. This code is coordinated via the GC or some external means rather than by clients directly
 tv_secure_bypass                                                                 : false            : release                          : Bypass secure challenge on TV port
-tv_show_allchat                                                                  : true             : sv, release                      : 
 tv_snapshotrate                                                                  : 20               : rep, release                     : Snapshots broadcast per second
 tv_snapshotrate1                                                                 : 32               : release                          : Snapshots broadcast per second, GOTV[1]
 tv_status                                                                        : cmd              : release                          : Show SourceTV server status.
@@ -57603,11 +57593,23 @@ vprof_reset_peaks                                                               
 vprof_scope_entity_clientthink                                                   : false            : cl                               : Set to 1 to generate individual VPROF nodes for each client entity's think function.
 vprof_scope_entity_thinks                                                        : false            : sv, cl, rep                      : 
 vprof_think_limit                                                                : false            : sv                               : 
+vt_page_atlas_size                                                               : 6                :                                  : Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). Changing it evicts every virtual texture tile.
 vt_sim_streaming_delay_ms                                                        : 500              :                                  : 
 vtune                                                                            : cmd              :                                  : Controls VTune's sampling.
+vulkan_batch_size                                                                : 500              :                                  : 
+vulkan_batch_submits                                                             : true             :                                  : 
+vulkan_dedicated_allocation_threshold                                            : 512              :                                  : Size (in KBs) above which textures should be allocated in dedicated memory (NV-only).
+vulkan_framebuffermgr_print                                                      : cmd              :                                  : Prints out stats for the Vulkan Framebuffer manager
 vulkan_link_time_optimize_libraries                                              : true             : release                          : 
+vulkan_memgr_fragmentation_print                                                 : cmd              :                                  : Prints out detailed memory fragmentation stats for the Vulkan memory manager
+vulkan_memgr_print                                                               : cmd              :                                  : Prints out stats for the Vulkan memory manager
+vulkan_pipeline_compile_spew                                                     : false            :                                  : 
+vulkan_pipeline_compile_throttle_ms                                              : 0                :                                  : 
+vulkan_pipelinemgr_print                                                         : cmd              :                                  : Prints out stats for the Vulkan Pipeline manager
+vulkan_shader_table_print                                                        : cmd              :                                  : Prints out stats for the Vulkan shader table
+vulkan_vma_defrag                                                                : cmd              :                                  : Force defragmenting memory with VMA
+vulkan_vma_gpu_mem_dump                                                          : cmd              :                                  : Dump .json file for use by GpuMemDumpVis.py
 watch_server                                                                     : cmd              : cl                               : Watch a server steam id
-wind_system_debug_volumes                                                        : false            :                                  : 
 wind_system_default_resolution_xy                                                : 256              :                                  : 
 wind_system_default_resolution_z                                                 : 32               :                                  : 
 wind_system_default_sample_min_spacing                                           : 12               :                                  : 
@@ -57621,7 +57623,7 @@ writeip                                                                         
 writekeybindings                                                                 : cmd              : release                          : Saves current key bindings to disk.
 zoom_sensitivity_ratio                                                           : 1                : cl, a, per_user                  : Additional mouse sensitivity scale factor applied when FOV is zoomed in.
 --------------
-5289 total convars/concommands
+5291 total convars/concommands
 $> cl_panorama_typescript_declarations
 interface CPanoramaScript_GameEvents
 {
@@ -73686,8 +73688,8 @@ interface Countdown
     SetCompositionLayerTextureName( _arg_1: string ): void;
     WriteCompositionLayerPNG( _arg_1: string, _arg_2: string ): void;
     WriteCompositionLayerJPEG( _arg_1: string, _arg_2: string, _arg_3: number, _arg_4: number ): void;
-    startTime( _arg_1 );
-    endTime( _arg_1 );
+    startTime( _arg_1: number ): number;
+    endTime( _arg_1: number ): number;
     updateInterval( _arg_1: number ): number;
     timeDialogVariable( _arg_1: string ): string;
     SetPanelEvent( _arg_1 ): void;
