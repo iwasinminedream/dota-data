@@ -20,8 +20,25 @@ no GPU, no Steam client). When the installed Dota build changes it:
    and pushes to `origin/master`. The report has a summary (Haiku draft, checked by Opus) of the API changes
    (`files/changelogs/<version>.json`, minus what the control dump marked as noise) and of the
    `.so` changes against the previous snapshot (sizes, code size, exports, strings from the
-   read-only data and protobuf descriptors, Metamod plugin anchor strings that disappeared), plus
-   tables computed without the model.
+   read-only data and protobuf descriptors) and function by function (`funcdiff.py`, below), plus
+   tables computed without the model. The whole function-level comparison, with the code diff of
+   every changed function, goes to `reports/<version>-functions.md`.
+
+## Function-level comparison
+
+`funcdiff.py OLD.so NEW.so` finds what changed in the code of a stripped library even when no
+string or export did (a balance change, a new condition): it splits `.text` into functions
+(capstone linear sweep, cut at the int3 padding and at the `.eh_frame` / data-pointer entry points),
+normalises each one so that recompiling at other addresses changes nothing (a string reference
+becomes the string, a value loaded from read-only data becomes the value — the float constants of
+game logic —, other addresses become placeholders) and pairs the functions of the two builds
+(unique identical code as anchors, then order, strings, names and size). Names come from RTTI:
+`Class::vfunc#N` for vtable slot N, and `Class::OnSpellStart` when the slot is one that
+`CDOTA_Ability_Lua` / `CDOTA_Item_Lua` / `CDOTA_Modifier_Lua` forward to the Lua callback of that
+name (callback names from `files/vscripts/api.json`). For each changed function: strings and
+constants added / removed, virtual calls, object fields, call count, and the normalised code diff.
+A library's function table is cached in `<snapshot>/funcs/<lib>.json.gz` (about a minute and
+4–6 GB of memory per big library to build). Needs `pip install capstone` (5.x).
 
 ## The models
 
@@ -29,8 +46,9 @@ Both run through the `claude` CLI with the server's Claude Code subscription log
 (`ANTHROPIC_API_KEY` in the env file would make the same CLI use the API instead), without a
 spending cap, in `/var/lib/dota-data/analysis/<version>/`:
 
-1. **Claude Haiku 4.5 — the bulk pass.** The whole changelog and the whole `.so` diff, uncapped, are
-   cut into chunks (by API category / library and string group, `REPORT_CHUNK_CHARS`, 60k
+1. **Claude Haiku 4.5 — the bulk pass.** The whole changelog, the whole `.so` diff and every changed
+   function, uncapped, are cut into chunks (by API category / library and string group / function,
+   `REPORT_CHUNK_CHARS`, 60k
    characters) and each chunk gets a detailed digest with the exact names (`REPORT_DRAFT_WORKERS`,
    3 in parallel, no tools). `chunks/` and `digests/` stay in the workspace.
 2. **Claude Opus 5.5 — the check.** It reads every digest, verifies each claim that goes into the
@@ -40,10 +58,12 @@ spending cap, in `/var/lib/dota-data/analysis/<version>/`:
    used, the strings around, the disassembly) and in localization / KV, and the report explains what
    it does, with the evidence and how sure that is. It is a read-only agent: `--tools "Read Grep Glob
    Bash"`, `--permission-mode dontAsk`, the only allowed shell command `automation/so-query.py`
-   (strings, exported symbols, code referencing a string, the strings that code uses, disassembly —
-   of the installed build's snapshot and the one before only),
-   file access limited to the workspace, this repo, the snapshots and `/opt/<plugin>/src`. Anything
-   else (other commands, files elsewhere, writes) is refused without asking.
+   (strings, exported symbols, code referencing a string, the strings that code uses, disassembly,
+   and per function: the changed list, a whole diff, a function's code with strings and constants
+   resolved, its callers and callees, a class's vtable — of the installed build's snapshot and the
+   one before only), file access limited to the workspace, this repo and the snapshots. Anything
+   else (other commands, files elsewhere, writes) is refused without asking. Each changed function
+   gets explained in the report: whose it is, what changed, what that means in the game.
 
 Models and effort: `REPORT_DRAFT_MODEL`, `REPORT_FINAL_MODEL`, `REPORT_FINAL_EFFORT`.
 
@@ -59,6 +79,7 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `dump-diff.py` | section-by-section comparison of two raw dumps |
 | `so-report.py` | `snapshot`, `list`, `report OLD NEW` (a .so-only report by hand) |
 | `update-report.py` | `VERSION --out reports/VERSION.md`: the update report |
+| `funcdiff.py` | `OLD.so NEW.so`: function-level comparison of two builds of a library |
 | `so-query.py` | the read-only queries the model may run on the snapshots |
 | `systemd/dota-data-sync.service` | runs `dota-data-sync.sh` (nice, idle IO, CPU 400 %, memory 12 G) |
 | `systemd/dota-data-sync.path` | starts it when `game/dota/steam.inf` changes (panel «Обновить доту» or a manual steamcmd) |
@@ -82,7 +103,8 @@ branch that diverged from `origin/master` stops it without touching anything.
   the lavapipe `fakegpu` Vulkan layer in `/root/dota-data-runtime/fakegpu`, `DOTA_DATA_GIT_NAME/EMAIL`,
   and for the Wine mode `DOTA_DATA_STEAM_LOGIN`, `DUMPER_WINE_LAUNCH`, `DUMPER_WINE_GAME_DIR`,
   `DUMPER_WIN_DEPOTS`, `DUMPER_STEAMWORKS`, `DUMPER_WIN_SERVER_DLL`, `WINEPREFIX`, `DUMPER_LANGUAGE`).
-  Packages: wine (64-bit), gcc-mingw-w64-x86-64, xvfb, mesa-vulkan-drivers.
+  Packages: wine (64-bit), gcc-mingw-w64-x86-64, xvfb, mesa-vulkan-drivers, binutils; Python:
+  `pip install capstone`.
 - Push: a deploy key with write access, `/root/.ssh/dota-data-deploy`, used by this clone through
   `core.sshCommand`, push URL `git@github.com:iwasinminedream/dota-data.git`.
 - Units: `cp automation/systemd/* /etc/systemd/system/ && systemctl daemon-reload &&

@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 """
 The report of a Dota update, reports/<version>.md: what changed in the API (the dump's changelog,
-files/changelogs/<version>.json) and in the Linux .so files (two snapshots of so-report.py).
+files/changelogs/<version>.json) and in the Linux .so files (two snapshots of so-report.py): strings
+and exports, and function by function (funcdiff.py: every changed, added and removed function of
+the game's libraries with its class/callback name, strings, changed constants and code diff;
+written in full to reports/<version>-functions.md).
 
 Two models, both through the `claude` CLI (the server's Claude Code subscription login, or
 ANTHROPIC_API_KEY when set), no spending cap:
 
-1. Claude Haiku 4.5 goes through everything, uncapped: the changelog and the .so diff are cut into
-   chunks (by category / library and string group) and each chunk gets a detailed digest with the
-   exact names (a few chunks in parallel, no tools: the chunk is the whole input).
+1. Claude Haiku 4.5 goes through everything, uncapped: the changelog, the .so diff and the changed
+   functions are cut into chunks (by category / library and string group / function) and each chunk
+   gets a detailed digest with the exact names (a few chunks in parallel, no tools: the chunk is the
+   whole input).
 2. Claude Opus 5.5 reads the digests, checks every claim that goes into the report against the raw
    data, fixes and completes them, and writes the report, listing what it corrected. It works as a
    read-only agent: Read/Grep/Glob inside the analysis workspace, this repo and the two snapshots
    (the server's Metamod plugins are not part of this public report), and one shell command,
-   automation/so-query.py (strings, symbols,
-   string references, disassembly of the snapshots); `--permission-mode dontAsk` refuses
-   everything else, nothing can be written.
+   automation/so-query.py (strings, symbols, string references, disassembly, functions: changed
+   list, whole diffs, callers, vtables); `--permission-mode dontAsk` refuses everything else,
+   nothing can be written.
 
     update-report.py VERSION --out reports/VERSION.md [--no-ai]
 
@@ -37,6 +41,9 @@ REPO = os.path.dirname(HERE)
 spec = importlib.util.spec_from_file_location('so_report', os.path.join(HERE, 'so-report.py'))
 so_report = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(so_report)
+spec = importlib.util.spec_from_file_location('funcdiff', os.path.join(HERE, 'funcdiff.py'))
+funcdiff = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(funcdiff)
 
 STATE = os.environ.get('DOTA_DATA_STATE', '/var/lib/dota-data')
 DRAFT_MODEL = os.environ.get('REPORT_DRAFT_MODEL', 'claude-haiku-4-5')
@@ -120,6 +127,95 @@ def snapshot_pair(version):
     return (older[-1], newest) if older else None
 
 
+def function_diffs(old, new, files, workspace):
+    """Function-level comparison of every changed game library (not the third-party ones):
+    func-diff/<lib>.json in the workspace (for so-query) and the results."""
+    results = []
+    os.makedirs(os.path.join(workspace, 'func-diff'), exist_ok=True)
+    for f in files:
+        if f['status'] != 'changed' or 'text' not in f:
+            continue
+        try:
+            result = funcdiff.compare(os.path.join(so_report.STORE, old, f['rel']),
+                                      os.path.join(so_report.STORE, new, f['rel']))
+        except Exception as e:  # a library the sweep cannot read: the string diff still covers it
+            print(f"funcdiff {f['rel']}: {e!r}", file=sys.stderr)
+            continue
+        result['rel'] = f['rel']
+        with open(os.path.join(workspace, 'func-diff', f"{result['lib']}.json"), 'w') as out:
+            json.dump(result, out, ensure_ascii=False)
+        results.append(result)
+    return results
+
+
+MANY_FUNCTIONS = int(os.environ.get('REPORT_MANY_FUNCTIONS', '1500'))
+
+
+def significant(entry):
+    """A change with meaning beyond recompilation: strings, data constants or virtual calls."""
+    return any(s.startswith(('строки', 'константы из данных', 'виртуальные вызовы', 'код тот же'))
+               for s in entry['summary'])
+
+
+def function_blocks(results):
+    """Draft-model input: one block per changed function, added/removed ones in lists. In a library
+    with more than MANY_FUNCTIONS changed functions (a big patch, a changed header) only the
+    significant ones get a block; the others are listed by name."""
+    blocks = []
+    for r in results:
+        c = r['counts']
+        head = (f"функций {c['functions_old']} -> {c['functions_new']}, изменено {c['changed']}, "
+                f"добавлено {c['added']}, удалено {c['removed']}")
+        blocks.append((f"Функции {r['lib']}: {head}", ['(дальше — каждая изменённая функция отдельно)']))
+        lists = {'added': [], 'removed': [], 'copy': [], 'minor': []}
+        many = c['changed'] > MANY_FUNCTIONS
+        for e in r['entries']:
+            kind = 'copy' if e['kind'].startswith('copy_') else e['kind']
+            if many and kind in ('changed', 'callee') and not significant(e):
+                lists['minor'].append(f"{e['title'][:200]} ({'; '.join(e['summary'])})")
+                continue
+            if kind in lists:
+                lists[kind].append(e['title'] if kind != 'copy' else f"{funcdiff.KIND[e['kind']]}: {e['title']}")
+                continue
+            lines = [f"было: {e.get('was', '')}"] + [f'- {s}' for s in e['summary']]
+            if e['diff']:
+                lines += ['дифф нормализованного кода (строки и константы подставлены, регистры как есть):']
+                lines += e['diff']
+                if e['diff_total'] > len(e['diff']):
+                    lines.append(f"... ещё {e['diff_total'] - len(e['diff'])} строк")
+            blocks.append((f"Функция {r['lib']} изменена: {e['title'][:300]}", lines))
+        for kind, label in (('minor', 'изменены без новых строк, констант и виртуальных вызовов (списком)'),
+                            ('added', 'добавлены'), ('removed', 'удалены'),
+                            ('copy', 'копии уже существующего кода (шаблоны, склейка компоновщиком — не новый код)')):
+            if lists[kind]:
+                blocks.append((f"Функции {r['lib']} {label} ({len(lists[kind])})", lists[kind]))
+    return blocks
+
+
+def render_functions(results, report_name):
+    """Model-free part of the report: counts and the changed functions, the rest in the file."""
+    out = ['### Функции', '',
+           'Сравнение по функциям (funcdiff.py): изменённый код, константы и строки каждой функции; '
+           f'имена — из RTTI и Lua-колбэков. Полностью, с диффом кода: [`{report_name}`]({report_name}).', '',
+           '| библиотека | функций | изменено | добавлено | удалено | копии шаблонов ± |', '|---|---|---|---|---|---|']
+    for r in results:
+        c = r['counts']
+        out.append(f"| {r['rel']} | {c['functions_new']} | {c['changed']} | {c['added']} | {c['removed']} "
+                   f"| {c.get('copies', 0)} |")
+    out.append('')
+    for r in results:
+        changed = [e for e in r['entries'] if e['kind'] in ('changed', 'callee')]
+        if not changed:
+            continue
+        out += [f"<details><summary>{r['lib']}: изменённые функции ({len(changed)})</summary>", '']
+        for e in changed[:300]:
+            out.append(f"- `{e['title'][:240]}`")
+        if len(changed) > 300:
+            out.append(f'- … ещё {len(changed) - 300}')
+        out += ['', '</details>', '']
+    return out
+
+
 def previous_dump(version):
     """The raw dump of the version before (from git), for the final model to compare against."""
     revs = subprocess.run(['git', '-C', REPO, 'rev-list', 'HEAD', '--', 'dumper/dump'],
@@ -150,7 +246,14 @@ def claude(args, prompt, cwd, timeout):
 DRAFT_PROMPT = """Ты делаешь первый, черновой проход по обновлению Dota 2. Тебе дают одну часть данных: \
 изменения API из дампа игры (Lua API и константы, Panorama API/события/панели, модификаторы, консольные \
 переменные, способности, юниты, локализация; строки «+» добавлено, «-» удалено, «~» изменено) и/или \
-дифф Linux-библиотек .so (строки из секций данных, экспортируемые символы).
+дифф Linux-библиотек .so (строки из секций данных, экспортируемые символы) и/или изменённые функции \
+кода игры. У функции: имя «Класс::Колбэк» (например CDOTA_Ability_Tinker_Rearm::OnChannelFinish — \
+переопределение Lua-видимого колбэка способности/предмета/модификатора) или «Класс::vfunc#N» (слот без \
+известного имени), строки, которые она использует, сводка (строки/константы +/−, виртуальные вызовы, \
+поля объектов, число вызовов) и дифф нормализованного кода: [S:"…"] — строка, [K:…] — константа из \
+данных (числа баланса: дальности, длительности, проценты), F — вызов другой функции, L — переход \
+внутри функции, [D]/[T] — прочие адреса. Регистры и смещения стека часто меняются просто от \
+перекомпиляции — это не изменение логики.
 
 Перечисли по-русски ВСЕ значимые изменения этой части, сгруппировав по смыслу: точные имена (функции, \
 классы, константы, переменные, модификаторы, способности, предметы, юниты), что добавилось, удалилось \
@@ -159,7 +262,10 @@ DRAFT_PROMPT = """Ты делаешь первый, черновой прохо�
 локализации или похожих строк) своди в группу с подсчётом и примерами. Шум дампера — значения, \
 перечисленные во вводных как нестабильные, — изменениями не считай. Отдельным списком в конце выпиши \
 все новые свойства, события и методы (модификаторов, Lua API, Panorama) с точными именами и сигнатурами: \
-их потом разберут по коду игры. Без вступления и заключения."""
+их потом разберут по коду игры. По каждой изменённой функции: чья она (герой/способность/предмет/юнит/\
+система и какой колбэк), что конкретно поменялось в логике (константа было→стало, новая или убранная \
+проверка/условие, строки, например предметы из списка, другой вызов) и возможный игровой эффект с \
+пометкой «возможно», если это вывод. Без вступления и заключения."""
 
 FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об обновлении Dota 2 для разработчиков кастомных \
 игр. Пиши по-русски, Markdown.
@@ -170,6 +276,10 @@ FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об 
 шум за изменения;
 - chunks/ — исходные части, по которым писались конспекты (тот же номер);
 - api-changes.txt — все изменения API по дампу; so-diff.txt (если есть) — весь дифф .so; \
+func-diff.txt (если есть) — все изменённые, добавленные и удалённые функции библиотек игры с именами \
+(«Класс::Колбэк» — переопределение Lua-видимого колбэка, «Класс::vfunc#N» — слот без имени), строками, \
+сводкой изменений и диффом нормализованного кода ([S:…] строка, [K:…] константа из данных, F вызов, \
+L переход внутри функции; смена регистров и смещений стека — перекомпиляция, не логика); \
 dump-noise.md (если есть) — шум дампера: чем различаются два дампа одной сборки, это не изменения игры;
 - previous-dump.txt — сырой дамп прошлой версии; в репозитории dota-data — files/*.json (текущее API) \
 и dumper/dump (текущий сырой дамп);
@@ -179,7 +289,9 @@ files/panorama/*.json (описания API);
 - команда `python3 /root/dota-data/automation/so-query.py` (без аргументов печатает справку) — строки, \
 символы, места использования строки в коде, строки вокруг этих мест и дизассемблер Linux-библиотек \
 установленной сборки («new»: libserver.so — серверная логика, libclient.so — клиент и интерфейс) и \
-прошлой сборки («old»), если её снимок есть. Других команд нет. Запускай её только так, одной командой: \
+прошлой сборки («old»), если её снимок есть; по функциям: funcs (список изменённых), fdiff (весь дифф \
+функции), func (код функции с подставленными строками и константами, кто её вызывает и кого она), \
+callers, vtable (базовые классы и переопределённые слоты класса). Других команд нет. Запускай её только так, одной командой: \
 `python3 /root/dota-data/automation/so-query.py <аргументы>` — без cd, &&, ;, конвейеров (|) и \
 перенаправлений, иначе вызов отклонят (вывод и так ограничен; рабочий каталог уже нужный).
 
@@ -198,14 +310,28 @@ files/panorama/*.json (описания API);
 пиши, на чём основан вывод и насколько он надёжен; если код не нашёл — так и скажи, не придумывай.
 
 Отчёт (заголовки третьего уровня, ###):
-1. «Главное» — 3–8 пунктов: что по сути поменялось (контент, механики, системы).
+1. «Главное» — 3–8 пунктов: что по сути поменялось (контент, механики, системы; в том числе изменения \
+логики героев и предметов, найденные по коду функций).
 2. «Новые свойства и методы: что делают» — по каждому новому свойству, событию и методу: что делает, \
 как пользоваться в кастомке, доказательства (дамп / локализация / KV / код .so) и надёжность вывода.
 3. «Для разработчиков кастомок» — остальное новое, удалённое и изменённое в Lua API, Panorama, событиях, \
 модификаторах, консольных переменных; конкретные имена; что может сломать существующие аддоны.
-4. «Бинарники» — только если есть so-diff.txt: что видно по .so (движок, сеть, системы, что за \
-изменениями в API стоит в коде).
-5. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
+4. «Изменения в коде игры» — только если есть func-diff.txt: по каждой изменённой функции (и по \
+заметным добавленным/удалённым): чья она (герой, способность, предмет, юнит, система; какой колбэк), что \
+именно поменялось (константы было→стало, новые или убранные проверки и условия, строки, другие вызовы) и \
+что это значит в игре; где можно — сверь с KV (files/abilities.json, files/units.json) и локализацией \
+(значение константы совпадает со значением способности, подсказка изменилась и т. п.). Разбирай код \
+через so-query (fdiff — целиком, func — что за функция и кто её вызывает, func old — как было). Для \
+каждого пункта — на чём основан вывод и насколько он надёжен. Однотипные служебные функции (без строк и \
+имён, с одинаковым изменением) своди в группу; «копии существующего кода» — не изменения. Изменения \
+логики, видимые только по коду, — главное, что может дать этот отчёт сверх патчноутов. Если изменённых \
+функций до ~60 — разбери каждую. Если больше — сгруппируй по героям, предметам и системам, подробно \
+разбери самые значимые (изменённые константы из данных, новые или убранные проверки, списки строк, \
+другие вызовы), остальные перечисли по имени с одной строкой сути и сошлись на полный список \
+(reports/<версия>-functions.md, so-query funcs): отчёт должен уместиться в один ответ.
+5. «Бинарники» — только если есть so-diff.txt: что видно по .so в целом (какие библиотеки, движок, \
+сеть, системы, что за изменениями в API стоит в коде).
+6. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
 Только подтверждённое данными; если смысл неясен — так и скажи. Серверные Metamod-плагины и их \
 проверку в отчёте не упоминай: это отдельная проверка на сервере. Без вступления и заключения. \
 Ответ — только сам отчёт."""
@@ -297,7 +423,7 @@ def main():
             json.dump({'old': os.path.join(so_report.STORE, pair[0]) if pair else None,
                        'new': os.path.join(so_report.STORE, current)}, f)
         add_dirs.append(os.path.join(so_report.STORE, current))
-    files = []
+    files, func_results = [], []
     if pair:
         old, new = pair
         files, _anchors = so_report.build_diff(old, new)  # plugin anchors: not in this report
@@ -307,6 +433,11 @@ def main():
             f.write(f'Снимки .so: {old} -> {new}\n\n' +
                     ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in so_blocks))
         add_dirs.append(os.path.join(so_report.STORE, old))
+        func_results = function_diffs(old, new, files, workspace)
+        if func_results:
+            with open(os.path.join(workspace, 'func-diff.txt'), 'w') as f:
+                f.write(f'Снимки .so: {old} -> {new}\n\n' + '\n'.join(funcdiff.render(r) for r in func_results))
+            blocks += function_blocks(func_results)
 
     chunks = chunk(blocks)
     if args.no_ai:
@@ -338,6 +469,15 @@ def main():
     if pair:
         out += [f'Снимки `{pair[0]}` → `{pair[1]}`.', '']
         out += so_report.render_binaries(files, [], h='###', anchors=False)
+        if func_results:
+            functions = os.path.splitext(args.out)[0] + '-functions.md'
+            out += render_functions(func_results, os.path.basename(functions))
+            with open(functions, 'w') as f:
+                f.write(f'# Dota {version}: изменения кода по функциям\n\n'
+                        f'Снимки `{pair[0]}` → `{pair[1]}`; funcdiff.py. В диффе: [S:…] — строка, [K:…] — '
+                        'константа из данных, F — вызов другой функции, L — переход внутри функции, [D]/[T] — '
+                        'прочие адреса. Регистры и смещения стека меняются и от перекомпиляции.\n\n'
+                        + '\n'.join(funcdiff.render(r) for r in func_results))
     else:
         out += ['Нет снимка .so предыдущей сборки — сравнивать не с чем.']
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)

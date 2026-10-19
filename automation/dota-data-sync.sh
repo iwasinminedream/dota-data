@@ -11,9 +11,10 @@
 #   4. npm run build and the files-match-dump test (the schema tests need network fixtures that are
 #      gone upstream); a rebuild that changes nothing in files/ is not committed;
 #   5. commit "<version>";
-#   6. the update report reports/<version>.md: API changes from the dump and .so changes, summarised
-#      by Claude Haiku 4.5 with read-only tools (update-report.py); then push. Commits that could
-#      not be pushed are pushed by the next run.
+#   6. the update report reports/<version>.md: API changes from the dump and .so changes (strings,
+#      exports and function by function, reports/<version>-functions.md), drafted by Claude Haiku 4.5
+#      and checked by Claude Opus 5.5 with read-only tools (update-report.py); then push. Commits that
+#      could not be pushed are pushed by the next run.
 # Started by dota-data-sync.path when steam.inf changes (any Dota update: the panel button or a manual
 # steamcmd) and by dota-data-sync.timer as a fallback; see automation/README.md.
 #
@@ -291,19 +292,27 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
 fi
 
 # The update report: API (the dump's changelog) and .so changes, summarised by Claude Haiku 4.5
-# with read-only tools (automation/update-report.py). Retried by the next run if it fails.
+# with read-only tools (automation/update-report.py). A failed report is retried after RETRY_AFTER
+# (report-failed-<id> in $STATE) or at once with --force.
 REPORT_ID=${REPORT_ID:-$INSTALLED}
 REPORT=reports/$REPORT_ID.md
-if [[ ! -e $REPORT && -e files/changelogs/$INSTALLED.json && $(inf ClientVersion dumper/dump) == "$INSTALLED" ]]; then
+FUNCTIONS=reports/$REPORT_ID-functions.md
+REPORT_FAILED=$STATE/report-failed-$REPORT_ID
+if [[ ! -e $REPORT && -e files/changelogs/$INSTALLED.json && $(inf ClientVersion dumper/dump) == "$INSTALLED" ]] &&
+    { (( FORCE )) || [[ ! -e $REPORT_FAILED ]] || (( $(date +%s) - $(stat -c %Y "$REPORT_FAILED") >= RETRY_AFTER )); }; then
     rc=0
+    rm -f "$FUNCTIONS"
     python3 automation/update-report.py "$REPORT_ID" --out "$REPORT" || rc=$?
     if (( rc == 0 )) && [[ -e $REPORT ]]; then
         git add "$REPORT"
+        [[ -e $FUNCTIONS ]] && git add "$FUNCTIONS"
         git commit -q -m "report: $REPORT_ID"
+        rm -f "$REPORT_FAILED"
         say "committed $REPORT"
     else
-        rm -f "$REPORT"
-        say "update report not committed (update-report.py exit $rc), retried next run"
+        rm -f "$REPORT" "$FUNCTIONS"
+        date '+%F %T' >"$REPORT_FAILED"
+        say "update report not committed (update-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
     fi
 fi
 

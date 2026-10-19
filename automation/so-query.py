@@ -14,9 +14,24 @@ there is a snapshot of it); every answer is capped.
                                                   to STRING uses (what that code is about)
     so-query.py disasm old|new LIB ADDRESS [N]    N bytes (default 160, max 600) of code at ADDRESS
 
+  functions (function-level comparison of the two builds, see funcdiff.py):
+    so-query.py funcs LIB [REGEX]                 changed / added / removed functions of LIB with
+                                                  their names, strings and what changed (REGEX
+                                                  filters by name/strings/summary)
+    so-query.py fdiff LIB ADDRESS [SKIP]          the whole diff of a changed function (its new or
+                                                  old address), from line SKIP
+    so-query.py func old|new LIB ADDRESS [SKIP]   the function containing ADDRESS: names, strings,
+                                                  callers, callees and its code with strings and
+                                                  constants resolved, from instruction SKIP
+    so-query.py callers old|new LIB ADDRESS       functions that call / reference that function
+    so-query.py vtable old|new LIB CLASS          the class's base classes and the vtable slots it
+                                                  overrides (Lua callback names where known)
+
 LIB is a file name such as libserver.so (game server; libclient.so: client and UI; libengine2.so:
-engine). Addresses are virtual addresses (hex).
+engine). Addresses are virtual addresses (hex). Function names: "Class::OnSpellStart" is the
+class's override of a Lua-visible callback, "Class::vfunc#N" an unnamed vtable slot N.
 """
+import bisect
 import importlib.util
 import json
 import os
@@ -28,6 +43,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 spec = importlib.util.spec_from_file_location('so_report', os.path.join(HERE, 'so-report.py'))
 so_report = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(so_report)
+
+spec = importlib.util.spec_from_file_location('funcdiff', os.path.join(HERE, 'funcdiff.py'))
+funcdiff = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(funcdiff)
 
 MAX_LINES = 200
 
@@ -209,8 +228,164 @@ def cmd_disasm(args):
     capped(disasm(library(which, name), int(address, 16), length))
 
 
+def comparison(name):
+    """The function-level comparison of LIB: precomputed by the report (func-diff/LIB.json)."""
+    path = os.path.join('func-diff', f'{name}.json')
+    if os.path.isfile(path):
+        with open(path) as f:
+            return json.load(f)
+    old, new = library('old', name), library('new', name)
+    if open(old, 'rb').read() == open(new, 'rb').read():
+        fail(f'{name} is the same file in both builds: no function changed')
+    fail(f'no function-level comparison of {name} (a third-party library): use strings/xref/disasm')
+
+
+def table(which, name):
+    t = funcdiff.load_table(library(which, name), build=False)
+    if t is None:
+        fail(f'no function table for {name} ({which}) yet')
+    return t['funcs']
+
+
+def containing(funcs, address):
+    starts = [f[0] for f in funcs]
+    k = bisect.bisect_right(starts, address) - 1
+    if k < 0 or not funcs[k][0] <= address < funcs[k][1]:
+        fail(f'{address:#x} is not inside a known function')
+    return k
+
+
+def label(f):
+    return f"{f[0]:#x}" + (f" {f[5][0]}" if f[5] else '') + \
+        (f" | {'; '.join(json.dumps(s[:60]) for s in f[4][:4])}" if f[4] else '')
+
+
+def cmd_funcs(args):
+    result = comparison(args[0])
+    rx = re.compile(args[1]) if len(args) > 1 else None
+    c = result['counts']
+    print(f"{result['lib']}: functions {c['functions_old']} -> {c['functions_new']}; changed {c['changed']}, "
+          f"added {c['added']}, removed {c['removed']}; copies of existing code (not listed without "
+          f"REGEX) {c.get('copies', 0)}")
+    lines = []
+    for e in result['entries']:
+        if e['kind'].startswith('copy_') and not rx:
+            continue
+        text = f"{funcdiff.KIND[e['kind']]}: {e['title']}"
+        if e['kind'] == 'changed':
+            text += f" (было {e['was']})"
+        body = [text] + [f'    {s}' for s in e['summary']]
+        if rx and not any(rx.search(b) for b in body):
+            continue
+        lines += body
+    capped(lines)
+
+
+def cmd_fdiff(args):
+    name, address = args[0], int(args[1], 16)
+    skip = int(args[2]) if len(args) > 2 else 0
+    for e in comparison(name)['entries']:
+        if e['kind'] in ('changed', 'callee') and address in (e.get('new'), e.get('old')):
+            break
+    else:
+        fail(f'{address:#x} is not a changed function of {name} (see: so-query.py funcs {name})')
+    old_path, new_path = library('old', name), library('new', name)
+    old, new = table('old', name), table('new', name)
+    o, n = old[containing(old, e['old'])], new[containing(new, e['new'])]
+    a = funcdiff.function_tokens(old_path, o[0], o[1])
+    b = funcdiff.function_tokens(new_path, n[0], n[1])
+    diff = [d[:220] for d in funcdiff.difflib.unified_diff(a, b, lineterm='', n=3)
+            if not d.startswith(('---', '+++'))]
+    print(f"{e['title']}\nбыло {o[0]:#x}, стало {n[0]:#x}; " + '; '.join(e['summary']))
+    print(f'diff lines {skip}..{min(skip + 400, len(diff))} of {len(diff)}')
+    for line in diff[skip:skip + 400]:
+        print(line)
+
+
+def cmd_func(args):
+    which, name, address = args[:3]
+    skip = int(args[3]) if len(args) > 3 else 0
+    path = library(which, name)
+    funcs = table(which, name)
+    k = containing(funcs, int(address, 16))
+    f = funcs[k]
+    print(f'function {f[0]:#x}..{f[1]:#x} ({f[1] - f[0]} bytes, {f[2]} instructions)')
+    print('names: ' + (', '.join(f[5]) if f[5] else '-'))
+    print('strings: ' + ('; '.join(json.dumps(s) for s in f[4]) if f[4] else '-'))
+    by_start = {g[0]: g for g in funcs}
+    callers = [g for g in funcs if f[0] in g[6]]
+    print(f'callers ({len(callers)}): ' + ('; '.join(label(g) for g in callers[:6]) or '-'))
+    callees = [by_start[t] for t in dict.fromkeys(f[6]) if t in by_start]
+    print(f'callees ({len(callees)}): ' + ('; '.join(label(g) for g in callees[:10]) or '-'))
+    img = funcdiff.Image(path)
+    md = funcdiff.capstone.Cs(funcdiff.capstone.CS_ARCH_X86, funcdiff.capstone.CS_MODE_64)
+    md.skipdata = True
+    off = img.offset(f[0])
+    insns = [i for i in md.disasm_lite(img.data[off:off + f[1] - f[0]], f[0]) if i[2] != 'int3']
+    lines = []
+    for a, size, mnemonic, op in insns[skip:skip + 300]:
+        refs = []
+        text = funcdiff.normalise(img, a, size, mnemonic, op, f[0], f[1], [], refs)
+        if text.endswith((' F', ' L')) or refs:
+            target = refs[-1] if refs else int(op, 16)
+            text = text[:-1] + f'{target:#x}' if text.endswith((' F', ' L')) else text
+            if target in by_start and by_start[target][5]:
+                text += f'  ; {by_start[target][5][0]}'
+        lines.append(f'  {a:x}: {text}')
+    print(f'code, instructions {skip}..{skip + len(lines)} of {len(insns)}:')
+    for line in lines:
+        print(line)
+
+
+def cmd_callers(args):
+    which, name, address = args
+    funcs = table(which, name)
+    f = funcs[containing(funcs, int(address, 16))]
+    callers = [g for g in funcs if f[0] in g[6]]
+    print(f'{label(f)}: {len(callers)} caller(s)')
+    capped(label(g) for g in callers)
+
+
+def cmd_vtable(args):
+    which, name, cls = args
+    path = library(which, name)
+    funcs = table(which, name)
+    classes = funcdiff.classes(funcdiff.Image(path))
+    if cls not in classes:
+        fail(f'no class {cls} with RTTI in {name}')
+    chain = funcdiff.ancestors(cls, classes)
+    print('class chain: ' + ' -> '.join(chain))
+    slots = funcdiff.slot_names(classes, {g[0]: g[4] for g in funcs})
+    known = {}
+    for anc in chain:
+        for n, nm in slots.get(anc, {}).items():
+            known.setdefault(n, nm)
+    # the inherited function of a slot: the base's, or the most common one among the base's subclasses
+    base = chain[1] if len(chain) > 1 else None
+    siblings = [v['vtable'] for v in classes.values() if base and v['base'] == base]
+    usual = {}
+    for n in range(len(classes[cls]['vtable'])):
+        votes = funcdiff.collections.Counter(v[n] for v in siblings if len(v) > n)
+        usual[n] = votes.most_common(1)[0][0] if votes else None
+    if base and classes[base]['vtable']:
+        usual.update({n: fn for n, fn in enumerate(classes[base]['vtable']) if fn})
+    by_start = {g[0]: g for g in funcs}
+    lines = []
+    for n, fn in enumerate(classes[cls]['vtable']):
+        if usual.get(n) == fn:
+            continue
+        g = by_start.get(fn)
+        strings = '; '.join(json.dumps(s[:60]) for s in g[4][:4]) if g and g[4] else ''
+        lines.append(f"  #{n:<4} {known.get(n, ''):32} {fn:#x} {(g[1] - g[0]) if g else '?'} bytes  {strings}")
+    print(f"{len(classes[cls]['vtable'])} slots; overridden here (not the inherited function): {len(lines)}")
+    capped(lines)
+
+
 COMMANDS = {'libs': (cmd_libs, 0), 'strings': (cmd_strings, 3), 'symbols': (cmd_symbols, 3),
-            'xref': (cmd_xref, 3), 'context': (cmd_context, 3), 'disasm': (cmd_disasm, 3)}
+            'xref': (cmd_xref, 3), 'context': (cmd_context, 3), 'disasm': (cmd_disasm, 3),
+            'funcs': (cmd_funcs, 1), 'fdiff': (cmd_fdiff, 2), 'func': (cmd_func, 3),
+            'callers': (cmd_callers, 3), 'vtable': (cmd_vtable, 3)}
+OPTIONAL = {'disasm', 'funcs', 'fdiff', 'func'}  # one more optional argument
 
 
 def main():
@@ -219,13 +394,15 @@ def main():
         return 1
     fn, nargs = COMMANDS[sys.argv[1]]
     args = sys.argv[2:]
-    if len(args) < nargs or (sys.argv[1] != 'disasm' and len(args) > nargs) or len(args) > nargs + 1:
+    if len(args) < nargs or (sys.argv[1] not in OPTIONAL and len(args) > nargs) or len(args) > nargs + 1:
         print(__doc__)
         return 1
     try:
         fn(args)
     except re.error as e:
         fail(f'bad regex: {e}')
+    except ValueError as e:
+        fail(f'bad number: {e}')
     return 0
 
 
