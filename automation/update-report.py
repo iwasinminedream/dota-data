@@ -11,8 +11,9 @@ ANTHROPIC_API_KEY when set), no spending cap:
    exact names (a few chunks in parallel, no tools: the chunk is the whole input).
 2. Claude Opus 5.5 reads the digests, checks every claim that goes into the report against the raw
    data, fixes and completes them, and writes the report, listing what it corrected. It works as a
-   read-only agent: Read/Grep/Glob inside the analysis workspace, this repo, the two snapshots and
-   the Metamod plugin sources, and one shell command, automation/so-query.py (strings, symbols,
+   read-only agent: Read/Grep/Glob inside the analysis workspace, this repo and the two snapshots
+   (the server's Metamod plugins are not part of this public report), and one shell command,
+   automation/so-query.py (strings, symbols,
    string references, disassembly of the snapshots); `--permission-mode dontAsk` refuses
    everything else, nothing can be written.
 
@@ -153,8 +154,8 @@ DRAFT_PROMPT = """Ты делаешь первый, черновой прохо�
 локализации или похожих строк) своди в группу с подсчётом и примерами. Шум дампера — значения, \
 перечисленные во вводных как нестабильные, — изменениями не считай. Без вступления и заключения."""
 
-FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об обновлении Dota 2 для владельца сервера с \
-кастомными играми и Metamod-плагинами. Пиши по-русски, Markdown.
+FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об обновлении Dota 2 для разработчиков кастомных \
+игр. Пиши по-русски, Markdown.
 
 В рабочем каталоге:
 - digests/ — черновые конспекты всех частей данных от Claude Haiku. Haiku быстрый, но ошибается: \
@@ -164,24 +165,24 @@ FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об 
 - api-changes.txt — все изменения API по дампу; so-diff.txt (если есть) — весь дифф .so; \
 dump-noise.md (если есть) — шум дампера: чем различаются два дампа одной сборки, это не изменения игры;
 - previous-dump.txt — сырой дамп прошлой версии; в репозитории dota-data — files/*.json (текущее API) \
-и dumper/dump (текущий сырой дамп); исходники Metamod-плагинов;
+и dumper/dump (текущий сырой дамп);
 - команда `python3 /root/dota-data/automation/so-query.py` (без аргументов печатает справку) — строки, \
 символы, места использования строки в коде и дизассемблер обоих снимков .so. Других команд нет.
 
 Работа: прочитай все конспекты. Каждое утверждение, которое попадёт в отчёт, проверь по исходным \
 данным (Grep/Read по chunks, api-changes.txt, so-diff.txt, дампам; so-query для .so). Исправь \
 неверное, убери неподтверждённое, дополни важное, что Haiku пропустил (пробегись по крупным разделам \
-исходных частей). Если есть so-diff.txt и в нём есть строки-якоря плагинов, выясни, что с ними стало \
-(so-query xref по старому и новому снимку).
+исходных частей).
 
 Отчёт (заголовки третьего уровня, ###):
 1. «Главное» — 3–8 пунктов: что по сути поменялось (контент, механики, системы).
 2. «Для разработчиков кастомок» — новое, удалённое и изменённое в Lua API, Panorama, событиях, \
 модификаторах, консольных переменных; конкретные имена; что может сломать существующие аддоны.
-3. «Бинарники и плагины» — только если есть so-diff.txt: что видно по .so, риски для плагинов \
-(конкретные плагины и что проверить).
+3. «Бинарники» — только если есть so-diff.txt: что видно по .so (движок, сеть, системы, что за \
+изменениями в API стоит в коде).
 4. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
-Только подтверждённое данными; если смысл неясен — так и скажи. Без вступления и заключения. \
+Только подтверждённое данными; если смысл неясен — так и скажи. Серверные Metamod-плагины и их \
+проверку в отчёте не упоминай: это отдельная проверка на сервере. Без вступления и заключения. \
 Ответ — только сам отчёт."""
 
 
@@ -262,13 +263,13 @@ def main():
         with open(os.path.join(workspace, 'previous-dump.txt'), 'w') as f:
             f.write(prev)
 
-    add_dirs = [REPO] + sorted(glob.glob(so_report.PLUGIN_SOURCE.format('*')))
+    add_dirs = [REPO]
     pair = snapshot_pair(version)
-    files, anchor_hits = [], []
+    files = []
     if pair:
         old, new = pair
-        files, anchor_hits = so_report.build_diff(old, new)
-        so_blocks = so_report.diff_blocks(old, new, files, anchor_hits)
+        files, _anchors = so_report.build_diff(old, new)  # plugin anchors: not in this report
+        so_blocks = so_report.diff_blocks(old, new, files, [])
         blocks += so_blocks
         with open(os.path.join(workspace, 'so-diff.txt'), 'w') as f:
             f.write(f'Снимки .so: {old} -> {new}\n\n' +
@@ -306,7 +307,7 @@ def main():
     out += ['## Бинарники (.so)', '']
     if pair:
         out += [f'Снимки `{pair[0]}` → `{pair[1]}`.', '']
-        out += so_report.render_binaries(files, anchor_hits, h='###')
+        out += so_report.render_binaries(files, [], h='###', anchors=False)
     else:
         out += ['Нет снимка .so предыдущей сборки — сравнивать не с чем.']
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)

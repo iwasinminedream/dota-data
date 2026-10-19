@@ -343,18 +343,19 @@ def ask_haiku(text):
     return res.stdout.strip(), None
 
 
-def render_binaries(files, anchor_hits, h='##'):
-    """The plugin anchor and file sections of a report (Markdown lines)."""
+def render_binaries(files, anchor_hits, h='##', anchors=True):
+    """The plugin anchor (unless anchors=False) and file sections of a report (Markdown lines)."""
     out = []
-    out.append(f'{h} Якоря Metamod-плагинов')
-    out.append('')
-    if anchor_hits:
-        out.append('Исчезли строки, которые встречаются в исходниках плагинов (по ним ищется код):')
+    if anchors:
+        out.append(f'{h} Якоря Metamod-плагинов')
         out.append('')
-        out.extend(f'- `{s}`: {", ".join(p)} (было в {lib})' for s, p, lib in anchor_hits)
-    else:
-        out.append('Все строки из исходников плагинов, которые были в старых библиотеках, на месте.')
-    out.append('')
+        if anchor_hits:
+            out.append('Исчезли строки, которые встречаются в исходниках плагинов (по ним ищется код):')
+            out.append('')
+            out.extend(f'- `{s}`: {", ".join(p)} (было в {lib})' for s, p, lib in anchor_hits)
+        else:
+            out.append('Все строки из исходников плагинов, которые были в старых библиотеках, на месте.')
+        out.append('')
     changed = [f for f in files if f['status'] != 'same']
     out.append(f"{h} Файлы ({len(changed)} из {len(files)} изменились)")
     out.append('')

@@ -60,6 +60,12 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `systemd/dota-data-sync.path` | starts it when `game/dota/steam.inf` changes (panel «Обновить доту» or a manual steamcmd) |
 | `systemd/dota-data-sync.timer` | hourly fallback: snapshots the installed build, retries a failed push |
 
+On this server Dota updates itself: `/root/dota-custom/dota-auto-update.sh` (`dota-auto-update.timer`,
+every 5 minutes) asks Steam anonymously for the public build and runs the panel's `dota-update.sh
+update` when it differs (lobbies stopped, steamcmd, Metamod plugin check — its result shows in the
+panel, not in these reports — lobbies back up); the new `steam.inf` then starts this sync. If Dota
+changes while a sync runs, the run discards what it dumped and starts over for the new build.
+
 `dota-data-sync.sh` waits until the update has settled (no live `/run/dota-update.active` marker, no
 `steamcmd` process, `StateFlags 4` in `appmanifest_570.acf`). A version whose dump failed is retried
 after 6 hours (`/var/lib/dota-data/failed-<version>`), or at once with `--force`. A dirty worktree or a

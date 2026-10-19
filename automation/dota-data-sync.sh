@@ -36,6 +36,7 @@ LOCK=/run/dota-data-sync.lock
 UPDATE_ACTIVE=/run/dota-update.active
 RETRY_AFTER=$((6 * 3600)) # a failed version is retried after this long (or with --force)
 
+ARGS=("$@")
 FORCE=0
 CHECK=0
 [[ ${1:-} == --force ]] && FORCE=1
@@ -206,6 +207,16 @@ DUMPED=$(inf ClientVersion dumper/dump)
 [[ -s $BUILD_MARK || $DUMPED != "$INSTALLED" ]] || echo "$BUILD" >"$BUILD_MARK"
 DUMPED_BUILD=$(cat "$BUILD_MARK" 2>/dev/null || true)
 
+# Dota can be updated in the middle of a run (dota-auto-update.timer): what was dumped then is neither
+# build. Start over for the new one (the new instance waits until the update has settled).
+current_build() { grep -m1 -oP '"buildid"\s+"\K[0-9]+' "$APP_MANIFEST"; }
+rerun_if_updated() {
+    if [[ $(current_build) != "$BUILD" ]] || ! settled; then
+        say "Dota changed during this run (build $BUILD -> $(current_build)) — starting over"
+        exec "$0" "${ARGS[@]}"
+    fi
+}
+
 if (( CHECK )); then
     mkdir -p "$STATE/checks"
     report=$STATE/checks/$INSTALLED-$(date +%Y%m%d-%H%M%S).md
@@ -240,18 +251,25 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
         mkdir -p dump-checks
         step=""
         if ! { step=auto-dump && auto_dump &&
+               step=install && [[ $(current_build) == "$BUILD" ]] &&
                step=version && [[ $(inf ClientVersion dumper/dump) == "$INSTALLED" ]] &&
                { (( !CONTROL )) || control_dump "$CHECK_REPORT"; } &&
                step=build && npm run build &&
                step=test && npx jest test/files_match_dump.spec.ts --testTimeout=600000 &&
                step=json && json_ok; }; then
             say "failed at: $step — restoring the worktree"
-            echo "$(date '+%F %T') $step" >"$FAILED_MARK"
             restore
+            rerun_if_updated
+            echo "$(date '+%F %T') $step" >"$FAILED_MARK"
             exit 1
         fi
         rm -f "$FAILED_MARK"
         rmdir dump-checks 2>/dev/null || true
+        # The build reads the game's VPKs too: an update since the dump started spoils the result.
+        if [[ $(current_build) != "$BUILD" ]] || ! settled; then
+            restore
+            rerun_if_updated
+        fi
         if [[ $DUMPED == "$INSTALLED" ]] && git diff --quiet -- files && [[ -z $(git ls-files --others --exclude-standard files) ]]; then
             # Same version, new Steam build, same API: nothing worth a commit.
             say "build $BUILD changes nothing in files/ — not committed"
@@ -300,3 +318,6 @@ if (( AHEAD > 0 )); then
 else
     say "up to date: Dota $INSTALLED"
 fi
+
+# An update that came in while this run worked (its .path trigger is lost while we are active).
+rerun_if_updated
