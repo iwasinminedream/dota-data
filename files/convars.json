@@ -6442,7 +6442,9 @@
   "dota_audio_language_storage": {
     "default": "8",
     "flags": [
-      "cl"
+      "cl",
+      "a",
+      "user"
     ],
     "description": ""
   },
@@ -18926,7 +18928,9 @@
   "dota_ui_language_storage": {
     "default": "8",
     "flags": [
-      "cl"
+      "cl",
+      "a",
+      "user"
     ],
     "description": ""
   },

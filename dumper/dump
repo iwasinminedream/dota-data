@@ -1,13 +1,13 @@
-ClientVersion=6963
-ServerVersion=6963
+ClientVersion=6964
+ServerVersion=6964
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11145455
+SourceRevision=11146732
 VersionDate=Oct 19 2026
-VersionTime=13:28:36
+VersionTime=16:03:42
 $> script_reload
 Initializing script VM...
 ...done
@@ -31711,10 +31711,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1796
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1808
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
     "value":1510
   },{
@@ -31988,7 +31984,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1810
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32164,7 +32160,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1811
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32691,6 +32687,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "value":1557
   },{
     "kind":"constant",
+    "name":"ACT_DOTA_TORRENT",
+    "value":1811
+  },{
+    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -32752,7 +32752,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1809
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -52326,7 +52326,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.416927
+Time: 0.411964
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -53179,7 +53179,7 @@ dota_armory_stickers_quality_filter_option                                      
 dota_armory_stickers_quality_type_option                                         : 0                : cl                               : 
 dota_assisted_camera_operator_pure_interp_multiplier                             : 16               : cl                               : 
 dota_attack_timer_buffer_ticks                                                   : 3                : sv, cheat                        : 
-dota_audio_language_storage                                                      : 8                : cl                               : 
+dota_audio_language_storage                                                      : 8                : cl, a, user                      : 
 dota_auto_connect                                                                : 0                : cl                               : Automatically connect to the specified server forever
 dota_auto_courier_auto_burst                                                     : false            : cl, a, user, per_user, release   : Whether courier automatically uses Speed Burst when auto-mode is on.
 dota_auto_courier_deliver_visible_only                                           : false            : cl, a, user, per_user, release   : Whether courier delivers only while you're visible when auto-mode is on.
@@ -54814,7 +54814,7 @@ dota_ui_give_item_indicator_receiver_animation_duration                         
 dota_ui_give_item_indicator_receiver_animation_offset                            : 30               : cl                               : 
 dota_ui_give_item_indicator_x_offset                                             : 64               : cl                               : 
 dota_ui_give_item_indicator_y_offset                                             : 135              : cl                               : 
-dota_ui_language_storage                                                         : 8                : cl                               : 
+dota_ui_language_storage                                                         : 8                : cl, a, user                      : 
 dota_ui_popup_collectors_cache_available_voted_items                             : 0                : cl, a                            : 
 dota_ui_popup_collectors_cache_available_voted_items_timestamp                   : 0                : cl, a                            : 
 dota_ui_show_give_item_indicator                                                 : true             : cl                               : 
