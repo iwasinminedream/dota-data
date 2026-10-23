@@ -76,13 +76,99 @@ apiTypesDeclarations.push({
 apiTypesDeclarations.push({
   kind: 'object',
   name: 'CreateIllusionsModifierKeys',
+  description:
+    'All keys are copied into the KeyValues of `modifier_illusion`: booleans become 0/1, vectors become "x y z" strings, tables and handles are skipped with a warning.',
   fields: [
-    { name: 'outgoing_damage', types: ['float', 'nil'] },
-    { name: 'incoming_damage', types: ['float', 'nil'] },
-    { name: 'bounty_base', types: ['float', 'nil'] },
-    { name: 'bounty_growth', types: ['float', 'nil'] },
-    { name: 'outgoing_damage_structure', types: ['float', 'nil'] },
-    { name: 'outgoing_damage_roshan', types: ['float', 'nil'] },
+    // modifier_illusion
+    {
+      name: 'outgoing_damage',
+      types: ['int', 'nil'],
+      description:
+        "Percentage. Read as an integer, fractions are truncated. On creation the original hero's `MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION_AMPLIFY` is added to it.\n@default 0",
+    },
+    {
+      name: 'incoming_damage',
+      types: ['int', 'nil'],
+      description: 'Percentage. Read as an integer, fractions are truncated.\n@default 0',
+    },
+    { name: 'bounty_base', types: ['int', 'nil'], description: '@default 0' },
+    { name: 'bounty_growth', types: ['int', 'nil'], description: '@default 2' },
+    {
+      name: 'outgoing_damage_structure',
+      types: ['int', 'nil'],
+      description:
+        'Percentage. Read as an integer. An explicit 0 is not the same as omitting the key.\n@default (outgoing_damage + 100) * 0.4 - 100',
+    },
+    {
+      name: 'outgoing_damage_roshan',
+      types: ['int', 'nil'],
+      description:
+        'Percentage. Read as an integer. An explicit 0 is not the same as omitting the key.\n@default (outgoing_damage + 100) * 0.2 - 100',
+    },
+    {
+      name: 'duration',
+      types: ['float', 'nil'],
+      description: 'Illusion lifetime in seconds. Status resistance does not apply.',
+    },
+    {
+      name: 'illusion_type',
+      types: ['string', 'nil'],
+      description: '`monkey_king_fur_army` disables the death particle and sound.',
+    },
+    { name: 'fixed_day_vision', types: ['int', 'nil'], description: '@default 800' },
+    { name: 'fixed_night_vision', types: ['int', 'nil'], description: '@default 400' },
+    {
+      name: 'is_hidden',
+      types: ['bool', 'nil'],
+      description: 'Hides the `modifier_illusion` buff.\n@default false',
+    },
+    {
+      name: 'illusionlabel',
+      types: ['string', 'nil'],
+      description:
+        'Has no effect: CreateIllusions always overwrites it with an empty label (key names are case-insensitive, so it is the same key as `illusionLabel`).',
+    },
+
+    // Illusion creation
+    {
+      name: 'nodraw',
+      types: ['bool', 'nil'],
+      description: 'Illusion is not drawn, no creation particle.\n@default false',
+    },
+    {
+      name: 'no_effect_on_original',
+      types: ['bool', 'nil'],
+      description: 'No creation particle on the original hero.\n@default false',
+    },
+    {
+      name: 'teamonlyparticles',
+      types: ['bool', 'nil'],
+      description:
+        "Creation particles are visible only to the original hero's team.\n@default false",
+    },
+    {
+      name: 'invulnerability_on_creation',
+      types: ['bool', 'nil'],
+      description: 'Applies `modifier_invulnerable` for 0.1 seconds.\n@default true',
+    },
+    {
+      name: 'illusion_effect_override',
+      types: ['string', 'nil'],
+      description:
+        'Creation particle used instead of `particles/generic_gameplay/illusion_created.vpcf`.',
+    },
+    {
+      name: 'permit_illusion_recycling',
+      types: ['bool', 'nil'],
+      description:
+        'Allows reusing a pooled illusion entity of this hero instead of spawning a new one.\n@default true',
+    },
+    {
+      name: 'fullhp',
+      types: ['bool', 'nil'],
+      description:
+        'Spawn with full health. Otherwise the illusion gets the current health of the original hero.\n@default false',
+    },
   ],
 });
 
