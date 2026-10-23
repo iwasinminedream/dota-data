@@ -558,9 +558,19 @@ apiTypesDeclarations.push({
   kind: 'object',
   name: 'ModifierUnitOrderEvent',
   fields: [
-    // { name: 'new_pos', types: ['Vector'] },
     { name: 'order_type', types: ['dotaunitorder_t'] },
     { name: 'unit', types: ['CDOTA_BaseNPC'] },
+    {
+      name: 'target',
+      types: ['CDOTA_BaseNPC', 'CDOTA_MapTree', 'nil'],
+      description: 'Order target: a unit, or a tree for tree orders.',
+    },
+    { name: 'ability', types: ['CDOTABaseAbility', 'nil'] },
+    {
+      name: 'new_pos',
+      types: ['Vector'],
+      description: 'Order position. Zero vector for orders without a position.',
+    },
   ],
 });
 
@@ -600,6 +610,30 @@ apiTypesDeclarations.push({
   fields: [
     { name: 'ability', types: ['CDOTABaseAbility'] },
     { name: 'target', types: ['CDOTA_BaseNPC', 'nil'] },
+    {
+      name: 'cost',
+      types: ['int'],
+      description: 'Mana cost. Set for `OnSpentMana` and `OnAbilityFullyCast`, `0` otherwise.',
+    },
+    {
+      name: 'health_cost',
+      types: ['int'],
+      description: 'Health cost. Set for `OnSpentHealth`, `0` otherwise.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierAbilityTargetEvent',
+  fields: [
+    { name: 'ability', types: ['CDOTABaseAbility'] },
+    { name: 'target', types: ['CDOTA_BaseNPC', 'nil'], description: 'Cast target, when known.' },
+    {
+      name: 'attacker',
+      types: ['CDOTA_BaseNPC', 'nil'],
+      description: 'Caster. Set for cast range properties.',
+    },
   ],
 });
 
@@ -618,7 +652,16 @@ apiTypesDeclarations.push({
   name: 'ModifierAddedEvent',
   fields: [
     { name: 'unit', types: ['CDOTA_BaseNPC'] },
-    { name: 'added_buff', types: ['CDOTA_Buff'] },
+    {
+      name: 'added_buff',
+      types: ['CDOTA_Buff'],
+      description: 'The modifier that was added (refreshed, removed).',
+    },
+    {
+      name: 'attacker',
+      types: ['CDOTA_BaseNPC', 'nil'],
+      description: 'Caster of the modifier. Not set for `OnModifierRemoved`.',
+    },
   ],
 });
 
@@ -626,7 +669,134 @@ apiTypesDeclarations.push({
   kind: 'object',
   name: 'ModifierHealEvent',
   extend: ['ModifierUnitEvent'],
-  fields: [{ name: 'gain', types: ['int'] }],
+  fields: [
+    { name: 'gain', types: ['float'] },
+    {
+      name: 'inflictor',
+      types: ['CDOTABaseAbility', 'nil'],
+      description: 'Ability or item that caused the restoration, if any.',
+    },
+    {
+      name: 'attacker',
+      types: ['CDOTA_BaseNPC', 'nil'],
+      description: 'Source of the restoration, when known.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierUnitMovedEvent',
+  extend: ['ModifierUnitEvent'],
+  fields: [
+    {
+      name: 'new_pos',
+      types: ['Vector'],
+      description: 'New position. For `OnTeleporting`, the destination.',
+    },
+    {
+      name: 'distance',
+      types: ['float'],
+      description: 'Distance moved. For `OnTeleporting`, the distance to the destination.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierStatusEffectEvent',
+  fields: [
+    { name: 'target', types: ['CDOTA_BaseNPC'], description: 'Unit the effect is applied to.' },
+    { name: 'unit', types: ['CDOTA_BaseNPC'], description: 'Caster of the effect.' },
+    {
+      name: 'inflictor',
+      types: ['CDOTABaseAbility', 'nil'],
+      description: 'Ability or item that applies the effect.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierAvoidSpellEvent',
+  fields: [
+    { name: 'target', types: ['CDOTA_BaseNPC'], description: 'Unit the modifier is applied to.' },
+    { name: 'added_buff', types: ['CDOTA_Buff'], description: 'The modifier being applied.' },
+    { name: 'attacker', types: ['CDOTA_BaseNPC', 'nil'], description: 'Caster of the modifier.' },
+    {
+      name: 'ability',
+      types: ['CDOTABaseAbility', 'nil'],
+      description: 'Ability or item that applies the modifier.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierProjectileDodgeEvent',
+  fields: [
+    { name: 'target', types: ['CDOTA_BaseNPC'], description: 'Unit that dodges the projectile.' },
+    {
+      name: 'unit',
+      types: ['CDOTA_BaseNPC', 'nil'],
+      description: 'Attacker whose projectile was dodged. Not set for `OnAttemptProjectileDodge`.',
+    },
+    {
+      name: 'damage',
+      types: ['float'],
+      description: 'Damage of the dodged attack. `0` for `OnAttemptProjectileDodge`.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierIllusionCreatedEvent',
+  fields: [
+    { name: 'unit', types: ['CDOTA_BaseNPC'], description: 'The created illusion.' },
+    { name: 'attacker', types: ['CDOTA_BaseNPC'], description: 'Owner of the illusion.' },
+    { name: 'target', types: ['CDOTA_BaseNPC'], description: 'Hero the illusion copies.' },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierPurgedEvent',
+  extend: ['ModifierUnitEvent'],
+  fields: [
+    {
+      name: 'inflictor',
+      types: ['CDOTABaseAbility', 'nil'],
+      description: 'Ability or item that purged the unit. Not set for script purges.',
+    },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierRuneSpawnEvent',
+  fields: [{ name: 'unit', types: ['CBaseAnimatingActivity'], description: 'The spawned rune.' }],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierModelChangedEvent',
+  fields: [
+    { name: 'attacker', types: ['CDOTA_BaseNPC'], description: 'Unit whose model changed.' },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'ModifierTreePlantedEvent',
+  fields: [
+    {
+      name: 'unit',
+      types: ['CDOTA_BaseNPC', 'nil'],
+      description:
+        'Unit that planted the tree. Not set for trees created by scripts (`CreateTempTree`).',
+    },
+  ],
 });
 
 apiTypesDeclarations.push({
