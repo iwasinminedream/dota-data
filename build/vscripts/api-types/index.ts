@@ -190,6 +190,8 @@ apiTypesDeclarations.push({
 apiTypesDeclarations.push({
   kind: 'object',
   name: 'ExecuteOrderOptions',
+  description:
+    'The table is converted to KeyValues first: entity handles are dropped (pass entity indexes; a handle in `UnitIndex` makes the order do nothing), booleans become 0/1.',
   fields: [
     { name: 'UnitIndex', types: ['EntityIndex'] },
     { name: 'OrderType', types: ['dotaunitorder_t'] },
@@ -205,8 +207,8 @@ apiTypesDeclarations.push({
     },
     {
       name: 'Position',
-      types: ['Vector', 'nil'],
-      description: 'Only used when targeting the ground.',
+      types: ['Vector', 'string', 'nil'],
+      description: 'Only used when targeting the ground. A `"x y z"` string works too.',
     },
     {
       name: 'Queue',
@@ -223,8 +225,13 @@ apiTypesDeclarations.push({
     { name: 'startpos', types: ['Vector'] },
     { name: 'endpos', types: ['Vector'] },
     { name: 'ent', types: ['CBaseEntity'] },
-    { name: 'mins', types: ['unknown', 'nil'] },
-    { name: 'maxs', types: ['unknown', 'nil'] },
+    {
+      name: 'min',
+      types: ['Vector', 'nil'],
+      description:
+        'With `max`: trace a box instead of a ray. The help text of the function says `mins`/`maxs`, but those keys are not read.',
+    },
+    { name: 'max', types: ['Vector', 'nil'] },
   ],
 });
 
@@ -234,6 +241,11 @@ apiTypesDeclarations.push({
   extend: ['TraceCollideableInputs'],
   fields: [
     { name: 'hit', types: ['bool'] },
+    {
+      name: 'startsolid',
+      types: ['bool', 'nil'],
+      description: 'Set (to `true`) only when the trace starts inside the entity.',
+    },
     { name: 'pos', types: ['Vector'] },
     { name: 'normal', types: ['Vector'] },
     { name: 'fraction', types: ['float'] },
@@ -246,10 +258,15 @@ apiTypesDeclarations.push({
   fields: [
     { name: 'startpos', types: ['Vector'] },
     { name: 'endpos', types: ['Vector'] },
-    { name: 'min', types: ['unknown'] },
-    { name: 'max', types: ['unknown'] },
-    { name: 'mask', types: ['unknown', 'nil'] },
-    { name: 'ignore', types: ['unknown', 'nil'] },
+    { name: 'min', types: ['Vector'] },
+    { name: 'max', types: ['Vector'] },
+    {
+      name: 'mask',
+      types: ['int', 'nil'],
+      description:
+        'Not read by `TraceHull`, unlike `TraceLine` (the help text of the function lists it).',
+    },
+    { name: 'ignore', types: ['CBaseEntity', 'nil'], description: 'The trace passes through it.' },
   ],
 });
 
@@ -259,7 +276,11 @@ apiTypesDeclarations.push({
   extend: ['TraceHullInputs'],
   fields: [
     { name: 'hit', types: ['bool'] },
-    { name: 'startsolid', types: ['bool'] },
+    {
+      name: 'startsolid',
+      types: ['bool', 'nil'],
+      description: 'Set (to `true`) only when the trace starts inside a solid.',
+    },
     { name: 'pos', types: ['Vector'] },
     { name: 'normal', types: ['Vector'] },
     { name: 'fraction', types: ['float'] },
@@ -273,8 +294,8 @@ apiTypesDeclarations.push({
   fields: [
     { name: 'startpos', types: ['Vector'] },
     { name: 'endpos', types: ['Vector'] },
-    { name: 'mask', types: ['unknown', 'nil'] },
-    { name: 'ignore', types: ['unknown', 'nil'] },
+    { name: 'mask', types: ['int', 'nil'], description: 'Collision mask: `0` hits nothing.' },
+    { name: 'ignore', types: ['CBaseEntity', 'nil'], description: 'The trace passes through it.' },
   ],
 });
 
@@ -284,7 +305,11 @@ apiTypesDeclarations.push({
   extend: ['TraceLineInputs'],
   fields: [
     { name: 'hit', types: ['bool'] },
-    { name: 'startsolid', types: ['bool'] },
+    {
+      name: 'startsolid',
+      types: ['bool', 'nil'],
+      description: 'Set (to `true`) only when the trace starts inside a solid.',
+    },
     { name: 'pos', types: ['Vector'] },
     { name: 'normal', types: ['Vector'] },
     { name: 'fraction', types: ['float'] },
@@ -322,6 +347,7 @@ apiTypesDeclarations.push({
   fields: [
     // Movement
     { name: 'vSpawnOrigin', types: ['Vector', 'nil'] },
+    { name: 'vParticleSpawnOrigin', types: ['Vector', 'nil'] },
     { name: 'vVelocity', types: ['Vector', 'nil'] },
     { name: 'vAcceleration', types: ['Vector', 'nil'], description: 'Velocity change per second.' },
     { name: 'fMaxSpeed', types: ['float', 'nil'] },
@@ -336,6 +362,8 @@ apiTypesDeclarations.push({
     { name: 'iUnitTargetType', types: ['DOTA_UNIT_TARGET_TYPE', 'nil'] },
     { name: 'bIgnoreSource', types: ['bool', 'nil'] },
     { name: 'bHasFrontalCone', types: ['bool', 'nil'] },
+    { name: 'bIgnoreObstructions', types: ['bool', 'nil'] },
+    { name: 'bStickyFoWReveal', types: ['bool', 'nil'] },
 
     // Appearance
     { name: 'bDrawsOnMinimap', types: ['bool', 'nil'], description: '@default false' },
@@ -355,6 +383,11 @@ apiTypesDeclarations.push({
     // Movement
     { name: 'vSourceLoc', types: ['Vector', 'nil'] },
     { name: 'Target', types: ['CDOTA_BaseNPC', 'nil'] },
+    {
+      name: 'vTargetLoc',
+      types: ['Vector', 'nil'],
+      description: 'Without `Target` the projectile flies to this point.',
+    },
     { name: 'iMoveSpeed', types: ['int', 'nil'] },
 
     // Behavior
@@ -385,6 +418,11 @@ apiTypesDeclarations.push({
     { name: 'entindex_caster_const', types: ['EntityIndex'] },
     { name: 'entindex_ability_const', types: ['EntityIndex'] },
     { name: 'value_name_const', types: ['string'] },
+    {
+      name: 'level',
+      types: ['int'],
+      description: 'Zero-based ability level the value is requested for.',
+    },
     { name: 'value', types: ['int'] },
   ],
 });
@@ -475,6 +513,11 @@ apiTypesDeclarations.push({
     { name: 'hero_entindex_const', types: ['EntityIndex'] },
     { name: 'player_id_const', types: ['PlayerID'] },
     { name: 'reason_const', types: ['EDOTA_ModifyXP_Reason'] },
+    {
+      name: 'source_entindex_const',
+      types: ['EntityIndex', literal(-1)],
+      description: 'Entity the experience comes from, such as the killed unit.',
+    },
     { name: 'experience', types: ['int'] },
   ],
 });
@@ -485,6 +528,11 @@ apiTypesDeclarations.push({
   fields: [
     { name: 'player_id_const', types: ['PlayerID'] },
     { name: 'reason_const', types: ['EDOTA_ModifyGold_Reason'] },
+    {
+      name: 'source_entindex_const',
+      types: ['EntityIndex', literal(-1)],
+      description: 'Entity the gold comes from, such as the killed unit. `-1` when there is none.',
+    },
     { name: 'reliable', types: binaryBoolean },
     { name: 'gold', types: ['uint'] },
   ],
@@ -796,6 +844,18 @@ apiTypesDeclarations.push({
       description:
         'Unit that planted the tree. Not set for trees created by scripts (`CreateTempTree`).',
     },
+  ],
+});
+
+apiTypesDeclarations.push({
+  kind: 'object',
+  name: 'AddItemDropOptions',
+  description: 'The engine does not initialize fields that are not passed, so set all four.',
+  fields: [
+    { name: 'szItemName', types: ['string'] },
+    { name: 'flChance', types: ['float'], description: 'Percentage.' },
+    { name: 'nReqLevel', types: ['int'] },
+    { name: 'bMustBeChampion', types: ['bool'] },
   ],
 });
 

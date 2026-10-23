@@ -201,7 +201,11 @@ export const moddotaDump: Record<string, ExtensionFunction> = {
       '0': [null, ['CDOTA_BaseNPC', 'nil']],
       '1': [null, ['CDOTABaseAbility', 'nil']],
       '2': ['modifierName'],
-      '3': [null, ['table', 'nil']],
+      '3': [
+        null,
+        ['table', 'nil'],
+        '`duration` sets the duration. All keys reach `OnCreated`/`OnRefresh` on the server: numbers and strings as is, booleans as 1/0, vectors as `"x y z"` strings; handles, tables and functions are dropped with a warning. On the client these functions get only engine keys (`creationtime`, `duration`, `stack_count`, `isProvidedByAura`, `isCurrentlyInAuraRange`, `auraOwner`).',
+      ],
     },
   },
   'CDOTA_BaseNPC.AlertNearbyUnits': {
@@ -300,7 +304,7 @@ export const moddotaDump: Record<string, ExtensionFunction> = {
   },
   'CDOTA_BaseNPC.TriggerSpellAbsorb': { args: { '0': [null, 'CDOTABaseAbility'] } },
   'CDOTA_BaseNPC.TriggerSpellReflect': { args: { '0': [null, 'CDOTABaseAbility'] } },
-  'CDOTA_BaseNPC_Creature.AddItemDrop': { args: { '0': [null, 'table'] } },
+  'CDOTA_BaseNPC_Creature.AddItemDrop': { args: { '0': [null, 'AddItemDropOptions'] } },
   'CDOTA_BaseNPC_Hero.GetAdditionalOwnedUnits': { returns: array('CDOTA_BaseNPC') },
   'CDOTA_BaseNPC_Hero.GetPlayerID': { returns: 'PlayerID' },
   'CDOTA_BaseNPC_Hero.GetPrimaryAttribute': { returns: 'Attributes', description: '' },

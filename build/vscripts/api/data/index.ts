@@ -750,7 +750,11 @@ export const functionExtensions: Record<string, ExtensionFunction> = {
     args: {
       '0': [null, ['CDOTA_BaseNPC', 'nil']],
       '1': [null, ['CDOTABaseAbility', 'nil']],
-      '3': [null, ['table', 'nil']],
+      '3': [
+        null,
+        ['table', 'nil'],
+        'Converted like the table of `AddNewModifier`, except that vectors are dropped too.',
+      ],
       '5': [null, 'DOTATeam_t'],
     },
     returns: 'CDOTA_BaseNPC',
@@ -760,6 +764,22 @@ export const functionExtensions: Record<string, ExtensionFunction> = {
   '_G.TraceCollideable': { description: '', args: { 0: ['query', 'TraceCollideableInputs'] } },
   '_G.TraceHull': { description: '', args: { 0: ['query', 'TraceHullInputs'] } },
   '_G.TraceLine': { description: '', args: { 0: ['query', 'TraceLineInputs'] } },
+  '_G.CreateEffect': {
+    args: {
+      0: ['options', 'table', 'Keys: `entity`, `effectname`, `position`, `angles`, `direction`.'],
+    },
+  },
+  'CDOTAVoteSystem.StartVote': {
+    args: {
+      0: [
+        'options',
+        'table',
+        'Converted to KeyValues. Keys: `Text`, `Duration`, `NumChoices`, `Choice0`, `Choice1`, ..., `DefaultChoice`, `RequiredVoteThreshold`, `Callback`, `AllowVoteChanging`, `PauseGame`, `EndEarlyIfOutcomeIsDetermined`, `EndEarlyIfAllHaveVoted`. `Callback` is read as a string: a function value is dropped by the conversion.',
+      ],
+    },
+  },
+  'CDOTA_CustomUIManager.DynamicHud_Create': { args: { 3: [null, ['table', 'nil']] } },
+  'CDOTA_CustomUIManager.DynamicHud_SetDialogVariables': { args: { 2: [null, 'table'] } },
   'CBaseEntity.SetAngularVelocity': { description: 'Set the local angular velocity.' }, // Remove argument names
   'CBaseModelEntity.SetSkin': { description: '' }, // Remove argument type and function name
   'CDOTAGameRules.AddEventMetadataLeaderboardEntry': {
