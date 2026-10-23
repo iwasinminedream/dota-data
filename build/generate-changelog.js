@@ -75,11 +75,20 @@ function formatSignature(func) {
   return `${func.name}(${args})`;
 }
 
+// Argument descriptions, one `name: description` line per described argument.
+// Only the documentation diff compares them.
+function formatArgDescriptions(func) {
+  return (func.args || [])
+    .filter(a => a.description)
+    .map(a => `${a.name}: ${a.description}`)
+    .join('\n');
+}
+
 // Extract items from API
 function extractApiItems(content) {
   const items = [];
   if (!Array.isArray(content)) return items;
-  
+
   for (const item of content) {
     if (item.kind === 'class') {
       items.push({ type: 'class', name: item.name });
@@ -93,6 +102,7 @@ function extractApiItems(content) {
               signature: formatSignature(m),
               returns: typesToStr(m.returns),
               description: m.description || '',
+              argDescriptions: formatArgDescriptions(m),
               abstract: !!m.abstract,
             });
           }
@@ -105,6 +115,7 @@ function extractApiItems(content) {
         signature: formatSignature(item),
         returns: typesToStr(item.returns),
         description: item.description || '',
+        argDescriptions: formatArgDescriptions(item),
       });
     } else if (item.kind === 'constant') {
       items.push({ type: 'constant', name: item.name, value: item.value });
@@ -179,10 +190,24 @@ function extractEnums(content) {
   return items;
 }
 
-// Extract types
+// Extract types. Fields of object types are items of their own (`type_field`, grouped
+// by the type), so a field added, removed or retyped shows up in the changelog.
 function extractTypes(content) {
   if (!Array.isArray(content)) return [];
-  return content.map(t => ({ type: t.kind, name: t.name }));
+  const items = [];
+  for (const t of content) {
+    items.push({ type: t.kind, name: t.name, description: t.description || '' });
+    for (const f of t.fields || []) {
+      items.push({
+        type: 'type_field',
+        class: t.name,
+        name: f.name,
+        signature: `${f.name}: ${typesToStr(f.types)}`,
+        description: f.description || '',
+      });
+    }
+  }
+  return items;
 }
 
 // Extract modifiers
@@ -452,6 +477,7 @@ function itemKey(item) {
   if (item.type === 'enum_member') return `enum_member:${item.enum}.${item.name}`;
   if (item.type === 'modifier') return `modifier:${item.category}:${item.name}`;
   if (item.type === 'panel_attribute') return `panel_attribute:${item.panel}.${item.name}`;
+  if (item.type === 'type_field') return `type_field:${item.class}.${item.name}`;
   return `${item.type}:${item.name}`;
 }
 
@@ -499,8 +525,23 @@ function buildItemDiff(oldItem, newItem) {
   return diffFields;
 }
 
-// Compare states
-function compareStates(prev, curr) {
+// Per-field diff for the documentation block: unlike buildItemDiff, a value appearing
+// or disappearing (e.g. a description added) counts as a change too.
+function buildDocsDiff(oldItem, newItem) {
+  const diffFields = {};
+  const fieldsToCompare = ['signature', 'returns', 'value', 'fieldsDetail', 'description', 'argDescriptions'];
+  for (const field of fieldsToCompare) {
+    const oldVal = oldItem[field] === undefined ? '' : String(oldItem[field]);
+    const newVal = newItem[field] === undefined ? '' : String(newItem[field]);
+    if (oldVal !== newVal) diffFields[field] = { old: oldVal, new: newVal };
+  }
+  return diffFields;
+}
+
+// Compare states. `docs` compares for the documentation block (changes made to the
+// files after the version's dump was committed): descriptions count, and the
+// hand-maintained abstract modifier handlers are included.
+function compareStates(prev, curr, { docs = false } = {}) {
   const changes = {};
   
   for (const [key, currData] of Object.entries(curr)) {
@@ -517,11 +558,28 @@ function compareStates(prev, curr) {
     
     // Detect changes in items that exist in both states
     const changed = [];
-    const trackableTypes = new Set(['function', 'method', 'ability', 'unit', 'panel']);
+    const trackableTypes = docs
+      ? new Set(['function', 'method', 'panel', 'type_field', 'object', 'nominal', 'primitive'])
+      : new Set(['function', 'method', 'ability', 'unit', 'panel', 'type_field']);
     const kvTypes = new Set(['ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
         const prevItem = prevMap.get(k);
+
+        if (docs) {
+          const diff = buildDocsDiff(prevItem, currItem);
+          if (Object.keys(diff).length > 0) {
+            changed.push({
+              type: currItem.type,
+              name: currItem.name,
+              class: currItem.class,
+              enum: currItem.enum,
+              category: currItem.category,
+              changes: diff,
+            });
+          }
+          continue;
+        }
 
         // Abstract methods (e.g. the modifier function handlers on
         // CDOTA_Modifier_Lua) are hand-maintained interface declarations, not
@@ -662,6 +720,10 @@ function findPreviousRef(currentVer) {
   } catch {
     return { ref: null, version: null };
   }
+  // The oldest commit already on the current version: the one that committed its dump.
+  // Changes after it are documentation updates, not game changes. null while the
+  // current version's dump is only in the working tree.
+  let currentRef = null;
   for (const sha of shas) {
     try {
       const dump = execSync(`git show ${sha}:dumper/dump`, {
@@ -670,12 +732,51 @@ function findPreviousRef(currentVer) {
         stdio: ['pipe', 'pipe', 'ignore'],
       }).toString('utf8');
       const m = dump.match(/ClientVersion=(\d+)/);
-      if (m && m[1] !== currentVer) return { ref: sha, version: m[1] };
+      if (m && m[1] !== currentVer) return { ref: sha, version: m[1], currentRef };
+      if (m) currentRef = sha;
     } catch {
       // dumper/dump not present in this commit — keep walking back.
     }
   }
-  return { ref: null, version: null };
+  return { ref: null, version: null, currentRef };
+}
+
+// "Properties Fixed" tracks modifier-property availability (only `true` values are
+// stored in the state). A property becoming available shows up as "added" and one
+// becoming unavailable as "removed". Re-render those as explicit value flips so the
+// changelog reads e.g. `MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT: true -> false`
+// (and the reverse) instead of bare add/remove rows.
+function flipPropertiesFixed(changes) {
+  const propsFixed = changes['Properties Fixed'];
+  if (!propsFixed) return;
+  const flips = [
+    ...(propsFixed.added || []).map(it => ({
+      type: 'modifier_property',
+      name: it.name,
+      changes: { value: { old: 'false', new: 'true' } },
+    })),
+    ...(propsFixed.removed || []).map(it => ({
+      type: 'modifier_property',
+      name: it.name,
+      changes: { value: { old: 'true', new: 'false' } },
+    })),
+  ];
+  if (flips.length > 0) {
+    flips.sort((a, b) => a.name.localeCompare(b.name));
+    propsFixed.added = [];
+    propsFixed.removed = [];
+    propsFixed.changed = [...(propsFixed.changed || []), ...flips];
+  }
+}
+
+function countChanges(changes) {
+  let added = 0, removed = 0, changed = 0;
+  for (const cat of Object.values(changes)) {
+    added += cat.added?.length || 0;
+    removed += cat.removed?.length || 0;
+    changed += cat.changed?.length || 0;
+  }
+  return { added, removed, changed };
 }
 
 // Main
@@ -698,34 +799,15 @@ if (prev.ref && Object.keys(prevState).length === 0) {
   process.exit(1);
 }
 
-const changes = compareStates(prevState, currState);
-
-// "Properties Fixed" tracks modifier-property availability (only `true` values are
-// stored in the state). A property becoming available shows up as "added" and one
-// becoming unavailable as "removed". Re-render those as explicit value flips so the
-// changelog reads e.g. `MODIFIER_PROPERTY_MOVESPEED_MAX_BONUS_CONSTANT: true -> false`
-// (and the reverse) instead of bare add/remove rows.
-const propsFixed = changes['Properties Fixed'];
-if (propsFixed) {
-  const flips = [
-    ...(propsFixed.added || []).map(it => ({
-      type: 'modifier_property',
-      name: it.name,
-      changes: { value: { old: 'false', new: 'true' } },
-    })),
-    ...(propsFixed.removed || []).map(it => ({
-      type: 'modifier_property',
-      name: it.name,
-      changes: { value: { old: 'true', new: 'false' } },
-    })),
-  ];
-  if (flips.length > 0) {
-    flips.sort((a, b) => a.name.localeCompare(b.name));
-    propsFixed.added = [];
-    propsFixed.removed = [];
-    propsFixed.changed = [...(propsFixed.changed || []), ...flips];
-  }
+// Game changes end at the commit of this version's dump; whatever changed in the files
+// after it is a documentation update and goes to its own block.
+const versionState = prev.currentRef ? buildStateFromGit(prev.currentRef) : null;
+if (prev.currentRef) {
+  console.log(`Version ${currentVersion.version} dump: git ${prev.currentRef.slice(0, 8)}`);
 }
+
+const changes = compareStates(prevState, versionState || currState);
+flipPropertiesFixed(changes);
 
 // Localization is diffed straight from git (previous commit vs working tree) rather
 // than the state snapshots, then merged in as its own category.
@@ -734,13 +816,12 @@ if (localizationChanges) {
   changes['Localization'] = localizationChanges;
 }
 
-// Count changes
-let addedCount = 0, removedCount = 0, changedCount = 0;
-for (const cat of Object.values(changes)) {
-  addedCount += cat.added?.length || 0;
-  removedCount += cat.removed?.length || 0;
-  changedCount += cat.changed?.length || 0;
-}
+const documentation = versionState ? compareStates(versionState, currState, { docs: true }) : {};
+flipPropertiesFixed(documentation);
+
+const { added: addedCount, removed: removedCount, changed: changedCount } = countChanges(changes);
+const docsCounts = countChanges(documentation);
+const documentationCount = docsCounts.added + docsCounts.removed + docsCounts.changed;
 
 // Write changelog
 const changelogEntry = {
@@ -749,6 +830,7 @@ const changelogEntry = {
   time: currentVersion.time,
   changes,
 };
+if (documentationCount > 0) changelogEntry.documentation = documentation;
 
 fs.writeFileSync(path.join(changelogsDir, `${currentVersion.version}.json`), JSON.stringify(changelogEntry, null, 2));
 
@@ -770,6 +852,7 @@ const indexEntry = {
   removedCount,
   changedCount,
 };
+if (documentationCount > 0) indexEntry.documentationCount = documentationCount;
 
 if (existingIdx !== -1) {
   index[existingIdx] = indexEntry;
@@ -798,5 +881,12 @@ if (addedCount > 0 || removedCount > 0 || changedCount > 0) {
     } else {
       console.log(`  ${cat}: +${a} -${r} ~${c}`);
     }
+  }
+}
+
+if (documentationCount > 0) {
+  console.log(`Documentation: +${docsCounts.added} added, -${docsCounts.removed} removed, ~${docsCounts.changed} changed`);
+  for (const [cat, ch] of Object.entries(documentation)) {
+    console.log(`  ${cat}: +${ch.added?.length || 0} -${ch.removed?.length || 0} ~${ch.changed?.length || 0}`);
   }
 }

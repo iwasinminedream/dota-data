@@ -287,9 +287,10 @@ All descriptions and argument names go through normalization:
 
 `build/generate-changelog.js`:
 1. Reads version info from `dumper/dump` header
-2. Compares current `files/*.json` against previous snapshot in `files/changelog-states/<version>.json`
-3. Diffs: added, removed, changed items across all data categories
-4. Outputs `files/changelogs/<version>.json` + updates `files/changelog-index.json`
+2. Baseline: the files of the newest commit whose dump is a different version (read with `git show`, not the `files/changelog-states/` snapshots)
+3. `changes` (game changes): that baseline → the commit that committed this version's dump (the working tree while the dump is not committed yet)
+4. `documentation`: this version's dump commit → working tree, i.e. hand-made fixes after the dump. It also compares descriptions, argument descriptions, the abstract modifier handlers and the fields of object types (`type_field` items). The site shows it as a separate "Documentation" block; the index gets `documentationCount`. Rerun `npm run build:changelog` after such fixes
+5. Outputs `files/changelogs/<version>.json`, `files/changelog-states/<version>.json` + updates `files/changelog-index.json`
 
 ---
 
