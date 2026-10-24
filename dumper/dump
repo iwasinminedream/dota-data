@@ -1,13 +1,13 @@
-ClientVersion=6966
-ServerVersion=6966
+ClientVersion=6967
+ServerVersion=6967
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11159903
-VersionDate=Oct 22 2026
-VersionTime=10:02:46
+SourceRevision=11168076
+VersionDate=Oct 24 2026
+VersionTime=09:40:34
 $> script_reload
 Initializing script VM...
 ...done
@@ -31712,7 +31712,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1798
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31828,7 +31828,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1811
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31988,7 +31988,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1799
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32164,7 +32164,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1800
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32428,7 +32428,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1808
+    "value":1799
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32468,7 +32468,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1809
+    "value":1800
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32480,7 +32480,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1810
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32497,10 +32497,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_RUN",
     "value":1502
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_RUN_ALT",
-    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32585,6 +32581,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32688,7 +32688,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1801
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -32752,7 +32752,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1802
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42500,19 +42500,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1804
+    "value":1809
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1805
+    "value":1810
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1806
+    "value":1811
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1807
+    "value":1798
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52326,7 +52326,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.407300
+Time: 0.415164
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
