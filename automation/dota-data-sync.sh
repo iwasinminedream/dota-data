@@ -13,8 +13,9 @@
 #   5. commit "<version>";
 #   6. the update report reports/<version>.md: API changes from the dump and .so changes (strings,
 #      exports and function by function, reports/<version>-functions.md), drafted by Claude Haiku 4.5
-#      and checked by Claude Opus 5.5 with read-only tools (update-report.py); then push. Commits that
-#      could not be pushed are pushed by the next run.
+#      and checked by Claude Opus 5.5 with read-only tools (update-report.py), and its English
+#      version reports/<version>.en.md (translate-report.py); then push. Commits that could not be
+#      pushed are pushed by the next run.
 # Started by dota-data-sync.path when steam.inf changes (any Dota update: the panel button or a manual
 # steamcmd) and by dota-data-sync.timer as a fallback; see automation/README.md.
 #
@@ -314,6 +315,26 @@ if [[ ! -e $REPORT && -e files/changelogs/$INSTALLED.json && $(inf ClientVersion
         rm -f "$REPORT" "$FUNCTIONS"
         date '+%F %T' >"$REPORT_FAILED"
         say "update report not committed (update-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
+    fi
+fi
+
+# Its English version reports/<id>.en.md for the site's language switch (translate-report.py),
+# retried like the report.
+REPORT_EN=reports/$REPORT_ID.en.md
+REPORT_EN_FAILED=$STATE/report-en-failed-$REPORT_ID
+if [[ -e $REPORT && ! -e $REPORT_EN ]] &&
+    { (( FORCE )) || [[ ! -e $REPORT_EN_FAILED ]] || (( $(date +%s) - $(stat -c %Y "$REPORT_EN_FAILED") >= RETRY_AFTER )); }; then
+    rc=0
+    python3 automation/translate-report.py "$REPORT" --out "$REPORT_EN" || rc=$?
+    if (( rc == 0 )) && [[ -e $REPORT_EN ]]; then
+        git add "$REPORT_EN"
+        git commit -q -m "report: $REPORT_ID (English)"
+        rm -f "$REPORT_EN_FAILED"
+        say "committed $REPORT_EN"
+    else
+        rm -f "$REPORT_EN"
+        date '+%F %T' >"$REPORT_EN_FAILED"
+        say "English report not committed (translate-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
     fi
 fi
 

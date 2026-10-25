@@ -22,7 +22,9 @@ no GPU, no Steam client). When the installed Dota build changes it:
    `.so` changes against the previous snapshot (sizes, code size, exports, strings from the
    read-only data and protobuf descriptors) and function by function (`funcdiff.py`, below), plus
    tables computed without the model. The whole function-level comparison, with the code diff of
-   every changed function, goes to `reports/<version>-functions.md`.
+   every changed function, goes to `reports/<version>-functions.md`. The report is written in
+   Russian; `translate-report.py` (Claude Sonnet 5.5) adds the English `reports/<version>.en.md`
+   (commit `report: <version> (English)`), which the site shows when its reader picks English.
 
 ## Function-level comparison
 
@@ -79,6 +81,7 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `dump-diff.py` | section-by-section comparison of two raw dumps |
 | `so-report.py` | `snapshot`, `list`, `report OLD NEW` (a .so-only report by hand) |
 | `update-report.py` | `VERSION --out reports/VERSION.md`: the update report |
+| `translate-report.py` | `reports/VERSION.md`: its English version `reports/VERSION.en.md`, checked against the original |
 | `funcdiff.py` | `OLD.so NEW.so`: function-level comparison of two builds of a library |
 | `so-query.py` | the read-only queries the model may run on the snapshots |
 | `systemd/dota-data-sync.service` | runs `dota-data-sync.sh` (nice, idle IO, CPU 400 %, memory 12 G) |
