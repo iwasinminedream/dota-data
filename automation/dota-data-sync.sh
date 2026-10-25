@@ -138,7 +138,8 @@ windows_depots() {
     fi
 }
 
-dump_wine() { (export DUMPER_GAME_DIR=$DUMPER_WINE_GAME_DIR; dump_with_repeat); }
+# DOTA_SERVER_BINARY inside the dump too: the dumper ends with the native-modifier analysis of server.dll
+dump_wine() { (export DUMPER_GAME_DIR=$DUMPER_WINE_GAME_DIR DOTA_SERVER_BINARY=$DUMPER_WIN_SERVER_DLL; dump_with_repeat); }
 dump_linux() { (unset DUMPER_WINE_LAUNCH; dump_with_repeat); }
 
 # Windows client with Workshop Tools under Wine (a complete -tools dump) when possible, the Linux

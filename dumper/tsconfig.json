@@ -11,6 +11,8 @@
     "modifier-baseline.mts",
     "build-modifier-properties.ts",
     "build-modifiers.ts",
+    "build-native-modifiers.ts",
+    "native-modifiers.mts",
     "build-abilities.ts",
     "build-units.ts"
   ]

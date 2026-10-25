@@ -10,7 +10,7 @@
     "files/**/*.{json,ts}"
   ],
   "scripts": {
-    "build": "run-s build:clean build:modifier-properties build:static build:tsc build:abilities build:units build:modifiers build:convars build:localization build:changelog",
+    "build": "run-s build:clean build:modifier-properties build:static build:tsc build:abilities build:units build:modifiers build:native-modifiers build:convars build:localization build:changelog",
     "build:clean": "rimraf \"files/vscripts\" \"files/panorama\" \"files/convars.json\" \"files/engine-enums.json\" \"files/engine-enums.d.ts\" \"files/events.json\" \"files/events.d.ts\" \"lib\"",
     "build:static": "tsx build",
     "build:tsc": "tsc -p src",
@@ -28,6 +28,8 @@
     "auto-dump": "tsx dumper/start-dumper.mts",
     "build:modifiers": "tsx dumper/build-modifiers.ts",
     "build:modifier-properties": "tsx dumper/build-modifier-properties.ts",
+    "build:native-modifiers": "tsx dumper/build-native-modifiers.ts",
+    "dump:native-modifiers": "tsx dumper/native-modifiers.mts",
     "build:abilities": "tsx dumper/build-abilities.ts",
     "build:units": "tsx dumper/build-units.ts",
     "build:localization": "tsx dumper/build-localization.ts",

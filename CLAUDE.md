@@ -104,7 +104,10 @@ dota-data/
 │   ├── addon_game_mode.lua     # Companion Lua file
 │   ├── start-dumper.mts        # Launches Dota 2, captures console output
 │   ├── vconsole.mts            # VConsole automation
-│   └── build-modifiers.ts      # Extracts modifier_list.json from dump
+│   ├── build-modifiers.ts      # Extracts modifier_list.json from dump
+│   ├── native-modifiers/       # server.dll analysis: native modifiers' functions + formulas (Python)
+│   ├── native-modifiers.mts    # Runs it after auto-dump → native_modifiers.json
+│   └── build-native-modifiers.ts # native_modifiers.json → files/vscripts/native_modifiers.json
 ├── files/                      # Generated output (published in npm)
 │   ├── convars.json
 │   ├── engine-enums.json / .d.ts
@@ -122,7 +125,8 @@ dota-data/
 │       ├── api.json / .d.ts    # Lua API declarations
 │       ├── api-types.json / .d.ts # Type definitions (Object, Nominal, Primitive)
 │       ├── enums.json / .d.ts  # Enum + constant declarations
-│       └── modifier_list.json  # Modifier names by category
+│       ├── modifier_list.json  # Modifier names by category
+│       └── native_modifiers.json # Per native modifier: declared functions, property formulas
 ├── src/                        # Runtime library (compiled to lib/)
 │   ├── helpers/
 │   │   └── vscripts.ts         # allData, findTypeByName(), getDeepTypes(), getFuncDeepTypes()
@@ -190,6 +194,12 @@ The engine only exposes TypeScript declarations for panel types that have been *
 `dumper/modifier_test_properties.lua` is a modifier that declares every modifier function and reports which of them the engine actually calls (`HasFunction`) → `dumper/modifier_test_output.txt` → `files/vscripts/modifier_properties.json` (`false` = the function is `broken` in the generated docs). The function list is read from the engine's own `MODIFIER_PROPERTY_*` / `MODIFIER_EVENT_*` globals at runtime — never hardcode it, because `modifierfunction` values are positional and a value inserted in the middle of the enum shifts every later result onto the previous name.
 
 The `-- BASELINE START/END` block in that file holds the previous dump's state, used only to report what changed; `dumper/modifier-baseline.mts` rewrites it after every successful dump and, when the enum itself gained or lost members, prints a "REPEAT THE DUMP" notice at the end of `npm run auto-dump`. `build:modifier-properties` independently cross-checks the test output against the `modifierfunction` enum in `dumper/dump` and refuses to overwrite the JSON when they disagree.
+
+#### Native modifiers
+
+`dumper/native-modifiers/extract.py` (Python 3 + capstone, the same requirement as `automation/funcdiff.py`) reads server.dll without launching the game: every class derived from `CDOTA_Buff`, the modifier functions its `DeclareFunctions` registers, and for every property the value its handler returns as a formula over special values (`%name%`), creation parameters (`kv.name`), `params` fields, the stack count and named calls on caster / parent / ability (`parent:IsRangedAttacker()`, `state(parent, MODIFIER_STATE_X)`). A symbolic executor follows every path of the x86-64 code; names come from the Lua bindings of the same DLL (each method's native code becomes a template), so nothing is hard-coded per build. Status per function: `constant`, `formula`, `partial` (some part shown as `?`), `unresolved`, `event` (events are listed without a formula). `CheckState` is read the same way: per modifier the `MODIFIER_STATE_*` it sets true / false and the condition (`states`). Details, the formula syntax and the output schema: `dumper/native-modifiers/README.md`.
+
+It runs at the end of every successful `npm run auto-dump`, or alone with `npm run dump:native-modifiers` (it only needs the installed server.dll; `DOTA_SERVER_BINARY` on Linux, as for engine enums; with only libserver.so or without Python/capstone the previous file is kept), and writes `dumper/native_modifiers.json` with the game version from steam.inf. `build:native-modifiers` checks it against the dump (version, `modifierfunction` names), adds the ability whose special values the formulas read (`ability`, or `abilities` when several define all of them) and writes `files/vscripts/native_modifiers.json`. The changelog tracks every modifier function with its formula as the value and every state with its value and condition (`modifier_state`) (a changed formula is a game change; never part of the Documentation block).
 
 ### Capturing on Linux
 

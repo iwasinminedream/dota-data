@@ -24,6 +24,7 @@ const trackedFiles = [
   { file: 'panorama/enums.json', type: 'panorama_enums', name: 'Panorama Enums' },
   { file: 'panorama/panels.json', type: 'panorama_panels', name: 'Panorama Panels' },
   { file: 'vscripts/modifier_properties.json', type: 'modifier_properties', name: 'Properties Fixed' },
+  { file: 'vscripts/native_modifiers.json', type: 'native_modifiers', name: 'Native Modifier Functions' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
   { file: 'engine-enums.json', type: 'engine_enums', name: 'Engine Enums' },
   { file: 'abilities.json', type: 'abilities', name: 'Abilities' },
@@ -361,6 +362,34 @@ function extractModifierProperties(content) {
     .map(([name]) => ({ type: 'modifier_property', name }));
 }
 
+// Extract the modifier functions and CheckState states of native modifiers: one item per modifier and
+// function (its formula as the value) or state (true / false and the condition): a change is a change
+// of the game's code
+function extractNativeModifiers(content) {
+  const modifiers = content && typeof content === 'object' ? content.modifiers : null;
+  if (!modifiers || typeof modifiers !== 'object') return [];
+  const items = [];
+  for (const [name, modifier] of Object.entries(modifiers)) {
+    for (const f of modifier.functions || []) {
+      items.push({
+        type: 'modifier_function',
+        name: `${name}.${f.function}`,
+        value: f.formula !== undefined ? f.formula : f.status,
+      });
+    }
+    // CheckState: one item per state, its value (and condition) as the value
+    const states = {};
+    for (const s of modifier.states || []) {
+      const v = `${s.value}${s.when ? ` when ${s.when}` : ''}`;
+      states[s.state] = states[s.state] ? `${states[s.state]}; ${v}` : v;
+    }
+    for (const [state, value] of Object.entries(states)) {
+      items.push({ type: 'modifier_state', name: `${name}.${state}`, value });
+    }
+  }
+  return items;
+}
+
 // Extract CSS properties
 function extractCssProperties(content) {
   if (typeof content !== 'object' || Array.isArray(content)) return [];
@@ -412,6 +441,9 @@ function buildState(readFile) {
         break;
       case 'modifier_properties':
         items = extractModifierProperties(content);
+        break;
+      case 'native_modifiers':
+        items = extractNativeModifiers(content);
         break;
       case 'events':
       case 'panorama_events':
@@ -545,6 +577,8 @@ function compareStates(prev, curr, { docs = false } = {}) {
   const changes = {};
   
   for (const [key, currData] of Object.entries(curr)) {
+    // native modifier formulas are read from the game's code: never documentation fixes
+    if (docs && key === 'native_modifiers') continue;
     const prevData = prev?.[key];
     const prevItems = prevData?.items || [];
     const prevMap = new Map(prevItems.map(i => [itemKey(i), i]));
@@ -560,7 +594,7 @@ function compareStates(prev, curr, { docs = false } = {}) {
     const changed = [];
     const trackableTypes = docs
       ? new Set(['function', 'method', 'panel', 'type_field', 'object', 'nominal', 'primitive'])
-      : new Set(['function', 'method', 'ability', 'unit', 'panel', 'type_field']);
+      : new Set(['function', 'method', 'ability', 'unit', 'panel', 'type_field', 'modifier_function', 'modifier_state']);
     const kvTypes = new Set(['ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
