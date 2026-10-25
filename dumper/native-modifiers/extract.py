@@ -77,10 +77,12 @@ def analyse(path, enums_path=None, log=print):
         entry = renderer.modifier(name, cname, mods.bases[vt], declared, handlers, writers, lua_names)
         checked = mods.check_state(vt)
         if checked is not None:
-            states = renderer.check_states(checked[0])
+            states = renderer.check_states(checked[0]) if checked[0] else None
             if states:
                 entry["states"] = states
                 stats["states"] = stats.get("states", 0) + 1
+            elif states is None:
+                entry["states_unresolved"] = True     # it sets states, but from data the analysis cannot read
         result[name] = entry
         stats["modifiers"] += 1
         stats["functions"] += len(declared)

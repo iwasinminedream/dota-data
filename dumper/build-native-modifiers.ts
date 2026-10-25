@@ -27,6 +27,8 @@ interface NativeModifier {
   fields?: Record<string, { in: string; value: string }[]>;
   // CheckState: true / false the modifier sets the state to (null: not followed), `when` its condition
   states?: { state: string; value: boolean | null; when?: string }[];
+  // it overrides CheckState, but builds the masks from data the analysis cannot read (KV, fields)
+  states_unresolved?: boolean;
   ability?: string;
   abilities?: string[];
 }

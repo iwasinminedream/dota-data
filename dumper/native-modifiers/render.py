@@ -187,6 +187,9 @@ class Renderer:
                 out.append(item)
             if when_of(tree, ST_UNKNOWN) != FALSE:
                 out.append({"state": name, "value": None, "when": "?"})
+        known = [x for x in out if x["value"] is not None]
+        if not known and out:
+            return None         # the masks come from data the analysis cannot read (e.g. a KV table)
         return out
 
     def handler_value(self, done):

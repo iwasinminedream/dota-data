@@ -96,7 +96,8 @@ Operators are Lua's (`~=`, `not`, `and`, `math.min`) plus `cond ? a : b`.
 
 `states` lists every state the modifier sets: `value` true or false, `when` the condition when it is not
 unconditional (a state can appear twice: true under one condition, false under another; `value: null` with
-`when: "?"` marks paths the analysis could not follow). `event` functions (`MODIFIER_EVENT_*`) are listed without a formula. `unresolved` has a `reason` (the
+`when: "?"` marks paths the analysis could not follow; `states_unresolved: true` instead of the list when the
+masks come from data it cannot read, e.g. the KV table of `modifier_datadriven`). `event` functions (`MODIFIER_EVENT_*`) are listed without a formula. `unresolved` has a `reason` (the
 executor's: a loop, too many paths). When several abilities define all the special values (shared
 values like `bonus_damage`), files/ has `abilities` instead of `ability`.
 
