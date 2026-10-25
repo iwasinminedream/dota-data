@@ -2,5 +2,3071 @@
   "version": "6967",
   "date": "Oct 24 2026",
   "time": "09:40:34",
-  "changes": {}
+  "changes": {},
+  "documentation": {
+    "Lua API": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "method",
+          "name": "AddImpulseAtPosition",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "AddImpulseAtPosition(arg1: Vector, arg2: Vector)",
+              "new": "AddImpulseAtPosition(impulse: Vector, position: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "impulse: World-space impulse.\nposition: World-space point the impulse is applied at; its offset from the center of mass adds angular velocity. Only dynamic bodies are affected."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddVelocity",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "AddVelocity(arg1: Vector, arg2: Vector)",
+              "new": "AddVelocity(linearVelocity: Vector, angularVelocity: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetAngularVelocity",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "SetAngularVelocity(arg1: Vector)",
+              "new": "SetAngularVelocity(angularVelocity: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetMaterialGroup",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "SetMaterialGroup(arg1: string)",
+              "new": "SetMaterialGroup(materialGroup: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "materialGroup: Material group name (hashed into a string token)."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetVelocity",
+          "class": "CBodyComponent",
+          "changes": {
+            "signature": {
+              "old": "SetVelocity(arg1: Vector)",
+              "new": "SetVelocity(velocity: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Axis",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Axis(arg1: Vector, arg2: QAngle, arg3: float, arg4: bool, arg5: float)",
+              "new": "Axis(origin: Vector, angles: QAngle, scale: float, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "ztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Box",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Box(arg1: Vector, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "Box(mins: Vector, maxs: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "BoxAngles",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: QAngle, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "BoxAngles(origin: Vector, mins: Vector, maxs: Vector, angles: QAngle, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Relative to origin.\nmaxs: Relative to origin.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Capsule",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Capsule(arg1: Vector, arg2: QAngle, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "Capsule(origin: Vector, angles: QAngle, height: float, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "origin: Bottom of the capsule.\nheight: Distance between the centers of the end spheres.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Circle",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Circle(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "Circle(center: Vector, angles: QAngle, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angles: Orientation of the circle plane.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CircleScreenOriented",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "CircleScreenOriented(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "CircleScreenOriented(center: Vector, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Cone",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Cone(arg1: Vector, arg2: Vector, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "Cone(apex: Vector, direction: Vector, angle: float, length: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angle: Full opening angle in radians.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Cross",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Cross(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "Cross(origin: Vector, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Cross3D",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Cross3D(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "Cross3D(origin: Vector, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Cross3DOriented",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Cross3DOriented(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "Cross3DOriented(origin: Vector, angles: QAngle, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "DrawTickMarkedLine",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "DrawTickMarkedLine(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "DrawTickMarkedLine(start: Vector, end: Vector, tickDistance: float, tickTextDistance: int, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "tickDistance: Distance between ticks (truncated to an integer).\ntickTextDistance: Unverified: in Source, every this many ticks get a distance label.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EntityAttachments",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "EntityAttachments(arg1: ehandle, arg2: float, arg3: float)",
+              "new": "EntityAttachments(entity: ehandle, scale: float, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "scale: Size of the attachment axes; 0 or less picks a default.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EntityAxis",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "EntityAxis(arg1: ehandle, arg2: float, arg3: bool, arg4: float)",
+              "new": "EntityAxis(entity: ehandle, scale: float, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "ztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EntityBounds",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "EntityBounds(arg1: ehandle, arg2: int, arg3: int, arg4: int, arg5: int, arg6: bool, arg7: float)",
+              "new": "EntityBounds(entity: ehandle, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EntitySkeleton",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "EntitySkeleton(arg1: ehandle, arg2: float)",
+              "new": "EntitySkeleton(entity: ehandle, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "duration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EntityText",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "EntityText(arg1: ehandle, arg2: int, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
+              "new": "EntityText(entity: ehandle, lineOffset: int, text: string, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FilledRect2D",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "FilledRect2D(arg1: Vector2D, arg2: Vector2D, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+              "new": "FilledRect2D(mins: Vector2D, maxs: Vector2D, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Top-left corner in pixels.\nmaxs: Bottom-right corner in pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "HorzArrow",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "HorzArrow(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "HorzArrow(start: Vector, end: Vector, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Line",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Line(arg1: Vector, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "Line(start: Vector, end: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Line2D",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Line2D(arg1: Vector2D, arg2: Vector2D, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+              "new": "Line2D(start: Vector2D, end: Vector2D, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "start: Pixels.\nend: Pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "PushAndClearDebugOverlayScope",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "PushAndClearDebugOverlayScope(arg1: string)",
+              "new": "PushAndClearDebugOverlayScope(scopeName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "PushDebugOverlayScope",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "PushDebugOverlayScope(arg1: string)",
+              "new": "PushDebugOverlayScope(scopeName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveAllInScope",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "RemoveAllInScope(arg1: string)",
+              "new": "RemoveAllInScope(scopeName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SolidCone",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "SolidCone(arg1: Vector, arg2: Vector, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "SolidCone(apex: Vector, direction: Vector, angle: float, length: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angle: Full opening angle in radians.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Sphere",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Sphere(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+              "new": "Sphere(center: Vector, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SweptBox",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: QAngle, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
+              "new": "SweptBox(start: Vector, end: Vector, mins: Vector, maxs: Vector, angles: QAngle, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Local-space bounds.\nmaxs: Local-space bounds.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Text",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Text(arg1: Vector, arg2: int, arg3: string, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: float)",
+              "new": "Text(origin: Vector, lineOffset: int, text: string, maxDistance: float, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "maxDistance: Hidden farther than this from the camera; 0: always shown.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Texture",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Texture(arg1: string, arg2: Vector2D, arg3: Vector2D, arg4: int, arg5: int, arg6: int, arg7: int, arg8: Vector2D, arg9: Vector2D, arg10: float)",
+              "new": "Texture(textureName: string, mins: Vector2D, maxs: Vector2D, r: int, g: int, b: int, a: int, uvMins: Vector2D, uvMaxs: Vector2D, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Top-left corner in pixels.\nmaxs: Bottom-right corner in pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nuvMins: Texture coordinates.\nuvMaxs: Texture coordinates.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Triangle",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "Triangle(arg1: Vector, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "Triangle(vertex1: Vector, vertex2: Vector, vertex3: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "VectorText3D",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "VectorText3D(arg1: Vector, arg2: QAngle, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "VectorText3D(origin: Vector, angles: QAngle, text: string, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "VertArrow",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "VertArrow(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+              "new": "VertArrow(start: Vector, end: Vector, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "YawArrow",
+          "class": "CDebugOverlayScriptHelper",
+          "changes": {
+            "signature": {
+              "old": "YawArrow(arg1: Vector, arg2: float, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+              "new": "YawArrow(start: Vector, yaw: float, length: float, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "yaw: Degrees.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "IsCosmetic",
+          "class": "CDOTA_Ability_Lua",
+          "changes": {
+            "signature": {
+              "old": "IsCosmetic(entity: handle)",
+              "new": "IsCosmetic(entity: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CheckStateToTable",
+          "class": "CDOTA_Buff",
+          "changes": {
+            "signature": {
+              "old": "CheckStateToTable(table: handle)",
+              "new": "CheckStateToTable(states: table)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "HasFunction",
+          "class": "CDOTA_Buff",
+          "changes": {
+            "signature": {
+              "old": "HasFunction(function: modifierfunction)",
+              "new": "HasFunction(modifierFunction: modifierfunction)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ListenForQueryFailed",
+          "class": "CDOTABaseGameMode",
+          "changes": {
+            "signature": {
+              "old": "ListenForQueryFailed(function: function, context: table)",
+              "new": "ListenForQueryFailed(callback: function, context: table)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ListenForQueryProgressChanged",
+          "class": "CDOTABaseGameMode",
+          "changes": {
+            "signature": {
+              "old": "ListenForQueryProgressChanged(function: function, context: table)",
+              "new": "ListenForQueryProgressChanged(callback: function, context: table)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ListenForQuerySucceeded",
+          "class": "CDOTABaseGameMode",
+          "changes": {
+            "signature": {
+              "old": "ListenForQuerySucceeded(function: function, context: table)",
+              "new": "ListenForQuerySucceeded(callback: function, context: table)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetHeroLocTokenByID",
+          "class": "CDOTAGameManager",
+          "changes": {
+            "signature": {
+              "old": "GetHeroLocTokenByID(arg1: int)",
+              "new": "GetHeroLocTokenByID(heroId: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroId: Hero ID, 1-255; other values return nil."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddBotPlayerWithEntityScript",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddBotPlayerWithEntityScript(heroName: string, playerName: string, team: DOTATeam_t, entityScript: string, arg5: bool)",
+              "new": "AddBotPlayerWithEntityScript(heroName: string, playerName: string, team: DOTATeam_t, entityScript: string, reuseExistingPlayer: bool)"
+            },
+            "argDescriptions": {
+              "old": "entityScript: Path to a script file executed in the context of spawned hero entity.",
+              "new": "entityScript: Path to a script file executed in the context of spawned hero entity.\nreuseExistingPlayer: When true and a player named `playerName` exists, that player gets the hero instead of a new bot being created."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddHeroIDToBlacklist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddHeroIDToBlacklist(arg1: int)",
+              "new": "AddHeroIDToBlacklist(heroId: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroId: Values below 1 are ignored."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddHeroIDToWhitelist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddHeroIDToWhitelist(arg1: int)",
+              "new": "AddHeroIDToWhitelist(heroId: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroId: Values below 1 are ignored."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddHeroToBlacklist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddHeroToBlacklist(arg1: string)",
+              "new": "AddHeroToBlacklist(heroName: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroName: Both `npc_dota_hero_axe` and `axe` work (verified in game)."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddHeroToPlayerAvailability",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddHeroToPlayerAvailability(arg1: int, arg2: int)",
+              "new": "AddHeroToPlayerAvailability(playerId: PlayerID, heroId: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "playerId: Player IDs 64 and above are ignored."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddHeroToWhitelist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddHeroToWhitelist(arg1: string)",
+              "new": "AddHeroToWhitelist(heroName: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroName: Both `npc_dota_hero_axe` and `axe` work."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddMinimapDebugPoint",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddMinimapDebugPoint(arg1: int, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+              "new": "AddMinimapDebugPoint(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddMinimapDebugPointForTeam",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "AddMinimapDebugPointForTeam(arg1: int, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float, arg8: int)",
+              "new": "AddMinimapDebugPointForTeam(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float, team: DOTATeam_t)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds.\nteam: Team whose players see the point."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "BeginTemporaryNight",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "BeginTemporaryNight(duration: float, arg2: int)",
+              "new": "BeginTemporaryNight(duration: float, source: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "source: Stored as `m_nTemporaryDayNightSource` (what caused the night); the meaning of the values was not established."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ClearPlayerHeroAvailability",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "ClearPlayerHeroAvailability(arg1: int)",
+              "new": "ClearPlayerHeroAvailability(playerId: PlayerID)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetGameSessionConfigValue",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "GetGameSessionConfigValue(arg1: string, arg2: string)",
+              "new": "GetGameSessionConfigValue(key: string, defaultValue: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "defaultValue: Returned when the key is not set."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetIetmStockDuration",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "GetIetmStockDuration(arg1: int, arg2: string, arg3: int)",
+              "new": "GetIetmStockDuration(team: DOTATeam_t, itemName: string, playerId: PlayerID)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "team: Team whose stock is read; a negative value matches no team stock.\nplayerId: Player whose own stock is read; -1 matches no player stock."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "IsHeroEnabledViaLists",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "IsHeroEnabledViaLists(arg1: string)",
+              "new": "IsHeroEnabledViaLists(heroName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "PrepareSpawners",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "PrepareSpawners(arg1: float)",
+              "new": "PrepareSpawners(interval: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "interval: Seconds between lane creep waves."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveHeroFromBlacklist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "RemoveHeroFromBlacklist(arg1: string)",
+              "new": "RemoveHeroFromBlacklist(heroName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveHeroFromWhitelist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "RemoveHeroFromWhitelist(arg1: string)",
+              "new": "RemoveHeroFromWhitelist(heroName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveHeroIDFromBlacklist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "RemoveHeroIDFromBlacklist(arg1: int)",
+              "new": "RemoveHeroIDFromBlacklist(heroId: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveHeroIDFromWhitelist",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "RemoveHeroIDFromWhitelist(arg1: int)",
+              "new": "RemoveHeroIDFromWhitelist(heroId: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ResetPlayer",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "ResetPlayer(arg1: int)",
+              "new": "ResetPlayer(playerId: PlayerID)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SendCustomMessage",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SendCustomMessage(arg1: string, arg2: int, arg3: int)",
+              "new": "SendCustomMessage(message: string, playerId: PlayerID, value: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "playerId: Player the message is sent on behalf of (`player_id` of CDOTAUserMsg_CustomMsg).\nvalue: Integer sent with the message (`value` of CDOTAUserMsg_CustomMsg)."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SendCustomMessageToTeam",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SendCustomMessageToTeam(arg1: string, arg2: int, arg3: int, arg4: int)",
+              "new": "SendCustomMessageToTeam(message: string, team: DOTATeam_t, playerId: PlayerID, value: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "team: Receiving team; spectators receive the message too.\nplayerId: Player the message is sent on behalf of.\nvalue: Integer sent with the message."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetAllowOutpostBonuses",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetAllowOutpostBonuses(arg1: bool)",
+              "new": "SetAllowOutpostBonuses(allow: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetCreepSpawningEnabled",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetCreepSpawningEnabled(arg1: bool)",
+              "new": "SetCreepSpawningEnabled(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetCustomGameAccountRecordSaveFunction",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetCustomGameAccountRecordSaveFunction(arg1: handle, arg2: handle)",
+              "new": "SetCustomGameAccountRecordSaveFunction(callback: handle, context: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "callback: Function called with a Player ID; nil is rejected with a console message.\ncontext: Table the callback is called with; nil is rejected."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits(arg1: bool)",
+              "new": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits(allow: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetCustomGameBansPerTeam",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetCustomGameBansPerTeam(arg1: int)",
+              "new": "SetCustomGameBansPerTeam(bans: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetEnableAlternateHeroGrids",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetEnableAlternateHeroGrids(arg1: bool)",
+              "new": "SetEnableAlternateHeroGrids(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetFilterMoreGold",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetFilterMoreGold(arg1: bool)",
+              "new": "SetFilterMoreGold(filterMoreGold: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetHeroSelectPenaltyTime",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetHeroSelectPenaltyTime(arg1: float)",
+              "new": "SetHeroSelectPenaltyTime(time: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "time: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetHideBlacklistedHeroes",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetHideBlacklistedHeroes(arg1: bool)",
+              "new": "SetHideBlacklistedHeroes(hide: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetIgnoreLobbyTeamsInCustomGame",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetIgnoreLobbyTeamsInCustomGame(arg1: bool)",
+              "new": "SetIgnoreLobbyTeamsInCustomGame(ignore: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetNeutralInitialSpawnOffset",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetNeutralInitialSpawnOffset(arg1: float)",
+              "new": "SetNeutralInitialSpawnOffset(offset: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "offset: Seconds added to the delay of the first neutral creep spawn."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetNextBountyRuneSpawnTime",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetNextBountyRuneSpawnTime(arg1: float)",
+              "new": "SetNextBountyRuneSpawnTime(time: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetNextRuneSpawnTime",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetNextRuneSpawnTime(arg1: float)",
+              "new": "SetNextRuneSpawnTime(time: float)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetPostGameColumns",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetPostGameColumns(arg1: handle)",
+              "new": "SetPostGameColumns(columns: table)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "columns: Column values 0-9 under keys of at most 2 characters; anything else is rejected with a console message."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetPostGameLayout",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetPostGameLayout(arg1: int)",
+              "new": "SetPostGameLayout(layout: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "layout: 0 or 1; other values are rejected with a console message."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetPostGameTeamScores",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetPostGameTeamScores(arg1: handle)",
+              "new": "SetPostGameTeamScores(scores: table)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetRiverPaint",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetRiverPaint(arg1: int, arg2: float)",
+              "new": "SetRiverPaint(riverType: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "riverType: River style 0-7 (`m_nRiverType`); a river vial sets the position of its item in `river_paint_item_defs`.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetSpeechUseSpawnInsteadOfRespawnConcept",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetSpeechUseSpawnInsteadOfRespawnConcept(arg1: bool)",
+              "new": "SetSpeechUseSpawnInsteadOfRespawnConcept(useSpawnConcept: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetSuggestAbilitiesEnabled",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetSuggestAbilitiesEnabled(arg1: bool)",
+              "new": "SetSuggestAbilitiesEnabled(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetSuggestItemsEnabled",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetSuggestItemsEnabled(arg1: bool)",
+              "new": "SetSuggestItemsEnabled(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetWeatherWindDirection",
+          "class": "CDOTAGameRules",
+          "changes": {
+            "signature": {
+              "old": "SetWeatherWindDirection(arg1: Vector)",
+              "new": "SetWeatherWindDirection(direction: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetTextReplaceString",
+          "class": "CDotaQuest",
+          "changes": {
+            "signature": {
+              "old": "SetTextReplaceString(string: string)",
+              "new": "SetTextReplaceString(text: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetTextReplaceString",
+          "class": "CDotaSubquestBase",
+          "changes": {
+            "signature": {
+              "old": "SetTextReplaceString(string: string)",
+              "new": "SetTextReplaceString(text: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddBot",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "AddBot(heroName: string, arg2: string, arg3: string, arg4: bool)",
+              "new": "AddBot(heroName: string, lane: string, difficulty: string, goodGuys: bool)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "heroName: `random` picks a random hero.\nlane: Stored as the bot's `force_lane` setting; nil: not set.\ndifficulty: Stored as the bot's `difficulty` setting; nil: not set.\ngoodGuys: true: the bot joins DOTA_TEAM_GOODGUYS, false: DOTA_TEAM_BADGUYS."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddQuest",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "AddQuest(arg1: string, arg2: int, arg3: string, arg4: string)",
+              "new": "AddQuest(name: string, type: int, title: string, text: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Quest name, used by `CompleteQuest`."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CompleteQuest",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "CompleteQuest(arg1: string)",
+              "new": "CompleteQuest(name: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Name the quest was added with."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CreateLocationTask",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "CreateLocationTask(arg1: Vector)",
+              "new": "CreateLocationTask(location: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EnableCreepAggroViz",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "EnableCreepAggroViz(arg1: bool)",
+              "new": "EnableCreepAggroViz(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EnablePlayerOffscreenTip",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "EnablePlayerOffscreenTip(arg1: bool)",
+              "new": "EnablePlayerOffscreenTip(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "EnableTowerAggroViz",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "EnableTowerAggroViz(arg1: bool)",
+              "new": "EnableTowerAggroViz(enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "MoveCameraToLocation",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "MoveCameraToLocation(arg1: Vector)",
+              "new": "MoveCameraToLocation(location: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SelectPlayerTeam",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "SelectPlayerTeam(arg1: string)",
+              "new": "SelectPlayerTeam(team: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "team: `good` or `bad`; other values are ignored."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetItemGuide",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "SetItemGuide(arg1: string)",
+              "new": "SetItemGuide(guideName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetTutorialConvar",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "SetTutorialConvar(arg1: string, arg2: string)",
+              "new": "SetTutorialConvar(convarName: string, value: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetTutorialUI",
+          "class": "CDOTATutorial",
+          "changes": {
+            "signature": {
+              "old": "SetTutorialUI(arg1: int)",
+              "new": "SetTutorialUI(mode: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "ConnectOutput",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "ConnectOutput(arg1: string, arg2: string)",
+              "new": "ConnectOutput(outputName: string, functionName: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "functionName: Function in this entity's script scope."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "DisconnectOutput",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "DisconnectOutput(arg1: string, arg2: string)",
+              "new": "DisconnectOutput(outputName: string, functionName: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "DisconnectRedirectedOutput",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "DisconnectRedirectedOutput(arg1: string, arg2: string, arg3: handle)",
+              "new": "DisconnectRedirectedOutput(outputName: string, functionName: string, entity: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FireOutput",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "FireOutput(arg1: string, arg2: handle, arg3: handle, arg4: table, arg5: float)",
+              "new": "FireOutput(outputName: string, activator: CBaseEntity | nil, caller: CBaseEntity | nil, value: table, delay: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "activator: nil: this entity.\ncaller: nil: this entity.\nvalue: Value passed with the output.\ndelay: Seconds."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetIntAttr",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "GetIntAttr(arg1: string)",
+              "new": "GetIntAttr(name: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RedirectOutput",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "RedirectOutput(arg1: string, arg2: string, arg3: handle)",
+              "new": "RedirectOutput(outputName: string, functionName: string, entity: CBaseEntity)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity whose script function is called."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetIntAttr",
+          "class": "CEntityInstance",
+          "changes": {
+            "signature": {
+              "old": "SetIntAttr(arg1: string, arg2: int)",
+              "new": "SetIntAttr(name: string, value: int)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SpawnEntityAtEntityOrigin",
+          "class": "CEnvEntityMaker",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityAtEntityOrigin(entity: handle)",
+              "new": "SpawnEntityAtEntityOrigin(entity: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddOutput",
+          "class": "CNativeOutputs",
+          "changes": {
+            "signature": {
+              "old": "AddOutput(arg1: string, arg2: string)",
+              "new": "AddOutput(outputName: string, description: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "description: Not read by the engine."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Init",
+          "class": "CNativeOutputs",
+          "changes": {
+            "signature": {
+              "old": "Init(arg1: int)",
+              "new": "Init(count: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "count: Number of outputs to reserve space for."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "AddBroadcastTeamTarget",
+          "class": "CSceneEntity",
+          "changes": {
+            "signature": {
+              "old": "AddBroadcastTeamTarget(arg1: int)",
+              "new": "AddBroadcastTeamTarget(team: DOTATeam_t)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "FindNamedEntity",
+          "class": "CSceneEntity",
+          "changes": {
+            "signature": {
+              "old": "FindNamedEntity(arg1: string)",
+              "new": "FindNamedEntity(name: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Entity reference such as `!target`, or an entity name."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "RemoveBroadcastTeamTarget",
+          "class": "CSceneEntity",
+          "changes": {
+            "signature": {
+              "old": "RemoveBroadcastTeamTarget(arg1: int)",
+              "new": "RemoveBroadcastTeamTarget(team: DOTATeam_t)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "Start",
+          "class": "CSceneEntity",
+          "changes": {
+            "signature": {
+              "old": "Start(arg1: handle)",
+              "new": "Start(activator: CBaseEntity | nil)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GetValue",
+          "class": "CScriptKeyValues",
+          "changes": {
+            "signature": {
+              "old": "GetValue(arg1: string)",
+              "new": "GetValue(key: string)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetParticleControlForward",
+          "class": "CScriptParticleManager",
+          "changes": {
+            "signature": {
+              "old": "SetParticleControlForward(particle: ParticleID, controlPoint: int, arg3: Vector)",
+              "new": "SetParticleControlForward(particle: ParticleID, controlPoint: int, forward: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetParticleControlOrientation",
+          "class": "CScriptParticleManager",
+          "changes": {
+            "signature": {
+              "old": "SetParticleControlOrientation(particle: ParticleID, controlPoint: int, arg3: Vector, arg4: Vector, arg5: Vector)",
+              "new": "SetParticleControlOrientation(particle: ParticleID, controlPoint: int, forward: Vector, right: Vector, up: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "SetParticleControlOrientationFLU",
+          "class": "CScriptParticleManager",
+          "changes": {
+            "signature": {
+              "old": "SetParticleControlOrientationFLU(particle: ParticleID, controlPoint: int, arg3: Vector, arg4: Vector, arg5: Vector)",
+              "new": "SetParticleControlOrientationFLU(particle: ParticleID, controlPoint: int, forward: Vector, left: Vector, up: Vector)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CommandLineFloat",
+          "class": "GlobalSys",
+          "changes": {
+            "signature": {
+              "old": "CommandLineFloat(arg1: string, arg2: float)",
+              "new": "CommandLineFloat(name: string, defaultValue: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter is not on the command line."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CommandLineInt",
+          "class": "GlobalSys",
+          "changes": {
+            "signature": {
+              "old": "CommandLineInt(arg1: string, arg2: int)",
+              "new": "CommandLineInt(name: string, defaultValue: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter is not on the command line."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "CommandLineStr",
+          "class": "GlobalSys",
+          "changes": {
+            "signature": {
+              "old": "CommandLineStr(arg1: string, arg2: string)",
+              "new": "CommandLineStr(name: string, defaultValue: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter has no value on the command line."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "DestroyTreesAroundPoint",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "DestroyTreesAroundPoint(arg1: Vector, arg2: float, arg3: bool)",
+              "new": "DestroyTreesAroundPoint(position: Vector, radius: float, fullCollision: bool)"
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GridPosToWorldCenterX",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "GridPosToWorldCenterX(arg1: int)",
+              "new": "GridPosToWorldCenterX(x: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "x: Grid X index."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "GridPosToWorldCenterY",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "GridPosToWorldCenterY(arg1: int)",
+              "new": "GridPosToWorldCenterY(y: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "y: Grid Y index."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "IsBlocked",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "IsBlocked(arg1: Vector)",
+              "new": "IsBlocked(position: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "position: Only x and y are used."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "IsTraversable",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "IsTraversable(arg1: Vector)",
+              "new": "IsTraversable(position: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "position: Only x and y are used."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WorldToGridPosX",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "WorldToGridPosX(arg1: float)",
+              "new": "WorldToGridPosX(x: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "x: World X coordinate."
+            }
+          }
+        },
+        {
+          "type": "method",
+          "name": "WorldToGridPosY",
+          "class": "GridNav",
+          "changes": {
+            "signature": {
+              "old": "WorldToGridPosY(arg1: float)",
+              "new": "WorldToGridPosY(y: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "y: World Y coordinate."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "AngleDiff",
+          "changes": {
+            "signature": {
+              "old": "AngleDiff(arg1: float, arg2: float)",
+              "new": "AngleDiff(destAngle: float, srcAngle: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "destAngle: Degrees.\nsrcAngle: Degrees. The result is `destAngle - srcAngle` wrapped to -180..180."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "AnglesToVector",
+          "changes": {
+            "signature": {
+              "old": "AnglesToVector(arg1: QAngle)",
+              "new": "AnglesToVector(angles: QAngle)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "AppendToLogFile",
+          "changes": {
+            "signature": {
+              "old": "AppendToLogFile(arg1: string, arg2: string)",
+              "new": "AppendToLogFile(unused1: string, unused2: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unused1: Not read by the engine.\nunused2: Not read by the engine."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "AxisAngleToQuaternion",
+          "changes": {
+            "signature": {
+              "old": "AxisAngleToQuaternion(arg1: Vector, arg2: float)",
+              "new": "AxisAngleToQuaternion(axis: Vector, angle: float)"
+            },
+            "description": {
+              "old": "Constructs a quaternion representing a rotation by angle around the specified vector axis.",
+              "new": "Constructs a quaternion representing a rotation by angle around the specified vector axis. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game)."
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angle: Degrees."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CalcClosestPointOnEntityOBB",
+          "changes": {
+            "signature": {
+              "old": "CalcClosestPointOnEntityOBB(arg1: handle, arg2: Vector)",
+              "new": "CalcClosestPointOnEntityOBB(entity: CBaseEntity, position: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CalcDistanceBetweenEntityOBB",
+          "changes": {
+            "signature": {
+              "old": "CalcDistanceBetweenEntityOBB(arg1: handle, arg2: handle)",
+              "new": "CalcDistanceBetweenEntityOBB(entity1: CBaseEntity, entity2: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CalcDistanceToLineSegment2D",
+          "changes": {
+            "signature": {
+              "old": "CalcDistanceToLineSegment2D(arg1: Vector, arg2: Vector, arg3: Vector)",
+              "new": "CalcDistanceToLineSegment2D(point: Vector, segmentStart: Vector, segmentEnd: Vector)"
+            },
+            "description": {
+              "old": "",
+              "new": "Distance from a point to a line segment, in 2D (z is ignored)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CancelEntityIOEvents",
+          "changes": {
+            "signature": {
+              "old": "CancelEntityIOEvents(arg1: ehandle)",
+              "new": "CancelEntityIOEvents(entity: ehandle)"
+            },
+            "description": {
+              "old": "Create all I/O events for a particular entity.",
+              "new": "Cancel all pending I/O events for a particular entity."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateDamageInfo",
+          "changes": {
+            "signature": {
+              "old": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: Vector, arg5: float, arg6: int)",
+              "new": "CreateDamageInfo(inflictor: CBaseEntity | nil, attacker: CBaseEntity | nil, force: Vector, position: Vector, damage: float, damageType: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "damageType: Damage type bits of the damage info."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateSceneEntity",
+          "changes": {
+            "signature": {
+              "old": "CreateSceneEntity(arg1: string)",
+              "new": "CreateSceneEntity(sceneFile: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "sceneFile: Scene file of the `logic_choreographed_scene`; refused once the game is running (only while the map loads)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CreateTrigger",
+          "changes": {
+            "signature": {
+              "old": "CreateTrigger(arg1: Vector, arg2: Vector, arg3: Vector)",
+              "new": "CreateTrigger(origin: Vector, mins: Vector, maxs: Vector)"
+            },
+            "description": {
+              "old": "Creates and returns an AABB trigger.",
+              "new": "Creates and returns an AABB trigger (`trigger_multiple`)."
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Relative to origin.\nmaxs: Relative to origin."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "CrossVectors",
+          "changes": {
+            "signature": {
+              "old": "CrossVectors(arg1: Vector, arg2: Vector)",
+              "new": "CrossVectors(a: Vector, b: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "cvar_getf",
+          "changes": {
+            "signature": {
+              "old": "cvar_getf(arg1: string)",
+              "new": "cvar_getf(name: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Unknown convars return 0."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "cvar_setf",
+          "changes": {
+            "signature": {
+              "old": "cvar_setf(arg1: string, arg2: float)",
+              "new": "cvar_setf(name: string, value: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "name: Unknown convars: returns false with a console warning."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugChangeTeam",
+          "changes": {
+            "signature": {
+              "old": "DebugChangeTeam(arg1: handle)",
+              "new": "DebugChangeTeam(hero: CDOTA_BaseNPC_Hero)"
+            },
+            "description": {
+              "old": "Changes the team of the hero.",
+              "new": "Moves the hero's player between DOTA_TEAM_GOODGUYS and DOTA_TEAM_BADGUYS."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugCreateHeroWithVariant",
+          "changes": {
+            "signature": {
+              "old": "DebugCreateHeroWithVariant(arg1: handle, arg2: string, arg3: int, arg4: int, arg5: bool, arg6: handle)",
+              "new": "DebugCreateHeroWithVariant(playerOwner: CDOTAPlayerController, heroName: string, variant: int, team: DOTATeam_t, unused: bool, callback: function)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "variant: Hero variant (facet) selected for the player along with the hero.\nunused: Not read by the engine."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugCreateUnit",
+          "changes": {
+            "signature": {
+              "old": "DebugCreateUnit(playerOwner: CDOTAPlayerController, unitName: string, team: DOTATeam_t, arg4: bool, callback: function)",
+              "new": "DebugCreateUnit(playerOwner: CDOTAPlayerController, unitName: string, team: DOTATeam_t, unused: bool, callback: function)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unused: Not read by the engine."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawBox",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
+              "new": "DebugDrawBox(origin: Vector, mins: Vector, maxs: Vector, r: int, g: int, b: int, a: int, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "mins: Relative to origin.\nmaxs: Relative to origin.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DebugDrawLine_vCol",
+          "changes": {
+            "signature": {
+              "old": "DebugDrawLine_vCol(arg1: Vector, arg2: Vector, arg3: Vector, arg4: bool, arg5: float)",
+              "new": "DebugDrawLine_vCol(start: Vector, end: Vector, rgb: Vector, ztest: bool, duration: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "rgb: Color, components 0-255.\nztest: Same as `ztest` of `DebugDrawLine`.\nduration: Seconds."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DisconnectClient",
+          "changes": {
+            "signature": {
+              "old": "DisconnectClient(arg1: int, arg2: bool)",
+              "new": "DisconnectClient(playerId: PlayerID, removeBotHeroes: bool)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "removeBotHeroes: When true and the player is a fake client (bot), the heroes it owns are removed too. The player is kicked either way."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DoEntFire",
+          "changes": {
+            "signature": {
+              "old": "DoEntFire(arg1: string, arg2: string, arg3: string, arg4: float, arg5: handle, arg6: handle)",
+              "new": "DoEntFire(target: string, action: string, value: string, delay: float, activator: CBaseEntity | nil, caller: CBaseEntity | nil)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "target: Name of the target entities.\naction: Input name; empty: `Use`.\nvalue: Parameter of the input; empty: none.\ndelay: Seconds; negative values mean 0."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DoEntFireByInstanceHandle",
+          "changes": {
+            "signature": {
+              "old": "DoEntFireByInstanceHandle(arg1: handle, arg2: string, arg3: string, arg4: float, arg5: handle, arg6: handle)",
+              "new": "DoEntFireByInstanceHandle(target: CBaseEntity, action: string, value: string, delay: float, activator: CBaseEntity | nil, caller: CBaseEntity | nil)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "action: Input name; empty: `Use`.\nvalue: Parameter of the input; empty: none.\ndelay: Seconds; negative values mean 0."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DoIncludeScript",
+          "changes": {
+            "signature": {
+              "old": "DoIncludeScript(arg1: string, arg2: handle)",
+              "new": "DoIncludeScript(scriptName: string, scope: table | nil)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DoScriptAssert",
+          "changes": {
+            "signature": {
+              "old": "DoScriptAssert(arg1: bool, arg2: string)",
+              "new": "DoScriptAssert(assertion: bool, message: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DotProduct",
+          "changes": {
+            "signature": {
+              "old": "DotProduct(arg1: Vector, arg2: Vector)",
+              "new": "DotProduct(a: Vector, b: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DropNeutralItemAtPositionForHero",
+          "changes": {
+            "signature": {
+              "old": "DropNeutralItemAtPositionForHero(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, arg5: bool)",
+              "new": "DropNeutralItemAtPositionForHero(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool)"
+            },
+            "argDescriptions": {
+              "old": "itemName: Can be any item name, it does not have to be neutral.\ntier: Zero-based tier number.",
+              "new": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "DropNeutralItemAtPositionForHeroWithOffset",
+          "changes": {
+            "signature": {
+              "old": "DropNeutralItemAtPositionForHeroWithOffset(arg1: string, arg2: Vector, arg3: handle, arg4: int, arg5: bool, arg6: Vector)",
+              "new": "DropNeutralItemAtPositionForHeroWithOffset(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool, launchOffset: Vector)"
+            },
+            "returns": {
+              "old": "handle",
+              "new": "CDOTA_Item_Physical"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast).\nlaunchOffset: Added to the point the item is launched from (the unit position moved up to 100 units toward location)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "EmitSoundOnClient",
+          "changes": {
+            "signature": {
+              "old": "EmitSoundOnClient(soundName: string, arg2: handle)",
+              "new": "EmitSoundOnClient(soundName: string, player: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "player: Player controller, or the player's hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "EmitSoundOnEntityForPlayer",
+          "changes": {
+            "signature": {
+              "old": "EmitSoundOnEntityForPlayer(arg1: string, arg2: handle, arg3: int)",
+              "new": "EmitSoundOnEntityForPlayer(soundName: string, entity: CBaseEntity, playerId: PlayerID)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "EmitSoundOnLocationForPlayer",
+          "changes": {
+            "signature": {
+              "old": "EmitSoundOnLocationForPlayer(arg1: string, arg2: Vector, arg3: int)",
+              "new": "EmitSoundOnLocationForPlayer(soundName: string, location: Vector, playerId: PlayerID)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ExponentialDecay",
+          "changes": {
+            "signature": {
+              "old": "ExponentialDecay(arg1: float, arg2: float, arg3: float)",
+              "new": "ExponentialDecay(decayTo: float, decayTime: float, dt: float)"
+            },
+            "description": {
+              "old": "Smooth curve decreasing slower as it approaches zero.",
+              "new": "Smooth curve decreasing slower as it approaches zero: `decayTo ^ (dt / decayTime)`."
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "decayTo: Value reached after `decayTime`."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "FindClearRandomPositionAroundUnit",
+          "changes": {
+            "signature": {
+              "old": "FindClearRandomPositionAroundUnit(arg1: handle, arg2: handle, arg3: int)",
+              "new": "FindClearRandomPositionAroundUnit(unit: CDOTA_BaseNPC, target: CDOTA_BaseNPC, extraDistance: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unit: Unit that is moved.\ntarget: Unit it is placed around.\nextraDistance: Added to the sum of both units' padded collision radii. The direction steps by 90 degrees on every call."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "FindClearSpaceForUnit",
+          "changes": {
+            "signature": {
+              "old": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector, arg3: bool)",
+              "new": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector, interrupt: bool)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "interrupt: When false, a unit whose movement component reports active movement is not moved and false is returned; when true that movement is interrupted and the unit is teleported."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "FireEntityIOInputNameOnly",
+          "changes": {
+            "signature": {
+              "old": "FireEntityIOInputNameOnly(arg1: ehandle, arg2: string)",
+              "new": "FireEntityIOInputNameOnly(entity: ehandle, input: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "FireEntityIOInputString",
+          "changes": {
+            "signature": {
+              "old": "FireEntityIOInputString(arg1: ehandle, arg2: string, arg3: string)",
+              "new": "FireEntityIOInputString(entity: ehandle, input: string, value: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "FireEntityIOInputVec",
+          "changes": {
+            "signature": {
+              "old": "FireEntityIOInputVec(arg1: ehandle, arg2: string, arg3: Vector)",
+              "new": "FireEntityIOInputVec(entity: ehandle, input: string, value: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetAbilityKeyValuesByName",
+          "changes": {
+            "signature": {
+              "old": "GetAbilityKeyValuesByName(arg1: string)",
+              "new": "GetAbilityKeyValuesByName(abilityName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetClearSpaceForUnit",
+          "changes": {
+            "signature": {
+              "old": "GetClearSpaceForUnit(arg1: handle, arg2: Vector)",
+              "new": "GetClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "location: Returned unchanged when no clear space is found."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetItemCost",
+          "changes": {
+            "signature": {
+              "old": "GetItemCost(arg1: string)",
+              "new": "GetItemCost(itemName: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "itemName: Unknown items cost 0."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetItemDefOwnedCount",
+          "changes": {
+            "signature": {
+              "old": "GetItemDefOwnedCount(arg1: int, arg2: int)",
+              "new": "GetItemDefOwnedCount(playerId: PlayerID, itemDef: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "itemDef: Econ item definition index."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetItemDefQuantity",
+          "changes": {
+            "signature": {
+              "old": "GetItemDefQuantity(arg1: int, arg2: int)",
+              "new": "GetItemDefQuantity(playerId: PlayerID, itemDef: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "itemDef: Econ item definition index."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetLocalPlayerTeam",
+          "changes": {
+            "signature": {
+              "old": "GetLocalPlayerTeam(arg1: int)",
+              "new": "GetLocalPlayerTeam(unused: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unused: Not read: the local player of split-screen slot 0 is used."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetMaxOutputDelay",
+          "changes": {
+            "signature": {
+              "old": "GetMaxOutputDelay(arg1: ehandle, arg2: string)",
+              "new": "GetMaxOutputDelay(entity: ehandle, outputName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetPhysAngularVelocity",
+          "changes": {
+            "signature": {
+              "old": "GetPhysAngularVelocity(arg1: handle)",
+              "new": "GetPhysAngularVelocity(entity: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetPhysVelocity",
+          "changes": {
+            "signature": {
+              "old": "GetPhysVelocity(arg1: handle)",
+              "new": "GetPhysVelocity(entity: CBaseEntity)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetTargetAOELocation",
+          "changes": {
+            "signature": {
+              "old": "GetTargetAOELocation(arg1: int, arg2: int, arg3: int, arg4: Vector, arg5: int, arg6: int, arg7: int)",
+              "new": "GetTargetAOELocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, castRange: int, radius: int, minTargets: int)"
+            },
+            "description": {
+              "old": "",
+              "new": "Center of the best cluster of units for an area effect (the bot helper). Units are searched within `castRange + radius` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetTargetLinearLocation",
+          "changes": {
+            "signature": {
+              "old": "GetTargetLinearLocation(arg1: int, arg2: int, arg3: int, arg4: Vector, arg5: int, arg6: int, arg7: int)",
+              "new": "GetTargetLinearLocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, range: int, width: int, minTargets: int)"
+            },
+            "description": {
+              "old": "",
+              "new": "Best point for a line effect (the bot helper). Units are searched within `range + width` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "GetUnitKeyValuesByName",
+          "changes": {
+            "signature": {
+              "old": "GetUnitKeyValuesByName(arg1: string)",
+              "new": "GetUnitKeyValuesByName(unitName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "HeroMaxLevel",
+          "changes": {
+            "signature": {
+              "old": "HeroMaxLevel(arg1: handle)",
+              "new": "HeroMaxLevel(hero: CDOTA_BaseNPC_Hero)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "InitLogFile",
+          "changes": {
+            "signature": {
+              "old": "InitLogFile(arg1: string, arg2: string)",
+              "new": "InitLogFile(unused1: string, unused2: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unused1: Not read by the engine.\nunused2: Not read by the engine."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "LerpVectors",
+          "changes": {
+            "signature": {
+              "old": "LerpVectors(arg1: Vector, arg2: Vector, arg3: float)",
+              "new": "LerpVectors(a: Vector, b: Vector, t: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "t: Not clamped."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "LimitPathingSearchDepth",
+          "changes": {
+            "signature": {
+              "old": "LimitPathingSearchDepth(arg1: float)",
+              "new": "LimitPathingSearchDepth(limit: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "limit: Fraction of the full search space, clamped to 0-1."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "MakeStringToken",
+          "changes": {
+            "signature": {
+              "old": "MakeStringToken(arg1: string)",
+              "new": "MakeStringToken(text: string)"
+            },
+            "description": {
+              "old": "Checks to see if the given hScript is a valid entity.",
+              "new": "Returns the string token (hash) of the lowercased string; 0 for an empty string."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ManuallyTriggerSpawnGroupCompletion",
+          "changes": {
+            "signature": {
+              "old": "ManuallyTriggerSpawnGroupCompletion(handle: SpawnGroupHandle)",
+              "new": "ManuallyTriggerSpawnGroupCompletion(spawnGroupHandle: SpawnGroupHandle)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "PrecacheEntityFromTable",
+          "changes": {
+            "signature": {
+              "old": "PrecacheEntityFromTable(arg1: string, arg2: handle, context: CScriptPrecacheContext)",
+              "new": "PrecacheEntityFromTable(className: string, keyValues: table, context: CScriptPrecacheContext)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "PrecacheEntityListFromTable",
+          "changes": {
+            "signature": {
+              "old": "PrecacheEntityListFromTable(arg1: handle, context: CScriptPrecacheContext)",
+              "new": "PrecacheEntityListFromTable(spawnTables: table, context: CScriptPrecacheContext)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "PrecacheResource",
+          "changes": {
+            "signature": {
+              "old": "PrecacheResource(arg1: string, arg2: string, context: CScriptPrecacheContext)",
+              "new": "PrecacheResource(resourceType: string, resourcePath: string, context: CScriptPrecacheContext)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "resourceType: Precache entry key, e.g. `particle`, `soundfile`, `model`."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "PrecacheUnitFromTableAsync",
+          "changes": {
+            "signature": {
+              "old": "PrecacheUnitFromTableAsync(arg1: handle, callback: function)",
+              "new": "PrecacheUnitFromTableAsync(keyValues: table, callback: function)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "keyValues: The unit is taken from its `MapUnitName` key."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "PrecacheUnitFromTableSync",
+          "changes": {
+            "signature": {
+              "old": "PrecacheUnitFromTableSync(arg1: handle, context: CScriptPrecacheContext)",
+              "new": "PrecacheUnitFromTableSync(keyValues: table, context: CScriptPrecacheContext)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "keyValues: The unit is taken from its `MapUnitName` key."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RandomFloatWrapper",
+          "changes": {
+            "signature": {
+              "old": "RandomFloatWrapper(arg1: float, arg2: float)",
+              "new": "RandomFloatWrapper(min: float, max: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RecordNeutralItemEarned",
+          "changes": {
+            "signature": {
+              "old": "RecordNeutralItemEarned(arg1: handle, arg2: handle, arg3: int)",
+              "new": "RecordNeutralItemEarned(hero: CDOTA_BaseNPC, item: CDOTA_Item, tier: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "hero: Its team is credited.\ntier: 1-based neutral item tier."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RegisterCustomAnimationScriptForModel",
+          "changes": {
+            "signature": {
+              "old": "RegisterCustomAnimationScriptForModel(arg1: string, arg2: string)",
+              "new": "RegisterCustomAnimationScriptForModel(modelName: string, scriptName: string)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "modelName: Only printed: the function is deprecated and does nothing.\nscriptName: Only printed."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RegisterSpawnGroupFilterProxy",
+          "changes": {
+            "signature": {
+              "old": "RegisterSpawnGroupFilterProxy(arg1: string)",
+              "new": "RegisterSpawnGroupFilterProxy(name: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RemoveSpawnGroupFilterProxy",
+          "changes": {
+            "signature": {
+              "old": "RemoveSpawnGroupFilterProxy(arg1: string)",
+              "new": "RemoveSpawnGroupFilterProxy(name: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotateOrientation",
+          "changes": {
+            "signature": {
+              "old": "RotateOrientation(arg1: QAngle, arg2: QAngle)",
+              "new": "RotateOrientation(a: QAngle, b: QAngle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "b: The result is the rotation of `a` followed by `b` (matrix a * b)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotatePosition",
+          "changes": {
+            "signature": {
+              "old": "RotatePosition(arg1: Vector, arg2: QAngle, arg3: Vector)",
+              "new": "RotatePosition(rotationOrigin: Vector, rotationAngle: QAngle, position: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotateQuaternionByAxisAngle",
+          "changes": {
+            "signature": {
+              "old": "RotateQuaternionByAxisAngle(arg1: Quaternion, arg2: Vector, arg3: float)",
+              "new": "RotateQuaternionByAxisAngle(quaternion: Quaternion, axis: Vector, angle: float)"
+            },
+            "description": {
+              "old": "Rotates a quaternion by the specified angle around the specified vector axis.",
+              "new": "Rotates a quaternion by the specified angle around the specified vector axis. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game)."
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angle: Degrees."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotationDelta",
+          "changes": {
+            "signature": {
+              "old": "RotationDelta(arg1: QAngle, arg2: QAngle)",
+              "new": "RotationDelta(src: QAngle, dest: QAngle)"
+            },
+            "description": {
+              "old": "Find the delta between two QAngles.",
+              "new": "Find the rotation from one QAngle to another (verified in game)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "RotationDeltaAsAngularVelocity",
+          "changes": {
+            "signature": {
+              "old": "RotationDeltaAsAngularVelocity(arg1: QAngle, arg2: QAngle)",
+              "new": "RotationDeltaAsAngularVelocity(src: QAngle, dest: QAngle)"
+            },
+            "description": {
+              "old": "Converts delta QAngle to an angular velocity Vector.",
+              "new": "Rotation from one QAngle to another as an angular velocity: axis multiplied by degrees (verified in game)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "Script_RandomFloat",
+          "changes": {
+            "signature": {
+              "old": "Script_RandomFloat(arg1: float, arg2: float)",
+              "new": "Script_RandomFloat(min: float, max: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "Script_RemapValClamped",
+          "changes": {
+            "signature": {
+              "old": "Script_RemapValClamped(arg1: float, arg2: float, arg3: float, arg4: float, arg5: float)",
+              "new": "Script_RemapValClamped(value: float, inputStart: float, inputEnd: float, outputStart: float, outputEnd: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SendToConsole",
+          "changes": {
+            "signature": {
+              "old": "SendToConsole(arg1: string)",
+              "new": "SendToConsole(command: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SendToServerConsole",
+          "changes": {
+            "signature": {
+              "old": "SendToServerConsole(arg1: string)",
+              "new": "SendToServerConsole(command: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetOpvarFloatAll",
+          "changes": {
+            "signature": {
+              "old": "SetOpvarFloatAll(arg1: string, arg2: string, arg3: string, arg4: float)",
+              "new": "SetOpvarFloatAll(stackName: string, operatorName: string, opvarName: string, value: float)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetOpvarFloatPlayer",
+          "changes": {
+            "signature": {
+              "old": "SetOpvarFloatPlayer(arg1: string, arg2: string, arg3: string, arg4: float, arg5: handle)",
+              "new": "SetOpvarFloatPlayer(stackName: string, operatorName: string, opvarName: string, value: float, player: CDOTAPlayerController)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetPhysAngularVelocity",
+          "changes": {
+            "signature": {
+              "old": "SetPhysAngularVelocity(arg1: handle, arg2: Vector)",
+              "new": "SetPhysAngularVelocity(entity: CBaseEntity, angularVelocity: Vector)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetQuestName",
+          "changes": {
+            "signature": {
+              "old": "SetQuestName(arg1: string)",
+              "new": "SetQuestName(name: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetQuestPhase",
+          "changes": {
+            "signature": {
+              "old": "SetQuestPhase(arg1: int)",
+              "new": "SetQuestPhase(phase: int)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SetRenderingEnabled",
+          "changes": {
+            "signature": {
+              "old": "SetRenderingEnabled(arg1: ehandle, arg2: bool)",
+              "new": "SetRenderingEnabled(entity: ehandle, enabled: bool)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ShowGenericPopup",
+          "changes": {
+            "signature": {
+              "old": "ShowGenericPopup(arg1: string, arg2: string, arg3: string, arg4: string, arg5: int)",
+              "new": "ShowGenericPopup(header: string, body: string, param1: string, param2: string, flags: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "flags: 1: tint the screen, 2: show no other dialogs (`tint_screen`, `show_no_other_dialogs` of CDOTAUserMsg_ShowGenericPopup)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ShowGenericPopupToPlayer",
+          "changes": {
+            "signature": {
+              "old": "ShowGenericPopupToPlayer(arg1: handle, arg2: string, arg3: string, arg4: string, arg5: string, arg6: int)",
+              "new": "ShowGenericPopupToPlayer(player: CDOTAPlayerController, header: string, body: string, param1: string, param2: string, flags: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "flags: 1: tint the screen, 2: show no other dialogs."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "ShowMessage",
+          "changes": {
+            "signature": {
+              "old": "ShowMessage(arg1: string)",
+              "new": "ShowMessage(message: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SpawnEffigyOfUnitOrModel",
+          "changes": {
+            "signature": {
+              "old": "SpawnEffigyOfUnitOrModel(arg1: string, arg2: int, arg3: Vector, arg4: Vector, arg5: float, arg6: float, arg7: int)",
+              "new": "SpawnEffigyOfUnitOrModel(unitOrModel: string, team: DOTATeam_t, origin: Vector, angles: Vector, pedestalScale: float, modelScale: float, effigyType: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "unitOrModel: Unit name, or a `.vmdl` model path.\nangles: Pitch, yaw, roll.\npedestalScale: Model scale of the pedestal.\nmodelScale: Model scale of the statue; negative: the unit's `ModelScale`.\neffigyType: Status effect index of the statue material; also selects the pedestal model (with team)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SpawnEntityFromTableAsynchronous",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityFromTableAsynchronous(arg1: string, arg2: handle, arg3: handle, arg4: handle)",
+              "new": "SpawnEntityFromTableAsynchronous(className: string, keyValues: table, callback: handle, context: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "callback: Called when the entity has spawned."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SpawnEntityGroupFromTable",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityGroupFromTable(arg1: handle, arg2: bool, arg3: handle)",
+              "new": "SpawnEntityGroupFromTable(spawnTables: table, async: bool, callback: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "spawnTables: Entity tables, each with a `classname` key.\nasync: true: spawned through the asynchronous queue, the callback runs when it completes; false: spawned right away and the callback runs before the function returns."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SpawnEntityListFromTableAsynchronous",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityListFromTableAsynchronous(arg1: handle, arg2: handle)",
+              "new": "SpawnEntityListFromTableAsynchronous(spawnTables: table, callback: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "spawnTables: Entity tables, each with a `classname` key.\ncallback: Called when spawning is complete."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SpawnEntityListFromTableSynchronous",
+          "changes": {
+            "signature": {
+              "old": "SpawnEntityListFromTableSynchronous(arg1: handle)",
+              "new": "SpawnEntityListFromTableSynchronous(spawnTables: table)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "spawnTables: Entity tables, each with a `classname` key."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SplineQuaternions",
+          "changes": {
+            "signature": {
+              "old": "SplineQuaternions(arg1: Quaternion, arg2: Quaternion, arg3: float)",
+              "new": "SplineQuaternions(q0: Quaternion, q1: Quaternion, t: float)"
+            },
+            "description": {
+              "old": "Very basic interpolation of v0 to v1 over t on [0,1].",
+              "new": "Very basic interpolation of v0 to v1 over t on [0,1]. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game)."
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "t: Clamped to 0-1."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "SplineVectors",
+          "changes": {
+            "signature": {
+              "old": "SplineVectors(arg1: Vector, arg2: Vector, arg3: float)",
+              "new": "SplineVectors(v0: Vector, v1: Vector, t: float)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "t: Clamped to 0-1; smoothstep curve."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEvent",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEvent(arg1: string, arg2: handle)",
+              "new": "StartSoundEvent(soundName: string, entity: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity the sound is played on. A player controller is replaced with its hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEventReliable",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEventReliable(arg1: string, arg2: handle)",
+              "new": "StartSoundEventReliable(soundName: string, entity: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity the sound is played on. A player controller is replaced with its hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StartSoundEventUnreliable",
+          "changes": {
+            "signature": {
+              "old": "StartSoundEventUnreliable(arg1: string, arg2: handle)",
+              "new": "StartSoundEventUnreliable(soundName: string, entity: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity the sound is played on. A player controller is replaced with its hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StopEffect",
+          "changes": {
+            "signature": {
+              "old": "StopEffect(arg1: handle, arg2: string)",
+              "new": "StopEffect(entity: CBaseEntity | nil, effectName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StopGlobalSound",
+          "changes": {
+            "signature": {
+              "old": "StopGlobalSound(arg1: string)",
+              "new": "StopGlobalSound(soundName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StopListeningToAllGameEvents",
+          "changes": {
+            "signature": {
+              "old": "StopListeningToAllGameEvents(arg1: handle)",
+              "new": "StopListeningToAllGameEvents(context: table)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "context: Context table the listeners were registered with."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StopSoundEvent",
+          "changes": {
+            "signature": {
+              "old": "StopSoundEvent(arg1: string, arg2: handle)",
+              "new": "StopSoundEvent(soundName: string, entity: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity the sound is played on. A player controller is replaced with its hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "StopSoundOn",
+          "changes": {
+            "signature": {
+              "old": "StopSoundOn(arg1: string, arg2: handle)",
+              "new": "StopSoundOn(soundName: string, entity: handle)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "entity: Entity the sound is played on. A player controller is replaced with its hero."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UnloadSpawnGroup",
+          "changes": {
+            "signature": {
+              "old": "UnloadSpawnGroup(arg1: string)",
+              "new": "UnloadSpawnGroup(spawnGroupName: string)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UnloadSpawnGroupByHandle",
+          "changes": {
+            "signature": {
+              "old": "UnloadSpawnGroupByHandle(handle: SpawnGroupHandle)",
+              "new": "UnloadSpawnGroupByHandle(spawnGroupHandle: SpawnGroupHandle)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UserIDToControllerHScript",
+          "changes": {
+            "signature": {
+              "old": "UserIDToControllerHScript(arg1: int)",
+              "new": "UserIDToControllerHScript(userId: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "userId: The `userid` field of game events."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UTIL_MessageText",
+          "changes": {
+            "signature": {
+              "old": "UTIL_MessageText(arg1: int, arg2: string, arg3: int, arg4: int, arg5: int, arg6: int)",
+              "new": "UTIL_MessageText(playerEntityIndex: int, message: string, r: int, g: int, b: int, a: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UTIL_MessageText_WithContext",
+          "changes": {
+            "signature": {
+              "old": "UTIL_MessageText_WithContext(arg1: int, arg2: string, arg3: int, arg4: int, arg5: int, arg6: int, arg7: handle)",
+              "new": "UTIL_MessageText_WithContext(playerEntityIndex: int, message: string, r: int, g: int, b: int, a: int, context: table)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\ncontext: Values for the message: `player_id`, `value`, `team_id` (missing keys: -1)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UTIL_MessageTextAll",
+          "changes": {
+            "signature": {
+              "old": "UTIL_MessageTextAll(arg1: string, arg2: int, arg3: int, arg4: int, arg5: int)",
+              "new": "UTIL_MessageTextAll(message: string, r: int, g: int, b: int, a: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UTIL_MessageTextAll_WithContext",
+          "changes": {
+            "signature": {
+              "old": "UTIL_MessageTextAll_WithContext(arg1: string, arg2: int, arg3: int, arg4: int, arg5: int, arg6: handle)",
+              "new": "UTIL_MessageTextAll_WithContext(message: string, r: int, g: int, b: int, a: int, context: table)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\ncontext: Values for the message: `player_id`, `value`, `team_id` (missing keys: -1)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "UTIL_ResetMessageText",
+          "changes": {
+            "signature": {
+              "old": "UTIL_ResetMessageText(arg1: int)",
+              "new": "UTIL_ResetMessageText(playerEntityIndex: int)"
+            },
+            "argDescriptions": {
+              "old": "",
+              "new": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`)."
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "VectorAngles",
+          "changes": {
+            "signature": {
+              "old": "VectorAngles(arg1: Vector)",
+              "new": "VectorAngles(direction: Vector)"
+            }
+          }
+        },
+        {
+          "type": "function",
+          "name": "VectorToAngles",
+          "changes": {
+            "signature": {
+              "old": "VectorToAngles(arg1: Vector)",
+              "new": "VectorToAngles(direction: Vector)"
+            }
+          }
+        }
+      ]
+    }
+  }
 }

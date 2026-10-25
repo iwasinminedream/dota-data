@@ -1,0 +1,7 @@
+# Line endings: LF in the repository and in every working copy. The generators (Node, Python) write LF,
+# so a Windows checkout with core.autocrlf=true would otherwise show every regenerated file as changed.
+* text=auto eol=lf
+
+# The raw dump keeps the console output of the game byte for byte (it mixes CRLF and LF).
+dumper/dump -text
+dumper/*.partial -text
