@@ -1,6 +1,7 @@
 import dedent from 'dedent';
 import * as apiTypes from '../types';
 import { moddotaDump } from './moddota-dump';
+import { withUnnamedArguments } from './unnamed-args';
 import { array, binaryBoolean, ExtensionClass, ExtensionFunction, func, literal } from './utils';
 
 const abilityPrecacheFunction: apiTypes.ClassMember = {
@@ -156,7 +157,7 @@ export const classExtensions: Record<string, ExtensionClass> = {
   },
 };
 
-export const functionExtensions: Record<string, ExtensionFunction> = {
+export const functionExtensions: Record<string, ExtensionFunction> = withUnnamedArguments({
   ...moddotaDump,
   '_G.SetRenderingEnabled': { deprecated: 'Instantly crashes the game.' },
   'CDOTA_PlayerResource.GetPlayer': {
@@ -600,7 +601,7 @@ export const functionExtensions: Record<string, ExtensionFunction> = {
       0: ['itemName', null, 'Can be any item name, it does not have to be neutral.'],
       1: ['location'],
       2: ['unit', 'CDOTA_BaseNPC'],
-      3: ['tier', null, 'Zero-based tier number.'],
+      3: ['tier'],
     },
   },
   '_G.FindSpawnEntityForTeam': {
@@ -809,8 +810,10 @@ export const functionExtensions: Record<string, ExtensionFunction> = {
   },
   'CDOTAPlayerController.SpawnCourierAtPosition': { returns: 'CDOTA_Unit_Courier' },
   '_G.GetActiveSpawnGroupHandle': { returns: 'SpawnGroupHandle' },
-  '_G.ManuallyTriggerSpawnGroupCompletion': { args: { 0: ['handle', 'SpawnGroupHandle'] } },
-  '_G.UnloadSpawnGroupByHandle': { args: { 0: ['handle', 'SpawnGroupHandle'] } },
+  '_G.ManuallyTriggerSpawnGroupCompletion': {
+    args: { 0: ['spawnGroupHandle', 'SpawnGroupHandle'] },
+  },
+  '_G.UnloadSpawnGroupByHandle': { args: { 0: ['spawnGroupHandle', 'SpawnGroupHandle'] } },
   'CBaseEntity.GetSpawnGroupHandle': { returns: 'SpawnGroupHandle' },
   'CDOTABaseAbility.GetBehavior': { returns: 'DOTA_ABILITY_BEHAVIOR' },
   'CDOTABaseAbility.GetBehaviorInt': { returns: 'DOTA_ABILITY_BEHAVIOR' },
@@ -899,7 +902,7 @@ export const functionExtensions: Record<string, ExtensionFunction> = {
       4: ['teleportOwner', ['CDOTA_BaseNPC_Hero', 'nil']],
     },
   },
-};
+});
 
 export const extraDeclarations = (() => {
   const context: apiTypes.Declaration[] = [];

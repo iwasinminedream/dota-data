@@ -1406,20 +1406,20 @@
         "type": "method",
         "class": "CBodyComponent",
         "name": "AddImpulseAtPosition",
-        "signature": "AddImpulseAtPosition(arg1: Vector, arg2: Vector)",
+        "signature": "AddImpulseAtPosition(impulse: Vector, position: Vector)",
         "returns": "nil",
         "description": "Apply an impulse at a worldspace position to the physics.",
-        "argDescriptions": "",
+        "argDescriptions": "impulse: World-space impulse.\nposition: World-space point the impulse is applied at; its offset from the center of mass adds angular velocity. Only dynamic bodies are affected.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CBodyComponent",
         "name": "AddVelocity",
-        "signature": "AddVelocity(arg1: Vector, arg2: Vector)",
+        "signature": "AddVelocity(linearVelocity: Vector, angularVelocity: Vector)",
         "returns": "nil",
         "description": "Add linear and angular velocity to the physics object.",
-        "argDescriptions": "",
+        "argDescriptions": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second.",
         "abstract": false
       },
       {
@@ -1446,27 +1446,27 @@
         "type": "method",
         "class": "CBodyComponent",
         "name": "SetAngularVelocity",
-        "signature": "SetAngularVelocity(arg1: Vector)",
+        "signature": "SetAngularVelocity(angularVelocity: Vector)",
         "returns": "nil",
         "description": "",
-        "argDescriptions": "",
+        "argDescriptions": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CBodyComponent",
         "name": "SetMaterialGroup",
-        "signature": "SetMaterialGroup(arg1: string)",
+        "signature": "SetMaterialGroup(materialGroup: string)",
         "returns": "nil",
         "description": "",
-        "argDescriptions": "",
+        "argDescriptions": "materialGroup: Material group name (hashed into a string token).",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CBodyComponent",
         "name": "SetVelocity",
-        "signature": "SetVelocity(arg1: Vector)",
+        "signature": "SetVelocity(velocity: Vector)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -1558,200 +1558,200 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Axis",
-        "signature": "Axis(arg1: Vector, arg2: QAngle, arg3: float, arg4: bool, arg5: float)",
+        "signature": "Axis(origin: Vector, angles: QAngle, scale: float, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws an axis. Specify origin + orientation in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "ztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Box",
-        "signature": "Box(arg1: Vector, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "Box(mins: Vector, maxs: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a world-space axis-aligned box. Specify bounds in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "BoxAngles",
-        "signature": "BoxAngles(arg1: Vector, arg2: Vector, arg3: Vector, arg4: QAngle, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "BoxAngles(origin: Vector, mins: Vector, maxs: Vector, angles: QAngle, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws an oriented box at the origin. Specify bounds in local space.",
-        "argDescriptions": "",
+        "argDescriptions": "mins: Relative to origin.\nmaxs: Relative to origin.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Capsule",
-        "signature": "Capsule(arg1: Vector, arg2: QAngle, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "Capsule(origin: Vector, angles: QAngle, height: float, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a capsule. Specify base in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "origin: Bottom of the capsule.\nheight: Distance between the centers of the end spheres.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Circle",
-        "signature": "Circle(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Circle(center: Vector, angles: QAngle, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a circle. Specify center in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "angles: Orientation of the circle plane.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "CircleScreenOriented",
-        "signature": "CircleScreenOriented(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "CircleScreenOriented(center: Vector, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a circle oriented to the screen. Specify center in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cone",
-        "signature": "Cone(arg1: Vector, arg2: Vector, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "Cone(apex: Vector, direction: Vector, angle: float, length: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a wireframe cone. Specify endpoint and direction in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "angle: Full opening angle in radians.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cross",
-        "signature": "Cross(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "Cross(origin: Vector, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a screen-aligned cross. Specify origin in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cross3D",
-        "signature": "Cross3D(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "Cross3D(origin: Vector, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a world-aligned cross. Specify origin in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Cross3DOriented",
-        "signature": "Cross3DOriented(arg1: Vector, arg2: QAngle, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Cross3DOriented(origin: Vector, angles: QAngle, size: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws an oriented cross. Specify origin in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "DrawTickMarkedLine",
-        "signature": "DrawTickMarkedLine(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "DrawTickMarkedLine(start: Vector, end: Vector, tickDistance: float, tickTextDistance: int, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a dashed line. Specify endpoints in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "tickDistance: Distance between ticks (truncated to an integer).\ntickTextDistance: Unverified: in Source, every this many ticks get a distance label.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "EntityAttachments",
-        "signature": "EntityAttachments(arg1: ehandle, arg2: float, arg3: float)",
+        "signature": "EntityAttachments(entity: ehandle, scale: float, duration: float)",
         "returns": "nil",
         "description": "Draws the attachments of the entity.",
-        "argDescriptions": "",
+        "argDescriptions": "scale: Size of the attachment axes; 0 or less picks a default.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "EntityAxis",
-        "signature": "EntityAxis(arg1: ehandle, arg2: float, arg3: bool, arg4: float)",
+        "signature": "EntityAxis(entity: ehandle, scale: float, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws the axis of the entity origin.",
-        "argDescriptions": "",
+        "argDescriptions": "ztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "EntityBounds",
-        "signature": "EntityBounds(arg1: ehandle, arg2: int, arg3: int, arg4: int, arg5: int, arg6: bool, arg7: float)",
+        "signature": "EntityBounds(entity: ehandle, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws bounds of an entity.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "EntitySkeleton",
-        "signature": "EntitySkeleton(arg1: ehandle, arg2: float)",
+        "signature": "EntitySkeleton(entity: ehandle, duration: float)",
         "returns": "nil",
         "description": "Draws the skeleton of the entity.",
-        "argDescriptions": "",
+        "argDescriptions": "duration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "EntityText",
-        "signature": "EntityText(arg1: ehandle, arg2: int, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
+        "signature": "EntityText(entity: ehandle, lineOffset: int, text: string, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draws text on an entity.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "FilledRect2D",
-        "signature": "FilledRect2D(arg1: Vector2D, arg2: Vector2D, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+        "signature": "FilledRect2D(mins: Vector2D, maxs: Vector2D, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draws a screen-space filled 2D rectangle. Coordinates are in pixels.",
-        "argDescriptions": "",
+        "argDescriptions": "mins: Top-left corner in pixels.\nmaxs: Bottom-right corner in pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "HorzArrow",
-        "signature": "HorzArrow(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "HorzArrow(start: Vector, end: Vector, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a horizontal arrow. Specify endpoints in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Line",
-        "signature": "Line(arg1: Vector, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "Line(start: Vector, end: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a line between two points.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Line2D",
-        "signature": "Line2D(arg1: Vector2D, arg2: Vector2D, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+        "signature": "Line2D(start: Vector2D, end: Vector2D, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draws a line between two points in screenspace.",
-        "argDescriptions": "",
+        "argDescriptions": "start: Pixels.\nend: Pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
@@ -1768,7 +1768,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "PushAndClearDebugOverlayScope",
-        "signature": "PushAndClearDebugOverlayScope(arg1: string)",
+        "signature": "PushAndClearDebugOverlayScope(scopeName: string)",
         "returns": "nil",
         "description": "Pushes an identifier used to group overlays. Deletes all existing overlays using this overlay id.",
         "argDescriptions": "",
@@ -1778,7 +1778,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "PushDebugOverlayScope",
-        "signature": "PushDebugOverlayScope(arg1: string)",
+        "signature": "PushDebugOverlayScope(scopeName: string)",
         "returns": "nil",
         "description": "Pushes an identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.",
         "argDescriptions": "",
@@ -1788,7 +1788,7 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "RemoveAllInScope",
-        "signature": "RemoveAllInScope(arg1: string)",
+        "signature": "RemoveAllInScope(scopeName: string)",
         "returns": "nil",
         "description": "Removes all overlays marked with a specific identifier, regardless of their lifetime.",
         "argDescriptions": "",
@@ -1798,90 +1798,90 @@
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "SolidCone",
-        "signature": "SolidCone(arg1: Vector, arg2: Vector, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "SolidCone(apex: Vector, direction: Vector, angle: float, length: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a solid cone. Specify endpoint and direction in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "angle: Full opening angle in radians.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Sphere",
-        "signature": "Sphere(arg1: Vector, arg2: float, arg3: int, arg4: int, arg5: int, arg6: int, arg7: bool, arg8: float)",
+        "signature": "Sphere(center: Vector, radius: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a wireframe sphere. Specify center in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "SweptBox",
-        "signature": "SweptBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: Vector, arg5: QAngle, arg6: int, arg7: int, arg8: int, arg9: int, arg10: float)",
+        "signature": "SweptBox(start: Vector, end: Vector, mins: Vector, maxs: Vector, angles: QAngle, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draws a swept box. Specify endpoints in world space and the bounds in local space.",
-        "argDescriptions": "",
+        "argDescriptions": "mins: Local-space bounds.\nmaxs: Local-space bounds.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Text",
-        "signature": "Text(arg1: Vector, arg2: int, arg3: string, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: float)",
+        "signature": "Text(origin: Vector, lineOffset: int, text: string, maxDistance: float, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draws 2D text. Specify origin in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "maxDistance: Hidden farther than this from the camera; 0: always shown.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Texture",
-        "signature": "Texture(arg1: string, arg2: Vector2D, arg3: Vector2D, arg4: int, arg5: int, arg6: int, arg7: int, arg8: Vector2D, arg9: Vector2D, arg10: float)",
+        "signature": "Texture(textureName: string, mins: Vector2D, maxs: Vector2D, r: int, g: int, b: int, a: int, uvMins: Vector2D, uvMaxs: Vector2D, duration: float)",
         "returns": "nil",
         "description": "Draws a screen-space texture. Coordinates are in pixels.",
-        "argDescriptions": "",
+        "argDescriptions": "mins: Top-left corner in pixels.\nmaxs: Bottom-right corner in pixels.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nuvMins: Texture coordinates.\nuvMaxs: Texture coordinates.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "Triangle",
-        "signature": "Triangle(arg1: Vector, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "Triangle(vertex1: Vector, vertex2: Vector, vertex3: Vector, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a filled triangle. Specify vertices in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "VectorText3D",
-        "signature": "VectorText3D(arg1: Vector, arg2: QAngle, arg3: string, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "VectorText3D(origin: Vector, angles: QAngle, text: string, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws 3D text. Specify origin + orientation in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "VertArrow",
-        "signature": "VertArrow(arg1: Vector, arg2: Vector, arg3: float, arg4: int, arg5: int, arg6: int, arg7: int, arg8: bool, arg9: float)",
+        "signature": "VertArrow(start: Vector, end: Vector, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a vertical arrow. Specify endpoints in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDebugOverlayScriptHelper",
         "name": "YawArrow",
-        "signature": "YawArrow(arg1: Vector, arg2: float, arg3: float, arg4: float, arg5: int, arg6: int, arg7: int, arg8: int, arg9: bool, arg10: float)",
+        "signature": "YawArrow(start: Vector, yaw: float, length: float, width: float, r: int, g: int, b: int, a: int, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draws a arrow associated with a specific yaw. Specify endpoints in world space.",
-        "argDescriptions": "",
+        "argDescriptions": "yaw: Degrees.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nztest: Depth test flag, the same as `ztest` of `DebugDrawLine` (which value turns the depth test off was not verified).\nduration: Seconds.",
         "abstract": false
       },
       {
@@ -2254,7 +2254,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "IsCosmetic",
-        "signature": "IsCosmetic(entity: handle)",
+        "signature": "IsCosmetic(entity: CBaseEntity)",
         "returns": "bool",
         "description": "Is this a cosmetic only ability?",
         "argDescriptions": "",
@@ -7486,7 +7486,7 @@
         "type": "method",
         "class": "CDOTA_Buff",
         "name": "CheckStateToTable",
-        "signature": "CheckStateToTable(table: handle)",
+        "signature": "CheckStateToTable(states: table)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -7686,7 +7686,7 @@
         "type": "method",
         "class": "CDOTA_Buff",
         "name": "HasFunction",
-        "signature": "HasFunction(function: modifierfunction)",
+        "signature": "HasFunction(modifierFunction: modifierfunction)",
         "returns": "bool",
         "description": "",
         "argDescriptions": "",
@@ -17462,7 +17462,7 @@
         "type": "method",
         "class": "CDOTABaseGameMode",
         "name": "ListenForQueryFailed",
-        "signature": "ListenForQueryFailed(function: function, context: table)",
+        "signature": "ListenForQueryFailed(callback: function, context: table)",
         "returns": "nil",
         "description": "Set function and context for real time combat analyzer query failed.",
         "argDescriptions": "",
@@ -17472,7 +17472,7 @@
         "type": "method",
         "class": "CDOTABaseGameMode",
         "name": "ListenForQueryProgressChanged",
-        "signature": "ListenForQueryProgressChanged(function: function, context: table)",
+        "signature": "ListenForQueryProgressChanged(callback: function, context: table)",
         "returns": "nil",
         "description": "Set function and context for real time combat analyzer query progress changed.",
         "argDescriptions": "",
@@ -17482,7 +17482,7 @@
         "type": "method",
         "class": "CDOTABaseGameMode",
         "name": "ListenForQuerySucceeded",
-        "signature": "ListenForQuerySucceeded(function: function, context: table)",
+        "signature": "ListenForQuerySucceeded(callback: function, context: table)",
         "returns": "nil",
         "description": "Set function and context for real time combat analyzer query succeeded.",
         "argDescriptions": "",
@@ -18536,10 +18536,10 @@
         "type": "method",
         "class": "CDOTAGameManager",
         "name": "GetHeroLocTokenByID",
-        "signature": "GetHeroLocTokenByID(arg1: int)",
+        "signature": "GetHeroLocTokenByID(heroId: int)",
         "returns": "string",
         "description": "Get the localization token for the given hero ID.",
-        "argDescriptions": "",
+        "argDescriptions": "heroId: Hero ID, 1-255; other values return nil.",
         "abstract": false
       },
       {
@@ -18580,10 +18580,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddBotPlayerWithEntityScript",
-        "signature": "AddBotPlayerWithEntityScript(heroName: string, playerName: string, team: DOTATeam_t, entityScript: string, arg5: bool)",
+        "signature": "AddBotPlayerWithEntityScript(heroName: string, playerName: string, team: DOTATeam_t, entityScript: string, reuseExistingPlayer: bool)",
         "returns": "CDOTA_BaseNPC_Hero | nil",
         "description": "Spawn a bot player of the passed hero name, player name, and team.",
-        "argDescriptions": "entityScript: Path to a script file executed in the context of spawned hero entity.",
+        "argDescriptions": "entityScript: Path to a script file executed in the context of spawned hero entity.\nreuseExistingPlayer: When true and a player named `playerName` exists, that player gets the hero instead of a new bot being created.",
         "abstract": false
       },
       {
@@ -18610,50 +18610,50 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddHeroIDToBlacklist",
-        "signature": "AddHeroIDToBlacklist(arg1: int)",
+        "signature": "AddHeroIDToBlacklist(heroId: int)",
         "returns": "nil",
         "description": "Add the hero ID to the hero blacklist if it is not already present.",
-        "argDescriptions": "",
+        "argDescriptions": "heroId: Values below 1 are ignored.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddHeroIDToWhitelist",
-        "signature": "AddHeroIDToWhitelist(arg1: int)",
+        "signature": "AddHeroIDToWhitelist(heroId: int)",
         "returns": "nil",
         "description": "Add the hero ID to the hero whitelist if it is not already present.",
-        "argDescriptions": "",
+        "argDescriptions": "heroId: Values below 1 are ignored.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddHeroToBlacklist",
-        "signature": "AddHeroToBlacklist(arg1: string)",
+        "signature": "AddHeroToBlacklist(heroName: string)",
         "returns": "nil",
         "description": "Add the hero to the hero blacklist if it is not already present.",
-        "argDescriptions": "",
+        "argDescriptions": "heroName: Both `npc_dota_hero_axe` and `axe` work (verified in game).",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddHeroToPlayerAvailability",
-        "signature": "AddHeroToPlayerAvailability(arg1: int, arg2: int)",
+        "signature": "AddHeroToPlayerAvailability(playerId: PlayerID, heroId: int)",
         "returns": "nil",
         "description": "Adds hero of given ID to available heroes of player of given ID.",
-        "argDescriptions": "",
+        "argDescriptions": "playerId: Player IDs 64 and above are ignored.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddHeroToWhitelist",
-        "signature": "AddHeroToWhitelist(arg1: string)",
+        "signature": "AddHeroToWhitelist(heroName: string)",
         "returns": "nil",
         "description": "Add the hero to the hero whitelist if it is not already present.",
-        "argDescriptions": "",
+        "argDescriptions": "heroName: Both `npc_dota_hero_axe` and `axe` work.",
         "abstract": false
       },
       {
@@ -18670,20 +18670,20 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddMinimapDebugPoint",
-        "signature": "AddMinimapDebugPoint(arg1: int, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float)",
+        "signature": "AddMinimapDebugPoint(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float)",
         "returns": "nil",
         "description": "Add a point on the minimap.",
-        "argDescriptions": "",
+        "argDescriptions": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddMinimapDebugPointForTeam",
-        "signature": "AddMinimapDebugPointForTeam(arg1: int, arg2: Vector, arg3: int, arg4: int, arg5: int, arg6: int, arg7: float, arg8: int)",
+        "signature": "AddMinimapDebugPointForTeam(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float, team: DOTATeam_t)",
         "returns": "nil",
         "description": "Add a point on the minimap for a specific team.",
-        "argDescriptions": "",
+        "argDescriptions": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds.\nteam: Team whose players see the point.",
         "abstract": false
       },
       {
@@ -18700,10 +18700,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "BeginTemporaryNight",
-        "signature": "BeginTemporaryNight(duration: float, arg2: int)",
+        "signature": "BeginTemporaryNight(duration: float, source: int)",
         "returns": "nil",
         "description": "Begin temporary night.",
-        "argDescriptions": "",
+        "argDescriptions": "source: Stored as `m_nTemporaryDayNightSource` (what caused the night); the meaning of the values was not established.",
         "abstract": false
       },
       {
@@ -18740,7 +18740,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "ClearPlayerHeroAvailability",
-        "signature": "ClearPlayerHeroAvailability(arg1: int)",
+        "signature": "ClearPlayerHeroAvailability(playerId: PlayerID)",
         "returns": "nil",
         "description": "Clears available heroes of player of given ID.",
         "argDescriptions": "",
@@ -18930,10 +18930,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "GetGameSessionConfigValue",
-        "signature": "GetGameSessionConfigValue(arg1: string, arg2: string)",
+        "signature": "GetGameSessionConfigValue(key: string, defaultValue: string)",
         "returns": "string",
         "description": "Get a string value from the game session config (map options).",
-        "argDescriptions": "",
+        "argDescriptions": "defaultValue: Returned when the key is not set.",
         "abstract": false
       },
       {
@@ -18950,10 +18950,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "GetIetmStockDuration",
-        "signature": "GetIetmStockDuration(arg1: int, arg2: string, arg3: int)",
+        "signature": "GetIetmStockDuration(team: DOTATeam_t, itemName: string, playerId: PlayerID)",
         "returns": "float",
         "description": "Get the time it takes to add a new item to stock.",
-        "argDescriptions": "",
+        "argDescriptions": "team: Team whose stock is read; a negative value matches no team stock.\nplayerId: Player whose own stock is read; -1 matches no player stock.",
         "abstract": false
       },
       {
@@ -19120,7 +19120,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "IsHeroEnabledViaLists",
-        "signature": "IsHeroEnabledViaLists(arg1: string)",
+        "signature": "IsHeroEnabledViaLists(heroName: string)",
         "returns": "bool",
         "description": "Is the hero not blacklisted, and is it either whitelisted or the whitelist is empty?",
         "argDescriptions": "",
@@ -19260,10 +19260,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "PrepareSpawners",
-        "signature": "PrepareSpawners(arg1: float)",
+        "signature": "PrepareSpawners(interval: float)",
         "returns": "nil",
         "description": "Prepare Dota lane style spawners with a given interval.",
-        "argDescriptions": "",
+        "argDescriptions": "interval: Seconds between lane creep waves.",
         "abstract": false
       },
       {
@@ -19280,7 +19280,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "RemoveHeroFromBlacklist",
-        "signature": "RemoveHeroFromBlacklist(arg1: string)",
+        "signature": "RemoveHeroFromBlacklist(heroName: string)",
         "returns": "nil",
         "description": "Remove the hero from the hero blacklist if present.",
         "argDescriptions": "",
@@ -19290,7 +19290,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "RemoveHeroFromWhitelist",
-        "signature": "RemoveHeroFromWhitelist(arg1: string)",
+        "signature": "RemoveHeroFromWhitelist(heroName: string)",
         "returns": "nil",
         "description": "Remove the hero from the hero whitelist if present.",
         "argDescriptions": "",
@@ -19300,7 +19300,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "RemoveHeroIDFromBlacklist",
-        "signature": "RemoveHeroIDFromBlacklist(arg1: int)",
+        "signature": "RemoveHeroIDFromBlacklist(heroId: int)",
         "returns": "nil",
         "description": "Remove the hero ID from the hero blacklist if present.",
         "argDescriptions": "",
@@ -19310,7 +19310,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "RemoveHeroIDFromWhitelist",
-        "signature": "RemoveHeroIDFromWhitelist(arg1: int)",
+        "signature": "RemoveHeroIDFromWhitelist(heroId: int)",
         "returns": "nil",
         "description": "Remove the hero ID from the hero whitelist if present.",
         "argDescriptions": "",
@@ -19350,7 +19350,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "ResetPlayer",
-        "signature": "ResetPlayer(arg1: int)",
+        "signature": "ResetPlayer(playerId: PlayerID)",
         "returns": "nil",
         "description": "Resets the player of a given ID.",
         "argDescriptions": "",
@@ -19390,27 +19390,27 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SendCustomMessage",
-        "signature": "SendCustomMessage(arg1: string, arg2: int, arg3: int)",
+        "signature": "SendCustomMessage(message: string, playerId: PlayerID, value: int)",
         "returns": "nil",
         "description": "Sends a message on behalf of a player.",
-        "argDescriptions": "",
+        "argDescriptions": "playerId: Player the message is sent on behalf of (`player_id` of CDOTAUserMsg_CustomMsg).\nvalue: Integer sent with the message (`value` of CDOTAUserMsg_CustomMsg).",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SendCustomMessageToTeam",
-        "signature": "SendCustomMessageToTeam(arg1: string, arg2: int, arg3: int, arg4: int)",
+        "signature": "SendCustomMessageToTeam(message: string, team: DOTATeam_t, playerId: PlayerID, value: int)",
         "returns": "nil",
         "description": "Sends a message on behalf of a player to the specified team.",
-        "argDescriptions": "",
+        "argDescriptions": "team: Receiving team; spectators receive the message too.\nplayerId: Player the message is sent on behalf of.\nvalue: Integer sent with the message.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetAllowOutpostBonuses",
-        "signature": "SetAllowOutpostBonuses(arg1: bool)",
+        "signature": "SetAllowOutpostBonuses(allow: bool)",
         "returns": "nil",
         "description": "Allow Outposts granting XP.",
         "argDescriptions": "",
@@ -19430,7 +19430,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetCreepSpawningEnabled",
-        "signature": "SetCreepSpawningEnabled(arg1: bool)",
+        "signature": "SetCreepSpawningEnabled(enabled: bool)",
         "returns": "nil",
         "description": "Sets whether the regular Dota creeps spawn.",
         "argDescriptions": "",
@@ -19440,10 +19440,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetCustomGameAccountRecordSaveFunction",
-        "signature": "SetCustomGameAccountRecordSaveFunction(arg1: handle, arg2: handle)",
+        "signature": "SetCustomGameAccountRecordSaveFunction(callback: handle, context: handle)",
         "returns": "nil",
         "description": "Sets a callback to handle saving custom game account records (callback is passed a Player ID and should return a flat simple table).",
-        "argDescriptions": "",
+        "argDescriptions": "callback: Function called with a Player ID; nil is rejected with a console message.\ncontext: Table the callback is called with; nil is rejected.",
         "abstract": false
       },
       {
@@ -19480,7 +19480,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits",
-        "signature": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits(arg1: bool)",
+        "signature": "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits(allow: bool)",
         "returns": "nil",
         "description": "Sets a flag to enable/disable the casting secondary abilities from units other than the player's own hero.",
         "argDescriptions": "",
@@ -19490,7 +19490,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetCustomGameBansPerTeam",
-        "signature": "SetCustomGameBansPerTeam(arg1: int)",
+        "signature": "SetCustomGameBansPerTeam(bans: int)",
         "returns": "nil",
         "description": "Set number of hero bans each team gets.",
         "argDescriptions": "",
@@ -19580,7 +19580,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetEnableAlternateHeroGrids",
-        "signature": "SetEnableAlternateHeroGrids(arg1: bool)",
+        "signature": "SetEnableAlternateHeroGrids(enabled: bool)",
         "returns": "nil",
         "description": "Allow alternate hero grids to be used (DOTA+, etc).  True by default.",
         "argDescriptions": "",
@@ -19610,7 +19610,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetFilterMoreGold",
-        "signature": "SetFilterMoreGold(arg1: bool)",
+        "signature": "SetFilterMoreGold(filterMoreGold: bool)",
         "returns": "nil",
         "description": "Sets whether to filter more gold events than normal.",
         "argDescriptions": "",
@@ -19700,17 +19700,17 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetHeroSelectPenaltyTime",
-        "signature": "SetHeroSelectPenaltyTime(arg1: float)",
+        "signature": "SetHeroSelectPenaltyTime(time: float)",
         "returns": "nil",
         "description": "Sets amount of penalty time before randoming a hero.",
-        "argDescriptions": "",
+        "argDescriptions": "time: Seconds.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetHideBlacklistedHeroes",
-        "signature": "SetHideBlacklistedHeroes(arg1: bool)",
+        "signature": "SetHideBlacklistedHeroes(hide: bool)",
         "returns": "nil",
         "description": "Should blacklisted heroes be hidden, or just dimmed, in hero picking?",
         "argDescriptions": "",
@@ -19730,7 +19730,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetIgnoreLobbyTeamsInCustomGame",
-        "signature": "SetIgnoreLobbyTeamsInCustomGame(arg1: bool)",
+        "signature": "SetIgnoreLobbyTeamsInCustomGame(ignore: bool)",
         "returns": "nil",
         "description": "Set whether custom and event games should ignore Lobby teams when assigning players to teams. Defaults to true.",
         "argDescriptions": "",
@@ -19750,17 +19750,17 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetNeutralInitialSpawnOffset",
-        "signature": "SetNeutralInitialSpawnOffset(arg1: float)",
+        "signature": "SetNeutralInitialSpawnOffset(offset: float)",
         "returns": "nil",
         "description": "Sets the extra offset to initial neutral creep spawn delay.",
-        "argDescriptions": "",
+        "argDescriptions": "offset: Seconds added to the delay of the first neutral creep spawn.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetNextBountyRuneSpawnTime",
-        "signature": "SetNextBountyRuneSpawnTime(arg1: float)",
+        "signature": "SetNextBountyRuneSpawnTime(time: float)",
         "returns": "nil",
         "description": "Sets next bounty rune spawn time.",
         "argDescriptions": "",
@@ -19770,7 +19770,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetNextRuneSpawnTime",
-        "signature": "SetNextRuneSpawnTime(arg1: float)",
+        "signature": "SetNextRuneSpawnTime(time: float)",
         "returns": "nil",
         "description": "Sets next rune spawn time.",
         "argDescriptions": "",
@@ -19790,27 +19790,27 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetPostGameColumns",
-        "signature": "SetPostGameColumns(arg1: handle)",
+        "signature": "SetPostGameColumns(columns: table)",
         "returns": "bool",
         "description": "Set columns to show in post game.",
-        "argDescriptions": "",
+        "argDescriptions": "columns: Column values 0-9 under keys of at most 2 characters; anything else is rejected with a console message.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetPostGameLayout",
-        "signature": "SetPostGameLayout(arg1: int)",
+        "signature": "SetPostGameLayout(layout: int)",
         "returns": "nil",
         "description": "Configure post game to be single or double column layout.",
-        "argDescriptions": "",
+        "argDescriptions": "layout: 0 or 1; other values are rejected with a console message.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetPostGameTeamScores",
-        "signature": "SetPostGameTeamScores(arg1: handle)",
+        "signature": "SetPostGameTeamScores(scores: table)",
         "returns": "bool",
         "description": "Set score value for each team. First element is for DOTA_TEAM_GOODGUYS.",
         "argDescriptions": "",
@@ -19840,10 +19840,10 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetRiverPaint",
-        "signature": "SetRiverPaint(arg1: int, arg2: float)",
+        "signature": "SetRiverPaint(riverType: int, duration: float)",
         "returns": "nil",
         "description": "Paints the river for a duration.",
-        "argDescriptions": "",
+        "argDescriptions": "riverType: River style 0-7 (`m_nRiverType`); a river vial sets the position of its item in `river_paint_item_defs`.\nduration: Seconds.",
         "abstract": false
       },
       {
@@ -19900,7 +19900,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetSpeechUseSpawnInsteadOfRespawnConcept",
-        "signature": "SetSpeechUseSpawnInsteadOfRespawnConcept(arg1: bool)",
+        "signature": "SetSpeechUseSpawnInsteadOfRespawnConcept(useSpawnConcept: bool)",
         "returns": "nil",
         "description": "Set whether to speak a Spawn concept instead of a Respawn concept on respawn.",
         "argDescriptions": "",
@@ -19930,7 +19930,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetSuggestAbilitiesEnabled",
-        "signature": "SetSuggestAbilitiesEnabled(arg1: bool)",
+        "signature": "SetSuggestAbilitiesEnabled(enabled: bool)",
         "returns": "nil",
         "description": "Sets Dota Plus ability suggestions enabled or disabled.",
         "argDescriptions": "",
@@ -19940,7 +19940,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetSuggestItemsEnabled",
-        "signature": "SetSuggestItemsEnabled(arg1: bool)",
+        "signature": "SetSuggestItemsEnabled(enabled: bool)",
         "returns": "nil",
         "description": "Sets Dota Plus ability item enabled or disabled.",
         "argDescriptions": "",
@@ -20000,7 +20000,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "SetWeatherWindDirection",
-        "signature": "SetWeatherWindDirection(arg1: Vector)",
+        "signature": "SetWeatherWindDirection(direction: Vector)",
         "returns": "nil",
         "description": "Set Weather Wind Direction Vector.",
         "argDescriptions": "",
@@ -20248,7 +20248,7 @@
         "type": "method",
         "class": "CDotaQuest",
         "name": "SetTextReplaceString",
-        "signature": "SetTextReplaceString(string: string)",
+        "signature": "SetTextReplaceString(text: string)",
         "returns": "nil",
         "description": "Set the text replace string for this quest.",
         "argDescriptions": "",
@@ -20282,7 +20282,7 @@
         "type": "method",
         "class": "CDotaSubquestBase",
         "name": "SetTextReplaceString",
-        "signature": "SetTextReplaceString(string: string)",
+        "signature": "SetTextReplaceString(text: string)",
         "returns": "nil",
         "description": "Set the text replace string for this subquest.",
         "argDescriptions": "",
@@ -20306,20 +20306,20 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "AddBot",
-        "signature": "AddBot(heroName: string, arg2: string, arg3: string, arg4: bool)",
+        "signature": "AddBot(heroName: string, lane: string, difficulty: string, goodGuys: bool)",
         "returns": "bool",
         "description": "Add a computer controlled bot.",
-        "argDescriptions": "",
+        "argDescriptions": "heroName: `random` picks a random hero.\nlane: Stored as the bot's `force_lane` setting; nil: not set.\ndifficulty: Stored as the bot's `difficulty` setting; nil: not set.\ngoodGuys: true: the bot joins DOTA_TEAM_GOODGUYS, false: DOTA_TEAM_BADGUYS.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTATutorial",
         "name": "AddQuest",
-        "signature": "AddQuest(arg1: string, arg2: int, arg3: string, arg4: string)",
+        "signature": "AddQuest(name: string, type: int, title: string, text: string)",
         "returns": "nil",
         "description": "Add a quest to the quest log.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Quest name, used by `CompleteQuest`.",
         "abstract": false
       },
       {
@@ -20336,17 +20336,17 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "CompleteQuest",
-        "signature": "CompleteQuest(arg1: string)",
+        "signature": "CompleteQuest(name: string)",
         "returns": "nil",
         "description": "Complete a quest,.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Name the quest was added with.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTATutorial",
         "name": "CreateLocationTask",
-        "signature": "CreateLocationTask(arg1: Vector)",
+        "signature": "CreateLocationTask(location: Vector)",
         "returns": "nil",
         "description": "Add a task to move to a specific location.",
         "argDescriptions": "",
@@ -20356,7 +20356,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "EnableCreepAggroViz",
-        "signature": "EnableCreepAggroViz(arg1: bool)",
+        "signature": "EnableCreepAggroViz(enabled: bool)",
         "returns": "nil",
         "description": "Alert the player when a creep becomes agro to their hero.",
         "argDescriptions": "",
@@ -20366,7 +20366,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "EnablePlayerOffscreenTip",
-        "signature": "EnablePlayerOffscreenTip(arg1: bool)",
+        "signature": "EnablePlayerOffscreenTip(enabled: bool)",
         "returns": "nil",
         "description": "Enable the tip to alert players how to find their hero.",
         "argDescriptions": "",
@@ -20376,7 +20376,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "EnableTowerAggroViz",
-        "signature": "EnableTowerAggroViz(arg1: bool)",
+        "signature": "EnableTowerAggroViz(enabled: bool)",
         "returns": "nil",
         "description": "Alert the player when a tower becomes agro to their hero.",
         "argDescriptions": "",
@@ -20416,7 +20416,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "MoveCameraToLocation",
-        "signature": "MoveCameraToLocation(arg1: Vector)",
+        "signature": "MoveCameraToLocation(location: Vector)",
         "returns": "nil",
         "description": "Moves the camera to a position.",
         "argDescriptions": "",
@@ -20446,17 +20446,17 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "SelectPlayerTeam",
-        "signature": "SelectPlayerTeam(arg1: string)",
+        "signature": "SelectPlayerTeam(team: string)",
         "returns": "nil",
         "description": "Select the team for the local player.",
-        "argDescriptions": "",
+        "argDescriptions": "team: `good` or `bad`; other values are ignored.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CDOTATutorial",
         "name": "SetItemGuide",
-        "signature": "SetItemGuide(arg1: string)",
+        "signature": "SetItemGuide(guideName: string)",
         "returns": "nil",
         "description": "Set the current item guide.",
         "argDescriptions": "",
@@ -20496,7 +20496,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "SetTutorialConvar",
-        "signature": "SetTutorialConvar(arg1: string, arg2: string)",
+        "signature": "SetTutorialConvar(convarName: string, value: string)",
         "returns": "nil",
         "description": "Set a tutorial convar.",
         "argDescriptions": "",
@@ -20506,7 +20506,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "SetTutorialUI",
-        "signature": "SetTutorialUI(arg1: int)",
+        "signature": "SetTutorialUI(mode: int)",
         "returns": "nil",
         "description": "Set the UI to use a reduced version to focus attention to specific elements.",
         "argDescriptions": "",
@@ -20822,10 +20822,10 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "ConnectOutput",
-        "signature": "ConnectOutput(arg1: string, arg2: string)",
+        "signature": "ConnectOutput(outputName: string, functionName: string)",
         "returns": "nil",
         "description": "Adds an I/O connection that will call the named function on this entity when the specified output fires.",
-        "argDescriptions": "",
+        "argDescriptions": "functionName: Function in this entity's script scope.",
         "abstract": false
       },
       {
@@ -20842,7 +20842,7 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "DisconnectOutput",
-        "signature": "DisconnectOutput(arg1: string, arg2: string)",
+        "signature": "DisconnectOutput(outputName: string, functionName: string)",
         "returns": "nil",
         "description": "Removes a connected script function from an I/O event on this entity.",
         "argDescriptions": "",
@@ -20852,7 +20852,7 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "DisconnectRedirectedOutput",
-        "signature": "DisconnectRedirectedOutput(arg1: string, arg2: string, arg3: handle)",
+        "signature": "DisconnectRedirectedOutput(outputName: string, functionName: string, entity: CBaseEntity)",
         "returns": "nil",
         "description": "Removes a connected script function from an I/O event on the passed entity.",
         "argDescriptions": "",
@@ -20872,10 +20872,10 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "FireOutput",
-        "signature": "FireOutput(arg1: string, arg2: handle, arg3: handle, arg4: table, arg5: float)",
+        "signature": "FireOutput(outputName: string, activator: CBaseEntity | nil, caller: CBaseEntity | nil, value: table, delay: float)",
         "returns": "nil",
         "description": "Fire an entity output.",
-        "argDescriptions": "",
+        "argDescriptions": "activator: nil: this entity.\ncaller: nil: this entity.\nvalue: Value passed with the output.\ndelay: Seconds.",
         "abstract": false
       },
       {
@@ -20922,7 +20922,7 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "GetIntAttr",
-        "signature": "GetIntAttr(arg1: string)",
+        "signature": "GetIntAttr(name: string)",
         "returns": "int",
         "description": "Get Integer Attribute.",
         "argDescriptions": "",
@@ -20992,10 +20992,10 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "RedirectOutput",
-        "signature": "RedirectOutput(arg1: string, arg2: string, arg3: handle)",
+        "signature": "RedirectOutput(outputName: string, functionName: string, entity: CBaseEntity)",
         "returns": "nil",
         "description": "Adds an I/O connection that will call the named function on the passed entity when the specified output fires.",
-        "argDescriptions": "",
+        "argDescriptions": "entity: Entity whose script function is called.",
         "abstract": false
       },
       {
@@ -21012,7 +21012,7 @@
         "type": "method",
         "class": "CEntityInstance",
         "name": "SetIntAttr",
-        "signature": "SetIntAttr(arg1: string, arg2: int)",
+        "signature": "SetIntAttr(name: string, value: int)",
         "returns": "nil",
         "description": "Set Integer Attribute.",
         "argDescriptions": "",
@@ -21040,7 +21040,7 @@
         "type": "method",
         "class": "CEnvEntityMaker",
         "name": "SpawnEntityAtEntityOrigin",
-        "signature": "SpawnEntityAtEntityOrigin(entity: handle)",
+        "signature": "SpawnEntityAtEntityOrigin(entity: CBaseEntity)",
         "returns": "nil",
         "description": "Create an entity at the location of a specified entity instance.",
         "argDescriptions": "",
@@ -21242,20 +21242,20 @@
         "type": "method",
         "class": "CNativeOutputs",
         "name": "AddOutput",
-        "signature": "AddOutput(arg1: string, arg2: string)",
+        "signature": "AddOutput(outputName: string, description: string)",
         "returns": "nil",
         "description": "Add an output.",
-        "argDescriptions": "",
+        "argDescriptions": "description: Not read by the engine.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "CNativeOutputs",
         "name": "Init",
-        "signature": "Init(arg1: int)",
+        "signature": "Init(count: int)",
         "returns": "nil",
         "description": "Initialize with number of outputs.",
-        "argDescriptions": "",
+        "argDescriptions": "count: Number of outputs to reserve space for.",
         "abstract": false
       },
       {
@@ -21534,7 +21534,7 @@
         "type": "method",
         "class": "CSceneEntity",
         "name": "AddBroadcastTeamTarget",
-        "signature": "AddBroadcastTeamTarget(arg1: int)",
+        "signature": "AddBroadcastTeamTarget(team: DOTATeam_t)",
         "returns": "nil",
         "description": "Adds a team (by index) to the broadcast list.",
         "argDescriptions": "",
@@ -21564,10 +21564,10 @@
         "type": "method",
         "class": "CSceneEntity",
         "name": "FindNamedEntity",
-        "signature": "FindNamedEntity(arg1: string)",
+        "signature": "FindNamedEntity(name: string)",
         "returns": "handle",
         "description": "Given an entity reference, such as !target, get actual entity from scene object.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Entity reference such as `!target`, or an entity name.",
         "abstract": false
       },
       {
@@ -21594,7 +21594,7 @@
         "type": "method",
         "class": "CSceneEntity",
         "name": "RemoveBroadcastTeamTarget",
-        "signature": "RemoveBroadcastTeamTarget(arg1: int)",
+        "signature": "RemoveBroadcastTeamTarget(team: DOTATeam_t)",
         "returns": "nil",
         "description": "Removes a team (by index) from the broadcast list.",
         "argDescriptions": "",
@@ -21604,7 +21604,7 @@
         "type": "method",
         "class": "CSceneEntity",
         "name": "Start",
-        "signature": "Start(arg1: handle)",
+        "signature": "Start(activator: CBaseEntity | nil)",
         "returns": "nil",
         "description": "Start scene playback, takes activatorEntity as param.",
         "argDescriptions": "",
@@ -21716,7 +21716,7 @@
         "type": "method",
         "class": "CScriptKeyValues",
         "name": "GetValue",
-        "signature": "GetValue(arg1: string)",
+        "signature": "GetValue(key: string)",
         "returns": "table",
         "description": "Reads a spawn key.",
         "argDescriptions": "",
@@ -21830,7 +21830,7 @@
         "type": "method",
         "class": "CScriptParticleManager",
         "name": "SetParticleControlForward",
-        "signature": "SetParticleControlForward(particle: ParticleID, controlPoint: int, arg3: Vector)",
+        "signature": "SetParticleControlForward(particle: ParticleID, controlPoint: int, forward: Vector)",
         "returns": "nil",
         "description": "[OBSOLETE - Use SetParticleControlTransformForward] (int nFXIndex, int nPoint, vForward).",
         "argDescriptions": "",
@@ -21840,7 +21840,7 @@
         "type": "method",
         "class": "CScriptParticleManager",
         "name": "SetParticleControlOrientation",
-        "signature": "SetParticleControlOrientation(particle: ParticleID, controlPoint: int, arg3: Vector, arg4: Vector, arg5: Vector)",
+        "signature": "SetParticleControlOrientation(particle: ParticleID, controlPoint: int, forward: Vector, right: Vector, up: Vector)",
         "returns": "nil",
         "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!).",
         "argDescriptions": "",
@@ -21850,7 +21850,7 @@
         "type": "method",
         "class": "CScriptParticleManager",
         "name": "SetParticleControlOrientationFLU",
-        "signature": "SetParticleControlOrientationFLU(particle: ParticleID, controlPoint: int, arg3: Vector, arg4: Vector, arg5: Vector)",
+        "signature": "SetParticleControlOrientationFLU(particle: ParticleID, controlPoint: int, forward: Vector, left: Vector, up: Vector)",
         "returns": "nil",
         "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect.",
         "argDescriptions": "",
@@ -22226,30 +22226,30 @@
         "type": "method",
         "class": "GlobalSys",
         "name": "CommandLineFloat",
-        "signature": "CommandLineFloat(arg1: string, arg2: float)",
+        "signature": "CommandLineFloat(name: string, defaultValue: float)",
         "returns": "table",
         "description": "Returns the command line param as a float.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter is not on the command line.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "GlobalSys",
         "name": "CommandLineInt",
-        "signature": "CommandLineInt(arg1: string, arg2: int)",
+        "signature": "CommandLineInt(name: string, defaultValue: int)",
         "returns": "table",
         "description": "Returns the command line param as an int.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter is not on the command line.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "GlobalSys",
         "name": "CommandLineStr",
-        "signature": "CommandLineStr(arg1: string, arg2: string)",
+        "signature": "CommandLineStr(name: string, defaultValue: string)",
         "returns": "table",
         "description": "Returns the command line param as a string.",
-        "argDescriptions": "",
+        "argDescriptions": "name: Parameter name with the leading `-`, e.g. `-port` (verified in game).\ndefaultValue: Returned when the parameter has no value on the command line.",
         "abstract": false
       },
       {
@@ -22270,7 +22270,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "DestroyTreesAroundPoint",
-        "signature": "DestroyTreesAroundPoint(arg1: Vector, arg2: float, arg3: bool)",
+        "signature": "DestroyTreesAroundPoint(position: Vector, radius: float, fullCollision: bool)",
         "returns": "nil",
         "description": "Destroy all trees in the area(vPosition, flRadius, bFullCollision.",
         "argDescriptions": "",
@@ -22300,30 +22300,30 @@
         "type": "method",
         "class": "GridNav",
         "name": "GridPosToWorldCenterX",
-        "signature": "GridPosToWorldCenterX(arg1: int)",
+        "signature": "GridPosToWorldCenterX(x: int)",
         "returns": "float",
         "description": "Get the X position of the center of a given X index.",
-        "argDescriptions": "",
+        "argDescriptions": "x: Grid X index.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "GridNav",
         "name": "GridPosToWorldCenterY",
-        "signature": "GridPosToWorldCenterY(arg1: int)",
+        "signature": "GridPosToWorldCenterY(y: int)",
         "returns": "float",
         "description": "Get the Y position of the center of a given Y index.",
-        "argDescriptions": "",
+        "argDescriptions": "y: Grid Y index.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "GridNav",
         "name": "IsBlocked",
-        "signature": "IsBlocked(arg1: Vector)",
+        "signature": "IsBlocked(position: Vector)",
         "returns": "bool",
         "description": "Checks whether the given position is blocked.",
-        "argDescriptions": "",
+        "argDescriptions": "position: Only x and y are used.",
         "abstract": false
       },
       {
@@ -22340,10 +22340,10 @@
         "type": "method",
         "class": "GridNav",
         "name": "IsTraversable",
-        "signature": "IsTraversable(arg1: Vector)",
+        "signature": "IsTraversable(position: Vector)",
         "returns": "bool",
         "description": "Checks whether the given position is traversable.",
-        "argDescriptions": "",
+        "argDescriptions": "position: Only x and y are used.",
         "abstract": false
       },
       {
@@ -22360,20 +22360,20 @@
         "type": "method",
         "class": "GridNav",
         "name": "WorldToGridPosX",
-        "signature": "WorldToGridPosX(arg1: float)",
+        "signature": "WorldToGridPosX(x: float)",
         "returns": "int",
         "description": "Get the X index of a given world X position.",
-        "argDescriptions": "",
+        "argDescriptions": "x: World X coordinate.",
         "abstract": false
       },
       {
         "type": "method",
         "class": "GridNav",
         "name": "WorldToGridPosY",
-        "signature": "WorldToGridPosY(arg1: float)",
+        "signature": "WorldToGridPosY(y: float)",
         "returns": "int",
         "description": "Get the Y index of a given world Y position.",
-        "argDescriptions": "",
+        "argDescriptions": "y: World Y coordinate.",
         "abstract": false
       },
       {
@@ -22847,15 +22847,15 @@
       {
         "type": "function",
         "name": "AngleDiff",
-        "signature": "AngleDiff(arg1: float, arg2: float)",
+        "signature": "AngleDiff(destAngle: float, srcAngle: float)",
         "returns": "float",
         "description": "Returns the number of degrees difference between two yaw angles.",
-        "argDescriptions": ""
+        "argDescriptions": "destAngle: Degrees.\nsrcAngle: Degrees. The result is `destAngle - srcAngle` wrapped to -180..180."
       },
       {
         "type": "function",
         "name": "AnglesToVector",
-        "signature": "AnglesToVector(arg1: QAngle)",
+        "signature": "AnglesToVector(angles: QAngle)",
         "returns": "Vector",
         "description": "Generate a vector given a QAngles.",
         "argDescriptions": ""
@@ -22863,10 +22863,10 @@
       {
         "type": "function",
         "name": "AppendToLogFile",
-        "signature": "AppendToLogFile(arg1: string, arg2: string)",
+        "signature": "AppendToLogFile(unused1: string, unused2: string)",
         "returns": "nil",
         "description": "",
-        "argDescriptions": ""
+        "argDescriptions": "unused1: Not read by the engine.\nunused2: Not read by the engine."
       },
       {
         "type": "function",
@@ -22879,15 +22879,15 @@
       {
         "type": "function",
         "name": "AxisAngleToQuaternion",
-        "signature": "AxisAngleToQuaternion(arg1: Vector, arg2: float)",
+        "signature": "AxisAngleToQuaternion(axis: Vector, angle: float)",
         "returns": "Quaternion",
-        "description": "Constructs a quaternion representing a rotation by angle around the specified vector axis.",
-        "argDescriptions": ""
+        "description": "Constructs a quaternion representing a rotation by angle around the specified vector axis. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game).",
+        "argDescriptions": "angle: Degrees."
       },
       {
         "type": "function",
         "name": "CalcClosestPointOnEntityOBB",
-        "signature": "CalcClosestPointOnEntityOBB(arg1: handle, arg2: Vector)",
+        "signature": "CalcClosestPointOnEntityOBB(entity: CBaseEntity, position: Vector)",
         "returns": "Vector",
         "description": "Compute the closest point on the OBB of an entity.",
         "argDescriptions": ""
@@ -22895,7 +22895,7 @@
       {
         "type": "function",
         "name": "CalcDistanceBetweenEntityOBB",
-        "signature": "CalcDistanceBetweenEntityOBB(arg1: handle, arg2: handle)",
+        "signature": "CalcDistanceBetweenEntityOBB(entity1: CBaseEntity, entity2: CBaseEntity)",
         "returns": "float",
         "description": "Compute the distance between two entity OBB. A negative return value indicates an input error. A return value of zero indicates that the OBBs are overlapping.",
         "argDescriptions": ""
@@ -22903,17 +22903,17 @@
       {
         "type": "function",
         "name": "CalcDistanceToLineSegment2D",
-        "signature": "CalcDistanceToLineSegment2D(arg1: Vector, arg2: Vector, arg3: Vector)",
+        "signature": "CalcDistanceToLineSegment2D(point: Vector, segmentStart: Vector, segmentEnd: Vector)",
         "returns": "float",
-        "description": "",
+        "description": "Distance from a point to a line segment, in 2D (z is ignored).",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "CancelEntityIOEvents",
-        "signature": "CancelEntityIOEvents(arg1: ehandle)",
+        "signature": "CancelEntityIOEvents(entity: ehandle)",
         "returns": "nil",
-        "description": "Create all I/O events for a particular entity.",
+        "description": "Cancel all pending I/O events for a particular entity.",
         "argDescriptions": ""
       },
       {
@@ -22935,10 +22935,10 @@
       {
         "type": "function",
         "name": "CreateDamageInfo",
-        "signature": "CreateDamageInfo(arg1: handle, arg2: handle, arg3: Vector, arg4: Vector, arg5: float, arg6: int)",
+        "signature": "CreateDamageInfo(inflictor: CBaseEntity | nil, attacker: CBaseEntity | nil, force: Vector, position: Vector, damage: float, damageType: int)",
         "returns": "CTakeDamageInfo",
         "description": "Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.",
-        "argDescriptions": ""
+        "argDescriptions": "damageType: Damage type bits of the damage info."
       },
       {
         "type": "function",
@@ -23023,10 +23023,10 @@
       {
         "type": "function",
         "name": "CreateSceneEntity",
-        "signature": "CreateSceneEntity(arg1: string)",
+        "signature": "CreateSceneEntity(sceneFile: string)",
         "returns": "CBaseAnimatingActivity",
         "description": "Create a scene entity to play the specified scene.",
-        "argDescriptions": ""
+        "argDescriptions": "sceneFile: Scene file of the `logic_choreographed_scene`; refused once the game is running (only while the map loads)."
       },
       {
         "type": "function",
@@ -23047,10 +23047,10 @@
       {
         "type": "function",
         "name": "CreateTrigger",
-        "signature": "CreateTrigger(arg1: Vector, arg2: Vector, arg3: Vector)",
+        "signature": "CreateTrigger(origin: Vector, mins: Vector, maxs: Vector)",
         "returns": "CBaseTrigger",
-        "description": "Creates and returns an AABB trigger.",
-        "argDescriptions": ""
+        "description": "Creates and returns an AABB trigger (`trigger_multiple`).",
+        "argDescriptions": "mins: Relative to origin.\nmaxs: Relative to origin."
       },
       {
         "type": "function",
@@ -23095,7 +23095,7 @@
       {
         "type": "function",
         "name": "CrossVectors",
-        "signature": "CrossVectors(arg1: Vector, arg2: Vector)",
+        "signature": "CrossVectors(a: Vector, b: Vector)",
         "returns": "Vector",
         "description": "Cross product between two vectors.",
         "argDescriptions": ""
@@ -23103,18 +23103,18 @@
       {
         "type": "function",
         "name": "cvar_getf",
-        "signature": "cvar_getf(arg1: string)",
+        "signature": "cvar_getf(name: string)",
         "returns": "float",
         "description": "Gets the value of the given cvar, as a float.",
-        "argDescriptions": ""
+        "argDescriptions": "name: Unknown convars return 0."
       },
       {
         "type": "function",
         "name": "cvar_setf",
-        "signature": "cvar_setf(arg1: string, arg2: float)",
+        "signature": "cvar_setf(name: string, value: float)",
         "returns": "bool",
         "description": "Sets the value of the given cvar, as a float.",
-        "argDescriptions": ""
+        "argDescriptions": "name: Unknown convars: returns false with a console warning."
       },
       {
         "type": "function",
@@ -23127,34 +23127,34 @@
       {
         "type": "function",
         "name": "DebugChangeTeam",
-        "signature": "DebugChangeTeam(arg1: handle)",
+        "signature": "DebugChangeTeam(hero: CDOTA_BaseNPC_Hero)",
         "returns": "nil",
-        "description": "Changes the team of the hero.",
+        "description": "Moves the hero's player between DOTA_TEAM_GOODGUYS and DOTA_TEAM_BADGUYS.",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "DebugCreateHeroWithVariant",
-        "signature": "DebugCreateHeroWithVariant(arg1: handle, arg2: string, arg3: int, arg4: int, arg5: bool, arg6: handle)",
+        "signature": "DebugCreateHeroWithVariant(playerOwner: CDOTAPlayerController, heroName: string, variant: int, team: DOTATeam_t, unused: bool, callback: function)",
         "returns": "int",
         "description": "Creates a unit with a specified hero variant, controllable by the specified player.",
-        "argDescriptions": ""
+        "argDescriptions": "variant: Hero variant (facet) selected for the player along with the hero.\nunused: Not read by the engine."
       },
       {
         "type": "function",
         "name": "DebugCreateUnit",
-        "signature": "DebugCreateUnit(playerOwner: CDOTAPlayerController, unitName: string, team: DOTATeam_t, arg4: bool, callback: function)",
+        "signature": "DebugCreateUnit(playerOwner: CDOTAPlayerController, unitName: string, team: DOTATeam_t, unused: bool, callback: function)",
         "returns": "int",
         "description": "Creates a test unit controllable by the specified player.",
-        "argDescriptions": ""
+        "argDescriptions": "unused: Not read by the engine."
       },
       {
         "type": "function",
         "name": "DebugDrawBox",
-        "signature": "DebugDrawBox(arg1: Vector, arg2: Vector, arg3: Vector, arg4: int, arg5: int, arg6: int, arg7: int, arg8: float)",
+        "signature": "DebugDrawBox(origin: Vector, mins: Vector, maxs: Vector, r: int, g: int, b: int, a: int, duration: float)",
         "returns": "nil",
         "description": "Draw a debug overlay box.",
-        "argDescriptions": ""
+        "argDescriptions": "mins: Relative to origin.\nmaxs: Relative to origin.\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\nduration: Seconds."
       },
       {
         "type": "function",
@@ -23191,10 +23191,10 @@
       {
         "type": "function",
         "name": "DebugDrawLine_vCol",
-        "signature": "DebugDrawLine_vCol(arg1: Vector, arg2: Vector, arg3: Vector, arg4: bool, arg5: float)",
+        "signature": "DebugDrawLine_vCol(start: Vector, end: Vector, rgb: Vector, ztest: bool, duration: float)",
         "returns": "nil",
         "description": "Draw a debug line using color vec.",
-        "argDescriptions": ""
+        "argDescriptions": "rgb: Color, components 0-255.\nztest: Same as `ztest` of `DebugDrawLine`.\nduration: Seconds."
       },
       {
         "type": "function",
@@ -23247,10 +23247,10 @@
       {
         "type": "function",
         "name": "DisconnectClient",
-        "signature": "DisconnectClient(arg1: int, arg2: bool)",
+        "signature": "DisconnectClient(playerId: PlayerID, removeBotHeroes: bool)",
         "returns": "nil",
         "description": "Kick a specific player from the game.",
-        "argDescriptions": ""
+        "argDescriptions": "removeBotHeroes: When true and the player is a fake client (bot), the heroes it owns are removed too. The player is kicked either way."
       },
       {
         "type": "function",
@@ -23263,23 +23263,23 @@
       {
         "type": "function",
         "name": "DoEntFire",
-        "signature": "DoEntFire(arg1: string, arg2: string, arg3: string, arg4: float, arg5: handle, arg6: handle)",
+        "signature": "DoEntFire(target: string, action: string, value: string, delay: float, activator: CBaseEntity | nil, caller: CBaseEntity | nil)",
         "returns": "nil",
         "description": "Generate and entity i/o event.",
-        "argDescriptions": ""
+        "argDescriptions": "target: Name of the target entities.\naction: Input name; empty: `Use`.\nvalue: Parameter of the input; empty: none.\ndelay: Seconds; negative values mean 0."
       },
       {
         "type": "function",
         "name": "DoEntFireByInstanceHandle",
-        "signature": "DoEntFireByInstanceHandle(arg1: handle, arg2: string, arg3: string, arg4: float, arg5: handle, arg6: handle)",
+        "signature": "DoEntFireByInstanceHandle(target: CBaseEntity, action: string, value: string, delay: float, activator: CBaseEntity | nil, caller: CBaseEntity | nil)",
         "returns": "nil",
         "description": "Generate and entity i/o event.",
-        "argDescriptions": ""
+        "argDescriptions": "action: Input name; empty: `Use`.\nvalue: Parameter of the input; empty: none.\ndelay: Seconds; negative values mean 0."
       },
       {
         "type": "function",
         "name": "DoIncludeScript",
-        "signature": "DoIncludeScript(arg1: string, arg2: handle)",
+        "signature": "DoIncludeScript(scriptName: string, scope: table | nil)",
         "returns": "bool",
         "description": "Execute a script (internal).",
         "argDescriptions": ""
@@ -23287,7 +23287,7 @@
       {
         "type": "function",
         "name": "DoScriptAssert",
-        "signature": "DoScriptAssert(arg1: bool, arg2: string)",
+        "signature": "DoScriptAssert(assertion: bool, message: string)",
         "returns": "nil",
         "description": "Asserts the passed in value. Prints out a message and brings up the assert dialog.",
         "argDescriptions": ""
@@ -23303,7 +23303,7 @@
       {
         "type": "function",
         "name": "DotProduct",
-        "signature": "DotProduct(arg1: Vector, arg2: Vector)",
+        "signature": "DotProduct(a: Vector, b: Vector)",
         "returns": "float",
         "description": "",
         "argDescriptions": ""
@@ -23319,18 +23319,18 @@
       {
         "type": "function",
         "name": "DropNeutralItemAtPositionForHero",
-        "signature": "DropNeutralItemAtPositionForHero(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, arg5: bool)",
+        "signature": "DropNeutralItemAtPositionForHero(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool)",
         "returns": "CDOTA_Item_Physical",
         "description": "Drop a neutral item for the team of the hero at the given tier.",
-        "argDescriptions": "itemName: Can be any item name, it does not have to be neutral.\ntier: Zero-based tier number."
+        "argDescriptions": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast)."
       },
       {
         "type": "function",
         "name": "DropNeutralItemAtPositionForHeroWithOffset",
-        "signature": "DropNeutralItemAtPositionForHeroWithOffset(arg1: string, arg2: Vector, arg3: handle, arg4: int, arg5: bool, arg6: Vector)",
-        "returns": "handle",
+        "signature": "DropNeutralItemAtPositionForHeroWithOffset(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool, launchOffset: Vector)",
+        "returns": "CDOTA_Item_Physical",
         "description": "Drop a neutral item for the team of the hero at the given tier.",
-        "argDescriptions": ""
+        "argDescriptions": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast).\nlaunchOffset: Added to the point the item is launched from (the unit position moved up to 100 units toward location)."
       },
       {
         "type": "function",
@@ -23391,15 +23391,15 @@
       {
         "type": "function",
         "name": "EmitSoundOnClient",
-        "signature": "EmitSoundOnClient(soundName: string, arg2: handle)",
+        "signature": "EmitSoundOnClient(soundName: string, player: handle)",
         "returns": "nil",
         "description": "Play named sound only on the client for the passed in player.",
-        "argDescriptions": ""
+        "argDescriptions": "player: Player controller, or the player's hero."
       },
       {
         "type": "function",
         "name": "EmitSoundOnEntityForPlayer",
-        "signature": "EmitSoundOnEntityForPlayer(arg1: string, arg2: handle, arg3: int)",
+        "signature": "EmitSoundOnEntityForPlayer(soundName: string, entity: CBaseEntity, playerId: PlayerID)",
         "returns": "nil",
         "description": "Emit a sound on an entity for only a specific player.",
         "argDescriptions": ""
@@ -23415,7 +23415,7 @@
       {
         "type": "function",
         "name": "EmitSoundOnLocationForPlayer",
-        "signature": "EmitSoundOnLocationForPlayer(arg1: string, arg2: Vector, arg3: int)",
+        "signature": "EmitSoundOnLocationForPlayer(soundName: string, location: Vector, playerId: PlayerID)",
         "returns": "nil",
         "description": "Emit a sound on a location for only a specific player.",
         "argDescriptions": ""
@@ -23447,26 +23447,26 @@
       {
         "type": "function",
         "name": "ExponentialDecay",
-        "signature": "ExponentialDecay(arg1: float, arg2: float, arg3: float)",
+        "signature": "ExponentialDecay(decayTo: float, decayTime: float, dt: float)",
         "returns": "float",
-        "description": "Smooth curve decreasing slower as it approaches zero.",
-        "argDescriptions": ""
+        "description": "Smooth curve decreasing slower as it approaches zero: `decayTo ^ (dt / decayTime)`.",
+        "argDescriptions": "decayTo: Value reached after `decayTime`."
       },
       {
         "type": "function",
         "name": "FindClearRandomPositionAroundUnit",
-        "signature": "FindClearRandomPositionAroundUnit(arg1: handle, arg2: handle, arg3: int)",
+        "signature": "FindClearRandomPositionAroundUnit(unit: CDOTA_BaseNPC, target: CDOTA_BaseNPC, extraDistance: int)",
         "returns": "bool",
         "description": "Finds a clear random position around a given target unit, using the target unit's padded collision radius.",
-        "argDescriptions": ""
+        "argDescriptions": "unit: Unit that is moved.\ntarget: Unit it is placed around.\nextraDistance: Added to the sum of both units' padded collision radii. The direction steps by 90 degrees on every call."
       },
       {
         "type": "function",
         "name": "FindClearSpaceForUnit",
-        "signature": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector, arg3: bool)",
+        "signature": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector, interrupt: bool)",
         "returns": "bool",
         "description": "Place a unit somewhere not already occupied.",
-        "argDescriptions": ""
+        "argDescriptions": "interrupt: When false, a unit whose movement component reports active movement is not moved and false is returned; when true that movement is interrupted and the unit is teleported."
       },
       {
         "type": "function",
@@ -23495,7 +23495,7 @@
       {
         "type": "function",
         "name": "FireEntityIOInputNameOnly",
-        "signature": "FireEntityIOInputNameOnly(arg1: ehandle, arg2: string)",
+        "signature": "FireEntityIOInputNameOnly(entity: ehandle, input: string)",
         "returns": "nil",
         "description": "Fire Entity's Action Input w/no data.",
         "argDescriptions": ""
@@ -23503,7 +23503,7 @@
       {
         "type": "function",
         "name": "FireEntityIOInputString",
-        "signature": "FireEntityIOInputString(arg1: ehandle, arg2: string, arg3: string)",
+        "signature": "FireEntityIOInputString(entity: ehandle, input: string, value: string)",
         "returns": "nil",
         "description": "Fire Entity's Action Input with passed String - you own the memory.",
         "argDescriptions": ""
@@ -23511,7 +23511,7 @@
       {
         "type": "function",
         "name": "FireEntityIOInputVec",
-        "signature": "FireEntityIOInputVec(arg1: ehandle, arg2: string, arg3: Vector)",
+        "signature": "FireEntityIOInputVec(entity: ehandle, input: string, value: Vector)",
         "returns": "nil",
         "description": "Fire Entity's Action Input with passed Vector - you own the memory.",
         "argDescriptions": ""
@@ -23543,7 +23543,7 @@
       {
         "type": "function",
         "name": "GetAbilityKeyValuesByName",
-        "signature": "GetAbilityKeyValuesByName(arg1: string)",
+        "signature": "GetAbilityKeyValuesByName(abilityName: string)",
         "returns": "table",
         "description": "Get ability data by ability name.",
         "argDescriptions": ""
@@ -23567,10 +23567,10 @@
       {
         "type": "function",
         "name": "GetClearSpaceForUnit",
-        "signature": "GetClearSpaceForUnit(arg1: handle, arg2: Vector)",
+        "signature": "GetClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector)",
         "returns": "Vector",
         "description": "Returns a location for the unit that is not already occupied.",
-        "argDescriptions": ""
+        "argDescriptions": "location: Returned unchanged when no clear space is found."
       },
       {
         "type": "function",
@@ -23631,26 +23631,26 @@
       {
         "type": "function",
         "name": "GetItemCost",
-        "signature": "GetItemCost(arg1: string)",
+        "signature": "GetItemCost(itemName: string)",
         "returns": "int",
         "description": "Get the cost of an item by name.",
-        "argDescriptions": ""
+        "argDescriptions": "itemName: Unknown items cost 0."
       },
       {
         "type": "function",
         "name": "GetItemDefOwnedCount",
-        "signature": "GetItemDefOwnedCount(arg1: int, arg2: int)",
+        "signature": "GetItemDefOwnedCount(playerId: PlayerID, itemDef: int)",
         "returns": "int",
         "description": "",
-        "argDescriptions": ""
+        "argDescriptions": "itemDef: Econ item definition index."
       },
       {
         "type": "function",
         "name": "GetItemDefQuantity",
-        "signature": "GetItemDefQuantity(arg1: int, arg2: int)",
+        "signature": "GetItemDefQuantity(playerId: PlayerID, itemDef: int)",
         "returns": "int",
         "description": "",
-        "argDescriptions": ""
+        "argDescriptions": "itemDef: Econ item definition index."
       },
       {
         "type": "function",
@@ -23679,10 +23679,10 @@
       {
         "type": "function",
         "name": "GetLocalPlayerTeam",
-        "signature": "GetLocalPlayerTeam(arg1: int)",
+        "signature": "GetLocalPlayerTeam(unused: int)",
         "returns": "DOTATeam_t",
         "description": "Get the local player team.",
-        "argDescriptions": ""
+        "argDescriptions": "unused: Not read: the local player of split-screen slot 0 is used."
       },
       {
         "type": "function",
@@ -23695,7 +23695,7 @@
       {
         "type": "function",
         "name": "GetMaxOutputDelay",
-        "signature": "GetMaxOutputDelay(arg1: ehandle, arg2: string)",
+        "signature": "GetMaxOutputDelay(entity: ehandle, outputName: string)",
         "returns": "float",
         "description": "Get the longest delay for all events attached to an output.",
         "argDescriptions": ""
@@ -23703,7 +23703,7 @@
       {
         "type": "function",
         "name": "GetPhysAngularVelocity",
-        "signature": "GetPhysAngularVelocity(arg1: handle)",
+        "signature": "GetPhysAngularVelocity(entity: CBaseEntity)",
         "returns": "Vector",
         "description": "Get Angular Velocity for VPHYS or normal object. Returns a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
         "argDescriptions": ""
@@ -23711,7 +23711,7 @@
       {
         "type": "function",
         "name": "GetPhysVelocity",
-        "signature": "GetPhysVelocity(arg1: handle)",
+        "signature": "GetPhysVelocity(entity: CBaseEntity)",
         "returns": "Vector",
         "description": "Get Velocity for VPHYS or normal object.",
         "argDescriptions": ""
@@ -23751,17 +23751,17 @@
       {
         "type": "function",
         "name": "GetTargetAOELocation",
-        "signature": "GetTargetAOELocation(arg1: int, arg2: int, arg3: int, arg4: Vector, arg5: int, arg6: int, arg7: int)",
+        "signature": "GetTargetAOELocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, castRange: int, radius: int, minTargets: int)",
         "returns": "Vector",
-        "description": "",
+        "description": "Center of the best cluster of units for an area effect (the bot helper). Units are searched within `castRange + radius` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found.",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "GetTargetLinearLocation",
-        "signature": "GetTargetLinearLocation(arg1: int, arg2: int, arg3: int, arg4: Vector, arg5: int, arg6: int, arg7: int)",
+        "signature": "GetTargetLinearLocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, range: int, width: int, minTargets: int)",
         "returns": "Vector",
-        "description": "",
+        "description": "Best point for a line effect (the bot helper). Units are searched within `range + width` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found.",
         "argDescriptions": ""
       },
       {
@@ -23791,7 +23791,7 @@
       {
         "type": "function",
         "name": "GetUnitKeyValuesByName",
-        "signature": "GetUnitKeyValuesByName(arg1: string)",
+        "signature": "GetUnitKeyValuesByName(unitName: string)",
         "returns": "table",
         "description": "Get unit data by ability name.",
         "argDescriptions": ""
@@ -23839,7 +23839,7 @@
       {
         "type": "function",
         "name": "HeroMaxLevel",
-        "signature": "HeroMaxLevel(arg1: handle)",
+        "signature": "HeroMaxLevel(hero: CDOTA_BaseNPC_Hero)",
         "returns": "nil",
         "description": "Max out a hero's level and give them all appropriate abilities and talents.",
         "argDescriptions": ""
@@ -23847,10 +23847,10 @@
       {
         "type": "function",
         "name": "InitLogFile",
-        "signature": "InitLogFile(arg1: string, arg2: string)",
+        "signature": "InitLogFile(unused1: string, unused2: string)",
         "returns": "nil",
         "description": "",
-        "argDescriptions": ""
+        "argDescriptions": "unused1: Not read by the engine.\nunused2: Not read by the engine."
       },
       {
         "type": "function",
@@ -23943,18 +23943,18 @@
       {
         "type": "function",
         "name": "LerpVectors",
-        "signature": "LerpVectors(arg1: Vector, arg2: Vector, arg3: float)",
+        "signature": "LerpVectors(a: Vector, b: Vector, t: float)",
         "returns": "Vector",
         "description": "Lerp between two vectors by a float factor returning new vector.",
-        "argDescriptions": ""
+        "argDescriptions": "t: Not clamped."
       },
       {
         "type": "function",
         "name": "LimitPathingSearchDepth",
-        "signature": "LimitPathingSearchDepth(arg1: float)",
+        "signature": "LimitPathingSearchDepth(limit: float)",
         "returns": "nil",
         "description": "Set the limit on the pathfinding search space.",
-        "argDescriptions": ""
+        "argDescriptions": "limit: Fraction of the full search space, clamped to 0-1."
       },
       {
         "type": "function",
@@ -23999,15 +23999,15 @@
       {
         "type": "function",
         "name": "MakeStringToken",
-        "signature": "MakeStringToken(arg1: string)",
+        "signature": "MakeStringToken(text: string)",
         "returns": "int",
-        "description": "Checks to see if the given hScript is a valid entity.",
+        "description": "Returns the string token (hash) of the lowercased string; 0 for an empty string.",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "ManuallyTriggerSpawnGroupCompletion",
-        "signature": "ManuallyTriggerSpawnGroupCompletion(handle: SpawnGroupHandle)",
+        "signature": "ManuallyTriggerSpawnGroupCompletion(spawnGroupHandle: SpawnGroupHandle)",
         "returns": "nil",
         "description": "Triggers the creation of entities in a manually-completed spawn group.",
         "argDescriptions": ""
@@ -24055,7 +24055,7 @@
       {
         "type": "function",
         "name": "PrecacheEntityFromTable",
-        "signature": "PrecacheEntityFromTable(arg1: string, arg2: handle, context: CScriptPrecacheContext)",
+        "signature": "PrecacheEntityFromTable(className: string, keyValues: table, context: CScriptPrecacheContext)",
         "returns": "nil",
         "description": "Precache an entity from KeyValues in table.",
         "argDescriptions": ""
@@ -24063,7 +24063,7 @@
       {
         "type": "function",
         "name": "PrecacheEntityListFromTable",
-        "signature": "PrecacheEntityListFromTable(arg1: handle, context: CScriptPrecacheContext)",
+        "signature": "PrecacheEntityListFromTable(spawnTables: table, context: CScriptPrecacheContext)",
         "returns": "nil",
         "description": "Precache a list of entity KeyValues tables.",
         "argDescriptions": ""
@@ -24095,10 +24095,10 @@
       {
         "type": "function",
         "name": "PrecacheResource",
-        "signature": "PrecacheResource(arg1: string, arg2: string, context: CScriptPrecacheContext)",
+        "signature": "PrecacheResource(resourceType: string, resourcePath: string, context: CScriptPrecacheContext)",
         "returns": "nil",
         "description": "Manually precache a single resource.",
-        "argDescriptions": ""
+        "argDescriptions": "resourceType: Precache entry key, e.g. `particle`, `soundfile`, `model`."
       },
       {
         "type": "function",
@@ -24119,18 +24119,18 @@
       {
         "type": "function",
         "name": "PrecacheUnitFromTableAsync",
-        "signature": "PrecacheUnitFromTableAsync(arg1: handle, callback: function)",
+        "signature": "PrecacheUnitFromTableAsync(keyValues: table, callback: function)",
         "returns": "nil",
         "description": "Precaches a DOTA unit from a table of entity key values.",
-        "argDescriptions": ""
+        "argDescriptions": "keyValues: The unit is taken from its `MapUnitName` key."
       },
       {
         "type": "function",
         "name": "PrecacheUnitFromTableSync",
-        "signature": "PrecacheUnitFromTableSync(arg1: handle, context: CScriptPrecacheContext)",
+        "signature": "PrecacheUnitFromTableSync(keyValues: table, context: CScriptPrecacheContext)",
         "returns": "nil",
         "description": "Precaches a DOTA unit from a table of entity key values.",
-        "argDescriptions": ""
+        "argDescriptions": "keyValues: The unit is taken from its `MapUnitName` key."
       },
       {
         "type": "function",
@@ -24159,7 +24159,7 @@
       {
         "type": "function",
         "name": "RandomFloatWrapper",
-        "signature": "RandomFloatWrapper(arg1: float, arg2: float)",
+        "signature": "RandomFloatWrapper(min: float, max: float)",
         "returns": "float",
         "description": "Generate a random floating point number within a range, inclusive.",
         "argDescriptions": ""
@@ -24183,23 +24183,23 @@
       {
         "type": "function",
         "name": "RecordNeutralItemEarned",
-        "signature": "RecordNeutralItemEarned(arg1: handle, arg2: handle, arg3: int)",
+        "signature": "RecordNeutralItemEarned(hero: CDOTA_BaseNPC, item: CDOTA_Item, tier: int)",
         "returns": "nil",
         "description": "Record in player resources that a new neutral item has been created, if it hasn't already been, and show a toast.",
-        "argDescriptions": ""
+        "argDescriptions": "hero: Its team is credited.\ntier: 1-based neutral item tier."
       },
       {
         "type": "function",
         "name": "RegisterCustomAnimationScriptForModel",
-        "signature": "RegisterCustomAnimationScriptForModel(arg1: string, arg2: string)",
+        "signature": "RegisterCustomAnimationScriptForModel(modelName: string, scriptName: string)",
         "returns": "nil",
         "description": "Register a custom animation script to run when a model loads.",
-        "argDescriptions": ""
+        "argDescriptions": "modelName: Only printed: the function is deprecated and does nothing.\nscriptName: Only printed."
       },
       {
         "type": "function",
         "name": "RegisterSpawnGroupFilterProxy",
-        "signature": "RegisterSpawnGroupFilterProxy(arg1: string)",
+        "signature": "RegisterSpawnGroupFilterProxy(name: string)",
         "returns": "nil",
         "description": "Create a C proxy for a script-based spawn group filter.",
         "argDescriptions": ""
@@ -24223,7 +24223,7 @@
       {
         "type": "function",
         "name": "RemoveSpawnGroupFilterProxy",
-        "signature": "RemoveSpawnGroupFilterProxy(arg1: string)",
+        "signature": "RemoveSpawnGroupFilterProxy(name: string)",
         "returns": "nil",
         "description": "Remove the C proxy for a script-based spawn group filter.",
         "argDescriptions": ""
@@ -24255,15 +24255,15 @@
       {
         "type": "function",
         "name": "RotateOrientation",
-        "signature": "RotateOrientation(arg1: QAngle, arg2: QAngle)",
+        "signature": "RotateOrientation(a: QAngle, b: QAngle)",
         "returns": "QAngle",
         "description": "Rotate a QAngle by another QAngle.",
-        "argDescriptions": ""
+        "argDescriptions": "b: The result is the rotation of `a` followed by `b` (matrix a * b)."
       },
       {
         "type": "function",
         "name": "RotatePosition",
-        "signature": "RotatePosition(arg1: Vector, arg2: QAngle, arg3: Vector)",
+        "signature": "RotatePosition(rotationOrigin: Vector, rotationAngle: QAngle, position: Vector)",
         "returns": "Vector",
         "description": "Rotate a Vector around a point.",
         "argDescriptions": ""
@@ -24271,25 +24271,25 @@
       {
         "type": "function",
         "name": "RotateQuaternionByAxisAngle",
-        "signature": "RotateQuaternionByAxisAngle(arg1: Quaternion, arg2: Vector, arg3: float)",
+        "signature": "RotateQuaternionByAxisAngle(quaternion: Quaternion, axis: Vector, angle: float)",
         "returns": "Quaternion",
-        "description": "Rotates a quaternion by the specified angle around the specified vector axis.",
-        "argDescriptions": ""
+        "description": "Rotates a quaternion by the specified angle around the specified vector axis. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game).",
+        "argDescriptions": "angle: Degrees."
       },
       {
         "type": "function",
         "name": "RotationDelta",
-        "signature": "RotationDelta(arg1: QAngle, arg2: QAngle)",
+        "signature": "RotationDelta(src: QAngle, dest: QAngle)",
         "returns": "QAngle",
-        "description": "Find the delta between two QAngles.",
+        "description": "Find the rotation from one QAngle to another (verified in game).",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "RotationDeltaAsAngularVelocity",
-        "signature": "RotationDeltaAsAngularVelocity(arg1: QAngle, arg2: QAngle)",
+        "signature": "RotationDeltaAsAngularVelocity(src: QAngle, dest: QAngle)",
         "returns": "Vector",
-        "description": "Converts delta QAngle to an angular velocity Vector.",
+        "description": "Rotation from one QAngle to another as an angular velocity: axis multiplied by degrees (verified in game).",
         "argDescriptions": ""
       },
       {
@@ -24311,7 +24311,7 @@
       {
         "type": "function",
         "name": "Script_RandomFloat",
-        "signature": "Script_RandomFloat(arg1: float, arg2: float)",
+        "signature": "Script_RandomFloat(min: float, max: float)",
         "returns": "float",
         "description": "Get a random float within a range.",
         "argDescriptions": ""
@@ -24319,7 +24319,7 @@
       {
         "type": "function",
         "name": "Script_RemapValClamped",
-        "signature": "Script_RemapValClamped(arg1: float, arg2: float, arg3: float, arg4: float, arg5: float)",
+        "signature": "Script_RemapValClamped(value: float, inputStart: float, inputEnd: float, outputStart: float, outputEnd: float)",
         "returns": "float",
         "description": "RemapValClamped.",
         "argDescriptions": ""
@@ -24335,7 +24335,7 @@
       {
         "type": "function",
         "name": "SendToConsole",
-        "signature": "SendToConsole(arg1: string)",
+        "signature": "SendToConsole(command: string)",
         "returns": "nil",
         "description": "Send a string to the console as a client command.",
         "argDescriptions": ""
@@ -24343,7 +24343,7 @@
       {
         "type": "function",
         "name": "SendToServerConsole",
-        "signature": "SendToServerConsole(arg1: string)",
+        "signature": "SendToServerConsole(command: string)",
         "returns": "nil",
         "description": "Send a string to the console as a server command.",
         "argDescriptions": ""
@@ -24351,7 +24351,7 @@
       {
         "type": "function",
         "name": "SetOpvarFloatAll",
-        "signature": "SetOpvarFloatAll(arg1: string, arg2: string, arg3: string, arg4: float)",
+        "signature": "SetOpvarFloatAll(stackName: string, operatorName: string, opvarName: string, value: float)",
         "returns": "nil",
         "description": "Sets an opvar value for all players.",
         "argDescriptions": ""
@@ -24359,7 +24359,7 @@
       {
         "type": "function",
         "name": "SetOpvarFloatPlayer",
-        "signature": "SetOpvarFloatPlayer(arg1: string, arg2: string, arg3: string, arg4: float, arg5: handle)",
+        "signature": "SetOpvarFloatPlayer(stackName: string, operatorName: string, opvarName: string, value: float, player: CDOTAPlayerController)",
         "returns": "nil",
         "description": "Sets an opvar value for a single player.",
         "argDescriptions": ""
@@ -24367,15 +24367,15 @@
       {
         "type": "function",
         "name": "SetPhysAngularVelocity",
-        "signature": "SetPhysAngularVelocity(arg1: handle, arg2: Vector)",
+        "signature": "SetPhysAngularVelocity(entity: CBaseEntity, angularVelocity: Vector)",
         "returns": "nil",
         "description": "Set Angular Velocity for VPHYS or normal object, from a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
-        "argDescriptions": ""
+        "argDescriptions": "angularVelocity: Axis of rotation multiplied by the rotation speed in degrees per second."
       },
       {
         "type": "function",
         "name": "SetQuestName",
-        "signature": "SetQuestName(arg1: string)",
+        "signature": "SetQuestName(name: string)",
         "returns": "nil",
         "description": "Set the current quest name.",
         "argDescriptions": ""
@@ -24383,7 +24383,7 @@
       {
         "type": "function",
         "name": "SetQuestPhase",
-        "signature": "SetQuestPhase(arg1: int)",
+        "signature": "SetQuestPhase(phase: int)",
         "returns": "nil",
         "description": "Set the current quest phase.",
         "argDescriptions": ""
@@ -24391,7 +24391,7 @@
       {
         "type": "function",
         "name": "SetRenderingEnabled",
-        "signature": "SetRenderingEnabled(arg1: ehandle, arg2: bool)",
+        "signature": "SetRenderingEnabled(entity: ehandle, enabled: bool)",
         "returns": "nil",
         "description": "Set rendering on/off for an ehandle.",
         "argDescriptions": ""
@@ -24415,23 +24415,23 @@
       {
         "type": "function",
         "name": "ShowGenericPopup",
-        "signature": "ShowGenericPopup(arg1: string, arg2: string, arg3: string, arg4: string, arg5: int)",
+        "signature": "ShowGenericPopup(header: string, body: string, param1: string, param2: string, flags: int)",
         "returns": "nil",
         "description": "Show a generic popup dialog for all players.",
-        "argDescriptions": ""
+        "argDescriptions": "flags: 1: tint the screen, 2: show no other dialogs (`tint_screen`, `show_no_other_dialogs` of CDOTAUserMsg_ShowGenericPopup)."
       },
       {
         "type": "function",
         "name": "ShowGenericPopupToPlayer",
-        "signature": "ShowGenericPopupToPlayer(arg1: handle, arg2: string, arg3: string, arg4: string, arg5: string, arg6: int)",
+        "signature": "ShowGenericPopupToPlayer(player: CDOTAPlayerController, header: string, body: string, param1: string, param2: string, flags: int)",
         "returns": "nil",
         "description": "Show a generic popup dialog to a specific player.",
-        "argDescriptions": ""
+        "argDescriptions": "flags: 1: tint the screen, 2: show no other dialogs."
       },
       {
         "type": "function",
         "name": "ShowMessage",
-        "signature": "ShowMessage(arg1: string)",
+        "signature": "ShowMessage(message: string)",
         "returns": "nil",
         "description": "Print a hud message on all clients.",
         "argDescriptions": ""
@@ -24447,18 +24447,18 @@
       {
         "type": "function",
         "name": "SpawnEffigyOfUnitOrModel",
-        "signature": "SpawnEffigyOfUnitOrModel(arg1: string, arg2: int, arg3: Vector, arg4: Vector, arg5: float, arg6: float, arg7: int)",
+        "signature": "SpawnEffigyOfUnitOrModel(unitOrModel: string, team: DOTATeam_t, origin: Vector, angles: Vector, pedestalScale: float, modelScale: float, effigyType: int)",
         "returns": "handle",
         "description": "Spawn an effigy of the target unit.",
-        "argDescriptions": ""
+        "argDescriptions": "unitOrModel: Unit name, or a `.vmdl` model path.\nangles: Pitch, yaw, roll.\npedestalScale: Model scale of the pedestal.\nmodelScale: Model scale of the statue; negative: the unit's `ModelScale`.\neffigyType: Status effect index of the statue material; also selects the pedestal model (with team)."
       },
       {
         "type": "function",
         "name": "SpawnEntityFromTableAsynchronous",
-        "signature": "SpawnEntityFromTableAsynchronous(arg1: string, arg2: handle, arg3: handle, arg4: handle)",
+        "signature": "SpawnEntityFromTableAsynchronous(className: string, keyValues: table, callback: handle, context: handle)",
         "returns": "nil",
         "description": "Asynchronously spawns a single entity from a table.",
-        "argDescriptions": ""
+        "argDescriptions": "callback: Called when the entity has spawned."
       },
       {
         "type": "function",
@@ -24471,26 +24471,26 @@
       {
         "type": "function",
         "name": "SpawnEntityGroupFromTable",
-        "signature": "SpawnEntityGroupFromTable(arg1: handle, arg2: bool, arg3: handle)",
+        "signature": "SpawnEntityGroupFromTable(spawnTables: table, async: bool, callback: handle)",
         "returns": "bool",
         "description": "Hierarchically spawn an entity group from a set of spawn tables.",
-        "argDescriptions": ""
+        "argDescriptions": "spawnTables: Entity tables, each with a `classname` key.\nasync: true: spawned through the asynchronous queue, the callback runs when it completes; false: spawned right away and the callback runs before the function returns."
       },
       {
         "type": "function",
         "name": "SpawnEntityListFromTableAsynchronous",
-        "signature": "SpawnEntityListFromTableAsynchronous(arg1: handle, arg2: handle)",
+        "signature": "SpawnEntityListFromTableAsynchronous(spawnTables: table, callback: handle)",
         "returns": "int",
         "description": "Asynchronously spawn an entity group from a list of spawn tables. A callback will be triggered when the spawning is complete.",
-        "argDescriptions": ""
+        "argDescriptions": "spawnTables: Entity tables, each with a `classname` key.\ncallback: Called when spawning is complete."
       },
       {
         "type": "function",
         "name": "SpawnEntityListFromTableSynchronous",
-        "signature": "SpawnEntityListFromTableSynchronous(arg1: handle)",
+        "signature": "SpawnEntityListFromTableSynchronous(spawnTables: table)",
         "returns": "handle",
         "description": "Synchronously spawn an entity group from a list of spawn tables.",
-        "argDescriptions": ""
+        "argDescriptions": "spawnTables: Entity tables, each with a `classname` key."
       },
       {
         "type": "function",
@@ -24503,26 +24503,26 @@
       {
         "type": "function",
         "name": "SplineQuaternions",
-        "signature": "SplineQuaternions(arg1: Quaternion, arg2: Quaternion, arg3: float)",
+        "signature": "SplineQuaternions(q0: Quaternion, q1: Quaternion, t: float)",
         "returns": "Quaternion",
-        "description": "Very basic interpolation of v0 to v1 over t on [0,1].",
-        "argDescriptions": ""
+        "description": "Very basic interpolation of v0 to v1 over t on [0,1]. Quaternions cannot be passed to or returned from Lua: `AxisAngleToQuaternion` returns nil there (verified in game).",
+        "argDescriptions": "t: Clamped to 0-1."
       },
       {
         "type": "function",
         "name": "SplineVectors",
-        "signature": "SplineVectors(arg1: Vector, arg2: Vector, arg3: float)",
+        "signature": "SplineVectors(v0: Vector, v1: Vector, t: float)",
         "returns": "Vector",
         "description": "Very basic interpolation of v0 to v1 over t on [0,1].",
-        "argDescriptions": ""
+        "argDescriptions": "t: Clamped to 0-1; smoothstep curve."
       },
       {
         "type": "function",
         "name": "StartSoundEvent",
-        "signature": "StartSoundEvent(arg1: string, arg2: handle)",
+        "signature": "StartSoundEvent(soundName: string, entity: handle)",
         "returns": "nil",
         "description": "Start a sound event.",
-        "argDescriptions": ""
+        "argDescriptions": "entity: Entity the sound is played on. A player controller is replaced with its hero."
       },
       {
         "type": "function",
@@ -24551,23 +24551,23 @@
       {
         "type": "function",
         "name": "StartSoundEventReliable",
-        "signature": "StartSoundEventReliable(arg1: string, arg2: handle)",
+        "signature": "StartSoundEventReliable(soundName: string, entity: handle)",
         "returns": "nil",
         "description": "Start a sound event with reliable delivery.",
-        "argDescriptions": ""
+        "argDescriptions": "entity: Entity the sound is played on. A player controller is replaced with its hero."
       },
       {
         "type": "function",
         "name": "StartSoundEventUnreliable",
-        "signature": "StartSoundEventUnreliable(arg1: string, arg2: handle)",
+        "signature": "StartSoundEventUnreliable(soundName: string, entity: handle)",
         "returns": "nil",
         "description": "Start a sound event with optional delivery.",
-        "argDescriptions": ""
+        "argDescriptions": "entity: Entity the sound is played on. A player controller is replaced with its hero."
       },
       {
         "type": "function",
         "name": "StopEffect",
-        "signature": "StopEffect(arg1: handle, arg2: string)",
+        "signature": "StopEffect(entity: CBaseEntity | nil, effectName: string)",
         "returns": "nil",
         "description": "Pass entity and effect name.",
         "argDescriptions": ""
@@ -24575,7 +24575,7 @@
       {
         "type": "function",
         "name": "StopGlobalSound",
-        "signature": "StopGlobalSound(arg1: string)",
+        "signature": "StopGlobalSound(soundName: string)",
         "returns": "nil",
         "description": "Stop named sound for all players.",
         "argDescriptions": ""
@@ -24583,10 +24583,10 @@
       {
         "type": "function",
         "name": "StopListeningToAllGameEvents",
-        "signature": "StopListeningToAllGameEvents(arg1: handle)",
+        "signature": "StopListeningToAllGameEvents(context: table)",
         "returns": "nil",
         "description": "Stop listening to all game events within a specific context.",
-        "argDescriptions": ""
+        "argDescriptions": "context: Context table the listeners were registered with."
       },
       {
         "type": "function",
@@ -24599,18 +24599,18 @@
       {
         "type": "function",
         "name": "StopSoundEvent",
-        "signature": "StopSoundEvent(arg1: string, arg2: handle)",
+        "signature": "StopSoundEvent(soundName: string, entity: handle)",
         "returns": "nil",
         "description": "Stops a sound event with optional delivery.",
-        "argDescriptions": ""
+        "argDescriptions": "entity: Entity the sound is played on. A player controller is replaced with its hero."
       },
       {
         "type": "function",
         "name": "StopSoundOn",
-        "signature": "StopSoundOn(arg1: string, arg2: handle)",
+        "signature": "StopSoundOn(soundName: string, entity: handle)",
         "returns": "nil",
         "description": "Stop named sound on Entity.",
-        "argDescriptions": ""
+        "argDescriptions": "entity: Entity the sound is played on. A player controller is replaced with its hero."
       },
       {
         "type": "function",
@@ -24655,7 +24655,7 @@
       {
         "type": "function",
         "name": "UnloadSpawnGroup",
-        "signature": "UnloadSpawnGroup(arg1: string)",
+        "signature": "UnloadSpawnGroup(spawnGroupName: string)",
         "returns": "nil",
         "description": "Unload a spawn group by name.",
         "argDescriptions": ""
@@ -24663,7 +24663,7 @@
       {
         "type": "function",
         "name": "UnloadSpawnGroupByHandle",
-        "signature": "UnloadSpawnGroupByHandle(handle: SpawnGroupHandle)",
+        "signature": "UnloadSpawnGroupByHandle(spawnGroupHandle: SpawnGroupHandle)",
         "returns": "nil",
         "description": "Unload a spawn group by handle.",
         "argDescriptions": ""
@@ -24679,42 +24679,42 @@
       {
         "type": "function",
         "name": "UserIDToControllerHScript",
-        "signature": "UserIDToControllerHScript(arg1: int)",
+        "signature": "UserIDToControllerHScript(userId: int)",
         "returns": "handle",
         "description": "Turn a userid integer (typically, fields named 'userid' in game events) to an HScript representing the associated player controller's script instance.",
-        "argDescriptions": ""
+        "argDescriptions": "userId: The `userid` field of game events."
       },
       {
         "type": "function",
         "name": "UTIL_MessageText",
-        "signature": "UTIL_MessageText(arg1: int, arg2: string, arg3: int, arg4: int, arg5: int, arg6: int)",
+        "signature": "UTIL_MessageText(playerEntityIndex: int, message: string, r: int, g: int, b: int, a: int)",
         "returns": "nil",
         "description": "Sends colored text to one client.",
-        "argDescriptions": ""
+        "argDescriptions": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255."
       },
       {
         "type": "function",
         "name": "UTIL_MessageText_WithContext",
-        "signature": "UTIL_MessageText_WithContext(arg1: int, arg2: string, arg3: int, arg4: int, arg5: int, arg6: int, arg7: handle)",
+        "signature": "UTIL_MessageText_WithContext(playerEntityIndex: int, message: string, r: int, g: int, b: int, a: int, context: table)",
         "returns": "nil",
         "description": "Sends colored text to one client. (Valid context keys: player_id, value, team_id).",
-        "argDescriptions": ""
+        "argDescriptions": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\ncontext: Values for the message: `player_id`, `value`, `team_id` (missing keys: -1)."
       },
       {
         "type": "function",
         "name": "UTIL_MessageTextAll",
-        "signature": "UTIL_MessageTextAll(arg1: string, arg2: int, arg3: int, arg4: int, arg5: int)",
+        "signature": "UTIL_MessageTextAll(message: string, r: int, g: int, b: int, a: int)",
         "returns": "nil",
         "description": "Sends colored text to all clients.",
-        "argDescriptions": ""
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255."
       },
       {
         "type": "function",
         "name": "UTIL_MessageTextAll_WithContext",
-        "signature": "UTIL_MessageTextAll_WithContext(arg1: string, arg2: int, arg3: int, arg4: int, arg5: int, arg6: handle)",
+        "signature": "UTIL_MessageTextAll_WithContext(message: string, r: int, g: int, b: int, a: int, context: table)",
         "returns": "nil",
         "description": "Sends colored text to all clients. (Valid context keys: player_id, value, team_id).",
-        "argDescriptions": ""
+        "argDescriptions": "r: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\na: Alpha, 0-255.\ncontext: Values for the message: `player_id`, `value`, `team_id` (missing keys: -1)."
       },
       {
         "type": "function",
@@ -24735,10 +24735,10 @@
       {
         "type": "function",
         "name": "UTIL_ResetMessageText",
-        "signature": "UTIL_ResetMessageText(arg1: int)",
+        "signature": "UTIL_ResetMessageText(playerEntityIndex: int)",
         "returns": "nil",
         "description": "Clear all message text on one client.",
-        "argDescriptions": ""
+        "argDescriptions": "playerEntityIndex: Entity index of the player controller (`CDOTAPlayerController:entindex()`)."
       },
       {
         "type": "function",
@@ -24751,7 +24751,7 @@
       {
         "type": "function",
         "name": "VectorAngles",
-        "signature": "VectorAngles(arg1: Vector)",
+        "signature": "VectorAngles(direction: Vector)",
         "returns": "QAngle",
         "description": "",
         "argDescriptions": ""
@@ -24759,7 +24759,7 @@
       {
         "type": "function",
         "name": "VectorToAngles",
-        "signature": "VectorToAngles(arg1: Vector)",
+        "signature": "VectorToAngles(direction: Vector)",
         "returns": "QAngle",
         "description": "Get Qangles (with no roll) for a Vector.",
         "argDescriptions": ""
