@@ -525,7 +525,7 @@ class Executor:
         work = [st]
         done, aborted = [], []
         forks = 0
-        used_fallbacks = set()
+        used_fallbacks = {}     # id(snapshot) -> snapshot, see fallback()
         while work:
             s = work.pop()
             try:
@@ -561,10 +561,12 @@ class Executor:
         Returns the restarted state (pc None when that already completes the path) or None when another
         path already restarted from the same call."""
         snap, target, ret_to, tail_ret, _ = s.frames[-1]
+        # keyed by the snapshot object, kept alive here: a freed snapshot's id could be reused by another
+        # one, whose paths would then be dropped silently (the result depended on the heap layout)
         key = id(snap)
         if key in used:
             return None
-        used.add(key)
+        used[key] = snap
         self.fallbacks[target] = self.fallbacks.get(target, 0) + 1
         if self.fallbacks[target] >= 8:
             self.no_inline.add(target)
