@@ -1,4 +1,5 @@
-"""The VScript (Lua) classes of server.dll with the native implementation of every method, read offline.
+"""The VScript (Lua) classes of server.dll or client.dll with the native implementation of every method,
+read offline (client.dll also registers its Panorama JS API objects this way: Entities, Abilities, ...).
 
 Every script function is a ScriptFunctionBinding_t (0x50 bytes) that registration code fills in place: the
 word 0xff1d at +0x18 (return type "unknown", optional-argument count -1) marks where a description is

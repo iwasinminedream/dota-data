@@ -3,21 +3,30 @@ import { dirname, join } from 'path';
 
 // dumper/native_modifiers.json (written by the dumper from server.dll, see dumper/native-modifiers.mts)
 // -> files/vscripts/native_modifiers.json, checked against the dump and linked to the abilities whose
-// special values the formulas read.
+// special values the formulas read. dumper/native_modifiers_client.json (the same from client.dll) is
+// merged in: the client's formula where it differs from the server's, and what only one side has.
 
 const inputPath = join('dumper', 'native_modifiers.json');
+const clientPath = join('dumper', 'native_modifiers_client.json');
 const dumpPath = join('dumper', 'dump');
 const abilitiesPath = join('files', 'abilities.json');
 const outputPath = join('files', 'vscripts', 'native_modifiers.json');
 
-interface NativeFunction {
-  function: string;
-  handler?: string;
+interface NativeValue {
   status: 'constant' | 'formula' | 'partial' | 'unresolved' | 'event';
   formula?: string;
   specials?: string[];
   kv?: string[];
   reason?: string[];
+}
+
+interface NativeFunction extends NativeValue {
+  function: string;
+  handler?: string;
+  // client.dll's handler when its result differs from server.dll's
+  client?: NativeValue;
+  // declared by one DLL only
+  side?: 'server' | 'client';
 }
 
 interface NativeModifier {
@@ -31,6 +40,8 @@ interface NativeModifier {
   states_unresolved?: boolean;
   ability?: string;
   abilities?: string[];
+  // the modifier exists in one DLL only
+  side?: 'server' | 'client';
 }
 
 if (!existsSync(inputPath)) {
@@ -65,6 +76,66 @@ if (enumMembers.size > 0) {
   }
 }
 
+// --- client.dll
+// the formula (the status when there is none: events, unresolved; a path the executor gave up on can make
+// the same formula `partial` on one side only); field offsets differ between the DLLs, so the fields are
+// numbered in order of appearance
+function comparable(v: NativeValue): string {
+  if (v.formula === undefined) return v.status;
+  const fields = new Map<string, string>();
+  return v.formula.replace(/self[.]field_[0-9a-f]+/g, (f) => {
+    if (!fields.has(f)) fields.set(f, `self.field#${fields.size}`);
+    return fields.get(f)!;
+  });
+}
+
+function clientValue(f: NativeFunction): NativeValue {
+  const { function: _f, handler: _h, client: _c, side: _s, ...value } = f;
+  return value;
+}
+
+if (existsSync(clientPath)) {
+  const client: { version: string | null; modifiers: Record<string, NativeModifier> } = JSON.parse(
+    readFileSync(clientPath, 'utf8'),
+  );
+  if (client.version !== input.version) {
+    console.warn(
+      `! ${clientPath} is from client.dll of build ${client.version}, ${inputPath} from server.dll of ` +
+        `build ${input.version}: run \`npm run dump:native-modifiers\` again.`,
+    );
+  }
+  let differ = 0;
+  for (const [name, modifier] of Object.entries(input.modifiers)) {
+    const other = client.modifiers[name];
+    if (!other) {
+      modifier.side = 'server';
+      continue;
+    }
+    const theirs = new Map(other.functions.map((f) => [f.function, f]));
+    for (const f of modifier.functions) {
+      const c = theirs.get(f.function);
+      theirs.delete(f.function);
+      if (!c) f.side = 'server';
+      else if (comparable(c) !== comparable(f)) {
+        f.client = clientValue(c);
+        differ += 1;
+      }
+    }
+    for (const c of theirs.values()) modifier.functions.push({ ...c, side: 'client' });
+  }
+  for (const [name, modifier] of Object.entries(client.modifiers)) {
+    // CheckState and fields stay the server's: of a client-only modifier only its functions
+    const { class: cls, bases, functions } = modifier;
+    if (!input.modifiers[name]) input.modifiers[name] = { class: cls, bases, functions, side: 'client' };
+  }
+  input.modifiers = Object.fromEntries(
+    Object.entries(input.modifiers).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)),
+  );
+  console.log(`client.dll: ${differ} functions with a different result`);
+} else {
+  console.warn(`! No ${clientPath} — native modifiers without the client's formulas.`);
+}
+
 // --- abilities whose values the formulas read
 const valuesOf = new Map<string, Set<string>>(); // special value name -> abilities that define it
 if (existsSync(abilitiesPath)) {
@@ -90,7 +161,9 @@ if (existsSync(abilitiesPath)) {
 }
 
 function linkAbility(name: string, modifier: NativeModifier) {
-  const specials = new Set(modifier.functions.flatMap((f) => f.specials ?? []));
+  const specials = new Set(
+    modifier.functions.flatMap((f) => [...(f.specials ?? []), ...(f.client?.specials ?? [])]),
+  );
   if (specials.size === 0 || valuesOf.size === 0) return;
   let candidates: Set<string> | undefined;
   for (const special of specials) {

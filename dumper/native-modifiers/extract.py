@@ -1,6 +1,7 @@
-"""Native modifiers of Dota 2 and the modifier functions they implement, read offline from server.dll.
+"""Native modifiers of Dota 2 and the modifier functions they implement, read offline from server.dll
+(or client.dll, the client's copy of the same code).
 
-    python extract.py [--dll server.dll] [--out modifiers.json]
+    python extract.py [--dll server.dll | client.dll] [--out modifiers.json]
 
 For every native modifier (a class derived from CDOTA_Buff with a name): the modifier functions its
 DeclareFunctions registers (properties and events), and for every property the value its handler returns,

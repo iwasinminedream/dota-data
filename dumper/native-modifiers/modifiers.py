@@ -1,4 +1,5 @@
-"""Native modifiers of server.dll: their classes, declared modifier functions, fields and handler paths.
+"""Native modifiers of server.dll / client.dll: their classes, declared modifier functions, fields and
+handler paths.
 
 A native modifier is a class derived from CDOTA_Buff. Its DeclareFunctions (a virtual function) stores a
 handler for every modifier function it implements into the handler table of the object:
@@ -108,6 +109,7 @@ class Modifiers:
         self.slot_names = self.lua_slot_names(lua_vt) if lua_vt else {}
         self.handler_table = None
         self.declare_slot = self.find_declare_slot(lua_vt)
+        self.name_slot = self.find_name_slot()
         # fields of derived classes start after the handler table (one entry per modifier function)
         self.fields_from = self.handler_table + 16 * function_count
 
@@ -148,12 +150,31 @@ class Modifiers:
                     return i
         raise RuntimeError("DeclareFunctions of CDOTA_Modifier_Lua not found")
 
-    def name_of(self, vt):
-        """The modifier name: GetName (slot 9) returns a string constant."""
-        f = self.im.va(self.im.q(vt + 9 * 8))
-        if f is None:
+    def find_name_slot(self):
+        """GetName: the slot whose overrides return a "modifier_..." string constant (9 in server.dll, 3 in
+        client.dll, whose vtables differ)."""
+        counts = {}
+        sample = sorted(self.classes)[:60]
+        probe = Executor(self.im)     # its own: the executor remembers functions it failed to inline
+        for slot in range(min(24, len(self.base_slots))):
+            for vt in sample:
+                f = self.im.va(self.im.q(vt + slot * 8))
+                span = self.im.func_of(f) if f is not None else None
+                if f is None or (span and span[1] - span[0] > 0x40):
+                    continue        # a getter of a constant is a leaf of a few bytes
+                name = self.name_of(vt, slot, probe)
+                if name and name.startswith("modifier_"):
+                    counts[slot] = counts.get(slot, 0) + 1
+        if not counts:
+            raise RuntimeError("GetName of the modifier classes not found")
+        return max(counts, key=counts.get)
+
+    def name_of(self, vt, slot=None, ex=None):
+        """The modifier name: GetName returns a string constant."""
+        f = self.im.va(self.im.q(vt + (self.name_slot if slot is None else slot) * 8))
+        if f is None or not self.im.is_code(f):
             return None
-        done, _ = self.ex.run(f, regs={"rcx": THIS})
+        done, _ = (ex or self.ex).run(f, regs={"rcx": THIS})
         for s in done:
             v = s.regs.get("rax")
             if v and v[0] == 'c':
@@ -202,7 +223,7 @@ class Modifiers:
         for i, f in enumerate(self.im.vfuncs(vt)):
             if i >= len(self.base_slots):
                 break
-            if f != self.base_slots[i] and i not in (0, 9, self.declare_slot):
+            if f != self.base_slots[i] and i not in (0, self.name_slot, self.declare_slot):
                 out.append((i, f))
         return out
 

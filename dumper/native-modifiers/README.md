@@ -20,6 +20,13 @@ copies to `files/vscripts/native_modifiers.json`. Requirements: Python 3 and cap
 (`pip install capstone`), nothing else. On Linux the Windows server.dll comes from `DOTA_SERVER_BINARY`
 (the Wine depot); with only libserver.so the previous file is kept.
 
+The same analysis runs on client.dll (`--dll client.dll`, next to server.dll or `DOTA_CLIENT_BINARY`) into
+`dumper/native_modifiers_client.json`. The client has its own compiled copy of every modifier: the values
+it predicts and shows in tooltips, without the creation parameters (`kv` exists only on the server) and
+sometimes with logic the server does not need (or the other way round). `build:native-modifiers` merges it
+in, see "Output". The client's CheckState is not used: states are the server's (networked); the client's
+copy only predicts them.
+
 ## How it works
 
 Everything is found in the binary itself, nothing is hard-coded per build (offsets included: the handler table
@@ -27,16 +34,17 @@ from the Lua modifier's declare loop, its size from `MODIFIER_FUNCTION_LAST`, th
 
 | What | How |
 |---|---|
-| modifier classes | MSVC RTTI: every class derived from `CDOTA_Buff`; the name is what `GetName` (vtable slot 9) returns |
+| modifier classes | MSVC RTTI: every class derived from `CDOTA_Buff`; the name is what `GetName` returns (the vtable slot whose overrides return a `modifier_*` constant: 9 in server.dll, 3 in client.dll) |
 | declared functions | `DeclareFunctions` (the slot `CDOTA_Modifier_Lua` overrides with its declare loop) stores `{handler, this adjustment}` at `this + 0xE0 + 16 * P`; it is executed and the table read back |
 | function names | `modifierfunction` / `modifierstate` name tables of the engine (`{name, value}` every 0x20 bytes); Lua handler names from `CDOTA_Modifier_Lua`'s switch from P to the Lua callback |
 | handler results | the engine calls `handler(this, &result, &params)`; result: `+0` kind (1 number, 2 string), `+4` float, `+8` string |
 | fields | every virtual function the class overrides (OnCreated, OnRefresh, OnIntervalThink, ...) and every handler is executed; its stores to the modifier's own fields are recorded |
-| names of calls | the Lua bindings of server.dll (`script_api.py`, emulating the registration code): each method's native code is executed and what it returns becomes a template (`bit(ld(obj + 0xd18), 1)` is `obj:IsRangedAttacker()`, `ld(obj + 0x84)` on a modifier is `GetStackCount()`); virtual slots of abilities and modifiers are named after the Lua callbacks `CDOTA_Ability_Lua` / `CDOTA_Item_Lua` / `CDOTA_Modifier_Lua` forward them to |
+| names of calls | the Lua bindings of the DLL (`script_api.py`, emulating the registration code; client.dll's `C_X` classes are matched as server.dll's `CX`): each method's native code is executed and what it returns becomes a template (`bit(ld(obj + 0xd18), 1)` is `obj:IsRangedAttacker()`, `ld(obj + 0x84)` on a modifier is `GetStackCount()`); virtual slots of abilities and modifiers are named after the Lua callbacks `CDOTA_Ability_Lua` / `CDOTA_Item_Lua` / `CDOTA_Modifier_Lua` forward them to |
 | special values | the getters (float / int / bool) all start with the same level + lookup calls as the one `GetSpecialValueFor` uses |
 | params | the function that converts the params struct to the Lua table (`report_max`, `original_damage`, ...): offset -> key |
 | creation parameters | KeyValues imports (`FindKey`, `GetFloat`, ...) on the table passed to OnCreated / OnRefresh |
-| modifier lookups | calls on an NPC's modifier manager (its offset from `FindModifierByName`) with a `modifier_*` string |
+| modifier lookups | calls on an NPC's modifier manager (its offset from `FindModifierByName`) with a `modifier_*` string; in client.dll, calls of `C_DOTA_BaseNPC::FindModifierByName` (the function `HasModifier` calls) |
+| client states | client.dll tests a state in the union of two masks (the server's and the predicted one): `(ld(npc + A) \| ld(npc + B))` bit k is read as state k (A, B from `IsRooted`) |
 | states | `CheckState` (the slot `CDOTA_Modifier_Lua` forwards to `CheckState`) fills two 64-bit masks: `+0` the states it sets true, `+8` those it sets false (the Lua modifier turns `{[state] = true}` into `bts [+0]`, `btr [+8]`); every path is executed and each `MODIFIER_STATE_*` bit read back |
 
 The executor (`symexec.py`) is symbolic: registers and memory hold expressions (`expr.py`), conditional
@@ -81,8 +89,12 @@ Operators are Lua's (`~=`, `not`, `and`, `math.min`) plus `cond ? a : b`.
           "status": "formula",             // constant | formula | partial | unresolved | event
           "formula": "...",
           "specials": ["phase_movement_speed", "phase_movement_speed_range"],
-          "kv": []                         // creation parameters it reads
-        }
+          "kv": [],                        // creation parameters it reads
+          "client": { "status": "formula", "formula": "...", "specials": [] }
+                                           // files/ only: client.dll's result where it differs
+        },
+        { "function": "MODIFIER_EVENT_ON_DEATH", "status": "event", "side": "server" }
+                                           // files/ only: declared by one DLL only
       ],
       "fields": { "field_1ab0": [{ "in": "OnIntervalThink", "value": "..." }] },
       "states": [                          // CheckState
@@ -101,8 +113,18 @@ masks come from data it cannot read, e.g. the KV table of `modifier_datadriven`)
 executor's: a loop, too many paths). When several abilities define all the special values (shared
 values like `bonus_damage`), files/ has `abilities` instead of `ability`.
 
+In files/ (merged by `build:native-modifiers`): `client` on a function is client.dll's result when its
+status or formula differs from server.dll's (fields are compared by order of appearance: their offsets
+differ between the DLLs); no `client` means the same result. Many differences are the analysis reaching
+further in one DLL than in the other (a `?` on one side), or the same test written differently
+(`parent:IsDebuffImmune()` is a virtual call in client.dll, `state(parent, ...)` in server.dll); the
+real ones are values the client shows differently (a constant tooltip value, no `kv`). `side: "server"`
+/ `"client"` marks a function or a whole modifier only one DLL has (client-only modifiers carry only
+their functions). The changelog tracks client results as `modifier_function_client`.
+
 ## Working on it
 
-`python extract.py --dll <server.dll> --out <file>` runs everything (about two minutes). The modules can
+`python extract.py --dll <server.dll | client.dll> --out <file>` runs everything (about two minutes for
+server.dll, half a minute for client.dll). The modules can
 be used one by one; `Renderer.unknown` / `Renderer.examples` count and show what made formulas partial,
 which is the list to work from when a patch changes the code patterns.

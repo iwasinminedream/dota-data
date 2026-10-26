@@ -15,7 +15,7 @@ Text syntax (Lua-like pseudo-code):
 import math
 import re
 
-from expr import C, F, FALSE, TRUE, ZERO, base_off, bits_to_f32, fval, ite, lnot, signed, substitute, walk
+from expr import C, F, FALSE, TRUE, ZERO, addr, base_off, bits_to_f32, fval, ite, lnot, signed, substitute, walk
 from knowledge import GLOBAL_CLASSES, strip_script_handle
 from modifiers import OUT, PARAMS, THIS
 
@@ -63,12 +63,22 @@ class Renderer:
                     if b == ('sym', 'obj'):
                         self.handles[o] = {"GetCaster": "caster", "GetParent": "parent", "GetAbility": "ability",
                                            "GetAuraOwner": "aura_owner"}.get(mname, mname)
-        # the modifier-state bits of an NPC: the field IsRooted (state 0) tests
+        # the modifier-state bits of an NPC: the field IsRooted (state 0) tests. client.dll keeps two masks
+        # (the server's and the states it predicts) and tests a state in their union:
+        #     (ld(npc + A, 1) | ld(npc + B, 1)) & 1
         self.state_field = None
+        self.state_other = None
         for k, lst in kb.templates.items():
             for size, cname, mname, t, nargs in lst:
-                if cname == "CDOTA_BaseNPC" and mname == "IsRooted" and t[0] == 'bit' and t[2] == 0:
+                if cname != "CDOTA_BaseNPC" or mname != "IsRooted":
+                    continue
+                if t[0] == 'bit' and t[2] == 0:
                     self.state_field = base_off(t[1][1])[1]
+                x = t[2][2] if t[0] == 'op' and t[1] == 'and' and t[3] == C(1) and t[2][0] == 'un' else None
+                if x is not None and x[0] == 'op' and x[1] == 'or' and x[2][0] == 'ld' and x[3][0] == 'ld':
+                    (b1, o1), (b2, o2) = base_off(x[2][1]), base_off(x[3][1])
+                    if b1 == b2 == ('sym', 'obj') and abs(o1 - o2) >= 8:
+                        self.state_field, self.state_other = min(o1, o2), max(o1, o2)
 
     def summary(self):
         return ", ".join("%s %d" % kv for kv in sorted(self.counts.items()))
@@ -217,6 +227,8 @@ class Renderer:
     # --- naming and simplification
     def finish(self, e):
         e = self.as_float(e)
+        if self.state_other is not None:
+            e = substitute(e, self.merge_state_masks)
         for _ in range(3):
             e2 = substitute(e, self.rename)
             e2 = substitute(e2, self.simplify)
@@ -224,6 +236,24 @@ class Renderer:
                 break
             e = e2
         return e
+
+    def merge_state_masks(self, e):
+        """(the same read of both state masks) | ... -> the read of the first one (client.dll)."""
+        if e[0] == 'op' and e[1] == 'or':
+            a, b = e[2], e[3]
+            for p, q in ((a, b), (b, a)):
+                if q != p and self.shift_masks(q) == p:
+                    return substitute(p, self.merge_state_masks)
+        return None
+
+    def shift_masks(self, e):
+        def fn(x):
+            if x[0] == 'ld':
+                b, o = base_off(x[1])
+                if b is not None and self.state_other <= o < self.state_other + 8:
+                    return ('ld', addr(b, o - self.state_other + self.state_field), x[2])
+            return None
+        return substitute(e, fn)
 
     def as_float(self, e):
         """A value in float context (the result, operands of float arithmetic): integer constants there
@@ -262,6 +292,8 @@ class Renderer:
                     return {'caster': 'npc', 'parent': 'npc', 'ability': 'ability'}.get(self.handles[o], 'any')
                 if b == PARAMS and ('ent', o) in self.kb.params:
                     return self.kb.param_kinds.get(self.kb.params[('ent', o)], 'any')
+        if obj[0] == 'call' and obj[1] == 'FindModifierByName':
+            return 'modifier'
         if obj[0] == 'm':
             return {'GetCaster': 'npc', 'GetParent': 'npc', 'GetAbility': 'ability', 'GetOwner': 'npc',
                     'FindModifierByName': 'modifier', 'FindAbilityByName': 'ability',
@@ -312,6 +344,10 @@ class Renderer:
             key = self.string(e[2][1])
             if key:
                 return ('kvhas', key)
+        if t == 'call' and e[1] == 'FindModifierByName':
+            s = self.string(e[2][1])
+            if s:
+                return ('m', 'FindModifierByName', substitute(e[2][0], self.rename), (('s', s),))
         if t == 'call' and isinstance(e[1], str) and e[2] and self.kb.modifier_manager is not None:
             # a lookup in an NPC's modifier manager by a modifier name: FindModifierByName
             b, o = base_off(e[2][0])

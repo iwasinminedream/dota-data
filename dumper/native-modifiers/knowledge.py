@@ -1,4 +1,4 @@
-"""Names for what the executor sees, taken from the Lua bindings of server.dll.
+"""Names for what the executor sees, taken from the Lua bindings of the DLL (server.dll or client.dll).
 
 Every script method's native implementation is executed symbolically with `obj` as its object. When the
 result is a plain function of the object (a field, a bit of a field, the entity behind a handle field, a
@@ -29,6 +29,12 @@ KIND_CLASSES['any'] = KIND_CLASSES['npc'] + ["CDOTA_Item", "CDOTABaseAbility", "
 # singletons whose methods read globals and ignore the object: rendered as Class:Method()
 CMP_BYTE_3 = re.compile(rb"\x80[\xb8-\xbf](....)\x03", re.S)   # cmp byte ptr [reg + disp32], 3
 GLOBAL_CLASSES = {"CDOTAGameRules": "GameRules", "CDOTA_PlayerResource": "PlayerResource", "_G": None}
+
+
+def server_class(name):
+    """client.dll names its entity classes C_X where server.dll has CX (C_DOTA_BaseNPC, C_DOTABaseAbility);
+    the shared ones (CDOTA_Buff, CDOTAGameRules) are the same."""
+    return "C" + name[2:] if name.startswith("C_") else name
 
 
 def strip_script_handle(e):
@@ -129,6 +135,7 @@ class Knowledge:
     def __init__(self, im, classes, vtable_of):
         """classes: script_api.script_classes(); vtable_of(cpp class name) -> vtable rva or None."""
         self.im = im
+        classes = {server_class(n): c for n, c in classes.items()}
         self.classes = classes
         self.ex = Executor(im, max_paths=24, max_steps=3000)
         self.templates = collections.defaultdict(list)    # head -> [(size, class, method, template, nargs)]
@@ -152,7 +159,7 @@ class Knowledge:
         # virtual functions the Lua classes forward to Lua callbacks of the same name
         for lua, base in (("CDOTA_Ability_Lua", "CDOTABaseAbility"), ("CDOTA_Item_Lua", "CDOTA_Item"),
                           ("CDOTA_Modifier_Lua", "CDOTA_Buff")):
-            lvt, bvt = vtable_of(lua), vtable_of(base)
+            lvt, bvt = (vtable_of(classes[c]["cpp"]) if c in classes else None for c in (lua, base))
             if lvt is not None and bvt is not None:
                 for slot, name in lua_slot_names(im, lvt, bvt).items():
                     self.vslots.setdefault((base, slot), name)
@@ -208,9 +215,11 @@ class Knowledge:
         return best if counts[best] >= 1000 else None
 
     def find_modifier_manager(self):
-        """Offset of the modifier manager in an NPC: FindModifierByName calls the lookup with
-        rcx = npc + offset and the name argument."""
-        impl = self.method_impl("CDOTA_BaseNPC", "FindModifierByName")
+        """Offset of the modifier manager in an NPC: FindModifierByName (HasModifier in client.dll, which
+        has no FindModifierByName) calls the lookup with rcx = npc + offset and the name argument, directly
+        or through CDOTA_BaseNPC::FindModifierByName (which is named too)."""
+        impl = (self.method_impl("CDOTA_BaseNPC", "FindModifierByName")
+                or self.method_impl("CDOTA_BaseNPC", "HasModifier"))
         if impl is None:
             return None
         found = []
@@ -220,11 +229,20 @@ class Knowledge:
                 b, o = base_off(args[0])
                 if b == WILD:
                     found.append(o)
+            elif args[:2] == (WILD, ('sym', 'a1')) and isinstance(name, str) and name.startswith("sub_"):
+                # the binding calls CDOTA_BaseNPC::FindModifierByName(npc, name, caster), which the game code
+                # calls too where it is not inlined (client.dll's game code always calls it): name it
+                self.named[int(name[4:], 16)] = self.modifier_finder
 
         ex = Executor(self.im, max_paths=8, max_steps=2000, max_depth=0)
         ex.on_opaque = hook
         ex.run(impl, regs={"rcx": WILD, "rdx": ('sym', 'a1'), "r8": ('sym', 'a2'), "r9": ('sym', 'a3')})
         return found[0] if found else None
+
+    @staticmethod
+    def modifier_finder(ex, st):
+        e = ('call', 'FindModifierByName', (ex.rget(st, "rcx"), ex.rget(st, "rdx")))
+        return e, e
 
     @staticmethod
     def identity(ex, st):

@@ -364,18 +364,26 @@ function extractModifierProperties(content) {
 
 // Extract the modifier functions and CheckState states of native modifiers: one item per modifier and
 // function (its formula as the value) or state (true / false and the condition): a change is a change
-// of the game's code
+// of the game's code. server.dll's result is `modifier_function`; client.dll's, where it differs or only
+// the client has the function, is `modifier_function_client`
 function extractNativeModifiers(content) {
   const modifiers = content && typeof content === 'object' ? content.modifiers : null;
   if (!modifiers || typeof modifiers !== 'object') return [];
   const items = [];
+  const valueOf = (f) => (f.formula !== undefined ? f.formula : f.status);
   for (const [name, modifier] of Object.entries(modifiers)) {
     for (const f of modifier.functions || []) {
-      items.push({
-        type: 'modifier_function',
-        name: `${name}.${f.function}`,
-        value: f.formula !== undefined ? f.formula : f.status,
-      });
+      const clientOnly = f.side === 'client' || modifier.side === 'client';
+      if (!clientOnly) {
+        items.push({ type: 'modifier_function', name: `${name}.${f.function}`, value: valueOf(f) });
+      }
+      if (clientOnly || f.client) {
+        items.push({
+          type: 'modifier_function_client',
+          name: `${name}.${f.function}`,
+          value: valueOf(clientOnly ? f : f.client),
+        });
+      }
     }
     // CheckState: one item per state, its value (and condition) as the value
     const states = {};
@@ -594,7 +602,8 @@ function compareStates(prev, curr, { docs = false } = {}) {
     const changed = [];
     const trackableTypes = docs
       ? new Set(['function', 'method', 'panel', 'type_field', 'object', 'nominal', 'primitive'])
-      : new Set(['function', 'method', 'ability', 'unit', 'panel', 'type_field', 'modifier_function', 'modifier_state']);
+      : new Set(['function', 'method', 'ability', 'unit', 'panel', 'type_field', 'modifier_function',
+          'modifier_function_client', 'modifier_state']);
     const kvTypes = new Set(['ability', 'unit']);
     for (const [k, currItem] of currMap) {
       if (prevMap.has(k) && trackableTypes.has(currItem.type)) {
