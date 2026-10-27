@@ -1,13 +1,13 @@
-ClientVersion=6968
-ServerVersion=6968
+ClientVersion=6969
+ServerVersion=6969
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11170778
-VersionDate=Oct 26 2026
-VersionTime=12:01:24
+SourceRevision=11175759
+VersionDate=Oct 27 2026
+VersionTime=12:56:06
 $> script_reload
 Initializing script VM...
 ...done
@@ -52326,7 +52326,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.447007
+Time: 0.379096
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list

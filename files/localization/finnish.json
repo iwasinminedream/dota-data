@@ -31345,7 +31345,7 @@
   "DOTA_PlusPostGame_XPReceived_Other": "Muut",
   "DOTA_PlusPostGame_XPReceived_Abilities": "Kyvyt",
   "DOTA_PlusPostGame_XPReceived_Summons": "Kutsutut kätyrit",
-  "DOTA_PlusPostGame_DamageContributionDrilldownHeading": "Kyvyn {s:ability_name} vahinko",
+  "DOTA_PlusPostGame_DamageContributionDrilldownHeading": "Vahinko: {s:ability_name}",
   "DOTA_PlusPostGame_DamageContributionAttackHeading": "Hyökkäys",
   "DOTA_PlusPostGame_DamageContributionTotalDamageHeading": "Kokonaisvahinko",
   "DOTA_PlusPostGame_DamageContributionTotalHealingHeading": "Kokonaisparannus",
