@@ -1,0 +1,33 @@
+{
+  "version": "6970",
+  "date": "Nov 02 2026",
+  "time": "17:37:07",
+  "changes": {
+    "Native Modifier Functions": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "modifier_function_client",
+          "name": "modifier_item_invisibility_edge_windwalk.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT",
+          "changes": {
+            "value": {
+              "old": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6537541320 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
+              "new": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6537545416 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%"
+            }
+          }
+        },
+        {
+          "type": "modifier_function_client",
+          "name": "modifier_sniper_keen_scope.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL",
+          "changes": {
+            "value": {
+              "old": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6537541320 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
+              "new": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6537545416 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
