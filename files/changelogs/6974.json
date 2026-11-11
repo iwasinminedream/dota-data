@@ -1,0 +1,28 @@
+{
+  "version": "6974",
+  "date": "Nov 11 2026",
+  "time": "13:48:16",
+  "changes": {
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Temptool_18",
+          "value": "Temptool 18"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Temptool_19",
+          "value": "Temptool 19"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Item_Temptool_20",
+          "value": "Temptool 20"
+        }
+      ],
+      "removed": [],
+      "changed": []
+    }
+  }
+}
