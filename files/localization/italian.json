@@ -52726,6 +52726,8 @@
   "DOTA_PlayerReportPopup_Cheating_Tooltip": "Ha usato software di terze parti o exploit per ottenere un vantaggio sleale.",
   "DOTA_PlayerReportPopup_DidNotPlayRole_Title": "Abuso del ruolo",
   "DOTA_PlayerReportPopup_DidNotPlayRole_Tooltip": "Non rispettava il ruolo assegnatogli.",
+  "DOTA_PlayerReportPopup_Botting_Title": "Utilizzo di bot",
+  "DOTA_PlayerReportPopup_Botting_Tooltip": "L'Eroe è controllato da un software automatico anziché da un giocatore.",
   "DOTA_PlayerReportPopup_InGameButton_Tooltip": "Segnala questo giocatore per condotta inappropriata.",
   "DOTA_PlayerReportPopup_SendOverwatchReport": "Invia segnalazione (Sorveglianza)",
   "DOTA_PlayerBehaviorSummary_Popup_Title": "Riepilogo di condotta del giocatore",
