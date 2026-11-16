@@ -120,7 +120,7 @@ def send_text(text_html, disable_preview=True):
     if not TOKEN or not CHATS:
         print('telegram: DOTA_DATA_TG_TOKEN / DOTA_DATA_TG_CHATS are not set — nothing sent', file=sys.stderr)
         return NOT_CONFIGURED
-    rc = 0
+    delivered = 0
     for chat in CHATS:
         res = api('sendMessage', {'chat_id': chat, 'text': text_html, 'parse_mode': 'HTML',
                                   'link_preview_options': {'is_disabled': disable_preview}})
@@ -128,10 +128,12 @@ def send_text(text_html, disable_preview=True):
             # Bad markup is the likely cause: send it as plain text instead.
             plain = re.sub(r'<[^>]+>', '', text_html)
             res = api('sendMessage', {'chat_id': chat, 'text': html.unescape(plain)[:LIMIT]})
-        if not res.get('ok'):
+        if res.get('ok'):
+            delivered += 1
+        else:
             print(f"telegram: chat {chat}: {res.get('description')}", file=sys.stderr)
-            rc = 1
-    return rc
+    # Success once any chat has it: a retry would send it again to the chats that did get it.
+    return 0 if delivered else 1
 
 
 def send_document(path, caption_html=''):
@@ -159,10 +161,12 @@ def cmd_report(path, functions=None):
     rc = send_text(head + body + tail)
     if rc:
         return rc
-    rc = send_document(path, 'Отчёт целиком')
+    # The message (with its link) is what counts; a file that does not go through is only logged,
+    # so the report is not sent again on every run.
+    send_document(path, 'Отчёт целиком')
     if functions and os.path.exists(functions) and os.path.getsize(functions) < 45 << 20:
-        rc = send_document(functions, 'Изменения кода по функциям') or rc
-    return rc
+        send_document(functions, 'Изменения кода по функциям')
+    return 0
 
 
 def cmd_chats():

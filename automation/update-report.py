@@ -570,6 +570,9 @@ def main():
     with open(args.out, 'w') as f:
         f.write('\n'.join(out).rstrip() + '\n')
     print(f'report: {args.out}')
+    # The extracted copies (data/, tracking-old/) are big; chunks, digests and diffs stay for so-query.
+    for big in ('data', 'tracking-old'):
+        shutil.rmtree(os.path.join(workspace, big), ignore_errors=True)
     return 0
 
 
