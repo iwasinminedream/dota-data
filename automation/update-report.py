@@ -6,14 +6,15 @@ and exports, and function by function (funcdiff.py: every changed, added and rem
 the game's libraries with its class/callback name, strings, changed constants and code diff;
 written in full to reports/<version>-functions.md).
 
-Two models, both through the `claude` CLI (the server's Claude Code subscription login, or
-ANTHROPIC_API_KEY when set), no spending cap:
+Two passes, both by Claude Sonnet 5.5 by default (REPORT_DRAFT_MODEL / REPORT_FINAL_MODEL), through
+the `claude` CLI (the server's Claude Code subscription login, or ANTHROPIC_API_KEY when set), no
+spending cap:
 
-1. Claude Haiku 4.5 goes through everything, uncapped: the changelog, the .so diff and the changed
+1. The draft pass goes through everything, uncapped: the changelog, the .so diff and the changed
    functions are cut into chunks (by category / library and string group / function) and each chunk
    gets a detailed digest with the exact names (a few chunks in parallel, no tools: the chunk is the
    whole input).
-2. Claude Opus 5.5 reads the digests, checks every claim that goes into the report against the raw
+2. The final pass reads the digests, checks every claim that goes into the report against the raw
    data, fixes and completes them, and writes the report, listing what it corrected. It works as a
    read-only agent: Read/Grep/Glob inside the analysis workspace, this repo and the two snapshots
    (the server's Metamod plugins are not part of this public report), and one shell command,
@@ -21,7 +22,10 @@ ANTHROPIC_API_KEY when set), no spending cap:
    list, whole diffs, callers, vtables); `--permission-mode dontAsk` refuses everything else,
    nothing can be written.
 
-    update-report.py VERSION --out reports/VERSION.md [--no-ai]
+    update-report.py VERSION --out reports/VERSION.md [--no-ai] [--data-rev REV]
+
+--data-rev: the dump data (files/, dumper/dump, dump-checks/) is taken from commit REV instead of
+the worktree — a report written later for a version that is no longer the newest one.
 
 Exit code 0: written (or --no-ai); 2: a model failed, nothing written (the sync retries later).
 """
@@ -32,6 +36,7 @@ import glob
 import importlib.util
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -44,13 +49,23 @@ spec.loader.exec_module(so_report)
 spec = importlib.util.spec_from_file_location('funcdiff', os.path.join(HERE, 'funcdiff.py'))
 funcdiff = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(funcdiff)
+spec = importlib.util.spec_from_file_location('tracking_diff', os.path.join(HERE, 'tracking-diff.py'))
+tracking_diff = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(tracking_diff)
 
 STATE = os.environ.get('DOTA_DATA_STATE', '/var/lib/dota-data')
-DRAFT_MODEL = os.environ.get('REPORT_DRAFT_MODEL', 'claude-haiku-4-5')
-FINAL_MODEL = os.environ.get('REPORT_FINAL_MODEL', 'claude-opus-5-5')
+DRAFT_MODEL = os.environ.get('REPORT_DRAFT_MODEL', 'claude-sonnet-5-5')
+FINAL_MODEL = os.environ.get('REPORT_FINAL_MODEL', 'claude-sonnet-5-5')
 FINAL_EFFORT = os.environ.get('REPORT_FINAL_EFFORT', 'high')
 CHUNK_CHARS = int(os.environ.get('REPORT_CHUNK_CHARS', '60000'))
 DRAFT_WORKERS = int(os.environ.get('REPORT_DRAFT_WORKERS', '3'))
+DATA = REPO  # where files/, dumper/dump and dump-checks/ are read from (--data-rev: an extracted commit)
+DATA_REV = 'HEAD'
+
+
+def model_name(model):
+    m = re.match(r'claude-([a-z]+)-(\d+)-(\d+)', model)
+    return f'Claude {m.group(1).capitalize()} {m.group(2)}.{m.group(3)}' if m else model
 
 
 def item_text(item):
@@ -74,7 +89,7 @@ def changed_text(item):
 
 def api_blocks(version):
     """The whole changelog as (title, lines) blocks, one per category, and the count table."""
-    with open(os.path.join(REPO, 'files', 'changelogs', f'{version}.json')) as f:
+    with open(os.path.join(DATA, 'files', 'changelogs', f'{version}.json')) as f:
         log = json.load(f)
     blocks, table = [], []
     for category, change in log['changes'].items():
@@ -218,7 +233,7 @@ def render_functions(results, report_name):
 
 def previous_dump(version):
     """The raw dump of the version before (from git), for the final model to compare against."""
-    revs = subprocess.run(['git', '-C', REPO, 'rev-list', 'HEAD', '--', 'dumper/dump'],
+    revs = subprocess.run(['git', '-C', REPO, 'rev-list', DATA_REV, '--', 'dumper/dump'],
                           capture_output=True, text=True).stdout.split()
     for rev in revs:
         text = subprocess.run(['git', '-C', REPO, 'show', f'{rev}:dumper/dump'],
@@ -227,6 +242,27 @@ def previous_dump(version):
             if line.startswith('ClientVersion=') and line.split('=', 1)[1].strip() != str(version):
                 return text
     return None
+
+
+def previous_tracking(version, workspace):
+    """tracking/ of the version before (game-tracking.py output committed with it), extracted into the
+    workspace; None when no earlier commit has one."""
+    revs = subprocess.run(['git', '-C', REPO, 'rev-list', DATA_REV, '--', 'tracking/manifest.json'],
+                          capture_output=True, text=True).stdout.split()
+    for rev in revs:
+        manifest = subprocess.run(['git', '-C', REPO, 'show', f'{rev}:tracking/manifest.json'],
+                                  capture_output=True, text=True).stdout
+        try:
+            built = json.loads(manifest).get('build', {}).get('ClientVersion')
+        except ValueError:
+            continue
+        if built and built != str(version):
+            dest = os.path.join(workspace, 'tracking-old')
+            os.makedirs(dest, exist_ok=True)
+            archive = subprocess.run(['git', '-C', REPO, 'archive', rev, 'tracking'], capture_output=True, check=True)
+            subprocess.run(['tar', '-x', '-C', dest], input=archive.stdout, check=True)
+            return os.path.join(dest, 'tracking'), built
+    return None, None
 
 
 def claude(args, prompt, cwd, timeout):
@@ -271,16 +307,21 @@ FINAL_PROMPT = """Ты проверяешь и доводишь отчёт об 
 игр. Пиши по-русски, Markdown.
 
 В рабочем каталоге:
-- digests/ — черновые конспекты всех частей данных от Claude Haiku. Haiku быстрый, но ошибается: \
-путает героев и предметы, делает опечатки, выдаёт догадки за факты, пропускает важное, принимает \
-шум за изменения;
+- digests/ — черновые конспекты всех частей данных (первый проход: модель видела только свою часть, \
+без инструментов). Черновик ошибается: путает героев и предметы, делает опечатки, выдаёт догадки за \
+факты, пропускает важное, принимает шум за изменения;
 - chunks/ — исходные части, по которым писались конспекты (тот же номер);
 - api-changes.txt — все изменения API по дампу; so-diff.txt (если есть) — весь дифф .so; \
 func-diff.txt (если есть) — все изменённые, добавленные и удалённые функции библиотек игры с именами \
 («Класс::Колбэк» — переопределение Lua-видимого колбэка, «Класс::vfunc#N» — слот без имени), строками, \
 сводкой изменений и диффом нормализованного кода ([S:…] строка, [K:…] константа из данных, F вызов, \
 L переход внутри функции; смена регистров и смещений стека — перекомпиляция, не логика); \
-dump-noise.md (если есть) — шум дампера: чем различаются два дампа одной сборки, это не изменения игры;
+dump-noise.md (если есть) — шум дампера: чем различаются два дампа одной сборки, это не изменения игры; \
+tracking-diff.txt (если есть) — изменения файлов игры против прошлой версии: SchemaSystem (классы, поля, \
+размеры и смещения полей — «смещения X…Y (N пол.) +8» значит, что эти поля сдвинулись, обычно из-за \
+нового поля перед ними; enum), .proto сетевых и GC-сообщений, текстовые файлы из VPK (scripts/, \
+items_game по разделам) и индекс VPK (добавленные/удалённые/изменённые ассеты по папкам); полностью \
+сами файлы — в tracking-old/ (прошлая версия) и в tracking/ репозитория (эта);
 - previous-dump.txt — сырой дамп прошлой версии; в репозитории dota-data — files/*.json (текущее API) \
 и dumper/dump (текущий сырой дамп);
 - в репозитории dota-data также files/localization/*.json (тексты игры, в том числе подсказки способностей и \
@@ -297,7 +338,7 @@ callers, vtable (базовые классы и переопределённые
 
 Работа: прочитай все конспекты. Каждое утверждение, которое попадёт в отчёт, проверь по исходным \
 данным (Grep/Read по chunks, api-changes.txt, so-diff.txt, дампам; so-query для .so). Исправь \
-неверное, убери неподтверждённое, дополни важное, что Haiku пропустил (пробегись по крупным разделам \
+неверное, убери неподтверждённое, дополни важное, что черновик пропустил (пробегись по крупным разделам \
 исходных частей).
 
 Новые свойства, события и методы (модификаторов, Lua API, Panorama, новые поведения и флаги способностей) \
@@ -329,9 +370,14 @@ callers, vtable (базовые классы и переопределённые
 разбери самые значимые (изменённые константы из данных, новые или убранные проверки, списки строк, \
 другие вызовы), остальные перечисли по имени с одной строкой сути и сошлись на полный список \
 (reports/<версия>-functions.md, so-query funcs): отчёт должен уместиться в один ответ.
-5. «Бинарники» — только если есть so-diff.txt: что видно по .so в целом (какие библиотеки, движок, \
+5. «Схема, протоколы и файлы игры» — только если есть tracking-diff.txt: что поменялось в классах \
+SchemaSystem (новые/удалённые поля и классы, изменения размеров; сдвиги смещений — одной строкой на \
+класс: какое поле их вызвало), в enum, в .proto (новые сообщения и поля — что они, судя по именам, \
+передают), в items_game и scripts/ (новые предметы, наборы, ивенты, изменённые разделы) и какие ассеты \
+появились (модели, частицы, звуки — по папкам, с героями/предметами, к которым они относятся).
+6. «Бинарники» — только если есть so-diff.txt: что видно по .so в целом (какие библиотеки, движок, \
 сеть, системы, что за изменениями в API стоит в коде).
-6. «Что исправлено в черновике» — коротко: что у Haiku было неверно, неподтверждено или пропущено.
+7. «Что исправлено в черновике» — коротко: что в черновике было неверно, неподтверждено или пропущено.
 Только подтверждённое данными; если смысл неясен — так и скажи. Серверные Metamod-плагины и их \
 проверку в отчёте не упоминай: это отдельная проверка на сервере. Без вступления и заключения. \
 Ответ — только сам отчёт."""
@@ -359,7 +405,7 @@ def run_drafts(workspace, chunks, noise_text):
                 break
         header = f"# Конспект части {n:02}: {'; '.join(titles)}\n\n"
         with open(os.path.join(workspace, 'digests', f'digest-{n:02}.md'), 'w') as f:
-            f.write(header + (text or f'_Haiku не справился с этой частью ({error}); читай chunks/chunk-{n:02}.txt._'))
+            f.write(header + (text or f'_Черновая модель не справилась с этой частью ({error}); читай chunks/chunk-{n:02}.txt._'))
         return text is not None
 
     with concurrent.futures.ThreadPoolExecutor(DRAFT_WORKERS) as pool:
@@ -373,7 +419,11 @@ def run_final(workspace, add_dirs):
             '--permission-mode', 'dontAsk', '--system-prompt', FINAL_PROMPT]
     for d in add_dirs:
         args += ['--add-dir', d]
-    text, error = claude(args, 'Прочитай конспекты в digests/, проверь их по исходным данным и напиши отчёт.',
+    task = 'Прочитай конспекты в digests/, проверь их по исходным данным и напиши отчёт.'
+    if DATA != REPO:
+        task += (f' Это отчёт о прошлой версии: её данные (files/, dumper/dump) лежат в {DATA} — читай их там, '
+                 f'а не в {REPO} (там уже более новая версия).')
+    text, error = claude(args, task,
                          workspace, 4 * 3600)
     if text:
         first = text.find('###')  # drop any preamble before the first section
@@ -381,7 +431,7 @@ def run_final(workspace, add_dirs):
         marker = '### Что исправлено в черновике'
         if marker in text:
             before, after = text.split(marker, 1)
-            text = (before.rstrip() + '\n\n<details><summary>Что Opus исправил в черновике Haiku</summary>\n\n'
+            text = (before.rstrip() + '\n\n<details><summary>Что исправлено в черновике при проверке</summary>\n\n'
                     + after.strip() + '\n\n</details>')
     return text, error
 
@@ -392,18 +442,28 @@ def main():
     p.add_argument('--out', required=True)
     p.add_argument('--noise', help='dump-checks report of this build (default: the newest for VERSION)')
     p.add_argument('--no-ai', action='store_true')
+    p.add_argument('--data-rev', help='take the dump data from this commit (a report for an older version)')
     args = p.parse_args()
     version = args.version.split('-')[0]
 
     workspace = os.path.join(STATE, 'analysis', args.version)
     shutil.rmtree(workspace, ignore_errors=True)
     os.makedirs(workspace)
+    global DATA, DATA_REV
+    if args.data_rev:
+        DATA_REV = args.data_rev
+        DATA = os.path.join(workspace, 'data')
+        os.makedirs(DATA)
+        paths = [p for p in ('files', 'dumper/dump', 'dump-checks', 'tracking') if subprocess.run(
+            ['git', '-C', REPO, 'cat-file', '-e', f'{DATA_REV}:{p}'], capture_output=True).returncode == 0]
+        archive = subprocess.run(['git', '-C', REPO, 'archive', DATA_REV] + paths, capture_output=True, check=True)
+        subprocess.run(['tar', '-x', '-C', DATA], input=archive.stdout, check=True)
 
     blocks, api_table = api_blocks(version)
     with open(os.path.join(workspace, 'api-changes.txt'), 'w') as f:
         f.write(''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in blocks))
 
-    noise = args.noise or (sorted(glob.glob(os.path.join(REPO, 'dump-checks', f'{version}*.md')),
+    noise = args.noise or (sorted(glob.glob(os.path.join(DATA, 'dump-checks', f'{version}*.md')),
                                   key=os.path.getmtime) or [None])[-1]
     noise_text = ''
     if noise and os.path.exists(noise):
@@ -414,7 +474,7 @@ def main():
         with open(os.path.join(workspace, 'previous-dump.txt'), 'w') as f:
             f.write(prev)
 
-    add_dirs = [REPO]
+    add_dirs = [REPO] + ([DATA] if DATA != REPO else [])
     current = current_snapshot(version)
     pair = snapshot_pair(version)
     if current:
@@ -439,6 +499,17 @@ def main():
                 f.write(f'Снимки .so: {old} -> {new}\n\n' + '\n'.join(funcdiff.render(r) for r in func_results))
             blocks += function_blocks(func_results)
 
+    tracking_table, tracking_old = None, None
+    new_tracking = os.path.join(DATA, 'tracking')
+    if os.path.exists(os.path.join(new_tracking, 'manifest.json')):
+        old_tracking, tracking_old = previous_tracking(version, workspace)
+        if old_tracking:
+            t_blocks, tracking_table = tracking_diff.blocks(old_tracking, new_tracking)
+            with open(os.path.join(workspace, 'tracking-diff.txt'), 'w') as f:
+                f.write(f'tracking/: {tracking_old} -> {version}\n\n' +
+                        ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in t_blocks))
+            blocks += t_blocks
+
     chunks = chunk(blocks)
     if args.no_ai:
         summary, error, drafted = None, 'отключено (--no-ai)', 0
@@ -452,8 +523,8 @@ def main():
 
     out = [f'# Dota {version}: что изменилось', '',
            f'Отчёт создан автоматически {datetime.date.today().isoformat()}. Черновик по всем изменениям '
-           f'({len(chunks)} частей) — Claude Haiku 4.5, проверка по исходным данным и итог — Claude Opus 5.5 '
-           '(оба только с правом чтения); таблицы ниже посчитаны без модели.', '', '## Сводка', '',
+           f'(частей: {len(chunks)}) — {model_name(DRAFT_MODEL)}, проверка по исходным данным и итог — '
+           f'{model_name(FINAL_MODEL)} (только с правом чтения); таблицы ниже посчитаны без модели.', '', '## Сводка', '',
            summary or f'_Без сводки: {error}_', '',
            '## Изменения API (дамп)', '',
            f'Полный список: [`files/changelogs/{version}.json`](../files/changelogs/{version}.json).', '',
@@ -465,6 +536,21 @@ def main():
         out += ['## Шум дампера', '',
                 f'Контрольный дамп той же сборки разошёлся с основным: [`{os.path.basename(noise)}`]({rel}). '
                 'Эти строки не считаются изменениями игры.', '']
+    if tracking_table is not None:
+        sc, vc = tracking_table.get('schema', {}), tracking_table.get('vpk', {})
+        out += ['## Файлы игры (tracking/)', '',
+                f'Сравнение с {tracking_old}: SchemaSystem, .proto, текстовые файлы из VPK и индекс VPK '
+                '([`tracking/`](../tracking/)).', '',
+                '| что | + | − | ~ |', '|---|---|---|---|',
+                f"| классы схемы | {sc.get('classes_added', 0)} | {sc.get('classes_removed', 0)} | {sc.get('classes_changed', 0)} |",
+                f"| enum схемы | {sc.get('enums_added', 0)} | {sc.get('enums_removed', 0)} | {sc.get('enums_changed', 0)} |"]
+        for area, label in (('protobuf', '.proto'), ('vpk-files', 'файлы scripts/'), ('game', 'gameinfo / steam.inf')):
+            c = tracking_table.get(area, {})
+            out.append(f"| {label} | {c.get('added', 0)} | {c.get('removed', 0)} | {c.get('changed', 0)} |")
+        for pak in sorted({k.split('_')[0] for k in vc}):
+            out.append(f"| ассеты VPK {pak} | {vc.get(pak + '_добавлены', 0)} | {vc.get(pak + '_удалены', 0)} "
+                       f"| {vc.get(pak + '_изменены', 0)} |")
+        out.append('')
     out += ['## Бинарники (.so)', '']
     if pair:
         out += [f'Снимки `{pair[0]}` → `{pair[1]}`.', '']
@@ -479,7 +565,7 @@ def main():
                         'прочие адреса. Регистры и смещения стека меняются и от перекомпиляции.\n\n'
                         + '\n'.join(funcdiff.render(r) for r in func_results))
     else:
-        out += ['Нет снимка .so предыдущей сборки — сравнивать не с чем.']
+        out += ['Нет снимка .so этой или предыдущей сборки — сравнивать не с чем.']
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     with open(args.out, 'w') as f:
         f.write('\n'.join(out).rstrip() + '\n')

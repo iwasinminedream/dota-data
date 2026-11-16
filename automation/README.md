@@ -17,7 +17,7 @@ no GPU, no Steam client). When the installed Dota build changes it:
    no longer exist upstream and fail regardless);
 5. commits `<version>`; the commit body says which client dumped and how the control dump went;
 6. writes the update report `reports/<version>.md` (`update-report.py`, commit `report: <version>`)
-   and pushes to `origin/master`. The report has a summary (Haiku draft, checked by Opus) of the API changes
+   and pushes to `origin/master`. The report has a summary (a draft pass and a checking pass, both Claude Sonnet 5.5) of the API changes
    (`files/changelogs/<version>.json`, minus what the control dump marked as noise) and of the
    `.so` changes against the previous snapshot (sizes, code size, exports, strings from the
    read-only data and protobuf descriptors) and function by function (`funcdiff.py`, below), plus
@@ -48,14 +48,14 @@ Both run through the `claude` CLI with the server's Claude Code subscription log
 (`ANTHROPIC_API_KEY` in the env file would make the same CLI use the API instead), without a
 spending cap, in `/var/lib/dota-data/analysis/<version>/`:
 
-1. **Claude Haiku 4.5 — the bulk pass.** The whole changelog, the whole `.so` diff and every changed
+1. **The draft pass (Claude Sonnet 5.5).** The whole changelog, the whole `.so` diff and every changed
    function, uncapped, are cut into chunks (by API category / library and string group / function,
    `REPORT_CHUNK_CHARS`, 60k
    characters) and each chunk gets a detailed digest with the exact names (`REPORT_DRAFT_WORKERS`,
    3 in parallel, no tools). `chunks/` and `digests/` stay in the workspace.
-2. **Claude Opus 5.5 — the check.** It reads every digest, verifies each claim that goes into the
+2. **The check (Claude Sonnet 5.5, `--effort high`).** It reads every digest, verifies each claim that goes into the
    report against the raw data, fixes and completes them and writes the report, ending with what it
-   corrected in Haiku's draft (`--effort high`). Every new property, event and method is also looked
+   corrected in the draft. Every new property, event and method is also looked
    up in the game code (the installed build's `libserver.so` / `libclient.so`: where its name is
    used, the strings around, the disassembly) and in localization / KV, and the report explains what
    it does, with the evidence and how sure that is. It is a read-only agent: `--tools "Read Grep Glob
@@ -67,7 +67,45 @@ spending cap, in `/var/lib/dota-data/analysis/<version>/`:
    else (other commands, files elsewhere, writes) is refused without asking. Each changed function
    gets explained in the report: whose it is, what changed, what that means in the game.
 
-Models and effort: `REPORT_DRAFT_MODEL`, `REPORT_FINAL_MODEL`, `REPORT_FINAL_EFFORT`.
+Models and effort: `REPORT_DRAFT_MODEL`, `REPORT_FINAL_MODEL` (both `claude-sonnet-5-5`),
+`REPORT_FINAL_EFFORT` (`high`). Before writing a report the sync checks that `claude` answers; if
+the login has expired the reports wait (nothing is marked failed) and Telegram gets one alert a day.
+
+Reports missing for recent versions — the last `DOTA_DATA_CATCH_UP` (10) bare-version commits — are
+written later with `update-report.py VERSION --data-rev <commit>`: the dump data comes from that
+commit, the `.so` part only if its snapshots still exist. `so-report.py snapshot` keeps the 3 newest
+snapshots and, up to `SO_KEEP_MAX` (8), those a missing report still needs.
+
+## Game files (`tracking/`)
+
+`game-tracking.py` runs after the build and test, and its output is committed with the version. It
+lives outside `files/`, so it is not part of the npm package and does not trigger the site deploy.
+
+| path | what | how |
+| --- | --- | --- |
+| `tracking/schema/<module>.json` | SchemaSystem of 18 modules (libserver, libclient, engine2, particles, ...): every class with size, alignment, bases, fields (type, offset, metadata) and every enum | `schema-dump/schema-dump.cpp`, built on demand into `$DOTA_DATA_STATE/bin`: loads the libraries without starting the game, hooks `ISchemaSystem::RegisterEnums/RegisterClasses` (slots 33/34; current builds pass a null-terminated array and the schema version, 118) and calls each module's `InstallSchemaBindings`. Under a second. Retail builds carry no network metadata (`MNetworkEnable` is not in any binary) |
+| `tracking/protobuf/*.proto` | the .proto files compiled into the libraries (usermessages, netmessages, GC, demo, ...), `index.json`: which library has which | `proto-dump.py`: embedded `FileDescriptorProto`s parsed with a descriptor that lacks the editions fields (Valve's options reuse their numbers), printed back as source; custom options as `option (number) = value` |
+| `tracking/vpk/<pak>/<folder>.txt` | the VPK index, `path crc size`, sorted | pip `vpk` |
+| `tracking/vpk-files/<pak>/scripts/**` | the text files of `scripts/` in the VPKs; `items_game.txt` split by its top-level sections (≈4 MB parts; whole it is over GitHub's 50 MB warning) | pip `vpk` |
+| `tracking/game/` | `gameinfo.gi`, `gameinfo_branchspecific.gi`, `steam.inf` | |
+
+A step that fails keeps its committed files and is listed in `tracking/manifest.json` (`failed`); the
+sync notifies and goes on. `tracking-diff.py OLD NEW` is what the report uses: the schema
+structurally (sizes, fields added/removed/retyped, offset shifts as runs), unified diffs of .proto
+and text files, added/removed/changed assets per folder. Compiled resources (`*_c`: soundevents,
+vdata, ...) are only in the index — decompiling them would need ValveResourceFormat.
+
+`history.py NAME [--schema]` — when something changed: changelogs, reports and (with `--schema`)
+the SchemaSystem of every committed version.
+
+## Telegram
+
+`telegram-notify.py` sends every new report (its «Главное», a link to it on GitHub, the report and
+`-functions.md` as files) and every failure (dump, report, tracking step, claude login) once. Set in
+the env file: `DOTA_DATA_TG_TOKEN` (from @BotFather) and `DOTA_DATA_TG_CHATS` (comma-separated chat
+ids; `telegram-notify.py chats` lists who has written to the bot, `telegram-notify.py test` sends a
+test message). Until then reports wait in `$DOTA_DATA_STATE/telegram-queue` and go out with the
+next run; failure alerts are only logged.
 
 `dota-data-sync.sh --check` dumps the installed build once more and compares it with the committed
 dump without committing anything (report in `/var/lib/dota-data/checks/`): a quick way to see how
@@ -82,6 +120,12 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `so-report.py` | `snapshot`, `list`, `report OLD NEW` (a .so-only report by hand) |
 | `update-report.py` | `VERSION --out reports/VERSION.md`: the update report |
 | `translate-report.py` | `reports/VERSION.md`: its English version `reports/VERSION.en.md`, checked against the original |
+| `game-tracking.py` | `tracking/`: schema, .proto, VPK index, text files from the VPKs |
+| `tracking-diff.py` | `OLD NEW`: what changed in `tracking/` (used by the report) |
+| `schema-dump/schema-dump.cpp` | the SchemaSystem dumper (C++, built on demand) |
+| `proto-dump.py` | `OUT LIB...`: the .proto files embedded in libraries |
+| `telegram-notify.py` | `report`, `text`, `chats`, `test`: Telegram notifications |
+| `history.py` | `NAME [--schema]`: in which versions a name changed |
 | `funcdiff.py` | `OLD.so NEW.so`: function-level comparison of two builds of a library |
 | `so-query.py` | the read-only queries the model may run on the snapshots |
 | `systemd/dota-data-sync.service` | runs `dota-data-sync.sh` (nice, idle IO, CPU 400 %, memory 12 G) |
@@ -106,8 +150,8 @@ branch that diverged from `origin/master` stops it without touching anything.
   the lavapipe `fakegpu` Vulkan layer in `/root/dota-data-runtime/fakegpu`, `DOTA_DATA_GIT_NAME/EMAIL`,
   and for the Wine mode `DOTA_DATA_STEAM_LOGIN`, `DUMPER_WINE_LAUNCH`, `DUMPER_WINE_GAME_DIR`,
   `DUMPER_WIN_DEPOTS`, `DUMPER_STEAMWORKS`, `DUMPER_WIN_SERVER_DLL`, `WINEPREFIX`, `DUMPER_LANGUAGE`).
-  Packages: wine (64-bit), gcc-mingw-w64-x86-64, xvfb, mesa-vulkan-drivers, binutils; Python:
-  `pip install capstone`.
+  Packages: wine (64-bit), gcc-mingw-w64-x86-64, g++, xvfb, mesa-vulkan-drivers, binutils; Python:
+  `pip install capstone protobuf vpk`. Telegram: `DOTA_DATA_TG_TOKEN`, `DOTA_DATA_TG_CHATS`.
 - Push: a deploy key with write access, `/root/.ssh/dota-data-deploy`, used by this clone through
   `core.sshCommand`, push URL `git@github.com:iwasinminedream/dota-data.git`.
 - Units: `cp automation/systemd/* /etc/systemd/system/ && systemctl daemon-reload &&

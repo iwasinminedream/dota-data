@@ -12,10 +12,13 @@
 #      gone upstream); a rebuild that changes nothing in files/ is not committed;
 #   5. commit "<version>";
 #   6. the update report reports/<version>.md: API changes from the dump and .so changes (strings,
-#      exports and function by function, reports/<version>-functions.md), drafted by Claude Haiku 4.5
-#      and checked by Claude Opus 5.5 with read-only tools (update-report.py), and its English
-#      version reports/<version>.en.md (translate-report.py); then push. Commits that could not be
-#      pushed are pushed by the next run.
+#      exports and function by function, reports/<version>-functions.md), drafted and then checked
+#      with read-only tools by Claude Sonnet 5.5 (update-report.py), and its English version
+#      reports/<version>.en.md (translate-report.py); then push. Commits that could not be pushed are
+#      pushed by the next run. Reports missing for recent versions (e.g. the claude login had expired)
+#      are written later from those versions' commits (API part only once their .so snapshots are gone);
+#   7. new reports go to Telegram (telegram-notify.py, queued until the bot is configured), and so do
+#      failures (a dump, a report, an expired claude login), once each.
 # Started by dota-data-sync.path when steam.inf changes (any Dota update: the panel button or a manual
 # steamcmd) and by dota-data-sync.timer as a fallback; see automation/README.md.
 #
@@ -46,6 +49,8 @@ CHECK=0
 CONTROL=${DOTA_DATA_CONTROL_DUMP:-1} # 0: no control dump
 
 say() { echo "dota-data-sync: $*"; }
+# A Telegram message about a problem (telegram-notify.py; nothing happens until the bot is set up).
+notify() { python3 "$HERE/telegram-notify.py" text "dota-data: $*" >/dev/null 2>&1 || true; }
 
 exec 9>"$LOCK"
 flock -n 9 || { say "already running"; exit 0; }
@@ -201,7 +206,23 @@ process.exit(bad ? 1 : 0);'
 }
 
 restore() {
-    git checkout -q -- . && git clean -q -fd -- files dumper reports dump-checks
+    git checkout -q -- . && git clean -q -fd -- files dumper reports dump-checks tracking
+}
+
+# Game-file tracking (tracking/: SchemaSystem, .proto, VPK index and text files; game-tracking.py) of
+# the installed build, committed with the dump. Never fatal: a step that fails leaves its committed
+# files as they are (each step writes to a .tmp folder first), manifest.json lists it, and we notify.
+track_game() {
+    local rc=0 failed
+    timeout 1h python3 automation/game-tracking.py --repo "$REPO" --game "$DOTA2_DIR/game" || rc=$?
+    git clean -q -fd -- tracking/*.tmp 2>/dev/null || true
+    failed=$(python3 -c 'import json,sys; print(" ".join(json.load(open(sys.argv[1])).get("failed", {})))' \
+        tracking/manifest.json 2>/dev/null || echo all)
+    if (( rc != 0 )) || [[ -n $failed ]]; then
+        say "game tracking: failed steps: ${failed:-all} (exit $rc) — their committed files are kept"
+        notify "tracking/ для Dota $INSTALLED: не удались шаги ${failed:-все} (exit $rc), в коммите их прошлые файлы"
+    fi
+    return 0
 }
 
 BUILD=$(grep -m1 -oP '"buildid"\s+"\K[0-9]+' "$APP_MANIFEST")
@@ -259,10 +280,12 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
                { (( !CONTROL )) || control_dump "$CHECK_REPORT"; } &&
                step=build && npm run build &&
                step=test && npx jest test/files_match_dump.spec.ts --testTimeout=600000 &&
-               step=json && json_ok; }; then
+               step=json && json_ok &&
+               step=tracking && track_game; }; then
             say "failed at: $step — restoring the worktree"
             restore
             rerun_if_updated
+            [[ -e $FAILED_MARK ]] || notify "дамп Dota $INSTALLED (build $BUILD) не удался на шаге $step; повтор через $((RETRY_AFTER / 3600)) ч"
             echo "$(date '+%F %T') $step" >"$FAILED_MARK"
             exit 1
         fi
@@ -293,61 +316,118 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
     fi
 fi
 
-# The update report: API (the dump's changelog) and .so changes, summarised by Claude Haiku 4.5
-# with read-only tools (automation/update-report.py). A failed report is retried after RETRY_AFTER
-# (report-failed-<id> in $STATE) or at once with --force.
-REPORT_ID=${REPORT_ID:-$INSTALLED}
-REPORT=reports/$REPORT_ID.md
-FUNCTIONS=reports/$REPORT_ID-functions.md
-REPORT_FAILED=$STATE/report-failed-$REPORT_ID
-if [[ ! -e $REPORT && -e files/changelogs/$INSTALLED.json && $(inf ClientVersion dumper/dump) == "$INSTALLED" ]] &&
-    { (( FORCE )) || [[ ! -e $REPORT_FAILED ]] || (( $(date +%s) - $(stat -c %Y "$REPORT_FAILED") >= RETRY_AFTER )); }; then
-    rc=0
-    rm -f "$FUNCTIONS"
-    python3 automation/update-report.py "$REPORT_ID" --out "$REPORT" || rc=$?
-    if (( rc == 0 )) && [[ -e $REPORT ]]; then
-        git add "$REPORT"
-        [[ -e $FUNCTIONS ]] && git add "$FUNCTIONS"
-        git commit -q -m "report: $REPORT_ID"
-        rm -f "$REPORT_FAILED"
-        say "committed $REPORT"
-    else
-        rm -f "$REPORT" "$FUNCTIONS"
-        date '+%F %T' >"$REPORT_FAILED"
-        say "update report not committed (update-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
+# The update reports (automation/update-report.py) and their English versions (translate-report.py).
+# A failed one is retried after RETRY_AFTER (report-failed-<id> in $STATE) or at once with --force.
+TG_QUEUE=$STATE/telegram-queue # reports waiting to be sent to Telegram (after the push)
+CLAUDE_STATE=unknown
+claude_ok() {
+    [[ $CLAUDE_STATE == unknown ]] || { [[ $CLAUDE_STATE == ok ]]; return; }
+    local out alert=$STATE/claude-login-alert
+    if out=$(cd /tmp && echo 'Ответь одним словом: ok' | timeout 300 env -u CLAUDECODE -u CLAUDE_CODE_ENTRYPOINT \
+        claude -p --no-session-persistence --strict-mcp-config --setting-sources local \
+        --model "${REPORT_FINAL_MODEL:-claude-sonnet-5-5}" --tools '' 2>&1); then
+        CLAUDE_STATE=ok
+        rm -f "$alert"
+        return 0
     fi
+    CLAUDE_STATE=bad
+    say "claude does not answer (${out:0:300}) — reports wait"
+    if [[ ! -e $alert ]] || (( $(date +%s) - $(stat -c %Y "$alert") >= 86400 )); then
+        notify "claude на сервере не отвечает, отчёты ждут (нужен claude /login от root?): ${out:0:300}"
+        touch "$alert"
+    fi
+    return 1
+}
+retry_due() { (( FORCE )) || [[ ! -e $1 ]] || (( $(date +%s) - $(stat -c %Y "$1") >= RETRY_AFTER )); }
+
+# make_report ID [REV]: reports/ID.md (+ -functions.md) and reports/ID.en.md, each its own commit;
+# REV: the commit whose dump the report is about when it is not the worktree's.
+make_report() {
+    local id=$1 rev=${2:-} report=reports/$1.md functions=reports/$1-functions.md en=reports/$1.en.md
+    local failed=$STATE/report-failed-$1 en_failed=$STATE/report-en-failed-$1 rc
+    if [[ ! -e $report ]] && retry_due "$failed"; then
+        claude_ok || return 0
+        rc=0
+        rm -f "$functions"
+        say "writing the update report $report${rev:+ (dump of ${rev:0:7})}"
+        python3 automation/update-report.py "$id" --out "$report" ${rev:+--data-rev "$rev"} || rc=$?
+        if (( rc == 0 )) && [[ -e $report ]]; then
+            git add "$report"
+            [[ -e $functions ]] && git add "$functions"
+            # The commit body: the report's «Главное», so `git log` shows what the update was about.
+            git commit -q -m "report: $id" -m "$(python3 - "$report" <<'PY'
+import re, sys
+md = open(sys.argv[1], encoding='utf-8').read()
+m = re.search(r'^###\s+Главное[^\n]*\n(.*?)(?=^#{2,3}\s|\Z)', md, re.M | re.S)
+lines = [re.sub(r'[*`]', '', l).strip() for l in (m.group(1) if m else '').splitlines() if l.strip()]
+print('\n'.join(l[:300] for l in lines[:12]))
+PY
+)"
+            rm -f "$failed"
+            echo "$id" >>"$TG_QUEUE"
+            say "committed $report"
+        else
+            rm -f "$report" "$functions"
+            [[ -e $failed ]] || notify "отчёт $id не написан (update-report.py exit $rc), повтор через $((RETRY_AFTER / 3600)) ч"
+            date '+%F %T' >"$failed"
+            say "update report not committed (update-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
+            return 0
+        fi
+    fi
+    if [[ -e $report && ! -e $en ]] && retry_due "$en_failed"; then
+        claude_ok || return 0
+        rc=0
+        python3 automation/translate-report.py "$report" --out "$en" || rc=$?
+        if (( rc == 0 )) && [[ -e $en ]]; then
+            git add "$en"
+            git commit -q -m "report: $id (English)"
+            rm -f "$en_failed"
+            say "committed $en"
+        else
+            rm -f "$en"
+            date '+%F %T' >"$en_failed"
+            say "English report not committed (translate-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
+        fi
+    fi
+}
+
+REPORT_ID=${REPORT_ID:-$INSTALLED}
+if [[ -e files/changelogs/$INSTALLED.json && $(inf ClientVersion dumper/dump) == "$INSTALLED" ]]; then
+    make_report "$REPORT_ID"
 fi
 
-# Its English version reports/<id>.en.md for the site's language switch (translate-report.py),
-# retried like the report.
-REPORT_EN=reports/$REPORT_ID.en.md
-REPORT_EN_FAILED=$STATE/report-en-failed-$REPORT_ID
-if [[ -e $REPORT && ! -e $REPORT_EN ]] &&
-    { (( FORCE )) || [[ ! -e $REPORT_EN_FAILED ]] || (( $(date +%s) - $(stat -c %Y "$REPORT_EN_FAILED") >= RETRY_AFTER )); }; then
-    rc=0
-    python3 automation/translate-report.py "$REPORT" --out "$REPORT_EN" || rc=$?
-    if (( rc == 0 )) && [[ -e $REPORT_EN ]]; then
-        git add "$REPORT_EN"
-        git commit -q -m "report: $REPORT_ID (English)"
-        rm -f "$REPORT_EN_FAILED"
-        say "committed $REPORT_EN"
-    else
-        rm -f "$REPORT_EN"
-        date '+%F %T' >"$REPORT_EN_FAILED"
-        say "English report not committed (translate-report.py exit $rc), retried in $((RETRY_AFTER / 3600)) h or with --force"
-    fi
-fi
+# Catch-up: recent versions (bare "<version>" commits) that have a changelog but no report.
+CATCH_UP=${DOTA_DATA_CATCH_UP:-10}
+while read -r rev version; do
+    [[ $version == "$INSTALLED" || -e reports/$version.md || ! -e files/changelogs/$version.json ]] && continue
+    make_report "$version" "$rev"
+done < <(git log -n 300 --format='%H %s' | awk '$2 ~ /^[0-9]+$/ && NF == 2' | head -n "$CATCH_UP" | tac)
 
 AHEAD=$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)
 if (( AHEAD > 0 )); then
     if git push -q origin "HEAD:$BRANCH"; then
         say "pushed $AHEAD commit(s) to origin/$BRANCH"
+        PUSHED=1
     else
         say "push failed — $AHEAD commit(s) wait locally (deploy key with write access on GitHub?)"
         exit 3
     fi
 else
     say "up to date: Dota $INSTALLED"
+    PUSHED=1
+fi
+
+# New reports to Telegram once they are on GitHub (the message links there). Kept in the queue while
+# the bot is not configured (exit 4) or Telegram fails.
+if [[ ${PUSHED:-0} == 1 && -s $TG_QUEUE ]]; then
+    left=()
+    while read -r id; do
+        [[ -n $id && -e reports/$id.md ]] || continue
+        rc=0
+        python3 "$HERE/telegram-notify.py" report "reports/$id.md" --functions "reports/$id-functions.md" || rc=$?
+        if (( rc == 0 )); then say "report $id sent to Telegram"; else left+=("$id"); fi
+    done < <(awk '!seen[$0]++' "$TG_QUEUE")
+    printf '%s\n' "${left[@]}" | sed '/^$/d' >"$TG_QUEUE"
 fi
 
 # An update that came in while this run worked (its .path trigger is lost while we are active).

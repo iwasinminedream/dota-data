@@ -2,7 +2,7 @@
 """
 Snapshots the Linux .so files of the installed Dota 2 build and reports what changed between two
 snapshots: per-library size / export / string differences, which strings the Metamod plugins rely
-on disappeared, and a Russian summary written by Claude Haiku 4.5 (through the `claude` CLI, i.e.
+on disappeared, and a Russian summary written by Claude Sonnet 5.5 (through the `claude` CLI, i.e.
 the Claude Code login of this machine).
 
     so-report.py snapshot                 copy the installed build's .so files into the store
@@ -32,7 +32,7 @@ KEEP_SNAPSHOTS = int(os.environ.get('SO_KEEP', '3'))
 # are /opt/<name>/src.
 PLUGIN_STAGE = os.environ.get('SO_PLUGIN_STAGE', '/root/dota-custom/metamod/addons')
 PLUGIN_SOURCE = os.environ.get('SO_PLUGIN_SOURCE', '/opt/{}/src')
-HAIKU_MODEL = os.environ.get('SO_MODEL', 'claude-haiku-4-5')
+HAIKU_MODEL = os.environ.get('SO_MODEL', 'claude-sonnet-5-5')
 BIN_DIRS = {'bin': 'game/bin/linuxsteamrt64', 'dota-bin': 'game/dota/bin/linuxsteamrt64'}
 
 # Third-party libraries: listed in the file table, never diffed string by string.
@@ -98,9 +98,30 @@ def cmd_snapshot(_args):
         f.write('\n'.join(sums) + '\n')
     os.rename(tmp, target)
     print(f'snapshot {sid}: {len(sums)} files')
-    for old in list_snapshots()[:-KEEP_SNAPSHOTS]:
-        shutil.rmtree(os.path.join(STORE, old), ignore_errors=True)
-        print(f'removed old snapshot {old}')
+    prune()
+
+
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MAX_SNAPSHOTS = int(os.environ.get('SO_KEEP_MAX', '8'))
+
+
+def prune():
+    """Keeps the KEEP_SNAPSHOTS newest snapshots, and also (up to MAX_SNAPSHOTS in all) those a missing
+    update report still needs: a version without reports/<version>.md and the snapshot before it."""
+    snaps = list_snapshots()
+    keep = set(snaps[-KEEP_SNAPSHOTS:])
+    for i, sid in enumerate(snaps):
+        version = sid.split('-')[0]
+        if not glob.glob(os.path.join(REPO, 'reports', f'{version}.md')) and \
+                os.path.exists(os.path.join(REPO, 'files', 'changelogs', f'{version}.json')):
+            keep.add(sid)
+            if i:
+                keep.add(snaps[i - 1])
+    keep = set(sorted(keep, key=snaps.index)[-MAX_SNAPSHOTS:])
+    for old in snaps:
+        if old not in keep:
+            shutil.rmtree(os.path.join(STORE, old), ignore_errors=True)
+            print(f'removed old snapshot {old}')
 
 
 # --- ELF -----------------------------------------------------------------------------------------
@@ -395,7 +416,7 @@ def render(old, new, files, anchor_hits, summary, error):
     oi, ni = steam_inf(os.path.join(STORE, old, 'steam.inf')), steam_inf(os.path.join(STORE, new, 'steam.inf'))
     out = [f"# Dota 2 {oi.get('ClientVersion')} → {ni.get('ClientVersion')}: что изменилось в .so", '',
            f"Сборки `{old}` ({oi.get('VersionDate')}) → `{new}` ({ni.get('VersionDate')}). "
-           f"Отчёт создан автоматически {datetime.date.today().isoformat()}; сводку написал Claude Haiku 4.5 "
+           f"Отчёт создан автоматически {datetime.date.today().isoformat()}; сводку написал Claude Sonnet 5.5 "
            'по диффу строк и экспортов, таблицы ниже посчитаны без модели.', '']
     out.append('## Сводка')
     out.append('')

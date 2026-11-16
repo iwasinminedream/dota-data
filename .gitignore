@@ -8,3 +8,4 @@ dumper/linux/.build
 dumper/linux/client.log
 dumper/*.partial
 __pycache__/
+tracking/*.tmp/
