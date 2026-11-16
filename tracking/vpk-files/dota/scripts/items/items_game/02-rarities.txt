@@ -1,0 +1,60 @@
+	"rarities"
+	{
+		"common"
+		{
+			"value"		"1"
+			"loc_key"		"Rarity_Common"
+			"color"		"desc_common"
+			"next_rarity"		"uncommon"
+		}
+		"uncommon"
+		{
+			"value"		"2"
+			"loc_key"		"Rarity_Uncommon"
+			"color"		"desc_uncommon"
+			"next_rarity"		"rare"
+		}
+		"rare"
+		{
+			"value"		"3"
+			"loc_key"		"Rarity_Rare"
+			"color"		"desc_rare"
+			"next_rarity"		"mythical"
+		}
+		"mythical"
+		{
+			"value"		"4"
+			"loc_key"		"Rarity_Mythical"
+			"color"		"desc_mythical"
+		}
+		"legendary"
+		{
+			"value"		"5"
+			"loc_key"		"Rarity_Legendary"
+			"color"		"desc_legendary"
+		}
+		"ancient"
+		{
+			"value"		"6"
+			"loc_key"		"Rarity_Ancient"
+			"color"		"desc_ancient"
+		}
+		"immortal"
+		{
+			"value"		"7"
+			"loc_key"		"Rarity_Immortal"
+			"color"		"desc_immortal"
+		}
+		"arcana"
+		{
+			"value"		"8"
+			"loc_key"		"Rarity_Arcana"
+			"color"		"desc_arcana"
+		}
+		"seasonal"
+		{
+			"value"		"9"
+			"loc_key"		"Rarity_Seasonal"
+			"color"		"desc_seasonal"
+		}
+	}

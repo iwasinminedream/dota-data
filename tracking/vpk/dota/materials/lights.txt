@@ -1,0 +1,2 @@
+materials/lights/white.vtex_c crc=ed244601 size=1892
+materials/lights/white_tga_deab9e73.vtex_c crc=45e05258 size=1828

@@ -1,0 +1,14 @@
+particles/siege_fx/siege_bad_death_01.vpcf_c crc=49555f86 size=2223
+particles/siege_fx/siege_bad_death_01_winter.vpcf_c crc=90d2729b size=2229
+particles/siege_fx/siege_bad_debris.vpcf_c crc=e9634bd8 size=2428
+particles/siege_fx/siege_bad_splinters.vpcf_c crc=fb024b9e size=2408
+particles/siege_fx/siege_bits_01.vpcf_c crc=f08167d3 size=2359
+particles/siege_fx/siege_bits_02.vpcf_c crc=c320519d size=2657
+particles/siege_fx/siege_bits_03.vpcf_c crc=41b8414e size=2491
+particles/siege_fx/siege_crack.vpcf_c crc=adb3425c size=2210
+particles/siege_fx/siege_crack_b.vpcf_c crc=ffd7948c size=2105
+particles/siege_fx/siege_dust_01.vpcf_c crc=affa68d8 size=2086
+particles/siege_fx/siege_dust_02.vpcf_c crc=6909c38c size=2015
+particles/siege_fx/siege_good_death_01.vpcf_c crc=9af4ed13 size=2558
+particles/siege_fx/siege_good_death_01_winter.vpcf_c crc=5926ca53 size=2580
+particles/siege_fx/siege_good_death_sparks.vpcf_c crc=549ab669 size=2394

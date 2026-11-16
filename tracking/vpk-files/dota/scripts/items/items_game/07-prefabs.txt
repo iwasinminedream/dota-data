@@ -1,0 +1,724 @@
+	"prefabs"
+	{
+		"item"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Item"
+			"item_name"		"#DOTA_Wearable_Sven_DefaultSword"
+			"item_slot"		"weapon"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+		}
+		"wearable"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Wearable"
+			"item_name"		"#DOTA_Wearable_Sven_DefaultSword"
+			"item_slot"		"weapon"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_have_sockets"		"1"
+				"gems_can_be_extracted"		"1"
+				"can_gift_wrap"		"1"
+			}
+		}
+		"default_item"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Default_Item"
+			"item_name"		"#DOTA_Wearable_Sven_DefaultSword"
+			"item_slot"		"weapon"
+			"item_quality"		"base"
+			"item_rarity"		"common"
+			"baseitem"		"1"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"misc"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Misc"
+			"item_name"		"#DOTA_Wearable_Sven_DefaultSword"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"tool"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Tool"
+			"item_name"		"#DOTA_Wearable_Tool"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"emoticon_tool"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Emoticon_Tool"
+			"item_name"		"#DOTA_Wearable_Tool"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"league"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_League_Pass"
+			"item_name"		"#DOTA_Wearable_Tool"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"tool"
+			{
+				"type"		"league_view_pass"
+				"use_string"		"#ConsumeItem"
+			}
+			"capabilities"
+			{
+				"usable_gc"		"1"
+				"usable_out_of_game"		"1"
+			}
+		}
+		"bundle"
+		{
+			"item_class"		"bundle"
+			"item_type_name"		"#DOTA_WearableType_Bundle"
+			"item_name"		"#DOTA_Wearable_Bundle"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"usable_gc"		"1"
+				"usable_out_of_game"		"1"
+				"can_gift_wrap"		"1"
+			}
+			"tool"
+			{
+				"type"		"item_pack"
+				"use_string"		"#OpenBundle"
+			}
+		}
+		"courier"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Courier"
+			"item_name"		"#DOTA_Wearable_Courier"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"courier"
+			"player_loadout"		"1"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_have_sockets"		"1"
+				"gems_can_be_extracted"		"1"
+				"can_gift_wrap"		"1"
+			}
+		}
+		"ward"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Ward"
+			"item_name"		"#DOTA_Wearable_Ward"
+			"item_slot"		"ward"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+				"can_have_sockets"		"1"
+				"gems_can_be_extracted"		"1"
+				"can_gift_wrap"		"1"
+			}
+		}
+		"hud_skin"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Hud_Skin"
+			"item_name"		"#DOTA_Wearable_Hud_Skin"
+			"item_slot"		"hud_skin"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+			"capabilities"
+			{
+				"can_have_sockets"		"1"
+				"gems_can_be_extracted"		"1"
+				"can_gift_wrap"		"1"
+			}
+		}
+		"announcer"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Announcer"
+			"item_name"		"#DOTA_Wearable_Announcer"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+			"capabilities"
+			{
+				"can_gift_wrap"		"1"
+			}
+		}
+		"treasure_chest"
+		{
+			"item_class"		"supply_crate"
+			"item_type_name"		"#DOTA_WearableType_Treasure_Chest"
+			"item_name"		"#DOTA_Wearable_TreasureChest"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"decodable"		"1"
+			}
+			"treasure_chest"
+			{
+				"unusual_courier"
+				{
+					"name"		"#DOTA_UnusualCourier"
+					"text"		"#DOTA_UnusualCourier_Text"
+					"icon"		"econ/tools/special_courier"
+					"desc"		"#DOTA_UnusualCourier_Desc"
+					"desc_color"		"desc_legendary"
+				}
+			}
+		}
+		"retired_treasure_chest"
+		{
+			"item_class"		"supply_crate"
+			"item_type_name"		"#DOTA_WearableType_Treasure_Chest"
+			"item_name"		"#DOTA_Wearable_TreasureChest"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"decodable"		"1"
+			}
+			"treasure_chest"
+			{
+				"unusual_courier"
+				{
+					"name"		"#DOTA_UnusualCourier"
+					"text"		"#DOTA_UnusualCourier_Text"
+					"icon"		"econ/tools/special_courier"
+					"desc"		"#DOTA_UnusualCourier_Desc"
+					"desc_color"		"desc_legendary"
+				}
+			}
+		}
+		"pennant"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Pennant"
+			"item_name"		"#DOTA_Wearable_Pennant"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"passport_fantasy_team"
+		{
+			"item_class"		"passport_fantasy_team"
+			"item_type_name"		"#DOTA_WearableType_Passport_Fantasy_Team"
+			"item_name"		"#DOTA_Wearable_PassportFantasyTeam"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"player_card"
+		{
+			"item_class"		"player_card"
+			"item_type_name"		"#DOTA_WearableType_Player_Card"
+			"item_name"		"#DOTA_Wearable_PlayerCard"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"courier_wearable"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Courier_Wearable"
+			"item_name"		"#DOTA_Wearable_Courier_Wearable"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"modifier"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Modifier"
+			"item_name"		"#DOTA_Wearable_Modifier"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"key"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Treasure_Key"
+			"item_name"		"#DOTA_Wearable_Tool"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+		"taunt"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Taunt"
+			"item_name"		"#DOTA_Wearable_Sven_DefaultSword"
+			"item_slot"		"taunt"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"capabilities"
+			{
+				"nameable"		"1"
+			}
+			"tool"
+			{
+				"type"		"hero_taunt"
+			}
+			"capabilities"
+			{
+				"nameable"		"1"
+				"usable"		"1"
+			}
+		}
+		"loading_screen"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Loading_Screen"
+			"item_name"		"#DOTA_Wearable_Loading_Screen"
+			"item_slot"		"loading_screen"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+			"capabilities"
+			{
+				"can_gift_wrap"		"1"
+			}
+		}
+		"cursor_pack"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Cursor_Pack"
+			"item_name"		"#DOTA_Wearable_Cursor_Pack"
+			"item_slot"		"cursor_pack"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+			"capabilities"
+			{
+				"can_gift_wrap"		"1"
+			}
+		}
+		"dynamic_recipe"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Recipe"
+			"item_name"		"#DOTA_Wearable_Recipe"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"tool"
+			{
+				"type"		"dynamic_recipe"
+				"use_string"		"#ItemDynamicRecipe_Use"
+				"usage_capabilities"
+				{
+					"can_consume"		"1"
+				}
+			}
+		}
+		"socket_gem"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_SocketGem"
+			"item_name"		"#DOTA_Wearable_SocketGem"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"capabilities"
+			{
+				"is_gem"		"1"
+			}
+		}
+		"music"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Music"
+			"item_name"		"#DOTA_Wearable_Music"
+			"item_slot"		"music"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"teleport_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Teleport_Effect"
+			"item_name"		"#DOTA_Wearable_Teleport_Effect"
+			"item_slot"		"teleport_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"blink_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Blink_Effect"
+			"item_name"		"#DOTA_Wearable_Blink_Effect"
+			"item_slot"		"blink_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"weather"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Weather_Effect"
+			"item_name"		"#DOTA_Item_Default_Weather"
+			"item_slot"		"weather"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"summons"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_Summoned_Unit_Ambient_Effect"
+			"item_name"		"#DOTA_Item_Summoned_Unit_Ambient_Effect"
+			"item_slot"		"ambient_effects"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"baseitem"		"1"
+		}
+		"terrain"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Terrain"
+			"item_name"		"#DOTA_Item_Default_Terrain"
+			"item_slot"		"terrain"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"emblem"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Emblem"
+			"item_name"		"#DOTA_Item_Default_Emblem"
+			"item_slot"		"emblem"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"radiantcreeps"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Radiant_Creeps"
+			"item_name"		"#DOTA_Item_Default_Radiant_Creeps"
+			"item_slot"		"radiant_creeps"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"direcreeps"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Dire_Creeps"
+			"item_name"		"#DOTA_Item_Default_Dire_Creeps"
+			"item_slot"		"dire_creeps"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"radianttowers"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Radiant_Towers"
+			"item_name"		"#DOTA_Item_Default_Radiant_Towers"
+			"item_slot"		"radiant_towers"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"diretowers"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Dire_Towers"
+			"item_name"		"#DOTA_Item_Default_Dire_Towers"
+			"item_slot"		"dire_towers"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"versus_screen"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_VersusScreen"
+			"item_name"		"#DOTA_Item_Default_VersusScreen"
+			"item_slot"		"versus_screen"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"streak_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_StreakEffect"
+			"item_name"		"#DOTA_Item_Default_StreakEffect"
+			"item_slot"		"streak_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"kill_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_KillEffect"
+			"item_name"		"#DOTA_Item_Default_KillEffect"
+			"item_slot"		"kill_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"death_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_DeathEffect"
+			"item_name"		"#DOTA_Item_Default_DeathEffect"
+			"item_slot"		"death_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"head_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_HeadEffect"
+			"item_name"		"#DOTA_Item_Default_HeadEffect"
+			"item_slot"		"head_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"map_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_MapEffect"
+			"item_name"		"#DOTA_Item_Default_MapEffect"
+			"item_slot"		"map_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"courier_effect"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_CourierEffect"
+			"item_name"		"#DOTA_Item_Default_CourierEffect"
+			"item_slot"		"courier_effect"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"radiantsiegecreeps"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Radiant_Siege_Creeps"
+			"item_name"		"#DOTA_Item_Default_Radiant_Siege_Creeps"
+			"item_slot"		"radiant_siege_creeps"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"diresiegecreeps"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Dire_Siege_Creeps"
+			"item_name"		"#DOTA_Item_Default_Dire_Siege_Creeps"
+			"item_slot"		"dire_siege_creeps"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"sticker_capsule"
+		{
+			"item_class"		"supply_crate"
+			"item_type_name"		"#DOTA_WearableType_StickerPack"
+			"item_name"		"#DOTA_Wearable_StickerPack"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"legendary"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"perfect_world_explicit_whitelist"		"1"
+			"capabilities"
+			{
+				"decodable"		"1"
+				"no_key_required"		"1"
+			}
+			"static_attributes"
+			{
+				"recycling title"		"#DOTA_Sticker_RecyclingTitle"
+				"recycling description"		"#DOTA_Sticker_RecyclingDescription"
+			}
+		}
+		"sticker"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Sticker"
+			"item_name"		"#DOTA_Wearable_Sticker"
+			"item_quality"		"unique"
+			"item_rarity"		"uncommon"
+			"item_slot"		"none"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"tool"
+			{
+				"type"		"dynamic_sticker"
+			}
+		}
+		"roshan"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Roshan"
+			"item_name"		"#DOTA_Item_Default_Roshan"
+			"item_slot"		"roshan"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"tormentor"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Tormentor"
+			"item_name"		"#DOTA_Item_Default_Tormentor"
+			"item_slot"		"tormentor"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"ancient"
+		{
+			"item_class"		"dota_item_wearable"
+			"item_type_name"		"#DOTA_WearableType_Ancient"
+			"item_name"		"#DOTA_Item_Default_Ancient"
+			"item_slot"		"ancient"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+			"player_loadout"		"1"
+		}
+		"showcase_decoration"
+		{
+			"item_class"		"tool"
+			"item_type_name"		"#DOTA_WearableType_Showcase_Decoration"
+			"item_name"		"#DOTA_Item_Showcase_Decoration"
+			"item_slot"		"none"
+			"item_quality"		"unique"
+			"item_rarity"		"common"
+			"min_ilevel"		"1"
+			"max_ilevel"		"1"
+		}
+	}

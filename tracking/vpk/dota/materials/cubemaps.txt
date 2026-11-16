@@ -1,0 +1,16 @@
+materials/cubemaps/blue_day_cube_psd_3e67c8f2.vtex_c crc=eab6caca size=262840
+materials/cubemaps/bronze_day_contrast_cube_psd_be2fead9.vtex_c crc=63a4537c size=262888
+materials/cubemaps/bronze_day_cube_psd_39b66ffb.vtex_c crc=b5d2a336 size=66440
+materials/cubemaps/frostivus_cube_psd_276523f9.vtex_c crc=0352a2c2 size=263240
+materials/cubemaps/gold_day_cube_psd_803a65b6.vtex_c crc=fc12581b size=262840
+materials/cubemaps/gold_sticker_cube_psd_c1204dcf.vtex_c crc=7e0ab93a size=263304
+materials/cubemaps/palegreen_day_cube_psd_a88a532d.vtex_c crc=cd1ae9db size=262856
+materials/cubemaps/purple_day_cube_psd_94d8476d.vtex_c crc=b3adb38b size=262840
+materials/cubemaps/red_day_cube_psd_6a8fe464.vtex_c crc=d68e8552 size=262840
+materials/cubemaps/steel_day_cube_psd_1f40702c.vtex_c crc=1039b532 size=66232
+materials/cubemaps/sticker_2026a_cube_png_8949ee91.vtex_c crc=fce94b21 size=1049720
+materials/cubemaps/sticker_2026b_cube_png_1bb233e7.vtex_c crc=0d44e153 size=1049720
+materials/cubemaps/water_cube_psd_aa9e487d.vtex_c crc=8e10761e size=263192
+materials/cubemaps/wraithking_arcana_alt_cube_psd_92beb487.vtex_c crc=47ad2a94 size=263096
+materials/cubemaps/wraithking_arcana_cube_psd_f62ced81.vtex_c crc=13d80d77 size=263080
+materials/cubemaps/wraithking_frostivus_cube_psd_1aea2cc6.vtex_c crc=d9db0203 size=263256

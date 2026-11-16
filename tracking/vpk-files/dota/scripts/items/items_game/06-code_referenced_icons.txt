@@ -1,0 +1,6 @@
+	"code_referenced_icons"
+	{
+		"icon_path"		"econ/default_item"
+		"icon_path"		"econ/default_no_item"
+		"icon_path"		"econ/sockets/gem_stat_empty"
+	}

@@ -1,0 +1,384 @@
+syntax = "proto2";
+
+import "steammessages.proto";
+import "dota_shared_enums.proto";
+import "dota_gcmessages_common.proto";
+import "gcsdk_gcmessages.proto";
+import "base_gcmessages.proto";
+import "econ_gcmessages.proto";
+import "valveextensions.proto";
+
+enum CMsgBattleReport_HighlightType {
+	k_eHighlightTypeInvalid = -1 [(1002) = 1];
+	k_eGameWinrate = 0 [(1000) = "Game Winrate"];
+	k_eLaneWinrate = 1 [(1000) = "Lane Winrate"];
+	k_eMMRDelta = 2 [(1000) = "Ranked MMR Delta"];
+	k_eNumHeroesPlayed = 3 [(1000) = "Number of Heroes Played"];
+	k_eNumGamesPlayed = 4 [(1000) = "Number of Games Played"];
+	k_eAveragePowerRunesTaken = 5 [(1000) = "Average Power Runes Taken"];
+	k_eAverageBountyRunesTaken = 6 [(1000) = "Average Bounty Runes Taken"];
+	k_eTotalKillEnemyT1First = 7 [(1000) = "Total Enemy T1 Destroyed First"];
+	k_eTotalRoshanKills = 8 [(1000) = "Total Roshan Kills"];
+	k_eTotalDewards = 9 [(1000) = "Total Dewards"];
+	k_eTotalCampsStacked = 10 [(1000) = "Total Camps Stacked"];
+	k_eMaxWinstreak = 11 [(1000) = "Max Win Streak"];
+	k_eAverageDewards = 12 [(1000) = "Average Dewards"];
+	k_eAverageKills = 13 [(1000) = "Average Kills"];
+	k_eMaxKills = 14 [(1000) = "Max Kills"];
+	k_eAverageAssists = 15 [(1000) = "Average Assists"];
+	k_eMaxAssists = 16 [(1000) = "Max Assists"];
+	k_eAverageDeaths = 17 [(1000) = "Average Deaths"];
+	k_eMinDeaths = 18 [(1000) = "Min Deaths"];
+	k_eAverageCampsStacked = 19 [(1000) = "Average Camps Stacked"];
+	k_eTotalLastHits = 20 [(1000) = "Total Last Hits"];
+	k_eAverageLastHits = 21 [(1000) = "Average Last Hits"];
+	k_eTotalDenies = 22 [(1000) = "Total Denies"];
+	k_eAverageDenies = 23 [(1000) = "Average Denies"];
+	k_eTotalGamesWithRoshanAdvantage = 24 [(1000) = "Total Games With Roshan Advantage (Player team killed Roshan more times)"];
+	k_ePercentGamesWithRoshanAdvantage = 25 [(1000) = "Pct Games With Roshan Advantage (Player team killed Roshan more times)"];
+	k_eAverageStunDuration = 26 [(1000) = "Average Stun Duration"];
+	k_eTotalStunDuration = 27 [(1000) = "Total Stun Duration"];
+	k_eAverageTeleportsUsed = 28 [(1000) = "Average Teleports Used"];
+	k_eTotalTeleportsUsed = 29 [(1000) = "Total Teleports Used"];
+	k_eAverageHeroDamage = 30 [(1000) = "Average Hero Damage"];
+	k_eTotalHeroDamage = 31 [(1000) = "Total Hero Damage"];
+	k_eAverageHeroHealing = 32 [(1000) = "Average Hero Healing"];
+	k_eTotalHeroHealing = 33 [(1000) = "Total Hero Healing"];
+	k_eAverageTowerDamage = 34 [(1000) = "Average Tower Damage"];
+	k_eTotalTowerDamage = 35 [(1000) = "Total Tower Damage"];
+	k_eMaxLossStreak = 36 [(1000) = "Max Loss Streak"];
+	k_eAverageGameDuration = 37 [(1000) = "Average Game Duration"];
+	k_eMaxGameDuration = 38 [(1000) = "Max Game Duration"];
+	k_eMinGameDuration = 39 [(1000) = "Min Game Duration"];
+	k_eAverageWinDuration = 40 [(1000) = "Average Win Duration"];
+	k_eMaxWinDuration = 41 [(1000) = "Max Win Duration"];
+	k_eMinWinDuration = 42 [(1000) = "Min Win Duration"];
+	k_eAverageLossDuration = 43 [(1000) = "Average Loss Duration"];
+	k_eMaxLossDuration = 44 [(1000) = "Max Loss Duration"];
+	k_eMinLossDuration = 45 [(1000) = "Min Loss Duration"];
+	k_ePctGamesEnemyT1TakenFirst = 46 [(1000) = "Pct Games With Enemy Lane T1 Taken First"];
+	k_eMaxCampsStacked = 47 [(1000) = "Max Camps Stacked"];
+	k_eMaxDewards = 48 [(1000) = "Max Dewards"];
+	k_eMaxRoshanKills = 49 [(1000) = "Max Roshan Kills"];
+	k_eMaxBountyRunesTaken = 50 [(1000) = "Max Bounty Runes Taken"];
+	k_eMaxPowerRunesTaken = 51 [(1000) = "Max Power Runes Taken"];
+	k_eMaxDeaths = 52 [(1000) = "Max Deaths"];
+	k_eMaxLastHits = 53 [(1000) = "Max Last Hits"];
+	k_eMaxDenies = 54 [(1000) = "Max Denies"];
+	k_eRadiantWinRate = 55 [(1000) = "Radiant Winrate"];
+	k_eDireWinRate = 56 [(1000) = "Dire Winrate"];
+	k_eRadiantGameCount = 57 [(1000) = "Radiant Game Count"];
+	k_eDireGameCount = 58 [(1000) = "Dire Game Count"];
+	k_eMaxDamage = 59 [(1000) = "Max Hero Damage"];
+	k_eMaxHealing = 60 [(1000) = "Max Healing"];
+	k_eMaxTowerDamage = 61 [(1000) = "Max Tower Damage"];
+	k_eAverageGPM = 62 [(1000) = "Average GPM"];
+	k_eMaxGPM = 63 [(1000) = "Max GPM"];
+	k_eAverageXPM = 64 [(1000) = "Average XPM"];
+	k_eMaxXPM = 65 [(1000) = "Max XPM"];
+}
+
+enum CMsgBattleReport_HighlightCategory {
+	k_eHighlightGeneral = 0 [(1000) = "General"];
+	k_eHighlightHero = 1 [(1000) = "Hero"];
+	k_eHighlightRole = 2 [(1000) = "Role"];
+}
+
+enum CMsgBattleReport_Role {
+	k_eUnknownRole = -1 [(1002) = 1];
+	k_eSafelane = 0 [(1000) = "Safe Lane"];
+	k_eMidlane = 1 [(1000) = "Mid Lane"];
+	k_eOfflane = 2 [(1000) = "Off Lane"];
+	k_eSupport = 3 [(1000) = "Support"];
+	k_eHardSupport = 4 [(1000) = "Hard Support"];
+}
+
+enum CMsgBattleReport_CompareContext {
+	k_eCompareContextInvalid = -1 [(1002) = 1];
+	k_eAbsoluteValue = 0 [(1000) = "Overall Value"];
+	k_ePlayersOfSimilarRank = 1 [(1000) = "Vs Rank Population"];
+	k_eAllPlayers = 2 [(1000) = "Vs All Players"];
+	k_ePlayersPersonalHistory = 3 [(1000) = "Vs Personal History"];
+}
+
+enum CMsgBattleReport_HighlightTier {
+	k_eHighlightTierLow = -1 [(1000) = "Tier Low"];
+	k_eHighlightTierNone = 0 [(1002) = 1];
+	k_eHighlightTier1 = 1 [(1000) = "Tier 1"];
+	k_eHighlightTier2 = 2 [(1000) = "Tier 2"];
+	k_eHighlightTier3 = 3 [(1000) = "Tier 3"];
+	k_eHighlightTierCustom = 4 [(1000) = "Custom"];
+}
+
+enum CMsgBattleReport_HighlightRarity {
+	k_eHighlightCommon = 0 [(1000) = "Common"];
+	k_eHighlightUncommon = 1 [(1000) = "Uncommon"];
+	k_eHighlightRare = 2 [(1000) = "Rare"];
+}
+
+enum CMsgBattleReport_EOutcome {
+	k_eWin = 0;
+	k_eLoss = 1;
+}
+
+enum CMsgBattleReport_ELaneOutcome {
+	k_eUnknownLaneOutcome = -1;
+	k_eWonLane = 0;
+	k_eLostLane = 1;
+	k_eEvenLane = 2;
+}
+
+message CMsgClientToGCGetBattleReport {
+	optional uint32 account_id = 1;
+	optional uint32 timestamp = 2;
+	optional uint32 duration = 3;
+}
+
+message CMsgBattleReport_Game {
+	optional int32 hero_id = 1 [(20) = "HeroID_t"];
+	optional uint32 kills = 2;
+	optional uint32 deaths = 3;
+	optional uint32 assists = 4;
+	optional int32 rank_change = 5;
+	optional uint32 last_hits = 6;
+	optional uint32 denies = 21;
+	optional uint32 gpm = 7;
+	optional uint32 xpm = 8;
+	optional .CMsgBattleReport_Role role = 9;
+	optional .CMsgBattleReport_EOutcome outcome = 10;
+	optional .CMsgBattleReport_ELaneOutcome lane_outcome = 11;
+	optional bool ranked = 12;
+	optional uint64 match_id = 13 [(20) = "MatchID_t"];
+	optional uint32 lane_selection_flags = 14;
+	optional uint32 predicted_position = 15;
+	optional uint32 seconds_dead = 16;
+	optional uint32 winning_team = 17;
+	optional uint32 player_slot = 28 [(20) = "GCPlayerSlot_t"];
+	optional bool party_game = 19;
+	optional uint32 start_time = 20;
+	optional uint32 bounty_runes = 22;
+	optional uint32 water_runes = 23;
+	optional uint32 power_runes = 24;
+	optional uint32 time_enemy_t1_tower_destroyed = 25;
+	optional uint32 time_friendly_t1_tower_destroyed = 26;
+	optional uint32 enemy_roshan_kills = 27;
+	optional uint32 teleports_used = 29;
+	optional uint32 dewards = 30;
+	optional uint32 camps_stacked = 31;
+	optional uint32 support_gold = 32;
+	optional uint32 hero_damage = 33;
+	optional uint32 hero_healing = 34;
+	optional uint32 tower_damage = 35;
+	optional uint32 successful_smokes = 36;
+	optional uint32 stun_duration = 37;
+	optional uint32 duration = 38;
+	optional uint32 friendly_roshan_kills = 39;
+	optional int32 previous_rank = 40;
+	optional uint32 game_mode = 41;
+	optional uint32 lobby_type = 42;
+	optional float time_purchased_shard = 43;
+	optional float time_purchased_scepter = 44;
+	optional int32 item0 = 45 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional int32 item1 = 46 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional int32 item2 = 47 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional int32 item3 = 48 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional int32 item4 = 49 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional int32 item5 = 50 [default = -1, (20) = "AbilityID_t", (21) = "-1"];
+	optional uint32 selected_facet = 51 [(20) = "HeroFacetID_t"];
+}
+
+message CMsgBattleReport_GameList {
+	repeated .CMsgBattleReport_Game games = 1;
+}
+
+message CMsgBattleReport {
+	message HighlightGeneral {
+		optional int32 win_loss_window = 1;
+		optional float win_percent = 2;
+		optional int32 mmr_delta = 3;
+		optional float highlight_score = 4;
+	}
+	message Highlight {
+		optional uint32 highlight_id = 1;
+		optional .CMsgBattleReport_HighlightCategory category = 2;
+		optional .CMsgBattleReport_HighlightTier tier = 3;
+		optional .CMsgBattleReport_HighlightRarity rarity = 4;
+		optional float score = 5;
+		optional float confidence = 6;
+		optional int32 hero_id = 7 [(20) = "HeroID_t"];
+		optional .CMsgBattleReport_Role role = 8;
+		optional float comparison_delta_value = 9;
+		optional .CMsgBattleReport_CompareContext context = 10;
+	}
+	repeated .CMsgBattleReport_Game games = 1;
+	optional .CMsgBattleReportHighlights highlights = 3;
+}
+
+message CMsgBattleReportInfo {
+	optional uint32 timestamp = 1;
+	optional uint32 duration = 2;
+	optional bool acknowledged = 3;
+	optional int32 featured_hero_id = 4 [(20) = "HeroID_t"];
+	optional uint32 featured_position = 5;
+	optional uint32 games_played = 6;
+	repeated uint32 medal_counts = 7;
+}
+
+message CMsgBattleReportInfoList {
+	repeated .CMsgBattleReportInfo battle_report_info = 1;
+}
+
+message CMsgBattleReportHighlights {
+	repeated .CMsgBattleReport.Highlight highlights = 1;
+}
+
+message CMsgBattleReportAggregateStats {
+	message CMsgBattleReportStat {
+		optional float mean = 1;
+		optional float stdev = 2;
+	}
+	message CMsgBattleReportAggregate {
+		optional int32 hero_id = 1 [(20) = "HeroID_t"];
+		optional uint32 predicted_position = 2;
+		optional uint32 game_count = 3;
+		optional uint32 win_count = 4;
+		optional uint32 lane_win_count = 5;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat kills = 6;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat deaths = 7;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat assists = 8;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat rank_change = 9;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat last_hits = 10;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat denies = 11;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat gpm = 12;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat xpm = 13;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat seconds_dead = 14;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat bounty_runes = 15;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat water_runes = 16;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat power_runes = 17;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat time_enemy_t1_tower_destroyed = 18;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat time_friendly_t1_tower_destroyed = 19;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat enemy_roshan_kills = 20;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat teleports_used = 21;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat dewards = 22;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat camps_stacked = 23;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat support_gold = 24;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat hero_damage = 25;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat hero_healing = 26;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat tower_damage = 27;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat successful_smokes = 28;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat stun_duration = 29;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat duration = 30;
+		optional .CMsgBattleReportAggregateStats.CMsgBattleReportStat friendly_roshan_kills = 31;
+	}
+	repeated .CMsgBattleReportAggregateStats.CMsgBattleReportAggregate result = 1;
+}
+
+message CMsgBattleReportAggregatedGeneralStats {
+}
+
+message CMsgClientToGCGetBattleReportResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_ePermissionDenied = 4;
+		k_eNotSubscribedToDotaPlus = 5;
+		k_eInvalidParameters = 6;
+		k_eUnableToGetPlusSubInfo = 7;
+		k_eUnableToLoadBattleReport = 8;
+		k_eUnableToSaveBattleReport = 9;
+		k_eUnableToGetAggregates = 10;
+		k_eNotEnoughGamesPlayed = 11;
+	}
+	optional .CMsgBattleReport report = 1;
+	optional .CMsgClientToGCGetBattleReportResponse.EResponse response = 2;
+	optional .CMsgBattleReportAggregateStats aggregate_stats = 3;
+	optional .CMsgBattleReportInfo info = 4;
+}
+
+message CMsgClientToGCGetBattleReportAggregateStats {
+	message CMsgBattleReportAggregateKey {
+		optional int32 hero_id = 1 [(20) = "HeroID_t"];
+		optional uint32 predicted_position = 2;
+	}
+	repeated .CMsgClientToGCGetBattleReportAggregateStats.CMsgBattleReportAggregateKey aggregate_keys = 1;
+	optional uint32 timestamp = 2;
+	optional uint32 duration = 3;
+	optional uint32 rank = 4;
+}
+
+message CMsgClientToGCGetBattleReportAggregateStatsResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_ePermissionDenied = 4;
+		k_eInvalidParams = 5;
+		k_eNotSubscribedToDotaPlus = 6;
+	}
+	optional .CMsgBattleReportAggregateStats aggregate_stats = 1;
+	optional .CMsgClientToGCGetBattleReportAggregateStatsResponse.EResponse response = 2;
+}
+
+message CMsgClientToGCGetBattleReportInfo {
+	optional uint32 account_id = 1;
+}
+
+message CMsgClientToGCGetBattleReportInfoResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_ePermissionDenied = 4;
+		k_eNotSubscribedToDotaPlus = 5;
+	}
+	optional .CMsgBattleReportInfoList battle_report_info_list = 1;
+	optional .CMsgClientToGCGetBattleReportInfoResponse.EResponse response = 2;
+}
+
+message CMsgClientToGCAcknowledgeBattleReport {
+	optional uint32 account_id = 1;
+	optional uint32 timestamp = 2;
+	optional uint32 duration = 3;
+}
+
+message CMsgClientToGCAcknowledgeBattleReportResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_eTimeout = 4;
+		k_ePermissionDenied = 5;
+		k_eUnableToLoadBattleReport = 6;
+		k_eAlreadyAcknowledged = 7;
+		k_eUnknownReport = 8;
+		k_eNotSubscribedToDotaPlus = 9;
+		k_eNotEnoughGamesPlayed = 10;
+	}
+	optional .CMsgClientToGCAcknowledgeBattleReportResponse.EResponse response = 1;
+	optional uint32 shards_awarded = 2;
+}
+
+message CMsgClientToGCGetBattleReportMatchHistory {
+	optional uint32 account_id = 1;
+	optional uint32 timestamp = 2;
+	optional uint32 duration = 3;
+}
+
+message CMsgClientToGCGetBattleReportMatchHistoryResponse {
+	enum EResponse {
+		k_eInternalError = 0;
+		k_eSuccess = 1;
+		k_eTooBusy = 2;
+		k_eDisabled = 3;
+		k_eTimeout = 4;
+		k_ePermissionDenied = 5;
+		k_eNotSubscribedToDotaPlus = 6;
+	}
+	optional .CMsgClientToGCGetBattleReportMatchHistoryResponse.EResponse response = 1;
+	optional .CMsgBattleReport_GameList games = 2;
+}

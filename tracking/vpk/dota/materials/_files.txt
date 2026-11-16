@@ -1,0 +1,8 @@
+materials/console_background.vmat_c crc=5f82637c size=3360
+materials/console_background_color_psd_b9e26a4.vtex_c crc=82375ee0 size=2797948
+materials/loading_background.vmat_c crc=b0eec946 size=3360
+materials/loading_background_color_psd_4de9d46f.vtex_c crc=7574c7b9 size=2797948
+materials/startup_background.vmat_c crc=06f060b8 size=3528
+materials/startup_background_cn.vmat_c crc=66f99486 size=3560
+materials/startup_background_color_cn_png_2aad240b.vtex_c crc=6e58d15d size=263908
+materials/startup_background_color_png_65ffcfa7.vtex_c crc=9a3475cf size=176508

@@ -1,0 +1,13 @@
+elements/sessions/battlepass.dmx crc=3a5d5cfa size=3850789
+elements/sessions/clinkzti6.dmx crc=2cfdd511 size=832697
+elements/sessions/overthrow_midas_throne.dmx crc=581406e3 size=4430
+elements/sessions/role_position_battle_report_render.dmx crc=d445fca9 size=1621306
+elements/sessions/session29.dmx crc=3e56e583 size=509550
+elements/sessions/session7c.dmx crc=939378d3 size=2773986
+elements/sessions/session_linacommunityachievement2.dmx crc=56131307 size=1056701
+elements/sessions/sfm_ssao_and_volumetrics_test.dmx crc=9df59e03 size=18128
+elements/sessions/ursa_ti6.dmx crc=cebf8de7 size=644347
+elements/sessions/ursa_ti6_alt.dmx crc=55f043b5 size=939384
+elements/sessions/wall_light_test.dmx crc=a36a1fad size=760899
+elements/sessions/windrangerbattleranger.dmx crc=5b317e0a size=731648
+elements/sessions/windrangerbattleranger_alt.dmx crc=de880f62 size=731645

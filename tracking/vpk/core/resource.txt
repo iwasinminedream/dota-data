@@ -1,0 +1,6 @@
+resource/bugreporter.res crc=17e96be8 size=79
+resource/clientscheme.res crc=1353d7a8 size=14457
+resource/colorpicker.res crc=3d009bed size=7865
+resource/colorpickerframe.res crc=16c7a3fa size=1455
+resource/core.gameevents crc=cff06046 size=17305
+resource/gamemenu.res crc=e1f8d188 size=22

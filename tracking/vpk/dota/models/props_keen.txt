@@ -1,0 +1,6 @@
+models/props_keen/keen_door_01.vmdl_c crc=6b353aea size=106988
+models/props_keen/keen_wall_01.vmdl_c crc=148d3637 size=10540
+models/props_keen/keen_wall_01a.vmdl_c crc=510300b1 size=11405
+models/props_keen/keen_wall_01b.vmdl_c crc=ed3a1556 size=11373
+models/props_keen/keen_wall_base_01.vmdl_c crc=8eb76c7c size=8273
+models/props_keen/keen_wall_porch_01.vmdl_c crc=90056863 size=19458

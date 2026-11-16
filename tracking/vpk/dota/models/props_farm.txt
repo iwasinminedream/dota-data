@@ -1,0 +1,1 @@
+models/props_farm/anvil.vmdl_c crc=d50544ba size=28492

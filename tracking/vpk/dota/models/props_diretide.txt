@@ -1,0 +1,5 @@
+models/props_diretide/coffin_animatronic.vmdl_c crc=68d14a4d size=28403
+models/props_diretide/gravehands.vmdl_c crc=0b536f40 size=76737
+models/props_diretide/handcreature.vmdl_c crc=2c912ef0 size=47375
+models/props_diretide/pumpkin_head.vmdl_c crc=29f30bfb size=78822
+models/props_diretide/skeleton_animatronic.vmdl_c crc=001fb09e size=223551

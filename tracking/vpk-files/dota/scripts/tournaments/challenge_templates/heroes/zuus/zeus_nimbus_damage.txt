@@ -1,0 +1,47 @@
+"zeus_nimbus_damage"
+{
+	"desc"				"#DOTA_ChallengeDesc_Zeus_Nimbus_Damage"
+	"status_text"		"#DOTA_ChallengeStatus_Zeus_Nimbus_Damage"
+	"image"				"images/spellicons/zuus_cloud.png"
+	"requiredhero"		"zuus"
+	"events"
+	{
+		"matching_type"		"linear_series"
+		"query"
+		{
+			"nimbus_killeater"
+			{
+				"event"						"kill_eater"
+				"caster"					"!hero"
+				"kill_eater_event"			"873"
+				"storage"
+				{	
+					"1"
+					{
+						"key"		"value"
+						"aggregator"		"sum"
+					}		
+				}
+			}
+		}
+		"clear_storage_per_query"	"0"
+		"progress_stored_in"		"1"
+		"post_tests"
+		{
+			"test_value"
+			{
+				"storage"		"1"
+				"compare"		">="
+				"amount"		"<nimbus_damage>"
+			}
+		}
+	}
+	"variables"
+	{
+		"<nimbus_damage>"
+		{
+			"format"	"int"
+			"index"		"0"
+		}
+	}
+}

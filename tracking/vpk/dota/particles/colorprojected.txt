@@ -1,0 +1,2 @@
+particles/colorprojected/projected_gray.vpcf_c crc=cc787ee3 size=1736
+particles/colorprojected/spritecard_gray.vpcf_c crc=ac44d9f8 size=1695

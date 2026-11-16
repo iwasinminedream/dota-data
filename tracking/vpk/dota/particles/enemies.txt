@@ -1,0 +1,17 @@
+particles/enemies/lich_linear_chain_frost.vpcf_c crc=830e8cd2 size=3187
+particles/enemies/lich_linear_chain_frosta.vpcf_c crc=f6e02cf9 size=2534
+particles/enemies/lich_linear_chain_frostb.vpcf_c crc=db051100 size=2851
+particles/enemies/lich_linear_chain_frostb0.vpcf_c crc=354f4c97 size=2328
+particles/enemies/lich_linear_chain_frostb1.vpcf_c crc=18a350f7 size=2336
+particles/enemies/lich_linear_chain_frostb2.vpcf_c crc=b95fdc96 size=2935
+particles/enemies/lich_linear_chain_frostb3.vpcf_c crc=cc0a0814 size=2221
+particles/enemies/lich_linear_chain_frostb4.vpcf_c crc=26beaa05 size=2325
+particles/enemies/lich_linear_chain_frostc.vpcf_c crc=e70b145f size=2237
+particles/enemies/lich_linear_chain_frostd.vpcf_c crc=047557d7 size=2329
+particles/enemies/lich_linear_chain_froste.vpcf_c crc=e6a41e90 size=2753
+particles/enemies/lich_linear_chain_frostf.vpcf_c crc=65019da3 size=2326
+particles/enemies/lich_linear_chain_frostg.vpcf_c crc=affae12e size=3006
+particles/enemies/lich_linear_chain_frosth.vpcf_c crc=97895806 size=2617
+particles/enemies/lich_linear_chain_frosti.vpcf_c crc=85e68dc6 size=2921
+particles/enemies/lich_linear_chain_frostj.vpcf_c crc=9670c27a size=3442
+particles/enemies/lich_linear_chain_frostk.vpcf_c crc=b4dfa165 size=2737

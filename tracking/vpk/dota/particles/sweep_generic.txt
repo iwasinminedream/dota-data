@@ -1,0 +1,9 @@
+particles/sweep_generic/error_copy.vpcf_c crc=cc3204df size=2162
+particles/sweep_generic/error_copy3.vpcf_c crc=2dde12d8 size=1948
+particles/sweep_generic/sweep_1.vpcf_c crc=34f8cdb8 size=2026
+particles/sweep_generic/sweep_1b.vpcf_c crc=eac61bb7 size=2322
+particles/sweep_generic/sweep_2.vpcf_c crc=8f54e9f5 size=2055
+particles/sweep_generic/sweep_2b.vpcf_c crc=728413d1 size=2324
+particles/sweep_generic/sweep_3.vpcf_c crc=30cb8bd6 size=2052
+particles/sweep_generic/sweep_3b.vpcf_c crc=7a0e563f size=2420
+particles/sweep_generic/sweep_4.vpcf_c crc=1103cb9f size=2025

@@ -1,0 +1,9 @@
+particles/particles/econ/events/compendium_2024/compendium_2024_teleport_fx_model/curtain_top_left_reversed_vsnap.vsnap_c crc=3a9ebeb6 size=1023
+particles/particles/econ/events/compendium_2024/compendium_2024_teleport_fx_model/curtain_top_left_vsnap.vsnap_c crc=c58be1bd size=1012
+particles/particles/econ/events/compendium_2024/compendium_2024_teleport_fx_model/curtain_top_right_vsnap.vsnap_c crc=f1b34b16 size=1011
+particles/particles/models/items/wisp/wisp_ti10_taunt/wisp_question/wisp_question_fx_a.vsnap_c crc=3204a9ce size=1959
+particles/particles/models/items/wisp/wisp_ti10_taunt/wisp_question/wisp_question_fx_b.vsnap_c crc=694b7806 size=1244
+particles/particles/models/items/wisp/wisp_ti10_taunt/wisp_questionmark/wisp_questionmark_fx.vsnap_c crc=9287f697 size=11587
+particles/particles/models/shopitems/bullwhip/bullwhip/bullwhip_fx_01.vsnap_c crc=a09c3dbd size=1622
+particles/particles/units/heroes/hero_tinker/defense_matrix_model_center_fx_01.vsnap_c crc=fda0664e size=1654
+particles/particles/units/heroes/hero_tinker/defense_matrix_model_fx_02.vsnap_c crc=9a1fb7be size=1820

@@ -1,0 +1,1 @@
+models/editor/simple_obstruction.vmdl_c crc=88bf16e8 size=4509

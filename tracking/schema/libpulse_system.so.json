@@ -1,0 +1,420 @@
+{"module":"libpulse_system.so","project":"pulse_runtime_lib","schema_version":118,"classes":[
+{"name":"CBasePulseGraphInstance","size":144,"align":255,"flags":[99,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"CPulseBreakpointLocation","size":48,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_NodeID","type":"PulseDocNodeID_t","offset":0,"metadata":[]},
+ {"name":"m_SequencePoint","type":"PulseSymbol_t","offset":8,"metadata":[]},
+ {"name":"m_PortName","type":"PulseSymbol_t","offset":24,"metadata":[]},
+ {"name":"m_bDeferBreak","type":"bool","offset":40,"metadata":[]}]},
+{"name":"CPulseCell_Base","size":72,"align":8,"flags":[262497,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nEditorNodeID","type":"PulseDocNodeID_t","offset":8,"metadata":[{"name":"MFgdFromSchemaCompletelySkipField"}]}]},
+{"name":"CPulseCell_BaseFlow","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Base","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_BaseLerp","size":288,"align":255,"flags":[262499,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_WakeResume","type":"CPulse_ResumePoint","offset":216,"metadata":[]}]},
+{"name":"CPulseCell_BaseLerp::CursorState_t","size":8,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_StartTime","type":"GameTime_t","offset":0,"metadata":[]},
+ {"name":"m_EndTime","type":"GameTime_t","offset":4,"metadata":[]}]},
+{"name":"CPulseCell_BaseRequirement","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Base","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_BaseState","size":216,"align":255,"flags":[262499,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/inflow_statecell.png"}],"fields":[]},
+{"name":"CPulseCell_BaseValue","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Base","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_BaseYieldingInflow","size":216,"align":255,"flags":[262499,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MCustomFGDMetadata","value":"{ standard_yielding_flow = true }"}],"fields":[
+ {"name":"m_BaseFlow_OnAfterCancel","type":"CPulse_ResumePoint","offset":72,"metadata":[{"name":"MPulseFGDSkipField"}]},
+ {"name":"m_BaseFlow_WhileActive","type":"CPulse_ResumePoint","offset":144,"metadata":[{"name":"MPulseFGDSkipField"}]}]},
+{"name":"CPulseCell_BooleanSwitchState","size":504,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled."},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsStateNode' item_factory = 'BooleanSwitchState' }"}],"fields":[
+ {"name":"m_Condition","type":"CPulseObservableExpression< bool >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Condition to evaluate when any of its dependent values change."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
+ {"name":"m_WhenTrue","type":"CPulse_OutflowConnection","offset":360,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is true, and killed when false."},{"name":"MPropertyFriendlyName","value":"While True"}]},
+ {"name":"m_WhenFalse","type":"CPulse_OutflowConnection","offset":432,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is false, and killed when true."},{"name":"MPropertyFriendlyName","value":"While False"}]}]},
+{"name":"CPulseCell_CursorQueue","size":304,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_WaitForCursorsWithTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Cursor Queue"},{"name":"MPropertyDescription","value":"Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/cursor_wait_zone.png"}],"fields":[
+ {"name":"m_nCursorsAllowedToRunParallel","type":"int32","offset":296,"metadata":[{"name":"MPropertyDescription","value":"Any cursors above this count will wait, up to the limit."}]}]},
+{"name":"CPulseCell_ExampleCriteria","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseRequirement","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Example Criteria"},{"name":"MPropertyDescription","value":"An example of requirement data with ports"}],"fields":[]},
+{"name":"CPulseCell_ExampleCriteria::Criteria_t","size":12,"align":255,"flags":[104,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_flFloatValue1","type":"float32","offset":0,"metadata":[]},
+ {"name":"m_flFloatValue2","type":"float32","offset":4,"metadata":[]},
+ {"name":"m_bMyBool","type":"bool","offset":8,"metadata":[]}]},
+{"name":"CPulseCell_ExampleSelector","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Select Example Criteria"},{"name":"MPropertyDescription","value":"Evaluate the requirements of each connected node"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/requirements.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"}],"fields":[
+ {"name":"m_OutflowList","type":"PulseSelectorOutflowList_t","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_FireCursors","size":320,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outflows","type":"CUtlVector< CPulse_OutflowConnection >","offset":216,"metadata":[]},
+ {"name":"m_bWaitForChildOutflows","type":"bool","offset":240,"metadata":[]},
+ {"name":"m_OnFinished","type":"CPulse_ResumePoint","offset":248,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_BaseEntrypoint","size":128,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_EntryChunk","type":"PulseRuntimeChunkIndex_t","offset":72,"metadata":[]},
+ {"name":"m_RegisterMap","type":"PulseRegisterMap_t","offset":80,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_EntOutputHandler","size":184,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Inflow_BaseEntrypoint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_SourceEntity","type":"PulseSymbol_t","offset":128,"metadata":[]},
+ {"name":"m_SourceOutput","type":"PulseSymbol_t","offset":144,"metadata":[]},
+ {"name":"m_ExpectedParamType","type":"CPulseType","offset":160,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_EventHandler","size":144,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Inflow_BaseEntrypoint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_EventName","type":"PulseSymbol_t","offset":128,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_GraphHook","size":144,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Inflow_BaseEntrypoint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_HookName","type":"PulseSymbol_t","offset":128,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_Method","size":192,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Inflow_BaseEntrypoint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_MethodName","type":"PulseSymbol_t","offset":128,"metadata":[]},
+ {"name":"m_Description","type":"CUtlString","offset":144,"metadata":[]},
+ {"name":"m_bIsPublic","type":"bool","offset":152,"metadata":[]},
+ {"name":"m_Args","type":"CUtlLeanVector< CPulseRuntimeMethodArg >","offset":160,"metadata":[]},
+ {"name":"m_ReturnValues","type":"CUtlLeanVector< CPulseRuntimeMethodArg >","offset":176,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_ObservableVariableListener","size":136,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_Inflow_BaseEntrypoint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nBlackboardReference","type":"PulseRuntimeBlackboardReferenceIndex_t","offset":128,"metadata":[]},
+ {"name":"m_bSelfReference","type":"bool","offset":130,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_Wait","size":288,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wait"},{"name":"MPropertyDescription","value":"Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/inflow_wait.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsWaitNode IsControlFlowNode' item_factory = 'InflowWait' }"}],"fields":[
+ {"name":"m_WakeResume","type":"CPulse_ResumePoint","offset":216,"metadata":[]}]},
+{"name":"CPulseCell_Inflow_Yield","size":288,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_UnyieldResume","type":"CPulse_ResumePoint","offset":216,"metadata":[]}]},
+{"name":"CPulseCell_InlineNodeSkipSelector","size":176,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseFunctionHiddenInTool"}],"fields":[
+ {"name":"m_nFlowNodeID","type":"PulseDocNodeID_t","offset":72,"metadata":[]},
+ {"name":"m_bAnd","type":"bool","offset":76,"metadata":[]},
+ {"name":"m_PassOutflow","type":"PulseSelectorOutflowList_t","offset":80,"metadata":[]},
+ {"name":"m_FailOutflow","type":"CPulse_OutflowConnection","offset":104,"metadata":[]}]},
+{"name":"CPulseCell_IntervalTimer","size":360,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Interval Timer"},{"name":"MPropertyDescription","value":"Wait for a duration, firing a child cursor at regular (or randomized) intervals"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/node_timer.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ item_factory = 'IntervalTimer' }"}],"fields":[
+ {"name":"m_Completed","type":"CPulse_ResumePoint","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up perfectly."}]},
+ {"name":"m_OnInterval","type":"SignatureOutflow_Continue","offset":288,"metadata":[{"name":"MPropertyDescription","value":"New child cursor starts here every time the wait interval elapses"}]}]},
+{"name":"CPulseCell_IntervalTimer::CursorState_t","size":20,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_StartTime","type":"GameTime_t","offset":0,"metadata":[]},
+ {"name":"m_EndTime","type":"GameTime_t","offset":4,"metadata":[]},
+ {"name":"m_flWaitInterval","type":"float32","offset":8,"metadata":[]},
+ {"name":"m_flWaitIntervalHigh","type":"float32","offset":12,"metadata":[]},
+ {"name":"m_bCompleteOnNextWake","type":"bool","offset":16,"metadata":[]}]},
+{"name":"CPulseCell_IsRequirementValid","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseRequirement","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_IsRequirementValid::Criteria_t","size":1,"align":255,"flags":[104,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bIsValid","type":"bool","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_LimitCount","size":80,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseRequirement","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Limit Count"},{"name":"MPropertyDescription","value":"Skip this node after the limit. Check Type does not apply, the limit will always be checked."}],"fields":[
+ {"name":"m_nLimitCount","type":"int32","offset":72,"metadata":[{"name":"MPropertyFlattenIntoParentRow"}]}]},
+{"name":"CPulseCell_LimitCount::Criteria_t","size":1,"align":255,"flags":[104,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bLimitCountPasses","type":"bool","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_LimitCount::InstanceState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nCurrentCount","type":"int32","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_ObservableSwitchState","size":480,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable Switch"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on which case an observable value matches. When the observable result moves to a different case, the prior cursor will be canceled and the matching outflow will fire a new child cursor. Will monitor continuously until externally canceled."}],"fields":[
+ {"name":"m_SwitchValue","type":"CPulseObservableExpression< CPulseVariant >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Value to evaluate when any of its dependent values change. The result is compared against each case."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
+ {"name":"m_Cases","type":"CPulseObservableSwitchCases","offset":360,"metadata":[{"name":"MPulseFGDSkipField"}]}]},
+{"name":"CPulseCell_Outflow_CycleOrdered","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outputs","type":"CUtlVector< CPulse_OutflowConnection >","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Outflow_CycleOrdered::InstanceState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nNextIndex","type":"int32","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_Outflow_CycleRandom","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outputs","type":"CUtlVector< CPulse_OutflowConnection >","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Outflow_CycleShuffled","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outputs","type":"CUtlVector< CPulse_OutflowConnection >","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Outflow_CycleShuffled::InstanceState_t","size":40,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Shuffle","type":"CUtlVectorFixedGrowable< uint8, 8 >","offset":0,"metadata":[]},
+ {"name":"m_nNextShuffle","type":"int32","offset":32,"metadata":[]}]},
+{"name":"CPulseCell_Outflow_TestExplicitYesNo","size":216,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"[Test] Explicit Yes/No Outflow"},{"name":"MPropertyDescription","value":"Test node that picks between two outflows as specified in the test domain."}],"fields":[
+ {"name":"m_Yes","type":"CPulse_OutflowConnection","offset":72,"metadata":[{"name":"MPropertyFriendlyName","value":"Yes"}]},
+ {"name":"m_No","type":"CPulse_OutflowConnection","offset":144,"metadata":[{"name":"MPropertyFriendlyName","value":"No"}]}]},
+{"name":"CPulseCell_Outflow_TestRandomYesNo","size":216,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"[Test] Random Yes/No Outflow"},{"name":"MPropertyDescription","value":"Test node that randomly picks between two outflows."}],"fields":[
+ {"name":"m_Yes","type":"CPulse_OutflowConnection","offset":72,"metadata":[{"name":"MPropertyFriendlyName","value":"Yes"},{"name":"MPropertyDescription","value":"Randomly taken half of the time"}]},
+ {"name":"m_No","type":"CPulse_OutflowConnection","offset":144,"metadata":[{"name":"MPropertyFriendlyName","value":"No"},{"name":"MPropertyDescription","value":"Randomly taken half of the time"}]}]},
+{"name":"CPulseCell_PickBestOutflowSelector","size":104,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Select Best Exit"},{"name":"MPropertyDescription","value":"Evaluate the requirements of each connected node"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/requirements.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"}],"fields":[
+ {"name":"m_nCheckType","type":"PulseBestOutflowRules_t","offset":72,"metadata":[]},
+ {"name":"m_OutflowList","type":"PulseSelectorOutflowList_t","offset":80,"metadata":[]}]},
+{"name":"CPulseCell_RaceCursors","size":312,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outflows","type":"CUtlVector< CPulse_OutflowConnection >","offset":216,"metadata":[]},
+ {"name":"m_OnFinished","type":"CPulse_ResumePoint","offset":240,"metadata":[]}]},
+{"name":"CPulseCell_ReturnValues","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_Step_CallExternalMethod","size":336,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_MethodName","type":"PulseSymbol_t","offset":216,"metadata":[]},
+ {"name":"m_nBlackboardIndex","type":"PulseRuntimeBlackboardReferenceIndex_t","offset":232,"metadata":[]},
+ {"name":"m_ExpectedArgs","type":"CUtlLeanVector< CPulseRuntimeMethodArg >","offset":240,"metadata":[]},
+ {"name":"m_nAsyncCallMode","type":"PulseMethodCallMode_t","offset":256,"metadata":[]},
+ {"name":"m_OnFinished","type":"CPulse_ResumePoint","offset":264,"metadata":[]}]},
+{"name":"CPulseCell_Step_DebugLog","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_Step_PublicOutput","size":80,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_OutputIndex","type":"PulseRuntimeOutputIndex_t","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Step_TestDomainCreateFakeEntity","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Spawn Fake Entity"}],"fields":[]},
+{"name":"CPulseCell_Step_TestDomainDestroyFakeEntity","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Destroy Fake Entity"}],"fields":[]},
+{"name":"CPulseCell_Step_TestDomainEntFire","size":80,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Fake Ent-Fire"},{"name":"MPulseEditorHeaderText","value":"Fire input {m_Input}"}],"fields":[
+ {"name":"m_Input","type":"CUtlString","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Step_TestDomainTracepoint","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Tracepoint"}],"fields":[]},
+{"name":"CPulseCell_TestEnums","size":80,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Test Enums"}],"fields":[
+ {"name":"m_nReferenceColor","type":"PulseTestEnumColor_t","offset":72,"metadata":[]},
+ {"name":"m_nReferenceFlags","type":"PulseTestEnumFlags_t","offset":76,"metadata":[]}]},
+{"name":"CPulseCell_TestWaitWithAutoTracepoints","size":296,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wait and Trace"}],"fields":[
+ {"name":"m_TracePrefix","type":"CUtlString","offset":216,"metadata":[]},
+ {"name":"m_WakeResume","type":"CPulse_ResumePoint","offset":224,"metadata":[]}]},
+{"name":"CPulseCell_TestWaitWithCursorState","size":360,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_WakeResume","type":"CPulse_ResumePoint","offset":216,"metadata":[]},
+ {"name":"m_WakeFail","type":"CPulse_ResumePoint","offset":288,"metadata":[]}]},
+{"name":"CPulseCell_TestWaitWithCursorState::CursorState_t","size":36,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"flWaitValue","type":"float32","offset":0,"metadata":[]},
+ {"name":"bFail","type":"bool","offset":4,"metadata":[]},
+ {"name":"m_hSelfCursor","type":"HYieldedCursor","offset":8,"metadata":[]},
+ {"name":"m_hSelfCellInstanceUntyped","type":"HPulseCellBase","offset":20,"metadata":[]},
+ {"name":"m_hSelfCellInstance","type":"HPulseCell< CPulseCell_TestWaitWithCursorState >","offset":28,"metadata":[]}]},
+{"name":"CPulseCell_TestWaitWithCursorState::InstanceState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nDummy","type":"int32","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_TestYieldForever","size":216,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_TestYieldWithObservables","size":592,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_flWatchForFloatValue","type":"float32","offset":216,"metadata":[]},
+ {"name":"m_LiveFloatValue","type":"CPulseObservableExpression< float32 >","offset":224,"metadata":[]},
+ {"name":"m_WatchForStringValue","type":"CUtlString","offset":368,"metadata":[]},
+ {"name":"m_LiveStringValue","type":"CPulseObservableExpression< CUtlString >","offset":376,"metadata":[]},
+ {"name":"m_WakeResume","type":"CPulse_ResumePoint","offset":520,"metadata":[]}]},
+{"name":"CPulseCell_Test_MultiInflow_NoDefault","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_Test_MultiInflow_WithDefault","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_Test_MultiOutflow_WithParams","size":216,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Out1","type":"SignatureOutflow_Continue","offset":72,"metadata":[]},
+ {"name":"m_Out2","type":"SignatureOutflow_Continue","offset":144,"metadata":[]}]},
+{"name":"CPulseCell_Test_MultiOutflow_WithParams_Yielding","size":576,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Out1","type":"SignatureOutflow_Continue","offset":216,"metadata":[]},
+ {"name":"m_AsyncChild1","type":"SignatureOutflow_Continue","offset":288,"metadata":[]},
+ {"name":"m_AsyncChild2","type":"SignatureOutflow_Continue","offset":360,"metadata":[]},
+ {"name":"m_YieldResume1","type":"SignatureOutflow_Resume","offset":432,"metadata":[]},
+ {"name":"m_YieldResume2","type":"SignatureOutflow_Resume","offset":504,"metadata":[]}]},
+{"name":"CPulseCell_Test_MultiOutflow_WithParams_Yielding::CursorState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"nTestStep","type":"int32","offset":0,"metadata":[]}]},
+{"name":"CPulseCell_Test_NoInflow","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CPulseCell_Timeline","size":320,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_TimelineEvents","type":"CUtlVector< CPulseCell_Timeline::TimelineEvent_t >","offset":216,"metadata":[]},
+ {"name":"m_bWaitForChildOutflows","type":"bool","offset":240,"metadata":[]},
+ {"name":"m_OnFinished","type":"CPulse_ResumePoint","offset":248,"metadata":[]}]},
+{"name":"CPulseCell_Timeline::TimelineEvent_t","size":80,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_flTimeFromPrevious","type":"float32","offset":0,"metadata":[]},
+ {"name":"m_EventOutflow","type":"CPulse_OutflowConnection","offset":8,"metadata":[]}]},
+{"name":"CPulseCell_Unknown","size":88,"align":8,"flags":[353,0],"bases":[{"name":"CPulseCell_Base","offset":0}],"metadata":[],"fields":[
+ {"name":"m_UnknownKeys","type":"KeyValues3","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Val_TestDomainFindEntityByName","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Find Fake Entity"}],"fields":[]},
+{"name":"CPulseCell_Val_TestDomainGetEntityName","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Get Fake Entity Name"}],"fields":[]},
+{"name":"CPulseCell_Value_Curve","size":136,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Curve"}],"fields":[
+ {"name":"m_Curve","type":"CPiecewiseCurve","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Value_Gradient","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Gradient"}],"fields":[
+ {"name":"m_Gradient","type":"CColorGradient","offset":72,"metadata":[]}]},
+{"name":"CPulseCell_Value_RandomFloat","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Float"},{"name":"MPropertyDescription","value":"Generate a random float between min and max (inclusive)"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/exit_cycle_random.png"}],"fields":[]},
+{"name":"CPulseCell_Value_RandomInt","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Integer"},{"name":"MPropertyDescription","value":"Generate a random integer between min and max (inclusive)"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/exit_cycle_random.png"}],"fields":[]},
+{"name":"CPulseCell_Value_TestValue50","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"[Test] Int Value 50"},{"name":"MPropertyDescription","value":"Test node that just generates the integer 50. Nothing to see here!"}],"fields":[]},
+{"name":"CPulseCell_WaitForCursorsWithTag","size":304,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_WaitForCursorsWithTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wait For Cursors With Tag"},{"name":"MPropertyDescription","value":"Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/cursor_tag.png"}],"fields":[
+ {"name":"m_bTagSelfWhenComplete","type":"bool","offset":296,"metadata":[{"name":"MPropertyDescription","value":"Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag."}]},
+ {"name":"m_nDesiredKillPriority","type":"PulseCursorCancelPriority_t","offset":300,"metadata":[{"name":"MPropertyDescription","value":"When we start waiting, how should we handle existing cursors?"}]}]},
+{"name":"CPulseCell_WaitForCursorsWithTagBase","size":296,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsControlFlowNode' }"}],"fields":[
+ {"name":"m_nCursorsAllowedToWait","type":"int32","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Any extra waiting cursors will be terminated. -1 for infinite cursors."}]},
+ {"name":"m_WaitComplete","type":"CPulse_ResumePoint","offset":224,"metadata":[]}]},
+{"name":"CPulseCell_WaitForObservable","size":432,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/observable_variable_listener.png"},{"name":"MPropertyFriendlyName","value":"Wait Until"},{"name":"MPropertyDescription","value":"All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon."}],"fields":[
+ {"name":"m_Condition","type":"CPulseObservableExpression< bool >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Condition to evaluate when any of its dependent values change."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
+ {"name":"m_OnTrue","type":"CPulse_ResumePoint","offset":360,"metadata":[]}]},
+{"name":"CPulseExecCursor","size":216,"align":255,"flags":[97,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"CPulseGraphDef","size":448,"align":8,"flags":[353,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_DomainIdentifier","type":"PulseSymbol_t","offset":8,"metadata":[]},
+ {"name":"m_DomainSubType","type":"CPulseType","offset":24,"metadata":[]},
+ {"name":"m_ParentMapName","type":"PulseSymbol_t","offset":48,"metadata":[]},
+ {"name":"m_ParentXmlName","type":"PulseSymbol_t","offset":64,"metadata":[]},
+ {"name":"m_Chunks","type":"CUtlVector< CPulse_Chunk* >","offset":80,"metadata":[]},
+ {"name":"m_Cells","type":"CUtlVector< CPulseCell_Base* >","offset":104,"metadata":[]},
+ {"name":"m_Vars","type":"CUtlVector< CPulse_Variable >","offset":128,"metadata":[]},
+ {"name":"m_TempVarBanks","type":"CUtlVector< CPulse_TempVarBankDefinition* >","offset":152,"metadata":[]},
+ {"name":"m_PublicOutputs","type":"CUtlVector< CPulse_PublicOutput >","offset":176,"metadata":[]},
+ {"name":"m_InvokeBindings","type":"CUtlVector< CPulse_InvokeBinding* >","offset":200,"metadata":[]},
+ {"name":"m_CallInfos","type":"CUtlVector< CPulse_CallInfo* >","offset":224,"metadata":[]},
+ {"name":"m_Constants","type":"CUtlVector< CPulse_Constant >","offset":248,"metadata":[]},
+ {"name":"m_DomainValues","type":"CUtlVector< CPulse_DomainValue >","offset":272,"metadata":[]},
+ {"name":"m_BlackboardReferences","type":"CUtlVector< CPulse_BlackboardReference >","offset":296,"metadata":[]},
+ {"name":"m_OutputConnections","type":"CUtlVector< CPulse_OutputConnection* >","offset":320,"metadata":[]}]},
+{"name":"CPulseGraphExecutionHistory","size":120,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nInstanceID","type":"PulseGraphInstanceID_t","offset":0,"metadata":[]},
+ {"name":"m_strFileName","type":"CUtlString","offset":8,"metadata":[]},
+ {"name":"m_vecHistory","type":"CUtlVector< PulseGraphExecutionHistoryEntry_t* >","offset":16,"metadata":[]},
+ {"name":"m_mapCellDesc","type":"CUtlOrderedMap< PulseDocNodeID_t, PulseGraphExecutionHistoryNodeDesc_t* >","offset":40,"metadata":[]},
+ {"name":"m_mapCursorDesc","type":"CUtlOrderedMap< PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t* >","offset":80,"metadata":[]}]},
+{"name":"CPulseGraphInstance_TestDomain","size":216,"align":255,"flags":[97,0],"bases":[{"name":"CBasePulseGraphInstance","offset":0}],"metadata":[],"fields":[
+ {"name":"m_bIsRunningUnitTests","type":"bool","offset":168,"metadata":[]},
+ {"name":"m_bExplicitTimeStepping","type":"bool","offset":169,"metadata":[]},
+ {"name":"m_bExpectingToDestroyWithYieldedCursors","type":"bool","offset":170,"metadata":[]},
+ {"name":"m_bQuietTracepoints","type":"bool","offset":171,"metadata":[]},
+ {"name":"m_bExpectingCursorTerminatedDueToMaxInstructions","type":"bool","offset":172,"metadata":[]},
+ {"name":"m_nCursorsTerminatedDueToMaxInstructions","type":"int32","offset":176,"metadata":[]},
+ {"name":"m_nNextValidateIndex","type":"int32","offset":180,"metadata":[]},
+ {"name":"m_Tracepoints","type":"CUtlVector< CUtlString >","offset":184,"metadata":[]},
+ {"name":"m_bTestYesOrNoPath","type":"bool","offset":208,"metadata":[]}]},
+{"name":"CPulseGraphInstance_TestDomain_Derived","size":216,"align":255,"flags":[97,0],"bases":[{"name":"CPulseGraphInstance_TestDomain","offset":0}],"metadata":[],"fields":[
+ {"name":"m_nInstanceValueX","type":"int32","offset":212,"metadata":[]}]},
+{"name":"CPulseGraphInstance_TestDomain_FakeEntityOwner","size":144,"align":255,"flags":[97,0],"bases":[{"name":"CBasePulseGraphInstance","offset":0}],"metadata":[],"fields":[]},
+{"name":"CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView","size":216,"align":255,"flags":[97,0],"bases":[{"name":"CPulseGraphInstance_TestDomain","offset":0}],"metadata":[],"fields":[]},
+{"name":"CPulseGraphInstance_TurtleGraphics","size":184,"align":255,"flags":[97,0],"bases":[{"name":"CBasePulseGraphInstance","offset":0}],"metadata":[],"fields":[]},
+{"name":"CPulseRuntimeMethodArg","size":128,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Name","type":"CKV3MemberNameWithStorage","offset":0,"metadata":[]},
+ {"name":"m_Description","type":"CUtlString","offset":56,"metadata":[]},
+ {"name":"m_Type","type":"CPulseType","offset":64,"metadata":[]}]},
+{"name":"CPulseTurtleGraphicsCursor","size":240,"align":255,"flags":[97,0],"bases":[{"name":"CPulseExecCursor","offset":0}],"metadata":[],"fields":[
+ {"name":"m_Color","type":"Color","offset":216,"metadata":[]},
+ {"name":"m_vPos","type":"Vector2D","offset":220,"metadata":[]},
+ {"name":"m_flHeadingDeg","type":"float32","offset":228,"metadata":[]},
+ {"name":"m_bPenUp","type":"bool","offset":232,"metadata":[]}]},
+{"name":"CPulse_BlackboardReference","size":40,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_hBlackboardResource","type":"CStrongHandle< InfoForResourceTypeIPulseGraphDef >","offset":0,"metadata":[]},
+ {"name":"m_BlackboardResource","type":"PulseSymbol_t","offset":8,"metadata":[]},
+ {"name":"m_nNodeID","type":"PulseDocNodeID_t","offset":24,"metadata":[]},
+ {"name":"m_NodeName","type":"CGlobalSymbol","offset":32,"metadata":[]}]},
+{"name":"CPulse_CallInfo","size":96,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_PortName","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_nEditorNodeID","type":"PulseDocNodeID_t","offset":16,"metadata":[]},
+ {"name":"m_RegisterMap","type":"PulseRegisterMap_t","offset":24,"metadata":[]},
+ {"name":"m_CallMethodID","type":"PulseDocNodeID_t","offset":72,"metadata":[]},
+ {"name":"m_nSrcChunk","type":"PulseRuntimeChunkIndex_t","offset":76,"metadata":[]},
+ {"name":"m_nSrcInstruction","type":"int32","offset":80,"metadata":[]},
+ {"name":"m_nBreakDestChunk","type":"PulseRuntimeChunkIndex_t","offset":84,"metadata":[]},
+ {"name":"m_nBreakDestInstruction","type":"int32","offset":88,"metadata":[]}]},
+{"name":"CPulse_Chunk","size":96,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Instructions","type":"CUtlLeanVector< PGDInstruction_t >","offset":0,"metadata":[]},
+ {"name":"m_Registers","type":"CUtlLeanVector< CPulse_RegisterInfo >","offset":16,"metadata":[]},
+ {"name":"m_InstructionDebugInfos","type":"CUtlLeanVector< CPulse_InstructionDebug >","offset":32,"metadata":[]},
+ {"name":"m_nTempVarBank","type":"PulseRuntimeTempVarBankIndex_t","offset":48,"metadata":[]}]},
+{"name":"CPulse_Constant","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Type","type":"CPulseType","offset":0,"metadata":[]},
+ {"name":"m_Value","type":"KeyValues3","offset":24,"metadata":[]}]},
+{"name":"CPulse_DomainValue","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nType","type":"PulseDomainValueType_t","offset":0,"metadata":[]},
+ {"name":"m_Value","type":"CGlobalSymbolCaseSensitive","offset":8,"metadata":[]},
+ {"name":"m_RequiredRuntimeType","type":"CPulseType","offset":16,"metadata":[]}]},
+{"name":"CPulse_InstructionDebug","size":24,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nFlowNodeID","type":"PulseDocNodeID_t","offset":0,"metadata":[]},
+ {"name":"m_nValueNodeID","type":"PulseDocNodeID_t","offset":4,"metadata":[]},
+ {"name":"m_SequencePointName","type":"PulseSymbol_t","offset":8,"metadata":[]}]},
+{"name":"CPulse_InvokeBinding","size":176,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_RegisterMap","type":"PulseRegisterMap_t","offset":0,"metadata":[]},
+ {"name":"m_FuncName","type":"PulseSymbol_t","offset":48,"metadata":[]},
+ {"name":"m_nCellIndex","type":"PulseRuntimeCellIndex_t","offset":64,"metadata":[]},
+ {"name":"m_nSrcChunk","type":"PulseRuntimeChunkIndex_t","offset":68,"metadata":[]},
+ {"name":"m_nSrcInstruction","type":"int32","offset":72,"metadata":[]}]},
+{"name":"CPulse_OutflowConnection","size":72,"align":255,"flags":[96,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_SourceOutflowName","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_nDestChunk","type":"PulseRuntimeChunkIndex_t","offset":16,"metadata":[]},
+ {"name":"m_nInstruction","type":"int32","offset":20,"metadata":[]},
+ {"name":"m_OutflowRegisterMap","type":"PulseRegisterMap_t","offset":24,"metadata":[]}]},
+{"name":"CPulse_OutputConnection","size":64,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_SourceOutput","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_TargetEntity","type":"PulseSymbol_t","offset":16,"metadata":[]},
+ {"name":"m_TargetInput","type":"PulseSymbol_t","offset":32,"metadata":[]},
+ {"name":"m_Param","type":"PulseSymbol_t","offset":48,"metadata":[]}]},
+{"name":"CPulse_PublicOutput","size":40,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Name","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_Description","type":"CUtlString","offset":16,"metadata":[]},
+ {"name":"m_Args","type":"CUtlLeanVector< CPulseRuntimeMethodArg >","offset":24,"metadata":[]}]},
+{"name":"CPulse_RegisterInfo","size":96,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nReg","type":"PulseRuntimeRegisterIndex_t","offset":0,"metadata":[]},
+ {"name":"m_Type","type":"CPulseType","offset":8,"metadata":[]},
+ {"name":"m_OriginName","type":"CKV3MemberNameWithStorage","offset":32,"metadata":[]},
+ {"name":"m_nWrittenByInstruction","type":"int32","offset":88,"metadata":[]},
+ {"name":"m_nLastReadByInstruction","type":"int32","offset":92,"metadata":[]}]},
+{"name":"CPulse_ResumePoint","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_OutflowConnection","offset":0}],"metadata":[],"fields":[]},
+{"name":"CPulse_TempVarBankDefinition","size":40,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_TempVars","type":"CUtlVector< CPulse_TempVarInfo >","offset":0,"metadata":[]}]},
+{"name":"CPulse_TempVarInfo","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Name","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_Type","type":"CPulseType","offset":16,"metadata":[]},
+ {"name":"m_nEditorNodeID","type":"PulseDocNodeID_t","offset":40,"metadata":[]},
+ {"name":"m_bIsObservable","type":"bool","offset":44,"metadata":[]}]},
+{"name":"CPulse_Variable","size":96,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Name","type":"PulseSymbol_t","offset":0,"metadata":[]},
+ {"name":"m_Description","type":"CUtlString","offset":16,"metadata":[]},
+ {"name":"m_Type","type":"CPulseType","offset":24,"metadata":[]},
+ {"name":"m_DefaultValue","type":"KeyValues3","offset":48,"metadata":[]},
+ {"name":"m_nKeysSource","type":"PulseVariableKeysSource_t","offset":68,"metadata":[]},
+ {"name":"m_bIsPublicBlackboardVariable","type":"bool","offset":72,"metadata":[]},
+ {"name":"m_bIsObservable","type":"bool","offset":73,"metadata":[]},
+ {"name":"m_nEditorNodeID","type":"PulseDocNodeID_t","offset":76,"metadata":[]},
+ {"name":"m_Metadata","type":"KeyValues3","offset":80,"metadata":[]}]},
+{"name":"CTestDomainDerived_Cursor","size":224,"align":255,"flags":[97,0],"bases":[{"name":"CPulseExecCursor","offset":0}],"metadata":[],"fields":[
+ {"name":"m_nCursorValueA","type":"int32","offset":216,"metadata":[]},
+ {"name":"m_nCursorValueB","type":"int32","offset":220,"metadata":[]}]},
+{"name":"OutflowWithRequirements_t","size":128,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Connection","type":"CPulse_OutflowConnection","offset":0,"metadata":[]},
+ {"name":"m_DestinationFlowNodeID","type":"PulseDocNodeID_t","offset":72,"metadata":[]},
+ {"name":"m_RequirementNodeIDs","type":"CUtlVector< PulseDocNodeID_t >","offset":80,"metadata":[]},
+ {"name":"m_nCursorStateBlockIndex","type":"CUtlVector< int32 >","offset":104,"metadata":[]}]},
+{"name":"PGDInstruction_t","size":56,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nCode","type":"PulseInstructionCode_t","offset":0,"metadata":[]},
+ {"name":"m_nVar","type":"PulseRuntimeVarIndex_t","offset":4,"metadata":[]},
+ {"name":"m_nReg0","type":"PulseRuntimeRegisterIndex_t","offset":8,"metadata":[]},
+ {"name":"m_nReg1","type":"PulseRuntimeRegisterIndex_t","offset":10,"metadata":[]},
+ {"name":"m_nReg2","type":"PulseRuntimeRegisterIndex_t","offset":12,"metadata":[]},
+ {"name":"m_nInvokeBindingIndex","type":"PulseRuntimeInvokeIndex_t","offset":16,"metadata":[]},
+ {"name":"m_nChunk","type":"PulseRuntimeChunkIndex_t","offset":20,"metadata":[]},
+ {"name":"m_nDestInstruction","type":"int32","offset":24,"metadata":[]},
+ {"name":"m_nCallInfoIndex","type":"PulseRuntimeCallInfoIndex_t","offset":28,"metadata":[]},
+ {"name":"m_nConstIdx","type":"PulseRuntimeConstantIndex_t","offset":32,"metadata":[]},
+ {"name":"m_nDomainValueIdx","type":"PulseRuntimeDomainValueIndex_t","offset":34,"metadata":[]},
+ {"name":"m_nBlackboardReferenceIdx","type":"PulseRuntimeBlackboardReferenceIndex_t","offset":36,"metadata":[]},
+ {"name":"m_nTempVarIdx","type":"PulseRuntimeTempVarIndex_t","offset":38,"metadata":[]}]},
+{"name":"PulseCursorID_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseCursorYieldToken_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseDocNodeID_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseGraphExecutionHistoryCursorDesc_t","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"vecAncestorCursorIDs","type":"CUtlVector< PulseCursorID_t >","offset":0,"metadata":[]},
+ {"name":"nSpawnNodeID","type":"PulseDocNodeID_t","offset":24,"metadata":[]},
+ {"name":"nRetiredAtNodeID","type":"PulseDocNodeID_t","offset":28,"metadata":[]},
+ {"name":"flLastReferenced","type":"float32","offset":32,"metadata":[]},
+ {"name":"nLastValidEntryIdx","type":"int32","offset":36,"metadata":[]},
+ {"name":"bWasAnObservableComputation","type":"bool","offset":40,"metadata":[]}]},
+{"name":"PulseGraphExecutionHistoryEntry_t","size":56,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"nCursorID","type":"PulseCursorID_t","offset":0,"metadata":[]},
+ {"name":"nEditorID","type":"PulseDocNodeID_t","offset":4,"metadata":[]},
+ {"name":"seqPoint","type":"PulseSymbol_t","offset":8,"metadata":[]},
+ {"name":"flExecTime","type":"float32","offset":24,"metadata":[]},
+ {"name":"unFlags","type":"uint32","offset":28,"metadata":[]},
+ {"name":"tagName","type":"PulseSymbol_t","offset":32,"metadata":[]},
+ {"name":"childID","type":"PulseCursorID_t","offset":48,"metadata":[]}]},
+{"name":"PulseGraphExecutionHistoryNodeDesc_t","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"strCellDesc","type":"CBufferString","offset":0,"metadata":[]},
+ {"name":"strBindingName","type":"PulseSymbol_t","offset":16,"metadata":[]}]},
+{"name":"PulseGraphInstanceID_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"uint32","offset":0,"metadata":[]}]},
+{"name":"PulseNodeDynamicOutflows_t","size":24,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outflows","type":"CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >","offset":0,"metadata":[]}]},
+{"name":"PulseNodeDynamicOutflows_t::DynamicOutflow_t","size":80,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_OutflowID","type":"CGlobalSymbol","offset":0,"metadata":[]},
+ {"name":"m_Connection","type":"CPulse_OutflowConnection","offset":8,"metadata":[{"name":"MFgdFromSchemaCompletelySkipField"}]}]},
+{"name":"PulseRegisterMap_t","size":48,"align":255,"flags":[160,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_Inparams","type":"KeyValues3","offset":0,"metadata":[]},
+ {"name":"m_InparamsWhichCanBeMoved","type":"CKV3MemberNameSet","offset":16,"metadata":[]},
+ {"name":"m_Outparams","type":"KeyValues3","offset":32,"metadata":[]}]},
+{"name":"PulseRuntimeBlackboardReferenceIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeCallInfoIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeCellIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeChunkIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeConstantIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeDomainValueIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeEntrypointIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeInvokeIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeOutputIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeRegisterIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeStateOffset_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"uint16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeTempVarBankIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeTempVarIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeVarIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseSelectorOutflowList_t","size":24,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Outflows","type":"CUtlVector< OutflowWithRequirements_t >","offset":0,"metadata":[]}]},
+{"name":"SignatureOutflow_Continue","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_OutflowConnection","offset":0}],"metadata":[],"fields":[]},
+{"name":"SignatureOutflow_Resume","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_ResumePoint","offset":0}],"metadata":[],"fields":[]},
+{"name":"TestComponent_t","size":16,"align":255,"flags":[33,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_ComponentData","type":"CUtlString","offset":8,"metadata":[]}]}
+],"enums":[
+{"name":"EPulseGraphExecutionHistoryFlag","size":4,"metadata":[],"enumerators":[{"name":"NO_FLAGS","value":0,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MEnumeratorIsNotAFlag"}]},{"name":"CURSOR_ADD_TAG","value":1,"metadata":[]},{"name":"CURSOR_REMOVE_TAG","value":2,"metadata":[]},{"name":"CURSOR_RETIRED","value":4,"metadata":[]},{"name":"CURSOR_CREATE_CHILD","value":8,"metadata":[]},{"name":"REQUIREMENT_PASS","value":16,"metadata":[]},{"name":"REQUIREMENT_FAIL","value":32,"metadata":[]},{"name":"CALL_TO_PULSE","value":64,"metadata":[]},{"name":"RETURN","value":128,"metadata":[]}]},
+{"name":"PulseApiFeature_t","size":4,"metadata":[],"enumerators":[{"name":"AF_NONE","value":0,"metadata":[]},{"name":"AF_ENTITIES","value":1,"metadata":[]},{"name":"AF_PANORAMA","value":2,"metadata":[]},{"name":"AF_PARTICLES","value":8,"metadata":[]},{"name":"AF_FAKE_ENTITIES","value":16,"metadata":[]},{"name":"AF_SELECTORS_WITHOUT_REQUIREMENTS","value":32,"metadata":[]}]},
+{"name":"PulseBestOutflowRules_t","size":4,"metadata":[],"enumerators":[{"name":"SORT_BY_NUMBER_OF_VALID_CRITERIA","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Choose Best"},{"name":"MPropertyDescription","value":"Choose the best outflow with all rules passing, as determined by number of passing rules (specificity)."}]},{"name":"SORT_BY_OUTFLOW_INDEX","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Choose First"},{"name":"MPropertyDescription","value":"Choose the first outflow with all rules passing, from left to right"}]}]},
+{"name":"PulseCursorCancelPriority_t","size":4,"metadata":[],"enumerators":[{"name":"None","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Keep running normally."}]},{"name":"CancelOnSucceeded","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Kill After."},{"name":"MPropertyDescription","value":"Do not stop the current yielding node, but do not continue to the next node afterwards."}]},{"name":"SoftCancel","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Kill Elegantly."},{"name":"MPropertyDescription","value":"Request elegant wind-down of any associated work (e.g. vcd interrupt)."}]},{"name":"HardCancel","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Kill Immediately."},{"name":"MPropertyDescription","value":"Stop without any wind-down."}]}]},
+{"name":"PulseCursorWakePriority_t","size":4,"metadata":[],"enumerators":[{"name":"WakeElegantly","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Elegantly."},{"name":"MPropertyDescription","value":"Request elegant wind-down of any associated work (e.g. vcd interrupt), then proceed afterwards."}]},{"name":"WakeImmediate","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Immediately."},{"name":"MPropertyDescription","value":"Stop the node action without any wind-down, then proceed afterwards."}]}]},
+{"name":"PulseDomainValueType_t","size":4,"metadata":[],"enumerators":[{"name":"INVALID","value":-1,"metadata":[{"name":"MPropertyFriendlyName","value":"Invalid"}]},{"name":"ENTITY_NAME","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map Entity"}]},{"name":"PANEL_ID","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent XML Panel"}]},{"name":"COUNT","value":2,"metadata":[]}]},
+{"name":"PulseDurationStringFormat_t","size":4,"metadata":[],"enumerators":[{"name":"MM_SS_LEADING_ZERO","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"MM:SS with leading zeros"}]}]},
+{"name":"PulseInstructionCode_t","size":2,"metadata":[],"enumerators":[{"name":"INVALID","value":0,"metadata":[]},{"name":"IMMEDIATE_HALT","value":1,"metadata":[]},{"name":"RETURN_VOID","value":2,"metadata":[]},{"name":"RETURN_VALUE","value":3,"metadata":[]},{"name":"LOOP_BREAK","value":4,"metadata":[]},{"name":"NOP","value":5,"metadata":[]},{"name":"JUMP","value":6,"metadata":[]},{"name":"JUMP_COND","value":7,"metadata":[]},{"name":"CHUNK_LEAP","value":8,"metadata":[]},{"name":"CHUNK_LEAP_COND","value":9,"metadata":[]},{"name":"PULSE_CALL_SYNC","value":10,"metadata":[]},{"name":"PULSE_CALL_ASYNC_FIRE","value":11,"metadata":[]},{"name":"CREATE_CHILD_CURSOR_OUTFLOW","value":12,"metadata":[]},{"name":"CELL_INVOKE","value":13,"metadata":[]},{"name":"LIBRARY_INVOKE","value":14,"metadata":[]},{"name":"SET_VAR","value":15,"metadata":[]},{"name":"GET_VAR","value":16,"metadata":[]},{"name":"GET_VAR_DETACH","value":17,"metadata":[]},{"name":"DETACH_REGISTER","value":18,"metadata":[]},{"name":"SET_VAR_ARRAY_ELEMENT_1D","value":19,"metadata":[]},{"name":"SET_VAR_OBSERVABLE","value":20,"metadata":[]},{"name":"GET_CONST","value":21,"metadata":[]},{"name":"GET_ARRAY_ELEMENT","value":22,"metadata":[]},{"name":"GET_DOMAIN_VALUE","value":23,"metadata":[]},{"name":"COPY","value":24,"metadata":[]},{"name":"NOT","value":25,"metadata":[]},{"name":"NEGATE","value":26,"metadata":[]},{"name":"ADD","value":27,"metadata":[]},{"name":"SUB","value":28,"metadata":[]},{"name":"MUL","value":29,"metadata":[]},{"name":"DIV","value":30,"metadata":[]},{"name":"MOD","value":31,"metadata":[]},{"name":"LT","value":32,"metadata":[]},{"name":"LTE","value":33,"metadata":[]},{"name":"EQ","value":34,"metadata":[]},{"name":"NE","value":35,"metadata":[]},{"name":"AND","value":36,"metadata":[]},{"name":"OR","value":37,"metadata":[]},{"name":"SCALE","value":38,"metadata":[]},{"name":"SCALE_INV","value":39,"metadata":[]},{"name":"ELEMENT_ACCESS","value":40,"metadata":[]},{"name":"CONVERT_VALUE","value":41,"metadata":[]},{"name":"REINTERPRET_INSTANCE","value":42,"metadata":[]},{"name":"GET_BLACKBOARD_REFERENCE","value":43,"metadata":[]},{"name":"SET_BLACKBOARD_REFERENCE","value":44,"metadata":[]},{"name":"GET_TEMPVAR","value":45,"metadata":[]},{"name":"SET_TEMPVAR","value":46,"metadata":[]},{"name":"SET_TEMPVAR_OBSERVABLE","value":47,"metadata":[]},{"name":"LAST_SERIALIZED_CODE","value":48,"metadata":[]},{"name":"NEGATE_INT","value":49,"metadata":[]},{"name":"NEGATE_FLOAT","value":50,"metadata":[]},{"name":"NEGATE_VEC2","value":51,"metadata":[]},{"name":"NEGATE_VEC3","value":52,"metadata":[]},{"name":"NEGATE_VEC4","value":53,"metadata":[]},{"name":"ADD_INT","value":54,"metadata":[]},{"name":"ADD_FLOAT","value":55,"metadata":[]},{"name":"ADD_STRING","value":56,"metadata":[]},{"name":"ADD_VEC2","value":57,"metadata":[]},{"name":"ADD_VEC3","value":58,"metadata":[]},{"name":"ADD_VEC3WS_VEC3","value":59,"metadata":[]},{"name":"ADD_VEC3_VEC3WS","value":60,"metadata":[]},{"name":"ADD_VEC4","value":61,"metadata":[]},{"name":"ADD_GAMETIME_FLOAT","value":62,"metadata":[]},{"name":"ADD_FLOAT_GAMETIME","value":63,"metadata":[]},{"name":"SUB_INT","value":64,"metadata":[]},{"name":"SUB_FLOAT","value":65,"metadata":[]},{"name":"SUB_VEC2","value":66,"metadata":[]},{"name":"SUB_VEC3","value":67,"metadata":[]},{"name":"SUB_VEC3WS_VEC3","value":68,"metadata":[]},{"name":"SUB_VEC3WS_VEC3WS","value":69,"metadata":[]},{"name":"SUB_VEC4","value":70,"metadata":[]},{"name":"SUB_GAMETIME_FLOAT","value":71,"metadata":[]},{"name":"SUB_GAMETIME","value":72,"metadata":[]},{"name":"MUL_INT","value":73,"metadata":[]},{"name":"MUL_FLOAT","value":74,"metadata":[]},{"name":"DIV_FLOAT","value":75,"metadata":[]},{"name":"MOD_INT","value":76,"metadata":[]},{"name":"MOD_FLOAT","value":77,"metadata":[]},{"name":"LT_INT","value":78,"metadata":[]},{"name":"LT_FLOAT","value":79,"metadata":[]},{"name":"LT_GAMETIME","value":80,"metadata":[]},{"name":"LTE_INT","value":81,"metadata":[]},{"name":"LTE_FLOAT","value":82,"metadata":[]},{"name":"LTE_GAMETIME","value":83,"metadata":[]},{"name":"EQ_BOOL","value":84,"metadata":[]},{"name":"EQ_INT","value":85,"metadata":[]},{"name":"EQ_FLOAT","value":86,"metadata":[]},{"name":"EQ_VEC2","value":87,"metadata":[]},{"name":"EQ_VEC3","value":88,"metadata":[]},{"name":"EQ_VEC3WS","value":89,"metadata":[]},{"name":"EQ_VEC4","value":90,"metadata":[]},{"name":"EQ_STRING","value":91,"metadata":[]},{"name":"EQ_ENTITY_NAME","value":92,"metadata":[]},{"name":"EQ_ENUM","value":93,"metadata":[]},{"name":"EQ_EHANDLE","value":94,"metadata":[]},{"name":"EQ_PANEL_HANDLE","value":95,"metadata":[]},{"name":"EQ_LEAF","value":96,"metadata":[]},{"name":"EQ_COLOR_RGB","value":97,"metadata":[]},{"name":"EQ_ARRAY","value":98,"metadata":[]},{"name":"EQ_GAMETIME","value":99,"metadata":[]},{"name":"NE_BOOL","value":100,"metadata":[]},{"name":"NE_INT","value":101,"metadata":[]},{"name":"NE_FLOAT","value":102,"metadata":[]},{"name":"NE_VEC2","value":103,"metadata":[]},{"name":"NE_VEC3","value":104,"metadata":[]},{"name":"NE_VEC3WS","value":105,"metadata":[]},{"name":"NE_VEC4","value":106,"metadata":[]},{"name":"NE_STRING","value":107,"metadata":[]},{"name":"NE_ENTITY_NAME","value":108,"metadata":[]},{"name":"NE_ENUM","value":109,"metadata":[]},{"name":"NE_EHANDLE","value":110,"metadata":[]},{"name":"NE_PANEL_HANDLE","value":111,"metadata":[]},{"name":"NE_LEAF","value":112,"metadata":[]},{"name":"NE_COLOR_RGB","value":113,"metadata":[]},{"name":"NE_ARRAY","value":114,"metadata":[]},{"name":"NE_GAMETIME","value":115,"metadata":[]},{"name":"SCALE_VEC3","value":116,"metadata":[]},{"name":"SCALE_VEC2","value":117,"metadata":[]},{"name":"SCALE_VEC4","value":118,"metadata":[]},{"name":"SCALE_INV_VEC3","value":119,"metadata":[]},{"name":"SCALE_INV_VEC2","value":120,"metadata":[]},{"name":"SCALE_INV_VEC4","value":121,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC2","value":122,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3","value":123,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3WS","value":124,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC4","value":125,"metadata":[]},{"name":"ELEMENT_ACCESS_COLOR_RGB","value":126,"metadata":[]},{"name":"GET_CONST_INLINE_STORAGE","value":127,"metadata":[]}]},
+{"name":"PulseMethodCallMode_t","size":4,"metadata":[],"enumerators":[{"name":"SYNC_WAIT_FOR_COMPLETION","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Wait For Completion"},{"name":"MPropertyDescription","value":"Synchronous - Wait for this node to fully complete before proceeding."}]},{"name":"ASYNC_FIRE_AND_FORGET","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Immediately"},{"name":"MPropertyDescription","value":"Asynchronous - This node executes independently using a new Cursor. Formerly 'Fire and Forget'. Equivalent to scheduling using an additional 'Fire Child Cursors' node."}]}]},
+{"name":"PulseTestEnumColor_t","size":4,"metadata":[],"enumerators":[{"name":"BLACK","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Black"}]},{"name":"WHITE","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"White"}]},{"name":"RED","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Red"}]},{"name":"GREEN","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Green"}]},{"name":"BLUE","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Blue"}]}]},
+{"name":"PulseTestEnumFlagsAlt_t","size":4,"metadata":[],"enumerators":[{"name":"NONE","value":0,"metadata":[]},{"name":"FIRST","value":1,"metadata":[]}]},
+{"name":"PulseTestEnumFlags_t","size":4,"metadata":[],"enumerators":[{"name":"NONE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"None"}]},{"name":"FIRST","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"First"}]},{"name":"SECOND","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Second"}]},{"name":"THIRD","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Third"}]}]},
+{"name":"PulseTestEnumShape_t","size":4,"metadata":[],"enumerators":[{"name":"CIRCLE","value":100,"metadata":[{"name":"MPropertyFriendlyName","value":"Circle"}]},{"name":"SQUARE","value":200,"metadata":[{"name":"MPropertyFriendlyName","value":"Square"}]},{"name":"TRIANGLE","value":300,"metadata":[{"name":"MPropertyFriendlyName","value":"Triangle"}]}]},
+{"name":"PulseValueType_t","size":4,"metadata":[],"enumerators":[{"name":"PVAL_VOID","value":-1,"metadata":[{"name":"MPropertyFriendlyName","value":"Void"}]},{"name":"PVAL_BOOL","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Boolean"}]},{"name":"PVAL_INT","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Integer"}]},{"name":"PVAL_FLOAT","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Float"}]},{"name":"PVAL_STRING","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"String"}]},{"name":"PVAL_VEC2","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector2D"}]},{"name":"PVAL_VEC3","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector"}]},{"name":"PVAL_QANGLE","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Angle"}]},{"name":"PVAL_VEC3_WORLDSPACE","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"World Vector"}]},{"name":"PVAL_VEC4","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector4D"}]},{"name":"PVAL_TRANSFORM","value":9,"metadata":[{"name":"MPropertyFriendlyName","value":"Transform"}]},{"name":"PVAL_TRANSFORM_WORLDSPACE","value":10,"metadata":[{"name":"MPropertyFriendlyName","value":"World Transform"}]},{"name":"PVAL_COLOR_RGB","value":11,"metadata":[{"name":"MPropertyFriendlyName","value":"Color"}]},{"name":"PVAL_GAMETIME","value":12,"metadata":[{"name":"MPropertyFriendlyName","value":"Game Time"}]},{"name":"PVAL_EHANDLE","value":13,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Handle"}]},{"name":"PVAL_RESOURCE","value":14,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource"}]},{"name":"PVAL_RESOURCE_NAME","value":15,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource Name"}]},{"name":"PVAL_SNDEVT_GUID","value":16,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent Instance Handle"}]},{"name":"PVAL_SNDEVT_NAME","value":17,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent"}]},{"name":"PVAL_ENTITY_NAME","value":18,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Name"}]},{"name":"PVAL_LEAF","value":19,"metadata":[{"name":"MPropertyFriendlyName","value":"Leaf Type"}]},{"name":"PVAL_MODEL_MATERIAL_GROUP","value":20,"metadata":[{"name":"MPropertyFriendlyName","value":"Material Group"}]},{"name":"PVAL_CURSOR_FLOW","value":21,"metadata":[{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_VARIANT","value":22,"metadata":[{"name":"MPropertyFriendlyName","value":"Variant"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_UNKNOWN","value":23,"metadata":[{"name":"MPropertyFriendlyName","value":"Unknown"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_ENUM","value":24,"metadata":[{"name":"MPropertyFriendlyName","value":"Enum"}]},{"name":"PVAL_PANORAMA_PANEL_HANDLE","value":25,"metadata":[{"name":"MPropertyFriendlyName","value":"Panorama Panel Handle"}]},{"name":"PVAL_ARRAY","value":26,"metadata":[{"name":"MPropertyFriendlyName","value":"Array"}]},{"name":"PVAL_PARTICLE_EHANDLE","value":27,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MPropertyFriendlyName","value":"Particle Object"}]},{"name":"PVAL_ANIM_SEQUENCE","value":28,"metadata":[{"name":"MPropertyFriendlyName","value":"Anim Sequence"}]},{"name":"PVAL_VDATA_CHOICE","value":29,"metadata":[{"name":"MPropertyFriendlyName","value":"VData Choice"}]},{"name":"PVAL_COUNT","value":30,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
+{"name":"PulseVariableKeysSource_t","size":4,"metadata":[],"enumerators":[{"name":"PRIVATE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Private"}]},{"name":"CPP","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Code"}]},{"name":"VMAP","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map"}]},{"name":"VMDL","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VMDL"}]},{"name":"XML","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent XML"}]},{"name":"VDATA","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VData"}]},{"name":"COUNT","value":6,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]}
+]}

@@ -1,0 +1,10 @@
+particles/prototype_fx/item_linkens_buff.vpcf_c crc=c215e685 size=2620
+particles/prototype_fx/item_linkens_buff_b.vpcf_c crc=f94214e7 size=2423
+particles/prototype_fx/item_linkens_buff_c.vpcf_c crc=f8d5b9da size=2866
+particles/prototype_fx/item_linkens_buff_c_child.vpcf_c crc=0819e563 size=2241
+particles/prototype_fx/item_linkens_buff_c_child_b.vpcf_c crc=7a276de7 size=2055
+particles/prototype_fx/item_linkens_buff_explosion.vpcf_c crc=c6916a56 size=2412
+particles/prototype_fx/item_linkens_buff_explosion_flash.vpcf_c crc=76133b39 size=1897
+particles/prototype_fx/item_linkens_buff_explosion_light.vpcf_c crc=f73c5403 size=1862
+particles/prototype_fx/item_linkens_buff_explosion_trailsb.vpcf_c crc=92968cde size=1956
+particles/prototype_fx/item_linkens_buff_explosion_wave.vpcf_c crc=25054dd7 size=2098

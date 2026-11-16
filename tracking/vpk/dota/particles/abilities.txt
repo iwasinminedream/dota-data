@@ -1,0 +1,2 @@
+particles/abilities/rupture_burst.vpcf_c crc=233798d0 size=2600
+particles/abilities/rupture_burst_a.vpcf_c crc=857187f2 size=2360

@@ -1,0 +1,26 @@
+{"module":"libscenefilecache.so","project":"scenefilecache","schema_version":118,"classes":[
+{"name":"CRR_Response","size":440,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Type","type":"uint8","offset":0,"metadata":[]},
+ {"name":"m_szResponseName","type":"char[192]","offset":1,"metadata":[]},
+ {"name":"m_szMatchingRule","type":"char[128]","offset":193,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_Params","type":"ResponseParams","offset":352,"metadata":[]},
+ {"name":"m_fMatchScore","type":"float32","offset":380,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_bAnyMatchingRulesInCooldown","type":"bool","offset":384,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_szSpeakerContext","type":"char*","offset":392,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_szWorldContext","type":"char*","offset":400,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_Followup","type":"ResponseFollowup","offset":408,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_recipientFilter","type":"CUtlSymbol","offset":436,"metadata":[{"name":"MNotSaved"}]}]},
+{"name":"CResponseCriteriaSet","size":56,"align":255,"flags":[33,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bOverrideOnAppend","type":"bool","offset":48,"metadata":[]}]},
+{"name":"ResponseFollowup","size":28,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"followup_concept","type":"char*","offset":0,"metadata":[]},
+ {"name":"followup_contexts","type":"char*","offset":8,"metadata":[]},
+ {"name":"followup_delay","type":"float32","offset":16,"metadata":[]},
+ {"name":"followup_target","type":"char*","offset":20,"metadata":[]}]},
+{"name":"ResponseParams","size":28,"align":1,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"odds","type":"int16","offset":16,"metadata":[]},
+ {"name":"flags","type":"int16","offset":18,"metadata":[]},
+ {"name":"m_pFollowup","type":"ResponseFollowup*","offset":20,"metadata":[{"name":"MNotSaved"}]}]}
+],"enums":[
+{"name":"CRR_Response::ResponseEnum_t","size":4,"metadata":[],"enumerators":[{"name":"MAX_RESPONSE_NAME","value":192,"metadata":[]},{"name":"MAX_RULE_NAME","value":128,"metadata":[]}]}
+]}

@@ -1,0 +1,2 @@
+models/trophies/mesh/aegis_shield1.vmdl_c crc=9aca1ebe size=31516
+models/trophies/nemesisassassin.vmdl_c crc=8b8e539f size=200908

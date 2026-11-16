@@ -1,0 +1,41 @@
+{"module":"libschemasystem.so","project":"schemasystem","schema_version":118,"classes":[
+{"name":"CExampleSchemaVData_Monomorphic","size":8,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nExample1","type":"int32","offset":0,"metadata":[]},
+ {"name":"m_nExample2","type":"int32","offset":4,"metadata":[]}]},
+{"name":"CExampleSchemaVData_PolymorphicBase","size":16,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nBase","type":"int32","offset":8,"metadata":[]}]},
+{"name":"CExampleSchemaVData_PolymorphicDerivedA","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CExampleSchemaVData_PolymorphicBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nDerivedA","type":"int32","offset":12,"metadata":[]}]},
+{"name":"CExampleSchemaVData_PolymorphicDerivedB","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CExampleSchemaVData_PolymorphicBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nDerivedB","type":"int32","offset":12,"metadata":[]}]},
+{"name":"CSchemaSystemInternalRegistration","size":384,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_Vector2D","type":"Vector2D","offset":0,"metadata":[]},
+ {"name":"m_Vector","type":"Vector","offset":8,"metadata":[]},
+ {"name":"m_VectorWS","type":"VectorWS","offset":20,"metadata":[]},
+ {"name":"m_VectorAligned","type":"VectorAligned","offset":32,"metadata":[]},
+ {"name":"m_Quaternion","type":"Quaternion","offset":48,"metadata":[]},
+ {"name":"m_QAngle","type":"QAngle","offset":64,"metadata":[]},
+ {"name":"m_RotationVector","type":"RotationVector","offset":76,"metadata":[]},
+ {"name":"m_RadianEuler","type":"RadianEuler","offset":88,"metadata":[]},
+ {"name":"m_DegreeEuler","type":"DegreeEuler","offset":100,"metadata":[]},
+ {"name":"m_QuaternionStorage","type":"QuaternionStorage","offset":112,"metadata":[]},
+ {"name":"m_matrix3x4_t","type":"matrix3x4_t","offset":128,"metadata":[]},
+ {"name":"m_matrix3x4a_t","type":"matrix3x4a_t","offset":176,"metadata":[]},
+ {"name":"m_Color","type":"Color","offset":224,"metadata":[]},
+ {"name":"m_Vector4D","type":"Vector4D","offset":228,"metadata":[]},
+ {"name":"m_CTransform","type":"CTransform","offset":256,"metadata":[]},
+ {"name":"m_pKeyValues","type":"KeyValues*","offset":288,"metadata":[]},
+ {"name":"m_CUtlBinaryBlock","type":"CUtlBinaryBlock","offset":296,"metadata":[]},
+ {"name":"m_CUtlString","type":"CUtlString","offset":312,"metadata":[]},
+ {"name":"m_CUtlSymbol","type":"CUtlSymbol","offset":320,"metadata":[]},
+ {"name":"m_stringToken","type":"CUtlStringToken","offset":324,"metadata":[]},
+ {"name":"m_stringTokenWithStorage","type":"CUtlStringTokenWithStorage","offset":328,"metadata":[]},
+ {"name":"m_ResourceTypes","type":"CResourceArray< CResourcePointer< CResourceString > >","offset":352,"metadata":[]},
+ {"name":"m_KV3","type":"KeyValues3","offset":360,"metadata":[]}]},
+{"name":"InfoForResourceTypeCResourceManifestInternal","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
+{"name":"ResourceId_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"uint64","offset":0,"metadata":[]}]}
+],"enums":[
+{"name":"ThreeState_t","size":4,"metadata":[],"enumerators":[{"name":"TRS_FALSE","value":0,"metadata":[]},{"name":"TRS_TRUE","value":1,"metadata":[]},{"name":"TRS_NONE","value":2,"metadata":[]}]},
+{"name":"fieldtype_t","size":1,"metadata":[],"enumerators":[{"name":"FIELD_VOID","value":0,"metadata":[]},{"name":"FIELD_FLOAT32","value":1,"metadata":[]},{"name":"FIELD_STRING","value":2,"metadata":[]},{"name":"FIELD_VECTOR","value":3,"metadata":[]},{"name":"FIELD_QUATERNION","value":4,"metadata":[]},{"name":"FIELD_INT32","value":5,"metadata":[]},{"name":"FIELD_BOOLEAN","value":6,"metadata":[]},{"name":"FIELD_INT16","value":7,"metadata":[]},{"name":"FIELD_CHARACTER","value":8,"metadata":[]},{"name":"FIELD_COLOR32","value":9,"metadata":[]},{"name":"FIELD_EMBEDDED","value":10,"metadata":[]},{"name":"FIELD_CUSTOM","value":11,"metadata":[]},{"name":"FIELD_CLASSPTR","value":12,"metadata":[]},{"name":"FIELD_EHANDLE","value":13,"metadata":[]},{"name":"FIELD_POSITION_VECTOR","value":14,"metadata":[]},{"name":"FIELD_TIME","value":15,"metadata":[]},{"name":"FIELD_TICK","value":16,"metadata":[]},{"name":"FIELD_SOUNDNAME","value":17,"metadata":[]},{"name":"FIELD_INPUT","value":18,"metadata":[]},{"name":"FIELD_FUNCTION","value":19,"metadata":[]},{"name":"FIELD_VMATRIX","value":20,"metadata":[]},{"name":"FIELD_xxxAvail1","value":21,"metadata":[]},{"name":"FIELD_xxxAvail2","value":22,"metadata":[]},{"name":"FIELD_INTERVAL","value":23,"metadata":[]},{"name":"FIELD_UNUSED","value":24,"metadata":[]},{"name":"FIELD_VECTOR2D","value":25,"metadata":[]},{"name":"FIELD_INT64","value":26,"metadata":[]},{"name":"FIELD_VECTOR4D","value":27,"metadata":[]},{"name":"FIELD_RESOURCE","value":28,"metadata":[]},{"name":"FIELD_TYPEUNKNOWN","value":29,"metadata":[]},{"name":"FIELD_CSTRING","value":30,"metadata":[]},{"name":"FIELD_HSCRIPT","value":31,"metadata":[]},{"name":"FIELD_VARIANT","value":32,"metadata":[]},{"name":"FIELD_UINT64","value":33,"metadata":[]},{"name":"FIELD_FLOAT64","value":34,"metadata":[]},{"name":"FIELD_POSITIVEINTEGER_OR_NULL","value":35,"metadata":[]},{"name":"FIELD_HSCRIPT_NEW_INSTANCE","value":36,"metadata":[]},{"name":"FIELD_UINT32","value":37,"metadata":[]},{"name":"FIELD_UTLSTRINGTOKEN","value":38,"metadata":[]},{"name":"FIELD_QANGLE","value":39,"metadata":[]},{"name":"FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTOR","value":40,"metadata":[]},{"name":"FIELD_HMATERIAL","value":41,"metadata":[]},{"name":"FIELD_HMODEL","value":42,"metadata":[]},{"name":"FIELD_NETWORK_QUANTIZED_VECTOR","value":43,"metadata":[]},{"name":"FIELD_NETWORK_QUANTIZED_FLOAT","value":44,"metadata":[]},{"name":"FIELD_DIRECTION_VECTOR_WORLDSPACE","value":45,"metadata":[]},{"name":"FIELD_QANGLE_WORLDSPACE","value":46,"metadata":[]},{"name":"FIELD_QUATERNION_WORLDSPACE","value":47,"metadata":[]},{"name":"FIELD_HSCRIPT_LIGHTBINDING","value":48,"metadata":[]},{"name":"FIELD_V8_VALUE","value":49,"metadata":[]},{"name":"FIELD_V8_OBJECT","value":50,"metadata":[]},{"name":"FIELD_V8_ARRAY","value":51,"metadata":[]},{"name":"FIELD_V8_CALLBACK_INFO","value":52,"metadata":[]},{"name":"FIELD_UTLSTRING","value":53,"metadata":[]},{"name":"FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_POSITION_VECTOR","value":54,"metadata":[]},{"name":"FIELD_HRENDERTEXTURE","value":55,"metadata":[]},{"name":"FIELD_HPARTICLESYSTEMDEFINITION","value":56,"metadata":[]},{"name":"FIELD_UINT8","value":57,"metadata":[]},{"name":"FIELD_UINT16","value":58,"metadata":[]},{"name":"FIELD_CTRANSFORM","value":59,"metadata":[]},{"name":"FIELD_CTRANSFORM_WORLDSPACE","value":60,"metadata":[]},{"name":"FIELD_HPOSTPROCESSING","value":61,"metadata":[]},{"name":"FIELD_MATRIX3X4","value":62,"metadata":[]},{"name":"FIELD_SHIM","value":63,"metadata":[]},{"name":"FIELD_CMOTIONTRANSFORM","value":64,"metadata":[]},{"name":"FIELD_CMOTIONTRANSFORM_WORLDSPACE","value":65,"metadata":[]},{"name":"FIELD_ATTACHMENT_HANDLE","value":66,"metadata":[]},{"name":"FIELD_AMMO_INDEX","value":67,"metadata":[]},{"name":"FIELD_CONDITION_ID","value":68,"metadata":[]},{"name":"DEPRECATED_FIELD_AI_SCHEDULE_BITS","value":69,"metadata":[]},{"name":"FIELD_MODIFIER_HANDLE","value":70,"metadata":[]},{"name":"FIELD_ROTATION_VECTOR","value":71,"metadata":[]},{"name":"FIELD_ROTATION_VECTOR_WORLDSPACE","value":72,"metadata":[]},{"name":"FIELD_HVDATA","value":73,"metadata":[]},{"name":"FIELD_SCALE32","value":74,"metadata":[]},{"name":"FIELD_STRING_AND_TOKEN","value":75,"metadata":[]},{"name":"FIELD_ENGINE_TIME","value":76,"metadata":[]},{"name":"FIELD_ENGINE_TICK","value":77,"metadata":[]},{"name":"FIELD_WORLD_GROUP_ID","value":78,"metadata":[]},{"name":"FIELD_GLOBALSYMBOL","value":79,"metadata":[]},{"name":"FIELD_HNMGRAPHDEFINITION","value":80,"metadata":[]},{"name":"FIELD_NETWORK_QUANTIZED_VECTORWS","value":81,"metadata":[]},{"name":"FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTORWS","value":82,"metadata":[]},{"name":"FIELD_TYPECOUNT","value":83,"metadata":[]}]}
+]}

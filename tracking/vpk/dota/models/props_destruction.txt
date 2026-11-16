@@ -1,0 +1,9 @@
+models/props_destruction/branch_brkbl_dyn.vmdl_c crc=49127203 size=26607
+models/props_destruction/branch_dynam.vmdl_c crc=0cff2e9e size=152161
+models/props_destruction/crystal_spike.vmdl_c crc=9f26f5c2 size=9457
+models/props_destruction/dyn_tree_oak04.vmdl_c crc=60db3cde size=53945
+models/props_destruction/ground_ice.vmdl_c crc=29460eae size=30274
+models/props_destruction/lava_flow_clump.vmdl_c crc=553034f4 size=43639
+models/props_destruction/lion_groundspikes.vmdl_c crc=52cc8c53 size=9415
+models/props_destruction/rockyspikes_dynamic.vmdl_c crc=fb7d0118 size=484648
+models/props_destruction/tree_splinters.vmdl_c crc=3116cbd5 size=182726

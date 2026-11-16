@@ -1,0 +1,2 @@
+materials/deferred_fog/fog_apply.vmat_c crc=185186e8 size=2856
+materials/deferred_fog/ground_fog_accumulate.vmat_c crc=66462c2a size=2872

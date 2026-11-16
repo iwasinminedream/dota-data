@@ -1,0 +1,11 @@
+particles/teams/guilds/banner_guild_lvl4_ambient.vpcf_c crc=3ac8babd size=1966
+particles/teams/guilds/banner_guild_lvl4_ambient_crown.vpcf_c crc=612bcdff size=2696
+particles/teams/guilds/banner_guild_lvl4_ambient_embers.vpcf_c crc=1497f7c9 size=3638
+particles/teams/guilds/banner_guild_lvl4_ambient_gem.vpcf_c crc=d9a3da26 size=2629
+particles/teams/guilds/banner_guild_lvl4_ambient_gems_fx.vpcf_c crc=48886cec size=1572
+particles/teams/guilds/banner_guild_lvl4_ambient_glow.vpcf_c crc=715c6409 size=2777
+particles/teams/guilds/banner_guild_lvl4_ambient_sparkle.vpcf_c crc=0f04e4c8 size=3121
+particles/teams/guilds/banner_guild_lvl4_ambient_steam.vpcf_c crc=8bf1c193 size=2780
+particles/teams/guilds/banner_guild_lvl4_ambient_tassle_l.vpcf_c crc=4c3ba60b size=2540
+particles/teams/guilds/banner_guild_lvl4_ambient_tassle_r.vpcf_c crc=d945e208 size=2540
+particles/teams/guilds/banner_guild_lvl4_ambient_tassles_fx.vpcf_c crc=ba262ebb size=1572

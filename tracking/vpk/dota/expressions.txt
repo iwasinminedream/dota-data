@@ -1,0 +1,2 @@
+expressions/heroes/phonemes.txt crc=ffd6c79d size=20820
+expressions/heroes/phonemes.vfe crc=25633594 size=18972

@@ -1,0 +1,5 @@
+models/mh_monsters/barioth/barioth.vmdl_c crc=d65834a4 size=2073754
+models/mh_monsters/gore_magala/gore_magala.vmdl_c crc=1a7a6bb0 size=3006449
+models/mh_monsters/rathalos/rathalos.vmdl_c crc=073a3eb9 size=2087404
+models/mh_monsters/rathian/rathian.vmdl_c crc=eaf1da0e size=2832481
+models/mh_monsters/seregios/seregios.vmdl_c crc=a434b125 size=968419

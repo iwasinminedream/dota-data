@@ -1,0 +1,12 @@
+camera/cameras/hero_approach.txt crc=508882ca size=388
+camera/cameras/hero_approach_from_above.txt crc=c6b58972 size=421
+camera/cameras/hero_pan_right.txt crc=fca5f508 size=444
+camera/cameras/nemestice_intro.txt crc=d2dfd731 size=46873
+camera/cameras/rise.txt crc=1ffaf9d2 size=439
+camera/cameras/roam_birds.txt crc=f8361a54 size=491
+camera/cameras/roam_birdseye.txt crc=a1663949 size=78491
+camera/cameras/roam_dire.txt crc=2cd90d15 size=585
+camera/cameras/roam_radiant.txt crc=364c94ac size=593
+camera/cameras/roam_river.txt crc=c7695bb8 size=964
+camera/cameras/roam_ruin.txt crc=8ee1d7f8 size=465
+camera/cameras/roam_waterfall.txt crc=90abd670 size=471

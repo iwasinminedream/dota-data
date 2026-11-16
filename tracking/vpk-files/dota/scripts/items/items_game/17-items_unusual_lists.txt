@@ -1,0 +1,81 @@
+	"items_unusual_lists"
+	{
+		"frostivus_2023_unusual_list"
+		{
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 826"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 827"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 828"
+			}
+		}
+		"frostivus_2024_unusual_list"
+		{
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 826"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 827"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 828"
+			}
+		}
+		"new_bloom_2024_unusual_list"
+		{
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 833"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 834"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 835"
+			}
+		}
+		"crownfall_unusual_list"
+		{
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 836"
+			}
+			"socket 1"
+			{
+				"weight"		"1"
+				"attribute_class"		"socket"
+				"value"		"socket { required_type: 1 gem_def_index: 3045 } effect: 837"
+			}
+		}
+	}

@@ -1,0 +1,27 @@
+{
+ "build": {
+  "ClientVersion": "6975",
+  "SourceRevision": "11236380",
+  "VersionDate": "Nov 12 2026"
+ },
+ "failed": {},
+ "files": {
+  "core": 18,
+  "dota": 3855
+ },
+ "game": {
+  "files": 4
+ },
+ "protobuf": {
+  "protos": 88
+ },
+ "schema": {
+  "classes": 17940,
+  "enums": 1472,
+  "modules": 18
+ },
+ "vpk": {
+  "core": 1428,
+  "dota": 388117
+ }
+}

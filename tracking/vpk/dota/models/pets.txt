@@ -1,0 +1,16 @@
+models/pets/armadillo/armadillo.vmdl_c crc=bbef6173 size=438270
+models/pets/icewrack_wolf/icewrack_wolf.vmdl_c crc=9d0caa1e size=619486
+models/pets/icewrack_wolf_alt/icewrack_wolf_alt.vmdl_c crc=015c67b5 size=879102
+models/pets/items/bone001.vmdl_c crc=e1de5e14 size=8269
+models/pets/poogie/poogie.vmdl_c crc=90459809 size=442462
+models/pets/poogie/poogie_apprentice.vmdl_c crc=6cd54459 size=510924
+models/pets/poogie/poogie_bee.vmdl_c crc=6c56939e size=447373
+models/pets/poogie/poogie_emperor.vmdl_c crc=76f7811f size=376142
+models/pets/poogie/poogie_pink.vmdl_c crc=1a07d5f9 size=481031
+models/pets/poogie/poogie_pumpkin.vmdl_c crc=47907a11 size=421761
+models/pets/red_riding_hood/red_riding_hood.vmdl_c crc=95906cb9 size=1695764
+models/pets/red_riding_hood/red_riding_hood/red_riding_hood_lod0_vmorf.vtex_c crc=a805a64c size=2087188
+models/pets/red_riding_hood/red_riding_hood/red_riding_hood_lod1_vmorf.vtex_c crc=67355eff size=2127768
+models/pets/red_riding_hood/red_riding_hood_granny.vmdl_c crc=1f84e1b5 size=1591745
+models/pets/red_riding_hood/red_riding_hood_granny/red_riding_hood_granny_lod0_vmorf.vtex_c crc=e55987dc size=2087188
+models/pets/red_riding_hood/red_riding_hood_granny/red_riding_hood_granny_lod1_vmorf.vtex_c crc=01a57b96 size=2110308

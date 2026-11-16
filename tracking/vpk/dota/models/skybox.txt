@@ -1,0 +1,4 @@
+models/skybox/sky_dome.vmdl_c crc=7e86c26a size=19134
+models/skybox/sky_dome_mvp.vmdl_c crc=f9c0b9d4 size=13012
+models/skybox/skybox_dome.vmdl_c crc=07636330 size=16435
+models/skybox/skybox_dome_full.vmdl_c crc=56d0eeb0 size=29609

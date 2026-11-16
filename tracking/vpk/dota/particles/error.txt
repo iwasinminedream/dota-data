@@ -1,0 +1,3 @@
+particles/error/community_sparkle.vpcf_c crc=8e555ada size=1179
+particles/error/error.vpcf_c crc=56c0dcfc size=1359
+particles/error/null.vpcf_c crc=1ab2c113 size=851

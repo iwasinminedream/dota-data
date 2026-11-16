@@ -1,0 +1,1 @@
+resourcemanifests/addon_resources.vrman_c crc=6af7e63b size=475

@@ -1,0 +1,593 @@
+	"partners"
+	{
+		"teams"
+		{
+			"6"
+			{
+				"name"		"#DOTA_Teams_Absolute_Legends"
+			}
+			"111474"
+			{
+				"name"		"#DOTA_Teams_Alliance"
+				"icon_path"		"teams/111474"
+				"in_game_item_def"		"17131"
+				"image_banner"		"econ/brands/brand_alliance_banner"
+			}
+			"22"
+			{
+				"name"		"#DOTA_Teams_CLG"
+			}
+			"3"
+			{
+				"name"		"#DOTA_Teams_Complexity"
+				"icon_path"		"econ/brands/brand_complexity"
+				"in_game_item_def"		"17133"
+				"small_icon"		"econ/brands/brand_complexity_small"
+			}
+			"31"
+			{
+				"name"		"#DOTA_Teams_Darer"
+			}
+			"142"
+			{
+				"name"		"#DOTA_Teams_Dignitas"
+			}
+			"7"
+			{
+				"name"		"#DOTA_Teams_DK"
+			}
+			"4"
+			{
+				"name"		"#DOTA_Teams_EHOME"
+				"icon_path"		"econ/brands/brand_ehome"
+				"in_game_item_def"		"17134"
+				"small_icon"		"econ/brands/brand_ehome_small"
+				"image_banner"		"econ/brands/brand_ehome_banner"
+			}
+			"39"
+			{
+				"name"		"#DOTA_Teams_Evil_Geniuses"
+				"icon_path"		"teams/39"
+				"in_game_item_def"		"16279"
+				"small_icon"		"econ/brands/brand_eg_small"
+				"image_banner"		"econ/brands/brand_eg_banner"
+			}
+			"350190"
+			{
+				"name"		"#DOTA_Teams_Fnatic"
+				"icon_path"		"teams/350190"
+				"in_game_item_def"		"17132"
+				"image_banner"		"econ/brands/brand_fnatic_banner"
+			}
+			"5"
+			{
+				"name"		"#DOTA_Teams_iG"
+				"icon_path"		"econ/brands/brand_ig"
+				"small_icon"		"econ/brands/brand_ig_small"
+			}
+			"15"
+			{
+				"name"		"#DOTA_Teams_LGD"
+				"icon_path"		"teams/15"
+				"in_game_item_def"		"16677"
+				"small_icon"		"econ/brands/brand_lgd_small"
+				"image_banner"		"econ/brands/brand_lgd_banner"
+			}
+			"77666"
+			{
+				"name"		"#DOTA_Teams_LGD_Int"
+			}
+			"2163"
+			{
+				"name"		"#DOTA_Teams_Liquid"
+				"icon_path"		"teams/2163"
+				"in_game_item_def"		"16674"
+			}
+			"26"
+			{
+				"name"		"#DOTA_Teams_Mousesports"
+				"icon_path"		"econ/brands/brand_mousesports"
+				"small_icon"		"econ/brands/brand_mousesports_small"
+			}
+			"30"
+			{
+				"name"		"#DOTA_Teams_mTw"
+			}
+			"66"
+			{
+				"name"		"#DOTA_Teams_MUFC"
+			}
+			"36"
+			{
+				"name"		"#DOTA_Teams_NaVi"
+				"icon_path"		"teams/36"
+				"in_game_item_def"		"16877"
+				"image_banner"		"econ/brands/brand_navi_banner"
+			}
+			"416900"
+			{
+				"name"		"#DOTA_Teams_Orange"
+			}
+			"20"
+			{
+				"name"		"#DOTA_Teams_TongFu"
+			}
+			"17"
+			{
+				"name"		"#DOTA_Teams_World_Elite"
+			}
+			"2"
+			{
+				"name"		"#DOTA_Teams_Zenith"
+			}
+			"1333179"
+			{
+				"name"		"#DOTA_Teams_Cloud9"
+				"icon_path"		"econ/brands/brand_cloud9"
+				"small_icon"		"econ/brands/brand_cloud9_small"
+			}
+			"1245961"
+			{
+				"name"		"#DOTA_Teams_Zephyr"
+				"icon_path"		"econ/brands/brand_zephyr"
+				"image_banner"		"econ/brands/brand_zephyr_banner"
+			}
+			"1148284"
+			{
+				"name"		"#DOTA_Teams_MVP_Phoenix"
+				"icon_path"		"econ/brands/brand_mvpphoenix"
+				"in_game_item_def"		"16853"
+				"small_icon"		"econ/brands/brand_mvpphoenix_small"
+				"image_banner"		"econ/brands/brand_mvpphoenix_banner"
+			}
+			"726228"
+			{
+				"name"		"#DOTA_Teams_ViCi_Gaming"
+				"icon_path"		"teams/726228"
+				"image_banner"		"econ/brands/brand_vicigaming_banner"
+				"in_game_item_def"		"17524"
+			}
+			"999689"
+			{
+				"name"		"#DOTA_Teams_Titan"
+			}
+			"46"
+			{
+				"name"		"#DOTA_Teams_Team_Empire"
+				"icon_path"		"econ/brands/brand_empire"
+				"image_banner"		"econ/brands/brand_empire_banner"
+			}
+			"1375614"
+			{
+				"name"		"#DOTA_Teams_NewBee"
+				"icon_path"		"econ/brands/brand_newbee"
+				"in_game_item_def"		"16676"
+				"small_icon"		"econ/brands/brand_newbee_small"
+				"image_banner"		"econ/brands/brand_newbee_banner"
+			}
+			"1312775"
+			{
+				"name"		"#DOTA_Teams_CIS_Game"
+			}
+			"1642908"
+			{
+				"name"		"#DOTA_Teams_NaVi_NA"
+			}
+			"1883502"
+			{
+				"name"		"#DOTA_Teams_Virtus_Pro"
+				"icon_path"		"teams/1883502"
+				"image_banner"		"econ/brands/brand_virtuspro_banner"
+				"in_game_item_def"		"17523"
+			}
+			"1277104"
+			{
+				"name"		"#DOTA_Teams_Arrow_Gaming"
+			}
+			"2586976"
+			{
+				"name"		"#DOTA_Teams_OG"
+				"icon_path"		"teams/2586976"
+				"in_game_item_def"		"16286"
+				"small_icon"		"econ/brands/brand_og_small"
+			}
+			"1838315"
+			{
+				"name"		"#DOTA_Teams_Team_Secret"
+				"icon_path"		"teams/1838315"
+				"in_game_item_def"		"16881"
+				"small_icon"		"econ/brands/brand_team_secret_small"
+			}
+			"1836806"
+			{
+				"name"		"#DOTA_Teams_The_Wings_Gaming"
+				"icon_path"		"econ/brands/brand_wings_gaming"
+				"in_game_item_def"		"16879"
+				"small_icon"		"econ/brands/brand_wings_gaming_small"
+			}
+			"2777247"
+			{
+				"name"		"#DOTA_Teams_Vici_Gaming_Reborn"
+				"icon_path"		"econ/brands/brand_vici_gaming_reborn"
+				"in_game_item_def"		"17130"
+				"small_icon"		"econ/brands/brand_vici_gaming_reborn_small"
+			}
+			"2108395"
+			{
+				"name"		"#DOTA_Teams_TNC"
+				"icon_path"		"teams/2108395"
+				"in_game_item_def"		"16882"
+			}
+			"2512249"
+			{
+				"name"		"#DOTA_Teams_Digital_Chaos"
+				"icon_path"		"econ/brands/brand_digital_chaos"
+				"in_game_item_def"		"17005"
+				"small_icon"		"econ/brands/brand_digital_chaos_small"
+			}
+			"2783913"
+			{
+				"name"		"#DOTA_Teams_Escape_Gaming"
+				"icon_path"		"econ/brands/brand_escape"
+				"in_game_item_def"		"17135"
+				"small_icon"		"econ/brands/brand_escape_small"
+			}
+			"2581813"
+			{
+				"name"		"#DOTA_Teams_Execration"
+				"icon_path"		"econ/brands/brand_execration"
+				"in_game_item_def"		"17136"
+				"small_icon"		"econ/brands/brand_execration_small"
+			}
+			"2642171"
+			{
+				"name"		"#DOTA_Teams_Ad_Finem"
+				"icon_path"		"econ/brands/brand_adfinem"
+				"small_icon"		"econ/brands/brand_adfinem_small"
+			}
+			"3214108"
+			{
+				"name"		"#DOTA_Teams_NP"
+				"icon_path"		"econ/brands/brand_np"
+				"small_icon"		"econ/brands/brand_np_small"
+			}
+			"2659468"
+			{
+				"name"		"#DOTA_Teams_WarriorsGaming_Unity"
+				"icon_path"		"econ/brands/brand_wgunity"
+				"small_icon"		"econ/brands/brand_wgunity_small"
+			}
+			"3331948"
+			{
+				"name"		"#DOTA_Teams_LGD_ForeverYoung"
+				"icon_path"		"econ/brands/brand_lfy"
+				"small_icon"		"econ/brands/brand_lfy_small"
+			}
+			"2640025"
+			{
+				"name"		"#DOTA_Teams_IG_Vitality"
+				"icon_path"		"econ/brands/brand_igv"
+				"small_icon"		"econ/brands/brand_igv_small"
+			}
+			"3326875"
+			{
+				"name"		"#DOTA_Teams_Faceless"
+				"icon_path"		"econ/brands/brand_faceless"
+				"small_icon"		"econ/brands/brand_faceless_small"
+			}
+			"824543"
+			{
+				"name"		"#DOTA_Teams_Team_Radiant"
+				"icon_path"		"econ/brands/brand_radiant"
+				"in_game_item_def"		"17137"
+				"small_icon"		"econ/brands/brand_radiant_small"
+				"image_banner"		"econ/brands/brand_radiant_banner"
+			}
+			"824639"
+			{
+				"name"		"#DOTA_Teams_Team_Dire"
+				"icon_path"		"econ/brands/brand_dire"
+				"in_game_item_def"		"17138"
+				"small_icon"		"econ/brands/brand_dire_small"
+				"image_banner"		"econ/brands/brand_dire_banner"
+			}
+			"3547682"
+			{
+				"name"		"#DOTA_Teams_VG_J"
+				"icon_path"		"econ/brands/brand_vgj"
+				"small_icon"		"econ/brands/brand_vgj_small"
+			}
+			"3580606"
+			{
+				"name"		"#DOTA_Teams_SG_eSports"
+				"icon_path"		"econ/brands/brand_sg_esports"
+				"small_icon"		"econ/brands/brand_sg_esports_small"
+			}
+			"3722973"
+			{
+				"name"		"#DOTA_Teams_Team_Onyx"
+				"icon_path"		"econ/brands/brand_onyx"
+				"small_icon"		"econ/brands/brand_onyx_small"
+			}
+			"4253054"
+			{
+				"name"		"#DOTA_Teams_Team_Random"
+				"icon_path"		"econ/brands/brand_team_random"
+				"small_icon"		"econ/brands/brand_team_random_small"
+			}
+			"4251435"
+			{
+				"name"		"#DOTA_Teams_Thunderbirds"
+				"icon_path"		"econ/brands/brand_thunderbirds"
+				"small_icon"		"econ/brands/brand_thunderbirds_small"
+			}
+			"2672298"
+			{
+				"name"		"#DOTA_Teams_Infamous"
+				"icon_path"		"teams/2672298"
+				"in_game_item_def"		"17525"
+			}
+			"1846548"
+			{
+				"name"		"#DOTA_Teams_Hellraisers"
+				"icon_path"		"econ/brands/brand_hellraisers"
+				"small_icon"		"econ/brands/brand_hellraisers_small"
+			}
+			"543897"
+			{
+				"name"		"#DOTA_Teams_Mineski"
+				"icon_path"		"teams/543897"
+				"in_game_item_def"		"17510"
+			}
+			"7203342"
+			{
+				"name"		"#DOTA_Teams_ChaosEsports"
+				"icon_path"		"teams/7203342"
+				"in_game_item_def"		"17517"
+			}
+			"6214538"
+			{
+				"name"		"#DOTA_Teams_ForwardGaming"
+				"icon_path"		"teams/6214538"
+				"in_game_item_def"		"17518"
+			}
+			"6209804"
+			{
+				"name"		"#DOTA_Teams_RoyalNeverGiveUp"
+				"icon_path"		"teams/6209804"
+				"in_game_item_def"		"17519"
+			}
+			"2626685"
+			{
+				"name"		"#DOTA_Teams_KeenGaming"
+				"icon_path"		"teams/2626685"
+				"in_game_item_def"		"17521"
+			}
+			"6214973"
+			{
+				"name"		"#DOTA_Teams_NinjasInPyjamas"
+				"icon_path"		"teams/6214973"
+				"in_game_item_def"		"17522"
+			}
+		}
+		"corporations"
+		{
+			"132819754"
+			{
+				"name"		"#DOTA_Corporations_Beyond_the_Summit"
+				"icon_path"		"econ/brands/brand_bts"
+				"image_banner"		"econ/brands/brand_bts_banner"
+			}
+			"86715129"
+			{
+				"name"		"#DOTA_Corporations_Liquid_ixmike88"
+				"icon_path"		"econ/brands/brand_ixmike88"
+				"image_banner"		"econ/brands/brand_ixmike88_banner"
+			}
+			"84772440"
+			{
+				"name"		"#DOTA_Corporations_iceiceice"
+				"icon_path"		"econ/brands/brand_iceiceice"
+				"image_banner"		"econ/brands/brand_iceiceice_banner"
+			}
+			"90892734"
+			{
+				"name"		"#DOTA_Corporations_BurNIng"
+				"icon_path"		"econ/brands/brand_burning"
+				"image_banner"		"econ/brands/brand_burning_banner"
+			}
+			"82262664"
+			{
+				"name"		"#DOTA_Corporations_Kuroky"
+				"icon_path"		"econ/brands/brand_kuroky"
+				"image_banner"		"econ/brands/brand_kuroky_banner"
+			}
+			"19757254"
+			{
+				"name"		"#DOTA_Corporations_Sing"
+				"icon_path"		"econ/brands/brand_singsing"
+				"image_banner"		"econ/brands/brand_singsing_banner"
+			}
+			"129352909"
+			{
+				"name"		"#DOTA_Corporations_D2L"
+				"icon_path"		"econ/brands/brand_d2l"
+				"image_banner"		"econ/brands/brand_d2l_banner"
+			}
+			"96196828"
+			{
+				"name"		"#DOTA_Corporations_BZZ"
+				"icon_path"		"econ/brands/brand_bzz"
+				"image_banner"		"econ/brands/brand_bzz_banner"
+			}
+			"53482884"
+			{
+				"name"		"#DOTA_Corporations_CaspeRRR"
+				"icon_path"		"econ/brands/brand_casperrr"
+				"image_banner"		"econ/brands/brand_casperrr_banner"
+			}
+			"690740"
+			{
+				"name"		"#DOTA_Corporations_Dota_Cinema"
+				"icon_path"		"econ/brands/brand_dotacinema"
+				"image_banner"		"econ/brands/brand_dotacinema_banner"
+			}
+			"70388657"
+			{
+				"name"		"#DOTA_Corporations_Danil__Dendi__Ishutin"
+				"icon_path"		"econ/brands/brand_dendi"
+				"image_banner"		"econ/brands/brand_dendi_banner"
+			}
+			"87177591"
+			{
+				"name"		"#DOTA_Corporations_Clinton__Fear__Loomis"
+				"icon_path"		"econ/brands/brand_fear"
+				"image_banner"		"econ/brands/brand_fear_banner"
+			}
+			"68740191"
+			{
+				"name"		"#DOTA_Corporations_Benedict__HyHy__Lim"
+				"icon_path"		"econ/brands/brand_hyhy"
+				"image_banner"		"econ/brands/brand_hyhy_banner"
+			}
+			"76600360"
+			{
+				"name"		"#DOTA_Corporations_RoX_KIS_yol"
+				"icon_path"		"econ/brands/brand_yol"
+				"image_banner"		"econ/brands/brand_yol_banner"
+			}
+			"89371588"
+			{
+				"name"		"#DOTA_Corporations_DD"
+				"icon_path"		"econ/brands/brand_dd"
+				"image_banner"		"econ/brands/brand_dd_banner"
+			}
+			"107644273"
+			{
+				"name"		"#DOTA_Corporations_Ars_Art"
+				"icon_path"		"econ/brands/brand_arsart"
+				"image_banner"		"econ/brands/brand_arsart_banner"
+			}
+			"134556694"
+			{
+				"name"		"#DOTA_Corporations_SOLO"
+				"icon_path"		"econ/brands/brand_solo"
+				"image_banner"		"econ/brands/brand_solo_banner"
+			}
+			"90045009"
+			{
+				"name"		"#DOTA_Corporations_YYF"
+				"icon_path"		"econ/brands/brand_yyf"
+				"image_banner"		"econ/brands/brand_yyf_banner"
+			}
+			"113705693"
+			{
+				"name"		"#DOTA_Corporations_ZSMJ"
+				"icon_path"		"econ/brands/brand_zsmj"
+				"image_banner"		"econ/brands/brand_zsmj_banner"
+			}
+			"93712171"
+			{
+				"name"		"#DOTA_Corporations_NS"
+				"icon_path"		"econ/brands/brand_ns"
+				"image_banner"		"econ/brands/brand_ns_banner"
+			}
+			"86723143"
+			{
+				"name"		"#DOTA_Corporations_Funn1k"
+				"icon_path"		"econ/brands/brand_funn1k"
+				"image_banner"		"econ/brands/brand_funn1k_banner"
+			}
+			"93616251"
+			{
+				"name"		"#DOTA_Corporations_Ohaiyo"
+				"icon_path"		"econ/brands/brand_ohaiyo"
+				"image_banner"		"econ/brands/brand_ohaiyo_banner"
+			}
+			"30237211"
+			{
+				"name"		"#DOTA_Corporations_BuLba"
+				"icon_path"		"econ/brands/brand_bulba"
+				"image_banner"		"econ/brands/brand_bulba_banner"
+			}
+			"89871557"
+			{
+				"name"		"#DOTA_Corporations_Mushi"
+				"icon_path"		"econ/brands/brand_mushi"
+				"image_banner"		"econ/brands/brand_mushi_banner"
+			}
+			"86745912"
+			{
+				"name"		"#DOTA_Corporations_Arteezy"
+				"icon_path"		"econ/brands/brand_arteezy"
+				"image_banner"		"econ/brands/brand_arteezy_banner"
+			}
+			"86737705"
+			{
+				"name"		"#DOTA_Corporations_Aren__VeRsuta__Zurabyan"
+				"icon_path"		"econ/brands/brand_versuta"
+			}
+			"91644707"
+			{
+				"name"		"#DOTA_Corporations_Lee__Kyxy__Kang_Yang"
+				"icon_path"		"econ/brands/brand_KYXY"
+				"image_banner"		"econ/brands/brand_KYXY_banner"
+			}
+			"88508515"
+			{
+				"name"		"#DOTA_Corporations_Hao"
+				"icon_path"		"econ/brands/brand_Hao"
+			}
+			"87586992"
+			{
+				"name"		"#DOTA_Corporations_Sergey__G__Bragin"
+				"icon_path"		"econ/brands/brand_G"
+			}
+			"100317750"
+			{
+				"name"		"#DOTA_Corporations_Adrian__Era__Kryeziu"
+				"icon_path"		"econ/brands/brand_era"
+			}
+			"43276219"
+			{
+				"name"		"#DOTA_Corporations_EternaLEnVy"
+				"icon_path"		"econ/brands/brand_eternalenvy"
+			}
+			"138885864"
+			{
+				"name"		"#DOTA_Corporations_Lin__June__Shiyang"
+				"icon_path"		"econ/brands/brand_june"
+			}
+			"293426899"
+			{
+				"name"		"#DOTA_Corporations_JJ_Lin"
+				"icon_path"		"econ/brands/brand_jjlin"
+			}
+			"96169991"
+			{
+				"name"		"#DOTA_Corporations_Ar1se"
+				"icon_path"		"econ/brands/brand_arise"
+			}
+			"11550182"
+			{
+				"name"		"#DOTA_Corporations_VANSKOR"
+				"icon_path"		"econ/brands/brand_vanskor"
+			}
+			"87196890"
+			{
+				"name"		"#DOTA_Corporations_1437"
+				"icon_path"		"econ/brands/brand_1437"
+			}
+			"19672354"
+			{
+				"name"		"#DOTA_Corporations_Johan__n0tail__Sundstein"
+				"icon_path"		"econ/brands/brand_n0tail"
+			}
+			"17302781"
+			{
+				"name"		"#DOTA_Corporations_10th_anniversary"
+				"icon_path"		"econ/treasure_brands/brand_10th_anniversary"
+				"image_banner"		"econ/treasure_brands/brand_10th_anniversary_banner"
+			}
+		}
+	}

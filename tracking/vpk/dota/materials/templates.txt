@@ -1,0 +1,2 @@
+materials/templates/courier_material_template.vmat_c crc=e1f3f0be size=3782
+materials/templates/ward_material_template.vmat_c crc=5868f6b9 size=3766

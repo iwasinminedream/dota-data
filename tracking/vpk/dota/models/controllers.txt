@@ -1,0 +1,7 @@
+models/controllers/materials/onepointfive_lines_color_psd_136f5454.vtex_c crc=136c3e24 size=5594628
+models/controllers/materials/onepointfive_texture_tga_aea4707.vtex_c crc=98b64ecf size=2798012
+models/controllers/materials/vr_controller_02_mrhat_puck.vmat_c crc=dafd6b4f size=4384
+models/controllers/materials/vr_controller_onepointfive.vmat_c crc=a338a83d size=5656
+models/controllers/materials/vr_controller_onepointfive_lines.vmat_c crc=4dd3b6aa size=6008
+models/controllers/vr_controller.vmdl_c crc=4b2f6ebf size=351255
+models/controllers/vr_controller_tr.vmdl_c crc=44f1c516 size=351290

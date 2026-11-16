@@ -1,0 +1,15 @@
+particles/blood_impact/blood_advisor_pierce_spray.vpcf_c crc=4e12aec4 size=2592
+particles/blood_impact/blood_advisor_pierce_spray_b.vpcf_c crc=9362eab3 size=2428
+particles/blood_impact/blood_advisor_pierce_spray_c.vpcf_c crc=734eb2b7 size=2460
+particles/blood_impact/blood_advisor_shrapnel_spray_1.vpcf_c crc=a6bb88f7 size=2437
+particles/blood_impact/blood_advisor_shrapnel_spray_2.vpcf_c crc=57f4374c size=2427
+particles/blood_impact/blood_advisor_shrapnel_spurt_1.vpcf_c crc=d363ea08 size=2390
+particles/blood_impact/blood_impact_red_01_smalldroplets.vpcf_c crc=0ff7856c size=2007
+particles/blood_impact/blood_impact_synth_01_arc.vpcf_c crc=82b11d86 size=2199
+particles/blood_impact/blood_impact_synth_01_arc2.vpcf_c crc=6430809e size=2199
+particles/blood_impact/blood_impact_synth_01_arc3.vpcf_c crc=1974a796 size=2198
+particles/blood_impact/blood_impact_synth_01_arc4.vpcf_c crc=f9e12246 size=2199
+particles/blood_impact/blood_impact_synth_01_arc_parent.vpcf_c crc=09c0ec5f size=957
+particles/blood_impact/blood_impact_synth_01_arc_parents.vpcf_c crc=7976a9d5 size=1914
+particles/blood_impact/blood_impact_synth_01_dust.vpcf_c crc=c25ec784 size=2025
+particles/blood_impact/blood_impact_synth_01_short.vpcf_c crc=893e95c0 size=2348

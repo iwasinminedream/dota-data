@@ -1,0 +1,6 @@
+particles/heroes/undying/undying_decay_thinker.vpcf_c crc=ac62a6d8 size=3809
+particles/heroes/undying/undying_decay_thinker_edge.vpcf_c crc=1d88f00b size=3554
+particles/heroes/undying/undying_decay_thinker_edge_core.vpcf_c crc=77f9ad28 size=3460
+particles/heroes/undying/undying_decay_thinker_edge_core_endcap.vpcf_c crc=8c3070e7 size=2771
+particles/heroes/undying/undying_decay_thinker_edgeshadow.vpcf_c crc=b444fc94 size=3807
+particles/heroes/undying/undying_decay_thinker_wave.vpcf_c crc=82328c24 size=3336

@@ -1,0 +1,4 @@
+materials/colorwarps/dota_reef_dead.vmat_c crc=c6617fb0 size=3624
+materials/colorwarps/dota_reef_dead_z000_tga_3d4d46ca.vtex_c crc=6a9f9f20 size=17320
+materials/colorwarps/dota_reef_pause.vmat_c crc=3512bb19 size=3640
+materials/colorwarps/dota_reef_pause_z000_tga_a9afdb89.vtex_c crc=a42f895b size=17336

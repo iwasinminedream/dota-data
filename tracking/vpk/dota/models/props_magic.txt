@@ -1,0 +1,15 @@
+models/props_magic/bad_crystals001.vmdl_c crc=abd0034f size=14226
+models/props_magic/bad_crystals002.vmdl_c crc=3b6ef13f size=15778
+models/props_magic/bad_crystals003.vmdl_c crc=0c2af3b4 size=14370
+models/props_magic/bad_magic_crystals001.vmdl_c crc=b155b3dd size=12118
+models/props_magic/bad_magic_tower001.vmdl_c crc=aad8d5d8 size=47252
+models/props_magic/bad_sigil_ancient001.vmdl_c crc=01d8b31a size=57651
+models/props_magic/bad_sigil_barracks001.vmdl_c crc=d4605c3b size=3558
+models/props_magic/bad_sigil_tower001.vmdl_c crc=8a678e08 size=3909
+models/props_magic/rad_vapor_melee.vmdl_c crc=15a7264d size=10606
+models/props_magic/rad_vapor_melee_small.vmdl_c crc=91d6c586 size=7762
+models/props_magic/tutorial_barrier.vmdl_c crc=d71680a1 size=4242
+models/props_magic/vapors_red_001.vmdl_c crc=be78876e size=8849
+models/props_magic/vapors_red_002.vmdl_c crc=ea427ea1 size=9041
+models/props_magic/vapors_white_001.vmdl_c crc=9e15af1f size=8995
+models/props_magic/vapors_white_002.vmdl_c crc=e06c131f size=9191

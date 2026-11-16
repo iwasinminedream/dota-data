@@ -1,0 +1,17 @@
+particles/temp/muertas_gun.vpcf_c crc=0a500d12 size=2864
+particles/temp/pumpkin.vpcf_c crc=f6d15797 size=2516
+particles/temp/winstreak_example_hud_lv1.vpcf_c crc=a41117df size=2343
+particles/temp/winstreak_example_hud_lv2.vpcf_c crc=672d17e2 size=2492
+particles/temp/winstreak_example_topbar_lv1.vpcf_c crc=ce8dae34 size=2284
+particles/temp/winstreak_example_topbar_lv2.vpcf_c crc=c15ae8c1 size=2434
+particles/temp/winstreak_generic_smoke_hud.vpcf_c crc=ccd235ab size=2554
+particles/temp/winstreak_generic_sparkles_burst_hud.vpcf_c crc=a81f7324 size=3038
+particles/temp/winstreak_generic_sparkles_burst_topbar.vpcf_c crc=6a867ec4 size=3003
+particles/temp/winstreak_generic_sparkles_hud.vpcf_c crc=80e2f91c size=3022
+particles/temp/winstreak_generic_sparkles_topbar.vpcf_c crc=dde5eeea size=2999
+particles/temp/winstreak_generic_streaks_hud.vpcf_c crc=76ddbe77 size=3000
+particles/temp/winstreak_generic_streaks_topbar.vpcf_c crc=2e4ea645 size=2989
+particles/temp/winstreak_snowflakes_burst_hud.vpcf_c crc=a88e78fc size=3101
+particles/temp/winstreak_snowflakes_burst_topbar.vpcf_c crc=524df9b0 size=3081
+particles/temp/winstreak_snowflakes_hud.vpcf_c crc=3f5cd1be size=3138
+particles/temp/winstreak_snowflakes_topbar.vpcf_c crc=97d9113f size=3079

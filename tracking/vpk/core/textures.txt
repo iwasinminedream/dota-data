@@ -1,0 +1,14 @@
+textures/dev/albedo_chart.vtex_c crc=e25f0c3a size=1556948
+textures/dev/ao_proxy_lut.vtex_c crc=5e5cd5ab size=3092
+textures/dev/ao_proxy_lut_selfshadow.vtex_c crc=ebc9ff45 size=3108
+textures/dev/arhosek_skymodel_limb_darkening_datasets.vtex_c crc=c83fdbb0 size=2268
+textures/dev/arhosek_skymodel_solar_datasets.vtex_c crc=94768279 size=81204
+textures/dev/blue_noise_256.vtex_c crc=eb315605 size=263908
+textures/dev/brdf_lut.vtex_c crc=f200701b size=99336
+textures/dev/brdf_multiscatter_lut.vtex_c crc=ca96c334 size=9976
+textures/dev/checkerboard.vtex_c crc=3705b161 size=34516
+textures/dev/ggx_integrate_brdf_lut.vtex_c crc=0c6ab814 size=263940
+textures/dev/ggx_integrate_brdf_lut_schlick.vtex_c crc=6ba3c916 size=263988
+textures/dev/normalsfittingtexture.vtex_c crc=3bf18481 size=1050660
+textures/dev/reflectivity_scale.vtex_c crc=f9fdc83f size=468340
+textures/particle/largesmoke.vtex_c crc=3ddd47ab size=263924

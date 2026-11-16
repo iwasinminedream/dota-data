@@ -1,0 +1,877 @@
+"EVENT_ID_SPRING_2026"
+{
+	"season_name"	"#DOTA_EventName_Spring2026"
+	"season_class"	"Season_Spring2026"
+
+ 	"event_end_time"	"2026-06-04 11:00 AM"
+ 	"expiration_date"	"none"
+	"must_be_owned"		"0"
+	"event_points_to_spend_when_purchasing_levels" "EVENT_ID_PLUS_SUBSCRIPTION"
+	"event_points_conversion_rate_when_purchasing_levels" "0.1"
+
+	"fallback_display_event"			"1"
+	"seasonal_reward_line_event"		"1"
+	"default_event_points" "1000"
+	"visual_novel" "seasonal_spring_2026"
+	"dashboard_background_panel_path" "file://{resources}/layout/dashboard_background_seasonal_reward_line_spring_2026.xml"
+
+	"event_level"
+	{
+		"show_battle_level"		"1"
+		"points_per_level"		"1000"
+		"badge_tiers"
+		{
+			"1"
+			{
+				"event_level"	"1"
+				"tier_class"	"EventTierShowNumber"
+				"tier_badge"	"file://{images}/events/seasonal/artwork/polygonscore_base.png"
+				"show_in_chat"	"0"
+			}
+		}
+	}
+
+	"does_event_point_popup"			"1"
+	"does_event_point_popup_premium"	"0"
+
+	"effects_item_def"		"34395"
+
+	"event_actions"
+	{
+		"win_matches"
+		{
+			"action_id"					"1"
+			"max_grants"				"9999999"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points"	"650"
+					}
+				}
+			}
+		}
+
+		"win_turbo_matches"
+		{
+			"action_id"					"2"
+			"max_grants"				"9999999"
+
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points"	"425"
+					}
+				}
+			}
+		}
+
+		"lose_matches"
+		{
+			"action_id"					"3"
+			"max_grants"				"9999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points"	"250"
+					}
+				}
+			}
+		}
+
+		"lose_turbo_matches"
+		{
+			"action_id"					"4"
+			"max_grants"				"9999999"
+			"rewards"
+			{
+				"1 + 1n"
+				{
+					"grants"
+					{
+						"grant_points"	"175"
+					}
+				}
+			}
+		}
+
+		// ... additional grant sources here ...
+
+
+		
+		// ... level track here ...
+		"level_reward_1"
+		{
+			"action_id"					"1001"
+			"available_at_event_level"  "1"
+			"visual_novel_dialogue"		"q03_set01_itm01"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item"	"25476"
+					}
+				}
+			}
+
+		}
+
+		"level_reward_2"
+		{
+			"action_id"					"1002"
+			"available_at_event_level"	"2"
+			"visual_novel_dialogue"		"q03_set01_itm02"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item"	"25477"
+					}
+				}
+			}
+		}
+		"level_reward_4"
+		{
+			"action_id"					"1004"
+			"available_at_event_level"	"4"
+			"visual_novel_dialogue"		"q03_set01_itm03"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_reward_item" "25478"
+					}
+				}
+			}
+		}		
+		"level_reward_6"
+		{
+			"action_id"					"1006"
+			"available_at_event_level"	"6"
+			"visual_novel_dialogue"		"q03_set01_itm04"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "25480"
+					}
+				}
+			}
+		}
+		"level_reward_8"
+		{
+			"action_id"					"1008"
+			"available_at_event_level"	"8"
+			"visual_novel_dialogue"		"q03_set01_itm05"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item"	"25481"
+					}
+				}
+			}
+		}
+		"level_reward_10"
+		{
+			"action_id"					"1010"
+			"available_at_event_level"	"10"
+			"visual_novel_dialogue"		"q03_set01_itm06"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "25479"
+					}
+				}
+			}
+		}
+		"level_reward_12"
+		{
+			"action_id"					"1012"
+			"available_at_event_level"	"12"
+			"visual_novel_dialogue"		"q03_set02_itm01"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "26624"	
+					}
+				}
+			}
+		}
+		"level_reward_14"
+		{
+			"action_id"					"1014"
+			"available_at_event_level"	"14"
+			"visual_novel_dialogue"		"q03_set02_itm02"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "26623"	
+					}
+				}
+			}
+		}
+		"level_reward_16"
+		{
+			"action_id"					"1016"
+			"available_at_event_level"	"16"
+			"visual_novel_dialogue"		"q03_set02_itm03"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "26611"	
+					}
+				}
+			}
+		}
+		"level_reward_18"
+		{
+			"action_id"					"1018"
+			"available_at_event_level"	"18"
+			"visual_novel_dialogue"		"q03_set02_itm04"			
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item"	"26653"
+					}
+				}
+			}
+		}
+		"level_reward_21"
+		{
+			"action_id"					"1021"
+			"available_at_event_level"	"21"
+			"visual_novel_dialogue"		"q03_set03_itm01"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item"	"28840" 
+					}
+				}
+			}
+		}
+		"level_reward_24"
+		{
+			"action_id"					"1024"
+			"available_at_event_level"	"24"
+			"visual_novel_dialogue"		"q03_set03_itm02"
+
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "28841"
+					}
+				}
+			}
+		}
+		"level_reward_27"
+		{
+			"action_id"					"1027"
+			"available_at_event_level"	"27"
+			"visual_novel_dialogue"		"q03_set03_itm03"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "28843"
+					}
+				}
+			}
+		}
+		"level_reward_30"
+		{
+			"action_id"					"1030"
+			"available_at_event_level"	"30"
+			"visual_novel_dialogue"		"q03_set03_itm04"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "28844"
+					}
+				}
+			}
+		}
+		"level_reward_40"
+		{
+			"action_id"					"1040"
+			"available_at_event_level"	"40"
+			"visual_novel_dialogue"		"q03_set04_itm01"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "36243" 
+					}
+				}
+			}
+		}
+		"level_reward_55"
+		{
+			"action_id"					"1055"
+			"available_at_event_level"	"55"
+			"visual_novel_dialogue"		"q03_set04_itm02"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "36245"
+					}
+				}
+			}
+		}
+		"level_reward_75"
+		{
+			"action_id"					"1075"
+			"available_at_event_level"	"75"
+			"visual_novel_dialogue"		"q03_set04_itm03"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "36246" // set 4 component 3 - Shield
+					}
+				}
+			}
+		}
+		"level_reward_100"
+		{
+			"action_id"					"1100"
+			"available_at_event_level"	"100"
+			"visual_novel_dialogue"		"q03_set04_itm04"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_reward_item" "36247" // set 4 component 4 - Weapon 
+					}
+				}
+			}
+		}
+
+		"random_treasure_reward_01"
+		{
+			"action_id"					"30001"
+			"available_at_event_level"	"5"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34405" // "Quartero Curio Redemption Token - Gold"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HQHeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_02"
+		{
+			"action_id"					"30002"
+			"available_at_event_level"	"10"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_03"
+		{
+			"action_id"					"30003"
+			"available_at_event_level"	"15"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_04"
+		{
+			"action_id"					"30004"
+			"available_at_event_level"	"20"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_05"
+		{
+			"action_id"					"30005"
+			"available_at_event_level"	"25"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_06"
+		{
+			"action_id"					"30006"
+			"available_at_event_level"	"30"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_07"
+		{
+			"action_id"					"30007"
+			"available_at_event_level"	"40"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_08"
+		{
+			"action_id"					"30008"
+			"available_at_event_level"	"60"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_09"
+		{
+			"action_id"					"30009"
+			"available_at_event_level"	"80"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_10"
+		{
+			"action_id"					"30010"
+			"available_at_event_level"	"100"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_11"
+		{
+			"action_id"					"30011"
+			"available_at_event_level"	"200"
+			"visual_novel_dialogue"		"antique-200"
+			"require_claim_for_future_vn_dialog"	"false"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+		"random_treasure_reward_12"
+		{
+			"action_id"					"30012"
+			"available_at_event_level"	"300"
+			"visual_novel_dialogue"		"antique-300"
+			"require_claim_for_future_vn_dialog"	"false"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"						
+					{
+						"grant_untradeable_items" 
+						{
+							"item_def"		"34406" // "Quartero Curio Redemption Token"
+							"name"			"#DOTA_Reward_Line_Fall_2025_HeroSetReward"
+							"description"	"#DOTA_Reward_Line_Winter_2025_HeroSetRewardDescription"
+							"flavor"		"#DOTA_Reward_Line_Fall_2025_HeroSetRewardFlavor"
+						}
+					}
+				}
+			}
+		}
+
+		"particle_reward_1"
+		{
+			"action_id"					"20001"
+			"available_at_event_level"	"2"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_effect"			// gameplay fx 1
+						{
+							"name"			"#DOTA_EventEffect_Fountain"
+							"image"			"{images}/compendium/international2022/prestigerewards/fountain_fx_lv1.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_fountain_heal.webm"
+							"effect_index"	"1"
+						}
+					}
+				}
+			}
+		}
+		"particle_reward_2"
+		{
+			"action_id"					"20002"
+			"available_at_event_level"	"3"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Teleport"
+							"image"			"{images}/compendium/international2022/prestigerewards/tp_fx_lv1.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_teleport.webm"
+							"effect_index"	"4"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_3"
+		{
+			"action_id"					"20003"
+			"available_at_event_level"	"5"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_BlinkDagger"
+							"image"			"{images}/compendium/international2022/prestigerewards/blink_fx_lv1.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_blink_dagger.webm"
+							"effect_index"	"7"
+						}
+					}
+				}
+			}
+		}
+		"particle_reward_4"
+		{
+			"action_id"					"20004"
+			"available_at_event_level"	"7"
+			"rewards"
+			{
+				"1"
+				{
+				
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_LevelUp"
+							"image"			"{images}/compendium/international2022/prestigerewards/levelup_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_levelup.webm"
+							"effect_index"	"13"
+						}	
+					}
+
+				}
+			}
+		}
+		"particle_reward_5"
+		{
+			"action_id"					"20005"
+			"available_at_event_level"	"11"
+			"rewards"
+			{
+				"1"
+				{
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Euls"
+							"image"			"{images}/compendium/international2022/prestigerewards/eul_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_euls_scepter.webm"
+							"effect_index"	"11"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_6"
+		{
+			"action_id"					"20006"
+			"available_at_event_level"	"13"
+			"rewards"
+			{
+				"1"
+				{
+				
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Aghanim"
+							"image"			"{images}/compendium/international2022/prestigerewards/scepter_lv1.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_aghanims_scepter_aura.webm"
+							"effect_index"	"29"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_7"
+		{
+			"action_id"					"20007"
+			"available_at_event_level"	"17"
+			"rewards"
+			{
+				"1"
+				{
+
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_ForceStaff"
+							"image"			"{images}/compendium/international2022/prestigerewards/forcestaff_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_force_staff.webm"
+							"effect_index"	"10"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_8"
+		{
+			"action_id"					"20008"
+			"available_at_event_level"	"19"
+			"rewards"
+			{
+				"1"
+				{
+
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Phase_Boots"
+							"image"			"{images}/compendium/international2022/prestigerewards/phase_boots_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_phase_boots.webm"
+							"effect_index"	"31"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_9"
+		{
+			"action_id"					"20009"
+			"available_at_event_level"	"23"
+			"rewards"
+			{
+				"1"
+				{
+
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Mekansm"
+							"image"			"{images}/compendium/international2022/prestigerewards/mekansm_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_mekansm.webm"
+							"effect_index"	"15"
+						}	
+					}
+				}
+			}
+		}
+		"particle_reward_10"
+		{
+			"action_id"					"20010"
+			"available_at_event_level"	"29"
+			"rewards"
+			{
+				"1"
+				{
+
+					"grants"
+					{
+						"grant_effect"
+						{
+							"name"			"#DOTA_EventEffect_Radiance"
+							"image"			"{images}/compendium/international2022/prestigerewards/radiance_fx.png"
+							"video"			"file://{resources}/videos/seasonal/spring2026/abilityfx/quartero_spring_2026_radiance.webm"
+							"effect_index"	"14"
+						}	
+					}
+				}
+			}
+		}
+	}
+}

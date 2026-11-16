@@ -1,0 +1,5 @@
+models/props_foliage/draft_tree001.vmdl_c crc=c407a0fc size=23021
+models/props_foliage/draft_tree001_tall.vmdl_c crc=198df052 size=37425
+models/props_foliage/tree_pine01.vmdl_c crc=2ae9c86b size=18110
+models/props_foliage/tree_pine01_4cluster.vmdl_c crc=c307ee49 size=24711
+models/props_foliage/tree_pine01_8cluster.vmdl_c crc=ce4cd797 size=22503

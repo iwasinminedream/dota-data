@@ -1,0 +1,8 @@
+models/test/cloth_jewel_test.vmdl_c crc=16c5d613 size=10415
+models/test/cloth_min_mesh.vmdl_c crc=d5a1add5 size=9660
+models/test/cloth_rope4.vmdl_c crc=79bdabc3 size=15869
+models/test/cloth_rope4_chaintest.vmdl_c crc=86c1bcf2 size=15163
+models/test/cloth_rotcorr.vmdl_c crc=5104c9e7 size=9528
+models/test/cloth_stray_radius.vmdl_c crc=86511a12 size=3692
+models/test/hair_strand_3jnts.vmdl_c crc=86d5bacf size=10530
+models/test/hair_strand_5jnts.vmdl_c crc=eac7fa79 size=13688

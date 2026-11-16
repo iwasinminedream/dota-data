@@ -1,0 +1,2 @@
+particles/speechbubbles/speech_voice.vpcf_c crc=dadade39 size=1979
+particles/speechbubbles/speech_voice_bubble.vpcf_c crc=835590fa size=1806

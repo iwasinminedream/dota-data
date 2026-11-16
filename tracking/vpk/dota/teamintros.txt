@@ -1,0 +1,2 @@
+teamintros/base.txt crc=e35abe02 size=2661
+teamintros/river.txt crc=6e856b90 size=3428

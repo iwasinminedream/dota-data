@@ -1,0 +1,15 @@
+particles/props/creep_banners/dire_creep_banner.vpcf_c crc=8c3d89df size=3114
+particles/props/creep_banners/dire_creep_banner_ring.vpcf_c crc=fb67c2eb size=1308
+particles/props/creep_banners/dire_creep_banner_ring_circle.vpcf_c crc=d4a3d42f size=2815
+particles/props/creep_banners/dire_creep_banner_ring_embers.vpcf_c crc=063e50e3 size=3507
+particles/props/creep_banners/dire_creep_banner_ring_ray.vpcf_c crc=7b1f67d8 size=3668
+particles/props/creep_banners/dire_creep_banner_ring_rope.vpcf_c crc=0e66f694 size=3329
+particles/props/creep_banners/radiant_creep_banner.vpcf_c crc=56bbeb22 size=3105
+particles/props/creep_banners/radiant_creep_banner_ring.vpcf_c crc=40f8429b size=1343
+particles/props/creep_banners/radiant_creep_banner_ring_circle.vpcf_c crc=2b621006 size=3552
+particles/props/creep_banners/radiant_creep_banner_ring_embers.vpcf_c crc=974ac9b4 size=4297
+particles/props/creep_banners/radiant_creep_banner_ring_ray.vpcf_c crc=b076aac2 size=4369
+particles/props/creep_banners/radiant_creep_banner_ring_rope.vpcf_c crc=84012c78 size=3981
+particles/props/roshan_torch_flame_a.vpcf_c crc=5c627f4f size=4425
+particles/props/roshan_torch_flame_b.vpcf_c crc=936d3dd6 size=3740
+particles/props/roshan_torch_flame_embers.vpcf_c crc=3c9aae61 size=3391

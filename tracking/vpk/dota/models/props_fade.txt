@@ -1,0 +1,2 @@
+models/props_fade/fade_tent_bottom.vmdl_c crc=e79b7dcf size=11378
+models/props_fade/fade_tent_top.vmdl_c crc=0cb2b170 size=24159

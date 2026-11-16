@@ -1,0 +1,13 @@
+particles/showcase_fx/showcase_fx_base_1.vpcf_c crc=e57fc0ff size=2808
+particles/showcase_fx/showcase_fx_base_1_b.vpcf_c crc=7b8e9dae size=2205
+particles/showcase_fx/showcase_fx_base_1_c.vpcf_c crc=231dad38 size=2474
+particles/showcase_fx/showcase_fx_base_2.vpcf_c crc=14d08083 size=3048
+particles/showcase_fx/showcase_fx_base_2_b.vpcf_c crc=01a44862 size=2595
+particles/showcase_fx/showcase_fx_base_3.vpcf_c crc=a218fdc6 size=2748
+particles/showcase_fx/showcase_fx_base_3_b.vpcf_c crc=45ac9f9e size=2412
+particles/showcase_fx/showcase_fx_base_3_c.vpcf_c crc=80ec318b size=2422
+particles/showcase_fx/showcase_fx_base_3_d.vpcf_c crc=e69cc7f0 size=2345
+particles/showcase_fx/showcase_fx_base_3_e.vpcf_c crc=aa9ac2e5 size=2153
+particles/showcase_fx/showcase_fx_base_3_f.vpcf_c crc=31cb9731 size=1707
+particles/showcase_fx/showcase_fx_base_3_g.vpcf_c crc=b565d3d2 size=2251
+particles/showcase_fx/showcase_fx_base_3_h.vpcf_c crc=bec5a006 size=2330

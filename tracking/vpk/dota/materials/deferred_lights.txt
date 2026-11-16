@@ -1,0 +1,3 @@
+materials/deferred_lights/ssao_med.vmat_c crc=69ee148a size=3208
+materials/deferred_lights/ssao_random_tga_bf091230.vtex_c crc=0a5bbc59 size=1848
+materials/deferred_lights/ssao_strong.vmat_c crc=8c482d20 size=3224

@@ -1,0 +1,4 @@
+models/projectiles/drow_arrow.vmdl_c crc=4ddf20c2 size=17066
+models/projectiles/furion_growth.vmdl_c crc=33b3822a size=9216
+models/projectiles/mirana_arrow.vmdl_c crc=617e9b68 size=15035
+models/projectiles/windrunner_arrow.vmdl_c crc=2796b952 size=17907

@@ -1,0 +1,2 @@
+stringtokendatabase.txt crc=c558a0df size=35624
+toolscenelightrigs.vdata_c crc=f4af9df4 size=2506

@@ -1,0 +1,795 @@
+{
+ "base_gcmessages.proto": [
+  {
+   "file": "base_gcmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "c_peer2peer_netmessages.proto": [
+  {
+   "file": "c_peer2peer_netmessages.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "clientmessages.proto": [
+  {
+   "file": "clientmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "connectionless_netmessages.proto": [
+  {
+   "file": "connectionless_netmessages.proto",
+   "libs": [
+    "libengine2.so"
+   ]
+  }
+ ],
+ "demo.proto": [
+  {
+   "file": "demo.proto",
+   "libs": [
+    "libanimationsystem.so",
+    "libclient.so",
+    "libengine2.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_broadcastmessages.proto": [
+  {
+   "file": "dota_broadcastmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_client_enums.proto": [
+  {
+   "file": "dota_client_enums.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_clientmessages.proto": [
+  {
+   "file": "dota_clientmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_commonmessages.proto": [
+  {
+   "file": "dota_commonmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_fighting_game_p2p_messages.proto": [
+  {
+   "file": "dota_fighting_game_p2p_messages.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client.proto": [
+  {
+   "file": "dota_gcmessages_client.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_bingo.proto": [
+  {
+   "file": "dota_gcmessages_client_bingo.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_candy_shop.proto": [
+  {
+   "file": "dota_gcmessages_client_candy_shop.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_chat.proto": [
+  {
+   "file": "dota_gcmessages_client_chat.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_coaching.proto": [
+  {
+   "file": "dota_gcmessages_client_coaching.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_craftworks.proto": [
+  {
+   "file": "dota_gcmessages_client_craftworks.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_fantasy.proto": [
+  {
+   "file": "dota_gcmessages_client_fantasy.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_guild.proto": [
+  {
+   "file": "dota_gcmessages_client_guild.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_guild_events.proto": [
+  {
+   "file": "dota_gcmessages_client_guild_events.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_match_management.proto": [
+  {
+   "file": "dota_gcmessages_client_match_management.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_showcase.proto": [
+  {
+   "file": "dota_gcmessages_client_showcase.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_team.proto": [
+  {
+   "file": "dota_gcmessages_client_team.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_tournament.proto": [
+  {
+   "file": "dota_gcmessages_client_tournament.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_client_watch.proto": [
+  {
+   "file": "dota_gcmessages_client_watch.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common.proto": [
+  {
+   "file": "dota_gcmessages_common.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_battle_report.proto": [
+  {
+   "file": "dota_gcmessages_common_battle_report.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_bot_script.proto": [
+  {
+   "file": "dota_gcmessages_common_bot_script.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_craftworks.proto": [
+  {
+   "file": "dota_gcmessages_common_craftworks.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_fighting_game.proto": [
+  {
+   "file": "dota_gcmessages_common_fighting_game.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_item_battler.proto": [
+  {
+   "file": "dota_gcmessages_common_item_battler.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_league.proto": [
+  {
+   "file": "dota_gcmessages_common_league.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_lobby.proto": [
+  {
+   "file": "dota_gcmessages_common_lobby.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_match_management.proto": [
+  {
+   "file": "dota_gcmessages_common_match_management.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_monster_hunter.proto": [
+  {
+   "file": "dota_gcmessages_common_monster_hunter.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_overworld.proto": [
+  {
+   "file": "dota_gcmessages_common_overworld.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_common_survivors.proto": [
+  {
+   "file": "dota_gcmessages_common_survivors.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_msgid.proto": [
+  {
+   "file": "dota_gcmessages_msgid.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_server.proto": [
+  {
+   "file": "dota_gcmessages_server.proto",
+   "libs": [
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_gcmessages_webapi.proto": [
+  {
+   "file": "dota_gcmessages_webapi.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_hud_types.proto": [
+  {
+   "file": "dota_hud_types.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "dota_match_metadata.proto": [
+  {
+   "file": "dota_match_metadata.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_modifiers.proto": [
+  {
+   "file": "dota_modifiers.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_scenariomessages.proto": [
+  {
+   "file": "dota_scenariomessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_shared_enums.proto": [
+  {
+   "file": "dota_shared_enums.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_usercmd.proto": [
+  {
+   "file": "dota_usercmd.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "dota_usermessages.proto": [
+  {
+   "file": "dota_usermessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "econ_gcmessages.proto": [
+  {
+   "file": "econ_gcmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "econ_shared_enums.proto": [
+  {
+   "file": "econ_shared_enums.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "engine_gcmessages.proto": [
+  {
+   "file": "engine_gcmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libengine2.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "enums_clientserver.proto": [
+  {
+   "file": "enums_clientserver.proto",
+   "libs": [
+    "libvideo.so"
+   ]
+  }
+ ],
+ "event_gcmessages_client.proto": [
+  {
+   "file": "event_gcmessages_client.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "event_gcmessages_common.proto": [
+  {
+   "file": "event_gcmessages_common.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "events.proto": [
+  {
+   "file": "events.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "gameevents.proto": [
+  {
+   "file": "gameevents.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "gcsdk_gcmessages.proto": [
+  {
+   "file": "gcsdk_gcmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "gcsystemmsgs.proto": [
+  {
+   "file": "gcsystemmsgs.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "google/protobuf/any.proto": [
+  {
+   "file": "google__protobuf__any.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "google/protobuf/descriptor.proto": [
+  {
+   "file": "google__protobuf__descriptor.proto",
+   "libs": [
+    "libanimationsystem.so",
+    "libclient.so",
+    "libengine2.so",
+    "libhost.so",
+    "libnetworksystem.so",
+    "libpanorama.so",
+    "libpanorama_text_pango.so",
+    "libscenesystem.so",
+    "libserver.so"
+   ]
+  },
+  {
+   "file": "google__protobuf__descriptor@libsteamnetworkingsockets.so.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  },
+  {
+   "file": "google__protobuf__descriptor@libvideo.so.proto",
+   "libs": [
+    "libvideo.so"
+   ]
+  }
+ ],
+ "google/protobuf/source_context.proto": [
+  {
+   "file": "google__protobuf__source_context.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "google/protobuf/type.proto": [
+  {
+   "file": "google__protobuf__type.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "google/protobuf/wrappers.proto": [
+  {
+   "file": "google__protobuf__wrappers.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "netmessages.proto": [
+  {
+   "file": "netmessages.proto",
+   "libs": [
+    "libclient.so",
+    "libengine2.so",
+    "libnetworksystem.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "network_connection.proto": [
+  {
+   "file": "network_connection.proto",
+   "libs": [
+    "libclient.so",
+    "libengine2.so",
+    "libhost.so",
+    "libnetworksystem.so",
+    "libscenesystem.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "networkbasetypes.proto": [
+  {
+   "file": "networkbasetypes.proto",
+   "libs": [
+    "libclient.so",
+    "libengine2.so",
+    "libhost.so",
+    "libnetworksystem.so",
+    "libscenesystem.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "networksystem_protomessages.proto": [
+  {
+   "file": "networksystem_protomessages.proto",
+   "libs": [
+    "libengine2.so",
+    "libnetworksystem.so"
+   ]
+  }
+ ],
+ "prediction_events.proto": [
+  {
+   "file": "prediction_events.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "source2_steam_stats.proto": [
+  {
+   "file": "source2_steam_stats.proto",
+   "libs": [
+    "libclient.so",
+    "libengine2.so",
+    "libnetworksystem.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "steamdatagram_messages_auth.proto": [
+  {
+   "file": "steamdatagram_messages_auth.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "steamdatagram_messages_sdr.proto": [
+  {
+   "file": "steamdatagram_messages_sdr.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "steammessages.proto": [
+  {
+   "file": "steammessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "steammessages_base.proto": [
+  {
+   "file": "steammessages_base.proto",
+   "libs": [
+    "libvideo.so"
+   ]
+  }
+ ],
+ "steammessages_cloud.steamworkssdk.proto": [
+  {
+   "file": "steammessages_cloud.steamworkssdk.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "steammessages_gamenetworkingui.proto": [
+  {
+   "file": "steammessages_gamenetworkingui.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "steammessages_helprequest.steamworkssdk.proto": [
+  {
+   "file": "steammessages_helprequest.steamworkssdk.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "steammessages_int.proto": [
+  {
+   "file": "steammessages_int.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "steammessages_oauth.steamworkssdk.proto": [
+  {
+   "file": "steammessages_oauth.steamworkssdk.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "steammessages_player.steamworkssdk.proto": [
+  {
+   "file": "steammessages_player.steamworkssdk.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "steammessages_publishedfile.steamworkssdk.proto": [
+  {
+   "file": "steammessages_publishedfile.steamworkssdk.proto",
+   "libs": [
+    "libclient.so"
+   ]
+  }
+ ],
+ "steammessages_steamlearn.steamworkssdk.proto": [
+  {
+   "file": "steammessages_steamlearn.steamworkssdk.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "steammessages_unified_base.steamworkssdk.proto": [
+  {
+   "file": "steammessages_unified_base.steamworkssdk.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "steamnetworkingsockets_messages.proto": [
+  {
+   "file": "steamnetworkingsockets_messages.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "steamnetworkingsockets_messages_certs.proto": [
+  {
+   "file": "steamnetworkingsockets_messages_certs.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "steamnetworkingsockets_messages_udp.proto": [
+  {
+   "file": "steamnetworkingsockets_messages_udp.proto",
+   "libs": [
+    "libsteamnetworkingsockets.so"
+   ]
+  }
+ ],
+ "te.proto": [
+  {
+   "file": "te.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "uifontfile_format.proto": [
+  {
+   "file": "uifontfile_format.proto",
+   "libs": [
+    "libpanorama_text_pango.so"
+   ]
+  }
+ ],
+ "usercmd.proto": [
+  {
+   "file": "usercmd.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "usermessages.proto": [
+  {
+   "file": "usermessages.proto",
+   "libs": [
+    "libclient.so",
+    "libserver.so"
+   ]
+  }
+ ],
+ "valveextensions.proto": [
+  {
+   "file": "valveextensions.proto",
+   "libs": [
+    "libanimationsystem.so",
+    "libclient.so",
+    "libengine2.so",
+    "libhost.so",
+    "libnetworksystem.so",
+    "libpanorama.so",
+    "libpanorama_text_pango.so",
+    "libscenesystem.so",
+    "libserver.so"
+   ]
+  }
+ ]
+}

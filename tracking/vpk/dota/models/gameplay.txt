@@ -1,0 +1,6 @@
+models/gameplay/attrib_tome_agi.vmdl_c crc=40c4f714 size=39984
+models/gameplay/attrib_tome_int.vmdl_c crc=177edb65 size=39984
+models/gameplay/attrib_tome_str.vmdl_c crc=e4f34ba6 size=39984
+models/gameplay/attrib_tome_xp.vmdl_c crc=5bdf96ad size=39550
+models/gameplay/breakingcrate_dest.vmdl_c crc=ff5f5fe8 size=184967
+models/gameplay/breakingvase_dest.vmdl_c crc=7a105a1c size=240318

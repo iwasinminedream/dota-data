@@ -1,0 +1,1 @@
+tools/demoinfo2/demoinfo2.txt crc=eaa88562 size=2810

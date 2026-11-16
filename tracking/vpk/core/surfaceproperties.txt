@@ -1,0 +1,4 @@
+surfaceproperties/impact_blood.valst_c crc=7a0896dc size=1004
+surfaceproperties/impact_concrete.valst_c crc=68de95c5 size=1012
+surfaceproperties/impact_metal.valst_c crc=e20a448a size=1004
+surfaceproperties/surfaceproperties.vsurf_c crc=a869cfcf size=7916

@@ -1,0 +1,12 @@
+particles/water_impact/impact_waterx_child_bits.vpcf_c crc=668de48c size=2158
+particles/water_impact/impact_waterx_child_rings.vpcf_c crc=c9c48a6a size=1989
+particles/water_impact/impact_waterx_child_smallrings.vpcf_c crc=99161471 size=2103
+particles/water_impact/water_foam_line_longb.vpcf_c crc=5a5f4cbd size=2140
+particles/water_impact/water_foam_line_shortb.vpcf_c crc=f3870180 size=2128
+particles/water_impact/water_impact_bubbles_1b.vpcf_c crc=56553fde size=2316
+particles/water_impact/water_splash_01_drops.vpcf_c crc=2723c261 size=2168
+particles/water_impact/water_splash_02_droplets.vpcf_c crc=d2c1d7f9 size=2150
+particles/water_impact/water_splash_02_droplets_version_2.vpcf_c crc=30799538 size=2150
+particles/water_impact/water_splash_02_drops.vpcf_c crc=4966b86d size=2171
+particles/water_impact/water_splash_03_drops.vpcf_c crc=95216c44 size=2171
+particles/water_impact/water_trail_medium_b.vpcf_c crc=f09e6f7f size=1749

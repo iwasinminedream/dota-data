@@ -1,0 +1,8 @@
+	"game_info"
+	{
+		"first_valid_class"		"1"
+		"last_valid_class"		"1000"
+		"first_valid_item_slot"		"0"
+		"last_valid_item_slot"		"31"
+		"num_item_presets"		"4"
+	}

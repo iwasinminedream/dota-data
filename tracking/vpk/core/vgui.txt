@@ -1,0 +1,12 @@
+vgui/fonts/arial.ttf crc=34bad949 size=367112
+vgui/fonts/arialbd.ttf crc=44068765 size=352224
+vgui/fonts/arialn.ttf crc=4c369a9d size=134188
+vgui/fonts/arialuni.ttf crc=d366c06b size=23275812
+vgui/fonts/cour.ttf crc=69d8e5ba size=303296
+vgui/fonts/lucon.ttf crc=0382d2c1 size=115068
+vgui/fonts/marlett.ttf crc=5bf50847 size=24124
+vgui/fonts/tahoma.ttf crc=ef7e5a14 size=383140
+vgui/fonts/times.ttf crc=3c95e1af size=409280
+vgui/fonts/trebuc.ttf crc=210413c5 size=134108
+vgui/fonts/verdana.ttf crc=fc35447f size=171792
+vgui/fonts/xarialuni.ttf crc=57b467c4 size=6608540

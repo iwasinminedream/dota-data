@@ -1,0 +1,4 @@
+particles/playground_smoke/wispy_1.vpcf_c crc=55341f25 size=2034
+particles/playground_smoke/wispy_2.vpcf_c crc=4bc47715 size=2162
+particles/playground_smoke/wispy_fire.vpcf_c crc=9c650696 size=2191
+particles/playground_smoke/wispy_small_smoke.vpcf_c crc=6e22f4b7 size=2228

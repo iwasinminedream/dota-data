@@ -1,0 +1,17 @@
+dev/control_point_debug.vpcf_c crc=99bc38e9 size=1659
+dev/helper/reflectivity_90b.vmat_c crc=806f6ce0 size=4344
+dev/helper/reflectivity_90b_color_tga_2f207ce0.vtex_c crc=cf976c52 size=2428
+dev/helper/testgrid.vmat_c crc=75589c81 size=4272
+dev/helper/testgrid_color_tga_29ebccc9.vtex_c crc=12609def size=176540
+dev/helper/testgrid_color_tga_a8629bc7.vtex_c crc=a53e6af0 size=176476
+dev/panorama_world_panel_additive.vmat_c crc=81b1ca7f size=4566
+dev/panorama_world_panel_default.vmat_c crc=a7da023b size=4550
+dev/panorama_world_panel_opaque.vmat_c crc=c0375034 size=4478
+dev/point_worldtext_default.vmat_c crc=7f14a966 size=2620
+dev/point_worldtext_default_vmat_g_tcolor_f2d94a6b.vtex_c crc=ff0cca20 size=1580
+dev/point_worldtext_fullbright.vmat_c crc=6f4c3339 size=2764
+dev/point_worldtext_fullbright_vmat_g_tcolor_f2d94a6b.vtex_c crc=e4ae2492 size=1976
+dev/point_worldtext_translucent.vmat_c crc=a04b9e66 size=2700
+dev/point_worldtext_translucent_fullbright.vmat_c crc=2cd37d68 size=2748
+dev/point_worldtext_translucent_fullbright_vmat_g_tcolor_f2d94a6b.vtex_c crc=e4ae2492 size=1976
+dev/point_worldtext_translucent_vmat_g_tcolor_f2d94a6b.vtex_c crc=e4ae2492 size=1976

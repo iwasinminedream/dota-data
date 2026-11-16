@@ -1,0 +1,2 @@
+models/npc_minions/draft_siege_evil.vmdl_c crc=0c178e11 size=41048
+models/npc_minions/draft_siege_good.vmdl_c crc=c26b06b7 size=41048

@@ -1,0 +1,6 @@
+soundstacks/dota_presets.vdsp_c crc=d65c6290 size=1183
+soundstacks/soundstack_dota_ui_panner.vsndstck_c crc=af3843af size=4740
+soundstacks/soundstacks_dota_addons.vsndstck_c crc=6bf5b7f3 size=3737
+soundstacks/soundstacks_dota_core.vsndstck_c crc=c4c741e5 size=11477
+soundstacks/soundstacks_dota_music.vsndstck_c crc=f0398cee size=16257
+soundstacks/soundstacks_manifest.vrman_c crc=d298fa2e size=1675

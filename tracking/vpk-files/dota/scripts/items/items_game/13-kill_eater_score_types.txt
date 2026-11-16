@@ -1,0 +1,5789 @@
+	"kill_eater_score_types"
+	{
+		"0"
+		{
+			"type_name"		"#KillEaterEventType_Kills"
+			"image"		"challenges/icon_challenges_xkills.png"
+			"in_game_display_interval"		"75"
+		}
+		"1"
+		{
+			"type_name"		"#KillEaterEventType_KillAssists"
+			"image"		"challenges/icon_challenges_xassists.png"
+			"in_game_display_interval"		"100"
+		}
+		"2"
+		{
+			"type_name"		"#KillEaterEventType_Wins"
+			"in_game_display_interval"		"10"
+		}
+		"3"
+		{
+			"type_name"		"#KillEaterEventType_Treants_Created"
+			"required_hero"		"furion"
+			"in_game_display_interval"		"1500"
+			"image"		"spellicons/furion_force_of_nature.png"
+		}
+		"4"
+		{
+			"type_name"		"#KillEaterEventType_Omnislash_Jumps"
+			"required_hero"		"juggernaut"
+			"image"		"spellicons/juggernaut_omni_slash.png"
+			"in_game_display_interval"		"100"
+		}
+		"5"
+		{
+			"type_name"		"#KillEaterEventType_Blade_Fury_Time"
+			"required_hero"		"juggernaut"
+			"image"		"spellicons/juggernaut_blade_fury.png"
+			"in_game_display_interval"		"150000"
+		}
+		"6"
+		{
+			"type_name"		"#KillEaterEventType_Blade_Dance_Crits"
+			"required_hero"		"juggernaut"
+			"image"		"spellicons/juggernaut_blade_dance.png"
+			"in_game_display_interval"		"500"
+		}
+		"7"
+		{
+			"type_name"		"#KillEaterEventType_Wards_Placed"
+			"image"		"challenges/icon_challenges_ward.png"
+			"in_game_display_interval"		"100"
+		}
+		"8"
+		{
+			"type_name"		"#KillEaterEventType_Killing_Sprees"
+			"image"		"challenges/icon_challenges_streak.png"
+			"in_game_display_interval"		"10"
+		}
+		"9"
+		{
+			"type_name"		"#KillEaterEventType_Trees_Created"
+			"required_hero"		"furion"
+			"image"		"spellicons/furion_sprout.png"
+			"in_game_display_interval"		"5000"
+		}
+		"10"
+		{
+			"type_name"		"#KillEaterEventType_Carries_Killed"
+			"in_game_display_interval"		"50"
+		}
+		"11"
+		{
+			"type_name"		"#KillEaterEventType_First_Blood"
+			"image"		"challenges/icon_challenges_first_bloods.png"
+			"in_game_display_interval"		"5"
+		}
+		"12"
+		{
+			"type_name"		"#KillEaterEventType_Godlike"
+			"image"		"challenges/icon_challenges_godlikespree.png"
+			"in_game_display_interval"		"2"
+		}
+		"13"
+		{
+			"type_name"		"#KillEaterEventType_Gold_Earned"
+		}
+		"14"
+		{
+			"type_name"		"#KillEaterEventType_Gold_Spent"
+		}
+		"15"
+		{
+			"type_name"		"#KillEaterEventType_Towers_Destroyed"
+			"image"		"challenges/icon_challenges_tower.png"
+			"in_game_display_interval"		"20"
+		}
+		"16"
+		{
+			"type_name"		"#KillEaterEventType_Bounty_TrackedKills"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_track.png"
+			"in_game_display_interval"		"50"
+		}
+		"17"
+		{
+			"type_name"		"#KillEaterEventType_Bounty_TrackedInvisKills"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_track.png"
+			"in_game_display_interval"		"10"
+		}
+		"18"
+		{
+			"type_name"		"#KillEaterEventType_Bounty_InvisJinadaHits"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_jinada.png"
+			"in_game_display_interval"		"1000"
+		}
+		"19"
+		{
+			"type_name"		"#KillEaterEventType_Bounty_TrackGold"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_track.png"
+			"in_game_display_interval"		"25000"
+		}
+		"20"
+		{
+			"type_name"		"#KillEaterEventType_Tide_GoodRavages"
+			"required_hero"		"tidehunter"
+			"image"		"spellicons/tidehunter_ravage.png"
+			"in_game_display_interval"		"15"
+		}
+		"21"
+		{
+			"type_name"		"#KillEaterEventType_Windrunner_DoubleShackles"
+			"required_hero"		"windrunner"
+			"image"		"spellicons/windrunner_shackleshot.png"
+			"in_game_display_interval"		"15"
+		}
+		"22"
+		{
+			"type_name"		"#KillEaterEventType_Windrunner_GoodPowershots"
+			"required_hero"		"windrunner"
+			"image"		"spellicons/windrunner_powershot.png"
+			"in_game_display_interval"		"50"
+		}
+		"23"
+		{
+			"type_name"		"#KillEaterEventType_Invoker_SunstrikeKills"
+			"required_hero"		"invoker"
+			"image"		"spellicons/invoker_sun_strike.png"
+			"in_game_display_interval"		"15"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"24"
+		{
+			"type_name"		"#KillEaterEventType_Couriers_Purchased"
+			"image"		"items/courier.png"
+			"in_game_display_interval"		"25"
+		}
+		"25"
+		{
+			"type_name"		"#KillEaterEventType_Wards_Purchased"
+		}
+		"26"
+		{
+			"type_name"		"#KillEaterEventType_Tide_EnemiesGushed"
+			"required_hero"		"tidehunter"
+			"image"		"spellicons/tidehunter_gush.png"
+			"in_game_display_interval"		"100"
+		}
+		"27"
+		{
+			"type_name"		"#KillEaterEventType_Axe_Culls"
+			"required_hero"		"axe"
+			"image"		"spellicons/axe_berserkers_call.png"
+			"in_game_display_interval"		"50"
+		}
+		"28"
+		{
+			"type_name"		"#KillEaterEventType_Axe_BattleHungerKills"
+			"required_hero"		"axe"
+			"image"		"spellicons/axe_battle_hunger.png"
+			"in_game_display_interval"		"10"
+		}
+		"29"
+		{
+			"type_name"		"#KillEaterEventType_Axe_LowHealthKills"
+			"required_hero"		"axe"
+			"image"		"challenges/icon_challenges_neardeathkills.png"
+			"in_game_display_interval"		"5"
+		}
+		"30"
+		{
+			"type_name"		"#KillEaterEventType_Axe_CalledDamageDone"
+			"required_hero"		"axe"
+			"image"		"spellicons/axe_berserkers_call.png"
+			"in_game_display_interval"		"75000"
+		}
+		"31"
+		{
+			"type_name"		"#KillEaterEventType_Axe_CalledDamageTaken"
+			"required_hero"		"axe"
+			"image"		"spellicons/axe_berserkers_call.png"
+			"in_game_display_interval"		"50000"
+		}
+		"32"
+		{
+			"type_name"		"#KillEaterEventType_Invoker_TornadoKills"
+			"required_hero"		"invoker"
+			"image"		"spellicons/invoker_tornado.png"
+			"in_game_display_interval"		"3"
+		}
+		"33"
+		{
+			"type_name"		"#KillEaterEventType_GamesViewed"
+		}
+		"34"
+		{
+			"type_name"		"#KillEaterEventType_Sven_DoubleStuns"
+			"required_hero"		"sven"
+			"image"		"spellicons/sven_storm_bolt.png"
+			"in_game_display_interval"		"25"
+		}
+		"35"
+		{
+			"type_name"		"#KillEaterEventType_Sven_WarcryAssists"
+			"required_hero"		"sven"
+			"image"		"spellicons/sven_warcry.png"
+			"in_game_display_interval"		"15"
+		}
+		"36"
+		{
+			"type_name"		"#KillEaterEventType_Sven_CleaveDoubleKills"
+			"required_hero"		"sven"
+			"image"		"spellicons/sven_great_cleave.png"
+			"in_game_display_interval"		"1"
+		}
+		"37"
+		{
+			"type_name"		"#KillEaterEventType_Sven_TeleportInterrupts"
+			"required_hero"		"sven"
+			"image"		"spellicons/sven_storm_bolt.png"
+			"in_game_display_interval"		"1"
+		}
+		"38"
+		{
+			"type_name"		"#KillEaterEventType_Faceless_MultiChrono"
+			"required_hero"		"faceless_void"
+			"image"		"spellicons/faceless_void_chronosphere.png"
+			"in_game_display_interval"		"25"
+		}
+		"39"
+		{
+			"type_name"		"#KillEaterEventType_Faceless_ChronoKills"
+			"required_hero"		"faceless_void"
+			"image"		"spellicons/faceless_void_chronosphere.png"
+			"in_game_display_interval"		"25"
+		}
+		"40"
+		{
+			"type_name"		"#KillEaterEventType_Ursa_MultiShocks"
+			"required_hero"		"ursa"
+			"image"		"spellicons/ursa_earthshock.png"
+			"in_game_display_interval"		"50"
+		}
+		"41"
+		{
+			"type_name"		"#KillEaterEventType_RoshanKills"
+		}
+		"42"
+		{
+			"type_name"		"#KillEaterEventType_GiftsGranted"
+		}
+		"43"
+		{
+			"type_name"		"#KillEaterEventType_Lion_FingerKills"
+			"required_hero"		"lion"
+			"image"		"spellicons/lion_finger_of_death.png"
+			"in_game_display_interval"		"50"
+		}
+		"44"
+		{
+			"type_name"		"#KillEaterEventType_Lion_ManaDrained"
+			"required_hero"		"lion"
+			"image"		"spellicons/lion_mana_drain.png"
+			"in_game_display_interval"		"15000"
+		}
+		"45"
+		{
+			"type_name"		"#KillEaterEventType_OD_IntStolen"
+			"required_hero"		"obsidian_destroyer"
+			"image"		"spellicons/obsidian_destroyer_arcane_orb.png"
+			"in_game_display_interval"		"500"
+			"obsolete"		"1"
+		}
+		"46"
+		{
+			"type_name"		"#KillEaterEventType_Riki_GemCarrierKills"
+			"required_hero"		"riki"
+			"image"		"items/gem.png"
+			"in_game_display_interval"		"3"
+		}
+		"47"
+		{
+			"type_name"		"#KillEaterEventType_Riki_SmokedHeroKills"
+			"required_hero"		"riki"
+			"image"		"spellicons/riki_smoke_screen.png"
+			"in_game_display_interval"		"25"
+		}
+		"48"
+		{
+			"type_name"		"#KillEaterEventType_HeroesRevealedWithDust"
+			"image"		"items/dust.png"
+			"in_game_display_interval"		"10"
+		}
+		"49"
+		{
+			"type_name"		"#KillEaterEventType_SkeletonKing_ReincarnationKills"
+			"image"		"spellicons/skeleton_king_reincarnation.png"
+			"required_hero"		"skeleton_king"
+			"in_game_display_interval"		"10"
+		}
+		"50"
+		{
+			"type_name"		"#KillEaterEventType_Abaddon_BorrowedTimeDamageAbsorbed"
+			"required_hero"		"abaddon"
+			"image"		"spellicons/abaddon_borrowed_time.png"
+			"in_game_display_interval"		"100000"
+		}
+		"51"
+		{
+			"type_name"		"#KillEaterEventType_Skywrath_FlareKills"
+			"required_hero"		"skywrath_mage"
+			"image"		"spellicons/skywrath_mage_mystic_flare.png"
+			"in_game_display_interval"		"25"
+		}
+		"52"
+		{
+			"type_name"		"#KillEaterEventType_Enchantress_CreepsConverted"
+			"required_hero"		"enchantress"
+			"image"		"spellicons/enchantress_enchant.png"
+			"in_game_display_interval"		"25"
+		}
+		"53"
+		{
+			"type_name"		"#KillEaterEventType_Leshrac_SplitEarthStuns"
+			"required_hero"		"leshrac"
+			"image"		"spellicons/leshrac_split_earth.png"
+			"in_game_display_interval"		"100"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"54"
+		{
+			"type_name"		"#KillEaterEventType_Mirana_MaxStunArrows"
+			"required_hero"		"mirana"
+			"image"		"spellicons/mirana_arrow.png"
+			"in_game_display_interval"		"50"
+		}
+		"55"
+		{
+			"type_name"		"#KillEaterEventType_PhantomAssassin_CoupdeGraceCrits"
+			"required_hero"		"phantom_assassin"
+			"image"		"spellicons/phantom_assassin_coup_de_grace.png"
+			"in_game_display_interval"		"100"
+		}
+		"56"
+		{
+			"type_name"		"#KillEaterEventType_PhantomAssassin_DaggerCrits"
+			"required_hero"		"phantom_assassin"
+			"image"		"spellicons/phantom_assassin_stifling_dagger.png"
+			"in_game_display_interval"		"50"
+		}
+		"57"
+		{
+			"type_name"		"#KillEaterEventType_Meepo_Earthbinds"
+			"required_hero"		"meepo"
+			"image"		"spellicons/meepo_earthbind.png"
+			"in_game_display_interval"		"50"
+		}
+		"58"
+		{
+			"type_name"		"#KillEaterEventType_Bloodseeker_RuptureKills"
+			"required_hero"		"bloodseeker"
+			"image"		"spellicons/bloodseeker_rupture.png"
+			"in_game_display_interval"		"5"
+			"obsolete"		"1"
+		}
+		"59"
+		{
+			"type_name"		"#KillEaterEventType_ChaosKnight_FourSecondStunBolts"
+			"required_hero"		"chaos_knight"
+			"image"		"spellicons/chaos_knight_chaos_bolt.png"
+			"in_game_display_interval"		"25"
+		}
+		"60"
+		{
+			"type_name"		"#KillEaterEventType_Slark_LeashedEnemies"
+			"required_hero"		"slark"
+			"image"		"spellicons/slark_pounce.png"
+			"in_game_display_interval"		"150"
+		}
+		"61"
+		{
+			"type_name"		"#KillEaterEventType_Slark_EssenceStolen"
+			"required_hero"		"slark"
+			"image"		"spellicons/slark_essence_shift.png"
+			"in_game_display_interval"		"500"
+		}
+		"62"
+		{
+			"type_name"		"#KillEaterEventType_Slark_DebuffsPurged"
+			"required_hero"		"slark"
+			"image"		"spellicons/slark_dark_pact.png"
+			"in_game_display_interval"		"500"
+		}
+		"63"
+		{
+			"type_name"		"#KillEaterEventType_Disruptor_FountainGlimpses"
+			"required_hero"		"disruptor"
+			"image"		"spellicons/disruptor_glimpse.png"
+			"in_game_display_interval"		"5"
+		}
+		"64"
+		{
+			"type_name"		"#KillEaterEventType_Rubick_SpellsStolen"
+			"required_hero"		"rubick"
+			"image"		"spellicons/rubick_spell_steal.png"
+			"in_game_display_interval"		"150"
+		}
+		"65"
+		{
+			"type_name"		"#KillEaterEventType_Rubick_UltimatesStolen"
+			"required_hero"		"rubick"
+			"image"		"spellicons/rubick_spell_steal.png"
+			"in_game_display_interval"		"25"
+		}
+		"66"
+		{
+			"type_name"		"#KillEaterEventType_Doom_CreepsDevoured"
+			"required_hero"		"doom_bringer"
+			"in_game_display_interval"		"100"
+		}
+		"67"
+		{
+			"type_name"		"#KillEaterEventType_Doom_EnemiesDoomed"
+			"required_hero"		"doom_bringer"
+			"in_game_display_interval"		"25"
+		}
+		"68"
+		{
+			"type_name"		"#KillEaterEventType_OgreMagi_4xFireblasts"
+			"required_hero"		"ogre_magi"
+			"image"		"spellicons/ogre_magi_multicast.png"
+			"in_game_display_interval"		"15"
+		}
+		"69"
+		{
+			"type_name"		"#KillEaterEventType_OgreMagi_4xIgnites"
+			"required_hero"		"ogre_magi"
+			"image"		"spellicons/ogre_magi_multicast.png"
+			"in_game_display_interval"		"15"
+		}
+		"70"
+		{
+			"type_name"		"#KillEaterEventType_Omniknight_Purifications"
+			"required_hero"		"omniknight"
+			"in_game_display_interval"		"100"
+		}
+		"71"
+		{
+			"type_name"		"#KillEaterEventType_Omniknight_AlliesRepelled"
+			"required_hero"		"omniknight"
+			"in_game_display_interval"		"100"
+		}
+		"72"
+		{
+			"type_name"		"#KillEaterEventType_Omniknight_EnemiesRepelled"
+			"required_hero"		"omniknight"
+			"in_game_display_interval"		"100"
+			"obsolete"		"1"
+		}
+		"73"
+		{
+			"type_name"		"#KillEaterEventType_Warlock_FiveHeroFatalBonds"
+			"required_hero"		"warlock"
+			"image"		"spellicons/warlock_fatal_bonds.png"
+			"in_game_display_interval"		"1"
+		}
+		"74"
+		{
+			"type_name"		"#KillEaterEventType_Warlock_GolemsSummoned"
+			"required_hero"		"warlock"
+			"image"		"spellicons/warlock_rain_of_chaos.png"
+			"in_game_display_interval"		"25"
+		}
+		"75"
+		{
+			"type_name"		"#KillEaterEventType_CrystalMaiden_FrostbittenEnemies"
+			"image"		"spellicons/crystal_maiden_frostbite.png"
+			"required_hero"		"crystal_maiden"
+			"in_game_display_interval"		"50"
+		}
+		"76"
+		{
+			"type_name"		"#KillEaterEventType_CrystalMaiden_CrystalNovas"
+			"image"		"spellicons/crystal_maiden_crystal_nova.png"
+			"required_hero"		"crystal_maiden"
+			"in_game_display_interval"		"100"
+		}
+		"77"
+		{
+			"type_name"		"#KillEaterEventType_Kunkka_DoubleHeroTorrents"
+			"image"		"spellicons/kunkka_torrent.png"
+			"required_hero"		"kunkka"
+			"in_game_display_interval"		"25"
+		}
+		"78"
+		{
+			"type_name"		"#KillEaterEventType_Kunkka_TripleHeroGhostShips"
+			"image"		"spellicons/kunkka_ghostship.png"
+			"required_hero"		"kunkka"
+			"in_game_display_interval"		"5"
+		}
+		"79"
+		{
+			"type_name"		"#KillEaterEventType_NagaSiren_EnemiesEnsnared"
+			"image"		"spellicons/naga_siren_ensnare.png"
+			"required_hero"		"naga_siren"
+			"in_game_display_interval"		"150"
+		}
+		"80"
+		{
+			"type_name"		"#KillEaterEventType_NagaSiren_TripleHeroRipTides"
+			"image"		"spellicons/naga_siren_rip_tide.png"
+			"required_hero"		"naga_siren"
+			"in_game_display_interval"		"10"
+		}
+		"81"
+		{
+			"type_name"		"#KillEaterEventType_Lycan_KillsDuringShapeshift"
+			"image"		"spellicons/lycan_shapeshift.png"
+			"required_hero"		"lycan"
+			"in_game_display_interval"		"50"
+		}
+		"82"
+		{
+			"type_name"		"#KillEaterEventType_Lycan_WolvesSummoned"
+			"image"		"spellicons/lycan_summon_wolves.png"
+			"required_hero"		"lycan"
+			"in_game_display_interval"		"250"
+		}
+		"83"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_FleshHeapTotal"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"100"
+		}
+		"84"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_DismemberKills"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"5"
+			"image"		"spellicons/pudge_dismember.png"
+		}
+		"85"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_EnemyHeroesHooked"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"50"
+		}
+		"86"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_HookKills"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"10"
+			"image"		"spellicons/pudge_meat_hook.png"
+		}
+		"87"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_UnseenEnemyHeroesHooked"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"25"
+			"image"		"spellicons/pudge_meat_hook.png"
+		}
+		"88"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_EnemiesSilenced"
+			"image"		"spellicons/drow_ranger_wave_of_silence.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"150"
+		}
+		"89"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_MultiHeroSilences"
+			"image"		"spellicons/drow_ranger_wave_of_silence.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"50"
+		}
+		"90"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_SilencedKills"
+			"image"		"spellicons/drow_ranger_wave_of_silence.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"5"
+		}
+		"91"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_FrostArrowKills"
+			"image"		"spellicons/drow_ranger_frost_arrows.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"75"
+		}
+		"92"
+		{
+			"type_name"		"#KillEaterEventType_DragonKnight_KillsInDragonForm"
+			"required_hero"		"dragon_knight"
+			"in_game_display_interval"		"50"
+			"image"		"spellicons/dragon_knight_elder_dragon_form.png"
+		}
+		"93"
+		{
+			"type_name"		"#KillEaterEventType_DragonKnight_BreatheFireKills"
+			"required_hero"		"dragon_knight"
+			"in_game_display_interval"		"15"
+			"image"		"spellicons/dragon_knight_breathe_fire.png"
+		}
+		"94"
+		{
+			"type_name"		"#KillEaterEventType_DragonKnight_DragonTails"
+			"required_hero"		"dragon_knight"
+			"in_game_display_interval"		"150"
+			"image"		"spellicons/dragon_knight_dragon_tail.png"
+		}
+		"95"
+		{
+			"type_name"		"#KillEaterEventType_DragonKnight_SplashKills"
+			"required_hero"		"dragon_knight"
+			"in_game_display_interval"		"1"
+			"image"		"spellicons/dragon_knight_elder_dragon_form.png"
+		}
+		"96"
+		{
+			"type_name"		"#KillEaterEventType_Morphling_MorphReplicates"
+			"required_hero"		"morphling"
+			"image"		"spellicons/morphling_replicate.png"
+		}
+		"97"
+		{
+			"type_name"		"#KillEaterEventType_Morphling_HeroesReplicated"
+			"required_hero"		"morphling"
+			"obsolete"		"1"
+		}
+		"98"
+		{
+			"type_name"		"#KillEaterEventType_Morphling_MaxLengthStunAdaptive"
+			"required_hero"		"morphling"
+			"image"		"spellicons/morphling_adaptive_strike_str.png"
+			"in_game_display_interval"		"10"
+		}
+		"99"
+		{
+			"type_name"		"#KillEaterEventType_Morphling_MaxDamageAdaptive"
+			"required_hero"		"morphling"
+			"image"		"spellicons/morphling_adaptive_strike_agi.png"
+			"in_game_display_interval"		"250"
+		}
+		"100"
+		{
+			"type_name"		"#KillEaterEventType_WitchDoctor_CaskStuns"
+			"image"		"spellicons/witch_doctor_paralyzing_cask.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"100"
+		}
+		"101"
+		{
+			"type_name"		"#KillEaterEventType_WitchDoctor_MaledictKills"
+			"image"		"spellicons/witch_doctor_maledict.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"25"
+		}
+		"102"
+		{
+			"type_name"		"#KillEaterEventType_WitchDoctor_MultiHeroMaledicts"
+			"image"		"spellicons/witch_doctor_maledict.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"25"
+		}
+		"103"
+		{
+			"type_name"		"#KillEaterEventType_WitchDoctor_VoodooHealed"
+			"image"		"spellicons/witch_doctor_voodoo_restoration.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"50000"
+		}
+		"104"
+		{
+			"type_name"		"#KillEaterEventType_WitchDoctor_DeathWardKills"
+			"image"		"spellicons/witch_doctor_death_ward.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"15"
+		}
+		"105"
+		{
+			"type_name"		"#KillEaterEventType_Disruptor_ThunderStrikeKills"
+			"required_hero"		"disruptor"
+			"image"		"spellicons/disruptor_thunder_strike.png"
+			"in_game_display_interval"		"15"
+		}
+		"106"
+		{
+			"type_name"		"#KillEaterEventType_Disruptor_HeroesGlimpsed"
+			"required_hero"		"disruptor"
+			"image"		"spellicons/disruptor_glimpse.png"
+			"in_game_display_interval"		"25"
+		}
+		"107"
+		{
+			"type_name"		"#KillEaterEventType_CrystalMaiden_FreezingFieldKills"
+			"image"		"spellicons/crystal_maiden_freezing_field.png"
+			"required_hero"		"crystal_maiden"
+			"in_game_display_interval"		"10"
+		}
+		"108"
+		{
+			"type_name"		"#KillEaterEventType_Medusa_MysticSnakeManaStolen"
+			"required_hero"		"medusa"
+			"image"		"spellicons/medusa_mystic_snake.png"
+			"in_game_display_interval"		"150000"
+		}
+		"109"
+		{
+			"type_name"		"#KillEaterEventType_Medusa_EnemiesPetrified"
+			"required_hero"		"medusa"
+			"image"		"spellicons/medusa_stone_gaze.png"
+			"in_game_display_interval"		"250"
+		}
+		"110"
+		{
+			"type_name"		"#KillEaterEventType_Warlock_FatalBondsKills"
+			"required_hero"		"warlock"
+			"image"		"spellicons/warlock_fatal_bonds.png"
+			"in_game_display_interval"		"5"
+		}
+		"111"
+		{
+			"type_name"		"#KillEaterEventType_Warlock_GolemKills"
+			"required_hero"		"warlock"
+			"image"		"spellicons/warlock_rain_of_chaos.png"
+			"in_game_display_interval"		"15"
+		}
+		"112"
+		{
+			"type_name"		"#KillEaterEventType_Tusk_WalrusPunches"
+			"required_hero"		"tusk"
+			"image"		"spellicons/tusk_walrus_punch.png"
+			"in_game_display_interval"		"25"
+		}
+		"113"
+		{
+			"type_name"		"#KillEaterEventType_Tusk_SnowballStuns"
+			"required_hero"		"tusk"
+			"image"		"spellicons/tusk_snowball.png"
+			"in_game_display_interval"		"50"
+		}
+		"114"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_FissureStuns"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker_fissure.png"
+			"in_game_display_interval"		"100"
+		}
+		"115"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_3HeroEchoslams"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker_echo_slam.png"
+			"in_game_display_interval"		"15"
+		}
+		"116"
+		{
+			"type_name"		"#KillEaterEventType_SandKing_BurrowstrikeStuns"
+			"image"		"spellicons/sandking_burrowstrike.png"
+			"required_hero"		"sand_king"
+			"in_game_display_interval"		"100"
+		}
+		"117"
+		{
+			"type_name"		"#KillEaterEventType_SandKing_EpicenterKills"
+			"image"		"spellicons/sandking_epicenter.png"
+			"required_hero"		"sand_king"
+			"in_game_display_interval"		"15"
+		}
+		"118"
+		{
+			"type_name"		"#KillEaterEventType_SkywrathMage_AncientSealKills"
+			"required_hero"		"skywrath_mage"
+			"image"		"spellicons/skywrath_mage_ancient_seal.png"
+			"in_game_display_interval"		"50"
+		}
+		"119"
+		{
+			"type_name"		"#KillEaterEventType_SkywrathMage_ConcussiveShotKills"
+			"required_hero"		"skywrath_mage"
+			"image"		"spellicons/skywrath_mage_concussive_shot.png"
+			"in_game_display_interval"		"10"
+		}
+		"120"
+		{
+			"type_name"		"#KillEaterEventType_Luna_LucentBeamKills"
+			"required_hero"		"luna"
+			"image"		"spellicons/luna_lucent_beam.png"
+			"in_game_display_interval"		"50"
+		}
+		"121"
+		{
+			"type_name"		"#KillEaterEventType_Luna_EclipseKills"
+			"required_hero"		"luna"
+			"image"		"spellicons/luna_eclipse.png"
+			"in_game_display_interval"		"15"
+		}
+		"122"
+		{
+			"type_name"		"#KillEaterEventType_KeeperOfTheLight_IlluminateKills"
+			"required_hero"		"keeper_of_the_light"
+			"image"		"spellicons/keeper_of_the_light_illuminate.png"
+			"in_game_display_interval"		"25"
+		}
+		"123"
+		{
+			"type_name"		"#KillEaterEventType_KeeperOfTheLight_ManaLeakStuns"
+			"image"		"spellicons/keeper_of_the_light_mana_leak.png"
+			"required_hero"		"keeper_of_the_light"
+			"in_game_display_interval"		"20"
+			"obsolete"		"1"
+		}
+		"124"
+		{
+			"type_name"		"#KillEaterEventType_KeeperOfTheLight_TeammatesRecalled"
+			"image"		"spellicons/keeper_of_the_light_recall.png"
+			"required_hero"		"keeper_of_the_light"
+			"in_game_display_interval"		"10"
+		}
+		"125"
+		{
+			"type_name"		"#KillEaterEventType_Ward_RuneSpawnsSeen"
+		}
+		"126"
+		{
+			"type_name"		"#KillEaterEventType_Ward_TimesPlaced"
+			"obsolete"		"1"
+		}
+		"127"
+		{
+			"type_name"		"#KillEaterEventType_LegionCommander_DuelsWon"
+			"required_hero"		"legion_commander"
+			"image"		"spellicons/legion_commander_duel.png"
+			"in_game_display_interval"		"75"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"128"
+		{
+			"type_name"		"#KillEaterEventType_LegionCommander_DuelsLost"
+			"required_hero"		"legion_commander"
+			"image"		"spellicons/legion_commander_duel.png"
+		}
+		"129"
+		{
+			"type_name"		"#KillEaterEventType_Beastmaster_HawksSummoned"
+			"required_hero"		"beastmaster"
+			"in_game_display_interval"		"50"
+			"image"		"spellicons/beastmaster_call_of_the_wild.png"
+		}
+		"130"
+		{
+			"type_name"		"#KillEaterEventType_Beastmaster_BoarsSummoned"
+			"required_hero"		"beastmaster"
+			"in_game_display_interval"		"50"
+			"image"		"spellicons/beastmaster_call_of_the_wild.png"
+		}
+		"131"
+		{
+			"type_name"		"#KillEaterEventType_Beastmaster_RoarKills"
+			"required_hero"		"beastmaster"
+			"image"		"spellicons/beastmaster_primal_roar.png"
+		}
+		"132"
+		{
+			"type_name"		"#KillEaterEventType_Beastmaster_RoarMultiKills"
+			"required_hero"		"beastmaster"
+			"image"		"spellicons/beastmaster_primal_roar.png"
+		}
+		"133"
+		{
+			"type_name"		"#KillEaterEventType_Windrunner_FocusFireBuildings"
+			"required_hero"		"windrunner"
+			"image"		"spellicons/windrunner_focusfire.png"
+			"in_game_display_interval"		"5"
+		}
+		"134"
+		{
+			"type_name"		"#KillEaterEventType_Windrunner_PowershotKills"
+			"required_hero"		"windrunner"
+			"image"		"spellicons/windrunner_powershot.png"
+			"in_game_display_interval"		"25"
+		}
+		"135"
+		{
+			"type_name"		"#KillEaterEventType_PhantomAssassin_DaggerLastHits"
+			"required_hero"		"phantom_assassin"
+			"image"		"spellicons/phantom_assassin_stifling_dagger.png"
+			"in_game_display_interval"		"150"
+		}
+		"136"
+		{
+			"type_name"		"#KillEaterEventType_PhantomAssassin_PhantomStrikeKills"
+			"required_hero"		"phantom_assassin"
+			"image"		"spellicons/phantom_assassin_phantom_strike.png"
+			"in_game_display_interval"		"50"
+		}
+		"137"
+		{
+			"type_name"		"#KillEaterEventType_DeathProphet_CryptSwarmKills"
+			"required_hero"		"death_prophet"
+			"image"		"spellicons/death_prophet_carrion_swarm.png"
+			"in_game_display_interval"		"25"
+		}
+		"138"
+		{
+			"type_name"		"#KillEaterEventType_DeathProphet_ExorcismBuildingKills"
+			"required_hero"		"death_prophet"
+			"image"		"spellicons/death_prophet_exorcism.png"
+			"in_game_display_interval"		"25"
+		}
+		"139"
+		{
+			"type_name"		"#KillEaterEventType_DeathProphet_ExorcismSpiritsSummoned"
+			"required_hero"		"death_prophet"
+			"image"		"spellicons/death_prophet_exorcism.png"
+			"in_game_display_interval"		"500"
+		}
+		"140"
+		{
+			"type_name"		"#KillEaterEventType_DeathProphet_MultiHeroSilences"
+			"required_hero"		"death_prophet"
+			"image"		"spellicons/death_prophet_silence.png"
+			"in_game_display_interval"		"50"
+		}
+		"141"
+		{
+			"type_name"		"#KillEaterEventType_Abaddon_MistCoilKills"
+			"required_hero"		"abaddon"
+			"image"		"spellicons/abaddon_death_coil.png"
+			"in_game_display_interval"		"15"
+		}
+		"142"
+		{
+			"type_name"		"#KillEaterEventType_Abaddon_MistCoilHealed"
+			"required_hero"		"abaddon"
+			"image"		"spellicons/abaddon_death_coil.png"
+			"in_game_display_interval"		"50000"
+		}
+		"143"
+		{
+			"type_name"		"#KillEaterEventType_Abaddon_AphoticShieldKills"
+			"required_hero"		"abaddon"
+			"image"		"spellicons/abaddon_aphotic_shield.png"
+			"in_game_display_interval"		"10"
+		}
+		"144"
+		{
+			"type_name"		"#KillEaterEventType_Lich_Sacrifices"
+			"required_hero"		"lich"
+			"image"		"spellicons/lich_sinister_gaze.png"
+			"in_game_display_interval"		"100"
+		}
+		"145"
+		{
+			"type_name"		"#KillEaterEventType_Lich_ChainFrostTripleKills"
+			"required_hero"		"lich"
+			"image"		"spellicons/lich_chain_frost.png"
+			"in_game_display_interval"		"2"
+		}
+		"146"
+		{
+			"type_name"		"#KillEaterEventType_Lich_ChainFrostMultiKills"
+			"required_hero"		"lich"
+			"image"		"spellicons/lich_chain_frost.png"
+			"in_game_display_interval"		"3"
+			"obsolete"		"1"
+		}
+		"147"
+		{
+			"type_name"		"#KillEaterEventType_Lich_ChainFrostBounces"
+			"required_hero"		"lich"
+			"image"		"spellicons/lich_chain_frost.png"
+			"in_game_display_interval"		"500"
+		}
+		"148"
+		{
+			"type_name"		"#KillEaterEventType_Lich_IceArmorCasts"
+			"required_hero"		"lich"
+			"image"		"spellicons/lich_frost_armor.png"
+			"in_game_display_interval"		"100"
+		}
+		"149"
+		{
+			"type_name"		"#KillEaterEventType_Ursa_EnragedKills"
+			"required_hero"		"ursa"
+			"image"		"spellicons/ursa_enrage.png"
+			"in_game_display_interval"		"25"
+		}
+		"150"
+		{
+			"type_name"		"#KillEaterEventType_Ursa_EarthshockKills"
+			"required_hero"		"ursa"
+			"image"		"spellicons/ursa_earthshock.png"
+			"in_game_display_interval"		"50"
+		}
+		"151"
+		{
+			"type_name"		"#KillEaterEventType_Lina_LagunaBladeKills"
+			"required_hero"		"lina"
+			"image"		"spellicons/lina_laguna_blade.png"
+			"in_game_display_interval"		"10"
+		}
+		"152"
+		{
+			"type_name"		"#KillEaterEventType_Lina_DragonSlaveKills"
+			"required_hero"		"lina"
+			"image"		"spellicons/lina_dragon_slave.png"
+			"in_game_display_interval"		"15"
+		}
+		"153"
+		{
+			"type_name"		"#KillEaterEventType_Lina_LightStrikeArrayStuns"
+			"required_hero"		"lina"
+			"image"		"spellicons/lina_light_strike_array.png"
+			"in_game_display_interval"		"50"
+		}
+		"154"
+		{
+			"type_name"		"#KillEaterEvent_Barracks_Destroyed"
+			"image"		"challenges/icon_challenges_barracksdestroyed.png"
+			"in_game_display_interval"		"10"
+		}
+		"155"
+		{
+			"type_name"		"#KillEaterEvent_Buildings_Destroyed"
+		}
+		"156"
+		{
+			"type_name"		"#KillEaterEvent_Demons_Destroyed"
+		}
+		"157"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_MeldKills"
+			"required_hero"		"templar_assassin"
+			"image"		"spellicons/templar_assassin_meld.png"
+			"in_game_display_interval"		"3"
+		}
+		"158"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_TrapsTriggered"
+			"required_hero"		"templar_assassin"
+			"image"		"spellicons/templar_assassin_psionic_trap.png"
+			"in_game_display_interval"		"50"
+		}
+		"159"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_DamageAbsorbed"
+			"required_hero"		"templar_assassin"
+			"image"		"spellicons/templar_assassin_refraction.png"
+			"in_game_display_interval"		"75000"
+		}
+		"160"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_AssassinationKills"
+			"required_hero"		"sniper"
+			"image"		"spellicons/sniper_assassinate.png"
+			"in_game_display_interval"		"25"
+		}
+		"161"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_ShrapnelTowerDamage"
+			"required_hero"		"sniper"
+			"obsolete"		"1"
+		}
+		"162"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_HeadshotStuns"
+			"required_hero"		"sniper"
+			"image"		"spellicons/sniper_headshot.png"
+			"in_game_display_interval"		"100"
+		}
+		"163"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_SmashStuns"
+			"required_hero"		"earth_spirit"
+			"image"		"spellicons/earth_spirit_boulder_smash.png"
+			"in_game_display_interval"		"50"
+		}
+		"164"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_GripSilences"
+			"required_hero"		"earth_spirit"
+			"image"		"spellicons/earth_spirit_geomagnetic_grip.png"
+			"in_game_display_interval"		"50"
+		}
+		"165"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_SpeedingBoulders"
+			"required_hero"		"earth_spirit"
+			"image"		"spellicons/earth_spirit_rolling_boulder.png"
+			"in_game_display_interval"		"50"
+		}
+		"166"
+		{
+			"type_name"		"#KillEaterEvent_ShadowShaman_ShackleKills"
+			"image"		"spellicons/shadow_shaman_shackles.png"
+			"required_hero"		"shadow_shaman"
+			"in_game_display_interval"		"50"
+		}
+		"167"
+		{
+			"type_name"		"#KillEaterEvent_ShadowShaman_HexKills"
+			"image"		"spellicons/shadow_shaman_voodoo.png"
+			"required_hero"		"shadow_shaman"
+			"in_game_display_interval"		"5"
+		}
+		"168"
+		{
+			"type_name"		"#KillEaterEvent_ShadowShaman_WardsSummoned"
+			"image"		"spellicons/shadow_shaman_mass_serpent_ward.png"
+			"required_hero"		"shadow_shaman"
+			"in_game_display_interval"		"250"
+		}
+		"169"
+		{
+			"type_name"		"#KillEaterEvent_Centaur_EnemiesStomped"
+			"required_hero"		"centaur"
+			"image"		"spellicons/centaur_hoof_stomp.png"
+			"in_game_display_interval"		"50"
+		}
+		"170"
+		{
+			"type_name"		"#KillEaterEvent_Centaur_DoubleEdgeKills"
+			"image"		"spellicons/centaur_double_edge.png"
+			"required_hero"		"centaur"
+			"in_game_display_interval"		"25"
+		}
+		"171"
+		{
+			"type_name"		"#KillEaterEvent_Centaur_ReturnKills"
+			"image"		"spellicons/centaur_return.png"
+			"required_hero"		"centaur"
+			"in_game_display_interval"		"3"
+		}
+		"172"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_EnemiesChained"
+			"required_hero"		"ember_spirit"
+			"image"		"spellicons/ember_spirit_searing_chains.png"
+			"in_game_display_interval"		"100"
+		}
+		"173"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_SleightOfFistMultiKills"
+			"required_hero"		"ember_spirit"
+			"image"		"spellicons/ember_spirit_sleight_of_fist.png"
+			"in_game_display_interval"		"1"
+		}
+		"174"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_FlameGuardDamageAbsorbed"
+			"required_hero"		"ember_spirit"
+			"image"		"spellicons/ember_spirit_flame_guard.png"
+			"in_game_display_interval"		"50000"
+		}
+		"175"
+		{
+			"type_name"		"#KillEaterEvent_LegionCommander_TripleHeroOdds"
+			"required_hero"		"legion_commander"
+			"image"		"spellicons/legion_commander_overwhelming_odds.png"
+			"in_game_display_interval"		"10"
+		}
+		"176"
+		{
+			"type_name"		"#KillEaterEvent_LegionCommander_MomentOfCourageLifeStolen"
+			"required_hero"		"legion_commander"
+			"in_game_display_interval"		"150000"
+			"image"		"spellicons/legion_commander_moment_of_courage.png"
+		}
+		"177"
+		{
+			"type_name"		"#KillEaterEvent_LegionCommander_SecondsSpentDueling"
+			"required_hero"		"legion_commander"
+			"image"		"spellicons/legion_commander_duel.png"
+			"in_game_display_interval"		"250"
+		}
+		"178"
+		{
+			"type_name"		"#KillEaterEvent_Puck_GoodCoils"
+			"required_hero"		"puck"
+			"image"		"spellicons/puck_dream_coil.png"
+			"in_game_display_interval"		"10"
+		}
+		"179"
+		{
+			"type_name"		"#KillEaterEvent_Puck_GoodWaningRifts"
+			"required_hero"		"puck"
+			"image"		"spellicons/puck_waning_rift.png"
+			"in_game_display_interval"		"10"
+		}
+		"180"
+		{
+			"type_name"		"#KillEaterEvent_Puck_OrbKills"
+			"required_hero"		"puck"
+			"image"		"spellicons/puck_illusory_orb.png"
+			"in_game_display_interval"		"15"
+		}
+		"181"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_EnemiesStunned"
+			"required_hero"		"vengefulspirit"
+			"image"		"spellicons/vengefulspirit_magic_missile.png"
+			"in_game_display_interval"		"50"
+		}
+		"182"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_EnemiesSwapped"
+			"required_hero"		"vengefulspirit"
+			"image"		"spellicons/vengefulspirit_nether_swap.png"
+			"in_game_display_interval"		"20"
+		}
+		"183"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_MultiTerrors"
+			"required_hero"		"vengefulspirit"
+			"image"		"spellicons/vengefulspirit_wave_of_terror.png"
+			"in_game_display_interval"		"20"
+		}
+		"184"
+		{
+			"type_name"		"#KillEaterEvent_Lifestealer_RageKills"
+			"required_hero"		"life_stealer"
+			"image"		"spellicons/life_stealer_rage.png"
+			"in_game_display_interval"		"50"
+		}
+		"185"
+		{
+			"type_name"		"#KillEaterEvent_Lifestealer_OpenWoundsKills"
+			"required_hero"		"life_stealer"
+			"image"		"spellicons/life_stealer_open_wounds.png"
+			"in_game_display_interval"		"50"
+		}
+		"186"
+		{
+			"type_name"		"#KillEaterEvent_Lifestealer_InfestKills"
+			"required_hero"		"life_stealer"
+			"image"		"spellicons/life_stealer_infest.png"
+			"in_game_display_interval"		"5"
+		}
+		"187"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_GoodSplitters"
+			"required_hero"		"elder_titan"
+			"image"		"spellicons/elder_titan_earth_splitter.png"
+			"in_game_display_interval"		"10"
+		}
+		"188"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_SpiritKills"
+			"required_hero"		"elder_titan"
+			"image"		"spellicons/elder_titan_ancestral_spirit.png"
+			"in_game_display_interval"		"3"
+			"obsolete"		"1"
+		}
+		"189"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_GoodStomps"
+			"required_hero"		"elder_titan"
+			"image"		"spellicons/elder_titan_echo_stomp.png"
+			"in_game_display_interval"		"15"
+		}
+		"190"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_2Cogs"
+			"required_hero"		"rattletrap"
+			"image"		"spellicons/rattletrap_power_cogs.png"
+			"in_game_display_interval"		"10"
+		}
+		"191"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_BlindHooks"
+			"required_hero"		"rattletrap"
+			"image"		"spellicons/rattletrap_hookshot.png"
+			"in_game_display_interval"		"10"
+		}
+		"192"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_RocketKills"
+			"required_hero"		"rattletrap"
+			"image"		"spellicons/rattletrap_rocket_flare.png"
+			"in_game_display_interval"		"10"
+		}
+		"193"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_BlindRocketKills"
+			"required_hero"		"rattletrap"
+			"image"		"spellicons/rattletrap_rocket_flare.png"
+			"in_game_display_interval"		"1"
+		}
+		"194"
+		{
+			"type_name"		"#KillEaterEvent_GamesPlayed"
+			"in_game_display_interval"		"5"
+		}
+		"195"
+		{
+			"type_name"		"#KillEaterEvent_DreamLeague_DreamPoints"
+		}
+		"196"
+		{
+			"type_name"		"#KillEaterEvent_StormSpirit_BallDamage"
+			"required_hero"		"storm_spirit"
+			"image"		"spellicons/storm_spirit_ball_lightning.png"
+			"in_game_display_interval"		"50000"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"197"
+		{
+			"type_name"		"#KillEaterEvent_StormSpirit_BallKills"
+			"required_hero"		"storm_spirit"
+			"image"		"spellicons/storm_spirit_ball_lightning.png"
+			"in_game_display_interval"		"3"
+		}
+		"198"
+		{
+			"type_name"		"#KillEaterEvent_StormSpirit_DoubleRemnantKills"
+			"required_hero"		"storm_spirit"
+			"image"		"spellicons/storm_spirit_static_remnant.png"
+		}
+		"199"
+		{
+			"type_name"		"#KillEaterEvent_StormSpirit_VortexKills"
+			"required_hero"		"storm_spirit"
+			"image"		"spellicons/storm_spirit_electric_vortex.png"
+			"in_game_display_interval"		"25"
+		}
+		"200"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_Rearms"
+			"required_hero"		"tinker"
+			"image"		"spellicons/tinker_rearm.png"
+		}
+		"201"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_TPsToBase"
+			"required_hero"		"tinker"
+			"image"		"items/travel_boots.png"
+		}
+		"202"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_DoubleMissileKills"
+			"required_hero"		"tinker"
+			"image"		"spellicons/tinker_heat_seeking_missile.png"
+			"in_game_display_interval"		"10"
+			"obsolete"		"1"
+		}
+		"203"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_LaserKills"
+			"required_hero"		"tinker"
+			"image"		"spellicons/tinker_laser.png"
+			"in_game_display_interval"		"50"
+		}
+		"204"
+		{
+			"type_name"		"#KillEaterEventType_Techies_SuicideKills"
+			"required_hero"		"techies"
+			"image"		"spellicons/techies_suicide.png"
+			"in_game_display_interval"		"15"
+		}
+		"205"
+		{
+			"type_name"		"#KillEaterEvent_VictoryPredictions"
+			"allow_count_reset"		"0"
+		}
+		"206"
+		{
+			"type_name"		"#KillEaterEvent_Techies_LandMineKills"
+			"required_hero"		"techies"
+			"image"		"spellicons/techies_land_mines.png"
+			"in_game_display_interval"		"25"
+		}
+		"207"
+		{
+			"type_name"		"#KillEaterEvent_Techies_StasisTrapStuns"
+			"required_hero"		"techies"
+			"image"		"spellicons/techies_stasis_trap.png"
+			"in_game_display_interval"		"150"
+		}
+		"208"
+		{
+			"type_name"		"#KillEaterEvent_Techies_RemoteMineKills"
+			"required_hero"		"techies"
+			"image"		"spellicons/techies_remote_mines.png"
+			"in_game_display_interval"		"50"
+		}
+		"209"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_TripleRaze"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_shadowraze3.png"
+			"in_game_display_interval"		"15"
+		}
+		"210"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_TripleRazeKills"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_shadowraze3.png"
+			"in_game_display_interval"		"3"
+		}
+		"211"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_RequiemMultiKills"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_requiem.png"
+		}
+		"212"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_QRazeKills"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_shadowraze1.png"
+			"in_game_display_interval"		"10"
+		}
+		"213"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_WRazeKills"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_shadowraze2.png"
+			"in_game_display_interval"		"15"
+		}
+		"214"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_ERazeKills"
+			"required_hero"		"nevermore"
+			"image"		"spellicons/nevermore_shadowraze3.png"
+			"in_game_display_interval"		"25"
+		}
+		"215"
+		{
+			"type_name"		"#KillEaterEvent_Oracle_FatesEdictKills"
+			"required_hero"		"oracle"
+			"image"		"spellicons/oracle_fates_edict.png"
+			"in_game_display_interval"		"10"
+		}
+		"216"
+		{
+			"type_name"		"#KillEaterEvent_Oracle_FalsePromiseSaves"
+			"required_hero"		"oracle"
+			"image"		"spellicons/oracle_false_promise.png"
+			"in_game_display_interval"		"10"
+		}
+		"217"
+		{
+			"type_name"		"#KillEaterEvent_VictoryPredictionFailures"
+			"allow_count_reset"		"0"
+		}
+		"218"
+		{
+			"type_name"		"#KillEaterEvent_VictoryPredictionWins"
+			"allow_count_reset"		"0"
+			"in_game_display_interval"		"5"
+		}
+		"219"
+		{
+			"type_name"		"#KillEaterEventType_PhantomAssassin_ArcanaEventWins"
+			"required_hero"		"phantom_assassin"
+			"works_in_turbo_mode"		"1"
+		}
+		"220"
+		{
+			"type_name"		"#KillEaterEventType_Statue_Commends"
+		}
+		"221"
+		{
+			"type_name"		"#KillEaterEvent_EnemyWardKills"
+			"image"		"challenges/icon_challenges_deward.png"
+			"in_game_display_interval"		"50"
+		}
+		"222"
+		{
+			"type_name"		"#KillEaterEvent_Juggernaut_OmnislashKills"
+			"required_hero"		"juggernaut"
+			"image"		"spellicons/juggernaut_omni_slash.png"
+			"in_game_display_interval"		"50"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"223"
+		{
+			"type_name"		"#KillEaterEvent_TripleKills"
+			"image"		"challenges/icon_challenges_triplekill.png"
+			"in_game_display_interval"		"2"
+		}
+		"224"
+		{
+			"type_name"		"#KillEaterEvent_Rampages"
+			"image"		"challenges/icon_challenges_rampage.png"
+			"in_game_display_interval"		"1"
+		}
+		"225"
+		{
+			"type_name"		"#KillEaterEvent_WraithKing_SkeletonsSummoned"
+			"image"		"spellicons/skeleton_king_mortal_strike.png"
+			"required_hero"		"skeleton_king"
+			"in_game_display_interval"		"1000"
+		}
+		"226"
+		{
+			"type_name"		"#KillEaterEvent_WraithKing_SkeletonHeroKills"
+			"image"		"spellicons/skeleton_king_mortal_strike.png"
+			"required_hero"		"skeleton_king"
+			"in_game_display_interval"		"10"
+		}
+		"227"
+		{
+			"type_name"		"#KillEaterEvent_CursedCrownTripleStuns"
+			"image"		"spellicons/dark_willow_cursed_crown.png"
+			"required_hero"		"dark_willow"
+			"in_game_display_interval"		"2"
+		}
+		"228"
+		{
+			"type_name"		"#KillEaterEvent_ShallowGraveSaves"
+			"image"		"spellicons/dazzle_shallow_grave.png"
+			"required_hero"		"dazzle"
+			"in_game_display_interval"		"50"
+		}
+		"229"
+		{
+			"type_name"		"#KillEaterEvent_PoisonTouchKills"
+			"image"		"spellicons/dazzle_poison_touch.png"
+			"required_hero"		"dazzle"
+			"in_game_display_interval"		"15"
+		}
+		"230"
+		{
+			"type_name"		"#KillEaterEvent_ThreeManMeks"
+			"image"		"items/mekansm.png"
+			"in_game_display_interval"		"10"
+		}
+		"231"
+		{
+			"type_name"		"#KillEaterEvent_PoisonAttackKills"
+			"image"		"spellicons/viper_poison_attack.png"
+			"required_hero"		"viper"
+			"in_game_display_interval"		"25"
+		}
+		"232"
+		{
+			"type_name"		"#KillEaterEvent_CorrosiveSkinKills"
+			"image"		"spellicons/viper_corrosive_skin.png"
+			"required_hero"		"viper"
+			"in_game_display_interval"		"5"
+		}
+		"233"
+		{
+			"type_name"		"#KillEaterEvent_ThreeHeroVeils"
+			"image"		"items/veil_of_discord.png"
+			"in_game_display_interval"		"3"
+		}
+		"234"
+		{
+			"type_name"		"#KillEaterEvent_KillsDuringViperStrike"
+			"image"		"spellicons/viper_viper_strike.png"
+			"required_hero"		"viper"
+			"in_game_display_interval"		"50"
+		}
+		"235"
+		{
+			"type_name"		"#KillEaterEvent_SolarCrestKills"
+			"image"		"items/solar_crest.png"
+			"in_game_display_interval"		"5"
+		}
+		"236"
+		{
+			"type_name"		"#KillEaterEventType_TrollWarlord_MeleeAxesOnTwoOrMore"
+			"required_hero"		"troll_warlord"
+			"image"		"spellicons/troll_warlord_whirling_axes_melee.png"
+			"in_game_display_interval"		"50"
+		}
+		"237"
+		{
+			"type_name"		"#KillEaterEventType_TrollWarlord_BattleTranceTeamStructureDmg"
+			"required_hero"		"troll_warlord"
+			"image"		"spellicons/troll_warlord_battle_trance.png"
+			"in_game_display_interval"		"25000"
+			"obsolete"		"1"
+		}
+		"238"
+		{
+			"type_name"		"#KillEaterEventType_TrollWarlord_MeleeAxesEnemyMisses"
+			"required_hero"		"troll_warlord"
+			"image"		"spellicons/troll_warlord_whirling_axes_melee.png"
+			"in_game_display_interval"		"150"
+		}
+		"239"
+		{
+			"type_name"		"#KillEaterEventType_TrollWarlord_RangedAxesSlowDuration"
+			"required_hero"		"troll_warlord"
+			"image"		"spellicons/troll_warlord_whirling_axes_ranged.png"
+			"in_game_display_interval"		"750"
+		}
+		"240"
+		{
+			"type_name"		"#KillEaterEventType_Tiny_EnemiesThrownToAllies"
+			"required_hero"		"tiny"
+			"image"		"spellicons/tiny_toss.png"
+			"in_game_display_interval"		"25"
+		}
+		"241"
+		{
+			"type_name"		"#KillEaterEventType_Tiny_TwoPersonAvalanches"
+			"required_hero"		"tiny"
+			"image"		"spellicons/tiny_avalanche.png"
+			"in_game_display_interval"		"75"
+		}
+		"242"
+		{
+			"type_name"		"#KillEaterEventType_Tiny_TreeThrowKills"
+			"required_hero"		"tiny"
+			"image"		"spellicons/tiny_toss_tree.png"
+			"in_game_display_interval"		"15"
+		}
+		"243"
+		{
+			"type_name"		"#KillEaterEventType_StormSpirit_StaticRemnantDoubleHits"
+			"required_hero"		"storm_spirit"
+			"image"		"spellicons/storm_spirit_static_remnant.png"
+			"in_game_display_interval"		"25"
+		}
+		"244"
+		{
+			"type_name"		"#KillEaterEventType_SpiritBreaker_LongDistanceCharges"
+			"required_hero"		"spirit_breaker"
+			"image"		"spellicons/spirit_breaker_charge_of_darkness.png"
+			"in_game_display_interval"		"100"
+		}
+		"245"
+		{
+			"type_name"		"#KillEaterEventType_Spectre_DesolateDamage"
+			"required_hero"		"spectre"
+			"image"		"spellicons/spectre_desolate.png"
+			"in_game_display_interval"		"25000"
+		}
+		"246"
+		{
+			"type_name"		"#KillEaterEventType_ShadowShaman_MaxDurationShackles"
+			"required_hero"		"shadow_shaman"
+			"image"		"spellicons/shadow_shaman_shackles.png"
+			"in_game_display_interval"		"50"
+		}
+		"247"
+		{
+			"type_name"		"#KillEaterEventType_Riki_BackstabKills"
+			"required_hero"		"riki"
+			"image"		"spellicons/riki_permanent_invisibility.png"
+			"in_game_display_interval"		"50"
+		}
+		"248"
+		{
+			"type_name"		"#KillEaterEventType_Razor_MaxStaticLinkDrain"
+			"required_hero"		"razor"
+			"image"		"spellicons/razor_static_link.png"
+			"in_game_display_interval"		"50"
+		}
+		"249"
+		{
+			"type_name"		"#KillEaterEventType_Phoenix_ThreeHeroSupernovaStuns"
+			"required_hero"		"phoenix"
+			"image"		"spellicons/phoenix_supernova.png"
+			"in_game_display_interval"		"25"
+		}
+		"250"
+		{
+			"type_name"		"#KillEaterEventType_Phoenix_AlliedSunRayHealing"
+			"required_hero"		"phoenix"
+			"image"		"spellicons/phoenix_sun_ray.png"
+			"in_game_display_interval"		"25000"
+		}
+		"251"
+		{
+			"type_name"		"#KillEaterEventType_Terrorblade_MetamorphosisKills"
+			"required_hero"		"terrorblade"
+			"image"		"spellicons/terrorblade_metamorphosis.png"
+			"in_game_display_interval"		"50"
+		}
+		"252"
+		{
+			"type_name"		"#KillEaterEventType_Slark_LongDistancePounces"
+			"required_hero"		"slark"
+			"image"		"spellicons/slark_pounce.png"
+			"in_game_display_interval"		"15"
+		}
+		"253"
+		{
+			"type_name"		"#KillEaterEventType_Slark_HighEssenceShiftCount"
+			"required_hero"		"slark"
+			"image"		"spellicons/slark_essence_shift.png"
+			"in_game_display_interval"		"250"
+		}
+		"254"
+		{
+			"type_name"		"#KillEaterEventType_PhantomLancer_HighIllusionCount"
+			"required_hero"		"phantom_lancer"
+			"image"		"spellicons/phantom_lancer_juxtapose.png"
+			"in_game_display_interval"		"500"
+		}
+		"255"
+		{
+			"type_name"		"#KillEaterEventType_Oracle_FatesEdictMagicDamageResisted"
+			"required_hero"		"oracle"
+			"image"		"spellicons/oracle_fates_edict.png"
+			"in_game_display_interval"		"75000"
+		}
+		"256"
+		{
+			"type_name"		"#KillEaterEventType_Silencer_DamageOnGlobalSilencedEnemies"
+			"required_hero"		"silencer"
+			"image"		"spellicons/silencer_global_silence.png"
+			"in_game_display_interval"		"15000"
+		}
+		"257"
+		{
+			"type_name"		"#KillEaterEvent_Pudge_ArcanaWins"
+			"required_hero"		"pudge"
+			"image"		"econ/sockets/gem_pudge_arcana.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"258"
+		{
+			"type_name"		"#KillEaterEvent_TI8"
+			"image"		"challenges/icon_challenges_first_bloods.png"
+		}
+		"259"
+		{
+			"type_name"		"#KillEaterEventType_Lion_GreatFingerKills"
+			"required_hero"		"lion"
+			"image"		"spellicons/lion_finger_of_death.png"
+			"in_game_display_interval"		"5"
+		}
+		"260"
+		{
+			"type_name"		"#KillEaterEventType_Grimstroke_MultiHeroInkSwell"
+			"required_hero"		"grimstroke"
+			"image"		"spellicons/grimstroke_spirit_walk.png"
+			"in_game_display_interval"		"15"
+		}
+		"261"
+		{
+			"type_name"		"#KillEaterEventType_Grimstroke_PhantomSoulChainCombo"
+			"required_hero"		"grimstroke"
+			"image"		"spellicons/grimstroke_soul_chain.png"
+			"in_game_display_interval"		"25"
+		}
+		"262"
+		{
+			"type_name"		"#KillEaterEventType_Grimstroke_MultiHeroDarkArtistry"
+			"required_hero"		"grimstroke"
+			"image"		"spellicons/grimstroke_dark_artistry.png"
+			"in_game_display_interval"		"25"
+		}
+		"263"
+		{
+			"type_name"		"#KillEaterEventType_Grimstroke_MaxStunDurationInkSwell"
+			"required_hero"		"grimstroke"
+			"image"		"spellicons/grimstroke_spirit_walk.png"
+			"in_game_display_interval"		"75"
+		}
+		"264"
+		{
+			"type_name"		"#KillEaterEventType_Grimstroke_FullDurationPhantomsEmbrace"
+			"required_hero"		"grimstroke"
+			"image"		"spellicons/grimstroke_ink_creature.png"
+			"in_game_display_interval"		"125"
+		}
+		"265"
+		{
+			"type_name"		"#KillEaterEvent_RubickArcana"
+			"image"		"econ/sockets/gem_rubick_arcana.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"266"
+		{
+			"type_name"		"#KillEaterEvent_OgreMagiArcana"
+			"image"		"econ/sockets/gem_ogre_magi_arcana.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"267"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaHeroesKilled_1"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"use_bitmap_instead_of_increment"		"1"
+			"requires_win"		"1"
+			"hidden"		"1"
+		}
+		"268"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaHeroesKilled_2"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"use_bitmap_instead_of_increment"		"1"
+			"requires_win"		"1"
+			"hidden"		"1"
+		}
+		"269"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaHeroesKilled_3"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"use_bitmap_instead_of_increment"		"1"
+			"requires_win"		"1"
+			"hidden"		"1"
+		}
+		"270"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaHeroesKilled_4"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"use_bitmap_instead_of_increment"		"1"
+			"requires_win"		"1"
+			"hidden"		"1"
+		}
+		"271"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaHeroesKilled_5"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"use_bitmap_instead_of_increment"		"1"
+			"requires_win"		"1"
+			"hidden"		"1"
+		}
+		"272"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_ArcanaProgress"
+			"image"		"spellicons/skeleton_king/arcana/skeleton_king_bone_guard_arcana.png"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"requires_win"		"1"
+		}
+		"273"
+		{
+			"type_name"		"#KillEaterEvent_Spectre_ArcanaProgress"
+			"required_hero"		"spectre"
+			"image"		"spellicons/spectre_haunt.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"274"
+		{
+			"type_name"		"#KillEaterEvent_Spectre_Arcana_KillstreakRecord"
+			"required_hero"		"spectre"
+			"image"		"spellicons/spectre_desolate.png"
+			"in_game_display_interval"		"99999"
+			"use_max_instead_of_increment"		"1"
+		}
+		"275"
+		{
+			"type_name"		"#KillEaterEvent_DrowRanger_ArcanaProgress"
+			"required_hero"		"drow_ranger"
+			"image"		"spellicons/drow_ranger_marksmanship.png"
+			"works_in_turbo_mode"		"1"
+			"requires_win"		"1"
+		}
+		"276"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_ScionEnemiesSwapped"
+			"required_hero"		"vengefulspirit"
+			"image"		"spellicons/vengefulspirit_nether_swap.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"277"
+		{
+			"type_name"		"#KillEaterEvent_DrowRanger_ArcanaFlawlessVictories"
+			"required_hero"		"drow_ranger"
+			"image"		"spellicons/drow_ranger_silence.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"278"
+		{
+			"type_name"		"#KillEaterEvent_FacelessVoid_ArcanaProgress"
+			"required_hero"		"faceless_void"
+			"image"		"spellicons/faceless_void_chronosphere.png"
+			"works_in_turbo_mode"		"1"
+			"requires_win"		"1"
+		}
+		"279"
+		{
+			"type_name"		"#KillEaterEvent_Razor_ArcanaProgress"
+			"required_hero"		"razor"
+			"image"		"spellicons/razor_static_link.png"
+			"works_in_turbo_mode"		"1"
+		}
+		"280"
+		{
+			"type_name"		"#KillEaterEvent_NewBloom2024_GiftsGiven"
+			"image"		"econ/tools/new_bloom_2024_red_envelope.png"
+			"allow_count_reset"		"0"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"281"
+		{
+			"type_name"		"#KillEaterEventType_Antimage_SpellsReflectedWithCounterspell"
+			"image"		"spellicons/antimage_counterspell.png"
+			"required_hero"		"antimage"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"282"
+		{
+			"type_name"		"#KillEaterEventType_Antimage_SpellsReflectedWithCounterspell_Cosmetic"
+			"image"		"spellicons/antimage_counterspell.png"
+			"required_hero"		"antimage"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"500"
+		{
+			"type_name"		"#KillEaterEvent_AncientApparition_MagicDamageUnderIceVortex"
+			"image"		"spellicons/ancient_apparition_ice_vortex.png"
+			"required_hero"		"ancient_apparition"
+			"in_game_display_interval"		"100000"
+		}
+		"501"
+		{
+			"type_name"		"#KillEaterEvent_Antimage_SpellsBlockedWithAghanims"
+			"image"		"items/ultimate_scepter.png"
+			"required_hero"		"antimage"
+			"in_game_display_interval"		"5"
+			"obsolete"		"1"
+		}
+		"502"
+		{
+			"type_name"		"#KillEaterEvent_Antimage_ManaBurned"
+			"image"		"spellicons/antimage_mana_break.png"
+			"required_hero"		"antimage"
+			"in_game_display_interval"		"100000"
+		}
+		"503"
+		{
+			"type_name"		"#KillEaterEvent_Antimage_ThreeHeroVoidHits"
+			"image"		"spellicons/antimage_mana_void.png"
+			"required_hero"		"antimage"
+			"in_game_display_interval"		"5"
+		}
+		"504"
+		{
+			"type_name"		"#KillEaterEvent_MidasGoldEarned"
+			"image"		"items/hand_of_midas.png"
+			"in_game_display_interval"		"5000"
+		}
+		"505"
+		{
+			"type_name"		"#KillEaterEvent_ArcWarden_TempestDoubleKills"
+			"required_hero"		"arc_warden"
+			"image"		"spellicons/arc_warden_tempest_double.png"
+			"in_game_display_interval"		"50"
+		}
+		"506"
+		{
+			"type_name"		"#KillEaterEvent_ArcWarden_TempestDoubleMidasGold"
+			"required_hero"		"arc_warden"
+			"image"		"items/hand_of_midas.png"
+			"in_game_display_interval"		"15000"
+		}
+		"507"
+		{
+			"type_name"		"#KillEaterEvent_ArcWarden_DoubleFlux"
+			"required_hero"		"arc_warden"
+			"image"		"spellicons/arc_warden_flux.png"
+			"in_game_display_interval"		"3"
+		}
+		"508"
+		{
+			"type_name"		"#KillEaterEvent_ArcWarden_SparkWraithKills"
+			"required_hero"		"arc_warden"
+			"image"		"spellicons/arc_warden_spark_wraith.png"
+			"in_game_display_interval"		"50"
+		}
+		"509"
+		{
+			"type_name"		"#KillEaterEvent_Maelstrom_ChainLightingDamage"
+			"image"		"items/maelstrom.png"
+			"in_game_display_interval"		"250000"
+		}
+		"510"
+		{
+			"type_name"		"#KillEaterEvent_Bane_BrainSapKills"
+			"required_hero"		"bane"
+			"image"		"spellicons/bane_brain_sap.png"
+			"in_game_display_interval"		"15"
+		}
+		"511"
+		{
+			"type_name"		"#KillEaterEvent_Bane_NightmareDuration"
+			"required_hero"		"bane"
+			"image"		"spellicons/bane_nightmare.png"
+			"in_game_display_interval"		"500"
+		}
+		"512"
+		{
+			"type_name"		"#KillEaterEvent_Bane_BrainSapHealing"
+			"required_hero"		"bane"
+			"image"		"spellicons/bane_brain_sap.png"
+			"in_game_display_interval"		"75000"
+		}
+		"513"
+		{
+			"type_name"		"#KillEaterEvent_Bane_KillsWhileFiendsGripping"
+			"required_hero"		"bane"
+			"image"		"spellicons/bane_fiends_grip.png"
+			"in_game_display_interval"		"10"
+		}
+		"514"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_TripleHeroFlamebreaks"
+			"required_hero"		"batrider"
+			"image"		"spellicons/batrider_flamebreak.png"
+			"in_game_display_interval"		"15"
+		}
+		"515"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_DoubleHeroLassoes"
+			"required_hero"		"batrider"
+			"image"		"spellicons/batrider_flaming_lasso.png"
+			"in_game_display_interval"		"2"
+		}
+		"516"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_BonusStickyNapalmDamage"
+			"required_hero"		"batrider"
+			"image"		"spellicons/batrider_sticky_napalm.png"
+			"in_game_display_interval"		"75000"
+		}
+		"517"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_FireflyDamage"
+			"required_hero"		"batrider"
+			"image"		"spellicons/batrider_firefly.png"
+			"in_game_display_interval"		"50000"
+		}
+		"518"
+		{
+			"type_name"		"#KillEaterEvent_Beastmaster_TwoHeroAxes"
+			"required_hero"		"beastmaster"
+			"image"		"spellicons/beastmaster_wild_axes.png"
+			"in_game_display_interval"		"100"
+		}
+		"519"
+		{
+			"type_name"		"#KillEaterEvent_BountyHunter_ShurikenTossDoubleBounce"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_shuriken_toss.png"
+			"in_game_display_interval"		"25"
+		}
+		"520"
+		{
+			"type_name"		"#KillEaterEvent_Brewmaster_FirePandaImmolationDamage"
+			"required_hero"		"brewmaster"
+			"image"		"spellicons/brewmaster_fire_permanent_immolation.png"
+			"in_game_display_interval"		"15000"
+		}
+		"521"
+		{
+			"type_name"		"#KillEaterEvent_Brewmaster_KillsDuringPrimalSplit"
+			"required_hero"		"brewmaster"
+			"image"		"spellicons/brewmaster_primal_split.png"
+			"in_game_display_interval"		"25"
+		}
+		"522"
+		{
+			"type_name"		"#KillEaterEvent_Brewmaster_AttacksDodgedWithDrunkenHaze"
+			"required_hero"		"brewmaster"
+			"image"		"spellicons/brewmaster_drunken_haze.png"
+			"in_game_display_interval"		"100"
+			"obsolete"		"1"
+		}
+		"523"
+		{
+			"type_name"		"#KillEaterEvent_Brewmaster_StormPandaPurges"
+			"required_hero"		"brewmaster"
+			"image"		"spellicons/brewmaster_storm_dispel_magic.png"
+			"in_game_display_interval"		"150"
+		}
+		"524"
+		{
+			"type_name"		"#KillEaterEvent_Bristleback_KillsUnderFourQuillStacks"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_quill_spray.png"
+			"in_game_display_interval"		"15"
+		}
+		"525"
+		{
+			"type_name"		"#KillEaterEvent_Bristleback_TripleHeroNasalGoo"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_viscous_nasal_goo.png"
+			"in_game_display_interval"		"50"
+			"obsolete"		"1"
+		}
+		"526"
+		{
+			"type_name"		"#KillEaterEvent_Bristleback_MaxWarpathStackDuration"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_warpath.png"
+			"in_game_display_interval"		"750"
+		}
+		"527"
+		{
+			"type_name"		"#KillEaterEvent_Bristleback_QuillStackDamage"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_quill_spray.png"
+			"in_game_display_interval"		"50000"
+		}
+		"528"
+		{
+			"type_name"		"#KillEaterEvent_Bristleback_BristlebackTriggeredDamage"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_bristleback.png"
+			"in_game_display_interval"		"75000"
+		}
+		"529"
+		{
+			"type_name"		"#KillEaterEvent_PipeOfInsight_DamageBlocked"
+			"image"		"items/pipe.png"
+			"in_game_display_interval"		"10000"
+		}
+		"530"
+		{
+			"type_name"		"#KillEaterEvent_CrimsonGuard_DamageBlocked"
+			"image"		"items/crimson_guard.png"
+			"in_game_display_interval"		"30000"
+		}
+		"531"
+		{
+			"type_name"		"#KillEaterEvent_Broodmother_SpiderlingHeroKills"
+			"image"		"spellicons/broodmother_spawn_spiderlings.png"
+			"required_hero"		"broodmother"
+			"in_game_display_interval"		"25"
+		}
+		"532"
+		{
+			"type_name"		"#KillEaterEvent_Broodmother_KillsInsideWeb"
+			"image"		"spellicons/broodmother_spin_web.png"
+			"required_hero"		"broodmother"
+			"in_game_display_interval"		"75"
+		}
+		"533"
+		{
+			"type_name"		"#KillEaterEvent_Broodmother_Lifesteal"
+			"image"		"spellicons/broodmother_insatiable_hunger.png"
+			"required_hero"		"broodmother"
+			"in_game_display_interval"		"50000"
+		}
+		"534"
+		{
+			"type_name"		"#KillEaterEvent_Centaur_ThreeHeroStampede"
+			"image"		"spellicons/centaur_stampede.png"
+			"required_hero"		"centaur"
+			"in_game_display_interval"		"5"
+		}
+		"535"
+		{
+			"type_name"		"#KillEaterEvent_LowHealthKills"
+			"image"		"challenges/icon_challenges_neardeathkills.png"
+			"in_game_display_interval"		"25"
+		}
+		"536"
+		{
+			"type_name"		"#KillEaterEvent_ChaosKnight_PhantasmIllusionDamage"
+			"image"		"spellicons/chaos_knight_phantasm.png"
+			"required_hero"		"chaos_knight"
+			"in_game_display_interval"		"75000"
+		}
+		"537"
+		{
+			"type_name"		"#KillEaterEvent_ChaosKnight_ChaosStrikeLifeStolen"
+			"image"		"spellicons/chaos_knight_chaos_strike.png"
+			"required_hero"		"chaos_knight"
+			"in_game_display_interval"		"30000"
+		}
+		"538"
+		{
+			"type_name"		"#KillEaterEvent_ChaosKnight_PhantasmDebuffsPurged"
+			"image"		"spellicons/chaos_knight_phantasm.png"
+			"required_hero"		"chaos_knight"
+			"in_game_display_interval"		"50"
+		}
+		"539"
+		{
+			"type_name"		"#KillEaterEvent_ChaosKnight_RealityRiftKills"
+			"image"		"spellicons/chaos_knight_reality_rift.png"
+			"required_hero"		"chaos_knight"
+			"in_game_display_interval"		"50"
+		}
+		"540"
+		{
+			"type_name"		"#KillEaterEvent_Chen_KillsWithPenitence"
+			"image"		"spellicons/chen_penitence.png"
+			"required_hero"		"chen"
+			"in_game_display_interval"		"50"
+		}
+		"541"
+		{
+			"type_name"		"#KillEaterEventType_Clinkz_DeathPactDamage"
+			"image"		"spellicons/clinkz_death_pact.png"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"50000"
+			"obsolete"		"1"
+		}
+		"542"
+		{
+			"type_name"		"#KillEaterEvent_Clinkz_StrafeProjectilesDodged"
+			"image"		"spellicons/clinkz_strafe.png"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"25"
+			"obsolete"		"1"
+		}
+		"543"
+		{
+			"type_name"		"#KillEaterEvent_Clinkz_SearingArrowDamage"
+			"image"		"spellicons/clinkz_searing_arrows.png"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"50000"
+		}
+		"544"
+		{
+			"type_name"		"#KillEaterEvent_CrystalMaiden_TwoHeroCrystalNovas"
+			"image"		"spellicons/crystal_maiden_crystal_nova.png"
+			"required_hero"		"crystal_maiden"
+			"in_game_display_interval"		"50"
+		}
+		"545"
+		{
+			"type_name"		"#KillEaterEvent_CrystalMaiden_ThreeHeroFreezingFields"
+			"image"		"spellicons/crystal_maiden_freezing_field.png"
+			"required_hero"		"crystal_maiden"
+			"in_game_display_interval"		"15"
+		}
+		"546"
+		{
+			"type_name"		"#KillEaterEvent_Dazzle_ShadowWaveKills"
+			"image"		"spellicons/dazzle_shadow_wave.png"
+			"required_hero"		"dazzle"
+			"in_game_display_interval"		"5"
+		}
+		"547"
+		{
+			"type_name"		"#KillEaterEvent_DeathProphet_SiphonHealthDrained"
+			"image"		"spellicons/death_prophet_spirit_siphon.png"
+			"required_hero"		"death_prophet"
+			"in_game_display_interval"		"50000"
+		}
+		"548"
+		{
+			"type_name"		"#KillEaterEvent_DeathProphet_SiphonKills"
+			"image"		"spellicons/death_prophet_spirit_siphon.png"
+			"required_hero"		"death_prophet"
+			"in_game_display_interval"		"15"
+		}
+		"549"
+		{
+			"type_name"		"#KillEaterEvent_DeathProphet_ExorcismKillsDuringEuls"
+			"image"		"spellicons/death_prophet_exorcism.png"
+			"required_hero"		"death_prophet"
+			"in_game_display_interval"		"1"
+		}
+		"550"
+		{
+			"type_name"		"#KillEaterEvent_Disruptor_ThreeHeroKineticFieldStaticStormCombos"
+			"image"		"spellicons/disruptor_static_storm.png"
+			"required_hero"		"disruptor"
+			"in_game_display_interval"		"5"
+		}
+		"551"
+		{
+			"type_name"		"#KillEaterEvent_Disruptor_ThunderStrikeDoubleHits"
+			"image"		"spellicons/disruptor_thunder_strike.png"
+			"required_hero"		"disruptor"
+			"in_game_display_interval"		"75"
+		}
+		"552"
+		{
+			"type_name"		"#KillEaterEvent_Doom_DevourGoldEarned"
+			"image"		"spellicons/doom_bringer_devour.png"
+			"required_hero"		"doom_bringer"
+			"in_game_display_interval"		"50000"
+		}
+		"553"
+		{
+			"type_name"		"#KillEaterEvent_Doom_InfernalBladeBurnKills"
+			"image"		"spellicons/doom_bringer_infernal_blade.png"
+			"required_hero"		"doom_bringer"
+			"in_game_display_interval"		"10"
+		}
+		"554"
+		{
+			"type_name"		"#KillEaterEvent_DrowRanger_PrecisionAuraBonusAllyDamage"
+			"image"		"spellicons/drow_ranger_trueshot.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"25000"
+			"obsolete"		"1"
+		}
+		"555"
+		{
+			"type_name"		"#KillEaterEvent_DrowRanger_PrecisionAuraCreepTowerKills"
+			"image"		"spellicons/drow_ranger_trueshot.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"2"
+			"obsolete"		"1"
+		}
+		"556"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_LongDurationMagnetize"
+			"image"		"spellicons/earth_spirit_magnetize.png"
+			"required_hero"		"earth_spirit"
+			"in_game_display_interval"		"25"
+		}
+		"557"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_RemnantKills"
+			"image"		"spellicons/ember_spirit_fire_remnant.png"
+			"required_hero"		"ember_spirit"
+			"in_game_display_interval"		"10"
+		}
+		"558"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_SleightOfFistKills"
+			"required_hero"		"ember_spirit"
+			"image"		"spellicons/ember_spirit_sleight_of_fist.png"
+			"in_game_display_interval"		"50"
+		}
+		"559"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_MultiHeroChains"
+			"required_hero"		"ember_spirit"
+			"image"		"spellicons/ember_spirit_searing_chains.png"
+			"in_game_display_interval"		"50"
+		}
+		"560"
+		{
+			"type_name"		"#KillEaterEvent_BattleFuryCleaveDamage"
+			"image"		"items/bfury.png"
+			"in_game_display_interval"		"10000"
+		}
+		"561"
+		{
+			"type_name"		"#KillEaterEvent_Enchantress_AlliedHealing"
+			"image"		"spellicons/enchantress_natures_attendants.png"
+			"required_hero"		"enchantress"
+			"in_game_display_interval"		"25000"
+		}
+		"562"
+		{
+			"type_name"		"#KillEaterEvent_Enchantress_ImpetusDamage"
+			"image"		"spellicons/enchantress_impetus.png"
+			"required_hero"		"enchantress"
+			"in_game_display_interval"		"75000"
+		}
+		"563"
+		{
+			"type_name"		"#KillEaterEvent_Enchantress_LongRangeImpetusHits"
+			"image"		"spellicons/enchantress_impetus.png"
+			"required_hero"		"enchantress"
+			"in_game_display_interval"		"75"
+		}
+		"564"
+		{
+			"type_name"		"#KillEaterEvent_Enigma_MidnightPulseBlackHoleCombos"
+			"image"		"spellicons/enigma_black_hole.png"
+			"required_hero"		"enigma"
+			"in_game_display_interval"		"50"
+		}
+		"565"
+		{
+			"type_name"		"#KillEaterEvent_Enigma_TripleBlackHoles"
+			"image"		"spellicons/enigma_black_hole.png"
+			"required_hero"		"enigma"
+			"in_game_display_interval"		"10"
+		}
+		"566"
+		{
+			"type_name"		"#KillEaterEvent_FacelessVoid_TimeWalkDamageAvoided"
+			"image"		"spellicons/faceless_void_time_walk.png"
+			"required_hero"		"faceless_void"
+			"in_game_display_interval"		"50000"
+		}
+		"567"
+		{
+			"type_name"		"#KillEaterEvent_FacelessVoid_MultiHeroTimeDilation"
+			"image"		"spellicons/faceless_void_time_dilation.png"
+			"required_hero"		"faceless_void"
+			"in_game_display_interval"		"50"
+		}
+		"568"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_SideGunnerDamage"
+			"image"		"items/ultimate_scepter.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"25000"
+		}
+		"569"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_ThreeHeroFlakCannon"
+			"image"		"spellicons/gyrocopter_flak_cannon.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"100"
+		}
+		"570"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_HomingMissileKills"
+			"image"		"spellicons/gyrocopter_homing_missile.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"10"
+		}
+		"571"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_RocketBarrageKills"
+			"image"		"spellicons/gyrocopter_rocket_barrage.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"25"
+		}
+		"572"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_RocketBarrageDamage"
+			"image"		"spellicons/gyrocopter_rocket_barrage.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"75000"
+		}
+		"573"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_ThreeHeroDoubleCallDown"
+			"image"		"spellicons/gyrocopter_call_down.png"
+			"required_hero"		"gyrocopter"
+			"in_game_display_interval"		"5"
+		}
+		"574"
+		{
+			"type_name"		"#KillEaterEvent_Huskar_InnerVitalityAlliedHealing"
+			"image"		"spellicons/huskar_inner_vitality.png"
+			"required_hero"		"huskar"
+			"in_game_display_interval"		"1000"
+			"obsolete"		"1"
+		}
+		"575"
+		{
+			"type_name"		"#KillEaterEvent_Huskar_KillsDuringLifeBreak"
+			"image"		"spellicons/huskar_life_break.png"
+			"required_hero"		"huskar"
+			"in_game_display_interval"		"50"
+		}
+		"576"
+		{
+			"type_name"		"#KillEaterEvent_Huskar_BurningSpearKills"
+			"image"		"spellicons/huskar_burning_spear.png"
+			"required_hero"		"huskar"
+			"in_game_display_interval"		"50"
+		}
+		"577"
+		{
+			"type_name"		"#KillEaterEvent_Huskar_BurningSpearDamage"
+			"image"		"spellicons/huskar_burning_spear.png"
+			"required_hero"		"huskar"
+			"in_game_display_interval"		"50000"
+		}
+		"578"
+		{
+			"type_name"		"#KillEaterEvent_Invoker_MultiHeroIceWall"
+			"image"		"spellicons/invoker_ice_wall.png"
+			"required_hero"		"invoker"
+			"in_game_display_interval"		"25"
+		}
+		"579"
+		{
+			"type_name"		"#KillEaterEvent_Invoker_ThreeHeroEMP"
+			"image"		"spellicons/invoker_emp.png"
+			"required_hero"		"invoker"
+			"in_game_display_interval"		"5"
+		}
+		"580"
+		{
+			"type_name"		"#KillEaterEvent_Invoker_ThreeHeroDeafeningBlast"
+			"image"		"spellicons/invoker_deafening_blast.png"
+			"required_hero"		"invoker"
+			"in_game_display_interval"		"5"
+		}
+		"581"
+		{
+			"type_name"		"#KillEaterEvent_Invoker_MultiHeroChaosMeteor"
+			"image"		"spellicons/invoker_chaos_meteor.png"
+			"required_hero"		"invoker"
+			"in_game_display_interval"		"20"
+		}
+		"582"
+		{
+			"type_name"		"#KillEaterEvent_Invoker_BonusAlacrityDamage"
+			"image"		"spellicons/invoker_alacrity.png"
+			"required_hero"		"invoker"
+			"in_game_display_interval"		"25000"
+		}
+		"583"
+		{
+			"type_name"		"#KillEaterEvent_Jakiro_MultiHeroDualBreath"
+			"image"		"spellicons/jakiro_dual_breath.png"
+			"required_hero"		"jakiro"
+			"in_game_display_interval"		"50"
+		}
+		"584"
+		{
+			"type_name"		"#KillEaterEvent_Jakiro_IcePathMacropyreCombos"
+			"image"		"spellicons/jakiro_macropyre.png"
+			"required_hero"		"jakiro"
+			"in_game_display_interval"		"25"
+		}
+		"585"
+		{
+			"type_name"		"#KillEaterEvent_Leshrac_DiabolicEdictBuildingDamage"
+			"image"		"spellicons/leshrac_diabolic_edict.png"
+			"required_hero"		"leshrac"
+			"in_game_display_interval"		"50000"
+		}
+		"586"
+		{
+			"type_name"		"#KillEaterEvent_Leshrac_PulseNovaKills"
+			"image"		"spellicons/leshrac_pulse_nova.png"
+			"required_hero"		"leshrac"
+			"in_game_display_interval"		"50"
+		}
+		"587"
+		{
+			"type_name"		"#KillEaterEvent_Leshrac_ThreeHeroLightningStorm"
+			"image"		"spellicons/leshrac_lightning_storm.png"
+			"required_hero"		"leshrac"
+			"in_game_display_interval"		"10"
+		}
+		"588"
+		{
+			"type_name"		"#KillEaterEvent_Lion_ThreeHeroFinger"
+			"image"		"spellicons/lion_finger_of_death.png"
+			"required_hero"		"lion"
+			"in_game_display_interval"		"3"
+		}
+		"589"
+		{
+			"type_name"		"#KillEaterEvent_Luna_EclipseHeroMaxHits"
+			"image"		"spellicons/luna_eclipse.png"
+			"required_hero"		"luna"
+			"in_game_display_interval"		"10"
+		}
+		"590"
+		{
+			"type_name"		"#KillEaterEvent_Meepo_PoofKills"
+			"image"		"spellicons/meepo_poof.png"
+			"required_hero"		"meepo"
+			"in_game_display_interval"		"10"
+		}
+		"591"
+		{
+			"type_name"		"#KillEaterEvent_Meepo_LongDurationEarthbind"
+			"image"		"spellicons/meepo_earthbind.png"
+			"required_hero"		"meepo"
+			"in_game_display_interval"		"10"
+		}
+		"592"
+		{
+			"type_name"		"#KillEaterEvent_Meepo_MultiHeroEarthbinds"
+			"image"		"spellicons/meepo_earthbind.png"
+			"required_hero"		"meepo"
+			"in_game_display_interval"		"25"
+		}
+		"593"
+		{
+			"type_name"		"#KillEaterEvent_NightStalker_NighttimeKills"
+			"image"		"spellicons/night_stalker_hunter_in_the_night.png"
+			"required_hero"		"night_stalker"
+			"in_game_display_interval"		"75"
+		}
+		"594"
+		{
+			"type_name"		"#KillEaterEvent_Morphling_EtherealBladeAdaptiveStrikeCombos"
+			"image"		"spellicons/morphling_adaptive_strike_agi.png"
+			"required_hero"		"morphling"
+			"in_game_display_interval"		"25"
+			"obsolete"		"1"
+		}
+		"595"
+		{
+			"type_name"		"#KillEaterEvent_Morphling_MultiHeroWaveforms"
+			"image"		"spellicons/morphling_waveform.png"
+			"required_hero"		"morphling"
+			"in_game_display_interval"		"25"
+		}
+		"596"
+		{
+			"type_name"		"#KillEaterEvent_Morphling_KillsDuringReplicate"
+			"image"		"spellicons/morphling_replicate.png"
+			"required_hero"		"morphling"
+			"in_game_display_interval"		"5"
+		}
+		"597"
+		{
+			"type_name"		"#KillEaterEvent_OgreMagi_FireblastKills"
+			"required_hero"		"ogre_magi"
+			"image"		"spellicons/ogre_magi_fireblast.png"
+			"in_game_display_interval"		"10"
+		}
+		"598"
+		{
+			"type_name"		"#KillEaterEvent_OgreMagi_IgniteKills"
+			"required_hero"		"ogre_magi"
+			"image"		"spellicons/ogre_magi_ignite.png"
+			"in_game_display_interval"		"15"
+		}
+		"599"
+		{
+			"type_name"		"#KillEaterEvent_DominatingKillStreaks"
+			"image"		"challenges/icon_challenges_dominating.png"
+			"in_game_display_interval"		"2"
+		}
+		"600"
+		{
+			"type_name"		"#KillEaterEvent_MegaKillStreaks"
+			"image"		"challenges/icon_challenges_multikill.png"
+			"in_game_display_interval"		"5"
+		}
+		"601"
+		{
+			"type_name"		"#KillEaterEvent_Alchemist_AghanimsGiven"
+			"required_hero"		"alchemist"
+			"image"		"items/ultimate_scepter.png"
+			"in_game_display_interval"		"15"
+		}
+		"602"
+		{
+			"type_name"		"#KillEaterEvent_VeilsLeadingToKills"
+			"image"		"items/veil_of_discord.png"
+			"in_game_display_interval"		"10"
+		}
+		"603"
+		{
+			"type_name"		"#KillEaterEvent_DustLeadingToKills"
+			"image"		"items/dust.png"
+			"in_game_display_interval"		"1"
+		}
+		"604"
+		{
+			"type_name"		"#KillEaterEvent_WitchDoctor_MultiHeroCaskStuns"
+			"image"		"spellicons/witch_doctor_paralyzing_cask.png"
+			"required_hero"		"witch_doctor"
+			"in_game_display_interval"		"75"
+		}
+		"605"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_NearDeathTimeLapses"
+			"image"		"spellicons/weaver_time_lapse.png"
+			"required_hero"		"weaver"
+			"in_game_display_interval"		"10"
+		}
+		"606"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_ShukuchiKills"
+			"image"		"spellicons/weaver_shukuchi.png"
+			"required_hero"		"weaver"
+			"in_game_display_interval"		"10"
+		}
+		"607"
+		{
+			"type_name"		"#KillEaterEvent_Windrunner_ShackleFocusFireKills"
+			"image"		"spellicons/windrunner_focusfire.png"
+			"required_hero"		"windrunner"
+			"in_game_display_interval"		"10"
+		}
+		"608"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_VengeanceAuraIllusionKills"
+			"image"		"spellicons/vengefulspirit_command_aura.png"
+			"required_hero"		"vengefulspirit"
+			"in_game_display_interval"		"5"
+		}
+		"609"
+		{
+			"type_name"		"#KillEaterEvent_Tusk_WalrusPunchKills"
+			"image"		"spellicons/tusk_walrus_punch.png"
+			"required_hero"		"tusk"
+			"in_game_display_interval"		"25"
+		}
+		"610"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_MarchOfTheMachinesDamage"
+			"image"		"spellicons/tinker_march_of_the_machines.png"
+			"required_hero"		"tinker"
+			"in_game_display_interval"		"75000"
+		}
+		"611"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_MultiHeroLasers"
+			"image"		"spellicons/tinker_laser.png"
+			"required_hero"		"tinker"
+			"in_game_display_interval"		"50"
+			"obsolete"		"1"
+		}
+		"612"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_MultiHeroPsiBlades"
+			"image"		"spellicons/templar_assassin_psi_blades.png"
+			"required_hero"		"templar_assassin"
+			"in_game_display_interval"		"50"
+		}
+		"613"
+		{
+			"type_name"		"#KillEaterEvent_Sven_KillsDuringGodsStrength"
+			"image"		"spellicons/sven_gods_strength.png"
+			"required_hero"		"sven"
+			"in_game_display_interval"		"50"
+		}
+		"614"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_ThreeHeroShrapnels"
+			"image"		"spellicons/sniper_shrapnel.png"
+			"required_hero"		"sniper"
+			"in_game_display_interval"		"25"
+		}
+		"615"
+		{
+			"type_name"		"#KillEaterEvent_Slark_KillsDuringShadowDance"
+			"image"		"spellicons/slark_shadow_dance.png"
+			"required_hero"		"slark"
+			"in_game_display_interval"		"15"
+		}
+		"616"
+		{
+			"type_name"		"#KillEaterEvent_ShadowShaman_MultiHeroEtherShocks"
+			"image"		"spellicons/shadow_shaman_ether_shock.png"
+			"required_hero"		"shadow_shaman"
+			"in_game_display_interval"		"15"
+		}
+		"617"
+		{
+			"type_name"		"#KillEaterEvent_ShadowShaman_SerpentWardShackleKills"
+			"image"		"spellicons/shadow_shaman_mass_serpent_ward.png"
+			"required_hero"		"shadow_shaman"
+			"in_game_display_interval"		"5"
+		}
+		"618"
+		{
+			"type_name"		"#KillEaterEvent_Riki_ThreeHeroTricksOfTheTrade"
+			"image"		"spellicons/riki_tricks_of_the_trade.png"
+			"required_hero"		"riki"
+			"in_game_display_interval"		"150"
+		}
+		"619"
+		{
+			"type_name"		"#KillEaterEvent_Razor_EyeOfTheStormKills"
+			"image"		"spellicons/razor_eye_of_the_storm.png"
+			"required_hero"		"razor"
+			"in_game_display_interval"		"15"
+		}
+		"620"
+		{
+			"type_name"		"#KillEaterEvent_Pugna_LifeDrainKills"
+			"image"		"spellicons/pugna_life_drain.png"
+			"required_hero"		"pugna"
+			"in_game_display_interval"		"50"
+		}
+		"621"
+		{
+			"type_name"		"#KillEaterEvent_ObsidianDestroyer_SanitysEclipseKills"
+			"image"		"spellicons/obsidian_destroyer_sanity_eclipse.png"
+			"required_hero"		"obsidian_destroyer"
+			"in_game_display_interval"		"25"
+		}
+		"622"
+		{
+			"type_name"		"#KillEaterEvent_Oracle_MultiHeroFortunesEnd"
+			"image"		"spellicons/oracle_fortunes_end.png"
+			"required_hero"		"oracle"
+			"in_game_display_interval"		"50"
+		}
+		"623"
+		{
+			"type_name"		"#KillEaterEvent_Omniknight_PurificationKills"
+			"image"		"spellicons/omniknight_purification.png"
+			"required_hero"		"omniknight"
+			"in_game_display_interval"		"10"
+		}
+		"624"
+		{
+			"type_name"		"#KillEaterEvent_NightStalker_EnemyMissesUnderCripplingFear"
+			"image"		"spellicons/night_stalker_crippling_fear.png"
+			"required_hero"		"night_stalker"
+			"in_game_display_interval"		"25"
+			"obsolete"		"1"
+		}
+		"625"
+		{
+			"type_name"		"#KillEaterEvent_Warlock_ThreeHeroFatalBonds"
+			"required_hero"		"warlock"
+			"image"		"spellicons/warlock_fatal_bonds.png"
+			"in_game_display_interval"		"25"
+		}
+		"626"
+		{
+			"type_name"		"#KillEaterEvent_Riki_TricksOfTheTradeKills"
+			"required_hero"		"riki"
+			"image"		"spellicons/riki_tricks_of_the_trade.png"
+			"in_game_display_interval"		"5"
+		}
+		"750"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_AftershockHits10"
+			"image"		"spellicons/earthshaker_aftershock.png"
+			"required_hero"		"earthshaker"
+			"in_game_display_interval"		"2"
+		}
+		"751"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_5HeroEchoslams"
+			"image"		"spellicons/earthshaker_echo_slam.png"
+			"required_hero"		"earthshaker"
+			"in_game_display_interval"		"10"
+		}
+		"752"
+		{
+			"type_name"		"#KillEaterEventType_Lina_FierySoulMaxStacks"
+			"image"		"spellicons/lina_fiery_soul.png"
+			"required_hero"		"lina"
+			"in_game_display_interval"		"100"
+		}
+		"753"
+		{
+			"type_name"		"#KillEaterEventType_LifeStealer_AssimilateDisjoints"
+			"image"		"spellicons/life_stealer_infest.png"
+			"required_hero"		"life_stealer"
+			"in_game_display_interval"		"1"
+		}
+		"754"
+		{
+			"type_name"		"#KillEaterEventType_Kunkka_XTorrentCombos"
+			"image"		"spellicons/kunkka_x_marks_the_spot.png"
+			"required_hero"		"kunkka"
+			"in_game_display_interval"		"75"
+		}
+		"755"
+		{
+			"type_name"		"#KillEaterEventType_Kunkka_TripleHeroTidebringer"
+			"image"		"spellicons/kunkka_tidebringer.png"
+			"required_hero"		"kunkka"
+			"in_game_display_interval"		"25"
+		}
+		"756"
+		{
+			"type_name"		"#KillEaterEventType_LegionCommander_PressTheAttackPurges"
+			"image"		"spellicons/legion_commander_press_the_attack.png"
+			"required_hero"		"legion_commander"
+			"in_game_display_interval"		"50"
+		}
+		"757"
+		{
+			"type_name"		"#KillEaterEventType_SandKing_CausticFinaleHeroSlows"
+			"image"		"spellicons/sandking_caustic_finale.png"
+			"required_hero"		"sand_king"
+			"in_game_display_interval"		"250"
+		}
+		"758"
+		{
+			"type_name"		"#KillEaterEventType_Lina_LagunaBladeHeroKills"
+			"required_hero"		"lina"
+			"image"		"spellicons/lina_laguna_blade.png"
+			"in_game_display_interval"		"25"
+		}
+		"759"
+		{
+			"type_name"		"#KillEaterEventType_Lina_LagunaLightStrikeHeroStuns"
+			"required_hero"		"lina"
+			"image"		"spellicons/lina_light_strike_array.png"
+			"in_game_display_interval"		"250"
+		}
+		"760"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_FissureHeroMultiStuns"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker_fissure.png"
+			"in_game_display_interval"		"10"
+		}
+		"761"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_TotemKills"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker_enchant_totem.png"
+			"in_game_display_interval"		"75"
+		}
+		"762"
+		{
+			"type_name"		"#KillEaterEventType_Pudge_RotDenies"
+			"required_hero"		"pudge"
+			"image"		"spellicons/pudge_rot.png"
+			"in_game_display_interval"		"2"
+			"obsolete"		"1"
+		}
+		"763"
+		{
+			"type_name"		"#KillEaterEventType_Pangolier_SwashbuckleKills"
+			"required_hero"		"pangolier"
+			"image"		"spellicons/pangolier_swashbuckle.png"
+			"in_game_display_interval"		"25"
+		}
+		"764"
+		{
+			"type_name"		"#KillEaterEventType_Furion_Teleportations"
+			"required_hero"		"furion"
+			"image"		"spellicons/furion_teleportation.png"
+			"in_game_display_interval"		"250"
+		}
+		"765"
+		{
+			"type_name"		"#KillEaterEventType_Furion_WrathHits"
+			"required_hero"		"furion"
+			"image"		"spellicons/furion_wrath_of_nature.png"
+			"in_game_display_interval"		"250"
+		}
+		"766"
+		{
+			"type_name"		"#KillEaterEventType_Furion_EnemyHeroesTrapped"
+			"required_hero"		"furion"
+			"image"		"spellicons/furion_sprout.png"
+			"in_game_display_interval"		"250"
+		}
+		"767"
+		{
+			"type_name"		"#KillEaterEventType_Juggernaut_HealingWardHeroes"
+			"required_hero"		"juggernaut"
+			"image"		"spellicons/juggernaut_healing_ward.png"
+			"in_game_display_interval"		"10"
+		}
+		"768"
+		{
+			"type_name"		"#KillEaterEventType_KOTL_ChakraHeroes"
+			"required_hero"		"keeper_of_the_light"
+			"image"		"spellicons/keeper_of_the_light_chakra_magic.png"
+			"in_game_display_interval"		"50"
+		}
+		"769"
+		{
+			"type_name"		"#KillEaterEventType_KOTL_BlindedHeroes"
+			"required_hero"		"keeper_of_the_light"
+			"image"		"spellicons/keeper_of_the_light_blinding_light.png"
+			"in_game_display_interval"		"200"
+		}
+		"770"
+		{
+			"type_name"		"#KillEaterEventType_LifeStealer_FeastLifeStolen"
+			"image"		"spellicons/life_stealer_feast.png"
+			"required_hero"		"life_stealer"
+			"in_game_display_interval"		"75000"
+		}
+		"771"
+		{
+			"type_name"		"#KillEaterEventType_Pangolier_RicochetSameTarget"
+			"required_hero"		"pangolier"
+			"image"		"spellicons/pangolier_gyroshell.png"
+			"in_game_display_interval"		"50"
+		}
+		"772"
+		{
+			"type_name"		"#KillEaterEventType_Pangolier_HeartpiercerKills"
+			"required_hero"		"pangolier"
+			"image"		"spellicons/pangolier_heartpiercer.png"
+			"in_game_display_interval"		"75"
+		}
+		"773"
+		{
+			"type_name"		"#KillEaterEventType_Medusa_MultiHeroStoneGaze"
+			"required_hero"		"medusa"
+			"image"		"spellicons/medusa_stone_gaze.png"
+			"in_game_display_interval"		"100"
+		}
+		"774"
+		{
+			"type_name"		"#KillEaterEventType_Medusa_ShieldDamageAbsorbed"
+			"required_hero"		"medusa"
+			"image"		"spellicons/medusa_mana_shield.png"
+			"in_game_display_interval"		"500000"
+		}
+		"775"
+		{
+			"type_name"		"#KillEaterEventType_Medusa_SplitShotKills"
+			"required_hero"		"medusa"
+			"image"		"spellicons/medusa_split_shot.png"
+			"in_game_display_interval"		"5"
+		}
+		"776"
+		{
+			"type_name"		"#KillEaterEventType_Mirana_MultiHeroStarstorm"
+			"required_hero"		"mirana"
+			"image"		"spellicons/mirana_starfall.png"
+			"in_game_display_interval"		"50"
+		}
+		"777"
+		{
+			"type_name"		"#KillEaterEventType_Mirana_KillsFromMoonlightShadow"
+			"required_hero"		"mirana"
+			"image"		"spellicons/mirana_invis.png"
+			"in_game_display_interval"		"50"
+		}
+		"778"
+		{
+			"type_name"		"#KillEaterEventType_Magnus_MultiHeroSkewers"
+			"required_hero"		"magnataur"
+			"image"		"spellicons/magnataur_skewer.png"
+			"in_game_display_interval"		"25"
+		}
+		"779"
+		{
+			"type_name"		"#KillEaterEventType_Magnus_MultiHeroReversePolarity"
+			"required_hero"		"magnataur"
+			"image"		"spellicons/magnataur_reverse_polarity.png"
+			"in_game_display_interval"		"10"
+		}
+		"780"
+		{
+			"type_name"		"#KillEaterEventType_Magnus_HeroesSlowedWithShockwave"
+			"required_hero"		"magnataur"
+			"image"		"spellicons/magnataur_shockwave.png"
+			"in_game_display_interval"		"500"
+		}
+		"781"
+		{
+			"type_name"		"#KillEaterEventType_NagaSiren_MultiHeroSong"
+			"required_hero"		"naga_siren"
+			"image"		"spellicons/naga_siren_song_of_the_siren.png"
+			"in_game_display_interval"		"10"
+		}
+		"782"
+		{
+			"type_name"		"#KillEaterEventType_NagaSiren_AlliesHealedBySong"
+			"required_hero"		"naga_siren"
+			"image"		"items/ultimate_scepter.png"
+			"in_game_display_interval"		"5"
+		}
+		"783"
+		{
+			"type_name"		"#KillEaterEventType_LoneDruid_MultiHeroRoar"
+			"required_hero"		"lone_druid"
+			"image"		"spellicons/lone_druid_savage_roar.png"
+			"in_game_display_interval"		"3"
+		}
+		"784"
+		{
+			"type_name"		"#KillEaterEventType_LoneDruid_BearAghs"
+			"required_hero"		"lone_druid"
+			"image"		"items/ultimate_scepter.png"
+			"in_game_display_interval"		"25"
+		}
+		"785"
+		{
+			"type_name"		"#KillEaterEventType_LoneDruid_BattleCryKills"
+			"required_hero"		"lone_druid"
+			"image"		"spellicons/lone_druid_true_form_battle_cry.png"
+			"in_game_display_interval"		"1"
+			"obsolete"		"1"
+		}
+		"786"
+		{
+			"type_name"		"#KillEaterEventType_Lion_IllusionsKilledWithHex"
+			"required_hero"		"lion"
+			"image"		"spellicons/lion_voodoo.png"
+			"in_game_display_interval"		"10"
+		}
+		"787"
+		{
+			"type_name"		"#KillEaterEventType_WinterWyvern_ThreeHeroCurses"
+			"required_hero"		"winter_wyvern"
+			"image"		"spellicons/winter_wyvern_winters_curse.png"
+			"in_game_display_interval"		"25"
+		}
+		"789"
+		{
+			"type_name"		"#KillEaterEventType_LoneDruid_EntangleDuration"
+			"required_hero"		"lone_druid"
+			"image"		"spellicons/lone_druid_spirit_bear_entangle.png"
+			"in_game_display_interval"		"150"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"790"
+		{
+			"type_name"		"#KillEaterEventType_Lion_HexDuration"
+			"required_hero"		"lion"
+			"image"		"spellicons/lion_voodoo.png"
+			"in_game_display_interval"		"150"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"791"
+		{
+			"type_name"		"#KillEaterEventType_Kunkka_Torrents"
+			"required_hero"		"kunkka"
+			"image"		"spellicons/kunkka_torrent.png"
+			"in_game_display_interval"		"100"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"792"
+		{
+			"type_name"		"#KillEaterEventType_Antimage_SpellsBlockedWithCounterspell"
+			"image"		"spellicons/antimage_counterspell.png"
+			"required_hero"		"antimage"
+			"in_game_display_interval"		"50"
+		}
+		"793"
+		{
+			"type_name"		"#KillEaterEventType_Brewmaster_CinderBrewSelfAttacks"
+			"required_hero"		"brewmaster"
+			"image"		"spellicons/brewmaster_cinder_brew.png"
+			"in_game_display_interval"		"100"
+			"obsolete"		"1"
+		}
+		"794"
+		{
+			"type_name"		"#KillEaterEventType_KeeperOfTheLight_WispCharms"
+			"required_hero"		"keeper_of_the_light"
+			"image"		"spellicons/keeper_of_the_light_will_o_wisp.png"
+			"in_game_display_interval"		"250"
+		}
+		"795"
+		{
+			"type_name"		"#KillEaterEventType_Mars_BulwarkDamageBlocked"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_bulwark.png"
+			"in_game_display_interval"		"50000"
+		}
+		"796"
+		{
+			"type_name"		"#KillEaterEventType_Mars_SpearImpales"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_spear.png"
+			"in_game_display_interval"		"100"
+		}
+		"797"
+		{
+			"type_name"		"#KillEaterEventType_Mars_EnemiesKilledInArena"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_arena_of_blood.png"
+			"in_game_display_interval"		"150"
+		}
+		"798"
+		{
+			"type_name"		"#KillEaterEventType_Mars_SpearImpalesOnArena"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_spear.png"
+			"in_game_display_interval"		"50"
+		}
+		"799"
+		{
+			"type_name"		"#KillEaterEventType_Mars_MultiHeroGodsRebuke"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_gods_rebuke.png"
+			"in_game_display_interval"		"25"
+		}
+		"800"
+		{
+			"type_name"		"#KillEaterEventType_Mars_GodsRebukeKills"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_gods_rebuke.png"
+			"in_game_display_interval"		"25"
+		}
+		"801"
+		{
+			"type_name"		"#KillEaterEventType_Mars_ArenaDamageDealt"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_arena_of_blood.png"
+			"in_game_display_interval"		"50000"
+		}
+		"802"
+		{
+			"type_name"		"#KillEaterEventType_Mars_ArenaDamageBlocked"
+			"required_hero"		"mars"
+			"image"		"spellicons/mars_arena_of_blood.png"
+			"in_game_display_interval"		"50000"
+		}
+		"803"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_Arcana_EchoSlamDamageLeadingToKills"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker/earthshaker_arcana/earthshaker_echo_slam.png"
+			"in_game_display_interval"		"10"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"804"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_Arcana_ComboRecord"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker/earthshaker_arcana/earthshaker_enchant_totem.png"
+			"in_game_display_interval"		"99999"
+			"use_max_instead_of_increment"		"1"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"805"
+		{
+			"type_name"		"#KillEaterEventType_Earthshaker_Arcana_ComboDamageRecord"
+			"required_hero"		"earthshaker"
+			"image"		"spellicons/earthshaker/earthshaker_arcana/earthshaker_aftershock.png"
+			"in_game_display_interval"		"999999"
+			"use_max_instead_of_increment"		"1"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+		}
+		"806"
+		{
+			"type_name"		"#KillEaterEventType_LifeStealer_InfestLifeHealed"
+			"image"		"spellicons/life_stealer_infest.png"
+			"required_hero"		"life_stealer"
+			"in_game_display_interval"		"25000"
+		}
+		"807"
+		{
+			"type_name"		"#KillEaterEventType_Bounty_JinadaGoldStolen"
+			"required_hero"		"bounty_hunter"
+			"image"		"spellicons/bounty_hunter_jinada.png"
+			"in_game_display_interval"		"15000"
+		}
+		"808"
+		{
+			"type_name"		"#KillEaterEventType_Snapfire_PointBlankShotgunHits"
+			"required_hero"		"snapfire"
+			"image"		"spellicons/snapfire_scatterblast.png"
+			"in_game_display_interval"		"100"
+		}
+		"809"
+		{
+			"type_name"		"#KillEaterEventType_Snapfire_LizardBlobsKills"
+			"required_hero"		"snapfire"
+			"image"		"spellicons/snapfire_mortimer_kisses.png"
+			"in_game_display_interval"		"25"
+		}
+		"810"
+		{
+			"type_name"		"#KillEaterEventType_Snapfire_TwoHeroCookieStuns"
+			"required_hero"		"snapfire"
+			"image"		"spellicons/snapfire_firesnap_cookie.png"
+			"in_game_display_interval"		"5"
+		}
+		"811"
+		{
+			"type_name"		"#KillEaterEventType_Snapfire_ShotgunSlowDuration"
+			"required_hero"		"snapfire"
+			"image"		"spellicons/snapfire_scatterblast.png"
+			"in_game_display_interval"		"150"
+		}
+		"812"
+		{
+			"type_name"		"#KillEaterEventType_Snapfire_LizardBlobsDamage"
+			"required_hero"		"snapfire"
+			"image"		"spellicons/snapfire_mortimer_kisses.png"
+			"in_game_display_interval"		"75000"
+		}
+		"813"
+		{
+			"type_name"		"#KillEaterEventType_Void_Spirit_AstralStepPopDamage"
+			"required_hero"		"void_spirit"
+			"image"		"spellicons/void_spirit_astral_step.png"
+			"in_game_display_interval"		"50000"
+		}
+		"814"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_MarksmanshipProcDamage"
+			"image"		"spellicons/drow_ranger_marksmanship.png"
+			"required_hero"		"drow_ranger"
+			"in_game_display_interval"		"25000"
+		}
+		"815"
+		{
+			"type_name"		"#KillEaterEventType_QueenOfPain_ArcanaProgress"
+			"image"		"spellicons/queenofpain_sonic_wave.png"
+			"required_hero"		"queenofpain"
+			"in_game_display_interval"		"10"
+			"works_in_turbo_mode"		"1"
+			"requires_win"		"1"
+		}
+		"816"
+		{
+			"type_name"		"#KillEaterEventType_Windrunner_ArcanaProgress"
+			"image"		"spellicons/windrunner_focusfire.png"
+			"required_hero"		"windrunner"
+			"in_game_display_interval"		"10"
+			"works_in_turbo_mode"		"1"
+			"requires_win"		"0"
+		}
+		"817"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_AcornShotDamage"
+			"image"		"spellicons/hoodwink_acorn_shot.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"50000"
+		}
+		"818"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_AcornShotThreeBounceOnHero"
+			"image"		"spellicons/hoodwink_acorn_shot.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"25"
+		}
+		"819"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_SharpshooterKills"
+			"image"		"spellicons/hoodwink_sharpshooter.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"25"
+		}
+		"820"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_SharpshooterFullChargeHits"
+			"image"		"spellicons/hoodwink_sharpshooter.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"50"
+		}
+		"821"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_BushwhackMultiHeroStuns"
+			"image"		"spellicons/hoodwink_bushwhack.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"25"
+		}
+		"822"
+		{
+			"type_name"		"#KillEaterEventType_Hoodwink_AcornBushwhackCombo"
+			"image"		"spellicons/hoodwink_bushwhack.png"
+			"required_hero"		"hoodwink"
+			"in_game_display_interval"		"75"
+		}
+		"823"
+		{
+			"type_name"		"#KillEaterEventType_NagaSiren_IllusionKills"
+			"image"		"spellicons/naga_siren_mirror_image.png"
+			"required_hero"		"naga_siren"
+			"in_game_display_interval"		"25"
+		}
+		"824"
+		{
+			"type_name"		"#KillEaterEventType_Bloodseeker_BloodrageAbilityKills"
+			"image"		"spellicons/bloodseeker_bloodrage.png"
+			"required_hero"		"bloodseeker"
+			"in_game_display_interval"		"25"
+		}
+		"825"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_FireWreathFinisherKills"
+			"image"		"spellicons/dawnbreaker_fire_wreath.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"15"
+		}
+		"826"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_FireWreathDamage"
+			"image"		"spellicons/dawnbreaker_fire_wreath.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"60000"
+		}
+		"827"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_SolarGuardianMultiheroStuns"
+			"image"		"spellicons/dawnbreaker_solar_guardian.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"10"
+		}
+		"828"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_HealingWithLuminosity"
+			"image"		"spellicons/dawnbreaker_luminosity.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"55000"
+		}
+		"829"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_CelestialHammerHeroDamage"
+			"image"		"spellicons/dawnbreaker_celestial_hammer.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"50000"
+		}
+		"830"
+		{
+			"type_name"		"#KillEaterEventType_Dawnbreaker_SolarGuardianHeroDamage"
+			"image"		"spellicons/dawnbreaker_solar_guardian.png"
+			"required_hero"		"dawnbreaker"
+			"in_game_display_interval"		"20000"
+		}
+		"831"
+		{
+			"type_name"		"#KillEaterEventType_Marci_MultiHeroDispose"
+			"image"		"spellicons/marci_grapple.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"10"
+		}
+		"832"
+		{
+			"type_name"		"#KillEaterEventType_Marci_DisposeHeroesStunnedTotal"
+			"image"		"spellicons/marci_grapple.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"250"
+		}
+		"833"
+		{
+			"type_name"		"#KillEaterEventType_Marci_MultiHeroRebound"
+			"image"		"spellicons/marci_companion_run.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"25"
+		}
+		"834"
+		{
+			"type_name"		"#KillEaterEventType_Marci_SidekickLifesteal"
+			"image"		"spellicons/marci_guardian.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"750000"
+			"in_game_display_all_teams"		"0"
+			"obsolete"		"1"
+		}
+		"835"
+		{
+			"type_name"		"#KillEaterEventType_Marci_UnleashPulseDamage"
+			"image"		"spellicons/marci_unleash.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"30000"
+		}
+		"836"
+		{
+			"type_name"		"#KillEaterEventType_Marci_UnleashKills"
+			"image"		"spellicons/marci_unleash.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"50"
+		}
+		"837"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_Trample_Damage"
+			"image"		"spellicons/primal_beast_trample.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"150000"
+		}
+		"838"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_Pulverize_Kills"
+			"image"		"spellicons/primal_beast_pulverize.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"25"
+		}
+		"839"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_Pulverize_Damage"
+			"image"		"spellicons/primal_beast_pulverize.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"75000"
+		}
+		"840"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_Onslaught_Allies"
+			"image"		"spellicons/primal_beast_onslaught.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"100"
+			"in_game_display_all_teams"		"0"
+		}
+		"841"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_Onslaught_Multihero"
+			"image"		"spellicons/primal_beast_onslaught.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"20"
+		}
+		"842"
+		{
+			"type_name"		"#KillEaterEventType_PrimalBeast_UproarKills"
+			"image"		"spellicons/primal_beast_uproar.png"
+			"required_hero"		"primal_beast"
+			"in_game_display_interval"		"75"
+		}
+		"843"
+		{
+			"type_name"		"#KillEaterEventType_Underlord_AtrophyAuraBonusDamage"
+			"image"		"spellicons/abyssal_underlord_atrophy_aura.png"
+			"required_hero"		"abyssal_underlord"
+			"in_game_display_interval"		"25000"
+		}
+		"844"
+		{
+			"type_name"		"#KillEaterEventType_Tinker_DefenseMatrixDamageBlocked"
+			"image"		"spellicons/tinker_defense_matrix.png"
+			"required_hero"		"tinker"
+			"in_game_display_interval"		"20000"
+			"obsolete"		"1"
+		}
+		"845"
+		{
+			"type_name"		"#KillEaterEventType_Slardar_BashDamage"
+			"image"		"spellicons/slardar_bash.png"
+			"required_hero"		"slardar"
+			"in_game_display_interval"		"20000"
+		}
+		"846"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_MultiHeroDeadShot"
+			"image"		"spellicons/muerta_dead_shot.png"
+			"required_hero"		"muerta"
+			"in_game_display_interval"		"20"
+		}
+		"847"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_MultiHeroTheCalling"
+			"image"		"spellicons/muerta_the_calling.png"
+			"required_hero"		"muerta"
+			"in_game_display_interval"		"25"
+		}
+		"848"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_PierceTheVeilKills"
+			"required_hero"		"muerta"
+			"image"		"spellicons/muerta_pierce_the_veil.png"
+			"in_game_display_interval"		"50"
+		}
+		"849"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_NoVisionDeadShotHits"
+			"required_hero"		"muerta"
+			"image"		"spellicons/muerta_dead_shot.png"
+			"in_game_display_interval"		"25"
+		}
+		"850"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_DeadShotKills"
+			"required_hero"		"muerta"
+			"image"		"spellicons/muerta_dead_shot.png"
+			"in_game_display_interval"		"5"
+		}
+		"851"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_DeadShotsIntoTheCalling"
+			"required_hero"		"muerta"
+			"image"		"spellicons/muerta_the_calling.png"
+			"in_game_display_interval"		"20"
+		}
+		"852"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_LongRangeDaggerHits"
+			"required_hero"		"ringmaster"
+			"image"		"spellicons/ringmaster_impalement.png"
+			"in_game_display_interval"		"100"
+		}
+		"853"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_MultiHeroWhips"
+			"required_hero"		"ringmaster"
+			"image"		"spellicons/ringmaster_tame_the_beasts.png"
+			"in_game_display_interval"		"25"
+		}
+		"854"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_FullChargeWhipsLanded"
+			"required_hero"		"ringmaster"
+			"image"		"spellicons/ringmaster_tame_the_beasts.png"
+			"in_game_display_interval"		"50"
+		}
+		"855"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_MultiHeroMesmerizes"
+			"required_hero"		"ringmaster"
+			"image"		"spellicons/ringmaster_wheel.png"
+			"in_game_display_interval"		"50"
+		}
+		"856"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_TameTheBeastsDamage"
+			"required_hero"		"ringmaster"
+			"image"		"spellicons/ringmaster_tame_the_beasts.png"
+			"in_game_display_interval"		"50000"
+		}
+		"857"
+		{
+			"type_name"		"#KillEaterEventType_Kez_EchoSlashDamage"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_echo_slash.png"
+			"in_game_display_interval"		"50000"
+		}
+		"858"
+		{
+			"type_name"		"#KillEaterEventType_Kez_RaptorDanceHealing"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_raptor_dance.png"
+			"in_game_display_interval"		"50000"
+		}
+		"859"
+		{
+			"type_name"		"#KillEaterEventType_Kez_RavensVeilKills"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_ravens_veil.png"
+			"in_game_display_interval"		"25"
+		}
+		"860"
+		{
+			"type_name"		"#KillEaterEventType_Kez_ParryCounterAttacks"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_shodo_sai.png"
+			"in_game_display_interval"		"25"
+		}
+		"861"
+		{
+			"type_name"		"#KillEaterEventType_Kez_KatanaBleedDamage"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_kazurai_katana.png"
+			"in_game_display_interval"		"50000"
+		}
+		"862"
+		{
+			"type_name"		"#KillEaterEventType_Kez_KillsDuringFalconRush"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_falcon_rush.png"
+			"in_game_display_interval"		"25"
+		}
+		"863"
+		{
+			"type_name"		"#KillEaterEventType_Kez_TriggerMarkWithKatana"
+			"required_hero"		"kez"
+			"image"		"spellicons/kez_switch_weapons_katana.png"
+			"in_game_display_interval"		"50"
+		}
+		"866"
+		{
+			"type_name"		"#KillEaterEventType_Marci_BodyguardAttacks"
+			"image"		"spellicons/marci_bodyguard.png"
+			"required_hero"		"marci"
+			"in_game_display_interval"		"50"
+		}
+		"867"
+		{
+			"type_name"		"#KillEaterEvent_Venomancer_SepticShockAttackWithSomeDebuff"
+			"image"		"hud/facets/innate_icon.png"
+			"required_hero"		"venomancer"
+			"in_game_display_interval"		"200"
+			"obsolete"		"1"
+		}
+		"868"
+		{
+			"type_name"		"#KillEaterEventType_Morphling_TimeSpentAtMaxAttributeShift"
+			"required_hero"		"morphling"
+			"image"		"spellicons/morphling_morph_agi.png"
+			"in_game_display_interval"		"600"
+		}
+		"869"
+		{
+			"type_name"		"#KillEaterEventType_Bristleback_MultiHeroHairballs"
+			"required_hero"		"bristleback"
+			"image"		"spellicons/bristleback_hairball.png"
+			"in_game_display_interval"		"20"
+		}
+		"870"
+		{
+			"type_name"		"#KillEaterEvent_Largo_MultiHeroFrogstomp"
+			"image"		"spellicons/largo_frogstomp.png"
+			"required_hero"		"largo"
+			"in_game_display_interval"		"50"
+		}
+		"871"
+		{
+			"type_name"		"#KillEaterEvent_Largo_AmphibianRhapsodyKillsAssists"
+			"required_hero"		"largo"
+			"image"		"spellicons/largo_amphibian_rhapsody.png"
+			"in_game_display_interval"		"25"
+		}
+		"873"
+		{
+			"type_name"		"#KillEaterEvent_NimbusDamage"
+			"required_hero"		"zuus"
+			"image"		"spellicons/zuus_cloud.png"
+			"in_game_display_interval"		"50000"
+		}
+		"874"
+		{
+			"type_name"		"#KillEaterEventType_Clinkz_DeathPactHealthGained"
+			"image"		"spellicons/clinkz_death_pact.png"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"100000"
+		}
+		"875"
+		{
+			"type_name"		"#KillEaterEventType_Venomancer_NoxiousPlagueDebuffsSpread"
+			"image"		"spellicons/venomancer_noxious_plague.png"
+			"required_hero"		"venomancer"
+			"in_game_display_interval"		"100"
+		}
+		"876"
+		{
+			"type_name"		"#KillEaterEventType_Tinker_SelfAndEnemyTurretKnockback"
+			"image"		"spellicons/tinker_deploy_turrets.png"
+			"required_hero"		"tinker"
+			"in_game_display_interval"		"10"
+		}
+		"877"
+		{
+			"type_name"		"#KillEaterEvent_Tidehunter_ArcanaProgress"
+			"image"		"spellicons/tidehunter_ravage.png"
+			"required_hero"		"tidehunter"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"in_game_display_interval"		"10"
+		}
+		"878"
+		{
+			"type_name"		"#KillEaterEvent_Tidehunter_ArcanaFishEaten"
+			"image"		"spellicons/tidehunter_leviathans_catch.png"
+			"required_hero"		"tidehunter"
+			"works_in_turbo_mode"		"1"
+			"gives_normal_credit_in_turbo_mode"		"1"
+			"in_game_display_interval"		"25"
+		}
+		"5000"
+		{
+			"type_name"		"#KillEaterEvent_Axe_Blink_Call"
+			"challenge_instance"		"relic_axe_blink_calls"
+			"in_game_display_interval"		"100"
+		}
+		"5001"
+		{
+			"type_name"		"#KillEaterEvent_Mirana_MaxStunArrows"
+			"challenge_instance"		"relic_mirana_max_duration_arrows"
+			"image"		"spellicons/mirana_arrow.png"
+			"in_game_display_interval"		"25"
+		}
+		"5002"
+		{
+			"type_name"		"#KillEaterEvent_NeutralCampsStacked"
+			"challenge_instance"		"relic_stack_neutral_camps_as_hero"
+			"in_game_display_interval"		"10"
+		}
+		"5003"
+		{
+			"type_name"		"#KillEaterEvent_PhantomLancer_KillsAfterSpiritLance"
+			"challenge_instance"		"relic_phantom_lancer_kills_after_spirit_lance"
+			"in_game_display_interval"		"50"
+		}
+		"5004"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_BlinkLassoForceStaffCombos"
+			"challenge_instance"		"relic_batrider_blink_lasso_force_staff_combos"
+			"in_game_display_interval"		"5"
+		}
+		"5005"
+		{
+			"type_name"		"#KillEaterEvent_Razor_KillDuringStaticLink"
+			"challenge_instance"		"relic_razor_kills_during_static_link"
+			"in_game_display_interval"		"75"
+		}
+		"5006"
+		{
+			"type_name"		"#KillEaterEvent_Zeus_ArcLightningTripleHits"
+			"challenge_instance"		"relic_zeus_arc_lightning_triple_hits"
+			"in_game_display_interval"		"50"
+		}
+		"5007"
+		{
+			"type_name"		"#KillEaterEvent_Tiny_AvalancheTossCombo"
+			"challenge_instance"		"relic_tiny_avalanche_toss_combo"
+			"in_game_display_interval"		"150"
+		}
+		"5008"
+		{
+			"type_name"		"#KillEaterEvent_Slardar_BlinkCrushes"
+			"challenge_instance"		"relic_slardar_blink_crushes"
+			"in_game_display_interval"		"75"
+		}
+		"5010"
+		{
+			"type_name"		"#KillEaterEvent_Necrolyte_ReapersScytheKills"
+			"challenge_instance"		"relic_necrolyte_reapers_scythe_kills"
+			"in_game_display_interval"		"50"
+		}
+		"5011"
+		{
+			"type_name"		"#KillEaterEvent_Necrolyte_TripleDeathPulses"
+			"challenge_instance"		"relic_necrolyte_triple_death_pulses"
+			"in_game_display_interval"		"50"
+		}
+		"5012"
+		{
+			"type_name"		"#KillEaterEvent_QueenOfPain_TripleSonicWaves"
+			"challenge_instance"		"relic_queenofpain_triple_sonic_waves"
+			"in_game_display_interval"		"10"
+		}
+		"5013"
+		{
+			"type_name"		"#KillEaterEvent_Venomancer_TriplePoisonNovas"
+			"challenge_instance"		"relic_venomancer_triple_poison_novas"
+			"in_game_display_interval"		"10"
+			"obsolete"		"1"
+		}
+		"5014"
+		{
+			"type_name"		"#KillEaterEvent_Pugna_DoubleNetherBlasts"
+			"challenge_instance"		"relic_pugna_double_nether_blasts"
+			"in_game_display_interval"		"50"
+		}
+		"5015"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_TripleVacuums"
+			"challenge_instance"		"relic_dark_seer_triple_vacuums"
+			"in_game_display_interval"		"10"
+		}
+		"5016"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_IonShellCreepKills"
+			"challenge_instance"		"relic_dark_seer_ion_shell_creep_kills"
+			"in_game_display_interval"		"1500"
+		}
+		"5017"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_VacuumWallCombos"
+			"challenge_instance"		"relic_dark_seer_vacuum_wall_combos"
+			"in_game_display_interval"		"50"
+		}
+		"5018"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_IonShellDamage"
+			"challenge_instance"		"relic_dark_seer_ion_shell_damage"
+			"in_game_display_interval"		"100000"
+		}
+		"5019"
+		{
+			"type_name"		"#KillEaterEvent_Dazzle_ShadowWaveDamage"
+			"challenge_instance"		"relic_dazzle_shadow_wave_damage"
+			"in_game_display_interval"		"15000"
+		}
+		"5020"
+		{
+			"type_name"		"#KillEaterEvent_SlowsLeadingToKills"
+			"challenge_instance"		"relic_slows_leading_to_kills_as_hero"
+			"in_game_display_interval"		"75"
+		}
+		"5021"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_DoubleShukuchis"
+			"challenge_instance"		"relic_weaver_double_shukuchis"
+			"in_game_display_interval"		"50"
+		}
+		"5022"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_SwarmDamage"
+			"challenge_instance"		"relic_weaver_swarm_damage"
+			"in_game_display_interval"		"25000"
+		}
+		"5023"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_TimeLapseKills"
+			"challenge_instance"		"relic_weaver_time_lapse_kills"
+			"in_game_display_interval"		"50"
+		}
+		"5024"
+		{
+			"type_name"		"#KillEaterEvent_Weaver_KillsOnSwarmedHeroes"
+			"challenge_instance"		"relic_weaver_kills_on_swarmed_heroes"
+			"in_game_display_interval"		"75"
+		}
+		"5025"
+		{
+			"type_name"		"#KillEaterEvent_Jakiro_DoubleIcePath"
+			"challenge_instance"		"relic_jakiro_double_ice_paths"
+			"in_game_display_interval"		"50"
+		}
+		"5026"
+		{
+			"type_name"		"#KillEaterEvent_Jakiro_LiquidFireBuildingDamage"
+			"challenge_instance"		"relic_jakiro_liquid_fire_building_damage"
+			"in_game_display_interval"		"15000"
+		}
+		"5027"
+		{
+			"type_name"		"#KillEaterEvent_Batrider_KillsDuringLasso"
+			"challenge_instance"		"relic_batrider_kills_during_lasso"
+			"in_game_display_interval"		"15"
+		}
+		"5028"
+		{
+			"type_name"		"#KillEaterEvent_Centaur_StompDoubleEdgeCombos"
+			"challenge_instance"		"relic_centaur_stomp_double_edge_combo"
+			"in_game_display_interval"		"100"
+		}
+		"5029"
+		{
+			"type_name"		"#KillEaterEvent_NightStalker_ChannelsCancelled"
+			"challenge_instance"		"relic_night_stalker_channels_cancelled"
+			"in_game_display_interval"		"5"
+		}
+		"5030"
+		{
+			"type_name"		"#KillEaterEvent_Broodmother_KillsWithSpawnSpiderlings"
+			"challenge_instance"		"relic_broodmother_kills_with_spawn_spiderlings"
+			"in_game_display_interval"		"75"
+		}
+		"5031"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_SleepDuration"
+			"challenge_instance"		"relic_elder_titan_sleep_duration"
+			"in_game_display_interval"		"750"
+		}
+		"5032"
+		{
+			"type_name"		"#KillEaterEvent_Chen_SaveHeroWithHealing"
+			"challenge_instance"		"relic_chen_save_hero_with_healing"
+			"in_game_display_interval"		"10"
+		}
+		"5033"
+		{
+			"type_name"		"#KillEaterEvent_Chen_SaveHeroHolyPersuasion"
+			"challenge_instance"		"relic_chen_save_hero_holy_persuasion_teleport"
+			"in_game_display_interval"		"3"
+			"obsolete"		"1"
+		}
+		"5034"
+		{
+			"type_name"		"#KillEaterEvent_KillAfterSmoke"
+			"challenge_instance"		"relic_kill_after_smoke"
+			"in_game_display_interval"		"15"
+		}
+		"5035"
+		{
+			"type_name"		"#KillEaterEvent_Bashes"
+			"challenge_instance"		"relic_bash_enemies_as_hero"
+			"in_game_display_interval"		"75"
+		}
+		"5036"
+		{
+			"type_name"		"#KillEaterEvent_ChannelsCancelled"
+			"challenge_instance"		"relic_cancel_channels_as_hero"
+			"in_game_display_interval"		"5"
+		}
+		"5037"
+		{
+			"type_name"		"#KillEaterEvent_SpellsDisjointed"
+			"challenge_instance"		"relic_disjoint_spells_as_hero"
+			"in_game_display_interval"		"100"
+		}
+		"5038"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterBlink"
+			"challenge_instance"		"relic_kill_after_blink_as_hero"
+			"in_game_display_interval"		"100"
+		}
+		"5039"
+		{
+			"type_name"		"#KillEaterEvent_CourierKills"
+			"challenge_instance"		"relic_courier_kills"
+			"in_game_display_interval"		"5"
+		}
+		"5040"
+		{
+			"type_name"		"#KillEaterEvent_SilencesLeadingToKills"
+			"challenge_instance"		"relic_kill_while_silenced_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5041"
+		{
+			"type_name"		"#KillEaterEvent_KillsDuringBKB"
+			"challenge_instance"		"relic_kills_during_bkb_as_hero"
+			"in_game_display_interval"		"15"
+		}
+		"5042"
+		{
+			"type_name"		"#KillEaterEvent_RootsLeadingToKills"
+			"challenge_instance"		"relic_kills_on_rooted_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5043"
+		{
+			"type_name"		"#KillEaterEvent_StunsLeadingToKills"
+			"challenge_instance"		"relic_kills_on_stunned_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5044"
+		{
+			"type_name"		"#KillEaterEvent_DoubleStuns"
+			"challenge_instance"		"relic_double_stuns"
+			"in_game_display_interval"		"25"
+		}
+		"5045"
+		{
+			"type_name"		"#KillEaterEvent_LongRangeKills"
+			"challenge_instance"		"relic_long_range_kills"
+			"in_game_display_interval"		"15"
+		}
+		"5046"
+		{
+			"type_name"		"#KillEaterEvent_BlinkStuns"
+			"challenge_instance"		"relic_blink_single_stun"
+			"in_game_display_interval"		"100"
+		}
+		"5047"
+		{
+			"type_name"		"#KillEaterEvent_DebuffsPurged"
+			"challenge_instance"		"relic_purge_debuffs"
+			"in_game_display_interval"		"500"
+		}
+		"5048"
+		{
+			"type_name"		"#KillEaterEvent_AegisesClaimed"
+			"challenge_instance"		"relic_take_aegis_as_hero_multi_match"
+			"in_game_display_interval"		"5"
+		}
+		"5049"
+		{
+			"type_name"		"#KillEaterEvent_LightningSplitEarthCombo"
+			"challenge_instance"		"relic_leshrac_lightning_split_earth_combo"
+			"in_game_display_interval"		"50"
+		}
+		"5050"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_DamageAfterAstralSpirit"
+			"challenge_instance"		"relic_elder_titan_physical_damage_after_astral_spirit"
+			"in_game_display_interval"		"75000"
+		}
+		"5051"
+		{
+			"type_name"		"#KillEaterEvent_Underlord_MultiHeroTP"
+			"challenge_instance"		"relic_abyssal_underlord_dark_rift_multi_hero_teleports"
+			"in_game_display_interval"		"25"
+		}
+		"5052"
+		{
+			"type_name"		"#KillEaterEvent_Underlord_RiftHeroesSaved"
+			"challenge_instance"		"relic_abyssal_underlord_dark_rift_save_heroes"
+			"in_game_display_interval"		"3"
+		}
+		"5053"
+		{
+			"type_name"		"#KillEaterEvent_DamageWithRadiance"
+			"challenge_instance"		"relic_deal_damage_with_radiance"
+			"in_game_display_interval"		"30000"
+		}
+		"5054"
+		{
+			"type_name"		"#KillEaterEvent_AncientApparition_IceBlastKills"
+			"challenge_instance"		"relic_aa_iceblast_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5055"
+		{
+			"type_name"		"#KillEaterEvent_AncientApparition_IceBlastDamage"
+			"challenge_instance"		"relic_aa_iceblast_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5056"
+		{
+			"type_name"		"#KillEaterEvent_AncientApparition_ColdFeetFreezes"
+			"challenge_instance"		"relic_aa_cold_feet_freezes"
+			"in_game_display_interval"		"75"
+		}
+		"5057"
+		{
+			"type_name"		"#KillEaterEvent_SpiritBreaker_KillAfterCharge"
+			"challenge_instance"		"relic_spirit_breaker_kill_after_charge"
+			"in_game_display_interval"		"5"
+		}
+		"5058"
+		{
+			"type_name"		"#KillEaterEvent_Gyrocopter_CallDownKills"
+			"challenge_instance"		"relic_gyrocopter_call_down_kills"
+			"in_game_display_interval"		"10"
+		}
+		"5059"
+		{
+			"type_name"		"#KillEaterEvent_BladeMailDamage"
+			"challenge_instance"		"relic_deal_damage_with_blade_mail_as_hero"
+			"in_game_display_interval"		"15000"
+		}
+		"5060"
+		{
+			"type_name"		"#KillEaterEvent_WinterWyvern_CreepKillsWithSplinterBlast"
+			"challenge_instance"		"relic_winter_wyvern_creep_kills_with_splinter_blast"
+			"in_game_display_interval"		"500"
+		}
+		"5061"
+		{
+			"type_name"		"#KillEaterEvent_WinterWyvern_TwoHeroSplinterBlast"
+			"challenge_instance"		"relic_winter_wyvern_double_man_splinter_blast"
+			"in_game_display_interval"		"50"
+		}
+		"5062"
+		{
+			"type_name"		"#KillEaterEvent_WinterWyvern_ThreeHeroWintersCurse"
+			"challenge_instance"		"relic_winter_wyvern_triple_man_winters_curse"
+			"in_game_display_interval"		"2"
+		}
+		"5063"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_CreepKillsWithFlare"
+			"challenge_instance"		"relic_clockwerk_creep_kills_with_flare"
+			"in_game_display_interval"		"25"
+		}
+		"5064"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_HookBatteryAssaultCombo"
+			"challenge_instance"		"relic_clockwerk_hook_battery_assault_combo"
+			"in_game_display_interval"		"100"
+		}
+		"5065"
+		{
+			"type_name"		"#KillEaterEvent_MonkeyKing_BoundlessStrikeDamage"
+			"challenge_instance"		"plus_monkey_king_boundless_strike_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5066"
+		{
+			"type_name"		"#KillEaterEvent_MonkeyKing_TwoHeroStrike"
+			"challenge_instance"		"plus_monkey_king_double_strike"
+			"in_game_display_interval"		"50"
+		}
+		"5067"
+		{
+			"type_name"		"#KillEaterEvent_MonkeyKing_KillAfterSpring"
+			"challenge_instance"		"plus_monkey_king_kill_after_spring"
+			"in_game_display_interval"		"25"
+		}
+		"5068"
+		{
+			"type_name"		"#KillEaterEvent_MonkeyKing_WukongCommandDamage"
+			"challenge_instance"		"plus_monkey_king_wukong_command_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5069"
+		{
+			"type_name"		"#KillEaterEvent_Phoenix_DamageDuringSupernova"
+			"challenge_instance"		"relic_phoenix_damage_during_supernova"
+			"in_game_display_interval"		"2500"
+		}
+		"5070"
+		{
+			"type_name"		"#KillEaterEvent_Razor_ThreeHeroPlasmaFields"
+			"challenge_instance"		"relic_razor_triple_man_plasma_fields"
+			"in_game_display_interval"		"100"
+		}
+		"5071"
+		{
+			"type_name"		"#KillEaterEvent_Razor_BuildingDmgWithEyeOfTheStorm"
+			"challenge_instance"		"relic_razor_building_damage_with_eye_of_the_storm"
+			"in_game_display_interval"		"7500"
+		}
+		"5072"
+		{
+			"type_name"		"#KillEaterEvent_Razor_StaticLinkDamageStolen"
+			"challenge_instance"		"relic_razor_static_link_enemies"
+			"in_game_display_interval"		"1000"
+		}
+		"5073"
+		{
+			"type_name"		"#KillEaterEvent_ShadowDemon_DamageWithIllusions"
+			"challenge_instance"		"relic_shadow_demon_damage_with_illusions"
+			"image"		"spellicons/shadow_demon_disruption.png"
+			"in_game_display_interval"		"50000"
+		}
+		"5074"
+		{
+			"type_name"		"#KillEaterEvent_ShadowDemon_KillsUnderDemonicPurge"
+			"challenge_instance"		"relic_shadow_demon_kills_under_demonic_purge"
+			"image"		"spellicons/shadow_demon_demonic_purge.png"
+			"in_game_display_interval"		"50"
+		}
+		"5075"
+		{
+			"type_name"		"#KillEaterEvent_ShadowDemon_SetupStunsWithDisruption"
+			"challenge_instance"		"relic_shadow_demon_setup_stuns_with_disruption"
+			"image"		"spellicons/shadow_demon_disruption.png"
+			"in_game_display_interval"		"10"
+		}
+		"5076"
+		{
+			"type_name"		"#KillEaterEvent_ShadowDemon_ShadowPoisonDamage"
+			"challenge_instance"		"relic_shadow_demon_shadow_poison_damage"
+			"image"		"spellicons/shadow_demon_shadow_poison.png"
+			"in_game_display_interval"		"50000"
+		}
+		"5077"
+		{
+			"type_name"		"#KillEaterEvent_Timbersaw_ChakramDamage"
+			"challenge_instance"		"relic_timbersaw_chakram_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5078"
+		{
+			"type_name"		"#KillEaterEvent_Timbersaw_TimberChainWhirlingDeathCombos"
+			"challenge_instance"		"relic_timbersaw_timber_chain_whirling_death_combos"
+			"in_game_display_interval"		"25"
+		}
+		"5079"
+		{
+			"type_name"		"#KillEaterEvent_Timbersaw_TreeCutCount"
+			"challenge_instance"		"relic_timbersaw_tree_cut_count"
+			"in_game_display_interval"		"2500"
+		}
+		"5080"
+		{
+			"type_name"		"#KillEaterEvent_Treant_BuildingHealing"
+			"challenge_instance"		"relic_treant_building_healing"
+			"in_game_display_interval"		"15000"
+		}
+		"5081"
+		{
+			"type_name"		"#KillEaterEvent_Treant_OvergrowthDamage"
+			"challenge_instance"		"relic_treant_deal_damage_with_overgrowth"
+			"in_game_display_interval"		"25000"
+		}
+		"5082"
+		{
+			"type_name"		"#KillEaterEvent_Treant_NaturesGuiseRoots"
+			"challenge_instance"		"relic_treant_natures_guise_roots"
+			"in_game_display_interval"		"50"
+			"obsolete"		"1"
+		}
+		"5083"
+		{
+			"type_name"		"#KillEaterEvent_Treant_PlaceEyesInTheForest"
+			"challenge_instance"		"relic_treant_place_eyes_in_the_forest"
+			"in_game_display_interval"		"50"
+		}
+		"5084"
+		{
+			"type_name"		"#KillEaterEvent_Treant_TripleManOvergrowth"
+			"challenge_instance"		"relic_treant_triple_man_overgrowth"
+			"in_game_display_interval"		"15"
+		}
+		"5085"
+		{
+			"type_name"		"#KillEaterEvent_Treant_TotalHealing"
+			"challenge_instance"		"relic_treant_total_healing"
+			"in_game_display_interval"		"60000"
+		}
+		"5086"
+		{
+			"type_name"		"#KillEaterEvent_Undying_DecayStacks"
+			"challenge_instance"		"relic_undying_decay_stacks"
+			"in_game_display_interval"		"50"
+		}
+		"5087"
+		{
+			"type_name"		"#KillEaterEvent_Undying_SaveHeroesSoulRip"
+			"challenge_instance"		"relic_undying_save_heroes_soul_rip"
+			"in_game_display_interval"		"5"
+		}
+		"5088"
+		{
+			"type_name"		"#KillEaterEvent_Undying_SelfHealing"
+			"challenge_instance"		"relic_undying_self_healing"
+			"in_game_display_interval"		"2500"
+		}
+		"5089"
+		{
+			"type_name"		"#KillEaterEvent_Undying_TombstoneDamage"
+			"challenge_instance"		"relic_undying_tombstone_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5090"
+		{
+			"type_name"		"#KillEaterEvent_Visage_DamageDuringGravechill"
+			"challenge_instance"		"relic_visage_damage_during_gravechill"
+			"in_game_display_interval"		"50000"
+		}
+		"5091"
+		{
+			"type_name"		"#KillEaterEvent_Visage_SoulAssumptionDamage"
+			"challenge_instance"		"relic_visage_soul_assumption_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5092"
+		{
+			"type_name"		"#KillEaterEvent_Visage_StunsWithSummons"
+			"challenge_instance"		"relic_visage_stuns_with_summons"
+			"in_game_display_interval"		"250"
+		}
+		"5093"
+		{
+			"type_name"		"#KillEaterEvent_BountyRunesTaken"
+			"challenge_instance"		"relic_pick_up_bounty_runes"
+			"in_game_display_interval"		"25"
+		}
+		"5094"
+		{
+			"type_name"		"#KillEaterEvent_ShivasSlowDuration"
+			"challenge_instance"		"relic_shivas_slow_as_hero"
+			"in_game_display_interval"		"150"
+		}
+		"5095"
+		{
+			"type_name"		"#KillEaterEvent_HalbardDisarmDuration"
+			"challenge_instance"		"relic_total_halberd_duration_as_hero"
+			"in_game_display_interval"		"75"
+		}
+		"5096"
+		{
+			"type_name"		"#KillEaterEvent_SummonsTowerDamage"
+			"challenge_instance"		"relic_tower_damage_with_summons"
+			"in_game_display_interval"		"15000"
+		}
+		"5097"
+		{
+			"type_name"		"#KillEaterEvent_InvisDamageDealt"
+			"challenge_instance"		"relic_deal_damage_from_invis_as_hero"
+			"in_game_display_interval"		"100000"
+		}
+		"5098"
+		{
+			"type_name"		"#KillEaterEvent_ArmletDamageDealt"
+			"challenge_instance"		"relic_deal_damage_with_active_armlet"
+			"in_game_display_interval"		"75000"
+		}
+		"5099"
+		{
+			"type_name"		"#KillEaterEvent_GlimmerCapeAllies"
+			"challenge_instance"		"relic_glimmer_cape_allies_duration_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5100"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterEuls"
+			"challenge_instance"		"relic_kill_after_euls_as_hero"
+			"in_game_display_interval"		"10"
+		}
+		"5101"
+		{
+			"type_name"		"#KillEaterEvent_UrnChargesUsed"
+			"challenge_instance"		"relic_use_urn_or_spirit_vessel_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5102"
+		{
+			"type_name"		"#KillEaterEvent_DoubleSilences"
+			"challenge_instance"		"relic_bloodseeker_double_silences"
+			"in_game_display_interval"		"50"
+		}
+		"5103"
+		{
+			"type_name"		"#KillEaterEvent_BloodrageKills"
+			"challenge_instance"		"relic_bloodseeker_kills_on_bloodraged_enemies"
+			"in_game_display_interval"		"3"
+		}
+		"5104"
+		{
+			"type_name"		"#KillEaterEvent_BlinkDoubleClap"
+			"challenge_instance"		"relic_brewmaster_blink_double_clap"
+			"in_game_display_interval"		"10"
+		}
+		"5105"
+		{
+			"type_name"		"#KillEaterEvent_BrewlingHeroDamage"
+			"challenge_instance"		"relic_brewmaster_hero_damage_with_brewlings"
+			"in_game_display_interval"		"75000"
+		}
+		"5106"
+		{
+			"type_name"		"#KillEaterEvent_SplitBoulderCycloneCombos"
+			"challenge_instance"		"relic_brewmaster_split_boulder_cyclone_combo"
+			"in_game_display_interval"		"75"
+		}
+		"5107"
+		{
+			"type_name"		"#KillEaterEvent_HurlBoulderStuns"
+			"challenge_instance"		"relic_brewmaster_stun_with_hurl_boulder"
+			"in_game_display_interval"		"250"
+		}
+		"5108"
+		{
+			"type_name"		"#KillEaterEvent_StrafeBuildingDamage"
+			"challenge_instance"		"relic_clinkz_building_damage_during_strafe"
+			"in_game_display_interval"		"10000"
+			"obsolete"		"1"
+		}
+		"5109"
+		{
+			"type_name"		"#KillEaterEvent_MagneticFieldDamage"
+			"challenge_instance"		"relic_arc_warden_damage_from_magnetic_field"
+			"in_game_display_interval"		"150000"
+		}
+		"5110"
+		{
+			"type_name"		"#KillEaterEvent_BedlamDamage"
+			"challenge_instance"		"relic_dark_willow_bedlam_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5111"
+		{
+			"type_name"		"#KillEaterEvent_BramblesDuration"
+			"challenge_instance"		"relic_dark_willow_brambles_duration"
+			"in_game_display_interval"		"750"
+		}
+		"5112"
+		{
+			"type_name"		"#KillEaterEvent_TripleHeroTerrorize"
+			"challenge_instance"		"relic_dark_willow_triple_hero_terrorize"
+			"in_game_display_interval"		"5"
+		}
+		"5113"
+		{
+			"type_name"		"#KillEaterEvent_FourAllyWeaves"
+			"challenge_instance"		"relic_dazzle_four_man_ally_weaves"
+			"in_game_display_interval"		"10"
+			"obsolete"		"1"
+		}
+		"5114"
+		{
+			"type_name"		"#KillEaterEvent_MidnightPulseDamage"
+			"challenge_instance"		"relic_enigma_deal_damage_with_midnight_pulse"
+			"in_game_display_interval"		"75000"
+		}
+		"5115"
+		{
+			"type_name"		"#KillEaterEvent_MaleficeKills"
+			"challenge_instance"		"relic_enigma_kills_while_malefice"
+			"in_game_display_interval"		"50"
+		}
+		"5116"
+		{
+			"type_name"		"#KillEaterEvent_DamageDuringTether"
+			"challenge_instance"		"relic_wisp_ally_damage_during_tether"
+			"in_game_display_interval"		"150000"
+		}
+		"5117"
+		{
+			"type_name"		"#KillEaterEvent_DamageDuringRelocate"
+			"challenge_instance"		"relic_wisp_damage_during_relocate"
+			"in_game_display_interval"		"15000"
+		}
+		"5118"
+		{
+			"type_name"		"#KillEaterEvent_OverchargeAlliesDuration"
+			"challenge_instance"		"relic_wisp_overcharge_allies_duration"
+			"in_game_display_interval"		"1500"
+		}
+		"5119"
+		{
+			"type_name"		"#KillEaterEvent_SpiritsDamage"
+			"challenge_instance"		"relic_wisp_spirits_damage"
+			"in_game_display_interval"		"100000"
+		}
+		"5120"
+		{
+			"type_name"		"#KillEaterEvent_SpiritsSlows"
+			"challenge_instance"		"relic_wisp_spirits_slow"
+			"in_game_display_interval"		"50"
+			"obsolete"		"1"
+		}
+		"5121"
+		{
+			"type_name"		"#KillEaterEvent_TrueFormDamage"
+			"challenge_instance"		"relic_lone_druid_damage_during_true_form"
+			"in_game_display_interval"		"10000"
+		}
+		"5122"
+		{
+			"type_name"		"#KillEaterEvent_EmpowerAlliesDuration"
+			"challenge_instance"		"relic_magnataur_empower_allies_duration"
+			"in_game_display_interval"		"5000"
+		}
+		"5123"
+		{
+			"type_name"		"#KillEaterEvent_DamageDuringDarkness"
+			"challenge_instance"		"relic_night_stalker_damage_during_darkness"
+			"in_game_display_interval"		"100000"
+		}
+		"5124"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterFlight"
+			"challenge_instance"		"relic_night_stalker_kills_after_flight"
+			"in_game_display_interval"		"3"
+			"obsolete"		"1"
+		}
+		"5125"
+		{
+			"type_name"		"#KillEaterEvent_DamageDuringBurrow"
+			"challenge_instance"		"relic_nyx_assassin_damage_during_burrow"
+			"in_game_display_interval"		"15000"
+		}
+		"5126"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterImprisonment"
+			"challenge_instance"		"relic_obsidian_destroyer_kills_after_imprisonment"
+			"in_game_display_interval"		"75"
+		}
+		"5127"
+		{
+			"type_name"		"#KillEaterEvent_GyroshellHits"
+			"challenge_instance"		"plus_pangolier_gyroshell_hits"
+			"in_game_display_interval"		"150"
+			"image"		"spellicons/pangolier_gyroshell.png"
+		}
+		"5128"
+		{
+			"type_name"		"#KillEaterEvent_SwashbuckleDamage"
+			"challenge_instance"		"plus_pangolier_swashbuckle_damage"
+			"in_game_display_interval"		"75000"
+			"image"		"spellicons/pangolier_swashbuckle.png"
+		}
+		"5129"
+		{
+			"type_name"		"#KillEaterEvent_TwoHeroShieldCrash"
+			"challenge_instance"		"plus_pangolier_two_hero_shield_crash"
+			"in_game_display_interval"		"50"
+			"image"		"spellicons/pangolier_shield_crash.png"
+		}
+		"5130"
+		{
+			"type_name"		"#KillEaterEvent_LifeDrainHealing"
+			"challenge_instance"		"plus_pugna_heal_allies_with_life_drain"
+			"in_game_display_interval"		"30000"
+		}
+		"5131"
+		{
+			"type_name"		"#KillEaterEvent_StrikeScreamWaveCombo"
+			"challenge_instance"		"relic_queenofpain_strike_scream_wave_combo"
+			"in_game_display_interval"		"25"
+		}
+		"5133"
+		{
+			"type_name"		"#KillEaterEvent_IntStealStacks"
+			"challenge_instance"		"relic_silencer_int_steal_stacks"
+			"in_game_display_interval"		"500"
+		}
+		"5134"
+		{
+			"type_name"		"#KillEaterEvent_TwoManCurse"
+			"challenge_instance"		"relic_silencer_two_man_curse"
+			"in_game_display_interval"		"75"
+		}
+		"5135"
+		{
+			"type_name"		"#KillEaterEvent_DamageAfterBulldoze"
+			"challenge_instance"		"relic_spirit_breaker_damage_after_empowering_haste"
+			"in_game_display_interval"		"75000"
+		}
+		"5136"
+		{
+			"type_name"		"#KillEaterEvent_KillsWhileReflection"
+			"challenge_instance"		"relic_terrorblade_kills_while_reflection"
+			"in_game_display_interval"		"50"
+		}
+		"5137"
+		{
+			"type_name"		"#KillEaterEvent_NovaDamage"
+			"challenge_instance"		"relic_venomancer_nova_damage"
+			"in_game_display_interval"		"75000"
+			"obsolete"		"1"
+		}
+		"5138"
+		{
+			"type_name"		"#KillEaterEvent_NovaGaleCombos"
+			"challenge_instance"		"relic_venomancer_nova_gale_an_enemy"
+			"in_game_display_interval"		"50"
+			"obsolete"		"1"
+		}
+		"5139"
+		{
+			"type_name"		"#KillEaterEvent_DamageOnNetherToxinedEnemies"
+			"challenge_instance"		"relic_viper_damage_on_nethertoxined_enemies"
+			"in_game_display_interval"		"75000"
+		}
+		"5140"
+		{
+			"type_name"		"#KillEaterEvent_NimbusDamage"
+			"challenge_instance"		"relic_zeus_nimbus_damage"
+			"in_game_display_interval"		"50000"
+			"obsolete"		"1"
+		}
+		"5141"
+		{
+			"type_name"		"#KillEaterEvent_DealMagicDamageAsHero"
+			"challenge_instance"		"relic_deal_magic_damage_as_hero"
+			"in_game_display_interval"		"250000"
+		}
+		"5142"
+		{
+			"type_name"		"#KillEaterEvent_DealMagicDamageWithSummonsAsHero"
+			"challenge_instance"		"relic_deal_magic_damage_with_summons_as_hero"
+			"in_game_display_interval"		"150000"
+		}
+		"5143"
+		{
+			"type_name"		"#KillEaterEvent_DealPhysicalDamageAsHero"
+			"challenge_instance"		"relic_deal_physical_damage_as_hero"
+			"in_game_display_interval"		"150000"
+		}
+		"5144"
+		{
+			"type_name"		"#KillEaterEvent_DealPureDamageAsHero"
+			"challenge_instance"		"relic_deal_pure_damage_as_hero"
+			"in_game_display_interval"		"75000"
+		}
+		"5145"
+		{
+			"type_name"		"#KillEaterEvent_KillAfterMotionControlAsHero"
+			"challenge_instance"		"relic_kill_after_motion_control_as_hero"
+			"in_game_display_interval"		"75"
+		}
+		"5146"
+		{
+			"type_name"		"#KillEaterEvent_KillAfterTeleport"
+			"challenge_instance"		"relic_kill_after_teleport"
+			"in_game_display_interval"		"75"
+		}
+		"5148"
+		{
+			"type_name"		"#KillEaterEvent_LastHitsAsHero"
+			"challenge_instance"		"relic_last_hits_as_hero"
+			"in_game_display_interval"		"2500"
+		}
+		"5149"
+		{
+			"type_name"		"#KillEaterEvent_ManaDamageAsHero"
+			"challenge_instance"		"relic_mana_damage_as_hero"
+			"in_game_display_interval"		"25000"
+		}
+		"5151"
+		{
+			"type_name"		"#KillEaterEvent_RestoreManaAsHero"
+			"challenge_instance"		"relic_restore_mana_as_hero"
+			"in_game_display_interval"		"30000"
+		}
+		"5152"
+		{
+			"type_name"		"#KillEaterEvent_SlowDurationAsHero"
+			"challenge_instance"		"relic_slow_duration_as_hero"
+			"in_game_display_interval"		"1500"
+		}
+		"5153"
+		{
+			"type_name"		"#KillEaterEvent_TotalHealingAsHero"
+			"challenge_instance"		"relic_total_healing_as_hero"
+			"in_game_display_interval"		"250000"
+		}
+		"5154"
+		{
+			"type_name"		"#KillEaterEvent_HurricanePikeDamage"
+			"challenge_instance"		"relic_damage_during_hurricane_pike_as_hero"
+			"in_game_display_interval"		"10000"
+		}
+		"5155"
+		{
+			"type_name"		"#KillEaterEvent_DamageWhileInvisible"
+			"challenge_instance"		"relic_deal_damage_while_invis_as_hero"
+			"in_game_display_interval"		"250000"
+		}
+		"5156"
+		{
+			"type_name"		"#KillEaterEvent_Zeus_KillsWithLightningBolt"
+			"challenge_instance"		"relic_zeus_kills_with_lightning_bolt"
+			"in_game_display_interval"		"15"
+		}
+		"5157"
+		{
+			"type_name"		"#KillEaterEvent_Zeus_KillsWithThundergodsWrath"
+			"challenge_instance"		"relic_zeus_kills_with_thundergods_wrath"
+			"in_game_display_interval"		"50"
+		}
+		"5158"
+		{
+			"type_name"		"#KillEaterEvent_WinterWyvern_ArcticBurnKills"
+			"challenge_instance"		"relic_winter_wyvern_kills_while_arctic_burn"
+			"in_game_display_interval"		"50"
+		}
+		"5159"
+		{
+			"type_name"		"#KillEaterEvent_Visage_SoulAssumptionKills"
+			"challenge_instance"		"relic_visage_soul_assumption_kills"
+			"in_game_display_interval"		"50"
+		}
+		"5160"
+		{
+			"type_name"		"#KillEaterEvent_Venomancer_VenomousGaleKills"
+			"challenge_instance"		"relic_venomancer_kills_while_gale"
+			"in_game_display_interval"		"75"
+		}
+		"5161"
+		{
+			"type_name"		"#KillEaterEvent_SkeletonKing_Lifesteal"
+			"challenge_instance"		"relic_skeleton_king_lifesteal"
+			"in_game_display_interval"		"25000"
+		}
+		"5162"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_SwapStunCombo"
+			"challenge_instance"		"relic_vengeful_spirit_swap_stun_combo"
+			"in_game_display_interval"		"50"
+		}
+		"5163"
+		{
+			"type_name"		"#KillEaterEvent_Ursa_QuickFuryKills"
+			"challenge_instance"		"relic_ursa_quick_fury_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5164"
+		{
+			"type_name"		"#KillEaterEvent_Underlord_TwoPersonPits"
+			"challenge_instance"		"relic_abyssal_underlord_two_person_pit_of_malice"
+			"in_game_display_interval"		"50"
+		}
+		"5165"
+		{
+			"type_name"		"#KillEaterEvent_Underlord_FirestormDamage"
+			"challenge_instance"		"relic_abyssal_underlord_firestorm_damage"
+			"in_game_display_interval"		"150000"
+		}
+		"5166"
+		{
+			"type_name"		"#KillEaterEvent_Tusk_KillsAfterIceShards"
+			"challenge_instance"		"relic_tusk_kill_after_ice_shards"
+			"in_game_display_interval"		"50"
+		}
+		"5167"
+		{
+			"type_name"		"#KillEaterEvent_Tusk_FrozenSigilSlowDuration"
+			"challenge_instance"		"relic_tusk_frozen_sigil_slow_duration"
+			"in_game_display_interval"		"250"
+			"obsolete"		"1"
+		}
+		"5168"
+		{
+			"type_name"		"#KillEaterEvent_Warlock_ThreePersonUpheavals"
+			"challenge_instance"		"relic_warlock_three_person_upheaval"
+			"in_game_display_interval"		"50"
+		}
+		"5169"
+		{
+			"type_name"		"#KillEaterEvent_Undying_DecayOnThreePlus"
+			"challenge_instance"		"relic_undying_decay_on_three_plus"
+			"in_game_display_interval"		"10"
+		}
+		"5170"
+		{
+			"type_name"		"#KillEaterEvent_Undying_HealAllies"
+			"challenge_instance"		"relic_undying_heal_allies"
+			"in_game_display_interval"		"50000"
+		}
+		"5171"
+		{
+			"type_name"		"#KillEaterEvent_Undying_ManyZombiesMade"
+			"challenge_instance"		"relic_undying_many_zombies_made"
+			"in_game_display_interval"		"75"
+		}
+		"5172"
+		{
+			"type_name"		"#KillEaterEvent_Underlord_KillsAfterDarkRift"
+			"challenge_instance"		"relic_abyssal_underlord_kill_after_dark_rift"
+			"in_game_display_interval"		"150"
+		}
+		"5173"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterSheep"
+			"challenge_instance"		"relic_kill_after_sheep_as_hero"
+			"in_game_display_interval"		"15"
+		}
+		"5174"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterEtherealBlade"
+			"challenge_instance"		"relic_kill_after_ethereal_blade_as_hero"
+			"in_game_display_interval"		"10"
+		}
+		"5175"
+		{
+			"type_name"		"#KillEaterEvent_Timbersaw_TimberChainKills"
+			"challenge_instance"		"relic_timbersaw_timber_chain_kill"
+			"in_game_display_interval"		"15"
+		}
+		"5176"
+		{
+			"type_name"		"#KillEaterEvent_Tidehunter_KillsAfterRavage"
+			"challenge_instance"		"relic_tidehunter_kill_after_ravage"
+			"in_game_display_interval"		"50"
+		}
+		"5177"
+		{
+			"type_name"		"#KillEaterEvent_Tidehunter_AnchorSmashMultiHero"
+			"challenge_instance"		"relic_tidehunter_anchor_smash_multi_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5178"
+		{
+			"type_name"		"#KillEaterEvent_Terrorblade_SunderKills"
+			"challenge_instance"		"relic_terrorblade_sunder_kills"
+			"in_game_display_interval"		"10"
+		}
+		"5179"
+		{
+			"type_name"		"#KillEaterEvent_Terrorblade_ReflectionOnThree"
+			"challenge_instance"		"relic_terrorblade_reflection_on_three"
+			"in_game_display_interval"		"10"
+		}
+		"5180"
+		{
+			"type_name"		"#KillEaterEvent_BuildingDamageWithIllusions"
+			"challenge_instance"		"relic_building_damage_with_illusions"
+			"in_game_display_interval"		"25000"
+		}
+		"5181"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_MeldKills_QueryBased"
+			"challenge_instance"		"relic_templar_assassin_meld_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5182"
+		{
+			"type_name"		"#KillEaterEvent_TemplarAssassin_KillTrappedEnemy"
+			"challenge_instance"		"relic_templar_assassin_kill_trapped_enemy"
+			"in_game_display_interval"		"50"
+		}
+		"5183"
+		{
+			"type_name"		"#KillEaterEvent_SpiritBreaker_BashesOnThreeDuringCharge"
+			"challenge_instance"		"relic_spirit_breaker_bashes_on_three_during_charge"
+			"in_game_display_interval"		"10"
+		}
+		"5184"
+		{
+			"type_name"		"#KillEaterEvent_SpiritBreaker_ChargeNetherStrikeCombos"
+			"challenge_instance"		"relic_spirit_breaker_charge_nether_strike_combos"
+			"in_game_display_interval"		"10"
+		}
+		"5185"
+		{
+			"type_name"		"#KillEaterEvent_Spectre_KillsAfterReality"
+			"challenge_instance"		"relic_spectre_kill_after_reality"
+			"in_game_display_interval"		"75"
+		}
+		"5186"
+		{
+			"type_name"		"#KillEaterEvent_Spectre_KillsDuringSpectralDagger"
+			"challenge_instance"		"relic_spectre_kill_during_spectral_dagger"
+			"in_game_display_interval"		"100"
+		}
+		"5187"
+		{
+			"type_name"		"#KillEaterEvent_Spectre_DispersionKills"
+			"challenge_instance"		"relic_spectre_dispersion_kill"
+			"in_game_display_interval"		"10"
+		}
+		"5188"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_KillsDuringShrapnel"
+			"challenge_instance"		"relic_sniper_kills_during_shrapnel"
+			"in_game_display_interval"		"75"
+		}
+		"5189"
+		{
+			"type_name"		"#KillEaterEvent_Sniper_KillsDuringHeadshot"
+			"challenge_instance"		"relic_sniper_kills_during_headshot"
+			"in_game_display_interval"		"50"
+		}
+		"5190"
+		{
+			"type_name"		"#KillEaterEvent_Slark_KillsDuringPounce"
+			"challenge_instance"		"relic_slark_kills_during_pounce"
+			"in_game_display_interval"		"50"
+		}
+		"5191"
+		{
+			"type_name"		"#KillEaterEvent_Slardar_KillsDuringCorrosiveHaze"
+			"challenge_instance"		"relic_slardar_kills_during_corrosive_haze"
+			"in_game_display_interval"		"100"
+		}
+		"5192"
+		{
+			"type_name"		"#KillEaterEvent_Slardar_KillsAfterSprint"
+			"challenge_instance"		"relic_slardar_kills_after_sprint"
+			"in_game_display_interval"		"75"
+		}
+		"5193"
+		{
+			"type_name"		"#KillEaterEvent_Slardar_CrushesOnThree"
+			"challenge_instance"		"relic_slardar_crushes_on_three"
+			"in_game_display_interval"		"5"
+		}
+		"5194"
+		{
+			"type_name"		"#KillEaterEvent_Skywrath_KillsDuringConcussiveShot"
+			"challenge_instance"		"relic_skywrath_mage_kills_on_heroes_slowed_by_concussive_shot"
+			"in_game_display_interval"		"75"
+		}
+		"5195"
+		{
+			"type_name"		"#KillEaterEvent_Skywrath_AtosMysticFlareDamage"
+			"challenge_instance"		"relic_skywrath_mage_atos_mystic_flare_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5196"
+		{
+			"type_name"		"#KillEaterEvent_Silencer_LastWordSilenceDuration"
+			"in_game_display_interval"		"500"
+			"obsolete"		"1"
+		}
+		"5197"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_RequiemsOnMany"
+			"challenge_instance"		"relic_shadow_fiend_requiems_on_many"
+			"in_game_display_interval"		"75"
+		}
+		"5198"
+		{
+			"type_name"		"#KillEaterEvent_ShadowFiend_ShadowRazeMultiHero"
+			"challenge_instance"		"relic_shadow_fiend_shadowraze_multi_hero"
+			"in_game_display_interval"		"25"
+		}
+		"5199"
+		{
+			"type_name"		"#KillEaterEvent_Rubick_FadeBoltMultiHero"
+			"challenge_instance"		"relic_rubick_fade_bolt_multi_hero"
+			"in_game_display_interval"		"75"
+		}
+		"5200"
+		{
+			"type_name"		"#KillEaterEvent_Rubick_DamageOnNullFieldedEnemies"
+			"challenge_instance"		"relic_rubick_magic_damage_on_null_fielded_enemies"
+			"in_game_display_interval"		"20000"
+			"obsolete"		"1"
+		}
+		"5201"
+		{
+			"type_name"		"#KillEaterEvent_Riki_KillsAfterBlinkStrike"
+			"challenge_instance"		"relic_riki_kills_after_blink_strike"
+			"in_game_display_interval"		"100"
+		}
+		"5202"
+		{
+			"type_name"		"#KillEaterEvent_Riki_SmokeCloudOnThree"
+			"challenge_instance"		"relic_riki_smoke_cloud_on_three"
+			"in_game_display_interval"		"250"
+		}
+		"5203"
+		{
+			"type_name"		"#KillEaterEvent_QueenOfPain_TripleScreamOfPains"
+			"challenge_instance"		"relic_queenofpain_triple_scream_of_pain"
+			"in_game_display_interval"		"75"
+		}
+		"5204"
+		{
+			"type_name"		"#KillEaterEvent_Pugna_DecrepifyNetherBlastCombos"
+			"challenge_instance"		"relic_pugna_decrepify_nether_blast_combo"
+			"in_game_display_interval"		"100"
+		}
+		"5205"
+		{
+			"type_name"		"#KillEaterEvent_Pugna_NetherWardDamage"
+			"challenge_instance"		"relic_pugna_nether_ward_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5206"
+		{
+			"type_name"		"#KillEaterEvent_Puck_IllusoryOrbWaningRiftCombos"
+			"challenge_instance"		"relic_puck_illusory_orb_waning_rift_combo"
+			"in_game_display_interval"		"75"
+		}
+		"5207"
+		{
+			"type_name"		"#KillEaterEvent_QueenOfPain_KillsOnShadowStrikedEnemies"
+			"challenge_instance"		"relic_queenofpain_kill_on_shadow_striked_enemy"
+			"in_game_display_interval"		"100"
+		}
+		"5208"
+		{
+			"type_name"		"#KillEaterEvent_Phoenix_ThreeHeroIcarusDives"
+			"challenge_instance"		"relic_phoenix_three_hero_icarus_dive"
+			"in_game_display_interval"		"5"
+		}
+		"5209"
+		{
+			"type_name"		"#KillEaterEvent_Phoenix_ThreeHeroFireSpirits"
+			"challenge_instance"		"relic_phoenix_three_hero_fire_spirits"
+			"in_game_display_interval"		"50"
+		}
+		"5210"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterOrchid"
+			"challenge_instance"		"relic_kill_after_orchid_as_hero"
+			"in_game_display_interval"		"50"
+		}
+		"5211"
+		{
+			"type_name"		"#KillEaterEvent_PhantomLancer_DisjointSpellWithDoppelganger"
+			"challenge_instance"		"relic_phantom_lancer_disjoint_spell_with_doppelganger"
+			"in_game_display_interval"		"50"
+		}
+		"5212"
+		{
+			"type_name"		"#KillEaterEvent_PhantomLancer_KillAfterPhantomRush"
+			"challenge_instance"		"relic_phantom_lancer_kill_after_phantom_rush"
+			"in_game_display_interval"		"150"
+		}
+		"5213"
+		{
+			"type_name"		"#KillEaterEvent_DisjointSpellsWithMantaAsHero"
+			"challenge_instance"		"relic_disjoint_spells_with_manta_as_hero"
+			"in_game_display_interval"		"10"
+		}
+		"5214"
+		{
+			"type_name"		"#KillEaterEvent_ObsidianDestroyer_ManyHeroSanityEclipse"
+			"challenge_instance"		"relic_obsidian_destroyer_many_hero_sanity_eclipse"
+			"in_game_display_interval"		"2"
+		}
+		"5215"
+		{
+			"type_name"		"#KillEaterEvent_ObsidianDestroyer_AstralBlinkEscapeCombos"
+			"challenge_instance"		"relic_obsidian_destroyer_astral_blink_escape_combo"
+			"in_game_display_interval"		"10"
+		}
+		"5216"
+		{
+			"type_name"		"#KillEaterEvent_Oracle_KillsAfterFortunesEnd"
+			"challenge_instance"		"relic_oracle_kill_after_fortunes_end"
+			"in_game_display_interval"		"75"
+		}
+		"5217"
+		{
+			"type_name"		"#KillEaterEvent_Oracle_PurifyingFlamesFortunesEndCombos"
+			"challenge_instance"		"relic_oracle_purifying_flames_fortunes_end_combo"
+			"in_game_display_interval"		"100"
+		}
+		"5218"
+		{
+			"type_name"		"#KillEaterEvent_Omniknight_PurificationDamage"
+			"challenge_instance"		"relic_omniknight_purification_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5219"
+		{
+			"type_name"		"#KillEaterEvent_Omniknight_ManyHeroGuardianAngels"
+			"challenge_instance"		"relic_omniknight_four_man_guardian_angel"
+			"in_game_display_interval"		"15"
+		}
+		"5220"
+		{
+			"type_name"		"#KillEaterEvent_Omniknight_DamageDuringRepelAnyAlly"
+			"challenge_instance"		"relic_omniknight_damage_during_repel_any_ally"
+			"in_game_display_interval"		"250000"
+		}
+		"5221"
+		{
+			"type_name"		"#KillEaterEvent_NyxAssassin_ManyHeroImpales"
+			"challenge_instance"		"relic_nyx_assassin_many_hero_impale"
+			"in_game_display_interval"		"5"
+		}
+		"5222"
+		{
+			"type_name"		"#KillEaterEvent_NyxAssassin_KillsAfterCarapace"
+			"challenge_instance"		"relic_nyx_assassin_kill_after_carapace"
+			"in_game_display_interval"		"30"
+		}
+		"5223"
+		{
+			"type_name"		"#KillEaterEvent_NyxAssassin_VendettaCombo"
+			"challenge_instance"		"relic_nyx_assassin_vendetta_combo"
+			"in_game_display_interval"		"25"
+		}
+		"5224"
+		{
+			"type_name"		"#KillEaterEvent_Necrolyte_SelfHealingDuringShroud"
+			"challenge_instance"		"relic_necrolyte_self_healing_during_shroud"
+			"in_game_display_interval"		"50000"
+		}
+		"5225"
+		{
+			"type_name"		"#KillEaterEvent_Necrolyte_HeartstopperDamage"
+			"challenge_instance"		"relic_necrolyte_heartstopper_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5226"
+		{
+			"type_name"		"#KillEaterEvent_KillsAfterDagon"
+			"challenge_instance"		"relic_kills_after_dagon_as_hero"
+			"in_game_display_interval"		"15"
+		}
+		"5227"
+		{
+			"type_name"		"#KillEaterEvent_Venomancer_PlagueWardBuildingDamage"
+			"challenge_instance"		"relic_venomancer_plague_ward_building_damage"
+			"in_game_display_interval"		"5000"
+		}
+		"5228"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_MagicMissileKills"
+			"challenge_instance"		"relic_kills_on_stunned_as_hero"
+			"required_hero"		"vengefulspirit"
+			"image"		"spellicons/vengefulspirit_magic_missile.png"
+			"in_game_display_interval"		"50"
+		}
+		"5229"
+		{
+			"type_name"		"#KillEaterEvent_VengefulSpirit_SwapsLeadingToKills"
+			"challenge_instance"		"relic_vengeful_spirit_swaps_leading_to_kills"
+			"in_game_display_interval"		"25"
+		}
+		"5230"
+		{
+			"type_name"		"#KillEaterEvent_Antimage_QuickBlinkKills"
+			"challenge_instance"		"relic_antimage_quick_blink_kills"
+			"in_game_display_interval"		"25"
+		}
+		"5231"
+		{
+			"type_name"		"#KillEaterEvent_Clockwerk_ManyStunsLeadingToKill"
+			"challenge_instance"		"relic_clockwerk_many_stuns_leading_to_kill"
+			"in_game_display_interval"		"50"
+		}
+		"5232"
+		{
+			"type_name"		"#KillEaterEvent_Beastmaster_WildAxesKills"
+			"challenge_instance"		"relic_beastmaster_wild_axes_kills"
+			"in_game_display_interval"		"15"
+		}
+		"5233"
+		{
+			"type_name"		"#KillEaterEvent_Beastmaster_KillsAfterRoar"
+			"challenge_instance"		"relic_beastmaster_kills_after_roar"
+			"in_game_display_interval"		"50"
+		}
+		"5234"
+		{
+			"type_name"		"#KillEaterEvent_Chen_MinionDebuffsLeadingToKills"
+			"challenge_instance"		"relic_chen_minion_debuffs_leading_to_kills"
+			"image"		"spellicons/chen_holy_persuasion.png"
+			"in_game_display_interval"		"25"
+		}
+		"5235"
+		{
+			"type_name"		"#KillEaterEvent_CrystalMaiden_FreezingFieldDamageWhileInvis"
+			"challenge_instance"		"relic_crystal_maiden_freezing_field_damage_while_invis"
+			"in_game_display_interval"		"7500"
+		}
+		"5236"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_GripSmashCombos"
+			"challenge_instance"		"relic_earth_spirit_grip_smash_combos"
+			"in_game_display_interval"		"75"
+		}
+		"5237"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_BoulderSlowsLeadingToKills"
+			"challenge_instance"		"relic_earth_spirit_rolling_boulder_slows_leading_to_kills"
+			"in_game_display_interval"		"20"
+			"obsolete"		"1"
+		}
+		"5238"
+		{
+			"type_name"		"#KillEaterEvent_Lich_MultiHeroFrostBlasts"
+			"challenge_instance"		"relic_lich_multi_hero_frost_blasts"
+			"in_game_display_interval"		"25"
+		}
+		"5239"
+		{
+			"type_name"		"#KillEaterEvent_Lich_FrostBlastsLeadingToKills"
+			"challenge_instance"		"relic_lich_frost_blasts_leading_to_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5240"
+		{
+			"type_name"		"#KillEaterEvent_Lion_ManyHeroEarthSpikes"
+			"challenge_instance"		"relic_lion_many_hero_earth_spikes"
+			"in_game_display_interval"		"50"
+		}
+		"5241"
+		{
+			"type_name"		"#KillEaterEvent_Enchantress_MinionDebuffsLeadingToKills"
+			"challenge_instance"		"relic_enchantress_minion_debuffs_leading_to_kills"
+			"image"		"spellicons/enchantress_enchant.png"
+			"in_game_display_interval"		"250"
+		}
+		"5242"
+		{
+			"type_name"		"#KillEaterEvent_ArcWarden_FluxDamage"
+			"challenge_instance"		"relic_arc_warden_flux_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5243"
+		{
+			"type_name"		"#KillEaterEvent_EmberSpirit_ChainsDuringSleightOfFist"
+			"challenge_instance"		"relic_ember_spirit_chains_during_sleight_of_fist"
+			"in_game_display_interval"		"150"
+		}
+		"5500"
+		{
+			"type_name"		"#KillEaterEvent_Alchemist_ConcoctionDoubleStuns"
+			"challenge_instance"		"relic_alchemist_double_stun_with_concoction"
+			"in_game_display_interval"		"25"
+		}
+		"5501"
+		{
+			"type_name"		"#KillEaterEvent_Alchemist_KillsUnderAcidSpray"
+			"challenge_instance"		"relic_alchemist_kills_under_acid_spray"
+			"in_game_display_interval"		"25"
+		}
+		"5502"
+		{
+			"type_name"		"#KillEaterEvent_Alchemist_DamageDuringRage"
+			"challenge_instance"		"relic_alchemist_damage_during_rage"
+			"in_game_display_interval"		"100000"
+		}
+		"5503"
+		{
+			"type_name"		"#KillEaterEvent_DebuffsPurgedWithManta"
+			"challenge_instance"		"relic_manta_debuff_purge"
+			"in_game_display_interval"		"50"
+		}
+		"5504"
+		{
+			"type_name"		"#KillEaterEvent_Beastmaster_HeroesPushedWithRoar"
+			"challenge_instance"		"relic_beastmaster_push_with_roar"
+			"in_game_display_interval"		"15"
+		}
+		"5505"
+		{
+			"type_name"		"#KillEaterEvent_Bloodseeker_BloodrageLifesteal"
+			"challenge_instance"		"relic_bloodseeker_lifesteal_using_bloodrage_from_heroes"
+			"in_game_display_interval"		"250000"
+		}
+		"5506"
+		{
+			"type_name"		"#KillEaterEvent_CritDamage"
+			"challenge_instance"		"relic_deal_critical_damage_as_hero"
+			"in_game_display_interval"		"100000"
+		}
+		"5507"
+		{
+			"type_name"		"#KillEaterEvent_CrystalMaiden_BlinkFrostbiteCombos"
+			"challenge_instance"		"relic_crystal_maiden_blink_frostbite_combos"
+			"in_game_display_interval"		"25"
+		}
+		"5508"
+		{
+			"type_name"		"#KillEaterEvent_CrystalMaiden_FrostbiteCreepKills"
+			"challenge_instance"		"relic_crystal_maiden_creep_kills_with_frostbite"
+			"in_game_display_interval"		"50"
+		}
+		"5509"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_BlinkVacuumCombos"
+			"challenge_instance"		"relic_dark_seer_blink_vacuum_combos"
+			"in_game_display_interval"		"50"
+		}
+		"5510"
+		{
+			"type_name"		"#KillEaterEvent_DarkSeer_AllySurgeDuration"
+			"challenge_instance"		"relic_dark_seer_surge_on_allies_duration"
+			"in_game_display_interval"		"500"
+		}
+		"5511"
+		{
+			"type_name"		"#KillEaterEvent_Disruptor_GlimpseKineticFieldCombos"
+			"challenge_instance"		"relic_disruptor_glimpse_kinetic_field_combo"
+			"in_game_display_interval"		"30"
+		}
+		"5512"
+		{
+			"type_name"		"#KillEaterEvent_Disruptor_GlimpseKills"
+			"challenge_instance"		"relic_disruptor_glimpse_kills"
+			"in_game_display_interval"		"50"
+		}
+		"5513"
+		{
+			"type_name"		"#KillEaterEvent_Doom_BlinkOrShadowbladeDooms"
+			"challenge_instance"		"relic_doom_blink_dooms"
+			"in_game_display_interval"		"10"
+		}
+		"5514"
+		{
+			"type_name"		"#KillEaterEvent_Doom_DamageDuringScorchedEarth"
+			"challenge_instance"		"relic_doom_damage_during_scorched_earth"
+			"in_game_display_interval"		"100000"
+		}
+		"5515"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_ThreeHeroMagnetize"
+			"challenge_instance"		"relic_earth_spirit_triple_man_magnetize"
+			"in_game_display_interval"		"15"
+		}
+		"5516"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_RollingBoulderSlows"
+			"challenge_instance"		"relic_earth_spirit_rolling_boulder_slows"
+			"in_game_display_interval"		"10"
+		}
+		"5517"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_PetrifySmashCombos"
+			"challenge_instance"		"relic_earth_spirit_petrify_smash_combo"
+			"in_game_display_interval"		"5"
+		}
+		"5518"
+		{
+			"type_name"		"#KillEaterEvent_ElderTitan_EarthSplitterDamage"
+			"challenge_instance"		"relic_elder_titan_earth_splitter_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5519"
+		{
+			"type_name"		"#KillEaterEvent_StunsWithMinions"
+			"challenge_instance"		"relic_stuns_with_minions"
+			"in_game_display_interval"		"50"
+		}
+		"5520"
+		{
+			"type_name"		"#KillEaterEvent_RootsWithMinions"
+			"challenge_instance"		"relic_roots_with_minions"
+			"in_game_display_interval"		"15"
+		}
+		"5521"
+		{
+			"type_name"		"#KillEaterEvent_MinionKills"
+			"challenge_instance"		"relic_kills_with_minions"
+			"in_game_display_interval"		"75"
+		}
+		"5522"
+		{
+			"type_name"		"#KillEaterEvent_HealthStolen"
+			"challenge_instance"		"relic_lifesteal_as_hero"
+			"in_game_display_interval"		"50000"
+		}
+		"5523"
+		{
+			"type_name"		"#KillEaterEvent_Jakiro_EulsIcePathCombos"
+			"challenge_instance"		"relic_jakiro_euls_ice_path_combos"
+			"in_game_display_interval"		"5"
+		}
+		"5524"
+		{
+			"type_name"		"#KillEaterEvent_Leshrac_EulsSplitEarthCombos"
+			"challenge_instance"		"relic_leshrac_euls_split_earth_combos"
+			"in_game_display_interval"		"10"
+		}
+		"5525"
+		{
+			"type_name"		"#KillEaterEvent_Lina_EulsLightStrikeCombos"
+			"challenge_instance"		"relic_lina_euls_into_lsa"
+			"in_game_display_interval"		"15"
+		}
+		"5526"
+		{
+			"type_name"		"#KillEaterEvent_Luna_MoonGlaivesBuildingDamage"
+			"challenge_instance"		"relic_luna_moon_glaives_building_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5527"
+		{
+			"type_name"		"#KillEaterEvent_Meepo_PoofDamageAfterBlink"
+			"challenge_instance"		"relic_meepo_poof_damage_after_blink"
+			"in_game_display_interval"		"15000"
+		}
+		"5528"
+		{
+			"type_name"		"#KillEaterEvent_SpellsAbsorbWithLinkens"
+			"challenge_instance"		"relic_linken_spell_absorbs_as_hero"
+			"in_game_display_interval"		"10"
+		}
+		"5529"
+		{
+			"type_name"		"#KillEaterEvent_OgreMagi_AllyDamageDuringBloodlust"
+			"challenge_instance"		"relic_ogre_magi_ally_damage_during_bloodlust"
+			"in_game_display_interval"		"750000"
+		}
+		"5530"
+		{
+			"type_name"		"#KillEaterEvent_OgreMagi_DoubleFireblasts"
+			"challenge_instance"		"relic_ogre_magi_double_fireblasts"
+			"in_game_display_interval"		"25"
+		}
+		"5531"
+		{
+			"type_name"		"#KillEaterEvent_WitchDoctor_DeathWardDamageWhileInvis"
+			"challenge_instance"		"relic_witch_doctor_death_ward_damage_while_invis"
+			"in_game_display_interval"		"15000"
+		}
+		"5532"
+		{
+			"type_name"		"#KillEaterEvent_Tusk_SnowballsLeadingToKills"
+			"challenge_instance"		"relic_tusk_snowballs_leading_to_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5533"
+		{
+			"type_name"		"#KillEaterEvent_TideHunter_GushesLeadingToKills"
+			"challenge_instance"		"relic_slows_leading_to_kills_as_hero"
+			"required_hero"		"tidehunter"
+			"image"		"spellicons/tidehunter_gush.png"
+			"in_game_display_interval"		"75"
+		}
+		"5534"
+		{
+			"type_name"		"#KillEaterEvent_Slark_DamageDuringShadowDance"
+			"challenge_instance"		"relic_slark_damage_during_shadow_dance"
+			"in_game_display_interval"		"5000"
+		}
+		"5535"
+		{
+			"type_name"		"#KillEaterEvent_SandKing_BurrowStrikeDoubleStuns"
+			"challenge_instance"		"relic_double_stuns"
+			"required_hero"		"sand_king"
+			"image"		"spellicons/sandking_burrowstrike.png"
+			"in_game_display_interval"		"50"
+		}
+		"5536"
+		{
+			"type_name"		"#KillEaterEvent_Rubick_TelekinesisLeadingToKills"
+			"challenge_instance"		"relic_rubick_kill_after_telekinesis"
+			"in_game_display_interval"		"50"
+		}
+		"5537"
+		{
+			"type_name"		"#KillEaterEvent_PhantomAssassin_CoupDeGraceCritDamage"
+			"challenge_instance"		"relic_deal_critical_damage_as_hero"
+			"required_hero"		"phantom_assassin"
+			"image"		"spellicons/phantom_assassin_coup_de_grace.png"
+			"in_game_display_interval"		"150000"
+		}
+		"5538"
+		{
+			"type_name"		"#KillEaterEvent_Omniknight_SoulRingPurificationCombos"
+			"challenge_instance"		"relic_omniknight_soul_ring_purification"
+			"in_game_display_interval"		"50"
+		}
+		"5539"
+		{
+			"type_name"		"#KillEaterEvent_Enigma_EidolonKills"
+			"challenge_instance"		"relic_kills_with_minions"
+			"required_hero"		"enigma"
+			"image"		"spellicons/enigma_demonic_conversion.png"
+			"in_game_display_interval"		"15"
+		}
+		"5540"
+		{
+			"type_name"		"#KillEaterEvent_Magnus_SkewersLeadingToKills"
+			"challenge_instance"		"relic_magnataur_kill_after_skewer"
+			"in_game_display_interval"		"75"
+		}
+		"5541"
+		{
+			"type_name"		"#KillEaterEvent_MeteorHammersLeadingToKills"
+			"challenge_instance"		"relic_meteor_hammer_leading_to_kills_as_hero"
+			"in_game_display_interval"		"5"
+		}
+		"5750"
+		{
+			"type_name"		"#KillEaterEvent_SandKing_Epicenter_Blink"
+			"challenge_instance"		"relic_sand_king_blink_epicenter"
+			"in_game_display_interval"		"50"
+		}
+		"5751"
+		{
+			"type_name"		"#KillEaterEvent_Lina_FullComboStack"
+			"challenge_instance"		"relic_lina_full_combo"
+			"in_game_display_interval"		"50"
+		}
+		"5752"
+		{
+			"type_name"		"#KillEaterEvent_Mirana_KillAfterLeap"
+			"challenge_instance"		"relic_mirana_kill_after_leap"
+			"in_game_display_interval"		"75"
+		}
+		"5753"
+		{
+			"type_name"		"#KillEaterEvent_Lycan_TowerDamageWithWolves"
+			"challenge_instance"		"relic_lycan_tower_damage_with_wolves"
+			"in_game_display_interval"		"50000"
+		}
+		"5754"
+		{
+			"type_name"		"#KillEaterEvent_Lycan_KillsDuringHowl"
+			"challenge_instance"		"relic_lycan_howl_kills"
+			"in_game_display_interval"		"75"
+		}
+		"5755"
+		{
+			"type_name"		"#KillEaterEvent_Lycan_HeroDamageWithWolves"
+			"challenge_instance"		"relic_lycan_hero_damage_with_wolves"
+			"in_game_display_interval"		"50000"
+		}
+		"5756"
+		{
+			"type_name"		"#KillEaterEvent_Lion_BlinkHexSpike"
+			"challenge_instance"		"relic_lion_blink_hex_spike"
+			"in_game_display_interval"		"50"
+		}
+		"5757"
+		{
+			"type_name"		"#KillEaterEvent_LoneDruidRootsWithMinions"
+			"challenge_instance"		"relic_roots_with_minions"
+			"in_game_display_interval"		"150"
+		}
+		"5758"
+		{
+			"type_name"		"#KillEaterEvent_Bloodseeker_Damage_During_Rupture"
+			"challenge_instance"		"relic_bloodseeker_damage_during_rupture"
+			"in_game_display_interval"		"75000"
+		}
+		"5759"
+		{
+			"type_name"		"#KillEaterEvent_Clinkz_Damage_With_Skeleton_Army"
+			"challenge_instance"		"relic_clinkz_hero_damage_with_skeleton_army"
+			"in_game_display_interval"		"75000"
+		}
+		"5760"
+		{
+			"type_name"		"#KillEaterEvent_DazzleFourManJuJu"
+			"challenge_instance"		"relic_dazzle_four_man_enemy_juju"
+			"in_game_display_interval"		"100"
+			"obsolete"		"1"
+		}
+		"5761"
+		{
+			"type_name"		"#KillEaterEvent_EarthSpirit_BoulderStunsLeadingToKills"
+			"challenge_instance"		"relic_earth_spirit_rolling_boulder_stuns_leading_to_kills"
+			"in_game_display_interval"		"100"
+		}
+		"5762"
+		{
+			"type_name"		"#KillEaterEvent_Huskar_DamageToInnerFired"
+			"challenge_instance"		"relic_huskar_damage_to_inner_fired_targets"
+			"in_game_display_interval"		"50000"
+		}
+		"5763"
+		{
+			"type_name"		"#KillEaterEvent_NightStalker_FearSilenceDuration"
+			"challenge_instance"		"relic_night_stalker_crippling_fear_silence_duration"
+			"in_game_display_interval"		"750"
+		}
+		"5764"
+		{
+			"type_name"		"#KillEaterEvent_NightStalker_VoidSlowDuration"
+			"challenge_instance"		"relic_night_stalker_void_slow"
+			"in_game_display_interval"		"750"
+		}
+		"5765"
+		{
+			"type_name"		"#KillEaterEvent_Rubick_StunsAfterTelekinesis"
+			"challenge_instance"		"relic_rubick_stuns_after_telekinesis"
+			"in_game_display_interval"		"250"
+		}
+		"5766"
+		{
+			"type_name"		"#KillEaterEvent_Tusk_DamageOnTagTeamed"
+			"challenge_instance"		"relic_tusk_damage_on_tag_teamed"
+			"in_game_display_interval"		"75000"
+		}
+		"5767"
+		{
+			"type_name"		"#KillEaterEvent_Chen_HolyPersuasionKills"
+			"challenge_instance"		"relic_chen_holy_persuasion_kill"
+			"in_game_display_interval"		"100"
+			"obsolete"		"1"
+		}
+		"5768"
+		{
+			"type_name"		"#KillEaterEvent_Troll_BattleTranceKills"
+			"challenge_instance"		"relic_troll_warlord_kills_during_battle_trance"
+			"in_game_display_interval"		"100"
+		}
+		"5769"
+		{
+			"type_name"		"#KillEaterEvent_Legion_HealsWithPressTheAttack"
+			"challenge_instance"		"relic_legion_press_the_attack_heal"
+			"required_hero"		"legion_commander"
+			"image"		"spellicons/legion_commander_press_the_attack.png"
+			"in_game_display_interval"		"75000"
+		}
+		"5770"
+		{
+			"type_name"		"#KillEaterEvent_Void_Spirit_AetherRemnantHits"
+			"challenge_instance"		"relic_void_spirit_aether_remnant_hits"
+			"required_hero"		"void_spirit"
+			"image"		"spellicons/void_spirit_aether_remnant.png"
+			"in_game_display_interval"		"250"
+		}
+		"5771"
+		{
+			"type_name"		"#KillEaterEvent_Void_Spirit_DissimilateDamage"
+			"challenge_instance"		"relic_void_spirit_dissimilate_damage"
+			"required_hero"		"void_spirit"
+			"image"		"spellicons/void_spirit_dissimilate.png"
+			"in_game_display_interval"		"50000"
+		}
+		"5772"
+		{
+			"type_name"		"#KillEaterEvent_Void_Spirit_TripleHeroPulse"
+			"challenge_instance"		"relic_void_spirit_triple_hero_pulse"
+			"required_hero"		"void_spirit"
+			"image"		"spellicons/void_spirit_resonant_pulse.png"
+			"in_game_display_interval"		"250"
+		}
+		"5773"
+		{
+			"type_name"		"#KillEaterEventType_DrowRanger_MultishotDamage"
+			"image"		"spellicons/drow_ranger_multishot.png"
+			"required_hero"		"drow_ranger"
+			"challenge_instance"		"relic_drow_ranger_damage_with_multishot"
+			"in_game_display_interval"		"60000"
+		}
+		"5774"
+		{
+			"type_name"		"#KillEaterEventType_LoneDruid_HealsFromSpiritLink"
+			"image"		"spellicons/lone_druid_spirit_link.png"
+			"required_hero"		"lone_druid"
+			"challenge_instance"		"relic_lone_druid_spirit_link_healing"
+			"in_game_display_interval"		"75000"
+		}
+		"5775"
+		{
+			"type_name"		"#KillEaterEvent_WispTetherSlows"
+			"image"		"spellicons/wisp_tether.png"
+			"challenge_instance"		"relic_wisp_tether_slow"
+			"required_hero"		"wisp"
+			"in_game_display_interval"		"250"
+		}
+		"5776"
+		{
+			"type_name"		"#KillEaterEvent_Treant_NaturesGraspDamage"
+			"image"		"spellicons/treant_natures_grasp.png"
+			"challenge_instance"		"relic_treant_deal_damage_with_natures_grasp"
+			"required_hero"		"treant"
+			"in_game_display_interval"		"50000"
+		}
+		"5777"
+		{
+			"type_name"		"#KillEaterEvent_Clinkz_KillsDuringDeathPact"
+			"image"		"spellicons/clinkz_death_pact.png"
+			"challenge_instance"		"relic_clinkz_kills_during_death_pact"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"75"
+		}
+		"5778"
+		{
+			"type_name"		"#KillEaterEvent_Clinkz_DeathPactHealthGained"
+			"image"		"spellicons/clinkz_death_pact.png"
+			"challenge_instance"		"relic_clinkz_death_pact_health_gained"
+			"required_hero"		"clinkz"
+			"in_game_display_interval"		"100000"
+			"obsolete"		"1"
+		}
+		"5779"
+		{
+			"type_name"		"#KillEaterEvent_Pudge_DismemberHealing"
+			"image"		"spellicons/pudge_dismember.png"
+			"challenge_instance"		"relic_pudge_heal_with_dismember"
+			"required_hero"		"pudge"
+			"in_game_display_interval"		"25000"
+		}
+		"5780"
+		{
+			"type_name"		"#KillEaterEvent_OD_ArcaneOrb"
+			"image"		"spellicons/obsidian_destroyer_arcane_orb.png"
+			"challenge_instance"		"relic_obsidian_destroyer_arcane_orb_damage"
+			"required_hero"		"obsidian_destroyer"
+			"in_game_display_interval"		"75000"
+		}
+		"5781"
+		{
+			"type_name"		"#KillEaterEvent_Brewmaster_CinderBrewDuration"
+			"image"		"spellicons/brewmaster_cinder_brew.png"
+			"challenge_instance"		"relic_brewmaster_cinder_brew_debuff_duration"
+			"required_hero"		"brewmaster"
+			"in_game_display_interval"		"1500"
+		}
+		"5782"
+		{
+			"type_name"		"#KillEaterEventType_Dazzle_DamageAndHealFromUltimate"
+			"image"		"spellicons/dazzle_bad_juju.png"
+			"challenge_instance"		"relic_dazzle_damage_and_heal_from_ultimate"
+			"required_hero"		"dazzle"
+			"in_game_display_interval"		"25000"
+			"obsolete"		"1"
+		}
+		"5783"
+		{
+			"type_name"		"#KillEaterEventType_Techies_ReactiveTazerMultiheroDisarms"
+			"image"		"spellicons/techies_reactive_tazer.png"
+			"challenge_instance"		"relic_techies_reactive_tazer_multihero_disarm"
+			"required_hero"		"techies"
+			"in_game_display_interval"		"75"
+		}
+		"5784"
+		{
+			"type_name"		"#KillEaterEventType_Techies_StickyBombsAttachedToHeroes"
+			"image"		"spellicons/techies_sticky_bomb.png"
+			"challenge_instance"		"relic_techies_sticky_bombs_attached"
+			"required_hero"		"techies"
+			"in_game_display_interval"		"250"
+		}
+		"5785"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_GunslingerHeroDamage"
+			"image"		"spellicons/muerta_gunslinger.png"
+			"challenge_instance"		"relic_muerta_gunslinger_damage"
+			"required_hero"		"muerta"
+			"in_game_display_interval"		"50000"
+		}
+		"5786"
+		{
+			"type_name"		"#KillEaterEventType_Muerta_DeadShotsLeadingToKills"
+			"image"		"spellicons/muerta_dead_shot.png"
+			"challenge_instance"		"relic_muerta_dead_shots_leading_to_kills"
+			"required_hero"		"muerta"
+			"in_game_display_interval"		"50"
+		}
+		"5787"
+		{
+			"type_name"		"#KillEaterEventType_Ringmaster_MesmerizedHeroesKilled"
+			"image"		"spellicons/ringmaster_wheel.png"
+			"challenge_instance"		"relic_ringmaster_mesmerized_heroes_killed"
+			"required_hero"		"ringmaster"
+			"in_game_display_interval"		"25"
+		}
+		"5792"
+		{
+			"type_name"		"#KillEaterEvent_Silencer_LastWordDamage"
+			"challenge_instance"		"relic_silencer_last_word_damage"
+			"image"		"spellicons/silencer_last_word.png"
+			"required_hero"		"silencer"
+			"in_game_display_interval"		"50000"
+		}
+		"5793"
+		{
+			"type_name"		"#KillEaterEvent_NoxiousPlagueDamage"
+			"challenge_instance"		"relic_venomancer_noxious_plague_damage"
+			"in_game_display_interval"		"75000"
+		}
+		"5794"
+		{
+			"type_name"		"#KillEaterEvent_Venomancer_NoxiousPlagueTwoHeroesSpread"
+			"challenge_instance"		"relic_venomancer_noxious_plague_two_heroes_spread"
+			"in_game_display_interval"		"10"
+		}
+		"5795"
+		{
+			"type_name"		"#KillEaterEvent_Chen_DivineFavorKills"
+			"challenge_instance"		"relic_chen_divine_favor_kill"
+			"in_game_display_interval"		"100"
+		}
+		"5796"
+		{
+			"type_name"		"#KillEaterEventType_Dazzle_HealDuringNothlProjection"
+			"image"		"spellicons/dazzle_nothl_projection.png"
+			"challenge_instance"		"relic_dazzle_heal_during_nothl_projection"
+			"required_hero"		"dazzle"
+			"in_game_display_interval"		"50000"
+		}
+		"5797"
+		{
+			"type_name"		"#KillEaterEvent_EnemyBuffsDispelled"
+			"challenge_instance"		"plus_largo_enemy_buffs_dispelled"
+			"in_game_display_interval"		"500"
+		}
+		"5798"
+		{
+			"type_name"		"#KillEaterEvent_Largo_KillAfterLick"
+			"challenge_instance"		"relic_largo_kill_after_lick"
+			"in_game_display_interval"		"50"
+		}
+		"5799"
+		{
+			"type_name"		"#KillEaterEvent_Largo_CroakOfGeniusDamage"
+			"challenge_instance"		"plus_largo_croak_of_genius_damage"
+			"in_game_display_interval"		"50000"
+		}
+		"5800"
+		{
+			"type_name"		"#KillEaterEvent_Tinker_DeployTurretsDamage"
+			"challenge_instance"		"plus_tinker_deploy_turrets_damage"
+			"in_game_display_interval"		"100000"
+			"image"		"spellicons/tinker_deploy_turrets.png"
+		}
+	}

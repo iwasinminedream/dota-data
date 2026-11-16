@@ -1,0 +1,417 @@
+"event_actions"
+{
+	// --------------------------------------------------------------------------
+	//  Week18 Quests
+	// --------------------------------------------------------------------------
+
+	"week18_play_matches"
+	{
+		"action_id"					"51810"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+
+		"rewards"
+		{
+			"4"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week18"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+			"16"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week18"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"30"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week18"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+		}
+	}
+
+
+	"week18_kills_and_assists"
+	{
+		"action_id"					"51820"
+		"max_grants"				"999999"
+		"important"                 "1"	
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+
+		"rewards"
+		{
+			"100"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Kills_Plus_Assists_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Kills_Plus_Assists_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"250"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Kills_Plus_Assists_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Kills_Plus_Assists_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"500"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Kills_Plus_Assists_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Kills_Plus_Assists_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+		}
+	}
+
+	"week18_kills"
+	{
+		"action_id"					"51821"
+		"max_grants"				"999999"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+
+		"rewards"
+		{
+			"1 + 1n"
+			{
+				"grants"
+				{
+					"grant_action" "week18_kills_and_assists"
+				}
+			}
+		}
+	}
+
+	"week18_assists"
+	{
+		"action_id"					"51822"
+		"max_grants"				"999999"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+
+		"rewards"
+		{
+			"1 + 1n"
+			{
+				"grants"
+				{
+					"grant_action" "week18_kills_and_assists"
+				}
+			}
+		}
+	}
+
+
+	"week18_win_as_ranged_hero"
+	{
+		"action_id"					"51830"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+		"require_in_game_win_to_increment"			"1"
+
+		"rewards"
+		{
+			"4"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"10"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"20"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Ranged_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+		}
+	}
+
+
+	"week18_winter2022_hit_greevils_for_candy"
+	{
+		"action_id"					"51840"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+		"require_in_game_win_to_increment"			"1"
+
+		"rewards"
+		{
+			"10"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"20"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"40"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"60"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+			"100"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_HitGreevilsForCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+
+			}
+		}
+	}
+
+
+	"week18_lifesteal"
+	{
+		"action_id"					"51850"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"double_increment_in_normal_games"			"1"
+		"allow_progress_in_event_game"				"1"
+		"linked_challenge"				"lifesteal_ranked"
+
+		"rewards"
+		{
+			"12000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Lifesteal_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Lifesteal_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+			"32000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Lifesteal_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Lifesteal_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+			"70000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Lifesteal_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Lifesteal_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+		}
+	}
+
+	"week18_total_disarm_duration"
+	{
+		"action_id"					"51860"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"linked_challenge"			"total_disarm_duration_weekly_quest"
+		"double_increment_in_normal_games"			"1"
+		"allow_progress_in_event_game"				"1"
+
+		"rewards"
+		{
+			"30"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Disarm_Duration_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Disarm_Duration_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+			"90"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Disarm_Duration_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Disarm_Duration_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+			"180"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Disarm_Duration_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Disarm_Duration_Description"
+				"grants"
+				{
+					"grant_action" "stars_week18"
+				}
+			}
+		}
+	}
+
+
+	// non-weekly-quest template actions
+
+	"stars_week18"
+	{
+		"action_id"					"51890"
+		"max_grants"				"999999"
+
+		"rewards"
+		{
+			"2"
+			{
+				"reward_name"			"#DOTA_Week18_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+			"8"
+			{
+				"reward_name"			"#DOTA_Week18_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+			"15"
+			{
+				"reward_name"			"#DOTA_Week18_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+		}
+	}
+
+
+	"stars_week18_claim"
+	{
+		"action_id"					"51891"
+		"max_grants"				"999999"
+
+		"claimable_if_prerequisites_satisfied"	"1"
+		"prerequisite_actions"
+		{
+			"stars_week18" "auto"
+		}
+
+		"rewards"
+		{
+			"1"
+			{
+				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}
+			"2"
+			{
+   				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}
+			"3"
+			{
+				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}		
+		}	
+	}
+}

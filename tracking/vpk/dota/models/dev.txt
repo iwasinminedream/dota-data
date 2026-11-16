@@ -1,0 +1,10 @@
+models/dev/color_chart.vmdl_c crc=2785128c size=4761
+models/dev/debut/debut_axis_helper.vmdl_c crc=e12122f4 size=11830
+models/dev/debut/debut_camera.vmdl_c crc=0a86ab5e size=57527
+models/dev/debut/debut_camera_rubick_arcana.vmdl_c crc=e98add3f size=49191
+models/dev/dev_test_sphere.vmdl_c crc=cfcb641c size=14712
+models/dev/hero_color_chart.vmdl_c crc=86dad89a size=4813
+models/dev/materialforerrormodel.vmat_c crc=a8bd3149 size=3496
+models/dev/new_model/materials/new_model.vmat_c crc=e6e249c4 size=4904
+models/dev/new_model/materials/new_model_color_psd_48230bb0.vtex_c crc=6c6ac565 size=2180
+models/dev/shadow_reciever.vmdl_c crc=151544a9 size=3506

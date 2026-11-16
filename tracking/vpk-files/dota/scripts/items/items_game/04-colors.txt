@@ -1,0 +1,313 @@
+	"colors"
+	{
+		"desc_level"
+		{
+			"color_name"		"ItemAttribLevel"
+			"hex_color"		"#756b5e"
+		}
+		"desc_attrib_neutral"
+		{
+			"color_name"		"ItemAttribNeutral"
+			"hex_color"		"#6c7075"
+		}
+		"desc_attrib_positive"
+		{
+			"color_name"		"ItemAttribPositive"
+			"hex_color"		"#99ccff"
+		}
+		"desc_attrib_negative"
+		{
+			"color_name"		"ItemAttribNegative"
+			"hex_color"		"#ff4040"
+		}
+		"desc_itemset_name"
+		{
+			"color_name"		"ItemSetName"
+			"hex_color"		"#9da1a9"
+		}
+		"desc_itemset_equipped"
+		{
+			"color_name"		"ItemSetItemEquipped"
+			"hex_color"		"#9da1a9"
+		}
+		"desc_itemset_missing"
+		{
+			"color_name"		"ItemSetItemMissing"
+			"hex_color"		"#6c7075"
+		}
+		"desc_bundle"
+		{
+			"color_name"		"ItemBundleItem"
+			"hex_color"		"#95af0c"
+		}
+		"desc_limited_use"
+		{
+			"color_name"		"ItemLimitedUse"
+			"hex_color"		"#00a000"
+		}
+		"desc_flags"
+		{
+			"color_name"		"ItemFlags"
+			"hex_color"		"#756b5e"
+		}
+		"desc_common"
+		{
+			"color_name"		"ItemRarityCommon"
+			"hex_color"		"#b0c3d9"
+		}
+		"desc_uncommon"
+		{
+			"color_name"		"ItemRarityUncommon"
+			"hex_color"		"#5e98d9"
+		}
+		"desc_rare"
+		{
+			"color_name"		"ItemRarityRare"
+			"hex_color"		"#4b69ff"
+		}
+		"desc_mythical"
+		{
+			"color_name"		"ItemRarityMythical"
+			"hex_color"		"#8847ff"
+		}
+		"desc_legendary"
+		{
+			"color_name"		"ItemRarityLegendary"
+			"hex_color"		"#d32ce6"
+		}
+		"desc_ancient"
+		{
+			"color_name"		"ItemRarityAncient"
+			"hex_color"		"#eb4b4b"
+		}
+		"desc_immortal"
+		{
+			"color_name"		"ItemRarityImmortal"
+			"hex_color"		"#e4ae39"
+		}
+		"desc_arcana"
+		{
+			"color_name"		"ItemRarityArcana"
+			"hex_color"		"#ade55c"
+		}
+		"desc_strange"
+		{
+			"color_name"		"Strange"
+			"hex_color"		"#CF6A32"
+		}
+		"desc_seasonal"
+		{
+			"color_name"		"Seasonal"
+			"hex_color"		"#FFF34F"
+		}
+		"unusual_red"
+		{
+			"color_name"		"UnusualRed"
+			"hex_color"		"#D03D33"
+		}
+		"unusual_rubiline"
+		{
+			"color_name"		"UnusualRubiline"
+			"hex_color"		"#D11FA1"
+		}
+		"unusual_gold"
+		{
+			"color_name"		"UnusualGold"
+			"hex_color"		"#CFAB31"
+		}
+		"unusual_blue"
+		{
+			"color_name"		"UnusualBlue"
+			"hex_color"		"#0097CE"
+		}
+		"unusual_purple"
+		{
+			"color_name"		"UnusualPurple"
+			"hex_color"		"#8232CF"
+		}
+		"unusual_orange"
+		{
+			"color_name"		"UnusualOrange"
+			"hex_color"		"#D07733"
+		}
+		"unusual_light_green"
+		{
+			"color_name"		"UnusualLightGreen"
+			"hex_color"		"#B7CF33"
+		}
+		"unusual_deep_blue"
+		{
+			"color_name"		"UnusualDeepBlue"
+			"hex_color"		"#3D68C4"
+		}
+		"unusual_sea_green"
+		{
+			"color_name"		"UnusualSeaGreen"
+			"hex_color"		"#4AB78D"
+		}
+		"unusual_verdant_green"
+		{
+			"color_name"		"UnusualVerdantGreen"
+			"hex_color"		"#51B350"
+		}
+		"unusual_deep_green"
+		{
+			"color_name"		"UnusualDeepGreen"
+			"hex_color"		"#37864D"
+		}
+		"unusual_bright_purple"
+		{
+			"color_name"		"UnusualBrightPurple"
+			"hex_color"		"#8232ED"
+		}
+		"unusual_bright_green"
+		{
+			"color_name"		"UnusualBrightGreen"
+			"hex_color"		"#A1FF59"
+		}
+		"unusual_placid_blue"
+		{
+			"color_name"		"UnusualPlacidBlue"
+			"hex_color"		"#94CAD0"
+		}
+		"unusual_summer_warmth"
+		{
+			"color_name"		"UnusualSummerWarmth"
+			"hex_color"		"#FFEEBC"
+		}
+		"unusual_defensive_red"
+		{
+			"color_name"		"UnusualDefensiveRed"
+			"hex_color"		"#FF4200"
+		}
+		"unusual_creators_light"
+		{
+			"color_name"		"UnusualCreatorsLight"
+			"hex_color"		"#DCF2FF"
+		}
+		"unusual_blossom_red"
+		{
+			"color_name"		"UnusualBlossomRed"
+			"hex_color"		"#D76092"
+		}
+		"unusual_crystalline_blue"
+		{
+			"color_name"		"UnusualCrystallineBlue"
+			"hex_color"		"#1A3D85"
+		}
+		"unusual_cursed_black"
+		{
+			"color_name"		"UnusualCursedBlack"
+			"hex_color"		"#060606"
+		}
+		"unusual_plague_grey"
+		{
+			"color_name"		"UnusualPlagueGrey"
+			"hex_color"		"#626E5B"
+		}
+		"unusual_international_2012"
+		{
+			"color_name"		"UnusualInternational2012"
+			"hex_color"		"#507DFE"
+		}
+		"unusual_international_2013"
+		{
+			"color_name"		"UnusualInternational2013"
+			"hex_color"		"#15A515"
+		}
+		"unusual_midas_gold"
+		{
+			"color_name"		"UnusualMidasGold"
+			"hex_color"		"#FFCA15"
+		}
+		"unusual_earth_green"
+		{
+			"color_name"		"UnusualEarthGreen"
+			"hex_color"		"#5AC355"
+		}
+		"unusual_ember_flame"
+		{
+			"color_name"		"UnusualEmberFlame"
+			"hex_color"		"#FFC604"
+		}
+		"unusual_diretide_orange"
+		{
+			"color_name"		"UnusualDiretideOrange"
+			"hex_color"		"#F79D00"
+		}
+		"unusual_dredge_earth"
+		{
+			"color_name"		"UnusualDredgeEarth"
+			"hex_color"		"#BDB76B"
+		}
+		"unusual_dungeon_doom"
+		{
+			"color_name"		"UnusualDungeonDoom"
+			"hex_color"		"#7B68EE"
+		}
+		"unusual_manns_mint"
+		{
+			"color_name"		"UnusualMannsMint"
+			"hex_color"		"#BCDDB3"
+		}
+		"unusual_business_pants"
+		{
+			"color_name"		"UnusualBusinessPants"
+			"hex_color"		"#F0E68C"
+		}
+		"unusual_unhallowed_ground"
+		{
+			"color_name"		"UnusualUnhallowedGround"
+			"hex_color"		"#808000"
+		}
+		"unusual_ship"
+		{
+			"color_name"		"UnusualShips"
+			"hex_color"		"#191970"
+		}
+		"unusual_miasma"
+		{
+			"color_name"		"UnusualMiasma"
+			"hex_color"		"#C0C0C0"
+		}
+		"unusual_pristine_platinum"
+		{
+			"color_name"		"UnusualPristinePlatinum"
+			"hex_color"		"#D5E3F5"
+		}
+		"unusual_vermilion_renewal"
+		{
+			"color_name"		"UnusualVermilionRenewal"
+			"hex_color"		"#CA0123"
+		}
+		"unusual_terrorblade_abysm"
+		{
+			"color_name"		"UnusualAbysm"
+			"hex_color"		"#FF3C28"
+		}
+		"unusual_lava_roshan"
+		{
+			"color_name"		"UnusualLavaRoshan"
+			"hex_color"		"#FF7832"
+		}
+		"unusual_ice_roshan"
+		{
+			"color_name"		"UnusualIceRoshan"
+			"hex_color"		"#32ABDC"
+		}
+		"unusual_plush_shagbark"
+		{
+			"color_name"		"UnusualPlushShagbark"
+			"hex_color"		"#FFC1DC"
+		}
+		"unusual_international_courier_2014"
+		{
+			"color_name"		"UnusualInternational2014"
+			"hex_color"		"#7F48C3"
+		}
+		"unusual_techies_swine"
+		{
+			"color_name"		"UnusualSwine"
+			"hex_color"		"#FFAF00"
+		}
+	}

@@ -1,0 +1,15 @@
+soundevents/soundevents_addon.vsndevts_c crc=6e85b750 size=917
+soundevents/soundevents_beat_pattern.vsndevts_c crc=bcbbe454 size=1401
+soundevents/soundevents_containers_test.vsndevts_c crc=0693fa2c size=1614
+soundevents/soundevents_core.vsndevts_c crc=0cca9b57 size=3230
+soundevents/soundevents_core_setters.vsndevts_c crc=39313805 size=1630
+soundevents/soundevents_diagnostics.vsndevts_c crc=64127385 size=9393
+soundevents/soundevents_examples.vsndevts_c crc=d4960cdf size=1405
+soundevents/soundevents_import_opvars_test.vsndevts_c crc=aac208c0 size=3145
+soundevents/soundevents_manifest.vrman_c crc=9a3b72ff size=480
+soundevents/soundevents_manifest_core.vrman_c crc=c27c0e56 size=890
+soundevents/soundevents_manifest_core_devonly.vrman_c crc=713d8f2e size=1061
+soundevents/soundevents_manifest_core_tools.vrman_c crc=cb1b65c1 size=1394
+soundevents/soundevents_manifest_tools.vrman_c crc=9c8cc28f size=918
+soundevents/soundevents_soundscapes_core.vsndevts_c crc=f6b86959 size=4726
+soundevents/testkv3_soundevents_diagnostics.vsndevts_c crc=b5e3264c size=4625

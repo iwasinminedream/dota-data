@@ -1,0 +1,4 @@
+particles/base_destruction_fx/gbm_lvl1_glow.vpcf_c crc=db752b9e size=2018
+particles/base_destruction_fx/gbm_lvl2_glow.vpcf_c crc=c4c0c421 size=1923
+particles/base_destruction_fx/gbm_lvl3_glow.vpcf_c crc=601a4ca2 size=1938
+particles/base_destruction_fx/gensmoke.vpcf_c crc=060cb08f size=2391

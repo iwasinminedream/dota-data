@@ -1,0 +1,382 @@
+"event_actions"
+{
+	// --------------------------------------------------------------------------
+	//  Week19 Quests
+	// --------------------------------------------------------------------------
+
+	"week19_play_matches"
+	{
+		"action_id"					"51910"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+
+		"rewards"
+		{
+			"4"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week19"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+			"16"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week19"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"30"
+			{
+
+				"reward_name"			"#DOTA_International2022_Quest_Plays_Name_Week19"
+				"reward_description"	"#DOTA_International2022_Quest_Plays_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+		}
+	}
+
+
+	"week19_get_first_blood"
+	{
+		"action_id"					"51920"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"linked_challenge"			"get_first_blood_weekly_quest"
+		"double_increment_in_normal_games"			"1"
+		"allow_progress_in_event_game"				"1"
+
+		"rewards"
+		{
+			"4"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_First_Blood_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_First_Blood_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"8"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_First_Blood_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_First_Blood_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"16"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_First_Blood_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_First_Blood_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+		}
+	}
+
+
+	"week19_win_as_melee_hero"
+	{
+		"action_id"					"51930"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+		"double_increment_in_normal_games"			"1"
+		"require_in_game_win_to_increment"			"1"
+
+		"rewards"
+		{
+			"4"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"10"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"20"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Win_With_Melee_Hero_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+		}
+	}
+
+
+	"week19_winter2022_steal_candy"
+	{
+		"action_id"					"51940"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"allow_progress_in_event_game"				"1"
+
+		"rewards"
+		{
+			"20"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_StealCandy2_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_StealCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"40"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_StealCandy2_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_StealCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"80"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_StealCandy2_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_StealCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"120"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_StealCandy2_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_StealCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"200"
+			{
+   				"reward_class"			"Diretide"
+				"reward_name"			"#DOTA_International2022_Quest_Diretide_StealCandy2_Name"
+				"reward_description"	"#DOTA_International2022_Quest_Diretide_StealCandy_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+		}
+	}
+
+
+	"week19_use_ability_charges"
+	{
+		"action_id"					"51950"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"linked_challenge"			"use_ability_charges_weekly_quest"
+		"double_increment_in_normal_games"			"1"
+		"allow_progress_in_event_game"				"1"
+
+		"rewards"
+		{
+			"40"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Use_Ability_Charges_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Use_Ability_Charges_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+			"100"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Use_Ability_Charges_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Use_Ability_Charges_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+			"200"
+			{
+				"reward_name"			"#DOTA_WeeklyQuest_Use_Ability_Charges_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Use_Ability_Charges_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+			}
+		}
+	}
+
+	"week19_deal_damage_from_cleave"
+	{
+		"action_id"					"51960"
+		"max_grants"				"999999"
+		"important"                 "1"
+		"double_increment_in_normal_games"			"1"
+		"allow_progress_in_event_game"				"1"
+		"linked_challenge"				"deal_damage_from_cleave_weekly_quest"
+
+		"rewards"
+		{
+			"6000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"32000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+			"150000"
+			{
+
+				"reward_name"			"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Hero_Cleave_Damage_Description"
+				"grants"
+				{
+					"grant_action" "stars_week19"
+				}
+
+			}
+		}
+	}
+
+
+	// non-weekly-quest template actions
+
+	"stars_week19"
+	{
+		"action_id"					"51990"
+		"max_grants"				"999999"
+
+		"rewards"
+		{
+			"2"
+			{
+				"reward_name"			"#DOTA_Week19_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+			"8"
+			{
+				"reward_name"			"#DOTA_Week19_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+			"15"
+			{
+				"reward_name"			"#DOTA_Week19_Quest_Stars_Name"
+				"reward_description"	"#DOTA_WeeklyQuest_Stars_Description"
+			}
+		}
+	}
+
+
+	"stars_week19_claim"
+	{
+		"action_id"					"51991"
+		"max_grants"				"999999"
+
+		"claimable_if_prerequisites_satisfied"	"1"
+		"prerequisite_actions"
+		{
+			"stars_week19" "auto"
+		}
+
+		"rewards"
+		{
+			"1"
+			{
+				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}
+			"2"
+			{
+   				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}
+			"3"
+			{
+				"reward_name"			"#DOTA_Stars_Claim_Name"
+   				"reward_class"			"Achievement"
+				"grants"
+				{
+					"grant_points_custom"
+					{
+						"points" "1000"
+					    "audit_action"  "103"
+					}
+				}
+			}		
+		}	
+	}
+}

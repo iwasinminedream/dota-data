@@ -1,0 +1,5 @@
+media/heroes/default.bik crc=db122722 size=1951756
+media/intro.bik crc=93bea87d size=18105564
+media/startupvids.txt crc=c5a3d61c size=28
+media/startupvidsnexon.txt crc=261a0b0a size=31
+media/startupvidspw.txt crc=5581e605 size=31

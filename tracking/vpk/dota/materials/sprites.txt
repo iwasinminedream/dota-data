@@ -1,0 +1,2 @@
+materials/sprites/glow_warm_00.vmat_c crc=15ea8c1d size=4256
+materials/sprites/glow_warm_00_color_psd_7ab7a85c.vtex_c crc=be99af44 size=176524

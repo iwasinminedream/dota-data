@@ -1,0 +1,10 @@
+materials/test/4b_cube_png_1aa4093b.vtex_c crc=86c879f6 size=1049704
+materials/test/dc_dash_cars.vmat_c crc=9da7b07d size=2842
+materials/test/dc_dash_cars_color_png_21ac78a8.vtex_c crc=4013a010 size=5594516
+materials/test/dc_dash_ground.vmat_c crc=9f929a88 size=2858
+materials/test/dc_dash_ground_color_png_aaa6e386.vtex_c crc=576420a6 size=5594548
+materials/test/dc_dash_sky.vmat_c crc=7e979a9e size=2682
+materials/test/dc_dash_sky_color_png_2f6c7962.vtex_c crc=ff7dcf1b size=2798268
+materials/test/gold12_cube_png_37f6d955.vtex_c crc=efa6b76a size=1049704
+materials/test/multiblend-1.vmat_c crc=1c9accbf size=7408
+materials/test/noise_tile_01_tga_34a9c89.vtex_c crc=a46a2e5f size=1400368

@@ -1,0 +1,6 @@
+materials/wood/boards_000_psd_51ff8fb0.vtex_c crc=d832919c size=700764
+materials/wood/wood_planks_color_psd_35758b38.vtex_c crc=50484e03 size=5594468
+materials/wood/wood_planks_energy_color_psd_7bfc8858.vtex_c crc=d0a0f3a8 size=2798268
+materials/wood/wood_planks_energy_refl_psd_fc9eeff6.vtex_c crc=c2d25ea1 size=2798316
+materials/wood/wood_planks_normal_psd_a049e77f.vtex_c crc=6c0f4972 size=5594500
+materials/wood/wood_planks_refl_psd_d1ebb89.vtex_c crc=fe0406b5 size=2798252

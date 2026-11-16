@@ -1,0 +1,2 @@
+particles/items_4fx/hefty_crossbow_fx_model.vpcf_c crc=386338bc size=3631
+particles/items_4fx/hefty_crossbow_undershadow.vpcf_c crc=393cf042 size=3277

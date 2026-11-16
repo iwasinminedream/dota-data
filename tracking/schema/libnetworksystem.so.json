@@ -1,0 +1,6 @@
+{"module":"libnetworksystem.so","project":"networksystem","schema_version":118,"classes":[
+{"name":"ChangeAccessorFieldPathIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]}
+],"enums":[
+
+]}

@@ -1,0 +1,4 @@
+materials/mastery_icons/mastery_icon_06_color_png_818d48e6.vtex_c crc=81451650 size=45564
+materials/mastery_icons/mastery_icon_06_metalnessmask_png_134d72b7.vtex_c crc=d7a6e193 size=89604
+materials/mastery_icons/mastery_icon_06_normal_png_2ea21988.vtex_c crc=47883b0b size=89396
+materials/mastery_icons/mastery_icon_06_specmask_png_9f9ee81e.vtex_c crc=c8612f5b size=90196

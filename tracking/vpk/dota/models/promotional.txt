@@ -1,0 +1,1 @@
+models/promotional/artifact_board.vmdl_c crc=af4b72a7 size=335262

@@ -1,0 +1,178 @@
+	"qualities"
+	{
+		"base"
+		{
+			"value"		"0"
+			"hexColor"		"#B2B2B2"
+			"sortPriority"		"2"
+			"displayName"		"#base"
+		}
+		"genuine"
+		{
+			"value"		"1"
+			"hexColor"		"#4D7455"
+			"sortPriority"		"20"
+			"displayName"		"#genuine"
+		}
+		"vintage"
+		{
+			"value"		"2"
+			"hexColor"		"#476291"
+			"sortPriority"		"30"
+			"displayName"		"#vintage"
+		}
+		"unusual"
+		{
+			"value"		"3"
+			"hexColor"		"#8650AC"
+			"sortPriority"		"45"
+			"displayName"		"#unusual"
+		}
+		"unique"
+		{
+			"value"		"4"
+			"hexColor"		"#D2D2D2"
+			"sortPriority"		"0"
+			"displayName"		"#unique"
+		}
+		"community"
+		{
+			"value"		"5"
+			"hexColor"		"#70B04A"
+			"sortPriority"		"25"
+			"displayName"		"#community"
+		}
+		"developer"
+		{
+			"value"		"6"
+			"hexColor"		"#A50F79"
+			"sortPriority"		"15"
+			"displayName"		"#developer"
+		}
+		"selfmade"
+		{
+			"value"		"7"
+			"hexColor"		"#70B04A"
+			"sortPriority"		"200"
+			"displayName"		"#selfmade"
+		}
+		"customized"
+		{
+			"value"		"8"
+			"hexColor"		"#00FF00"
+			"sortPriority"		"0"
+			"displayName"		"#customized"
+		}
+		"strange"
+		{
+			"value"		"9"
+			"hexColor"		"#CF6A32"
+			"sortPriority"		"10"
+			"displayName"		"#strange"
+		}
+		"completed"
+		{
+			"value"		"10"
+			"hexColor"		"#8650AC"
+			"sortPriority"		"0"
+			"displayName"		"#completed"
+		}
+		"haunted"
+		{
+			"value"		"11"
+			"hexColor"		"#8650AC"
+			"sortPriority"		"35"
+			"displayName"		"#haunted"
+		}
+		"tournament"
+		{
+			"value"		"12"
+			"hexColor"		"#8650AC"
+			"sortPriority"		"5"
+			"displayName"		"#tournament"
+		}
+		"favored"
+		{
+			"value"		"13"
+			"hexColor"		"#FFFF00"
+			"sortPriority"		"90"
+			"displayName"		"#favored"
+		}
+		"ascendant"
+		{
+			"value"		"14"
+			"hexColor"		"#EB4B4B"
+			"sortPriority"		"50"
+			"displayName"		"#ascendant"
+		}
+		"autographed"
+		{
+			"value"		"15"
+			"hexColor"		"#ADE55C"
+			"sortPriority"		"40"
+			"displayName"		"#autographed"
+		}
+		"legacy"
+		{
+			"value"		"16"
+			"hexColor"		"#FFFFFF"
+			"sortPriority"		"100"
+			"displayName"		"#legacy"
+		}
+		"exalted"
+		{
+			"value"		"17"
+			"hexColor"		"#CCCCCC"
+			"sortPriority"		"60"
+			"displayName"		"#exalted"
+		}
+		"frozen"
+		{
+			"value"		"18"
+			"hexColor"		"#4682B4"
+			"sortPriority"		"36"
+			"displayName"		"#frozen"
+		}
+		"corrupted"
+		{
+			"value"		"19"
+			"hexColor"		"#A52A2A"
+			"sortPriority"		"37"
+			"displayName"		"#corrupted"
+		}
+		"lucky"
+		{
+			"value"		"20"
+			"hexColor"		"#32CD32"
+			"sortPriority"		"38"
+			"displayName"		"#lucky"
+		}
+		"infused"
+		{
+			"value"		"21"
+			"hexColor"		"#8847ff"
+			"sortPriority"		"3"
+			"displayName"		"#infused"
+		}
+		"glitter"
+		{
+			"value"		"22"
+			"hexColor"		"#88ff88"
+			"sortPriority"		"91"
+			"displayName"		"#glitter"
+		}
+		"holo"
+		{
+			"value"		"23"
+			"hexColor"		"#8847ff"
+			"sortPriority"		"91"
+			"displayName"		"#holo"
+		}
+		"gold"
+		{
+			"value"		"24"
+			"hexColor"		"#ffd700"
+			"sortPriority"		"90"
+			"displayName"		"#gold"
+		}
+	}

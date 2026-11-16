@@ -1,0 +1,3 @@
+models/bad_ancient_ambient_blast.vmdl_c crc=78a75587 size=89874
+models/bad_ancient_destruction_pitrim.vmdl_c crc=70be7055 size=675505
+models/ghostanim.vmdl_c crc=2bd69373 size=63009

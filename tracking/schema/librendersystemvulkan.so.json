@@ -1,0 +1,66 @@
+{"module":"librendersystemvulkan.so","project":"rendersystemvulkan","schema_version":118,"classes":[
+{"name":"RenderInputLayoutField_t","size":76,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_pSemanticName","type":"char[32]","offset":0,"metadata":[]},
+ {"name":"m_nSemanticIndex","type":"int8","offset":32,"metadata":[]},
+ {"name":"m_nOffset","type":"int16","offset":40,"metadata":[]},
+ {"name":"m_nSlot","type":"int8","offset":42,"metadata":[]},
+ {"name":"m_nSlotType","type":"RenderSlotType_t","offset":43,"metadata":[]},
+ {"name":"m_szShaderSemantic","type":"char[32]","offset":44,"metadata":[]}]},
+{"name":"RsBlendStateDesc_t","size":32,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_srcBlendBits","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_destBlendBits","type":"uint32","offset":4,"metadata":[]},
+ {"name":"m_srcBlendAlphaBits","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_destBlendAlphaBits","type":"uint32","offset":12,"metadata":[]},
+ {"name":"m_renderTargetWriteMaskBits","type":"uint32","offset":16,"metadata":[]},
+ {"name":"m_blendOpBits","type":"bitfield:30","offset":0,"metadata":[]},
+ {"name":"m_bAlphaToCoverageEnable","type":"bitfield:1","offset":0,"metadata":[]},
+ {"name":"m_bIndependentBlendEnable","type":"bitfield:1","offset":0,"metadata":[]},
+ {"name":"m_blendOpAlphaBits","type":"uint32","offset":24,"metadata":[]},
+ {"name":"m_blendEnableBits","type":"uint8","offset":28,"metadata":[]},
+ {"name":"m_srgbWriteEnableBits","type":"uint8","offset":29,"metadata":[]}]},
+{"name":"RsDepthStencilStateDesc_t","size":8,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bDepthTestEnable","type":"bitfield:1","offset":0,"metadata":[]},
+ {"name":"m_bDepthWriteEnable","type":"bitfield:1","offset":0,"metadata":[]},
+ {"name":"m_depthFunc","type":"bitfield:4","offset":0,"metadata":[]},
+ {"name":"m_stencilState","type":"RsStencilStateDesc_t","offset":2,"metadata":[]}]},
+{"name":"RsRasterizerStateDesc_t","size":16,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_nFillMode","type":"RsFillMode_t","offset":0,"metadata":[]},
+ {"name":"m_nCullMode","type":"RsCullMode_t","offset":1,"metadata":[]},
+ {"name":"m_bDepthClipEnable","type":"bool","offset":2,"metadata":[]},
+ {"name":"m_bMultisampleEnable","type":"bool","offset":3,"metadata":[]},
+ {"name":"m_nDepthBias","type":"int32","offset":4,"metadata":[]},
+ {"name":"m_flDepthBiasClamp","type":"float32","offset":8,"metadata":[]},
+ {"name":"m_flSlopeScaledDepthBias","type":"float32","offset":12,"metadata":[]}]},
+{"name":"RsStencilStateDesc_t","size":6,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_frontStencilFunc","type":"bitfield:4","offset":0,"metadata":[]},
+ {"name":"m_backStencilFunc","type":"bitfield:4","offset":0,"metadata":[]},
+ {"name":"m_bStencilEnable","type":"bitfield:1","offset":0,"metadata":[]},
+ {"name":"m_frontStencilFailOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_frontStencilDepthFailOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_frontStencilPassOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_backStencilFailOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_backStencilDepthFailOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_backStencilPassOp","type":"bitfield:3","offset":0,"metadata":[]},
+ {"name":"m_nStencilReadMask","type":"uint8","offset":4,"metadata":[]},
+ {"name":"m_nStencilWriteMask","type":"uint8","offset":5,"metadata":[]}]},
+{"name":"SheetSequenceIntegerId_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"uint32","offset":0,"metadata":[]}]},
+{"name":"VsInputSignatureElement_t","size":196,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_pName","type":"char[64]","offset":0,"metadata":[]},
+ {"name":"m_pSemantic","type":"char[64]","offset":64,"metadata":[]},
+ {"name":"m_pD3DSemanticName","type":"char[64]","offset":128,"metadata":[]},
+ {"name":"m_nD3DSemanticIndex","type":"int32","offset":192,"metadata":[]}]},
+{"name":"VsInputSignature_t","size":48,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_elems","type":"CUtlVector< VsInputSignatureElement_t >","offset":0,"metadata":[]},
+ {"name":"m_depth_elems","type":"CUtlVector< VsInputSignatureElement_t >","offset":24,"metadata":[]}]}
+],"enums":[
+{"name":"InputLayoutVariation_t","size":1,"metadata":[],"enumerators":[{"name":"INPUT_LAYOUT_VARIATION_DEFAULT","value":0,"metadata":[]},{"name":"INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID","value":1,"metadata":[]},{"name":"INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID","value":2,"metadata":[]},{"name":"INPUT_LAYOUT_VARIATION_MAX","value":3,"metadata":[]}]},
+{"name":"RenderBufferFlags_t","size":4,"metadata":[],"enumerators":[{"name":"RENDER_BUFFER_USAGE_NONE","value":0,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_VERTEX_BUFFER","value":1,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_INDEX_BUFFER","value":2,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_SHADER_RESOURCE","value":4,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_UNORDERED_ACCESS","value":8,"metadata":[]},{"name":"RENDER_BUFFER_BYTEADDRESS_BUFFER","value":16,"metadata":[]},{"name":"RENDER_BUFFER_STRUCTURED_BUFFER","value":32,"metadata":[]},{"name":"RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS","value":256,"metadata":[]},{"name":"RENDER_BUFFER_ACCELERATION_STRUCTURE","value":512,"metadata":[]},{"name":"RENDER_BUFFER_SHADER_BINDING_TABLE","value":1024,"metadata":[]},{"name":"RENDER_BUFFER_POOL_ALLOCATED","value":2048,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_CONDITIONAL_RENDERING","value":4096,"metadata":[]},{"name":"RENDER_BUFFER_IMMOVABLE_ALLOCATION","value":8192,"metadata":[]},{"name":"RENDER_BUFFER_DYNAMIC_ZERO_COPY","value":16384,"metadata":[]}]},
+{"name":"RenderMultisampleType_t","size":1,"metadata":[],"enumerators":[{"name":"RENDER_MULTISAMPLE_INVALID","value":-1,"metadata":[]},{"name":"RENDER_MULTISAMPLE_NONE","value":0,"metadata":[]},{"name":"RENDER_MULTISAMPLE_2X","value":1,"metadata":[]},{"name":"RENDER_MULTISAMPLE_4X","value":2,"metadata":[]},{"name":"RENDER_MULTISAMPLE_6X","value":3,"metadata":[]},{"name":"RENDER_MULTISAMPLE_8X","value":4,"metadata":[]},{"name":"RENDER_MULTISAMPLE_16X","value":5,"metadata":[]},{"name":"RENDER_MULTISAMPLE_TYPE_COUNT","value":6,"metadata":[]}]},
+{"name":"RenderPrimitiveType_t","size":4,"metadata":[],"enumerators":[{"name":"RENDER_PRIM_POINTS","value":0,"metadata":[]},{"name":"RENDER_PRIM_LINES","value":1,"metadata":[]},{"name":"RENDER_PRIM_LINES_WITH_ADJACENCY","value":2,"metadata":[]},{"name":"RENDER_PRIM_LINE_STRIP","value":3,"metadata":[]},{"name":"RENDER_PRIM_LINE_STRIP_WITH_ADJACENCY","value":4,"metadata":[]},{"name":"RENDER_PRIM_TRIANGLES","value":5,"metadata":[]},{"name":"RENDER_PRIM_TRIANGLES_WITH_ADJACENCY","value":6,"metadata":[]},{"name":"RENDER_PRIM_TRIANGLE_STRIP","value":7,"metadata":[]},{"name":"RENDER_PRIM_TRIANGLE_STRIP_WITH_ADJACENCY","value":8,"metadata":[]},{"name":"RENDER_PRIM_INSTANCED_QUADS","value":9,"metadata":[]},{"name":"RENDER_PRIM_HETEROGENOUS","value":10,"metadata":[]},{"name":"RENDER_PRIM_COMPUTE_SHADER","value":11,"metadata":[]},{"name":"RENDER_PRIM_MESH_SHADER","value":12,"metadata":[]},{"name":"RENDER_PRIM_TYPE_COUNT","value":13,"metadata":[]}]},
+{"name":"RenderSlotType_t","size":1,"metadata":[],"enumerators":[{"name":"RENDER_SLOT_INVALID","value":-1,"metadata":[]},{"name":"RENDER_SLOT_PER_VERTEX","value":0,"metadata":[]},{"name":"RENDER_SLOT_PER_INSTANCE","value":1,"metadata":[]}]},
+{"name":"RsComparison_t","size":1,"metadata":[],"enumerators":[{"name":"RS_CMP_NEVER","value":0,"metadata":[]},{"name":"RS_CMP_LESS","value":1,"metadata":[]},{"name":"RS_CMP_EQUAL","value":2,"metadata":[]},{"name":"RS_CMP_LESS_EQUAL","value":3,"metadata":[]},{"name":"RS_CMP_GREATER","value":4,"metadata":[]},{"name":"RS_CMP_NOT_EQUAL","value":5,"metadata":[]},{"name":"RS_CMP_GREATER_EQUAL","value":6,"metadata":[]},{"name":"RS_CMP_ALWAYS","value":7,"metadata":[]},{"name":"RS_CMP_FUNC_MASK","value":7,"metadata":[]},{"name":"RS_CMP_CLOSER_FARTHER_FLAG","value":8,"metadata":[]},{"name":"RS_CMP_CLOSER","value":9,"metadata":[]},{"name":"RS_CMP_CLOSER_EQUAL","value":11,"metadata":[]},{"name":"RS_CMP_FARTHER","value":12,"metadata":[]},{"name":"RS_CMP_FARTHER_EQUAL","value":14,"metadata":[]}]},
+{"name":"RsCullMode_t","size":1,"metadata":[],"enumerators":[{"name":"RS_CULL_NONE","value":0,"metadata":[]},{"name":"RS_CULL_BACK","value":1,"metadata":[]},{"name":"RS_CULL_FRONT","value":2,"metadata":[]}]},
+{"name":"RsFillMode_t","size":1,"metadata":[],"enumerators":[{"name":"RS_FILL_SOLID","value":0,"metadata":[]},{"name":"RS_FILL_WIREFRAME","value":1,"metadata":[]}]},
+{"name":"UpscalerType_t","size":4,"metadata":[],"enumerators":[{"name":"UPSCALER_NONE","value":0,"metadata":[]},{"name":"UPSCALER_AMD_FSR2","value":1,"metadata":[]},{"name":"UPSCALER_AMD_FSR3","value":2,"metadata":[]},{"name":"UPSCALER_NVIDIA_DLSS","value":3,"metadata":[]},{"name":"UPSCALER_INTEL_XESS","value":4,"metadata":[]},{"name":"UPSCALER_COUNT","value":5,"metadata":[]}]}
+]}

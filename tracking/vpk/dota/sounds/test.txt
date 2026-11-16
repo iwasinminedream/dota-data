@@ -1,0 +1,2 @@
+sounds/test/beep.vsnd_c crc=b8e3b4d9 size=2811
+sounds/test/null.vsnd_c crc=4351b6ed size=1527

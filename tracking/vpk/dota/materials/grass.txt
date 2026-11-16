@@ -1,0 +1,14 @@
+materials/grass/dire_grassquad0.vmat_c crc=43d87dda size=5024
+materials/grass/dire_grassquad1.vmat_c crc=8ec9ed0b size=5024
+materials/grass/dire_grassquad2.vmat_c crc=cbe8fbe5 size=5024
+materials/grass/dire_grassquad3.vmat_c crc=17ab7a0a size=5024
+materials/grass/grassquad0.vmat_c crc=ba17d56c size=5024
+materials/grass/grassquad0_color_tga_4ed72d66.vtex_c crc=69a247e5 size=89444
+materials/grass/grassquad1.vmat_c crc=6a5697f9 size=2851
+materials/grass/grassquad1_color_tga_178e6c36.vtex_c crc=479b0e8d size=89444
+materials/grass/grassquad1_trans_tga_cb0b9cfa.vtex_c crc=e57d5922 size=45660
+materials/grass/grassquad2.vmat_c crc=3e124131 size=5024
+materials/grass/grassquad2_color_tga_163bcc78.vtex_c crc=819f3858 size=89444
+materials/grass/grassquad3.vmat_c crc=63052905 size=5024
+materials/grass/grassquad3_color_tga_7fa0bb74.vtex_c crc=55bde040 size=89444
+materials/grass/grasstile.vmat_c crc=10e657c6 size=2872
