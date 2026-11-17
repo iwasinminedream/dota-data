@@ -1,0 +1,77 @@
+{
+  "version": "6976",
+  "date": "Nov 16 2026",
+  "time": "16:28:07",
+  "changes": {
+    "Lua API": {
+      "added": [],
+      "removed": [
+        {
+          "type": "class",
+          "name": "CScriptHTTPRequest"
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "Send",
+          "signature": "Send(callback: function)",
+          "returns": "bool",
+          "description": "Send a HTTP request.",
+          "argDescriptions": "",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "SetHTTPRequestAbsoluteTimeoutMS",
+          "signature": "SetHTTPRequestAbsoluteTimeoutMS(milliseconds: uint)",
+          "returns": "bool",
+          "description": "Set the total timeout on the request.",
+          "argDescriptions": "",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "SetHTTPRequestGetOrPostParameter",
+          "signature": "SetHTTPRequestGetOrPostParameter(name: string, value: string)",
+          "returns": "bool",
+          "description": "Set a POST or GET parameter on the request.",
+          "argDescriptions": "",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "SetHTTPRequestHeaderValue",
+          "signature": "SetHTTPRequestHeaderValue(name: string, value: string)",
+          "returns": "bool",
+          "description": "Set a header value on the request.",
+          "argDescriptions": "",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "SetHTTPRequestNetworkActivityTimeout",
+          "signature": "SetHTTPRequestNetworkActivityTimeout(seconds: uint)",
+          "returns": "bool",
+          "description": "Set the network timeout on the request - this timer is reset when any data is received.",
+          "argDescriptions": "",
+          "abstract": false
+        },
+        {
+          "type": "method",
+          "class": "CScriptHTTPRequest",
+          "name": "SetHTTPRequestRawPostBody",
+          "signature": "SetHTTPRequestRawPostBody(contentType: string, body: string)",
+          "returns": "bool",
+          "description": "Set the literal body of a post - invalid after setting a post parameter.",
+          "argDescriptions": "",
+          "abstract": false
+        }
+      ],
+      "changed": []
+    }
+  }
+}
