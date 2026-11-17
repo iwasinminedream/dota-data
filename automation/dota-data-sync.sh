@@ -49,7 +49,7 @@ CHECK=0
 CONTROL=${DOTA_DATA_CONTROL_DUMP:-1} # 0: no control dump
 
 say() { echo "dota-data-sync: $*"; }
-# A Telegram message about a problem (telegram-notify.py; nothing happens until the bot is set up).
+# A Telegram message about a problem: to DOTA_DATA_TG_ADMIN_CHATS only (telegram-notify.py text).
 notify() { python3 "$HERE/telegram-notify.py" text "dota-data: $*" >/dev/null 2>&1 || true; }
 
 exec 9>"$LOCK"

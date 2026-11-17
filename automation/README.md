@@ -102,7 +102,7 @@ the SchemaSystem of every committed version.
 
 `telegram-notify.py` sends every new report (its «Главное», a link to it on GitHub, the report and
 `-functions.md` as files) and every failure (dump, report, tracking step, claude login) once. Set in
-the env file: `DOTA_DATA_TG_TOKEN` (from @BotFather) and `DOTA_DATA_TG_CHATS` (comma-separated chat
+the env file: `DOTA_DATA_TG_TOKEN` (from @BotFather) and `DOTA_DATA_TG_ADMIN_CHATS` (reports and failures) and `DOTA_DATA_TG_CHATS` (reports only; comma-separated chat
 ids; `telegram-notify.py chats` lists who has written to the bot, `telegram-notify.py test` sends a
 test message). Until then reports wait in `$DOTA_DATA_STATE/telegram-queue` and go out with the
 next run; failure alerts are only logged.

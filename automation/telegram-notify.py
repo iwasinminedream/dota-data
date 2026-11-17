@@ -9,8 +9,9 @@ link to the full report on GitHub and the report file itself) and failures of th
     telegram-notify.py test                a test message to every chat
 
 Environment (from the dumper env file): DOTA_DATA_TG_TOKEN — the bot token from @BotFather;
-DOTA_DATA_TG_CHATS — comma-separated chat ids (a user, a group or a channel the bot is in, e.g.
--1001234567890); DOTA_DATA_REPORT_URL — where reports are viewed (default: the reports/ folder on
+DOTA_DATA_TG_CHATS — comma-separated chat ids that get the reports (a user, a group or a channel the
+bot is in, e.g. -1001234567890); DOTA_DATA_TG_ADMIN_CHATS — the chats that also get failures and
+other technical messages (`text`); they get the reports too; DOTA_DATA_REPORT_URL — where reports are viewed (default: the reports/ folder on
 GitHub). Without a token or a chat nothing is sent and the exit code is 4, so the sync can keep the
 report queued until the bot is set up. Exit code 1: Telegram refused or could not be reached.
 Only the standard library is used.
@@ -25,7 +26,12 @@ import urllib.request
 import uuid
 
 TOKEN = os.environ.get('DOTA_DATA_TG_TOKEN', '').strip()
-CHATS = [c.strip() for c in os.environ.get('DOTA_DATA_TG_CHATS', '').split(',') if c.strip()]
+def chat_list(name):
+    return [c.strip() for c in os.environ.get(name, '').split(',') if c.strip()]
+
+
+ADMIN_CHATS = chat_list('DOTA_DATA_TG_ADMIN_CHATS')
+CHATS = list(dict.fromkeys(ADMIN_CHATS + chat_list('DOTA_DATA_TG_CHATS')))  # reports: everyone
 REPORT_URL = os.environ.get('DOTA_DATA_REPORT_URL',
                             'https://github.com/iwasinminedream/dota-data/blob/master/reports/')
 LIMIT = 4096  # Telegram's message length limit (after entity parsing)
@@ -116,12 +122,13 @@ def cut(html_text, limit):
     return keep + '\n…'
 
 
-def send_text(text_html, disable_preview=True):
-    if not TOKEN or not CHATS:
-        print('telegram: DOTA_DATA_TG_TOKEN / DOTA_DATA_TG_CHATS are not set — nothing sent', file=sys.stderr)
+def send_text(text_html, disable_preview=True, chats=None):
+    chats = CHATS if chats is None else chats
+    if not TOKEN or not chats:
+        print('telegram: DOTA_DATA_TG_TOKEN / chats are not set — nothing sent', file=sys.stderr)
         return NOT_CONFIGURED
     delivered = 0
-    for chat in CHATS:
+    for chat in chats:
         res = api('sendMessage', {'chat_id': chat, 'text': text_html, 'parse_mode': 'HTML',
                                   'link_preview_options': {'is_disabled': disable_preview}})
         if not res.get('ok'):
@@ -202,7 +209,8 @@ def main(argv):
         functions = argv[argv.index('--functions') + 1] if '--functions' in argv else None
         return cmd_report(argv[1], functions)
     if cmd == 'text' and len(argv) >= 2:
-        return send_text(html.escape(' '.join(argv[1:]), quote=False))
+        # failures and technical messages: admin chats only, never the report subscribers
+        return send_text(html.escape(' '.join(argv[1:]), quote=False), chats=ADMIN_CHATS)
     if cmd == 'chats':
         return cmd_chats()
     if cmd == 'test':
