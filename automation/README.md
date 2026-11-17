@@ -104,7 +104,7 @@ the SchemaSystem of every committed version.
 `-functions.md` as files) and every failure (dump, report, tracking step, claude login) once. Set in
 the env file: `DOTA_DATA_TG_TOKEN` (from @BotFather) and `DOTA_DATA_TG_ADMIN_CHATS` (reports and failures) and `DOTA_DATA_TG_CHATS` (reports only; comma-separated chat
 ids; `telegram-notify.py chats` lists who has written to the bot, `telegram-notify.py test` sends a
-test message). Until then reports wait in `$DOTA_DATA_STATE/telegram-queue` and go out with the
+test message). Subscriptions: `dota-data-telegram.service` runs `telegram-notify.py poll` — `/start` subscribes a chat to the reports (`$DOTA_DATA_STATE/telegram-subscribers.json`), `/stop` unsubscribes, `/last` sends the newest report; a group or channel the bot is added to is subscribed. Subscribers get reports only; failures go to `DOTA_DATA_TG_ADMIN_CHATS`, which also hear about new subscribers. Until then reports wait in `$DOTA_DATA_STATE/telegram-queue` and go out with the
 next run; failure alerts are only logged.
 
 `dota-data-sync.sh --check` dumps the installed build once more and compares it with the committed
@@ -130,6 +130,7 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `so-query.py` | the read-only queries the model may run on the snapshots |
 | `systemd/dota-data-sync.service` | runs `dota-data-sync.sh` (nice, idle IO, CPU 400 %, memory 12 G) |
 | `systemd/dota-data-sync.path` | starts it when `game/dota/steam.inf` changes (panel «Обновить доту» or a manual steamcmd) |
+| `systemd/dota-data-telegram.service` | the Telegram bot: /start, /stop, /last |
 | `systemd/dota-data-sync.timer` | hourly fallback: snapshots the installed build, retries a failed push |
 
 On this server Dota updates itself: `/root/dota-custom/dota-auto-update.sh` (`dota-auto-update.timer`,

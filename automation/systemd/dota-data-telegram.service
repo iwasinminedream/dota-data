@@ -1,0 +1,16 @@
+[Unit]
+Description=dota-data: Telegram bot (/start subscribes a chat to the update reports)
+Documentation=file:///root/dota-data/automation/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# The env file is a shell script (export lines, command substitution), not an EnvironmentFile.
+ExecStart=/bin/bash -c 'set -a; source /root/dota-data-runtime/dumper.env; set +a; exec python3 /root/dota-data/automation/telegram-notify.py poll'
+Environment=HOME=/root
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
