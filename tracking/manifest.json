@@ -1,13 +1,13 @@
 {
  "build": {
-  "ClientVersion": "6976",
-  "SourceRevision": "11246070",
-  "VersionDate": "Nov 16 2026"
+  "ClientVersion": "6978",
+  "SourceRevision": "11253575",
+  "VersionDate": "Nov 18 2026"
  },
  "failed": {},
  "files": {
   "core": 18,
-  "dota": 3855
+  "dota": 3853
  },
  "game": {
   "files": 4
@@ -16,12 +16,12 @@
   "protos": 88
  },
  "schema": {
-  "classes": 17940,
-  "enums": 1472,
+  "classes": 18309,
+  "enums": 1477,
   "modules": 18
  },
  "vpk": {
-  "core": 1428,
-  "dota": 388117
+  "core": 1444,
+  "dota": 388761
  }
 }

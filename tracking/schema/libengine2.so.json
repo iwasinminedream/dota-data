@@ -5,7 +5,7 @@
  {"name":"m_Names","type":"CUtlOrderedMap< CUtlStringTokenNoRegistration, CUtlString >","offset":40,"metadata":[]}]},
 {"name":"CEntityComponent","size":8,"align":255,"flags":[107,0],"bases":[],"metadata":[],"fields":[]},
 {"name":"CEntityComponentHelper","size":40,"align":255,"flags":[43,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_flags","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_flags","type":"?","offset":8,"metadata":[]},
  {"name":"m_pInfo","type":"EntComponentInfo_t*","offset":16,"metadata":[]},
  {"name":"m_nPriority","type":"int32","offset":24,"metadata":[]},
  {"name":"m_pNext","type":"CEntityComponentHelper*","offset":32,"metadata":[]}]},
@@ -14,9 +14,9 @@
  {"name":"m_nameStringTableIndex","type":"int32","offset":20,"metadata":[{"name":"MNotSaved"}]},
  {"name":"m_name","type":"CUtlSymbolLarge","offset":24,"metadata":[]},
  {"name":"m_designerName","type":"CUtlSymbolLarge","offset":32,"metadata":[{"name":"MNotSaved"}]},
- {"name":"m_flags","type":"uint32","offset":48,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_flags","type":"?","offset":48,"metadata":[{"name":"MNotSaved"}]},
  {"name":"m_worldGroupId","type":"WorldGroupId_t","offset":56,"metadata":[{"name":"MNotSaved"}]},
- {"name":"m_fDataObjectTypes","type":"uint32","offset":60,"metadata":[{"name":"MNotSaved"}]},
+ {"name":"m_fDataObjectTypes","type":"?","offset":60,"metadata":[{"name":"MNotSaved"}]},
  {"name":"m_PathIndex","type":"ChangeAccessorFieldPathIndex_t","offset":64,"metadata":[{"name":"MNotSaved"}]},
  {"name":"m_pAttributes","type":"CEntityAttributeTable*","offset":72,"metadata":[]},
  {"name":"m_pPrev","type":"CEntityIdentity*","offset":80,"metadata":[{"name":"MNotSaved"}]},
@@ -38,14 +38,14 @@
  {"name":"m_nPlatWindowHeight","type":"int32","offset":28,"metadata":[]},
  {"name":"m_nRenderWidth","type":"int32","offset":32,"metadata":[]},
  {"name":"m_nRenderHeight","type":"int32","offset":36,"metadata":[]}]},
-{"name":"EntComponentInfo_t","size":96,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
+{"name":"EntComponentInfo_t","size":128,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_pName","type":"char*","offset":0,"metadata":[]},
  {"name":"m_pCPPClassname","type":"char*","offset":8,"metadata":[]},
  {"name":"m_pNetworkDataReferencedDescription","type":"char*","offset":16,"metadata":[]},
  {"name":"m_pNetworkDataReferencedPtrPropDescription","type":"char*","offset":24,"metadata":[]},
  {"name":"m_nRuntimeIndex","type":"int32","offset":32,"metadata":[]},
- {"name":"m_nFlags","type":"uint32","offset":36,"metadata":[]},
- {"name":"m_pBaseClassComponentHelper","type":"CEntityComponentHelper*","offset":88,"metadata":[]}]},
+ {"name":"m_nFlags","type":"?","offset":36,"metadata":[]},
+ {"name":"m_pBaseClassComponentHelper","type":"CEntityComponentHelper*","offset":120,"metadata":[]}]},
 {"name":"EntityIOQueuePrioritizedEvent_t","size":160,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_flFireTime","type":"GameTime_t","offset":4,"metadata":[]},
  {"name":"m_targetType","type":"EntityIOTargetType_t","offset":8,"metadata":[]},
@@ -67,7 +67,8 @@
 {"name":"EventBugBugComplete_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_pPayload","type":"EventBugBug_t*","offset":0,"metadata":[]}]},
 {"name":"EventBugBug_t","size":32,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[]},
-{"name":"EventClientAdvanceNonRenderedFrame_t","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"EventClientAdvanceNonRenderedFrame_t","size":1,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bRenderOnly","type":"bool","offset":0,"metadata":[]}]},
 {"name":"EventClientAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventAdvanceTick_t","offset":0}],"metadata":[],"fields":[]},
 {"name":"EventClientFrameSimulate_t","size":56,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
@@ -84,8 +85,9 @@
 {"name":"EventClientPollInput_t","size":48,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
  {"name":"m_flRealTime","type":"float32","offset":40,"metadata":[]}]},
-{"name":"EventClientPollNetworking_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_nTickCount","type":"int32","offset":0,"metadata":[]}]},
+{"name":"EventClientPollNetworking_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_nTickCount","type":"int32","offset":0,"metadata":[]},
+ {"name":"m_nTotalTicks","type":"int32","offset":4,"metadata":[]}]},
 {"name":"EventClientPostAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventPostAdvanceTick_t","offset":0}],"metadata":[],"fields":[]},
 {"name":"EventClientPostOutput_t","size":64,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
@@ -120,6 +122,7 @@
 {"name":"EventFrameBoundary_t","size":4,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_flFrameTime","type":"float32","offset":0,"metadata":[]}]},
 {"name":"EventModInitialized_t","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"EventPlayerConsoleCommand_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[]},
 {"name":"EventPostAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventSimulate_t","offset":0}],"metadata":[],"fields":[
  {"name":"m_nCurrentTick","type":"int32","offset":44,"metadata":[]},
  {"name":"m_nCurrentTickThisFrame","type":"int32","offset":48,"metadata":[]},

@@ -24919,12 +24919,12 @@ particles/econ/items/lich/lich_permafrost/lich_permafrost_head_ambient.vpcf_c cr
 particles/econ/items/lich/lich_permafrost/lich_permafrost_head_eye.vpcf_c crc=f46f10dc size=3306
 particles/econ/items/lich/lich_permafrost/lich_permafrost_head_eye_smoke.vpcf_c crc=b9cdf654 size=3748
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze.vpcf_c crc=88b14bff size=2747
-particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_cable.vpcf_c crc=e719ba6b size=4116
+particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_cable.vpcf_c crc=2727a223 size=5320
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_caster_decal.vpcf_c crc=09fdd880 size=2014
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_caster_mist.vpcf_c crc=01ba6e9f size=2284
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_chain_02.vpcf_c crc=a11e4f19 size=3574
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_chain_03.vpcf_c crc=d93837fe size=3700
-particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_chain_flash_start_child.vpcf_c crc=f367b412 size=2515
+particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_chain_flash_start_child.vpcf_c crc=cc808904 size=2942
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_chain_target_bind.vpcf_c crc=12551008 size=2637
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_cloud.vpcf_c crc=457f7d1c size=2302
 particles/econ/items/lich/lich_ti10_immortal_head/lich_ti10_immortal_gaze_eyes.vpcf_c crc=7b1eb585 size=1684
@@ -26846,7 +26846,7 @@ particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff_fire.vpcf_c
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff_fire_fleks.vpcf_c crc=dae7dd70 size=2231
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff_fire_glow.vpcf_c crc=42f5e310 size=2264
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_howl_buff_fire_noise.vpcf_c crc=a23ab637 size=2605
-particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_overhead.vpcf_c crc=48c41188 size=1605
+particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_overhead.vpcf_c crc=ae7c5bf7 size=1797
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_overhead_buff.vpcf_c crc=2efa4473 size=2702
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_overhead_model.vpcf_c crc=7cf025c5 size=2222
 particles/econ/items/lycan/ti9_immortal/lycan_ti9_immortal_overhead_model_background.vpcf_c crc=0091e8ed size=2532

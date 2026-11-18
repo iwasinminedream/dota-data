@@ -34,7 +34,7 @@ models/props_generic/gate_wooden_destruction_03.vmdl_c crc=ab16922e size=130319
 models/props_generic/gate_wooden_locked_01.vmdl_c crc=ab86d088 size=352240
 models/props_generic/gate_wooden_locked_02.vmdl_c crc=f2c4175b size=145722
 models/props_generic/gate_wooden_locked_03.vmdl_c crc=d9269641 size=126409
-models/props_generic/gate_wooden_open_01_alt.vmdl_c crc=4511dde4 size=78199
+models/props_generic/gate_wooden_open_01_alt.vmdl_c crc=d2f0f34c size=78215
 models/props_generic/ground_generic_treadmil.vmdl_c crc=9e42d063 size=3590
 models/props_generic/morokai_treasure.vmdl_c crc=dded9e0e size=117239
 models/props_generic/primitve_plane.vmdl_c crc=409e7dd9 size=3801

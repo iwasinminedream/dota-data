@@ -286,5 +286,10 @@
 		"ShowInsufficientPageFileMessageBox" "1"
 		"ShowLowAvailableVirtualMemoryMessageBox" "1"
 	}
+
+	Panorama
+	{
+		"PreprocessResources"	  "0"
+	}
 }
 

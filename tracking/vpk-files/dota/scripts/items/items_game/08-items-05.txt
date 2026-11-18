@@ -39678,10 +39678,6 @@
 					"frequency"		"1"
 				}
 			}
-			"static_attributes"
-			{
-				"workshop accepted"		"0"
-			}
 		}
 		"11709"
 		{

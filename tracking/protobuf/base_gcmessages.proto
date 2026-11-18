@@ -189,6 +189,10 @@ message CMsgSortItems {
 	optional uint32 sort_type = 1;
 }
 
+message CMsgDeleteItem {
+	optional uint64 item_id = 1 [(20) = "itemid_t"];
+}
+
 message CMsgItemAcknowledged {
 	optional uint32 account_id = 1;
 	optional uint32 inventory = 2;

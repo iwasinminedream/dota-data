@@ -1008,8 +1008,8 @@ particles/events/crownfall/survivors/weakness_b.vpcf_c crc=2971a3f5 size=2370
 particles/events/crownfall/survivors/weakness_beacon.vpcf_c crc=5474ff3c size=3502
 particles/events/crownfall/survivors/weakness_c.vpcf_c crc=47976799 size=2001
 particles/events/crownfall/survivors/weakness_reduction.vpcf_c crc=94e5153e size=2345
-particles/events/dark_carnival/automatons/automaton_core_lighting.vpcf_c crc=570a121c size=4472
-particles/events/dark_carnival/automatons/automaton_core_lighting_front.vpcf_c crc=c17288d3 size=4272
+particles/events/dark_carnival/automatons/automaton_core_lighting.vpcf_c crc=2d68ab07 size=4472
+particles/events/dark_carnival/automatons/automaton_core_lighting_front.vpcf_c crc=d5bf6c97 size=4268
 particles/events/dark_carnival/automatons/automaton_electric_bolts.vpcf_c crc=de5975c0 size=2912
 particles/events/dark_carnival/automatons/automaton_electric_bolts_blue.vpcf_c crc=852d1e11 size=2836
 particles/events/dark_carnival/automatons/automaton_electric_bolts_color_inherit.vpcf_c crc=a1aaf3c7 size=2879

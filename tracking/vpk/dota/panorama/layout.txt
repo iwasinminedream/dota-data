@@ -1,4 +1,4 @@
-panorama/layout/ability_details.vxml_c crc=f7728b13 size=6554
+panorama/layout/ability_details.vxml_c crc=50f10f12 size=6626
 panorama/layout/ability_details_v2.vxml_c crc=fe6903f2 size=7006
 panorama/layout/achievement.vxml_c crc=02a828c5 size=2107
 panorama/layout/achievement_toast.vxml_c crc=2ae36bdc size=1680
@@ -24,6 +24,7 @@ panorama/layout/banners/front_page_738.vxml_c crc=2b0ad020 size=2618
 panorama/layout/banners/front_page_738_short.vxml_c crc=e35c3e4e size=2402
 panorama/layout/banners/front_page_739.vxml_c crc=11721355 size=2399
 panorama/layout/banners/front_page_741.vxml_c crc=fef42765 size=2437
+panorama/layout/banners/front_page_742.vxml_c crc=84b4a838 size=2400
 panorama/layout/banners/front_page_armory_update.vxml_c crc=45b088d8 size=2531
 panorama/layout/banners/front_page_artifact_release.vxml_c crc=1c575731 size=1952
 panorama/layout/banners/front_page_battlepass_aghanim2022_collectors_cache.vxml_c crc=b0a40765 size=2645
@@ -61,7 +62,7 @@ panorama/layout/banners/front_page_cosmic_treasure_2025.vxml_c crc=4804ee03 size
 panorama/layout/banners/front_page_cosmic_treasure_2025_short.vxml_c crc=4f3e516e size=2849
 panorama/layout/banners/front_page_crownfall_archive_lg.vxml_c crc=f08b8b1d size=3059
 panorama/layout/banners/front_page_crownfall_archive_sm.vxml_c crc=de5b583e size=2489
-panorama/layout/banners/front_page_dark_carnival.vxml_c crc=d8eb203a size=4038
+panorama/layout/banners/front_page_dark_carnival.vxml_c crc=e6cf940d size=4029
 panorama/layout/banners/front_page_debut_antimage_persona.vxml_c crc=aaad3238 size=2285
 panorama/layout/banners/front_page_debut_arc_warden.vxml_c crc=5598f62f size=2020
 panorama/layout/banners/front_page_debut_arcana_ogre_magi.vxml_c crc=6190fe3b size=2126
@@ -125,7 +126,7 @@ panorama/layout/banners/front_page_patch_720.vxml_c crc=81e4e2ee size=2302
 panorama/layout/banners/front_page_patch_723.vxml_c crc=43e8c47b size=1505
 panorama/layout/banners/front_page_plus_update_jan_2019.vxml_c crc=e56f4440 size=2057
 panorama/layout/banners/front_page_ringmaster.vxml_c crc=3f4492c2 size=2586
-panorama/layout/banners/front_page_seasonal_reward_line.vxml_c crc=d9864bf5 size=3288
+panorama/layout/banners/front_page_seasonal_reward_line.vxml_c crc=b0e5a3bf size=3272
 panorama/layout/banners/front_page_secondary_featured_tournament.vxml_c crc=b96fca02 size=2162
 panorama/layout/banners/front_page_short_film_voting_2024.vxml_c crc=1d636cea size=2446
 panorama/layout/banners/front_page_short_film_voting_2025.vxml_c crc=9cd7e696 size=2430
@@ -245,10 +246,6 @@ panorama/layout/battle_pass/crownfall/ui_crownfall_token.vxml_c crc=3c39d78d siz
 panorama/layout/battle_pass/crownfall/ui_secret_admirer_friend_picker.vxml_c crc=09d00679 size=1495
 panorama/layout/battle_pass/daily_hero_quest_status.vxml_c crc=1efeb96e size=2236
 panorama/layout/battle_pass/db_cavern_crawl_postgame_progress.vxml_c crc=09e8709e size=2387
-panorama/layout/battle_pass/dota_hud_ingame_prediction_result.vxml_c crc=6c914fc9 size=2099
-panorama/layout/battle_pass/dota_hud_ingame_predictions.vxml_c crc=55ae1155 size=2185
-panorama/layout/battle_pass/dota_hud_ingame_predictions_container.vxml_c crc=1f740624 size=1972
-panorama/layout/battle_pass/dota_hud_ingame_predictions_notification.vxml_c crc=adf7ff98 size=2654
 panorama/layout/battle_pass/dpc/comp_dpc_fantasy.vxml_c crc=4b378173 size=7915
 panorama/layout/battle_pass/dpc/comp_dpc_playercard_details.vxml_c crc=ddf0dd60 size=2418
 panorama/layout/battle_pass/dpc/comp_dpc_playercards.vxml_c crc=e9ed4ea7 size=4802
@@ -583,7 +580,7 @@ panorama/layout/custom_game_lobby_list_row.vxml_c crc=1e35371c size=1921
 panorama/layout/custom_lobby.vxml_c crc=a72d9511 size=2869
 panorama/layout/custom_ui_container_gameinfo.vxml_c crc=54772396 size=1831
 panorama/layout/custom_ui_container_gamesetup.vxml_c crc=ffd727cc size=1589
-panorama/layout/dashboard.vxml_c crc=11bbfe89 size=7779
+panorama/layout/dashboard.vxml_c crc=a8b34e0a size=7779
 panorama/layout/dashboard_background_10th_anniversary.vxml_c crc=4a24bb4a size=2619
 panorama/layout/dashboard_background_arlington_major_2022.vxml_c crc=6796d1c5 size=2734
 panorama/layout/dashboard_background_bali_major_2023.vxml_c crc=9490f0c0 size=2740
@@ -610,7 +607,6 @@ panorama/layout/dashboard_background_seasonal_reward_line_fall_2026.vxml_c crc=3
 panorama/layout/dashboard_background_seasonal_reward_line_spring_2026.vxml_c crc=72b4bd5e size=7603
 panorama/layout/dashboard_background_seasonal_reward_line_summer_2026.vxml_c crc=9bbd366a size=7006
 panorama/layout/dashboard_background_seasonal_reward_line_winter_2025.vxml_c crc=6c0c0736 size=6925
-panorama/layout/dashboard_background_seasonal_reward_line_winter_2026.vxml_c crc=e2adbf45 size=7151
 panorama/layout/dashboard_background_stockholm_major_2022.vxml_c crc=fe399cfe size=2691
 panorama/layout/dashboard_frontpage_10th_anniversary_event.vxml_c crc=ac9b0275 size=2855
 panorama/layout/dashboard_frontpage_muerta_event.vxml_c crc=ddd092b3 size=3647
@@ -633,7 +629,7 @@ panorama/layout/dashboard_page_diretide_treasure_details.vxml_c crc=5cc40876 siz
 panorama/layout/dashboard_page_econ_item_details_bundle.vxml_c crc=67ce9c20 size=1545
 panorama/layout/dashboard_page_eugene.vxml_c crc=d75cdd42 size=2406
 panorama/layout/dashboard_page_facet_zoo.vxml_c crc=a2080da3 size=2678
-panorama/layout/dashboard_page_game_items.vxml_c crc=25a9a474 size=2164
+panorama/layout/dashboard_page_game_items.vxml_c crc=dc84dfda size=2427
 panorama/layout/dashboard_page_global_item_slot.vxml_c crc=a98ae883 size=3688
 panorama/layout/dashboard_page_global_items.vxml_c crc=984c8ac8 size=4154
 panorama/layout/dashboard_page_guild_base.vxml_c crc=366c2604 size=2147
@@ -663,7 +659,7 @@ panorama/layout/dashboard_page_lane_suggest_debug.vxml_c crc=6cd6ad99 size=2315
 panorama/layout/dashboard_page_learn_glossary.vxml_c crc=738d6365 size=2320
 panorama/layout/dashboard_page_learn_glossary_advanced.vxml_c crc=366bdd7e size=5513
 panorama/layout/dashboard_page_learn_glossary_items.vxml_c crc=1aad48cf size=2919
-panorama/layout/dashboard_page_learn_glossary_map.vxml_c crc=50321a94 size=5473
+panorama/layout/dashboard_page_learn_glossary_map.vxml_c crc=87b04ac5 size=5554
 panorama/layout/dashboard_page_learn_glossary_mechanics.vxml_c crc=4eb5233f size=6501
 panorama/layout/dashboard_page_learn_glossary_overview.vxml_c crc=5106a000 size=2571
 panorama/layout/dashboard_page_learn_glossary_teamwork.vxml_c crc=8d94ba7f size=4703
@@ -677,8 +673,8 @@ panorama/layout/dashboard_page_owned_item_details_gem.vxml_c crc=dbc1e881 size=3
 panorama/layout/dashboard_page_owned_item_details_primarycontrols.vxml_c crc=ad1634ec size=2194
 panorama/layout/dashboard_page_owned_item_details_style.vxml_c crc=1f834b50 size=2050
 panorama/layout/dashboard_page_past_events.vxml_c crc=2edf9957 size=4775
-panorama/layout/dashboard_page_patches.vxml_c crc=a546185e size=5319
-panorama/layout/dashboard_page_post_game.vxml_c crc=b8c75269 size=28232
+panorama/layout/dashboard_page_patches.vxml_c crc=71b06038 size=5315
+panorama/layout/dashboard_page_post_game.vxml_c crc=f5119f00 size=28248
 panorama/layout/dashboard_page_post_game_abilities_row.vxml_c crc=e3667f31 size=1423
 panorama/layout/dashboard_page_post_game_abilities_row_legend.vxml_c crc=f64f080a size=1985
 panorama/layout/dashboard_page_post_game_comment.vxml_c crc=4a476deb size=1732
@@ -753,7 +749,7 @@ panorama/layout/dota_hud_disconnect.vxml_c crc=575046de size=1633
 panorama/layout/dota_hud_netgraph.vxml_c crc=63d4cafb size=1733
 panorama/layout/dota_hud_projection_debug.vxml_c crc=79ce53db size=1896
 panorama/layout/dota_hud_radar_button.vxml_c crc=e9660279 size=1914
-panorama/layout/dota_hud_roshan_timer.vxml_c crc=84f55758 size=1722
+panorama/layout/dota_hud_roshan_timer.vxml_c crc=6afbb7ea size=2299
 panorama/layout/dota_hud_spectate_hero_selection.vxml_c crc=4319ae94 size=4585
 panorama/layout/dota_hud_ti_onstage_flags.vxml_c crc=3677eb51 size=1525
 panorama/layout/dota_hud_ti_onstage_overlay.vxml_c crc=bc334fe3 size=2519
@@ -771,6 +767,7 @@ panorama/layout/dota_ui_guide_picker.vxml_c crc=ab402bbd size=2387
 panorama/layout/dota_ui_hero_patch_notes.vxml_c crc=d3174bec size=2161
 panorama/layout/dota_ui_hero_patch_notes_history.vxml_c crc=f30dc1bf size=3566
 panorama/layout/dota_ui_incrementing_label.vxml_c crc=57e92d6c size=1520
+panorama/layout/dota_ui_item_patch_notes_history.vxml_c crc=b37b7c77 size=2096
 panorama/layout/dota_ui_livestream.vxml_c crc=a6b8bb13 size=1411
 panorama/layout/dota_ui_shop_item.vxml_c crc=b108ffa9 size=2848
 panorama/layout/dota_ui_talentdisplay.vxml_c crc=7a823915 size=2008
@@ -799,16 +796,16 @@ panorama/layout/event_goal.vxml_c crc=efde806a size=1688
 panorama/layout/event_leaderboard.vxml_c crc=2340b911 size=2239
 panorama/layout/event_level_shield.vxml_c crc=ee8941cd size=1617
 panorama/layout/event_reward_claim_button.vxml_c crc=3772ca12 size=2907
-panorama/layout/events/dark_carnival/background_dark_carnival.vxml_c crc=ca4ae410 size=8660
+panorama/layout/events/dark_carnival/background_dark_carnival.vxml_c crc=59d593fd size=7486
 panorama/layout/events/dark_carnival/context_menu_dark_carnival_node_debug.vxml_c crc=ffc07e0b size=2230
 panorama/layout/events/dark_carnival/dark_carnival_candy_shop_help_popup.vxml_c crc=9942d668 size=2426
 panorama/layout/events/dark_carnival/dc_test_03.vxml_c crc=e12f71bb size=1436
 panorama/layout/events/dark_carnival/map_dark_carnival_act1.vxml_c crc=1d87ca62 size=2261
 panorama/layout/events/dark_carnival/page_dark_carnival_candy_shop.vxml_c crc=5368284d size=6330
-panorama/layout/events/dark_carnival/page_dark_carnival_fortune_teller.vxml_c crc=3887dbac size=11142
-panorama/layout/events/dark_carnival/page_dark_carnival_overworld.vxml_c crc=19ce3065 size=9276
+panorama/layout/events/dark_carnival/page_dark_carnival_fortune_teller.vxml_c crc=228a4c54 size=11441
+panorama/layout/events/dark_carnival/page_dark_carnival_overworld.vxml_c crc=0bda62be size=7402
 panorama/layout/events/dark_carnival/page_dark_carnival_simulator.vxml_c crc=c41524b3 size=2558
-panorama/layout/events/dark_carnival/page_dark_carnival_store.vxml_c crc=31bbcfd3 size=19760
+panorama/layout/events/dark_carnival/page_dark_carnival_store.vxml_c crc=362fc1d0 size=19812
 panorama/layout/events/dark_carnival/popup_dark_carnival_candy_shop_upgrade.vxml_c crc=7e7c786e size=2944
 panorama/layout/events/dark_carnival/popup_dark_carnival_encounter_blimp_jump.vxml_c crc=707e059e size=7342
 panorama/layout/events/dark_carnival/popup_dark_carnival_encounter_crate_drop.vxml_c crc=197dd8e4 size=9823
@@ -820,12 +817,12 @@ panorama/layout/events/dark_carnival/popup_dark_carnival_encounter_whack_a_mole.
 panorama/layout/events/dark_carnival/popup_dark_carnival_free_token.vxml_c crc=d76caa09 size=2787
 panorama/layout/events/dark_carnival/popup_dark_carnival_how_to_play.vxml_c crc=5aafb40e size=4208
 panorama/layout/events/dark_carnival/popup_dark_carnival_intro.vxml_c crc=73025ddf size=5095
-panorama/layout/events/dark_carnival/popup_dark_carnival_rewards.vxml_c crc=a7d4957c size=6119
+panorama/layout/events/dark_carnival/popup_dark_carnival_rewards.vxml_c crc=f33e47b4 size=6114
 panorama/layout/events/dark_carnival/popup_dark_carnival_splash_ad.vxml_c crc=f2fb3857 size=4612
 panorama/layout/events/dark_carnival/popup_dark_carnival_token_trader.vxml_c crc=0499e051 size=2924
 panorama/layout/events/dark_carnival/popup_dark_carnival_tokens_received.vxml_c crc=e7139c16 size=1983
-panorama/layout/events/dark_carnival/popup_dark_carnival_visual_novel.vxml_c crc=78570819 size=2833
-panorama/layout/events/dark_carnival/tabs_dark_carnival.vxml_c crc=a537a50f size=2874
+panorama/layout/events/dark_carnival/popup_dark_carnival_visual_novel.vxml_c crc=0336650c size=3307
+panorama/layout/events/dark_carnival/tabs_dark_carnival.vxml_c crc=29ebd043 size=2889
 panorama/layout/events/dark_carnival/tooltip_dark_carnival_fortune_teller_story_node.vxml_c crc=f3534a7d size=2773
 panorama/layout/events/dark_carnival/tooltip_dark_carnival_hero_highlighter.vxml_c crc=d3c6a0fc size=1953
 panorama/layout/events/dark_carnival/tooltip_dark_carnival_node.vxml_c crc=f10a17c9 size=4904
@@ -834,14 +831,15 @@ panorama/layout/events/dark_carnival/tooltip_dark_carnival_store_purchase_all.vx
 panorama/layout/events/dark_carnival/tooltip_dark_carnival_store_secret_rooms_pack.vxml_c crc=204c6f94 size=1818
 panorama/layout/events/dark_carnival/ui_button_dark_carnival.vxml_c crc=14f86c9f size=1672
 panorama/layout/events/dark_carnival/ui_button_dark_carnival_purchase.vxml_c crc=6b296a9d size=2501
+panorama/layout/events/dark_carnival/ui_dark_carnival_act_selector.vxml_c crc=ad5a881d size=3184
 panorama/layout/events/dark_carnival/ui_dark_carnival_completion_progress.vxml_c crc=cfed2736 size=2508
 panorama/layout/events/dark_carnival/ui_dark_carnival_inventory.vxml_c crc=9be47fd6 size=2197
 panorama/layout/events/dark_carnival/ui_dark_carnival_inventory_picker.vxml_c crc=4b72dc00 size=2163
 panorama/layout/events/dark_carnival/ui_dark_carnival_inventory_tray.vxml_c crc=658a9c68 size=2589
 panorama/layout/events/dark_carnival/ui_dark_carnival_motion_comic.vxml_c crc=926b978d size=2548
-panorama/layout/events/dark_carnival/ui_dark_carnival_overworld_train_map.vxml_c crc=2feda011 size=10542
+panorama/layout/events/dark_carnival/ui_dark_carnival_overworld_train_map.vxml_c crc=13159db5 size=11617
 panorama/layout/events/dark_carnival/ui_dark_carnival_reward.vxml_c crc=b5556377 size=2342
-panorama/layout/events/dark_carnival/ui_dark_carnival_talking_head.vxml_c crc=1aa1811c size=1612
+panorama/layout/events/dark_carnival/ui_dark_carnival_talking_head.vxml_c crc=94429bfd size=1584
 panorama/layout/events/dark_carnival/ui_dark_carnival_tarot_card.vxml_c crc=02a970ea size=1719
 panorama/layout/events/dark_carnival/ui_dark_carnival_token.vxml_c crc=ddb43106 size=2004
 panorama/layout/events/dark_carnival/ui_dark_carnival_visual_novel.vxml_c crc=65756ae0 size=7030
@@ -947,7 +945,7 @@ panorama/layout/friend_menu.vxml_c crc=27969415 size=4036
 panorama/layout/friend_picker.vxml_c crc=b37162da size=1802
 panorama/layout/friends_and_foes.vxml_c crc=9bbe87c9 size=2839
 panorama/layout/frontpage_carousel.vxml_c crc=f5d32930 size=1626
-panorama/layout/frontpage_contents.vxml_c crc=778c2811 size=1812
+panorama/layout/frontpage_contents.vxml_c crc=864a3d79 size=1875
 panorama/layout/frontpage_default_button.vxml_c crc=a3bff2d8 size=1928
 panorama/layout/frontpage_dpc_live.vxml_c crc=03678869 size=2357
 panorama/layout/frontpage_dpc_upcoming.vxml_c crc=8b278b53 size=2369
@@ -1005,7 +1003,7 @@ panorama/layout/hud/dota_hero_labels.vxml_c crc=072bd961 size=2162
 panorama/layout/hud/dota_hud_ability_details_ui_card.vxml_c crc=afda29dc size=1481
 panorama/layout/hud/dota_hud_ability_hero_icons.vxml_c crc=19898433 size=1640
 panorama/layout/hud/dota_hud_ability_list.vxml_c crc=9d43fa5e size=1340
-panorama/layout/hud/dota_hud_ability_panel.vxml_c crc=d2eee17e size=5517
+panorama/layout/hud/dota_hud_ability_panel.vxml_c crc=5c8865e9 size=5611
 panorama/layout/hud/dota_hud_abilitydraft.vxml_c crc=127e682e size=10433
 panorama/layout/hud/dota_hud_ad_texture_sheet.vxml_c crc=1d4a8c36 size=3725
 panorama/layout/hud/dota_hud_aghanim_upgrade_picker.vxml_c crc=57c2bfbb size=3112
@@ -1014,6 +1012,7 @@ panorama/layout/hud/dota_hud_big_health_bar.vxml_c crc=239cffa8 size=1816
 panorama/layout/hud/dota_hud_botdebug.vxml_c crc=2163b7ea size=2867
 panorama/layout/hud/dota_hud_bounty_hunter_innate_card.vxml_c crc=2ca55d2b size=3202
 panorama/layout/hud/dota_hud_bounty_toast.vxml_c crc=07764aca size=1936
+panorama/layout/hud/dota_hud_brewmaster_scepter_items.vxml_c crc=70d6014a size=1817
 panorama/layout/hud/dota_hud_broadcaster.vxml_c crc=0458e4b6 size=2154
 panorama/layout/hud/dota_hud_broadcaster_selection.vxml_c crc=cb2034ed size=1917
 panorama/layout/hud/dota_hud_buff.vxml_c crc=24cfa522 size=1750
@@ -1037,6 +1036,7 @@ panorama/layout/hud/dota_hud_courier.vxml_c crc=95a98fb4 size=3556
 panorama/layout/hud/dota_hud_courier_left_fountain_toast.vxml_c crc=836bede2 size=1600
 panorama/layout/hud/dota_hud_courier_portrait.vxml_c crc=d2f1a2ed size=1451
 panorama/layout/hud/dota_hud_craftworks_quest_progress_toast.vxml_c crc=d8d1a60d size=1796
+panorama/layout/hud/dota_hud_cursor_ability_info.vxml_c crc=1f3ddcef size=1525
 panorama/layout/hud/dota_hud_cursor_cooldown.vxml_c crc=6e9ca275 size=1657
 panorama/layout/hud/dota_hud_death_panel.vxml_c crc=f9107fd7 size=2075
 panorama/layout/hud/dota_hud_deity_blessing_picker.vxml_c crc=95c4814b size=1881
@@ -1050,7 +1050,7 @@ panorama/layout/hud/dota_hud_game_end.vxml_c crc=4542928e size=2118
 panorama/layout/hud/dota_hud_game_end_muerta_release_event.vxml_c crc=50581164 size=6146
 panorama/layout/hud/dota_hud_gg.vxml_c crc=bdbdc56f size=1657
 panorama/layout/hud/dota_hud_give_item_indicator.vxml_c crc=1436b33e size=2621
-panorama/layout/hud/dota_hud_glyph.vxml_c crc=3e187852 size=1823
+panorama/layout/hud/dota_hud_glyph.vxml_c crc=3f7df3a7 size=1913
 panorama/layout/hud/dota_hud_guild_status.vxml_c crc=fdd94813 size=2205
 panorama/layout/hud/dota_hud_health_mana.vxml_c crc=5ad97be9 size=2575
 panorama/layout/hud/dota_hud_hero_attribute.vxml_c crc=2db5c569 size=1901
@@ -1086,7 +1086,7 @@ panorama/layout/hud/dota_hud_largo_song_card.vxml_c crc=217a0184 size=2317
 panorama/layout/hud/dota_hud_largo_ultimate_rhythm.vxml_c crc=eb9924e1 size=1908
 panorama/layout/hud/dota_hud_level_stats_frame.vxml_c crc=06864c2a size=1997
 panorama/layout/hud/dota_hud_level_up_button.vxml_c crc=faecf692 size=1641
-panorama/layout/hud/dota_hud_menu_buttons.vxml_c crc=9bb7b645 size=1909
+panorama/layout/hud/dota_hud_menu_buttons.vxml_c crc=c64e061c size=1925
 panorama/layout/hud/dota_hud_muerta_release_event.vxml_c crc=c4b7b2c9 size=3909
 panorama/layout/hud/dota_hud_muerta_release_event_announcement.vxml_c crc=4bbb4927 size=3268
 panorama/layout/hud/dota_hud_muerta_release_event_announcements.vxml_c crc=61d5c3ae size=1717
@@ -1118,8 +1118,7 @@ panorama/layout/hud/dota_hud_plus_timed_stats.vxml_c crc=a51667a9 size=2054
 panorama/layout/hud/dota_hud_portal_effect.vxml_c crc=c850394e size=1580
 panorama/layout/hud/dota_hud_portrait.vxml_c crc=dd70b630 size=1644
 panorama/layout/hud/dota_hud_portrait_killer.vxml_c crc=7b5e35c7 size=1345
-panorama/layout/hud/dota_hud_predictions_button.vxml_c crc=e7889008 size=1587
-panorama/layout/hud/dota_hud_pregame.vxml_c crc=d03c3f78 size=13082
+panorama/layout/hud/dota_hud_pregame.vxml_c crc=4ae5f566 size=13131
 panorama/layout/hud/dota_hud_pregame_playerdraft.vxml_c crc=beed4f95 size=5327
 panorama/layout/hud/dota_hud_promo.vxml_c crc=b9bbb066 size=1698
 panorama/layout/hud/dota_hud_qop_arcana.vxml_c crc=441374dc size=1827
@@ -1143,7 +1142,7 @@ panorama/layout/hud/dota_hud_secondary_abilities_bar.vxml_c crc=15741b08 size=15
 panorama/layout/hud/dota_hud_secondary_ability.vxml_c crc=76d6d645 size=2302
 panorama/layout/hud/dota_hud_shared_content.vxml_c crc=83fc23b8 size=2940
 panorama/layout/hud/dota_hud_shared_control_player.vxml_c crc=a670700a size=1758
-panorama/layout/hud/dota_hud_shop.vxml_c crc=4ce966f2 size=9390
+panorama/layout/hud/dota_hud_shop.vxml_c crc=7e8fa61a size=9514
 panorama/layout/hud/dota_hud_shop_pinned_items.vxml_c crc=9ea7f0ad size=1792
 panorama/layout/hud/dota_hud_shop_search_results.vxml_c crc=2fef7648 size=2124
 panorama/layout/hud/dota_hud_spec_courier_killed.vxml_c crc=2ffeab82 size=2149
@@ -1187,10 +1186,10 @@ panorama/layout/hud/dota_hud_wr_arcana.vxml_c crc=761e064e size=2678
 panorama/layout/hud/dota_hud_xp.vxml_c crc=6612a98b size=1800
 panorama/layout/hud/dota_unit_tooltip.vxml_c crc=e72d2bec size=1950
 panorama/layout/hud/hud_onstageroot.vxml_c crc=5679df3c size=1579
-panorama/layout/hud/hud_reborn.vxml_c crc=37aa7e21 size=12832
+panorama/layout/hud/hud_reborn.vxml_c crc=35c68000 size=12773
 panorama/layout/hud/hud_simple_hero_description.vxml_c crc=91213762 size=2123
 panorama/layout/hud/tooltip_backpack.vxml_c crc=e66c2767 size=1506
-panorama/layout/hud/tooltip_glyph.vxml_c crc=6a41b787 size=1970
+panorama/layout/hud/tooltip_glyph.vxml_c crc=e8a2514f size=1984
 panorama/layout/hud/tooltip_gold.vxml_c crc=26f16473 size=2584
 panorama/layout/hud/tooltip_hero_all_attributes.vxml_c crc=2eb78810 size=1486
 panorama/layout/hud/tooltip_hero_attribute.vxml_c crc=a9e72229 size=1429
@@ -1319,7 +1318,7 @@ panorama/layout/notifications_menu.vxml_c crc=2695e7bb size=1604
 panorama/layout/npx_home_widget.vxml_c crc=9a50a7dd size=2142
 panorama/layout/party.vxml_c crc=45a27a0d size=1669
 panorama/layout/ping_preview.vxml_c crc=df78c006 size=1546
-panorama/layout/play.vxml_c crc=4752efca size=16939
+panorama/layout/play.vxml_c crc=e9d1f182 size=16742
 panorama/layout/player_card.vxml_c crc=a41aed6d size=3122
 panorama/layout/plus/dashboard_background_plus.vxml_c crc=d86723e5 size=1701
 panorama/layout/plus/dashboard_page_plus_achievements.vxml_c crc=bb7a85d0 size=2863
@@ -1464,7 +1463,7 @@ panorama/layout/popups/popup_save_custom_hero_set.vxml_c crc=01a4685e size=2155
 panorama/layout/popups/popup_seasonal_item_received.vxml_c crc=0d70c951 size=2510
 panorama/layout/popups/popup_set_portrait_generator.vxml_c crc=6182d156 size=2162
 panorama/layout/popups/popup_settings.vxml_c crc=31e0b0f3 size=36433
-panorama/layout/popups/popup_settings_reborn.vxml_c crc=684d92b5 size=33592
+panorama/layout/popups/popup_settings_reborn.vxml_c crc=2d8b6379 size=33662
 panorama/layout/popups/popup_short_film_workshop_vote.vxml_c crc=1bd1ccde size=3915
 panorama/layout/popups/popup_steamchina_info.vxml_c crc=d274418d size=2568
 panorama/layout/popups/popup_sticker_stash.vxml_c crc=b0f8409b size=1881
@@ -1556,8 +1555,8 @@ panorama/layout/popups/splash_ads/popup_november_2018_treasure.vxml_c crc=1f2007
 panorama/layout/popups/splash_ads/popup_october_2018_treasure.vxml_c crc=2c089353 size=2188
 panorama/layout/popups/splash_ads/popup_october_2019_treasure.vxml_c crc=b16de4f3 size=2089
 panorama/layout/popups/splash_ads/popup_patch_update_722.vxml_c crc=f6fb4b5b size=1844
-panorama/layout/popups/splash_ads/popup_seasonal_fall_2025.vxml_c crc=537ea710 size=3472
-panorama/layout/popups/splash_ads/popup_seasonal_fall_2026.vxml_c crc=094e55ec size=4426
+panorama/layout/popups/splash_ads/popup_seasonal_fall_2025.vxml_c crc=e9025217 size=3504
+panorama/layout/popups/splash_ads/popup_seasonal_fall_2026.vxml_c crc=7a827203 size=4458
 panorama/layout/popups/splash_ads/popup_seasonal_spring_2026.vxml_c crc=b51ce2ce size=4262
 panorama/layout/popups/splash_ads/popup_seasonal_winter_2025.vxml_c crc=355527b0 size=5175
 panorama/layout/popups/splash_ads/popup_seasonal_winter_2025_outro.vxml_c crc=35092cbd size=3988
@@ -1617,7 +1616,7 @@ panorama/layout/rubick_arcana_progress.vxml_c crc=408f39f6 size=2267
 panorama/layout/scene_panel.vxml_c crc=cc5cddf0 size=1280
 panorama/layout/season_reward_toast.vxml_c crc=ed71a67f size=2477
 panorama/layout/selection_box.vxml_c crc=d02b6a36 size=1310
-panorama/layout/settings/ui_ability_bar_settings.vxml_c crc=a4adde62 size=6499
+panorama/layout/settings/ui_ability_bar_settings.vxml_c crc=149d8ccf size=6573
 panorama/layout/settings/ui_chat_wheel_settings.vxml_c crc=a024f754 size=5060
 panorama/layout/settings/ui_ping_wheel_settings.vxml_c crc=34cbdd85 size=3547
 panorama/layout/shards_button.vxml_c crc=714074d9 size=1745
@@ -1671,7 +1670,7 @@ panorama/layout/tooltips/tooltip_behavior_score_10000.vxml_c crc=3f394122 size=1
 panorama/layout/tooltips/tooltip_behavior_score_3000.vxml_c crc=741fdc24 size=1566
 panorama/layout/tooltips/tooltip_behavior_score_5000.vxml_c crc=b929b107 size=1566
 panorama/layout/tooltips/tooltip_behavior_score_7000.vxml_c crc=d34b1945 size=1614
-panorama/layout/tooltips/tooltip_buff.vxml_c crc=58284513 size=1727
+panorama/layout/tooltips/tooltip_buff.vxml_c crc=5cf0178b size=2417
 panorama/layout/tooltips/tooltip_campaign_artifacts_help.vxml_c crc=3bee2231 size=2087
 panorama/layout/tooltips/tooltip_candy_shop.vxml_c crc=1d0e86d9 size=2232
 panorama/layout/tooltips/tooltip_cavern_challenge.vxml_c crc=51d8c05c size=1739
@@ -1742,7 +1741,7 @@ panorama/layout/tooltips/tooltip_map_update_2023.vxml_c crc=a2c50744 size=2051
 panorama/layout/tooltips/tooltip_muerta_event.vxml_c crc=66bffd25 size=1782
 panorama/layout/tooltips/tooltip_mutation_info.vxml_c crc=b255c9a2 size=2064
 panorama/layout/tooltips/tooltip_neutral_crafting.vxml_c crc=cd7d36f5 size=3772
-panorama/layout/tooltips/tooltip_neutral_item.vxml_c crc=514b3a1e size=2504
+panorama/layout/tooltips/tooltip_neutral_item.vxml_c crc=bc091c93 size=2676
 panorama/layout/tooltips/tooltip_newbloom2019_gift.vxml_c crc=52c3baa7 size=1625
 panorama/layout/tooltips/tooltip_open_treasure.vxml_c crc=2fc2b4c6 size=1709
 panorama/layout/tooltips/tooltip_overworld_hero.vxml_c crc=df6e6b6c size=1665
@@ -1754,7 +1753,7 @@ panorama/layout/tooltips/tooltip_profile_badge.vxml_c crc=95dd5dc0 size=1513
 panorama/layout/tooltips/tooltip_profile_card.vxml_c crc=10a837d2 size=3086
 panorama/layout/tooltips/tooltip_radar.vxml_c crc=757565f7 size=1845
 panorama/layout/tooltips/tooltip_rank_tier.vxml_c crc=6016e6b0 size=2702
-panorama/layout/tooltips/tooltip_roshantimer.vxml_c crc=b2457039 size=1599
+panorama/layout/tooltips/tooltip_roshantimer.vxml_c crc=c0f65f26 size=1724
 panorama/layout/tooltips/tooltip_rune.vxml_c crc=399535a1 size=1578
 panorama/layout/tooltips/tooltip_speech_bubble.vxml_c crc=79bee461 size=2289
 panorama/layout/tooltips/tooltip_spidergraph.vxml_c crc=77a5c0ea size=1696

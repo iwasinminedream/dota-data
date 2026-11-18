@@ -803,6 +803,10 @@ particles/ui/hud/ping_wheel_world_glow.vpcf_c crc=6ab7245f size=3695
 particles/ui/hud/ping_wheel_world_icon_opaque.vpcf_c crc=c22f3acd size=3543
 particles/ui/hud/ping_wheel_world_ripple.vpcf_c crc=735f9f40 size=3101
 particles/ui/hud/ping_wheel_world_spinner.vpcf_c crc=a2a492aa size=3462
+particles/ui/hud/pugna_oblivion_savant_hud.vpcf_c crc=954cf5be size=1753
+particles/ui/hud/pugna_oblivion_savant_hud_line.vpcf_c crc=9037dd3b size=4205
+particles/ui/hud/pugna_oblivion_savant_hud_line_glow.vpcf_c crc=67e4a2b6 size=4345
+particles/ui/hud/pugna_oblivion_savant_hud_sparks.vpcf_c crc=248ddbe0 size=4211
 particles/ui/hud/rubick_arcana_green_spell.vpcf_c crc=7e229012 size=1368
 particles/ui/hud/rubick_arcana_green_spell_child_squares.vpcf_c crc=8713ad88 size=2567
 particles/ui/hud/team_logos_ti10.vpcf_c crc=a273fa7b size=3550

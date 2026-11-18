@@ -87823,10 +87823,6 @@
 					"frequency"		"1"
 				}
 			}
-			"static_attributes"
-			{
-				"workshop accepted"		"0"
-			}
 		}
 		"23800"
 		{
@@ -145428,6 +145424,7 @@
 				"can roll unusual"		"1"
 				"featured_until"		"1705046399"
 				"webm preview url"		"apps/dota2/videos/dota_react/winter2023/immortals/frostivus_arcwarden_client.webm"
+				"can_equip_as_ability_effects"		"2"
 			}
 			"used_by_heroes"
 			{
@@ -145441,12 +145438,14 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_arc_warden/arc_warden_magnetic.vpcf"
 					"modifier"		"particles/econ/items/arc_warden/arc_warden_frostivus_2023/arc_warden_magnetic_frostivus.vpcf"
+					"apply_when_equipped_in_ability_effects_slot"		"2"
 				}
 				"asset_modifier"
 				{
 					"type"		"ability_icon"
 					"asset"		"arc_warden_magnetic_field"
 					"modifier"		"arc_warden_magnetic_field_frostivus"
+					"apply_when_equipped_in_ability_effects_slot"		"2"
 				}
 				"asset_modifier"
 				{
@@ -161567,10 +161566,6 @@
 					"modifier"		"loadingscreens/brewmaster_hujiang_ls/loadingscreen.vtex"
 					"frequency"		"1"
 				}
-			}
-			"static_attributes"
-			{
-				"workshop accepted"		"0"
 			}
 		}
 		"25533"

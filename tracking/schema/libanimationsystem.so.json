@@ -22,19 +22,19 @@
  {"name":"m_flBiasAndClampPitchOffset","type":"float32","offset":220,"metadata":[]},
  {"name":"m_biasAndClampBlendCurve","type":"CBlendCurve","offset":224,"metadata":[]}]},
 {"name":"AnimComponentID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimNodeID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimNodeOutputID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimParamID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimScriptHandle","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimStateID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimTagID","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_id","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_id","type":"?","offset":0,"metadata":[]}]},
 {"name":"AnimationDecodeDebugDumpElement_t","size":112,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nEntityIndex","type":"int32","offset":0,"metadata":[]},
  {"name":"m_modelName","type":"CUtlString","offset":8,"metadata":[]},
@@ -94,7 +94,7 @@
  {"name":"m_opFixedSettings","type":"AimCameraOpFixedSettings_t","offset":128,"metadata":[]}]},
 {"name":"CAimConstraint","size":128,"align":16,"flags":[262433,0],"bases":[{"name":"CBaseConstraint","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_qAimOffset","type":"Quaternion","offset":96,"metadata":[]},
- {"name":"m_nUpType","type":"uint32","offset":112,"metadata":[]}]},
+ {"name":"m_nUpType","type":"?","offset":112,"metadata":[]}]},
 {"name":"CAimMatrixUpdateNode","size":384,"align":16,"flags":[262433,0],"bases":[{"name":"CUnaryUpdateNode","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_opFixedSettings","type":"AimMatrixOpFixedSettings_t","offset":112,"metadata":[]},
  {"name":"m_target","type":"AnimVectorSource","offset":360,"metadata":[]},
@@ -231,7 +231,7 @@
  {"name":"m_segmentIndexArray","type":"CUtlVector< int32 >","offset":8,"metadata":[]}]},
 {"name":"CAnimFrameSegment","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nUniqueFrameIndex","type":"int32","offset":0,"metadata":[]},
- {"name":"m_nLocalElementMasks","type":"uint32","offset":4,"metadata":[]},
+ {"name":"m_nLocalElementMasks","type":"?","offset":4,"metadata":[]},
  {"name":"m_nLocalChannel","type":"int32","offset":8,"metadata":[]},
  {"name":"m_container","type":"CUtlBinaryBlock","offset":16,"metadata":[]}]},
 {"name":"CAnimGraphDebugReplay","size":112,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -386,7 +386,7 @@
  {"name":"m_Color","type":"Color","offset":80,"metadata":[]},
  {"name":"m_Text","type":"CUtlString","offset":88,"metadata":[]}]},
 {"name":"CAnimationGroup","size":320,"align":8,"flags":[289,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nFlags","type":"uint32","offset":12,"metadata":[]},
+ {"name":"m_nFlags","type":"?","offset":12,"metadata":[]},
  {"name":"m_name","type":"CBufferString","offset":16,"metadata":[]},
  {"name":"m_localHAnimArray_Handle","type":"CUtlVector< CStrongHandle< InfoForResourceTypeCAnimData > >","offset":88,"metadata":[{"name":"MKV3TransferName","value":"m_localHAnimArray"}]},
  {"name":"m_includedGroupArray_Handle","type":"CUtlVector< CStrongHandle< InfoForResourceTypeCAnimationGroup > >","offset":112,"metadata":[{"name":"MKV3TransferName","value":"m_includedGroupArray"}]},
@@ -394,18 +394,19 @@
  {"name":"m_decodeKey","type":"CAnimKeyData","offset":144,"metadata":[]},
  {"name":"m_szScripts","type":"CUtlVector< CBufferString >","offset":264,"metadata":[]},
  {"name":"m_AdditionalExtRefs","type":"CUtlVector< CStrongHandleVoid >","offset":288,"metadata":[]}]},
-{"name":"CAnimationLayer","size":76,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CAnimationLayer","size":88,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_hSequence","type":"CAnimNetVar< int32 >","offset":0,"metadata":[]},
  {"name":"m_flPrevCycle","type":"float32","offset":12,"metadata":[]},
  {"name":"m_flCycle","type":"CAnimNetVar< float32 >","offset":16,"metadata":[]},
  {"name":"m_flWeight","type":"CAnimNetVar< float32 >","offset":28,"metadata":[]},
  {"name":"m_nOrder","type":"CAnimNetVar< int32 >","offset":40,"metadata":[]},
- {"name":"m_bLooping","type":"bool","offset":52,"metadata":[]},
- {"name":"m_nFlags","type":"int32","offset":56,"metadata":[]},
- {"name":"m_bSequenceFinished","type":"bool","offset":60,"metadata":[]},
- {"name":"m_flKillRate","type":"float32","offset":64,"metadata":[]},
- {"name":"m_flKillDelay","type":"float32","offset":68,"metadata":[]},
- {"name":"m_nPriority","type":"int32","offset":72,"metadata":[]}]},
+ {"name":"m_bDisableSequenceFadeOut","type":"CAnimNetVar< bool >","offset":52,"metadata":[]},
+ {"name":"m_bLooping","type":"bool","offset":64,"metadata":[]},
+ {"name":"m_nFlags","type":"int32","offset":68,"metadata":[]},
+ {"name":"m_bSequenceFinished","type":"bool","offset":72,"metadata":[]},
+ {"name":"m_flKillRate","type":"float32","offset":76,"metadata":[]},
+ {"name":"m_flKillDelay","type":"float32","offset":80,"metadata":[]},
+ {"name":"m_nPriority","type":"int32","offset":84,"metadata":[]}]},
 {"name":"CAttachment","size":144,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":0,"metadata":[]},
  {"name":"m_influenceNames","type":"CUtlString[3]","offset":8,"metadata":[]},
@@ -509,7 +510,7 @@
 {"name":"CBoneConstraintPoseSpaceMorph::Input_t","size":40,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_inputValue","type":"Vector","offset":0,"metadata":[]},
  {"name":"m_outputWeightList","type":"CUtlVector< float32 >","offset":16,"metadata":[]}]},
-{"name":"CBoneConstraintRbf","size":200,"align":8,"flags":[262433,0],"bases":[{"name":"CBoneConstraintBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CBoneConstraintRbf","size":224,"align":8,"flags":[262433,0],"bases":[{"name":"CBoneConstraintBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_inputBones","type":"CUtlVector< std::pair< CUtlString, uint32 > >","offset":32,"metadata":[]},
  {"name":"m_outputBones","type":"CUtlVector< std::pair< CUtlString, uint32 > >","offset":56,"metadata":[]}]},
 {"name":"CBoneMaskUpdateNode","size":176,"align":8,"flags":[262433,0],"bases":[{"name":"CBinaryUpdateNode","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -549,7 +550,7 @@
  {"name":"m_bCrossFade","type":"bool","offset":184,"metadata":[]},
  {"name":"m_bResetChosen","type":"bool","offset":185,"metadata":[]},
  {"name":"m_bDontResetSameSelection","type":"bool","offset":186,"metadata":[]}]},
-{"name":"CChoreoInstanceData","size":920,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CChoreoInstanceData","size":1064,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_AnimOverlay","type":"CAnimationLayer[12]","offset":0,"metadata":[]}]},
 {"name":"CChoreoUpdateNode","size":120,"align":8,"flags":[262433,0],"bases":[{"name":"CUnaryUpdateNode","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
 {"name":"CClothSettingsAnimTag","size":112,"align":8,"flags":[262433,0],"bases":[{"name":"CAnimTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Cloth Settings Tag"}],"fields":[
@@ -567,13 +568,13 @@
 {"name":"CConstraintSlave","size":80,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_qBaseOrientation","type":"Quaternion","offset":0,"metadata":[]},
  {"name":"m_vBasePosition","type":"Vector","offset":16,"metadata":[]},
- {"name":"m_nBoneHash","type":"uint32","offset":28,"metadata":[]},
+ {"name":"m_nBoneHash","type":"?","offset":28,"metadata":[]},
  {"name":"m_flWeight","type":"float32","offset":32,"metadata":[]},
  {"name":"m_sName","type":"CUtlString","offset":40,"metadata":[]}]},
 {"name":"CConstraintTarget","size":96,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_qOffset","type":"Quaternion","offset":32,"metadata":[]},
  {"name":"m_vOffset","type":"Vector","offset":48,"metadata":[]},
- {"name":"m_nBoneHash","type":"uint32","offset":60,"metadata":[]},
+ {"name":"m_nBoneHash","type":"?","offset":60,"metadata":[]},
  {"name":"m_sName","type":"CUtlString","offset":64,"metadata":[]},
  {"name":"m_flWeight","type":"float32","offset":72,"metadata":[]},
  {"name":"m_bIsAttachment","type":"bool","offset":89,"metadata":[]}]},
@@ -617,7 +618,7 @@
  {"name":"m_flInterpEndTime","type":"float32","offset":16,"metadata":[]},
  {"name":"m_weights","type":"float32[4]","offset":20,"metadata":[]},
  {"name":"m_sequences","type":"SequenceData[4]","offset":36,"metadata":[]},
- {"name":"m_currentSequenceIndex","type":"uint32","offset":260,"metadata":[]},
+ {"name":"m_currentSequenceIndex","type":"?","offset":260,"metadata":[]},
  {"name":"m_currentSequenceData","type":"CAnimNetVar< uint64 >","offset":264,"metadata":[]},
  {"name":"m_flFadeInTime","type":"float32","offset":280,"metadata":[]},
  {"name":"m_flFadeOutTime","type":"float32","offset":284,"metadata":[]},
@@ -822,16 +823,16 @@
  {"name":"m_vMinBounds","type":"Vector","offset":24,"metadata":[]},
  {"name":"m_vMaxBounds","type":"Vector","offset":36,"metadata":[]},
  {"name":"m_flShapeRadius","type":"float32","offset":48,"metadata":[]},
- {"name":"m_nBoneNameHash","type":"uint32","offset":52,"metadata":[]},
+ {"name":"m_nBoneNameHash","type":"?","offset":52,"metadata":[]},
  {"name":"m_nGroupId","type":"int32","offset":56,"metadata":[]},
  {"name":"m_nShapeType","type":"uint8","offset":60,"metadata":[]},
  {"name":"m_bTranslationOnly","type":"bool","offset":61,"metadata":[]},
- {"name":"m_CRC","type":"uint32","offset":64,"metadata":[]},
+ {"name":"m_CRC","type":"?","offset":64,"metadata":[]},
  {"name":"m_cRenderColor","type":"Color","offset":68,"metadata":[]},
  {"name":"m_nHitBoxIndex","type":"uint16","offset":72,"metadata":[]}]},
 {"name":"CHitBoxSet","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":0,"metadata":[]},
- {"name":"m_nNameHash","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_nNameHash","type":"?","offset":8,"metadata":[]},
  {"name":"m_HitBoxes","type":"CUtlVector< CHitBox >","offset":16,"metadata":[]},
  {"name":"m_SourceFilename","type":"CUtlString","offset":40,"metadata":[]}]},
 {"name":"CHitBoxSetList","size":24,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -904,9 +905,9 @@
  {"name":"m_flUvDensity","type":"float32","offset":0,"metadata":[]},
  {"name":"m_vTintColor","type":"Vector","offset":4,"metadata":[]},
  {"name":"m_flAlpha","type":"float32","offset":16,"metadata":[]},
- {"name":"m_nNumMeshlets","type":"uint32","offset":24,"metadata":[]},
- {"name":"m_nFirstMeshlet","type":"uint32","offset":32,"metadata":[]},
- {"name":"m_nAppliedIndexOffset","type":"uint32","offset":36,"metadata":[]},
+ {"name":"m_nNumMeshlets","type":"?","offset":24,"metadata":[]},
+ {"name":"m_nFirstMeshlet","type":"?","offset":32,"metadata":[]},
+ {"name":"m_nAppliedIndexOffset","type":"?","offset":36,"metadata":[]},
  {"name":"m_nEmissivePrimitiveCount","type":"int32","offset":40,"metadata":[]},
  {"name":"m_nDepthVertexBufferIndex","type":"uint8","offset":44,"metadata":[]},
  {"name":"m_nMeshletPackedIVBIndex","type":"uint8","offset":45,"metadata":[]},
@@ -923,13 +924,13 @@
 {"name":"CMaterialDrawDescriptor::RigidMeshPart_t","size":12,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nRigidBLASIndex","type":"uint16","offset":0,"metadata":[]},
  {"name":"m_nBoneIndex","type":"int16","offset":2,"metadata":[]},
- {"name":"m_nStartIndexOffset","type":"uint32","offset":4,"metadata":[]},
- {"name":"m_nPrimitiveCount","type":"uint32","offset":8,"metadata":[]}]},
+ {"name":"m_nStartIndexOffset","type":"?","offset":4,"metadata":[]},
+ {"name":"m_nPrimitiveCount","type":"?","offset":8,"metadata":[]}]},
 {"name":"CMeshletDescriptor","size":24,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_PackedAABB","type":"PackedAABB_t","offset":0,"metadata":[]},
  {"name":"m_CullingData","type":"CDrawCullingData","offset":8,"metadata":[]},
- {"name":"m_nVertexOffset","type":"uint32","offset":12,"metadata":[]},
- {"name":"m_nTriangleOffset","type":"uint32","offset":16,"metadata":[]},
+ {"name":"m_nVertexOffset","type":"?","offset":12,"metadata":[]},
+ {"name":"m_nTriangleOffset","type":"?","offset":16,"metadata":[]},
  {"name":"m_nVertexCount","type":"uint8","offset":20,"metadata":[]},
  {"name":"m_nTriangleCount","type":"uint8","offset":21,"metadata":[]},
  {"name":"m_nBoneIndex","type":"uint16","offset":22,"metadata":[]}]},
@@ -1132,7 +1133,7 @@
  {"name":"m_flCyclesPerSecond","type":"CAnimNetVar< float32 >","offset":16,"metadata":[]},
  {"name":"m_flCycleZeroTime","type":"CAnimNetVar< float32 >","offset":28,"metadata":[]},
  {"name":"m_resetCount","type":"CAnimNetVar< uint8 >","offset":40,"metadata":[]}]},
-{"name":"CNewParticleEffect","size":216,"align":255,"flags":[33,0],"bases":[{"name":"IParticleEffect","offset":0}],"metadata":[],"fields":[
+{"name":"CNewParticleEffect","size":208,"align":255,"flags":[33,0],"bases":[{"name":"IParticleEffect","offset":0}],"metadata":[],"fields":[
  {"name":"m_pNext","type":"CNewParticleEffect*","offset":16,"metadata":[]},
  {"name":"m_pPrev","type":"CNewParticleEffect*","offset":24,"metadata":[]},
  {"name":"m_pParticles","type":"IParticleCollection*","offset":32,"metadata":[]},
@@ -1163,9 +1164,8 @@
  {"name":"m_flFreezeTransitionOverride","type":"float32","offset":120,"metadata":[]},
  {"name":"m_LastMin","type":"Vector","offset":124,"metadata":[]},
  {"name":"m_LastMax","type":"Vector","offset":136,"metadata":[]},
- {"name":"m_nSplitScreenUser","type":"CSplitScreenSlot","offset":148,"metadata":[]},
- {"name":"m_vecAggregationCenter","type":"Vector","offset":152,"metadata":[]},
- {"name":"m_RefCount","type":"int32","offset":208,"metadata":[]}]},
+ {"name":"m_vecAggregationCenter","type":"Vector","offset":148,"metadata":[]},
+ {"name":"m_RefCount","type":"int32","offset":200,"metadata":[]}]},
 {"name":"CNmAdditiveBlendTask","size":240,"align":16,"flags":[289,0],"bases":[{"name":"CNmBlendTaskBase","offset":0}],"metadata":[],"fields":[]},
 {"name":"CNmAndNode::CDefinition","size":32,"align":8,"flags":[262433,0],"bases":[{"name":"CNmBoolValueNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_conditionNodeIndices","type":"CUtlLeanVectorFixedGrowable< int16, 4 >","offset":16,"metadata":[]}]},
@@ -1176,7 +1176,7 @@
  {"name":"m_flUserSpecifiedTime","type":"float32","offset":24,"metadata":[]},
  {"name":"m_bUseFramesAsInput","type":"bool","offset":28,"metadata":[]}]},
 {"name":"CNmBitFlags","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_flags","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_flags","type":"?","offset":0,"metadata":[]}]},
 {"name":"CNmBlend1DNode::CDefinition","size":128,"align":8,"flags":[262433,0],"bases":[{"name":"CNmParameterizedBlendNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_parameterization","type":"CNmParameterizedBlendNode::Parameterization_t","offset":48,"metadata":[]}]},
 {"name":"CNmBlend2DNode::CDefinition","size":200,"align":8,"flags":[262433,0],"bases":[{"name":"CNmPoseNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -1255,7 +1255,7 @@
 {"name":"CNmChainLookatTask","size":272,"align":16,"flags":[289,0],"bases":[{"name":"CNmPoseTask","offset":0}],"metadata":[],"fields":[]},
 {"name":"CNmClip","size":512,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_skeleton","type":"CStrongHandle< InfoForResourceTypeCNmSkeleton >","offset":0,"metadata":[]},
- {"name":"m_nNumFrames","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_nNumFrames","type":"?","offset":8,"metadata":[]},
  {"name":"m_flDuration","type":"float32","offset":12,"metadata":[]},
  {"name":"m_compressedPoseData","type":"CUtlBinaryBlock","offset":16,"metadata":[]},
  {"name":"m_trackCompressionSettings","type":"CUtlVector< NmCompressionSettings_t >","offset":32,"metadata":[]},
@@ -1485,7 +1485,7 @@
 {"name":"CNmGraphEventConditionNode::Condition_t","size":16,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_eventID","type":"CGlobalSymbol","offset":0,"metadata":[]},
  {"name":"m_eventTypeCondition","type":"NmGraphEventTypeCondition_t","offset":8,"metadata":[]}]},
-{"name":"CNmGraphInstance","size":944,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"CNmGraphInstance","size":896,"align":255,"flags":[32,0],"bases":[],"metadata":[],"fields":[]},
 {"name":"CNmGraphNode::CDefinition","size":16,"align":255,"flags":[262435,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nNodeIdx","type":"int16","offset":8,"metadata":[]}]},
 {"name":"CNmGraphVariationUserData","size":8,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
@@ -1538,8 +1538,6 @@
 {"name":"CNmIDValueNode::CDefinition","size":16,"align":255,"flags":[35,0],"bases":[{"name":"CNmValueNode::CDefinition","offset":0}],"metadata":[],"fields":[]},
 {"name":"CNmIsExternalGraphSlotFilledNode::CDefinition","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CNmBoolValueNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nExternalGraphNodeIdx","type":"int16","offset":10,"metadata":[]}]},
-{"name":"CNmIsExternalPoseSetNode::CDefinition","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CNmBoolValueNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nExternalPoseNodeIdx","type":"int16","offset":10,"metadata":[]}]},
 {"name":"CNmIsInactiveBranchConditionNode::CDefinition","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CNmBoolValueNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
 {"name":"CNmIsTargetSetNode::CDefinition","size":16,"align":8,"flags":[262433,0],"bases":[{"name":"CNmBoolValueNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nInputValueNodeIdx","type":"int16","offset":10,"metadata":[]}]},
@@ -1614,6 +1612,7 @@
  {"name":"m_bStopImmediately","type":"bool","offset":56,"metadata":[]},
  {"name":"m_bDetachFromOwner","type":"bool","offset":57,"metadata":[]},
  {"name":"m_bPlayEndCap","type":"bool","offset":58,"metadata":[]},
+ {"name":"m_bAggregate","type":"bool","offset":59,"metadata":[]},
  {"name":"m_attachmentPoint0","type":"CUtlString","offset":64,"metadata":[]},
  {"name":"m_attachmentType0","type":"ParticleAttachment_t","offset":72,"metadata":[]},
  {"name":"m_attachmentPoint1","type":"CUtlString","offset":80,"metadata":[]},
@@ -1670,14 +1669,15 @@
 {"name":"CNmSkeleton::SecondarySkeleton_t","size":16,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_attachToBoneID","type":"CGlobalSymbol","offset":0,"metadata":[]},
  {"name":"m_skeleton","type":"CStrongHandle< InfoForResourceTypeCNmSkeleton >","offset":8,"metadata":[]}]},
-{"name":"CNmSoundEvent","size":72,"align":8,"flags":[262433,0],"bases":[{"name":"CNmEvent","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CNmSoundEvent","size":64,"align":8,"flags":[262433,0],"bases":[{"name":"CNmSoundEventBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_name","type":"CUtlString","offset":48,"metadata":[]},
+ {"name":"m_tags","type":"CUtlString","offset":56,"metadata":[]}]},
+{"name":"CNmSoundEventBase","size":48,"align":255,"flags":[262435,0],"bases":[{"name":"CNmEvent","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_relevance","type":"CNmEventRelevance_t","offset":24,"metadata":[]},
- {"name":"m_name","type":"CUtlString","offset":32,"metadata":[]},
- {"name":"m_position","type":"CNmSoundEvent::Position_t","offset":40,"metadata":[]},
- {"name":"m_attachmentName","type":"CUtlString","offset":48,"metadata":[]},
- {"name":"m_tags","type":"CUtlString","offset":56,"metadata":[]},
- {"name":"m_bContinuePlayingSoundAtDurationEnd","type":"bool","offset":64,"metadata":[]},
- {"name":"m_flDurationInterruptionThreshold","type":"float32","offset":68,"metadata":[]}]},
+ {"name":"m_bContinuePlayingSoundAtDurationEnd","type":"bool","offset":28,"metadata":[]},
+ {"name":"m_flDurationInterruptionThreshold","type":"float32","offset":32,"metadata":[]},
+ {"name":"m_position","type":"CNmSoundEventBase::Position_t","offset":36,"metadata":[]},
+ {"name":"m_attachmentName","type":"CUtlString","offset":40,"metadata":[]}]},
 {"name":"CNmSpeedScaleBaseNode::CDefinition","size":24,"align":8,"flags":[262433,0],"bases":[{"name":"CNmPassthroughNode::CDefinition","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nInputValueNodeIdx","type":"int16","offset":12,"metadata":[]},
  {"name":"m_flDefaultInputValue","type":"float32","offset":16,"metadata":[]}]},
@@ -1728,6 +1728,8 @@
  {"name":"m_ID","type":"CGlobalSymbol","offset":0,"metadata":[]},
  {"name":"m_startTime","type":"NmPercent_t","offset":8,"metadata":[]},
  {"name":"m_duration","type":"NmPercent_t","offset":12,"metadata":[]}]},
+{"name":"CNmTaggedSoundEvent","size":56,"align":8,"flags":[262433,0],"bases":[{"name":"CNmSoundEventBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_name","type":"CUtlString","offset":48,"metadata":[]}]},
 {"name":"CNmTarget","size":48,"align":16,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_transform","type":"CTransform","offset":0,"metadata":[]},
  {"name":"m_boneID","type":"CGlobalSymbol","offset":32,"metadata":[]},
@@ -1892,6 +1894,7 @@
  {"name":"m_nVectorAttribute","type":"ParticleAttributeIndex_t","offset":96,"metadata":[]},
  {"name":"m_nVectorComponent","type":"int32","offset":100,"metadata":[]},
  {"name":"m_bReverseOrder","type":"bool","offset":104,"metadata":[]},
+ {"name":"m_bAbsoluteValue","type":"bool","offset":105,"metadata":[]},
  {"name":"m_flRandomMin","type":"float32","offset":108,"metadata":[]},
  {"name":"m_flRandomMax","type":"float32","offset":112,"metadata":[]},
  {"name":"m_bHasRandomSignFlip","type":"bool","offset":116,"metadata":[]},
@@ -1991,8 +1994,8 @@
 {"name":"CPerParticleVecInput","size":1712,"align":8,"flags":[289,0],"bases":[{"name":"CParticleVecInput","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyCustomEditor","value":"PerParticleVecInput()"}],"fields":[]},
 {"name":"CPhysSurfaceProperties","size":200,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":0,"metadata":[{"name":"MKV3TransferName","value":"surfacePropertyName"}]},
- {"name":"m_nameHash","type":"uint32","offset":8,"metadata":[]},
- {"name":"m_baseNameHash","type":"uint32","offset":12,"metadata":[]},
+ {"name":"m_nameHash","type":"?","offset":8,"metadata":[]},
+ {"name":"m_baseNameHash","type":"?","offset":12,"metadata":[]},
  {"name":"m_bHidden","type":"bool","offset":24,"metadata":[{"name":"MKV3TransferName","value":"hidden"}]},
  {"name":"m_description","type":"CUtlString","offset":32,"metadata":[{"name":"MKV3TransferName","value":"description"}]},
  {"name":"m_physics","type":"CPhysSurfacePropertiesPhysics","offset":40,"metadata":[{"name":"MKV3TransferName","value":"physics"}]},
@@ -2064,10 +2067,11 @@
 {"name":"CPulseCell_BaseYieldingInflow","size":216,"align":255,"flags":[262499,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MCustomFGDMetadata","value":"{ standard_yielding_flow = true }"}],"fields":[
  {"name":"m_BaseFlow_OnAfterCancel","type":"CPulse_ResumePoint","offset":72,"metadata":[{"name":"MPulseFGDSkipField"}]},
  {"name":"m_BaseFlow_WhileActive","type":"CPulse_ResumePoint","offset":144,"metadata":[{"name":"MPulseFGDSkipField"}]}]},
-{"name":"CPulseCell_BooleanSwitchState","size":504,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled."},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsStateNode' item_factory = 'BooleanSwitchState' }"}],"fields":[
- {"name":"m_Condition","type":"CPulseObservableExpression< bool >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Condition to evaluate when any of its dependent values change."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
- {"name":"m_WhenTrue","type":"CPulse_OutflowConnection","offset":360,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is true, and killed when false."},{"name":"MPropertyFriendlyName","value":"While True"}]},
- {"name":"m_WhenFalse","type":"CPulse_OutflowConnection","offset":432,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is false, and killed when true."},{"name":"MPropertyFriendlyName","value":"While False"}]}]},
+{"name":"CPulseCell_BooleanSwitchState","size":360,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled."},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsStateNode' item_factory = 'BooleanSwitchState' }"}],"fields":[
+ {"name":"m_WhenTrue","type":"CPulse_OutflowConnection","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is true, and killed when false."},{"name":"MPropertyFriendlyName","value":"While True"}]},
+ {"name":"m_WhenFalse","type":"CPulse_OutflowConnection","offset":288,"metadata":[{"name":"MPropertyDescription","value":"Fired when the observable boolean is false, and killed when true."},{"name":"MPropertyFriendlyName","value":"While False"}]}]},
+{"name":"CPulseCell_BooleanSwitchState::CursorState_t","size":12,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Condition","type":"HPulseObservableLambda< bool >","offset":0,"metadata":[]}]},
 {"name":"CPulseCell_CursorQueue","size":304,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_WaitForCursorsWithTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Cursor Queue"},{"name":"MPropertyDescription","value":"Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/cursor_wait_zone.png"}],"fields":[
  {"name":"m_nCursorsAllowedToRunParallel","type":"int32","offset":296,"metadata":[{"name":"MPropertyDescription","value":"Any cursors above this count will wait, up to the limit."}]}]},
 {"name":"CPulseCell_FireCursors","size":320,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -2103,15 +2107,18 @@
  {"name":"m_bAnd","type":"bool","offset":76,"metadata":[]},
  {"name":"m_PassOutflow","type":"PulseSelectorOutflowList_t","offset":80,"metadata":[]},
  {"name":"m_FailOutflow","type":"CPulse_OutflowConnection","offset":104,"metadata":[]}]},
-{"name":"CPulseCell_IntervalTimer","size":360,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Interval Timer"},{"name":"MPropertyDescription","value":"Wait for a duration, firing a child cursor at regular (or randomized) intervals"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/node_timer.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ item_factory = 'IntervalTimer' }"}],"fields":[
- {"name":"m_Completed","type":"CPulse_ResumePoint","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up perfectly."}]},
- {"name":"m_OnInterval","type":"SignatureOutflow_Continue","offset":288,"metadata":[{"name":"MPropertyDescription","value":"New child cursor starts here every time the wait interval elapses"}]}]},
+{"name":"CPulseCell_IntervalTimer","size":368,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Interval Timer"},{"name":"MPropertyDescription","value":"Wait for a duration, firing a child cursor at regular (or randomized) intervals"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/node_timer.png"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ item_factory = 'IntervalTimer' }"}],"fields":[
+ {"name":"m_Completed","type":"CPulse_ResumePoint","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Called when timer reaches the duration OR is stopped. NOTE: This will run a little while AFTER the last interval fires unless they line up very closely (0.05s) or 'Fire At End' is set."}]},
+ {"name":"m_OnInterval","type":"SignatureOutflow_Continue","offset":288,"metadata":[{"name":"MPropertyDescription","value":"New child cursor starts here every time the wait interval elapses"}]},
+ {"name":"m_bFireAtStart","type":"bool","offset":360,"metadata":[{"name":"MPropertyDescription","value":"Runs OnInterval immediately when waiting begins. Otherwise the first OnInterval happens after the first interval has elapsed."}]},
+ {"name":"m_bFireAtEnd","type":"bool","offset":361,"metadata":[{"name":"MPropertyDescription","value":"Runs OnInterval upon reaching the end of the duration. Otherwise the last OnInterval will fire earlier unless they line up very closely (0.05s)"}]}]},
 {"name":"CPulseCell_IntervalTimer::CursorState_t","size":20,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_StartTime","type":"GameTime_t","offset":0,"metadata":[]},
  {"name":"m_EndTime","type":"GameTime_t","offset":4,"metadata":[]},
  {"name":"m_flWaitInterval","type":"float32","offset":8,"metadata":[]},
  {"name":"m_flWaitIntervalHigh","type":"float32","offset":12,"metadata":[]},
- {"name":"m_bCompleteOnNextWake","type":"bool","offset":16,"metadata":[]}]},
+ {"name":"m_bCompleteOnNextWake","type":"bool","offset":16,"metadata":[]},
+ {"name":"m_bCompletingVeryCloseToEndOfInterval","type":"bool","offset":17,"metadata":[]}]},
 {"name":"CPulseCell_IsRequirementValid","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseRequirement","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
 {"name":"CPulseCell_IsRequirementValid::Criteria_t","size":1,"align":255,"flags":[104,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_bIsValid","type":"bool","offset":0,"metadata":[]}]},
@@ -2121,9 +2128,10 @@
  {"name":"m_bLimitCountPasses","type":"bool","offset":0,"metadata":[]}]},
 {"name":"CPulseCell_LimitCount::InstanceState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nCurrentCount","type":"int32","offset":0,"metadata":[]}]},
-{"name":"CPulseCell_ObservableSwitchState","size":480,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable Switch"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on which case an observable value matches. When the observable result moves to a different case, the prior cursor will be canceled and the matching outflow will fire a new child cursor. Will monitor continuously until externally canceled."}],"fields":[
- {"name":"m_SwitchValue","type":"CPulseObservableExpression< CPulseVariant >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Value to evaluate when any of its dependent values change. The result is compared against each case."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
- {"name":"m_Cases","type":"CPulseObservableSwitchCases","offset":360,"metadata":[{"name":"MPulseFGDSkipField"}]}]},
+{"name":"CPulseCell_ObservableSwitchState","size":336,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseState","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Monitor Observable Switch"},{"name":"MPropertyDescription","value":"While active, manage child cursors based on which case an observable value matches. When the observable result moves to a different case, the prior cursor will be canceled and the matching outflow will fire a new child cursor. Will monitor continuously until externally canceled."}],"fields":[
+ {"name":"m_Cases","type":"CPulseObservableSwitchCases","offset":216,"metadata":[{"name":"MPulseFGDSkipField"}]}]},
+{"name":"CPulseCell_ObservableSwitchState::CursorState_t","size":12,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_SwitchValue","type":"HPulseObservableLambda< CPulseVariant >","offset":0,"metadata":[]}]},
 {"name":"CPulseCell_Outflow_CycleOrdered","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseFlow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_Outputs","type":"CUtlVector< CPulse_OutflowConnection >","offset":72,"metadata":[]}]},
 {"name":"CPulseCell_Outflow_CycleOrdered::InstanceState_t","size":4,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -2160,23 +2168,18 @@
  {"name":"m_EventOutflow","type":"CPulse_OutflowConnection","offset":8,"metadata":[]}]},
 {"name":"CPulseCell_Unknown","size":88,"align":8,"flags":[353,0],"bases":[{"name":"CPulseCell_Base","offset":0}],"metadata":[],"fields":[
  {"name":"m_UnknownKeys","type":"KeyValues3","offset":72,"metadata":[]}]},
-{"name":"CPulseCell_Value_Curve","size":136,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Curve"}],"fields":[
- {"name":"m_Curve","type":"CPiecewiseCurve","offset":72,"metadata":[]}]},
-{"name":"CPulseCell_Value_Gradient","size":96,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Gradient"}],"fields":[
- {"name":"m_Gradient","type":"CColorGradient","offset":72,"metadata":[]}]},
-{"name":"CPulseCell_Value_RandomFloat","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Float"},{"name":"MPropertyDescription","value":"Generate a random float between min and max (inclusive)"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/exit_cycle_random.png"}],"fields":[]},
-{"name":"CPulseCell_Value_RandomInt","size":72,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseValue","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Integer"},{"name":"MPropertyDescription","value":"Generate a random integer between min and max (inclusive)"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/exit_cycle_random.png"}],"fields":[]},
-{"name":"CPulseCell_WaitForCursorsWithTag","size":304,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_WaitForCursorsWithTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wait For Cursors With Tag"},{"name":"MPropertyDescription","value":"Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/cursor_tag.png"}],"fields":[
+{"name":"CPulseCell_WaitForCursorsWithTag","size":304,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_WaitForCursorsWithTagBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wait For Cursors With Tag"},{"name":"MPulseEditorSearchExpr","value":"pTagName"},{"name":"MPropertyDescription","value":"Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting."},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/cursor_tag.png"}],"fields":[
  {"name":"m_bTagSelfWhenComplete","type":"bool","offset":296,"metadata":[{"name":"MPropertyDescription","value":"Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag."}]},
  {"name":"m_nDesiredKillPriority","type":"PulseCursorCancelPriority_t","offset":300,"metadata":[{"name":"MPropertyDescription","value":"When we start waiting, how should we handle existing cursors?"}]}]},
 {"name":"CPulseCell_WaitForCursorsWithTagBase","size":296,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorCanvasItemSpecKV3","value":"{ className = 'IsControlFlowNode' }"}],"fields":[
  {"name":"m_nCursorsAllowedToWait","type":"int32","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Any extra waiting cursors will be terminated. -1 for infinite cursors."}]},
  {"name":"m_WaitComplete","type":"CPulse_ResumePoint","offset":224,"metadata":[]}]},
-{"name":"CPulseCell_WaitForObservable","size":432,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/observable_variable_listener.png"},{"name":"MPropertyFriendlyName","value":"Wait Until"},{"name":"MPropertyDescription","value":"All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon."}],"fields":[
- {"name":"m_Condition","type":"CPulseObservableExpression< bool >","offset":216,"metadata":[{"name":"MPropertyDescription","value":"Condition to evaluate when any of its dependent values change."},{"name":"MPropertyFriendlyName","value":"Observable"}]},
- {"name":"m_OnTrue","type":"CPulse_ResumePoint","offset":360,"metadata":[]}]},
+{"name":"CPulseCell_WaitForObservable","size":288,"align":8,"flags":[262497,0],"bases":[{"name":"CPulseCell_BaseYieldingInflow","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPulseEditorHeaderIcon","value":"tools/images/pulse_editor/observable_variable_listener.png"},{"name":"MPropertyFriendlyName","value":"Wait Until"},{"name":"MPropertyDescription","value":"All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon."}],"fields":[
+ {"name":"m_OnTrue","type":"CPulse_ResumePoint","offset":216,"metadata":[]}]},
+{"name":"CPulseCell_WaitForObservable::CursorState_t","size":12,"align":4,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_Condition","type":"HPulseObservableLambda< bool >","offset":0,"metadata":[]}]},
 {"name":"CPulseExecCursor","size":216,"align":255,"flags":[97,0],"bases":[],"metadata":[],"fields":[]},
-{"name":"CPulseGraphDef","size":448,"align":8,"flags":[353,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CPulseGraphDef","size":472,"align":8,"flags":[353,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_DomainIdentifier","type":"PulseSymbol_t","offset":8,"metadata":[]},
  {"name":"m_DomainSubType","type":"CPulseType","offset":24,"metadata":[]},
  {"name":"m_ParentMapName","type":"PulseSymbol_t","offset":48,"metadata":[]},
@@ -2191,13 +2194,15 @@
  {"name":"m_Constants","type":"CUtlVector< CPulse_Constant >","offset":248,"metadata":[]},
  {"name":"m_DomainValues","type":"CUtlVector< CPulse_DomainValue >","offset":272,"metadata":[]},
  {"name":"m_BlackboardReferences","type":"CUtlVector< CPulse_BlackboardReference >","offset":296,"metadata":[]},
- {"name":"m_OutputConnections","type":"CUtlVector< CPulse_OutputConnection* >","offset":320,"metadata":[]}]},
-{"name":"CPulseGraphExecutionHistory","size":120,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_LambdaDefs","type":"CUtlVector< CPulse_LambdaDef >","offset":320,"metadata":[]},
+ {"name":"m_OutputConnections","type":"CUtlVector< CPulse_OutputConnection* >","offset":344,"metadata":[]}]},
+{"name":"CPulseGraphExecutionHistory","size":168,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nInstanceID","type":"PulseGraphInstanceID_t","offset":0,"metadata":[]},
  {"name":"m_strFileName","type":"CUtlString","offset":8,"metadata":[]},
- {"name":"m_vecHistory","type":"CUtlVector< PulseGraphExecutionHistoryEntry_t* >","offset":16,"metadata":[]},
- {"name":"m_mapCellDesc","type":"CUtlOrderedMap< PulseDocNodeID_t, PulseGraphExecutionHistoryNodeDesc_t* >","offset":40,"metadata":[]},
- {"name":"m_mapCursorDesc","type":"CUtlOrderedMap< PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t* >","offset":80,"metadata":[]}]},
+ {"name":"m_mapCellDesc","type":"CUtlOrderedMap< PulseDocNodeID_t, PulseGraphExecutionHistoryNodeDesc_t* >","offset":16,"metadata":[]},
+ {"name":"m_mapCursorDesc","type":"CUtlOrderedMap< PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t* >","offset":56,"metadata":[]},
+ {"name":"m_mapNodeToNewCursorCount","type":"CUtlOrderedMap< PulseDocNodeID_t, CUtlVector< int32 > >","offset":96,"metadata":[]},
+ {"name":"m_nCulledCursorCount","type":"int32","offset":160,"metadata":[]}]},
 {"name":"CPulseRuntimeMethodArg","size":128,"align":16,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_Name","type":"CKV3MemberNameWithStorage","offset":0,"metadata":[]},
  {"name":"m_Description","type":"CUtlString","offset":56,"metadata":[]},
@@ -2232,12 +2237,20 @@
  {"name":"m_nFlowNodeID","type":"PulseDocNodeID_t","offset":0,"metadata":[]},
  {"name":"m_nValueNodeID","type":"PulseDocNodeID_t","offset":4,"metadata":[]},
  {"name":"m_SequencePointName","type":"PulseSymbol_t","offset":8,"metadata":[]}]},
-{"name":"CPulse_InvokeBinding","size":176,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CPulse_InvokeBinding","size":184,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_RegisterMap","type":"PulseRegisterMap_t","offset":0,"metadata":[]},
  {"name":"m_FuncName","type":"PulseSymbol_t","offset":48,"metadata":[]},
  {"name":"m_nCellIndex","type":"PulseRuntimeCellIndex_t","offset":64,"metadata":[]},
  {"name":"m_nSrcChunk","type":"PulseRuntimeChunkIndex_t","offset":68,"metadata":[]},
  {"name":"m_nSrcInstruction","type":"int32","offset":72,"metadata":[]}]},
+{"name":"CPulse_LambdaDef","size":192,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_EvaluateConnection","type":"CPulse_OutflowConnection","offset":0,"metadata":[]},
+ {"name":"m_ResultType","type":"CPulseType","offset":72,"metadata":[]},
+ {"name":"m_nEditorNodeID","type":"PulseDocNodeID_t","offset":96,"metadata":[]},
+ {"name":"m_PortName","type":"PulseSymbol_t","offset":104,"metadata":[]},
+ {"name":"m_DependentObservableVars","type":"CUtlVector< PulseRuntimeVarIndex_t >","offset":120,"metadata":[]},
+ {"name":"m_DependentObservableBlackboardReferences","type":"CUtlVector< PulseRuntimeBlackboardReferenceIndex_t >","offset":144,"metadata":[]},
+ {"name":"m_DependentObservableTempVars","type":"CUtlVector< PulseDocNodeID_t >","offset":168,"metadata":[]}]},
 {"name":"CPulse_OutflowConnection","size":72,"align":255,"flags":[96,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_SourceOutflowName","type":"PulseSymbol_t","offset":0,"metadata":[]},
  {"name":"m_nDestChunk","type":"PulseRuntimeChunkIndex_t","offset":16,"metadata":[]},
@@ -2253,11 +2266,10 @@
  {"name":"m_Description","type":"CUtlString","offset":16,"metadata":[]},
  {"name":"m_Args","type":"CUtlLeanVector< CPulseRuntimeMethodArg >","offset":24,"metadata":[]}]},
 {"name":"CPulse_RegisterInfo","size":96,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nReg","type":"PulseRuntimeRegisterIndex_t","offset":0,"metadata":[]},
- {"name":"m_Type","type":"CPulseType","offset":8,"metadata":[]},
- {"name":"m_OriginName","type":"CKV3MemberNameWithStorage","offset":32,"metadata":[]},
- {"name":"m_nWrittenByInstruction","type":"int32","offset":88,"metadata":[]},
- {"name":"m_nLastReadByInstruction","type":"int32","offset":92,"metadata":[]}]},
+ {"name":"m_Type","type":"CPulseType","offset":0,"metadata":[]},
+ {"name":"m_OriginName","type":"CKV3MemberNameWithStorage","offset":24,"metadata":[]},
+ {"name":"m_nWrittenByInstruction","type":"int32","offset":80,"metadata":[]},
+ {"name":"m_nLastReadByInstruction","type":"int32","offset":84,"metadata":[]}]},
 {"name":"CPulse_ResumePoint","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_OutflowConnection","offset":0}],"metadata":[],"fields":[]},
 {"name":"CPulse_TempVarBankDefinition","size":40,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_TempVars","type":"CUtlVector< CPulse_TempVarInfo >","offset":0,"metadata":[]}]},
@@ -2306,7 +2318,7 @@
  {"name":"m_flMaxOutputValue","type":"float32","offset":16,"metadata":[]}]},
 {"name":"CRenderBufferBinding","size":32,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_hBuffer","type":"uint64","offset":0,"metadata":[]},
- {"name":"m_nBindOffsetBytes","type":"uint32","offset":16,"metadata":[]}]},
+ {"name":"m_nBindOffsetBytes","type":"?","offset":16,"metadata":[]}]},
 {"name":"CRenderGroom","size":176,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_hairs","type":"CUtlVector< RenderHairStrandInfo_t >","offset":0,"metadata":[]},
  {"name":"m_hairPositionOffsets","type":"CUtlVector< uint32 >","offset":24,"metadata":[]},
@@ -2322,14 +2334,14 @@
  {"name":"m_nAttachMeshIdx","type":"int32","offset":148,"metadata":[]},
  {"name":"m_nAttachMeshDrawCallIdx","type":"int32","offset":152,"metadata":[]},
  {"name":"m_bEnableSimulation","type":"bool","offset":172,"metadata":[]}]},
-{"name":"CRenderMesh","size":560,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CRenderMesh","size":640,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_sceneObjects","type":"CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 >","offset":16,"metadata":[]},
- {"name":"m_constraints","type":"CUtlLeanVector< CBaseConstraint* >","offset":208,"metadata":[]},
- {"name":"m_skeleton","type":"CRenderSkeleton","offset":224,"metadata":[]},
- {"name":"m_bUseUV2ForCharting","type":"bool","offset":500,"metadata":[]},
- {"name":"m_bEmbeddedMapMesh","type":"bool","offset":501,"metadata":[]},
- {"name":"m_meshDeformParams","type":"DynamicMeshDeformParams_t","offset":536,"metadata":[]},
- {"name":"m_pGroomData","type":"CRenderGroom*","offset":552,"metadata":[]}]},
+ {"name":"m_constraints","type":"CUtlLeanVector< CBaseConstraint* >","offset":216,"metadata":[]},
+ {"name":"m_skeleton","type":"CRenderSkeleton","offset":232,"metadata":[]},
+ {"name":"m_bUseUV2ForCharting","type":"bool","offset":580,"metadata":[]},
+ {"name":"m_bEmbeddedMapMesh","type":"bool","offset":581,"metadata":[]},
+ {"name":"m_meshDeformParams","type":"DynamicMeshDeformParams_t","offset":616,"metadata":[]},
+ {"name":"m_pGroomData","type":"CRenderGroom*","offset":632,"metadata":[]}]},
 {"name":"CRenderSkeleton","size":80,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_bones","type":"CUtlVector< RenderSkeletonBone_t >","offset":0,"metadata":[]},
  {"name":"m_boneParents","type":"CUtlVector< int32 >","offset":48,"metadata":[]},
@@ -2339,7 +2351,7 @@
  {"name":"m_vVelocityMS","type":"Vector","offset":16,"metadata":[]},
  {"name":"m_vUpOverride","type":"Vector","offset":28,"metadata":[]}]},
 {"name":"CRootUpdateNode","size":112,"align":8,"flags":[262433,0],"bases":[{"name":"CUnaryUpdateNode","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
-{"name":"CSceneObjectData","size":184,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"CSceneObjectData","size":192,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_vMinBounds","type":"Vector","offset":0,"metadata":[]},
  {"name":"m_vMaxBounds","type":"Vector","offset":12,"metadata":[]},
  {"name":"m_drawCalls","type":"CUtlLeanVector< CMaterialDrawDescriptor >","offset":24,"metadata":[]},
@@ -2348,7 +2360,7 @@
  {"name":"m_rtProxyDrawCalls","type":"CUtlLeanVector< CSceneObjectData::RTProxyDrawDescriptor_t >","offset":72,"metadata":[]},
  {"name":"m_vTintColor","type":"Vector4D","offset":88,"metadata":[]}]},
 {"name":"CSceneObjectData::RTProxyDrawDescriptor_t","size":368,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_materialGroupToken","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_materialGroupToken","type":"?","offset":0,"metadata":[]},
  {"name":"m_nSrcDrawIndex","type":"int32","offset":4,"metadata":[]},
  {"name":"m_drawDesc","type":"CMaterialDrawDescriptor","offset":8,"metadata":[]},
  {"name":"m_mWorldFromLocal","type":"matrix3x4_t","offset":296,"metadata":[]},
@@ -2502,7 +2514,7 @@
  {"name":"m_sequenceName","type":"CUtlString","offset":88,"metadata":[{"name":"MPropertyFriendlyName","value":"Sequence"},{"name":"MPropertyAttributeChoiceName","value":"Sequence"}]}]},
 {"name":"CSequenceGroupData","size":312,"align":8,"flags":[289,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_sName","type":"CBufferString","offset":16,"metadata":[]},
- {"name":"m_nFlags","type":"uint32","offset":32,"metadata":[]},
+ {"name":"m_nFlags","type":"?","offset":32,"metadata":[]},
  {"name":"m_localSequenceNameArray","type":"CUtlVector< CBufferString >","offset":40,"metadata":[]},
  {"name":"m_localS1SeqDescArray","type":"CUtlVector< CSeqS1SeqDesc >","offset":64,"metadata":[]},
  {"name":"m_localMultiSeqDescArray","type":"CUtlVector< CSeqS1SeqDesc >","offset":88,"metadata":[]},
@@ -2882,14 +2894,14 @@
 {"name":"ModelBoneFlexDriverControl_t","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nBoneComponent","type":"ModelBoneFlexComponent_t","offset":0,"metadata":[]},
  {"name":"m_flexController","type":"CUtlString","offset":8,"metadata":[]},
- {"name":"m_flexControllerToken","type":"uint32","offset":16,"metadata":[]},
+ {"name":"m_flexControllerToken","type":"?","offset":16,"metadata":[]},
  {"name":"m_flMin","type":"float32","offset":20,"metadata":[]},
  {"name":"m_flMax","type":"float32","offset":24,"metadata":[]}]},
 {"name":"ModelBoneFlexDriver_t","size":40,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_boneName","type":"CUtlString","offset":0,"metadata":[]},
- {"name":"m_boneNameToken","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_boneNameToken","type":"?","offset":8,"metadata":[]},
  {"name":"m_controls","type":"CUtlVector< ModelBoneFlexDriverControl_t >","offset":16,"metadata":[]}]},
-{"name":"ModelEmbeddedMesh_t","size":112,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"ModelEmbeddedMesh_t","size":136,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_Name","type":"CUtlString","offset":0,"metadata":[]},
  {"name":"m_nMeshIndex","type":"int32","offset":16,"metadata":[]},
  {"name":"m_nDataBlock","type":"int32","offset":20,"metadata":[]},
@@ -2897,22 +2909,28 @@
  {"name":"m_vertexBuffers","type":"CUtlVector< ModelMeshBufferData_t >","offset":32,"metadata":[]},
  {"name":"m_indexBuffers","type":"CUtlVector< ModelMeshBufferData_t >","offset":56,"metadata":[]},
  {"name":"m_toolsBuffers","type":"CUtlVector< ModelMeshBufferData_t >","offset":80,"metadata":[]},
- {"name":"m_nVBIBBlock","type":"int32","offset":104,"metadata":[]},
- {"name":"m_nToolsVBBlock","type":"int32","offset":108,"metadata":[]}]},
+ {"name":"m_dnaRigs","type":"CUtlVector< ModelMeshDNARig_t >","offset":104,"metadata":[]},
+ {"name":"m_nVBIBBlock","type":"int32","offset":128,"metadata":[]},
+ {"name":"m_nToolsVBBlock","type":"int32","offset":132,"metadata":[]}]},
 {"name":"ModelMeshBufferData_t","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nBlockIndex","type":"int32","offset":0,"metadata":[]},
- {"name":"m_nElementCount","type":"uint32","offset":4,"metadata":[]},
- {"name":"m_nElementSizeInBytes","type":"uint32","offset":8,"metadata":[]},
+ {"name":"m_nElementCount","type":"?","offset":4,"metadata":[]},
+ {"name":"m_nElementSizeInBytes","type":"?","offset":8,"metadata":[]},
  {"name":"m_bMeshoptCompressed","type":"bool","offset":12,"metadata":[]},
  {"name":"m_bMeshoptIndexSequence","type":"bool","offset":13,"metadata":[]},
  {"name":"m_nMeshoptMeshletEncodeVersion","type":"int8","offset":14,"metadata":[]},
  {"name":"m_bCompressedZSTD","type":"bool","offset":15,"metadata":[]},
- {"name":"m_bCreateBufferSRV","type":"bool","offset":16,"metadata":[]},
- {"name":"m_bCreateBufferUAV","type":"bool","offset":17,"metadata":[]},
- {"name":"m_bCreateRawBuffer","type":"bool","offset":18,"metadata":[]},
- {"name":"m_bCreatePooledBuffer","type":"bool","offset":19,"metadata":[]},
- {"name":"m_nBufferUsage","type":"uint16","offset":20,"metadata":[]},
+ {"name":"m_bCompressedZ3","type":"bool","offset":16,"metadata":[]},
+ {"name":"m_bCreateBufferSRV","type":"bool","offset":17,"metadata":[]},
+ {"name":"m_bCreateBufferUAV","type":"bool","offset":18,"metadata":[]},
+ {"name":"m_bCreateRawBuffer","type":"bool","offset":19,"metadata":[]},
+ {"name":"m_bCreatePooledBuffer","type":"bool","offset":20,"metadata":[]},
+ {"name":"m_nBufferUsage","type":"uint16","offset":22,"metadata":[]},
  {"name":"m_inputLayoutFields","type":"CUtlVector< RenderInputLayoutField_t >","offset":24,"metadata":[]}]},
+{"name":"ModelMeshDNARig_t","size":12,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"m_nRig","type":"int32","offset":0,"metadata":[]},
+ {"name":"m_nBlock","type":"int32","offset":4,"metadata":[]},
+ {"name":"m_bBlendShapes","type":"bool","offset":8,"metadata":[]}]},
 {"name":"ModelSkeletonData_t","size":168,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_boneName","type":"CUtlVector< CUtlString >","offset":0,"metadata":[]},
  {"name":"m_nParent","type":"CUtlVector< int16 >","offset":24,"metadata":[]},
@@ -2941,7 +2959,7 @@
  {"name":"m_pChild","type":"CSmartPtr< CMotionNode >","offset":0,"metadata":[]},
  {"name":"m_flKeyValue","type":"float32","offset":8,"metadata":[]}]},
 {"name":"MotionDBIndex","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nIndex","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_nIndex","type":"?","offset":0,"metadata":[]}]},
 {"name":"MotionIndex","size":4,"align":2,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nGroup","type":"uint16","offset":0,"metadata":[]},
  {"name":"m_nMotion","type":"uint16","offset":2,"metadata":[]}]},
@@ -3014,12 +3032,13 @@
  {"name":"m_nCursorStateBlockIndex","type":"CUtlVector< int32 >","offset":104,"metadata":[]}]},
 {"name":"PARTICLE_EHANDLE__","size":4,"align":255,"flags":[44,0],"bases":[],"metadata":[],"fields":[
  {"name":"unused","type":"int32","offset":0,"metadata":[]}]},
-{"name":"PGDInstruction_t","size":56,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"PGDInstruction_t","size":56,"align":8,"flags":[360,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nCode","type":"PulseInstructionCode_t","offset":0,"metadata":[]},
  {"name":"m_nVar","type":"PulseRuntimeVarIndex_t","offset":4,"metadata":[]},
  {"name":"m_nReg0","type":"PulseRuntimeRegisterIndex_t","offset":8,"metadata":[]},
  {"name":"m_nReg1","type":"PulseRuntimeRegisterIndex_t","offset":10,"metadata":[]},
  {"name":"m_nReg2","type":"PulseRuntimeRegisterIndex_t","offset":12,"metadata":[]},
+ {"name":"m_nLambdaIdx","type":"PulseRuntimeLambdaIndex_t","offset":14,"metadata":[]},
  {"name":"m_nInvokeBindingIndex","type":"PulseRuntimeInvokeIndex_t","offset":16,"metadata":[]},
  {"name":"m_nChunk","type":"PulseRuntimeChunkIndex_t","offset":20,"metadata":[]},
  {"name":"m_nDestInstruction","type":"int32","offset":24,"metadata":[]},
@@ -3105,7 +3124,7 @@
  {"name":"m_nParent","type":"int32","offset":40,"metadata":[]},
  {"name":"m_refModel","type":"CStrongHandle< InfoForResourceTypeCModel >","offset":48,"metadata":[]}]},
 {"name":"PermModelInfo_t","size":88,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nFlags","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_nFlags","type":"?","offset":0,"metadata":[]},
  {"name":"m_vHullMin","type":"Vector","offset":4,"metadata":[]},
  {"name":"m_vHullMax","type":"Vector","offset":16,"metadata":[]},
  {"name":"m_vViewMin","type":"Vector","offset":28,"metadata":[]},
@@ -3136,26 +3155,29 @@
  {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
 {"name":"PulseDocNodeID_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
  {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
-{"name":"PulseGraphExecutionHistoryCursorDesc_t","size":48,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"vecAncestorCursorIDs","type":"CUtlVector< PulseCursorID_t >","offset":0,"metadata":[]},
- {"name":"nSpawnNodeID","type":"PulseDocNodeID_t","offset":24,"metadata":[]},
- {"name":"nRetiredAtNodeID","type":"PulseDocNodeID_t","offset":28,"metadata":[]},
- {"name":"flLastReferenced","type":"float32","offset":32,"metadata":[]},
- {"name":"nLastValidEntryIdx","type":"int32","offset":36,"metadata":[]},
- {"name":"bWasAnObservableComputation","type":"bool","offset":40,"metadata":[]}]},
-{"name":"PulseGraphExecutionHistoryEntry_t","size":56,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+{"name":"PulseExecHistoryCallerInfo_t","size":4,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"PulseGraphExecutionHistoryCursorDesc_t","size":80,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"nCursorID","type":"PulseCursorID_t","offset":0,"metadata":[]},
- {"name":"nEditorID","type":"PulseDocNodeID_t","offset":4,"metadata":[]},
+ {"name":"vecAncestorCursorIDs","type":"CUtlVector< PulseCursorID_t >","offset":8,"metadata":[]},
+ {"name":"nSpawnNodeID","type":"PulseDocNodeID_t","offset":32,"metadata":[]},
+ {"name":"nRetiredAtNodeID","type":"PulseDocNodeID_t","offset":36,"metadata":[]},
+ {"name":"externalCallerInfo","type":"PulseExecHistoryCallerInfo_t","offset":40,"metadata":[]},
+ {"name":"m_vecHistory","type":"CUtlVector< PulseGraphExecutionHistoryEntry_t* >","offset":48,"metadata":[]},
+ {"name":"flLastReferenced","type":"float32","offset":72,"metadata":[]},
+ {"name":"bWasAnObservableComputation","type":"bool","offset":76,"metadata":[]},
+ {"name":"bOverflowedInstructionHistoryLimit","type":"bool","offset":77,"metadata":[]}]},
+{"name":"PulseGraphExecutionHistoryEntry_t","size":56,"align":8,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
+ {"name":"nEditorID","type":"PulseDocNodeID_t","offset":0,"metadata":[]},
  {"name":"seqPoint","type":"PulseSymbol_t","offset":8,"metadata":[]},
  {"name":"flExecTime","type":"float32","offset":24,"metadata":[]},
- {"name":"unFlags","type":"uint32","offset":28,"metadata":[]},
+ {"name":"unFlags","type":"?","offset":28,"metadata":[]},
  {"name":"tagName","type":"PulseSymbol_t","offset":32,"metadata":[]},
  {"name":"childID","type":"PulseCursorID_t","offset":48,"metadata":[]}]},
 {"name":"PulseGraphExecutionHistoryNodeDesc_t","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"strCellDesc","type":"CBufferString","offset":0,"metadata":[]},
  {"name":"strBindingName","type":"PulseSymbol_t","offset":16,"metadata":[]}]},
 {"name":"PulseGraphInstanceID_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
- {"name":"m_Value","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_Value","type":"?","offset":0,"metadata":[]}]},
 {"name":"PulseNodeDynamicOutflows_t","size":24,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_Outflows","type":"CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >","offset":0,"metadata":[]}]},
 {"name":"PulseNodeDynamicOutflows_t::DynamicOutflow_t","size":80,"align":8,"flags":[352,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -3181,6 +3203,8 @@
  {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
 {"name":"PulseRuntimeInvokeIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
  {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
+{"name":"PulseRuntimeLambdaIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
+ {"name":"m_Value","type":"int16","offset":0,"metadata":[]}]},
 {"name":"PulseRuntimeOutputIndex_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
  {"name":"m_Value","type":"int32","offset":0,"metadata":[]}]},
 {"name":"PulseRuntimeRegisterIndex_t","size":2,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
@@ -3200,9 +3224,9 @@
  {"name":"m_vGuideBary_vBaseBary","type":"uint16[4]","offset":8,"metadata":[]},
  {"name":"m_vRootOffset_flLengthScale","type":"uint16[4]","offset":16,"metadata":[]},
  {"name":"m_nPackedBaseUv","type":"uint16[2]","offset":24,"metadata":[]},
- {"name":"m_nPackedSurfaceNormalOs","type":"uint32","offset":28,"metadata":[]},
- {"name":"m_nPackedSurfaceTangentOs","type":"uint32","offset":32,"metadata":[]},
- {"name":"m_nDataOffset_Segments","type":"uint32","offset":36,"metadata":[]}]},
+ {"name":"m_nPackedSurfaceNormalOs","type":"?","offset":28,"metadata":[]},
+ {"name":"m_nPackedSurfaceTangentOs","type":"?","offset":32,"metadata":[]},
+ {"name":"m_nDataOffset_Segments","type":"?","offset":36,"metadata":[]}]},
 {"name":"RenderInputLayoutField_t","size":76,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_pSemanticName","type":"char[32]","offset":0,"metadata":[]},
  {"name":"m_nSemanticIndex","type":"int8","offset":32,"metadata":[]},
@@ -3215,7 +3239,8 @@
  {"name":"m_parentName","type":"CUtlString","offset":8,"metadata":[]},
  {"name":"m_invBindPose","type":"matrix3x4_t","offset":16,"metadata":[]},
  {"name":"m_bbox","type":"SkeletonBoneBounds_t","offset":64,"metadata":[]},
- {"name":"m_flSphereRadius","type":"float32","offset":88,"metadata":[]}]},
+ {"name":"m_flSphereRadius","type":"float32","offset":88,"metadata":[]},
+ {"name":"m_bRenderOnly","type":"bool","offset":92,"metadata":[]}]},
 {"name":"SampleCode","size":8,"align":1,"flags":[300,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_subCode","type":"uint8[8]","offset":0,"metadata":[]}]},
 {"name":"ScriptInfo_t","size":88,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -3233,7 +3258,7 @@
  {"name":"m_hSequence","type":"HSequence","offset":0,"metadata":[]},
  {"name":"m_cycle","type":"CNetworkedCycle","offset":4,"metadata":[]}]},
 {"name":"SheetSequenceIntegerId_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
- {"name":"m_Value","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_Value","type":"?","offset":0,"metadata":[]}]},
 {"name":"SignatureOutflow_Continue","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_OutflowConnection","offset":0}],"metadata":[],"fields":[]},
 {"name":"SignatureOutflow_Resume","size":72,"align":255,"flags":[96,0],"bases":[{"name":"CPulse_ResumePoint","offset":0}],"metadata":[],"fields":[]},
 {"name":"SkeletonAnimCapture_t","size":192,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -3336,7 +3361,7 @@
  {"name":"m_debugPartNames","type":"CUtlVector< CUtlString >","offset":304,"metadata":[]},
  {"name":"m_embeddedKeyvalues","type":"CUtlString","offset":328,"metadata":[]}]},
 {"name":"VPhysXBodyPart_t","size":152,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nFlags","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_nFlags","type":"?","offset":0,"metadata":[]},
  {"name":"m_flMass","type":"float32","offset":4,"metadata":[]},
  {"name":"m_rnShape","type":"VPhysics2ShapeDef_t","offset":8,"metadata":[]},
  {"name":"m_nCollisionAttributeIndex","type":"uint16","offset":112,"metadata":[]},
@@ -3350,7 +3375,7 @@
  {"name":"m_vMassCenterOverride","type":"Vector","offset":140,"metadata":[]}]},
 {"name":"VPhysXCollisionAttributes_t","size":208,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nIncludeDetailLayerCount","type":"int32","offset":0,"metadata":[]},
- {"name":"m_CollisionGroup","type":"uint32","offset":4,"metadata":[]},
+ {"name":"m_CollisionGroup","type":"?","offset":4,"metadata":[]},
  {"name":"m_InteractAs","type":"CUtlVector< uint32 >","offset":8,"metadata":[]},
  {"name":"m_InteractWith","type":"CUtlVector< uint32 >","offset":32,"metadata":[]},
  {"name":"m_InteractExclude","type":"CUtlVector< uint32 >","offset":56,"metadata":[]},
@@ -3361,7 +3386,7 @@
  {"name":"m_InteractExcludeStrings","type":"CUtlVector< CUtlString >","offset":160,"metadata":[]},
  {"name":"m_DetailLayerStrings","type":"CUtlVector< CUtlString >","offset":184,"metadata":[]}]},
 {"name":"VPhysXConstraint2_t","size":256,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nFlags","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_nFlags","type":"?","offset":0,"metadata":[]},
  {"name":"m_nParent","type":"uint16","offset":4,"metadata":[]},
  {"name":"m_nChild","type":"uint16","offset":6,"metadata":[]},
  {"name":"m_params","type":"VPhysXConstraintParams_t","offset":8,"metadata":[]}]},
@@ -3496,7 +3521,7 @@
 {"name":"CNmParticleEvent::Type_t","size":4,"metadata":[],"enumerators":[{"name":"Create","value":0,"metadata":[]},{"name":"Create_CFG","value":1,"metadata":[]}]},
 {"name":"CNmRootMotionData::SamplingMode_t","size":1,"metadata":[],"enumerators":[{"name":"Delta","value":0,"metadata":[]},{"name":"WorldSpace","value":1,"metadata":[]}]},
 {"name":"CNmRootMotionOverrideNode::OverrideFlags_t","size":1,"metadata":[],"enumerators":[{"name":"AllowMoveX","value":0,"metadata":[]},{"name":"AllowMoveY","value":1,"metadata":[]},{"name":"AllowMoveZ","value":2,"metadata":[]},{"name":"AllowFacingPitch","value":3,"metadata":[]},{"name":"ListenForEvents","value":4,"metadata":[]}]},
-{"name":"CNmSoundEvent::Position_t","size":4,"metadata":[],"enumerators":[{"name":"None","value":0,"metadata":[]},{"name":"World","value":1,"metadata":[]},{"name":"EntityPos","value":2,"metadata":[]},{"name":"EntityEyePos","value":3,"metadata":[]},{"name":"EntityAttachment","value":4,"metadata":[]}]},
+{"name":"CNmSoundEventBase::Position_t","size":4,"metadata":[],"enumerators":[{"name":"None","value":0,"metadata":[]},{"name":"World","value":1,"metadata":[]},{"name":"EntityPos","value":2,"metadata":[]},{"name":"EntityEyePos","value":3,"metadata":[]},{"name":"EntityAttachment","value":4,"metadata":[]}]},
 {"name":"CNmStateNode::TimedEvent_t::Comparison_t","size":1,"metadata":[],"enumerators":[{"name":"LessThanEqual","value":0,"metadata":[]},{"name":"GreaterThanEqual","value":1,"metadata":[]}]},
 {"name":"CNmSyncEventIndexConditionNode::TriggerMode_t","size":1,"metadata":[],"enumerators":[{"name":"ExactlyAtEventIndex","value":0,"metadata":[]},{"name":"GreaterThanEqualToEventIndex","value":1,"metadata":[]}]},
 {"name":"CNmTargetInfoNode::Info_t","size":4,"metadata":[],"enumerators":[{"name":"AngleHorizontal","value":0,"metadata":[]},{"name":"AngleVertical","value":1,"metadata":[]},{"name":"Distance","value":2,"metadata":[]},{"name":"DistanceHorizontalOnly","value":3,"metadata":[]},{"name":"DistanceVerticalOnly","value":4,"metadata":[]},{"name":"DeltaOrientationX","value":5,"metadata":[]},{"name":"DeltaOrientationY","value":6,"metadata":[]},{"name":"DeltaOrientationZ","value":7,"metadata":[]}]},
@@ -3511,7 +3536,7 @@
 {"name":"DampingSpeedFunction","size":4,"metadata":[],"enumerators":[{"name":"NoDamping","value":0,"metadata":[]},{"name":"Constant","value":1,"metadata":[]},{"name":"Spring","value":2,"metadata":[]},{"name":"AsymmetricSpring","value":3,"metadata":[]}]},
 {"name":"EDemoBoneSelectionMode","size":4,"metadata":[],"enumerators":[{"name":"CaptureAllBones","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Capture All Bones"}]},{"name":"CaptureSelectedBones","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Capture Selected Bones"}]}]},
 {"name":"EIKEndEffectorRotationFixUpMode","size":4,"metadata":[],"enumerators":[{"name":"None","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"None"},{"name":"MPropertyDescription","value":"However the end effector ends up after the solve, it's rotation will remain unchanged."}]},{"name":"MatchTargetOrientation","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Match Target Orientation"},{"name":"MPropertyDescription","value":"The targets orientation will be stamped onto the end effector."}]},{"name":"LookAtTargetForward","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Look At Target Forward"},{"name":"MPropertyDescription","value":"The targets forward vector will be used to build a look orientation while preserving the rotation of the end effector after the solve as much as possible."}]},{"name":"MaintainParentOrientation","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Maintain Parent Orientation"},{"name":"MPropertyDescription","value":"Use the parent bone's orientation as the end effector's orientation."}]},{"name":"Count","value":4,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
-{"name":"EPulseGraphExecutionHistoryFlag","size":4,"metadata":[],"enumerators":[{"name":"NO_FLAGS","value":0,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MEnumeratorIsNotAFlag"}]},{"name":"CURSOR_ADD_TAG","value":1,"metadata":[]},{"name":"CURSOR_REMOVE_TAG","value":2,"metadata":[]},{"name":"CURSOR_RETIRED","value":4,"metadata":[]},{"name":"CURSOR_CREATE_CHILD","value":8,"metadata":[]},{"name":"REQUIREMENT_PASS","value":16,"metadata":[]},{"name":"REQUIREMENT_FAIL","value":32,"metadata":[]},{"name":"CALL_TO_PULSE","value":64,"metadata":[]},{"name":"RETURN","value":128,"metadata":[]}]},
+{"name":"EPulseGraphExecutionHistoryFlag","size":4,"metadata":[],"enumerators":[{"name":"NO_FLAGS","value":0,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MEnumeratorIsNotAFlag"}]},{"name":"CURSOR_ADD_TAG","value":1,"metadata":[]},{"name":"CURSOR_REMOVE_TAG","value":2,"metadata":[]},{"name":"CURSOR_RETIRED","value":4,"metadata":[]},{"name":"CURSOR_CREATE_CHILD","value":8,"metadata":[]},{"name":"REQUIREMENT_PASS","value":16,"metadata":[]},{"name":"REQUIREMENT_FAIL","value":32,"metadata":[]},{"name":"CALL_TO_PULSE","value":64,"metadata":[]},{"name":"INTERNAL_CALL_TO_PULSE","value":128,"metadata":[]},{"name":"RETURN","value":256,"metadata":[]},{"name":"RECORD_NEXT_SEQ_POINT","value":512,"metadata":[]},{"name":"CURSOR_MAX_INSTRUCTIONS","value":1024,"metadata":[]}]},
 {"name":"FacingMode","size":1,"metadata":[],"enumerators":[{"name":"FacingMode_Invalid","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"None"}]},{"name":"FacingMode_Manual","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Manual Direction"}]},{"name":"FacingMode_Path","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Path"}]},{"name":"FacingMode_LookTarget","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Look Target"}]},{"name":"FacingMode_ManualPosition","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Manual Position"}]}]},
 {"name":"FieldNetworkOption","size":4,"metadata":[],"enumerators":[{"name":"Auto","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Auto"}]},{"name":"ForceEnable","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Enable Replication"}]},{"name":"ForceDisable","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Disable Replication"}]}]},
 {"name":"FlexOpCode_t","size":4,"metadata":[],"enumerators":[{"name":"FLEX_OP_CONST","value":1,"metadata":[]},{"name":"FLEX_OP_FETCH1","value":2,"metadata":[]},{"name":"FLEX_OP_FETCH2","value":3,"metadata":[]},{"name":"FLEX_OP_ADD","value":4,"metadata":[]},{"name":"FLEX_OP_SUB","value":5,"metadata":[]},{"name":"FLEX_OP_MUL","value":6,"metadata":[]},{"name":"FLEX_OP_DIV","value":7,"metadata":[]},{"name":"FLEX_OP_NEG","value":8,"metadata":[]},{"name":"FLEX_OP_EXP","value":9,"metadata":[]},{"name":"FLEX_OP_OPEN","value":10,"metadata":[]},{"name":"FLEX_OP_CLOSE","value":11,"metadata":[]},{"name":"FLEX_OP_COMMA","value":12,"metadata":[]},{"name":"FLEX_OP_MAX","value":13,"metadata":[]},{"name":"FLEX_OP_MIN","value":14,"metadata":[]},{"name":"FLEX_OP_2WAY_0","value":15,"metadata":[]},{"name":"FLEX_OP_2WAY_1","value":16,"metadata":[]},{"name":"FLEX_OP_NWAY","value":17,"metadata":[]},{"name":"FLEX_OP_COMBO","value":18,"metadata":[]},{"name":"FLEX_OP_DOMINATE","value":19,"metadata":[]},{"name":"FLEX_OP_DME_LOWER_EYELID","value":20,"metadata":[]},{"name":"FLEX_OP_DME_UPPER_EYELID","value":21,"metadata":[]},{"name":"FLEX_OP_SQRT","value":22,"metadata":[]},{"name":"FLEX_OP_REMAPVALCLAMPED","value":23,"metadata":[]},{"name":"FLEX_OP_SIN","value":24,"metadata":[]},{"name":"FLEX_OP_COS","value":25,"metadata":[]},{"name":"FLEX_OP_ABS","value":26,"metadata":[]}]},
@@ -3542,7 +3567,7 @@
 {"name":"MoodType_t","size":4,"metadata":[],"enumerators":[{"name":"eMoodType_Head","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Head"}]},{"name":"eMoodType_Body","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Body"}]}]},
 {"name":"MorphBundleType_t","size":4,"metadata":[],"enumerators":[{"name":"MORPH_BUNDLE_TYPE_NONE","value":0,"metadata":[]},{"name":"MORPH_BUNDLE_TYPE_POSITION_SPEED","value":1,"metadata":[]},{"name":"MORPH_BUNDLE_TYPE_NORMAL_WRINKLE","value":2,"metadata":[]},{"name":"MORPH_BUNDLE_TYPE_COUNT","value":3,"metadata":[]}]},
 {"name":"MorphFlexControllerRemapType_t","size":4,"metadata":[],"enumerators":[{"name":"MORPH_FLEXCONTROLLER_REMAP_PASSTHRU","value":0,"metadata":[]},{"name":"MORPH_FLEXCONTROLLER_REMAP_2WAY","value":1,"metadata":[]},{"name":"MORPH_FLEXCONTROLLER_REMAP_NWAY","value":2,"metadata":[]},{"name":"MORPH_FLEXCONTROLLER_REMAP_EYELID","value":3,"metadata":[]}]},
-{"name":"MovementCapability_t","size":4,"metadata":[],"enumerators":[{"name":"eStrafe","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Strafe"}]},{"name":"eIdleTurn","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Turn"}]},{"name":"eStart","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Start"}]},{"name":"eStop","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Stop"}]},{"name":"eInstantStop","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Instant Stop"}]},{"name":"eShuffle","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Shuffle"}]},{"name":"ePlantedTurn","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Planted Turn"}]},{"name":"eUseStartAsPlantedTurn","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"Stop/Start Planted Turn"}]},{"name":"eLean","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Lean"}]},{"name":"eForwardStartOnly","value":9,"metadata":[{"name":"MPropertyFriendlyName","value":"Forward Start Only"}]},{"name":"eCount","value":10,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
+{"name":"MovementCapability_t","size":4,"metadata":[],"enumerators":[{"name":"eStrafe","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Strafe"}]},{"name":"eIdleTurn","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Turn"}]},{"name":"eStart","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Start"}]},{"name":"eStop","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Stop"}]},{"name":"eInstantStop","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Instant Stop"}]},{"name":"eShuffle","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Shuffle"}]},{"name":"ePlantedTurn","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Planted Turn"}]},{"name":"eUseStartAsPlantedTurn","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"Stop/Start Planted Turn"}]},{"name":"eLean","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Lean"}]},{"name":"eTurnToStart","value":9,"metadata":[{"name":"MPropertyFriendlyName","value":"Turn To Start"}]},{"name":"eAim","value":10,"metadata":[{"name":"MPropertyFriendlyName","value":"Aim"}]},{"name":"eForwardStopOnly","value":11,"metadata":[{"name":"MPropertyFriendlyName","value":"Forward Stop Only"}]},{"name":"eCount","value":12,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
 {"name":"NPCPhysicsHullType_t","size":4,"metadata":[],"enumerators":[{"name":"eInvalid","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"None"}]},{"name":"eGroundCapsule","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Capsule - Ground"}]},{"name":"eCenteredCapsule","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Capsule - Centered"}]},{"name":"eGenericCapsule","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Capsule - Generic"}]},{"name":"eGroundBox","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Box - Ground"}]},{"name":"eGroundCylinder","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Cylinder - Ground (SLOW PERF)"}]},{"name":"eCenteredCylinder","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Cylinder - Centered (SLOW PERF)"}]}]},
 {"name":"NmCachedValueMode_t","size":4,"metadata":[],"enumerators":[{"name":"OnEntry","value":0,"metadata":[]},{"name":"OnExit","value":1,"metadata":[]}]},
 {"name":"NmEasingFunction_t","size":1,"metadata":[],"enumerators":[{"name":"Linear","value":0,"metadata":[]},{"name":"Quad","value":1,"metadata":[]},{"name":"Cubic","value":2,"metadata":[]},{"name":"Quart","value":3,"metadata":[]},{"name":"Quint","value":4,"metadata":[]},{"name":"Sine","value":5,"metadata":[]},{"name":"Expo","value":6,"metadata":[]},{"name":"Circ","value":7,"metadata":[]},{"name":"Back","value":8,"metadata":[]}]},
@@ -3577,7 +3602,7 @@
 {"name":"ParticleFloatMapType_t","size":4,"metadata":[],"enumerators":[{"name":"PF_MAP_TYPE_INVALID","value":-1,"metadata":[]},{"name":"PF_MAP_TYPE_DIRECT","value":0,"metadata":[]},{"name":"PF_MAP_TYPE_MULT","value":1,"metadata":[]},{"name":"PF_MAP_TYPE_REMAP","value":2,"metadata":[]},{"name":"PF_MAP_TYPE_REMAP_BIASED","value":3,"metadata":[]},{"name":"PF_MAP_TYPE_CURVE","value":4,"metadata":[]},{"name":"PF_MAP_TYPE_NOTCHED","value":5,"metadata":[]},{"name":"PF_MAP_TYPE_ROUND","value":6,"metadata":[]},{"name":"PF_MAP_TYPE_MIN","value":7,"metadata":[]},{"name":"PF_MAP_TYPE_MAX","value":8,"metadata":[]},{"name":"PF_MAP_TYPE_MOD","value":9,"metadata":[]},{"name":"PF_MAP_TYPE_COUNT","value":10,"metadata":[]}]},
 {"name":"ParticleFloatRandomMode_t","size":4,"metadata":[],"enumerators":[{"name":"PF_RANDOM_MODE_INVALID","value":-1,"metadata":[]},{"name":"PF_RANDOM_MODE_CONSTANT","value":0,"metadata":[]},{"name":"PF_RANDOM_MODE_VARYING","value":1,"metadata":[]},{"name":"PF_RANDOM_MODE_COUNT","value":2,"metadata":[]}]},
 {"name":"ParticleFloatRoundType_t","size":4,"metadata":[],"enumerators":[{"name":"PF_ROUND_TYPE_INVALID","value":-1,"metadata":[]},{"name":"PF_ROUND_TYPE_NEAREST","value":0,"metadata":[]},{"name":"PF_ROUND_TYPE_FLOOR","value":1,"metadata":[]},{"name":"PF_ROUND_TYPE_CEIL","value":2,"metadata":[]},{"name":"PF_ROUND_TYPE_COUNT","value":3,"metadata":[]}]},
-{"name":"ParticleFloatType_t","size":4,"metadata":[],"enumerators":[{"name":"PF_TYPE_INVALID","value":-1,"metadata":[]},{"name":"PF_TYPE_LITERAL","value":0,"metadata":[]},{"name":"PF_TYPE_NAMED_VALUE","value":1,"metadata":[]},{"name":"PF_TYPE_RANDOM_UNIFORM","value":2,"metadata":[]},{"name":"PF_TYPE_RANDOM_BIASED","value":3,"metadata":[]},{"name":"PF_TYPE_COLLECTION_AGE","value":4,"metadata":[]},{"name":"PF_TYPE_ENDCAP_AGE","value":5,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_COMPONENT","value":6,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_CHANGE_AGE","value":7,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_SPEED","value":8,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_DISTANCE","value":9,"metadata":[]},{"name":"PF_TYPE_PARTICLE_DETAIL_LEVEL","value":10,"metadata":[]},{"name":"PF_TYPE_CONCURRENT_DEF_COUNT","value":11,"metadata":[]},{"name":"PF_TYPE_CLOSEST_CAMERA_DISTANCE","value":12,"metadata":[]},{"name":"PF_TYPE_SNAPSHOT_COUNT","value":13,"metadata":[]},{"name":"PF_TYPE_SNAPSHOT_CHANGED","value":14,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_IS_SET","value":15,"metadata":[]},{"name":"PF_TYPE_RENDERER_CAMERA_DISTANCE","value":16,"metadata":[]},{"name":"PF_TYPE_RENDERER_CAMERA_DOT_PRODUCT","value":17,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NOISE","value":18,"metadata":[]},{"name":"PF_TYPE_PARTICLE_AGE","value":19,"metadata":[]},{"name":"PF_TYPE_PARTICLE_AGE_NORMALIZED","value":20,"metadata":[]},{"name":"PF_TYPE_PARTICLE_FLOAT","value":21,"metadata":[]},{"name":"PF_TYPE_PARTICLE_INITIAL_FLOAT","value":22,"metadata":[]},{"name":"PF_TYPE_PARTICLE_VECTOR_COMPONENT","value":23,"metadata":[]},{"name":"PF_TYPE_PARTICLE_INITIAL_VECTOR_COMPONENT","value":24,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SPEED","value":25,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NUMBER","value":26,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NUMBER_NORMALIZED","value":27,"metadata":[]},{"name":"PF_TYPE_PARTICLE_ROPE_SEGMENT","value":28,"metadata":[]},{"name":"PF_TYPE_PARTICLE_ROPE_SEGMENT_NORMALIZED","value":29,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DISTANCE","value":30,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DOT_PRODUCT","value":31,"metadata":[]},{"name":"PF_TYPE_COUNT","value":32,"metadata":[]}]},
+{"name":"ParticleFloatType_t","size":4,"metadata":[],"enumerators":[{"name":"PF_TYPE_INVALID","value":-1,"metadata":[]},{"name":"PF_TYPE_LITERAL","value":0,"metadata":[]},{"name":"PF_TYPE_NAMED_VALUE","value":1,"metadata":[]},{"name":"PF_TYPE_RANDOM_UNIFORM","value":2,"metadata":[]},{"name":"PF_TYPE_RANDOM_BIASED","value":3,"metadata":[]},{"name":"PF_TYPE_COLLECTION_AGE","value":4,"metadata":[]},{"name":"PF_TYPE_ENDCAP_AGE","value":5,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_COMPONENT","value":6,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_CHANGE_AGE","value":7,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_SPEED","value":8,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_DISTANCE","value":9,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_PLANE_DISTANCE","value":10,"metadata":[]},{"name":"PF_TYPE_PARTICLE_DETAIL_LEVEL","value":11,"metadata":[]},{"name":"PF_TYPE_CONCURRENT_DEF_COUNT","value":12,"metadata":[]},{"name":"PF_TYPE_CLOSEST_CAMERA_DISTANCE","value":13,"metadata":[]},{"name":"PF_TYPE_SNAPSHOT_COUNT","value":14,"metadata":[]},{"name":"PF_TYPE_SNAPSHOT_CHANGED","value":15,"metadata":[]},{"name":"PF_TYPE_CONTROL_POINT_IS_SET","value":16,"metadata":[]},{"name":"PF_TYPE_RENDERER_CAMERA_DISTANCE","value":17,"metadata":[]},{"name":"PF_TYPE_RENDERER_CAMERA_DOT_PRODUCT","value":18,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NOISE","value":19,"metadata":[]},{"name":"PF_TYPE_PARTICLE_AGE","value":20,"metadata":[]},{"name":"PF_TYPE_PARTICLE_AGE_NORMALIZED","value":21,"metadata":[]},{"name":"PF_TYPE_PARTICLE_FLOAT","value":22,"metadata":[]},{"name":"PF_TYPE_PARTICLE_INITIAL_FLOAT","value":23,"metadata":[]},{"name":"PF_TYPE_PARTICLE_VECTOR_COMPONENT","value":24,"metadata":[]},{"name":"PF_TYPE_PARTICLE_INITIAL_VECTOR_COMPONENT","value":25,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SPEED","value":26,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NUMBER","value":27,"metadata":[]},{"name":"PF_TYPE_PARTICLE_NUMBER_NORMALIZED","value":28,"metadata":[]},{"name":"PF_TYPE_PARTICLE_ROPE_SEGMENT","value":29,"metadata":[]},{"name":"PF_TYPE_PARTICLE_ROPE_SEGMENT_NORMALIZED","value":30,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DISTANCE","value":31,"metadata":[]},{"name":"PF_TYPE_PARTICLE_SCREENSPACE_CAMERA_DOT_PRODUCT","value":32,"metadata":[]},{"name":"PF_TYPE_COUNT","value":33,"metadata":[]}]},
 {"name":"ParticleModelType_t","size":4,"metadata":[],"enumerators":[{"name":"PM_TYPE_INVALID","value":0,"metadata":[]},{"name":"PM_TYPE_NAMED_VALUE_MODEL","value":1,"metadata":[]},{"name":"PM_TYPE_NAMED_VALUE_EHANDLE","value":2,"metadata":[]},{"name":"PM_TYPE_CONTROL_POINT","value":3,"metadata":[]},{"name":"PM_TYPE_COUNT","value":4,"metadata":[]}]},
 {"name":"ParticleSetMethod_t","size":4,"metadata":[],"enumerators":[{"name":"PARTICLE_SET_REPLACE_VALUE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Set Value"}]},{"name":"PARTICLE_SET_SCALE_INITIAL_VALUE","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Scale Initial Value"}]},{"name":"PARTICLE_SET_ADD_TO_INITIAL_VALUE","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Add to Initial Value"}]},{"name":"PARTICLE_SET_RAMP_CURRENT_VALUE","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Ramp Current Value at Input Rate Per Second"}]},{"name":"PARTICLE_SET_SCALE_CURRENT_VALUE","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Scale Current Value Raw"}]},{"name":"PARTICLE_SET_ADD_TO_CURRENT_VALUE","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Add to Current Value Raw"}]}]},
 {"name":"ParticleTransformType_t","size":4,"metadata":[],"enumerators":[{"name":"PT_TYPE_INVALID","value":0,"metadata":[]},{"name":"PT_TYPE_NAMED_VALUE","value":1,"metadata":[]},{"name":"PT_TYPE_CONTROL_POINT","value":2,"metadata":[]},{"name":"PT_TYPE_CONTROL_POINT_RANGE","value":3,"metadata":[]},{"name":"PT_TYPE_COUNT","value":4,"metadata":[]}]},
@@ -3590,10 +3615,10 @@
 {"name":"PulseCursorWakePriority_t","size":4,"metadata":[],"enumerators":[{"name":"WakeElegantly","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Elegantly."},{"name":"MPropertyDescription","value":"Request elegant wind-down of any associated work (e.g. vcd interrupt), then proceed afterwards."}]},{"name":"WakeImmediate","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Immediately."},{"name":"MPropertyDescription","value":"Stop the node action without any wind-down, then proceed afterwards."}]}]},
 {"name":"PulseDomainValueType_t","size":4,"metadata":[],"enumerators":[{"name":"INVALID","value":-1,"metadata":[{"name":"MPropertyFriendlyName","value":"Invalid"}]},{"name":"ENTITY_NAME","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map Entity"}]},{"name":"PANEL_ID","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent XML Panel"}]},{"name":"COUNT","value":2,"metadata":[]}]},
 {"name":"PulseDurationStringFormat_t","size":4,"metadata":[],"enumerators":[{"name":"MM_SS_LEADING_ZERO","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"MM:SS with leading zeros"}]}]},
-{"name":"PulseInstructionCode_t","size":2,"metadata":[],"enumerators":[{"name":"INVALID","value":0,"metadata":[]},{"name":"IMMEDIATE_HALT","value":1,"metadata":[]},{"name":"RETURN_VOID","value":2,"metadata":[]},{"name":"RETURN_VALUE","value":3,"metadata":[]},{"name":"LOOP_BREAK","value":4,"metadata":[]},{"name":"NOP","value":5,"metadata":[]},{"name":"JUMP","value":6,"metadata":[]},{"name":"JUMP_COND","value":7,"metadata":[]},{"name":"CHUNK_LEAP","value":8,"metadata":[]},{"name":"CHUNK_LEAP_COND","value":9,"metadata":[]},{"name":"PULSE_CALL_SYNC","value":10,"metadata":[]},{"name":"PULSE_CALL_ASYNC_FIRE","value":11,"metadata":[]},{"name":"CREATE_CHILD_CURSOR_OUTFLOW","value":12,"metadata":[]},{"name":"CELL_INVOKE","value":13,"metadata":[]},{"name":"LIBRARY_INVOKE","value":14,"metadata":[]},{"name":"SET_VAR","value":15,"metadata":[]},{"name":"GET_VAR","value":16,"metadata":[]},{"name":"GET_VAR_DETACH","value":17,"metadata":[]},{"name":"DETACH_REGISTER","value":18,"metadata":[]},{"name":"SET_VAR_ARRAY_ELEMENT_1D","value":19,"metadata":[]},{"name":"SET_VAR_OBSERVABLE","value":20,"metadata":[]},{"name":"GET_CONST","value":21,"metadata":[]},{"name":"GET_ARRAY_ELEMENT","value":22,"metadata":[]},{"name":"GET_DOMAIN_VALUE","value":23,"metadata":[]},{"name":"COPY","value":24,"metadata":[]},{"name":"NOT","value":25,"metadata":[]},{"name":"NEGATE","value":26,"metadata":[]},{"name":"ADD","value":27,"metadata":[]},{"name":"SUB","value":28,"metadata":[]},{"name":"MUL","value":29,"metadata":[]},{"name":"DIV","value":30,"metadata":[]},{"name":"MOD","value":31,"metadata":[]},{"name":"LT","value":32,"metadata":[]},{"name":"LTE","value":33,"metadata":[]},{"name":"EQ","value":34,"metadata":[]},{"name":"NE","value":35,"metadata":[]},{"name":"AND","value":36,"metadata":[]},{"name":"OR","value":37,"metadata":[]},{"name":"SCALE","value":38,"metadata":[]},{"name":"SCALE_INV","value":39,"metadata":[]},{"name":"ELEMENT_ACCESS","value":40,"metadata":[]},{"name":"CONVERT_VALUE","value":41,"metadata":[]},{"name":"REINTERPRET_INSTANCE","value":42,"metadata":[]},{"name":"GET_BLACKBOARD_REFERENCE","value":43,"metadata":[]},{"name":"SET_BLACKBOARD_REFERENCE","value":44,"metadata":[]},{"name":"GET_TEMPVAR","value":45,"metadata":[]},{"name":"SET_TEMPVAR","value":46,"metadata":[]},{"name":"SET_TEMPVAR_OBSERVABLE","value":47,"metadata":[]},{"name":"LAST_SERIALIZED_CODE","value":48,"metadata":[]},{"name":"NEGATE_INT","value":49,"metadata":[]},{"name":"NEGATE_FLOAT","value":50,"metadata":[]},{"name":"NEGATE_VEC2","value":51,"metadata":[]},{"name":"NEGATE_VEC3","value":52,"metadata":[]},{"name":"NEGATE_VEC4","value":53,"metadata":[]},{"name":"ADD_INT","value":54,"metadata":[]},{"name":"ADD_FLOAT","value":55,"metadata":[]},{"name":"ADD_STRING","value":56,"metadata":[]},{"name":"ADD_VEC2","value":57,"metadata":[]},{"name":"ADD_VEC3","value":58,"metadata":[]},{"name":"ADD_VEC3WS_VEC3","value":59,"metadata":[]},{"name":"ADD_VEC3_VEC3WS","value":60,"metadata":[]},{"name":"ADD_VEC4","value":61,"metadata":[]},{"name":"ADD_GAMETIME_FLOAT","value":62,"metadata":[]},{"name":"ADD_FLOAT_GAMETIME","value":63,"metadata":[]},{"name":"SUB_INT","value":64,"metadata":[]},{"name":"SUB_FLOAT","value":65,"metadata":[]},{"name":"SUB_VEC2","value":66,"metadata":[]},{"name":"SUB_VEC3","value":67,"metadata":[]},{"name":"SUB_VEC3WS_VEC3","value":68,"metadata":[]},{"name":"SUB_VEC3WS_VEC3WS","value":69,"metadata":[]},{"name":"SUB_VEC4","value":70,"metadata":[]},{"name":"SUB_GAMETIME_FLOAT","value":71,"metadata":[]},{"name":"SUB_GAMETIME","value":72,"metadata":[]},{"name":"MUL_INT","value":73,"metadata":[]},{"name":"MUL_FLOAT","value":74,"metadata":[]},{"name":"DIV_FLOAT","value":75,"metadata":[]},{"name":"MOD_INT","value":76,"metadata":[]},{"name":"MOD_FLOAT","value":77,"metadata":[]},{"name":"LT_INT","value":78,"metadata":[]},{"name":"LT_FLOAT","value":79,"metadata":[]},{"name":"LT_GAMETIME","value":80,"metadata":[]},{"name":"LTE_INT","value":81,"metadata":[]},{"name":"LTE_FLOAT","value":82,"metadata":[]},{"name":"LTE_GAMETIME","value":83,"metadata":[]},{"name":"EQ_BOOL","value":84,"metadata":[]},{"name":"EQ_INT","value":85,"metadata":[]},{"name":"EQ_FLOAT","value":86,"metadata":[]},{"name":"EQ_VEC2","value":87,"metadata":[]},{"name":"EQ_VEC3","value":88,"metadata":[]},{"name":"EQ_VEC3WS","value":89,"metadata":[]},{"name":"EQ_VEC4","value":90,"metadata":[]},{"name":"EQ_STRING","value":91,"metadata":[]},{"name":"EQ_ENTITY_NAME","value":92,"metadata":[]},{"name":"EQ_ENUM","value":93,"metadata":[]},{"name":"EQ_EHANDLE","value":94,"metadata":[]},{"name":"EQ_PANEL_HANDLE","value":95,"metadata":[]},{"name":"EQ_LEAF","value":96,"metadata":[]},{"name":"EQ_COLOR_RGB","value":97,"metadata":[]},{"name":"EQ_ARRAY","value":98,"metadata":[]},{"name":"EQ_GAMETIME","value":99,"metadata":[]},{"name":"NE_BOOL","value":100,"metadata":[]},{"name":"NE_INT","value":101,"metadata":[]},{"name":"NE_FLOAT","value":102,"metadata":[]},{"name":"NE_VEC2","value":103,"metadata":[]},{"name":"NE_VEC3","value":104,"metadata":[]},{"name":"NE_VEC3WS","value":105,"metadata":[]},{"name":"NE_VEC4","value":106,"metadata":[]},{"name":"NE_STRING","value":107,"metadata":[]},{"name":"NE_ENTITY_NAME","value":108,"metadata":[]},{"name":"NE_ENUM","value":109,"metadata":[]},{"name":"NE_EHANDLE","value":110,"metadata":[]},{"name":"NE_PANEL_HANDLE","value":111,"metadata":[]},{"name":"NE_LEAF","value":112,"metadata":[]},{"name":"NE_COLOR_RGB","value":113,"metadata":[]},{"name":"NE_ARRAY","value":114,"metadata":[]},{"name":"NE_GAMETIME","value":115,"metadata":[]},{"name":"SCALE_VEC3","value":116,"metadata":[]},{"name":"SCALE_VEC2","value":117,"metadata":[]},{"name":"SCALE_VEC4","value":118,"metadata":[]},{"name":"SCALE_INV_VEC3","value":119,"metadata":[]},{"name":"SCALE_INV_VEC2","value":120,"metadata":[]},{"name":"SCALE_INV_VEC4","value":121,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC2","value":122,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3","value":123,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3WS","value":124,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC4","value":125,"metadata":[]},{"name":"ELEMENT_ACCESS_COLOR_RGB","value":126,"metadata":[]},{"name":"GET_CONST_INLINE_STORAGE","value":127,"metadata":[]}]},
+{"name":"PulseInstructionCode_t","size":2,"metadata":[],"enumerators":[{"name":"INVALID","value":0,"metadata":[]},{"name":"IMMEDIATE_HALT","value":1,"metadata":[]},{"name":"RETURN_VOID","value":2,"metadata":[]},{"name":"RETURN_VALUE","value":3,"metadata":[]},{"name":"LOOP_BREAK","value":4,"metadata":[]},{"name":"NOP","value":5,"metadata":[]},{"name":"JUMP","value":6,"metadata":[]},{"name":"JUMP_COND","value":7,"metadata":[]},{"name":"CHUNK_LEAP","value":8,"metadata":[]},{"name":"CHUNK_LEAP_COND","value":9,"metadata":[]},{"name":"PULSE_CALL_SYNC","value":10,"metadata":[]},{"name":"PULSE_CALL_ASYNC_FIRE","value":11,"metadata":[]},{"name":"CREATE_CHILD_CURSOR_OUTFLOW","value":12,"metadata":[]},{"name":"CELL_INVOKE","value":13,"metadata":[]},{"name":"LIBRARY_INVOKE","value":14,"metadata":[]},{"name":"BROADCAST_INVOKE","value":15,"metadata":[]},{"name":"SET_VAR","value":16,"metadata":[]},{"name":"GET_VAR","value":17,"metadata":[]},{"name":"GET_VAR_DETACH","value":18,"metadata":[]},{"name":"DETACH_REGISTER","value":19,"metadata":[]},{"name":"SET_VAR_ARRAY_ELEMENT_1D","value":20,"metadata":[]},{"name":"SET_VAR_OBSERVABLE","value":21,"metadata":[]},{"name":"GET_CONST","value":22,"metadata":[]},{"name":"GET_ARRAY_ELEMENT","value":23,"metadata":[]},{"name":"GET_DOMAIN_VALUE","value":24,"metadata":[]},{"name":"COPY","value":25,"metadata":[]},{"name":"NOT","value":26,"metadata":[]},{"name":"NEGATE","value":27,"metadata":[]},{"name":"ADD","value":28,"metadata":[]},{"name":"SUB","value":29,"metadata":[]},{"name":"MUL","value":30,"metadata":[]},{"name":"DIV","value":31,"metadata":[]},{"name":"MOD","value":32,"metadata":[]},{"name":"LT","value":33,"metadata":[]},{"name":"LTE","value":34,"metadata":[]},{"name":"EQ","value":35,"metadata":[]},{"name":"NE","value":36,"metadata":[]},{"name":"AND","value":37,"metadata":[]},{"name":"OR","value":38,"metadata":[]},{"name":"SCALE","value":39,"metadata":[]},{"name":"SCALE_INV","value":40,"metadata":[]},{"name":"ELEMENT_ACCESS","value":41,"metadata":[]},{"name":"CONVERT_VALUE","value":42,"metadata":[]},{"name":"REINTERPRET_INSTANCE","value":43,"metadata":[]},{"name":"GET_BLACKBOARD_REFERENCE","value":44,"metadata":[]},{"name":"SET_BLACKBOARD_REFERENCE","value":45,"metadata":[]},{"name":"GET_TEMPVAR","value":46,"metadata":[]},{"name":"SET_TEMPVAR","value":47,"metadata":[]},{"name":"SET_TEMPVAR_OBSERVABLE","value":48,"metadata":[]},{"name":"BIND_LAMBDA","value":49,"metadata":[]},{"name":"LAST_SERIALIZED_CODE","value":50,"metadata":[]},{"name":"NEGATE_INT","value":51,"metadata":[]},{"name":"NEGATE_FLOAT","value":52,"metadata":[]},{"name":"NEGATE_VEC2","value":53,"metadata":[]},{"name":"NEGATE_VEC3","value":54,"metadata":[]},{"name":"NEGATE_VEC4","value":55,"metadata":[]},{"name":"ADD_INT","value":56,"metadata":[]},{"name":"ADD_FLOAT","value":57,"metadata":[]},{"name":"ADD_STRING","value":58,"metadata":[]},{"name":"ADD_VEC2","value":59,"metadata":[]},{"name":"ADD_VEC3","value":60,"metadata":[]},{"name":"ADD_VEC3WS_VEC3","value":61,"metadata":[]},{"name":"ADD_VEC3_VEC3WS","value":62,"metadata":[]},{"name":"ADD_VEC4","value":63,"metadata":[]},{"name":"ADD_GAMETIME_FLOAT","value":64,"metadata":[]},{"name":"ADD_FLOAT_GAMETIME","value":65,"metadata":[]},{"name":"SUB_INT","value":66,"metadata":[]},{"name":"SUB_FLOAT","value":67,"metadata":[]},{"name":"SUB_VEC2","value":68,"metadata":[]},{"name":"SUB_VEC3","value":69,"metadata":[]},{"name":"SUB_VEC3WS_VEC3","value":70,"metadata":[]},{"name":"SUB_VEC3WS_VEC3WS","value":71,"metadata":[]},{"name":"SUB_VEC4","value":72,"metadata":[]},{"name":"SUB_GAMETIME_FLOAT","value":73,"metadata":[]},{"name":"SUB_GAMETIME","value":74,"metadata":[]},{"name":"MUL_INT","value":75,"metadata":[]},{"name":"MUL_FLOAT","value":76,"metadata":[]},{"name":"DIV_FLOAT","value":77,"metadata":[]},{"name":"MOD_INT","value":78,"metadata":[]},{"name":"MOD_FLOAT","value":79,"metadata":[]},{"name":"LT_INT","value":80,"metadata":[]},{"name":"LT_FLOAT","value":81,"metadata":[]},{"name":"LT_GAMETIME","value":82,"metadata":[]},{"name":"LTE_INT","value":83,"metadata":[]},{"name":"LTE_FLOAT","value":84,"metadata":[]},{"name":"LTE_GAMETIME","value":85,"metadata":[]},{"name":"EQ_BOOL","value":86,"metadata":[]},{"name":"NE_BOOL","value":87,"metadata":[]},{"name":"EQ_INT","value":88,"metadata":[]},{"name":"NE_INT","value":89,"metadata":[]},{"name":"EQ_FLOAT","value":90,"metadata":[]},{"name":"NE_FLOAT","value":91,"metadata":[]},{"name":"EQ_STRING","value":92,"metadata":[]},{"name":"NE_STRING","value":93,"metadata":[]},{"name":"EQ_VEC2","value":94,"metadata":[]},{"name":"NE_VEC2","value":95,"metadata":[]},{"name":"EQ_VEC3","value":96,"metadata":[]},{"name":"NE_VEC3","value":97,"metadata":[]},{"name":"EQ_QANGLE","value":98,"metadata":[]},{"name":"NE_QANGLE","value":99,"metadata":[]},{"name":"EQ_VEC3WS","value":100,"metadata":[]},{"name":"NE_VEC3WS","value":101,"metadata":[]},{"name":"EQ_VEC4","value":102,"metadata":[]},{"name":"NE_VEC4","value":103,"metadata":[]},{"name":"EQ_TRANSFORM","value":104,"metadata":[]},{"name":"NE_TRANSFORM","value":105,"metadata":[]},{"name":"EQ_TRANSFORMWS","value":106,"metadata":[]},{"name":"NE_TRANSFORMWS","value":107,"metadata":[]},{"name":"EQ_COLOR_RGB","value":108,"metadata":[]},{"name":"NE_COLOR_RGB","value":109,"metadata":[]},{"name":"EQ_GAMETIME","value":110,"metadata":[]},{"name":"NE_GAMETIME","value":111,"metadata":[]},{"name":"EQ_EHANDLE","value":112,"metadata":[]},{"name":"NE_EHANDLE","value":113,"metadata":[]},{"name":"EQ_RESOURCE","value":114,"metadata":[]},{"name":"NE_RESOURCE","value":115,"metadata":[]},{"name":"EQ_RESOURCE_NAME","value":116,"metadata":[]},{"name":"NE_RESOURCE_NAME","value":117,"metadata":[]},{"name":"EQ_SNDEVT_GUID","value":118,"metadata":[]},{"name":"NE_SNDEVT_GUID","value":119,"metadata":[]},{"name":"EQ_SNDEVT_NAME","value":120,"metadata":[]},{"name":"NE_SNDEVT_NAME","value":121,"metadata":[]},{"name":"EQ_ENTITY_NAME","value":122,"metadata":[]},{"name":"NE_ENTITY_NAME","value":123,"metadata":[]},{"name":"EQ_LEAF","value":124,"metadata":[]},{"name":"NE_LEAF","value":125,"metadata":[]},{"name":"EQ_MODEL_MATERIAL_GROUP","value":126,"metadata":[]},{"name":"NE_MODEL_MATERIAL_GROUP","value":127,"metadata":[]},{"name":"EQ_VARIANT","value":128,"metadata":[]},{"name":"NE_VARIANT","value":129,"metadata":[]},{"name":"EQ_ENUM","value":130,"metadata":[]},{"name":"NE_ENUM","value":131,"metadata":[]},{"name":"EQ_PANEL_HANDLE","value":132,"metadata":[]},{"name":"NE_PANEL_HANDLE","value":133,"metadata":[]},{"name":"EQ_ARRAY","value":134,"metadata":[]},{"name":"NE_ARRAY","value":135,"metadata":[]},{"name":"EQ_PARTICLE_EHANDLE","value":136,"metadata":[]},{"name":"NE_PARTICLE_EHANDLE","value":137,"metadata":[]},{"name":"EQ_ANIM_SEQUENCE","value":138,"metadata":[]},{"name":"NE_ANIM_SEQUENCE","value":139,"metadata":[]},{"name":"EQ_VDATA_CHOICE","value":140,"metadata":[]},{"name":"NE_VDATA_CHOICE","value":141,"metadata":[]},{"name":"SCALE_VEC3","value":142,"metadata":[]},{"name":"SCALE_VEC2","value":143,"metadata":[]},{"name":"SCALE_VEC4","value":144,"metadata":[]},{"name":"SCALE_INV_VEC3","value":145,"metadata":[]},{"name":"SCALE_INV_VEC2","value":146,"metadata":[]},{"name":"SCALE_INV_VEC4","value":147,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC2","value":148,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3","value":149,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC3WS","value":150,"metadata":[]},{"name":"ELEMENT_ACCESS_VEC4","value":151,"metadata":[]},{"name":"ELEMENT_ACCESS_COLOR_RGB","value":152,"metadata":[]},{"name":"GET_CONST_INLINE_STORAGE","value":153,"metadata":[]},{"name":"BROADCAST_INVOKE_DOMAIN","value":154,"metadata":[]},{"name":"BROADCAST_INVOKE_ARRAY_SIMPLE","value":155,"metadata":[]},{"name":"BROADCAST_INVOKE_ARRAY_DOMAIN","value":156,"metadata":[]}]},
 {"name":"PulseMethodCallMode_t","size":4,"metadata":[],"enumerators":[{"name":"SYNC_WAIT_FOR_COMPLETION","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Wait For Completion"},{"name":"MPropertyDescription","value":"Synchronous - Wait for this node to fully complete before proceeding."}]},{"name":"ASYNC_FIRE_AND_FORGET","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Proceed Immediately"},{"name":"MPropertyDescription","value":"Asynchronous - This node executes independently using a new Cursor. Formerly 'Fire and Forget'. Equivalent to scheduling using an additional 'Fire Child Cursors' node."}]}]},
-{"name":"PulseValueType_t","size":4,"metadata":[],"enumerators":[{"name":"PVAL_VOID","value":-1,"metadata":[{"name":"MPropertyFriendlyName","value":"Void"}]},{"name":"PVAL_BOOL","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Boolean"}]},{"name":"PVAL_INT","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Integer"}]},{"name":"PVAL_FLOAT","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Float"}]},{"name":"PVAL_STRING","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"String"}]},{"name":"PVAL_VEC2","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector2D"}]},{"name":"PVAL_VEC3","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector"}]},{"name":"PVAL_QANGLE","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Angle"}]},{"name":"PVAL_VEC3_WORLDSPACE","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"World Vector"}]},{"name":"PVAL_VEC4","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector4D"}]},{"name":"PVAL_TRANSFORM","value":9,"metadata":[{"name":"MPropertyFriendlyName","value":"Transform"}]},{"name":"PVAL_TRANSFORM_WORLDSPACE","value":10,"metadata":[{"name":"MPropertyFriendlyName","value":"World Transform"}]},{"name":"PVAL_COLOR_RGB","value":11,"metadata":[{"name":"MPropertyFriendlyName","value":"Color"}]},{"name":"PVAL_GAMETIME","value":12,"metadata":[{"name":"MPropertyFriendlyName","value":"Game Time"}]},{"name":"PVAL_EHANDLE","value":13,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Handle"}]},{"name":"PVAL_RESOURCE","value":14,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource"}]},{"name":"PVAL_RESOURCE_NAME","value":15,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource Name"}]},{"name":"PVAL_SNDEVT_GUID","value":16,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent Instance Handle"}]},{"name":"PVAL_SNDEVT_NAME","value":17,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent"}]},{"name":"PVAL_ENTITY_NAME","value":18,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Name"}]},{"name":"PVAL_LEAF","value":19,"metadata":[{"name":"MPropertyFriendlyName","value":"Leaf Type"}]},{"name":"PVAL_MODEL_MATERIAL_GROUP","value":20,"metadata":[{"name":"MPropertyFriendlyName","value":"Material Group"}]},{"name":"PVAL_CURSOR_FLOW","value":21,"metadata":[{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_VARIANT","value":22,"metadata":[{"name":"MPropertyFriendlyName","value":"Variant"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_UNKNOWN","value":23,"metadata":[{"name":"MPropertyFriendlyName","value":"Unknown"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_ENUM","value":24,"metadata":[{"name":"MPropertyFriendlyName","value":"Enum"}]},{"name":"PVAL_PANORAMA_PANEL_HANDLE","value":25,"metadata":[{"name":"MPropertyFriendlyName","value":"Panorama Panel Handle"}]},{"name":"PVAL_ARRAY","value":26,"metadata":[{"name":"MPropertyFriendlyName","value":"Array"}]},{"name":"PVAL_PARTICLE_EHANDLE","value":27,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MPropertyFriendlyName","value":"Particle Object"}]},{"name":"PVAL_ANIM_SEQUENCE","value":28,"metadata":[{"name":"MPropertyFriendlyName","value":"Anim Sequence"}]},{"name":"PVAL_VDATA_CHOICE","value":29,"metadata":[{"name":"MPropertyFriendlyName","value":"VData Choice"}]},{"name":"PVAL_COUNT","value":30,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
-{"name":"PulseVariableKeysSource_t","size":4,"metadata":[],"enumerators":[{"name":"PRIVATE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Private"}]},{"name":"CPP","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Code"}]},{"name":"VMAP","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map"}]},{"name":"VMDL","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VMDL"}]},{"name":"XML","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent XML"}]},{"name":"VDATA","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VData"}]},{"name":"COUNT","value":6,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
+{"name":"PulseValueType_t","size":4,"metadata":[],"enumerators":[{"name":"PVAL_VOID","value":-1,"metadata":[{"name":"MPropertyFriendlyName","value":"Void"}]},{"name":"PVAL_BOOL","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Boolean"}]},{"name":"PVAL_INT","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Integer"}]},{"name":"PVAL_FLOAT","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Float"}]},{"name":"PVAL_STRING","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"String"}]},{"name":"PVAL_VEC2","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector2D"}]},{"name":"PVAL_VEC3","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector"}]},{"name":"PVAL_QANGLE","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Angle"}]},{"name":"PVAL_VEC3_WORLDSPACE","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"World Vector"}]},{"name":"PVAL_VEC4","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Vector4D"}]},{"name":"PVAL_TRANSFORM","value":9,"metadata":[{"name":"MPropertyFriendlyName","value":"Transform"}]},{"name":"PVAL_TRANSFORM_WORLDSPACE","value":10,"metadata":[{"name":"MPropertyFriendlyName","value":"World Transform"}]},{"name":"PVAL_COLOR_RGB","value":11,"metadata":[{"name":"MPropertyFriendlyName","value":"Color"}]},{"name":"PVAL_GAMETIME","value":12,"metadata":[{"name":"MPropertyFriendlyName","value":"Game Time"}]},{"name":"PVAL_EHANDLE","value":13,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Handle"}]},{"name":"PVAL_RESOURCE","value":14,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource"}]},{"name":"PVAL_RESOURCE_NAME","value":15,"metadata":[{"name":"MPropertyFriendlyName","value":"Resource Name"}]},{"name":"PVAL_SNDEVT_GUID","value":16,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent Instance Handle"}]},{"name":"PVAL_SNDEVT_NAME","value":17,"metadata":[{"name":"MPropertyFriendlyName","value":"SoundEvent"}]},{"name":"PVAL_ENTITY_NAME","value":18,"metadata":[{"name":"MPropertyFriendlyName","value":"Entity Targetname"}]},{"name":"PVAL_LEAF","value":19,"metadata":[{"name":"MPropertyFriendlyName","value":"Leaf Type"}]},{"name":"PVAL_MODEL_MATERIAL_GROUP","value":20,"metadata":[{"name":"MPropertyFriendlyName","value":"Material Group"}]},{"name":"PVAL_CURSOR_FLOW","value":21,"metadata":[{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_VARIANT","value":22,"metadata":[{"name":"MPropertyFriendlyName","value":"Variant"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_UNKNOWN","value":23,"metadata":[{"name":"MPropertyFriendlyName","value":"Unknown"},{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_ENUM","value":24,"metadata":[{"name":"MPropertyFriendlyName","value":"Enum"}]},{"name":"PVAL_PANORAMA_PANEL_HANDLE","value":25,"metadata":[{"name":"MPropertyFriendlyName","value":"Panorama Panel Handle"}]},{"name":"PVAL_ARRAY","value":26,"metadata":[{"name":"MPropertyFriendlyName","value":"Array"}]},{"name":"PVAL_PARTICLE_EHANDLE","value":27,"metadata":[{"name":"MPropertySuppressEnumerator"},{"name":"MPropertyFriendlyName","value":"Particle Object"}]},{"name":"PVAL_ANIM_SEQUENCE","value":28,"metadata":[{"name":"MPropertyFriendlyName","value":"Anim Sequence"}]},{"name":"PVAL_VDATA_CHOICE","value":29,"metadata":[{"name":"MPropertyFriendlyName","value":"VData Choice"}]},{"name":"PVAL_LAMBDA","value":30,"metadata":[{"name":"MPropertySuppressEnumerator"}]},{"name":"PVAL_COUNT","value":31,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
+{"name":"PulseVariableKeysSource_t","size":4,"metadata":[],"enumerators":[{"name":"PRIVATE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Private"}]},{"name":"CPP","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Code"}]},{"name":"VMAP","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map"}]},{"name":"VMDL","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VMDL"}]},{"name":"XML","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent XML"}]},{"name":"VDATA","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent VData"}]},{"name":"VMAP_AND_VDATA","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"Parent Map + VData"}]},{"name":"COUNT","value":7,"metadata":[{"name":"MPropertySuppressEnumerator"}]}]},
 {"name":"RagdollPoseControl","size":4,"metadata":[],"enumerators":[{"name":"Absolute","value":0,"metadata":[]}]},
 {"name":"RenderBufferFlags_t","size":4,"metadata":[],"enumerators":[{"name":"RENDER_BUFFER_USAGE_NONE","value":0,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_VERTEX_BUFFER","value":1,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_INDEX_BUFFER","value":2,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_SHADER_RESOURCE","value":4,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_UNORDERED_ACCESS","value":8,"metadata":[]},{"name":"RENDER_BUFFER_BYTEADDRESS_BUFFER","value":16,"metadata":[]},{"name":"RENDER_BUFFER_STRUCTURED_BUFFER","value":32,"metadata":[]},{"name":"RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS","value":256,"metadata":[]},{"name":"RENDER_BUFFER_ACCELERATION_STRUCTURE","value":512,"metadata":[]},{"name":"RENDER_BUFFER_SHADER_BINDING_TABLE","value":1024,"metadata":[]},{"name":"RENDER_BUFFER_POOL_ALLOCATED","value":2048,"metadata":[]},{"name":"RENDER_BUFFER_USAGE_CONDITIONAL_RENDERING","value":4096,"metadata":[]},{"name":"RENDER_BUFFER_IMMOVABLE_ALLOCATION","value":8192,"metadata":[]},{"name":"RENDER_BUFFER_DYNAMIC_ZERO_COPY","value":16384,"metadata":[]}]},
 {"name":"RenderMeshSlotType_t","size":1,"metadata":[],"enumerators":[{"name":"RENDERMESH_SLOT_INVALID","value":-1,"metadata":[]},{"name":"RENDERMESH_SLOT_PER_VERTEX","value":0,"metadata":[]},{"name":"RENDERMESH_SLOT_PER_INSTANCE","value":1,"metadata":[]}]},

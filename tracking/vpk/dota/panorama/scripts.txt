@@ -76,7 +76,7 @@ panorama/scripts/dashboard_background_primal_beast.vjs_c crc=eef38a1e size=4062
 panorama/scripts/dashboard_background_seasonal_reward_line_fall_2025.vts_c crc=33de2018 size=5486
 panorama/scripts/dashboard_background_seasonal_reward_line_generic.vts_c crc=64e79793 size=4734
 panorama/scripts/dashboard_background_seasonal_reward_line_winter_2025.vts_c crc=b294d454 size=5262
-panorama/scripts/dashboard_dark_carnival.vts_c crc=c3eea525 size=11374
+panorama/scripts/dashboard_dark_carnival.vts_c crc=99848096 size=12082
 panorama/scripts/dashboard_page_mega_treasure.vjs_c crc=6f3424e6 size=816
 panorama/scripts/dashboard_page_post_game.vjs_c crc=21bc4ca6 size=1545
 panorama/scripts/dashboard_page_post_game_overview_hero.vjs_c crc=fc6a5e45 size=1098

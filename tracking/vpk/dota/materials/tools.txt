@@ -1,6 +1,6 @@
 materials/tools/cameraclip.vmat_c crc=a96ac032 size=4864
 materials/tools/cameraclip_color_psd_d0bc57dd.vtex_c crc=e2f4fbbc size=7268
-materials/tools/dota_nav_walkable.vmat_c crc=67330219 size=2954
+materials/tools/dota_nav_walkable.vmat_c crc=e5d55dd9 size=2954
 materials/tools/fogvolume.vmat_c crc=3e3b1c0a size=5040
 materials/tools/fogvolume_color_tga_81aabbe.vtex_c crc=4489aa11 size=7508
 materials/tools/func_occluder_color_tga_99a8888d.vtex_c crc=0d1e0f12 size=89204

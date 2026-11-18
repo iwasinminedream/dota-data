@@ -109,6 +109,7 @@ particles/dev/new_heroes/new_hero_aoe_ring_rope.vpcf_c crc=4cc967af size=2695
 particles/dev/new_heroes/new_hero_cloud.vpcf_c crc=bf18a687 size=2725
 particles/dev/new_heroes/new_hero_dust_bursts.vpcf_c crc=8d46ccd5 size=2013
 particles/dev/overhead_icon.vpcf_c crc=d74f8391 size=1982
+particles/dev/preview_ground.vpcf_c crc=66134248 size=3035
 particles/dev/rune_test_electrified.vpcf_c crc=ccc8b22c size=2583
 particles/dev/rune_test_electrified_arc_b.vpcf_c crc=fffa0393 size=2336
 particles/dev/rune_test_electrified_beam_a.vpcf_c crc=b6ffb974 size=2413

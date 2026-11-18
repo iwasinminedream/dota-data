@@ -19589,6 +19589,7 @@
 			{
 				"can roll unusual"		"1"
 				"featured_until"		"1705046399"
+				"can_equip_as_ability_effects"		"4"
 			}
 			"used_by_heroes"
 			{
@@ -19602,6 +19603,7 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_txt_ult.vpcf"
 					"modifier"		"particles/units/heroes/hero_tusk/tusk_frostivuspunch_txt_ult.vpcf"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
@@ -19613,12 +19615,14 @@
 					"type"		"ability_icon"
 					"asset"		"tusk_walrus_punch"
 					"modifier"		"tusk_frostivus_punch"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
 					"type"		"sound"
 					"asset"		"Hero_Tusk.WalrusPunch.Target"
 					"modifier"		"Hero_Tusk.WalrusPunch.Target.2023"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 			}
 		}
@@ -107090,7 +107094,7 @@
 		}
 		"34452"
 		{
-			"name"		"Dark Carnival Secret Room Pack"
+			"name"		"Dark Carnival Secret Room Pack I"
 			"prefab"		"tool"
 			"capabilities"
 			{
@@ -107099,7 +107103,7 @@
 			"creation_date"		"2026-06-18"
 			"event_id"		"EVENT_ID_DARK_CARNIVAL"
 			"image_inventory"		"econ/tools/dark_carnival_secret_room_pack"
-			"item_name"		"#DOTA_Item_Dark_Carnival_Secret_Room_Pack"
+			"item_name"		"#DOTA_Item_Dark_Carnival_Secret_Room_Pack_I"
 			"item_rarity"		"seasonal"
 			"price_info"
 			{

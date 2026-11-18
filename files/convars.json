@@ -849,11 +849,6 @@
     "flags": [],
     "description": "Before triggering a resource reload, wait for input dependencies to stop being written"
   },
-  "assetsystem_recompile_dependents_as_needed": {
-    "default": "true",
-    "flags": [],
-    "description": "When an asset is being recompiled the dependents will be recompiled only as needed, otherwise the original recompile mode will be passed on."
-  },
   "assetsystem_reload_queue_requeue_pause": {
     "default": "1",
     "flags": [],
@@ -874,7 +869,7 @@
     "description": "(Dev command - regenerate the asset sort indicies)"
   },
   "assetthumbnail_old_fingerprint_style": {
-    "default": "true",
+    "default": "false",
     "flags": [],
     "description": "Set to true to revert to old behavior"
   },
@@ -1630,7 +1625,9 @@
   "changelevel": {
     "default": "cmd",
     "flags": [
-      "release"
+      "release",
+      "vconsole_fuzzy",
+      "vconsole_set_focus"
     ],
     "description": "changelevel <mapname> :Multiplayer change level."
   },
@@ -1978,6 +1975,14 @@
     "flags": [],
     "description": "Print the current number of FDs reported by getrlimit"
   },
+  "choreo_debug_root_motion_warp": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Draws the warped root motion of choreo anim clips."
+  },
   "cl_ShowBoneSetupEnts": {
     "default": "false",
     "flags": [
@@ -2003,11 +2008,6 @@
       "cl"
     ],
     "description": ""
-  },
-  "cl_async_usercmd_send_recvmargin_min": {
-    "default": "1",
-    "flags": [],
-    "description": "Min size of the recv margin queue when async usercmd send is disabled"
   },
   "cl_auto_cursor_scale": {
     "default": "true",
@@ -2773,6 +2773,13 @@
     ],
     "description": "Displays the joint names + axes an entity.  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
+  "cl_ent_list_names": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "List entity names"
+  },
   "cl_ent_messages": {
     "default": "cmd",
     "flags": [
@@ -3311,7 +3318,7 @@
       "cl",
       "cheat"
     ],
-    "description": "Sets ImGui selection"
+    "description": "Sets ImGui selection. Add 'focus' to bring the Entity Browser to the front."
   },
   "cl_imgui_set_status_text": {
     "default": "cmd",
@@ -3514,6 +3521,11 @@
       "a"
     ],
     "description": ""
+  },
+  "cl_packetentities_merge_before_decode": {
+    "default": "true",
+    "flags": [],
+    "description": "When an entity is decoded from a baseline plus a wire delta, merge the two and decode once (true), or decode the baseline and then the delta as two passes (false, the old behaviour, which can invoke change callbacks with baseline values for an entity that already exists)."
   },
   "cl_panel_freeze_time_after_press": {
     "default": "0.5",
@@ -3960,6 +3972,13 @@
       "cheat"
     ],
     "description": "Print all response rules"
+  },
+  "cl_save_check_persistent_resources": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Re-precache persistent entities and report precached resources that are no longer resident"
   },
   "cl_sceneentity_debug": {
     "default": "false",
@@ -4408,6 +4427,22 @@
     ],
     "description": "print soundscapes"
   },
+  "cl_spawn_group_list_filters": {
+    "default": "cmd",
+    "flags": [
+      "cl",
+      "cheat",
+      "release"
+    ],
+    "description": "List the registered spawn group entity filters."
+  },
+  "cl_spawngroup_unload_destroys_networked_entities": {
+    "default": "true",
+    "flags": [
+      "cl"
+    ],
+    "description": "Unloading a server spawn group destroys the client's copies of its entities before PostSpawnGroupUnload"
+  },
   "cl_spectator_interp_ratio": {
     "default": "2",
     "flags": [
@@ -4443,6 +4478,11 @@
       "user"
     ],
     "description": "This value, multiplied by the tick interval, is added to cl_tickpacket_recvmargin_desired to obtain the effective desired recv margin."
+  },
+  "cl_tickpacket_recvmargin_extra_async_usercmd_send_disabled": {
+    "default": "1",
+    "flags": [],
+    "description": "Min size of the recv margin queue when async usercmd send is disabled"
   },
   "cl_tickpacket_recvmargin_spew_interval": {
     "default": "0",
@@ -5304,6 +5344,14 @@
       "sv"
     ],
     "description": "Dump the debug history to the console. Format: <category id>     Categories:      0: Entity I/O      1: AI Decisions      2: Scene Print      3: Alyx Blind      4: Log of damage done to player   5: Player Teleport   6: Blind Zombie Sounds   7: Player Continuous"
+  },
+  "debug_ai_choreo_timing": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Log per-tick timing of goal arrival, motor state changes, choreo requirements and choreo external graph start / handshake."
   },
   "debug_destructible_parts": {
     "default": "false",
@@ -7094,6 +7142,13 @@
     ],
     "description": ""
   },
+  "dota_bright_glows": {
+    "default": "true",
+    "flags": [
+      "cl"
+    ],
+    "description": "Enable brighter glows."
+  },
   "dota_broadcast_is_live_cache_duration_s": {
     "default": "15",
     "flags": [
@@ -7162,6 +7217,14 @@
       "cheat"
     ],
     "description": "Minimum seconds between announcer warning a particular building is under attack"
+  },
+  "dota_cache_clientside_wearables": {
+    "default": "true",
+    "flags": [
+      "cl",
+      "release"
+    ],
+    "description": ""
   },
   "dota_cache_duration_all_hero_challenge_s": {
     "default": "1800",
@@ -8357,13 +8420,6 @@
     ],
     "description": ""
   },
-  "dota_claim_item_action_async_rewards_timeout_duration": {
-    "default": "20",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
   "dota_client_filesystem_warnings": {
     "default": "false",
     "flags": [
@@ -9126,6 +9182,13 @@
     "description": ""
   },
   "dota_debug_change_cursor_during_pending_order": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_debug_econ_set_preview_clicks": {
     "default": "false",
     "flags": [
       "cl"
@@ -11592,6 +11655,13 @@
     ],
     "description": "Add a custom class to the root of the HUD for testing purposes."
   },
+  "dota_hud_custom_label_name_offset": {
+    "default": "6",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
   "dota_hud_custom_label_offset": {
     "default": "16",
     "flags": [
@@ -11748,13 +11818,6 @@
     "description": ""
   },
   "dota_hud_hide_topbar": {
-    "default": "false",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
-  },
-  "dota_hud_ingame_predictions_hide": {
     "default": "false",
     "flags": [
       "cl"
@@ -13827,6 +13890,20 @@
     "flags": [
       "sv",
       "cheat"
+    ],
+    "description": ""
+  },
+  "dota_outline_brightness": {
+    "default": "0.7",
+    "flags": [
+      "cl"
+    ],
+    "description": ""
+  },
+  "dota_outline_thickness": {
+    "default": "0.0025",
+    "flags": [
+      "cl"
     ],
     "description": ""
   },
@@ -19157,6 +19234,30 @@
     ],
     "description": ""
   },
+  "dota_unit_separation_acceleration": {
+    "default": "2000",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Maximum change in separation velocity per second for soft-collision units."
+  },
+  "dota_unit_separation_max_speed": {
+    "default": "300",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Separation speed for soft-collision units at full overlap."
+  },
+  "dota_unit_separation_padding": {
+    "default": "80",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Extra distance beyond both hull radii at which soft-collision units start pushing apart."
+  },
   "dota_unit_short_path_search_debug": {
     "default": "0",
     "flags": [
@@ -19209,6 +19310,14 @@
       "cl"
     ],
     "description": ""
+  },
+  "dota_unit_soft_collision": {
+    "default": "true",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Non-player-controlled ground units stop blocking each other and are pushed apart with separation impulses instead."
   },
   "dota_unit_use_player_color": {
     "default": "true",
@@ -19376,7 +19485,7 @@
     "description": ""
   },
   "dota_use_experimental_npc_controller": {
-    "default": "false",
+    "default": "true",
     "flags": [
       "sv"
     ],
@@ -20670,6 +20779,13 @@
     ],
     "description": "Kills the given entity(s)  Arguments:    {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
   },
+  "ent_list_names": {
+    "default": "cmd",
+    "flags": [
+      "sv"
+    ],
+    "description": "List entity names"
+  },
   "ent_messages": {
     "default": "cmd",
     "flags": [
@@ -21344,14 +21460,6 @@
     ],
     "description": ""
   },
-  "fog_colorskybox": {
-    "default": "-1 -1 -1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
   "fog_enable": {
     "default": "true",
     "flags": [
@@ -21359,14 +21467,6 @@
       "cheat"
     ],
     "description": "Enable fog"
-  },
-  "fog_enableskybox": {
-    "default": "true",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
   },
   "fog_end": {
     "default": "-1",
@@ -21376,39 +21476,7 @@
     ],
     "description": ""
   },
-  "fog_endskybox": {
-    "default": "-1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
   "fog_hdrcolorscale": {
-    "default": "-1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "fog_hdrcolorscaleskybox": {
-    "default": "-1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "fog_maxdensity": {
-    "default": "-1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "fog_maxdensityskybox": {
     "default": "-1",
     "flags": [
       "cl",
@@ -21467,14 +21535,6 @@
     "description": ""
   },
   "fog_start": {
-    "default": "-1",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "fog_startskybox": {
     "default": "-1",
     "flags": [
       "cl",
@@ -21963,6 +22023,20 @@
     ],
     "description": ""
   },
+  "func_rotator_imgui_graph_seconds": {
+    "default": "5",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
+  "func_rotator_imgui_log_count": {
+    "default": "30",
+    "flags": [
+      "sv"
+    ],
+    "description": ""
+  },
   "func_rotator_run_parallel": {
     "default": "true",
     "flags": [
@@ -22138,7 +22212,7 @@
     "default": "cmd",
     "flags": [
       "cl",
-      "cheat"
+      "release"
     ],
     "description": "dump position and angles to the console"
   },
@@ -22146,7 +22220,7 @@
     "default": "cmd",
     "flags": [
       "cl",
-      "cheat"
+      "release"
     ],
     "description": "dump origin and angles to the console"
   },
@@ -22154,7 +22228,7 @@
     "default": "cmd",
     "flags": [
       "cl",
-      "cheat"
+      "release"
     ],
     "description": "dump position and angles to the console and clipboard"
   },
@@ -22162,7 +22236,7 @@
     "default": "cmd",
     "flags": [
       "cl",
-      "cheat"
+      "release"
     ],
     "description": "dump origin and angles to the console and clipboard"
   },
@@ -22329,13 +22403,6 @@
       "cheat"
     ],
     "description": "Give a supply of ammo for current weapon.."
-  },
-  "gl_clear": {
-    "default": "true",
-    "flags": [
-      "cl"
-    ],
-    "description": ""
   },
   "global_set": {
     "default": "cmd",
@@ -22533,6 +22600,11 @@
     "default": "false",
     "flags": [],
     "description": ""
+  },
+  "hammer_log_undo": {
+    "default": "false",
+    "flags": [],
+    "description": "Log each undo position, undo and redo"
   },
   "hammer_overlay_draw_projection_triangles": {
     "default": "false",
@@ -22761,6 +22833,20 @@
       "per_user"
     ],
     "description": ""
+  },
+  "hud_showstreaming": {
+    "default": "0",
+    "flags": [
+      "sv"
+    ],
+    "description": "Show the map spawn groups being streamed in and out (listen server). 1: what's loaded and the levels and environments next to it, 2: every one seen"
+  },
+  "hud_showstreaming_font_size": {
+    "default": "20",
+    "flags": [
+      "sv"
+    ],
+    "description": "hud_showstreaming text size"
   },
   "hud_sticky_item_name": {
     "default": "item_tpscroll",
@@ -23068,7 +23154,7 @@
       "sv",
       "cheat"
     ],
-    "description": "Sets ImGui selection"
+    "description": "Sets ImGui selection. Add 'focus' to bring the Entity Browser to the front."
   },
   "imgui_set_status_text": {
     "default": "cmd",
@@ -23238,6 +23324,13 @@
       "cl"
     ],
     "description": ""
+  },
+  "iv_combined_restore": {
+    "default": "false",
+    "flags": [
+      "cl"
+    ],
+    "description": "When leaving the rendering phase, restore client- and server-authoritative values in a single pass instead of two"
   },
   "iv_debug": {
     "default": "cmd",
@@ -24084,6 +24177,13 @@
       "cheat"
     ],
     "description": ""
+  },
+  "look_at_pos": {
+    "default": "cmd",
+    "flags": [
+      "cl"
+    ],
+    "description": "Center the camera on the given position"
   },
   "loop_dump": {
     "default": "cmd",
@@ -25551,6 +25651,22 @@
     ],
     "description": "Always false"
   },
+  "nav_gen_freeway_split_tol": {
+    "default": "1",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_gen_freeway_split_vertical_extent": {
+    "default": "0",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "Half height of the freeway split slab, 0 uses the freeway half width"
+  },
   "nav_gen_island_removal": {
     "default": "false",
     "flags": [
@@ -25761,6 +25877,14 @@
   },
   "nav_gen_split_multi_connection_polys_tol": {
     "default": "0.01",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": ""
+  },
+  "nav_gen_split_polys_by_freeway": {
+    "default": "true",
     "flags": [
       "sv",
       "cheat"
@@ -27268,6 +27392,16 @@
     ],
     "description": ""
   },
+  "net_decode_callback_queue_stats_clear": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Clear per-entity decode change callback stats"
+  },
+  "net_decode_callback_queue_stats_dump": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Print per-entity decode change callback stats"
+  },
   "net_detailed_canpacket_log": {
     "default": "false",
     "flags": [],
@@ -27345,14 +27479,14 @@
     "description": "Server: SteamNetworkingSockets will not buffer more than N messages from a connection that does not yet have a netchan"
   },
   "net_limit_sv_message_process_time_ms_drop_burst": {
-    "default": "200",
+    "default": "300",
     "flags": [
       "release"
     ],
     "description": "Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)"
   },
-  "net_limit_sv_message_process_time_ms_drop_rate": {
-    "default": "100",
+  "net_limit_sv_message_process_time_ms_drop_rate_per_sec": {
+    "default": "500",
     "flags": [
       "release"
     ],
@@ -27365,7 +27499,7 @@
     ],
     "description": "Warn if processing messages from a client consumes more than N ms of CPU time in a burst (token bucket capacity)"
   },
-  "net_limit_sv_message_process_time_ms_warn_rate": {
+  "net_limit_sv_message_process_time_ms_warn_rate_per_sec": {
     "default": "150",
     "flags": [
       "release"
@@ -28086,7 +28220,7 @@
     "flags": [],
     "description": "Show the filesystem path."
   },
-  "path_mover_enable_high_resolution_debug_rendering": {
+  "path_enable_high_resolution_debug_rendering": {
     "default": "false",
     "flags": [
       "sv"
@@ -28547,7 +28681,7 @@
     "flags": [
       "release"
     ],
-    "description": "Play a recorded demo file (.dem )."
+    "description": "Play a recorded demo file (.dem ).  Options: start=<tick> end=<tick> timescale=<float> (run with no arguments for details)."
   },
   "playdemo_scripted": {
     "default": "cmd",
@@ -28873,72 +29007,6 @@
       "vconsole_set_focus"
     ],
     "description": "Quit the game"
-  },
-  "r_AirboatViewDampenDamp": {
-    "default": "1",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_AirboatViewDampenFreq": {
-    "default": "7",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_AirboatViewZHeight": {
-    "default": "0",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_JeepViewDampenDamp": {
-    "default": "1",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_JeepViewDampenFreq": {
-    "default": "7",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
-  },
-  "r_JeepViewZHeight": {
-    "default": "10",
-    "flags": [
-      "sv",
-      "cl",
-      "nf",
-      "rep",
-      "cheat"
-    ],
-    "description": ""
   },
   "r_RainAllowInSplitScreen": {
     "default": "false",
@@ -29436,14 +29504,6 @@
     ],
     "description": ""
   },
-  "r_dota_debug_reflection_rects": {
-    "default": "false",
-    "flags": [
-      "cl",
-      "cheat"
-    ],
-    "description": ""
-  },
   "r_dota_depthbias": {
     "default": "0.001",
     "flags": [
@@ -29598,6 +29658,16 @@
     ],
     "description": ""
   },
+  "r_dota_render_occluded_npcs": {
+    "default": "false",
+    "flags": [
+      "cl",
+      "a",
+      "per_user",
+      "release"
+    ],
+    "description": "Enable rendering of occluded NPCs."
+  },
   "r_dota_shadow_ambient_light": {
     "default": "1.5",
     "flags": [
@@ -29671,6 +29741,13 @@
     "flags": [
       "cl",
       "cheat"
+    ],
+    "description": ""
+  },
+  "r_dota_water_reflect_combined": {
+    "default": "false",
+    "flags": [
+      "cl"
     ],
     "description": ""
   },
@@ -30509,11 +30586,6 @@
     "flags": [],
     "description": "render particles 100 times and show perf"
   },
-  "r_particle_testbuffers": {
-    "default": "false",
-    "flags": [],
-    "description": ""
-  },
   "r_particle_timescale": {
     "default": "1",
     "flags": [],
@@ -30613,6 +30685,13 @@
     ],
     "description": "Triggers a RenderDoc capture"
   },
+  "r_renderdoc_capture_frame_unscheduled": {
+    "default": "cmd",
+    "flags": [
+      "linked"
+    ],
+    "description": "Triggers a RenderDoc capture with sc_rendergraph_schedule pass reordering disabled, so passes are captured in submission order"
+  },
   "r_renderdoc_open_captures": {
     "default": "true",
     "flags": [],
@@ -30661,6 +30740,11 @@
       "cl"
     ],
     "description": ""
+  },
+  "r_send_gpu_memory_report": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Send r_gpu_mem_stats, a VMA memory dump and the console log in a minidump report.  Usage: r_send_gpu_memory_report [name ...] (default dang)"
   },
   "r_setpos": {
     "default": "cmd",
@@ -30960,6 +31044,11 @@
       "release"
     ],
     "description": "Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes."
+  },
+  "r_vulkan_present_wait": {
+    "default": "true",
+    "flags": [],
+    "description": ""
   },
   "r_vulkan_print_pipeline_compile_times": {
     "default": "cmd",
@@ -31299,6 +31388,7 @@
   "repeat_last_console_command": {
     "default": "cmd",
     "flags": [
+      "norecord",
       "release"
     ],
     "description": "Repeat last console command."
@@ -31624,6 +31714,13 @@
     ],
     "description": ""
   },
+  "save_check_persistent_resources": {
+    "default": "cmd",
+    "flags": [
+      "sv"
+    ],
+    "description": "Re-precache persistent entities and report precached resources that are no longer resident"
+  },
   "save_clear_subdirectory": {
     "default": "cmd",
     "flags": [
@@ -31661,14 +31758,6 @@
       "sv"
     ],
     "description": "Keep this many old copies in history of autosaves and quicksaves."
-  },
-  "save_maxarray_spew": {
-    "default": "10",
-    "flags": [
-      "sv",
-      "release"
-    ],
-    "description": "Max number of array entries to spew when using SaveRestoreIO spewing."
   },
   "save_parallel": {
     "default": "true",
@@ -31710,19 +31799,24 @@
     ],
     "description": ""
   },
-  "save_watchclass": {
-    "default": "cmd",
+  "save_streamed_out_level_async": {
+    "default": "true",
     "flags": [
-      "sv"
+      "sv",
+      "cl",
+      "rep"
     ],
-    "description": "Restrict spew to entities with matching classname"
+    "description": "A level streaming out encodes and writes its .hl1 (server) and .hl2 (client) on a save thread rather than in the frame it unloads"
   },
-  "save_watchentity": {
-    "default": "cmd",
+  "save_streamed_out_level_debug_delay": {
+    "default": "0",
     "flags": [
-      "sv"
+      "sv",
+      "cl",
+      "rep",
+      "cheat"
     ],
-    "description": "Restrict spew to entity index"
+    "description": "Sleep the save thread for this many milliseconds before writing a streamed out level's .hl1/.hl2, to test what waits for the write"
   },
   "save_write_kv3": {
     "default": "false",
@@ -31832,9 +31926,7 @@
   },
   "sc_disableThreading": {
     "default": "false",
-    "flags": [
-      "cheat"
-    ],
+    "flags": [],
     "description": ""
   },
   "sc_disable_baked_lighting": {
@@ -31858,9 +31950,7 @@
   },
   "sc_disable_shadow_fastpath": {
     "default": "false",
-    "flags": [
-      "cheat"
-    ],
+    "flags": [],
     "description": ""
   },
   "sc_disable_spotlight_shadows": {
@@ -32013,7 +32103,7 @@
     "description": "Toggles fade support for instanced meshes"
   },
   "sc_instanced_mesh_shadows_batch_across_materials": {
-    "default": "false",
+    "default": "true",
     "flags": [],
     "description": "Toggles whether mesh shader instanced can batch on reflectivity"
   },
@@ -32115,16 +32205,12 @@
   },
   "sc_reject_all_objects": {
     "default": "false",
-    "flags": [
-      "cheat"
-    ],
+    "flags": [],
     "description": ""
   },
   "sc_screen_size_lod_scale_override": {
     "default": "-1",
-    "flags": [
-      "cheat"
-    ],
+    "flags": [],
     "description": ""
   },
   "sc_setclassflags": {
@@ -32163,9 +32249,7 @@
   },
   "sc_skip_traversal": {
     "default": "false",
-    "flags": [
-      "cheat"
-    ],
+    "flags": [],
     "description": ""
   },
   "sc_spew_cmt_usage": {
@@ -33498,13 +33582,6 @@
     ],
     "description": "Reference distance for snd_refdb"
   },
-  "snd_report_audio_nan": {
-    "default": "false",
-    "flags": [
-      "release"
-    ],
-    "description": ""
-  },
   "snd_report_verbose_error": {
     "default": "false",
     "flags": [
@@ -33654,12 +33731,22 @@
     ],
     "description": ""
   },
+  "snd_sos_list_global_opvars": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Lists the global opvars (opvars of library stacks) with their values: snd_sos_list_global_opvars [stack name filter]. Called from a tool stream tool it replies with them instead (globalOpVar records)"
+  },
   "snd_sos_list_operator_updates": {
     "default": "false",
     "flags": [
       "cheat"
     ],
     "description": ""
+  },
+  "snd_sos_list_stack_fields": {
+    "default": "cmd",
+    "flags": [],
+    "description": "Lists the operators of each operator stack (library stack) and their fields, by the full names stackValues uses: snd_sos_list_stack_fields [stack name filter] [field name filter] ('' for any stack). Called from a tool stream tool it replies with them instead (stackFields records, one per stack)"
   },
   "snd_sos_max_event_base_depth": {
     "default": "4",
@@ -33762,7 +33849,7 @@
     "flags": [
       "cheat"
     ],
-    "description": "Prints a list of currently available stacks"
+    "description": "Prints a list of currently available stacks with their operator and field counts: snd_sos_print_operator_stacks [stack name filter]. Called from a tool stream tool it replies with them instead (stack records)"
   },
   "snd_sos_print_operators": {
     "default": "cmd",
@@ -34191,17 +34278,29 @@
     "flags": [],
     "description": "Hammer only. Set between 0 and 1 to color dimensions probes and the smooth surface with a hard cut instead of the continuous ramp: inside / outside below the value is red, at or above is blue. Negative disables."
   },
-  "snd_steamaudio_baked_occlusion_air_absorption_coefficient": {
-    "default": "0",
+  "snd_steamaudio_baked_materials_probelookup_usealternate": {
+    "default": "false",
     "flags": [],
-    "description": "Air absorption coefficient sued for baked occlusion calculation."
+    "description": "Use alternate probe lookup algorithm to query materials for listener position based on kd-tree of probe points."
+  },
+  "snd_steamaudio_baked_occlusion_dynamic_object_delta_scale": {
+    "default": "1",
+    "flags": [
+      "cheat"
+    ],
+    "description": "Scales the deltas of the open dynamic objects before they are added to the baked occlusion."
+  },
+  "snd_steamaudio_baked_occlusion_dynamic_objects": {
+    "default": "true",
+    "flags": [],
+    "description": "Add the baked deltas of open dynamic objects (doors, windows) to the baked occlusion."
   },
   "snd_steamaudio_baked_occlusion_mode": {
     "default": "0",
     "flags": [
       "cheat"
     ],
-    "description": "0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios. 7: no baked value - occlusion is traced per probe pair the way the calc_occlusion_info operator does, then interpolated like any other mode."
+    "description": "0: distance ratio only. 1: deviation only (1/r). 2: deviation only (linear). 3: Mode 0 and Mode 1, 4: Mode 0 and Mode 2, 5: Mode 2 and exponential pathing delta, 6: reflection energy ratios."
   },
   "snd_steamaudio_baked_occlusion_pathing_deviation_slope": {
     "default": "0.1",
@@ -34217,11 +34316,6 @@
     ],
     "description": "Adjust scaling of pathing energy by exponentiall scaling with pathing delta."
   },
-  "snd_steamaudio_baked_occlusion_probelookup_usealternate": {
-    "default": "false",
-    "flags": [],
-    "description": "Use alternate probe lookup algorithm to query occlusion for source and listener position based on kd-tree of probe points."
-  },
   "snd_steamaudio_baked_occlusion_reflection_factor": {
     "default": "1",
     "flags": [
@@ -34235,16 +34329,6 @@
       "cheat"
     ],
     "description": "Ambient noise energy to serve as a floor for reflection energy."
-  },
-  "snd_steamaudio_baked_occlusion_spatialfilter_mode": {
-    "default": "0",
-    "flags": [],
-    "description": "0: No spatial filtering. 1: bidirectional spatial filter."
-  },
-  "snd_steamaudio_baked_occlusion_spatialfilter_radius_factor": {
-    "default": "2",
-    "flags": [],
-    "description": "Radius factor to multiply the distance between probes with to get the radius withing which probes are averaged."
   },
   "snd_steamaudio_custombake_dimensions_outsidefield_bake_enabled": {
     "default": "true",
@@ -34261,6 +34345,31 @@
     "flags": [],
     "description": "Enable baking insize size field for probes when baking custom dimensions data."
   },
+  "snd_steamaudio_custombake_dynamic_object_energy_threshold": {
+    "default": "0.1",
+    "flags": [],
+    "description": "A probe pair keeps the deltas of a dynamic object only if opening it changes the reflection energy by more than this fraction of the energy with all dynamic objects closed, or of snd_steamaudio_baked_occlusion_reflection_regularization if that is higher."
+  },
+  "snd_steamaudio_custombake_materials_coneangle": {
+    "default": "120",
+    "flags": [],
+    "description": "Rays are only sampled in half angle measured from +Z. 120 deg covers everything except a 60 deg cap around straight down."
+  },
+  "snd_steamaudio_custombake_materials_max_raylength": {
+    "default": "8",
+    "flags": [],
+    "description": "Max ray length in meters to find resonant material."
+  },
+  "snd_steamaudio_custombake_materials_numrays": {
+    "default": "8192",
+    "flags": [],
+    "description": "Number of rays to trace to find resonant materials."
+  },
+  "snd_steamaudio_custombake_occlusion_air_absorption_coefficient": {
+    "default": "0",
+    "flags": [],
+    "description": "Air absorption coefficient used when baking occlusion."
+  },
   "snd_steamaudio_custombake_occlusion_bidirectional": {
     "default": "false",
     "flags": [],
@@ -34271,6 +34380,16 @@
     "flags": [],
     "description": "Number of reflection simulations to run when baking occlusion. Potential way to reduce noise."
   },
+  "snd_steamaudio_custombake_occlusion_spatialfilter_mode": {
+    "default": "0",
+    "flags": [],
+    "description": "Spatial filter of the occlusion reflection energy, applied when baking. 0: No spatial filtering. 1: bidirectional spatial filter."
+  },
+  "snd_steamaudio_custombake_occlusion_spatialfilter_radius_factor": {
+    "default": "2",
+    "flags": [],
+    "description": "Radius factor to multiply the distance between probes with to get the radius within which probes are averaged by the occlusion spatial filter, applied when baking."
+  },
   "snd_steamaudio_customdata_dimensions_inout_mode": {
     "default": "0",
     "flags": [],
@@ -34280,6 +34399,11 @@
     "default": "1",
     "flags": [],
     "description": "Debug option to generate clustered probes of a scaled size for debug visualization."
+  },
+  "snd_steamaudio_debug_scene_spew": {
+    "default": "false",
+    "flags": [],
+    "description": "Spew Steam Audio scene list changes and realtime direct occlusion results (at most 10 lines a second)."
   },
   "snd_steamaudio_diagnostic_baked_occlusion_single_probe": {
     "default": "-1",
@@ -34784,7 +34908,7 @@
   "soundsysteminfo": {
     "default": "cmd",
     "flags": [],
-    "description": "Describe the current sound device without an active voice list."
+    "description": "Describe the current sound device without an active voice list, and the speaker layout the panner uses. Called from a tool stream tool it replies with the speaker layout instead (layout record)"
   },
   "spawn_group_activate": {
     "default": "cmd",
@@ -34793,6 +34917,15 @@
       "cheat"
     ],
     "description": "Activate specified spawngroup."
+  },
+  "spawn_group_list_filters": {
+    "default": "cmd",
+    "flags": [
+      "sv",
+      "cheat",
+      "release"
+    ],
+    "description": "List the registered spawn group entity filters."
   },
   "spawn_group_load": {
     "default": "cmd",
@@ -34810,10 +34943,55 @@
     ],
     "description": "Unload named spawn group."
   },
+  "spawngroup_debug_check_ownership": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cheat"
+    ],
+    "description": "periodically warn about entities that belong to a different level than the one they do"
+  },
+  "spawngroup_debug_delay_unload": {
+    "default": "0",
+    "flags": [
+      "sv",
+      "cl",
+      "rep",
+      "cheat"
+    ],
+    "description": "Keep queued spawn group unloads waiting this many seconds before they start (debug, e.g. to save while one is pending)"
+  },
   "spawngroup_ignore_timeouts": {
     "default": "false",
     "flags": [],
     "description": ""
+  },
+  "spawngroup_prebuild_persistent_manifest": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": "Build the persistent entity manifests as soon as the player is in, rather than in the frame the first level streams out"
+  },
+  "spawngroup_save_on_unload": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": "A level unloading mid-game saves its entities to save/<level>.hl1/.hl2, which point_level_stream restores when it streams the level back in"
+  },
+  "spawngroup_transfer_entities": {
+    "default": "false",
+    "flags": [
+      "sv",
+      "cl",
+      "rep"
+    ],
+    "description": "Entities that leave their level (teleported or carried into another one, or left inside another level when theirs unloads) change to belonging to the level they're in, so they stay when the level they came from streams out"
   },
   "speaker_config": {
     "default": "-1",
@@ -38234,6 +38412,55 @@
     ],
     "description": "Current peak value (out of 64k) of the incoming voice stream"
   },
+  "voice_webrtc_aec": {
+    "default": "true",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: cancel game audio echoing from the speakers into the microphone (AEC3)."
+  },
+  "voice_webrtc_agc": {
+    "default": "true",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: adaptive digital automatic gain control (AGC2)."
+  },
+  "voice_webrtc_apm": {
+    "default": "false",
+    "flags": [
+      "a"
+    ],
+    "description": "Process in-process voice chat microphone audio with the WebRTC audio processing module (requires voice_in_process)."
+  },
+  "voice_webrtc_fixed_gain_db": {
+    "default": "0",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: fixed digital gain in dB applied to the microphone before the adaptive gain stage."
+  },
+  "voice_webrtc_hpf": {
+    "default": "true",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: high-pass filter to remove DC offset and low rumble."
+  },
+  "voice_webrtc_ns": {
+    "default": "true",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: noise suppression."
+  },
+  "voice_webrtc_ns_level": {
+    "default": "2",
+    "flags": [
+      "a"
+    ],
+    "description": "WebRTC: noise suppression aggressiveness, 0 (low) to 3 (very high)."
+  },
   "volume": {
     "default": "1",
     "flags": [
@@ -38337,6 +38564,28 @@
     "flags": [],
     "description": "Generate a report to the console."
   },
+  "vprof_lite_auto": {
+    "default": "true",
+    "flags": [
+      "release"
+    ],
+    "description": "Let demo playback and the game rules start, dump and stop the vprof lite profiler on their own.  The vprof_lite_start, vprof_lite_stop and vprof_lite_dump commands set this to 0 so that a script can drive the profiler itself."
+  },
+  "vprof_lite_dump": {
+    "default": "cmd",
+    "flags": [],
+    "description": "vprof_lite_dump [filename] [stop=1] Write the vprof lite budget group statistics as CSV, then stop the profiler and clear its data. stop=0 leaves the profiler running with its data.  The default filename is vprof_lite.csv in the mod directory; an absolute path is used as given.  Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own."
+  },
+  "vprof_lite_start": {
+    "default": "cmd",
+    "flags": [],
+    "description": "vprof_lite_start [clear=1] Start the vprof lite profiler, clearing any data it holds.  clear=0 keeps the data and continues adding to it. Sets vprof_lite_auto 0, so the game will not stop or dump the profiler on its own."
+  },
+  "vprof_lite_stop": {
+    "default": "cmd",
+    "flags": [],
+    "description": "vprof_lite_stop [clear=1] Stop the vprof lite profiler and clear its data.  clear=0 keeps the data, for engine_frametime_print_report or vprof_lite_dump. Sets vprof_lite_auto 0, so the game will not start the profiler on its own."
+  },
   "vprof_off": {
     "default": "cmd",
     "flags": [],
@@ -38391,14 +38640,9 @@
     "description": ""
   },
   "vt_page_atlas_size": {
-    "default": "6",
+    "default": "0",
     "flags": [],
-    "description": "Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). Changing it evicts every virtual texture tile."
-  },
-  "vt_sim_streaming_delay_ms": {
-    "default": "500",
-    "flags": [],
-    "description": ""
+    "description": "Virtual texture page atlas size in 16k x 16k slices of about 256MB each, 2 to 32 ( 512MB to 8GB ). 0 picks 4, 6, 8, 12 or 16 slices for GPUs below 8GB, 8GB, 12GB, 16GB and larger. Changing it evicts every virtual texture tile."
   },
   "vtune": {
     "default": "cmd",
@@ -38441,6 +38685,13 @@
     "default": "cmd",
     "flags": [],
     "description": "Prints out stats for the Vulkan memory manager"
+  },
+  "vulkan_pipeline_cache_max_size_mb": {
+    "default": "4096",
+    "flags": [
+      "release"
+    ],
+    "description": "Max pipeline cache size"
   },
   "vulkan_pipeline_compile_spew": {
     "default": "false",

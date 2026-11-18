@@ -87,6 +87,7 @@ enum ENetworkDisconnectionReason {
 	NETWORK_DISCONNECT_REMOTE_CERTNOTTRUSTED = 83 [(50500) = "#GameUI_Disconnect_RemoteProblem_BadCert"];
 	NETWORK_DISCONNECT_UNUSUAL = 84 [(50500) = "#GameUI_Disconnect_Unusual"];
 	NETWORK_DISCONNECT_INTERNAL_ERROR = 85 [(50500) = "#GameUI_Disconnect_InternalError"];
+	NETWORK_DISCONNECT_STEAM_GROUPMEMBERSHIP = 86 [(50500) = "#GameUI_Disconnect_SteamGroupMembership"];
 	NETWORK_DISCONNECT_REJECT_BADCHALLENGE = 128 [(50500) = "#GameUI_ServerRejectBadChallenge"];
 	NETWORK_DISCONNECT_REJECT_NOLOBBY = 129 [(50500) = "#GameUI_ServerNoLobby"];
 	NETWORK_DISCONNECT_REJECT_BACKGROUND_MAP = 130 [(50500) = "#Valve_Reject_Background_Map"];

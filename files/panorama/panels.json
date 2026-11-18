@@ -1488,6 +1488,16 @@
     "attributes": []
   },
   {
+    "name": "DOTABrewmasterScepterItemSlot",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
+    "name": "DOTABrewmasterScepterItems",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTABroadcastVideoStream",
     "base": "Panel",
     "attributes": [
@@ -1567,16 +1577,6 @@
   },
   {
     "name": "DOTABroadcasterToastTemplateTable",
-    "base": "Panel",
-    "attributes": []
-  },
-  {
-    "name": "DOTABruiserSpellCard",
-    "base": "Panel",
-    "attributes": []
-  },
-  {
-    "name": "DOTABruiserSpellCardRow",
     "base": "Panel",
     "attributes": []
   },
@@ -3057,6 +3057,11 @@
     "attributes": []
   },
   {
+    "name": "DOTADarkCarnivalActSelector",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTADarkCarnivalButton",
     "base": "TextButton",
     "attributes": []
@@ -3565,11 +3570,6 @@
   {
     "name": "DOTADebutMoviePopup",
     "base": "Popup",
-    "attributes": []
-  },
-  {
-    "name": "DOTADeityBlessingPicker",
-    "base": "Panel",
     "attributes": []
   },
   {
@@ -4632,6 +4632,11 @@
     "attributes": []
   },
   {
+    "name": "DOTAHUDCursorAbilityInfo",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTAHUDCursorCooldown",
     "base": "Panel",
     "attributes": []
@@ -5400,21 +5405,6 @@
         "name": "rate"
       }
     ]
-  },
-  {
-    "name": "DOTAIngamePrediction",
-    "base": "Panel",
-    "attributes": []
-  },
-  {
-    "name": "DOTAIngamePredictionResult",
-    "base": "Panel",
-    "attributes": []
-  },
-  {
-    "name": "DOTAIngamePredictionsContainer",
-    "base": "Panel",
-    "attributes": []
   },
   {
     "name": "DOTAInnateDisplay",
@@ -6924,11 +6914,6 @@
         "name": "itemname"
       }
     ]
-  },
-  {
-    "name": "DOTAPredictionsButton",
-    "base": "Panel",
-    "attributes": []
   },
   {
     "name": "DOTAPreviewAudioButton",
@@ -8879,6 +8864,11 @@
     ]
   },
   {
+    "name": "DOTAUIItemPatchNotesHistory",
+    "base": "Panel",
+    "attributes": []
+  },
+  {
     "name": "DOTAUILoadingScreenPicker",
     "base": "Panel",
     "attributes": []
@@ -9640,6 +9630,9 @@
         "name": "renderdecals"
       },
       {
+        "name": "renderscreenspaceparticles"
+      },
+      {
         "name": "rendershadows"
       },
       {
@@ -9755,6 +9748,10 @@
       },
       {
         "name": "horizontalalign"
+      },
+      {
+        "name": "languages",
+        "description": "Comma-separated list of the languages that src has localized flavors for, named by suffixing the source file name with the language, e.g. languages=\"russian,french\" alongside src=\"file://{images}/foo.png\" uses \"foo_french.png\" when the game is running in French. English is implied by src itself and cannot be listed"
       },
       {
         "name": "scaling"
@@ -10863,6 +10860,20 @@
     "name": "SuggestionPanel",
     "base": "Panel",
     "attributes": []
+  },
+  {
+    "name": "SyncedFontSizeLabel",
+    "base": "Label",
+    "attributes": [
+      {
+        "name": "fontsizesyncgroup",
+        "description": "Labels in the same fontsizesyncgroup share one font size, shrunk as needed so they all fit"
+      },
+      {
+        "name": "globalfontsizesyncgroup",
+        "description": "Match fontsizesyncgroup across layout files, not just within this one"
+      }
+    ]
   },
   {
     "name": "TabButton",

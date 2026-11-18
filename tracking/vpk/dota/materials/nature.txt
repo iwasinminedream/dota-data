@@ -377,6 +377,7 @@ materials/nature/sand_cracked_autumn_refl_psd_6c38f40d.vtex_c crc=8972510c size=
 materials/nature/sand_path001_color_psd_5c141784.vtex_c crc=542d8fc5 size=1400116
 materials/nature/sand_path001_color_psd_e0fc529b.vtex_c crc=6c55ab56 size=700812
 materials/nature/sand_path001_color_psd_f51d5456.vtex_c crc=07a215a0 size=1400100
+materials/nature/sand_path001_height_psd_1deb82a3.vtex_c crc=75b3d1bf size=89760
 materials/nature/sand_path001_height_psd_252da5e5.vtex_c crc=1b66b977 size=89380
 materials/nature/sand_path001_height_psd_34e3f58f.vtex_c crc=9b2fd715 size=89652
 materials/nature/sand_path001_height_psd_5aa3052.vtex_c crc=abe87eec size=89380

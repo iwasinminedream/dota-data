@@ -147,10 +147,10 @@ materials/dev/luminaire.vmat_c crc=97d020dc size=3320
 materials/dev/luminaire_vmat_g_tcolor_b5b51a54.vtex_c crc=8509b8a9 size=1948
 materials/dev/luminaire_vmat_g_tselfillummask_b4ea187a.vtex_c crc=41766c7b size=1644
 materials/dev/meshlet_refit_cs.vmat_c crc=0c1ab2c9 size=1173
-materials/dev/mirrortest.vmat_c crc=1d51f157 size=4736
 materials/dev/morphcomposite.vmat_c crc=bc2ed4a5 size=3264
 materials/dev/msaa_resolve.vmat_c crc=9a9b80ce size=1356
 materials/dev/msaa_resolve_cs.vmat_c crc=119b7701 size=1920
+materials/dev/nodraw.vmat_c crc=ba7d0983 size=2797
 materials/dev/noillum_primary_green.vmat_c crc=7d920ee3 size=5736
 materials/dev/noillum_primary_green_color_tga_204e1abb.vtex_c crc=b1fd4c03 size=176540
 materials/dev/nonmsaa_resolve.vmat_c crc=3d55bc19 size=1292
@@ -301,11 +301,11 @@ materials/dev/vrad3/lightmap_vertexlight_reduce.vmat_c crc=57a71570 size=1094
 materials/dev/vrad3/lpv_raytrace.vmat_c crc=2824fe1a size=1081
 materials/dev/vrad3/lpv_test_converged.vmat_c crc=25bf9731 size=1133
 materials/dev/vrad3/mark_occupied_voxels.vmat_c crc=a6122662 size=1212
+materials/dev/vrad3/materialsample_raytrace.vmat_c crc=c4a906fd size=1209
 materials/dev/vrad3/vertexlight_raytrace.vmat_c crc=063613f5 size=1113
 materials/dev/vrad3/vertexlight_test_converged.vmat_c crc=1bd5e128 size=1167
 materials/dev/vt_cs.vmat_c crc=8492ccd0 size=1148
 materials/dev/vt_debug_imgui.vmat_c crc=207740e4 size=1533
-materials/dev/water_normal_tga_a99039e9.vtex_c crc=830ea061 size=351380
 materials/dev/whitepanel_color_tga_a7576cc4.vtex_c crc=83cdedf0 size=176492
 materials/dev/wind_controller_visualize.vmat_c crc=9699f979 size=1512
 materials/dev/wind_noise_cs.vmat_c crc=75090808 size=1156
@@ -810,6 +810,7 @@ materials/tools/audiomodifier_color_tga_15a1e827.vtex_c crc=0167e4fc size=7604
 materials/tools/climb.vmat_c crc=e733be41 size=4688
 materials/tools/climb_color_tga_b223a265.vtex_c crc=593030a2 size=12876
 materials/tools/climb_versus.vmat_c crc=9025a264 size=4592
+materials/tools/container_slide.vmat_c crc=9c0a95f2 size=3324
 materials/tools/copy_texture_with_gamma.vmat_c crc=a5df7996 size=2728
 materials/tools/copy_to_backbuffer.vmat_c crc=1d3938f5 size=2696
 materials/tools/draw_points_sizefromcode.vmat_c crc=77a7b2d9 size=2767
@@ -838,6 +839,8 @@ materials/tools/handle_edged_diamond.vmat_c crc=8894a9bc size=3616
 materials/tools/handle_edged_diamond_tga_a3722553.vtex_c crc=0da75e19 size=3140
 materials/tools/handle_edged_diamond_translucent.vmat_c crc=9f15f285 size=3664
 materials/tools/handle_generic.vmat_c crc=d5a9733b size=3611
+materials/tools/handle_generic_aligned.vmat_c crc=5b1c8d40 size=2398
+materials/tools/handle_generic_aligned_translucent.vmat_c crc=528daa76 size=2446
 materials/tools/handle_generic_translucent.vmat_c crc=91f1ba62 size=3659
 materials/tools/handle_ring.vmat_c crc=9cfe2c2f size=3560
 materials/tools/handle_ring_color_tga_fab69840.vtex_c crc=b77c0eb8 size=7204
@@ -927,6 +930,8 @@ materials/tools/toolsinvisibleladder.vmat_c crc=cbb47a50 size=3109
 materials/tools/toolsinvisibleladder_color_tga_dd58c82d.vtex_c crc=3643cafd size=7604
 materials/tools/toolslightmapres.vmat_c crc=a0b02550 size=3096
 materials/tools/toolslightmapres_color_tga_3915f391.vtex_c crc=52f1556e size=7572
+materials/tools/toolslightmesh.vmat_c crc=3e1da848 size=3324
+materials/tools/toolslightmesh_color_tga_8f2a0d7.vtex_c crc=a4c02fd1 size=7572
 materials/tools/toolslightprobevolume.vmat_c crc=f5d0491b size=2924
 materials/tools/toolslightprobevolume_color_png_fb40b780.vtex_c crc=bb45c90e size=4892
 materials/tools/toolslightvolumeboundary.vmat_c crc=b88aa093 size=6176
@@ -984,6 +989,11 @@ materials/tools_postprocess_volume.vmat_c crc=e3503a4f size=3064
 materials/vfxtest/cs_compress_dxt5.vmat_c crc=9cdcdcab size=737
 materials/vfxtest/cs_compress_stb_dxt5.vmat_c crc=efd3b08c size=758
 materials/vfxtest/cstest.vmat_c crc=2cd158a3 size=1896
+materials/vfxtest/pmbstresstest.vmat_c crc=7f96d8e3 size=1175
+materials/vfxtest/raster_compute_material_test.vmat_c crc=effa6b4b size=2021
+materials/vfxtest/raster_compute_material_test_feature.vmat_c crc=0410b989 size=2101
+materials/vfxtest/raster_compute_material_test_feature_vmat_g_tshared_44fbc6b.vtex_c crc=2b3cd2ac size=1848
+materials/vfxtest/raster_compute_material_test_vmat_g_tshared_44fbc6b.vtex_c crc=2b3cd2ac size=1848
 materials/vfxtest/stencilsamplingtest.vmat_c crc=2573a0e1 size=1500
 materials/vfxtest/vis_cstest.vmat_c crc=f76d23bb size=2624
 materials/vgui/hud/800corner1.vmat_c crc=f2515853 size=3512
@@ -997,6 +1007,7 @@ materials/vgui/hud/800corner4_tga_89cb4f45.vtex_c crc=22099c8d size=1764
 materials/vgui/white.vmat_c crc=7248e0cb size=3552
 materials/vgui/white_additive.vmat_c crc=2888657f size=3584
 materials/vgui/white_alpha_only_no_stencil.vmat_c crc=eaab0dd9 size=3584
+materials/vgui/white_blendadd.vmat_c crc=62b4a34e size=2185
 materials/vgui/white_no_stencil.vmat_c crc=5df88c5e size=3536
 materials/water/dev_water_00.vmat_c crc=b35fdfed size=6816
 materials/water/dev_water_00_vmat_g_troughness_ea4ece6d.vtex_c crc=cf4e3ef8 size=1908

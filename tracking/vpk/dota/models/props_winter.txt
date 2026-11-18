@@ -1,4 +1,4 @@
-models/props_winter/egg.vmdl_c crc=e4d7f357 size=11127
+models/props_winter/egg.vmdl_c crc=8440f8f5 size=10209
 models/props_winter/egg_shatter_01.vmdl_c crc=2978e566 size=14978
 models/props_winter/egg_shatter_02.vmdl_c crc=d972a577 size=30114
 models/props_winter/egg_shatter_03.vmdl_c crc=3f4b497c size=21570

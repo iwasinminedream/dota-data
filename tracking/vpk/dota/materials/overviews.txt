@@ -1,4 +1,4 @@
-materials/overviews/dota.vmat_c crc=22e00ea5 size=2185
+materials/overviews/dota.vmat_c crc=51a2b2e6 size=2153
 materials/overviews/dota_681.vmat_c crc=b3ee2919 size=3528
 materials/overviews/dota_681_psd_4e73e769.vtex_c crc=1778dddc size=526020
 materials/overviews/dota_685.vmat_c crc=eb1b87bf size=3528
@@ -9,8 +9,8 @@ materials/overviews/dota_706.vmat_c crc=d7b22a35 size=3528
 materials/overviews/dota_706_psd_6e2dad9d.vtex_c crc=6fe0f612 size=526020
 materials/overviews/dota_719.vmat_c crc=227345e6 size=3560
 materials/overviews/dota_719_psd_32c9f530.vtex_c crc=990858c1 size=526052
-materials/overviews/dota_722.vmat_c crc=78c1c5ec size=2201
-materials/overviews/dota_728.vmat_c crc=e29b6931 size=2201
+materials/overviews/dota_722.vmat_c crc=e2319c54 size=2169
+materials/overviews/dota_728.vmat_c crc=93078549 size=2169
 materials/overviews/dota_732.vmat_c crc=98b9f19e size=1989
 materials/overviews/dota_732_psd_2cfc442d.vtex_c crc=c7f08a06 size=4196292
 materials/overviews/dota_737.vmat_c crc=a2ce850a size=2185
@@ -23,7 +23,7 @@ materials/overviews/dota_diretide_12.vmat_c crc=67d7be92 size=3600
 materials/overviews/dota_diretide_12_psd_95b496b9.vtex_c crc=3d41c2ac size=132836
 materials/overviews/dota_glade.vmat_c crc=05df413e size=3520
 materials/overviews/dota_glade_psd_4d47867a.vtex_c crc=0c3625bc size=526020
-materials/overviews/dota_minimal.vmat_c crc=fc21c861 size=2217
+materials/overviews/dota_minimal.vmat_c crc=41663571 size=2185
 materials/overviews/dota_minimal_688.vmat_c crc=56d013a2 size=3600
 materials/overviews/dota_minimal_688_psd_475276bd.vtex_c crc=346117b6 size=1050340
 materials/overviews/dota_minimal_706.vmat_c crc=0028f679 size=3600
@@ -35,15 +35,15 @@ materials/overviews/dota_minimal_732.vmat_c crc=85eafd04 size=1989
 materials/overviews/dota_minimal_732_psd_5a636a72.vtex_c crc=82f15679 size=1050580
 materials/overviews/dota_minimal_737.vmat_c crc=67ed3d7b size=2201
 materials/overviews/dota_minimal_737_psd_cc590ee0.vtex_c crc=f19738a9 size=1050660
-materials/overviews/dota_minimal_psd_f4e53729.vtex_c crc=6279614e size=1050676
+materials/overviews/dota_minimal_psd_f4e53729.vtex_c crc=9a0793e4 size=1050644
 materials/overviews/dota_newyear.vmat_c crc=8050d8fe size=3560
 materials/overviews/dota_newyear_681.vmat_c crc=8895e22d size=3600
 materials/overviews/dota_newyear_681_tga_4e750b65.vtex_c crc=d6e4b396 size=526052
 materials/overviews/dota_newyear_tga_dd96f6e5.vtex_c crc=a7dcf2e5 size=526036
-materials/overviews/dota_psd.vtex_c crc=a074d027 size=4196420
-materials/overviews/dota_psd_8b4a9409.vtex_c crc=4545a41a size=4196388
-materials/overviews/dota_tga_d8178876.vtex_c crc=d9e2fc78 size=1050660
-materials/overviews/dota_training.vmat_c crc=ccf6e94d size=2217
+materials/overviews/dota_psd.vtex_c crc=8ca5806a size=4196388
+materials/overviews/dota_psd_8b4a9409.vtex_c crc=d9cdd03d size=4196356
+materials/overviews/dota_tga_d8178876.vtex_c crc=7cfe9be0 size=1050628
+materials/overviews/dota_training.vmat_c crc=abd80f3e size=2185
 materials/overviews/dota_winter.vmat_c crc=eb91abeb size=3560
 materials/overviews/dota_winter_681.vmat_c crc=f150bdda size=3576
 materials/overviews/dota_winter_681_psd_2e65497.vtex_c crc=bb20768d size=526052

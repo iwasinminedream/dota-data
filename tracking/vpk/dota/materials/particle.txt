@@ -77,6 +77,7 @@ materials/particle/beam_crack_05.vtex_c crc=6d87a0a0 size=176548
 materials/particle/beam_crack_05_transparent.vtex_c crc=e301bdec size=176836
 materials/particle/beam_crack_06.vtex_c crc=b70d7867 size=176548
 materials/particle/beam_crack_06_bw_center.vtex_c crc=50d5afe5 size=176612
+materials/particle/beam_crack_06_bw_center_thinner.vtex_c crc=d7fb863b size=176852
 materials/particle/beam_crack_06_center.vtex_c crc=c943e86c size=176596
 materials/particle/beam_crack_07.vtex_c crc=09446758 size=45476
 materials/particle/beam_crack_08.vtex_c crc=e95a446e size=89156
@@ -206,6 +207,7 @@ materials/particle/beam_swirl_01_psd_40f7335c.vtex_c crc=853052a8 size=176740
 materials/particle/beam_tentacle.vtex_c crc=f46b0161 size=176548
 materials/particle/beam_tentacle2.vtex_c crc=b0597955 size=45492
 materials/particle/beam_tentacle2b.vtex_c crc=a1d4104f size=45492
+materials/particle/beam_tubes.vtex_c crc=3c870571 size=45764
 materials/particle/beam_turb_noise.vtex_c crc=098e5566 size=351332
 materials/particle/beam_uneven.vtex_c crc=5397b478 size=67652
 materials/particle/beam_vertebrae_1.vtex_c crc=451c0e3c size=45492
@@ -234,6 +236,9 @@ materials/particle/bendibeam5.vtex_c crc=a3bc09a6 size=45476
 materials/particle/big_white_glow.vtex_c crc=07702cd1 size=351572
 materials/particle/big_white_glow_png_b9d3cefc.vtex_c crc=8aac386b size=351556
 materials/particle/bigshot_light_interior.vtex_c crc=de6e1bd2 size=23684
+materials/particle/blob_blood.vmat_c crc=980c310b size=2954
+materials/particle/blob_blood_vmat_g_tcolor_ed4b6893.vtex_c crc=53e21394 size=1992
+materials/particle/blob_blood_vmat_g_tspecular_1f5a87ee.vtex_c crc=d4772d73 size=1992
 materials/particle/blob_flat.vmat_c crc=60240f9a size=3424
 materials/particle/blob_green_goo.vmat_c crc=5a172422 size=3111
 materials/particle/blob_green_liquid.vmat_c crc=95c7a0d9 size=5896
@@ -1174,6 +1179,7 @@ materials/particle/long_streaks_01.vtex_c crc=f1bd4e70 size=351332
 materials/particle/luna/luna_weapon_ghost.vtex_c crc=d1b2226e size=89220
 materials/particle/luna/luna_weapon_lucent_ghost.vtex_c crc=921b4616 size=89252
 materials/particle/luna/luna_weapon_ti9.vtex_c crc=f88cba87 size=7364
+materials/particle/lycan/lycan_wolf_mark_01.vtex_c crc=c723f3e5 size=351744
 materials/particle/lycosidae_egg_01.vtex_c crc=ace7a8dc size=18212
 materials/particle/magic/dust_drop/dust_drop.vtex_c crc=13d8182b size=1324072
 materials/particle/magneticring/ring_magnetic.vtex_c crc=27ab4902 size=1378788
@@ -1773,6 +1779,7 @@ materials/particle/razor/razor_arcana/razor_arcana_tornado.vmat_c crc=540e00e4 s
 materials/particle/razor/razor_arcana/razor_arcana_tornado_cylinder_trans_psd_98cd348c.vtex_c crc=e2ac9862 size=45824
 materials/particle/razor/razor_arcana/razor_arcana_tornado_water.vmat_c crc=faf02ff2 size=4489
 materials/particle/razor/razor_eye_of_the_storm_proj.vmat_c crc=a0a31c60 size=2321
+materials/particle/rectangle_soft.vtex_c crc=87583c5d size=264228
 materials/particle/rectangle_soft_glow.vtex_c crc=1eb85960 size=264260
 materials/particle/ribbon_beam1.vtex_c crc=83eb8a2e size=12716
 materials/particle/ribbon_electric.vtex_c crc=b34281b8 size=12732
@@ -3953,11 +3960,18 @@ materials/particle/sprays/ti9_zeus_jump_color_png_6ad20cb8.vtex_c crc=ee878fca s
 materials/particle/sprays/tide_thumbsup_spray_color.vtex_c crc=6386a144 size=264116
 materials/particle/sprays/tide_thumbsup_spray_color_png_40455f6d.vtex_c crc=ba553590 size=351348
 materials/particle/sprays/tide_thumbsup_spray_proj.vmat_c crc=ba2dbee8 size=4128
+materials/particle/square_extrasoft.vtex_c crc=05db7daf size=526372
 materials/particle/square_soft_border.vtex_c crc=097c2612 size=526292
 materials/particle/square_soft_border_rgb.vtex_c crc=1c5726dd size=526356
 materials/particle/square_soft_border_ripple_alpha.vtex_c crc=5377f1a1 size=1400164
 materials/particle/star.vtex_c crc=504c2d92 size=23604
 materials/particle/star_glow.vtex_c crc=395a1fc1 size=67316
+materials/particle/starforge/starforge_clock_wipe_mask_01.vtex_c crc=38503a26 size=89476
+materials/particle/starforge/starforge_ground_impact_color_psd_9b348252.vtex_c crc=6bf62f79 size=351792
+materials/particle/starforge/starforge_ground_impact_flow_psd_dacb3b94.vtex_c crc=a841ec3b size=176984
+materials/particle/starforge/starforge_ground_impact_height_psd_4041d14c.vtex_c crc=af7ce2e9 size=176984
+materials/particle/starforge/starforge_ground_impact_normal_tga_b3f29da1.vtex_c crc=71be6da4 size=351776
+materials/particle/starforge/starforge_ground_impact_projected.vmat_c crc=ecd69cda size=3984
 materials/particle/sticker_holo_normal_psd_4dcd52b0.vtex_c crc=d4bb13f6 size=1400116
 materials/particle/sven/sven_warcry_metal.vmat_c crc=f3fb42e6 size=7720
 materials/particle/sven/sven_warcry_metal_vmat_g_tcolor_c65e196c.vtex_c crc=5a75ed37 size=1532
@@ -4067,6 +4081,7 @@ materials/particle/text/rhasta.vtex_c crc=5089b620 size=12716
 materials/particle/text/saved.vtex_c crc=75c0208f size=67412
 materials/particle/text/slardar.vtex_c crc=d4c70924 size=12716
 materials/particle/text/windrunner.vtex_c crc=a4b86267 size=12732
+materials/particle/thunderhide_footsteps.vtex_c crc=be97b6ed size=34852
 materials/particle/ti9_drums_note.vtex_c crc=45b51e60 size=7332
 materials/particle/ti9_drums_noteb.vtex_c crc=5b714c15 size=7348
 materials/particle/tidehunter/tidehunter_anchor_chain.vmat_c crc=b93a0bcf size=4854
@@ -4100,6 +4115,7 @@ materials/particle/tile/tile_electric_01_psd_b81ee565.vtex_c crc=0a7cbdb4 size=3
 materials/particle/tile/tile_electric_01_psd_d63bef41.vtex_c crc=19fafda6 size=176684
 materials/particle/tile/tile_frost_psd_902c8d01.vtex_c crc=df958994 size=176732
 materials/particle/tile/tile_noise_01.vtex_c crc=a85e84c0 size=132980
+materials/particle/tile/tile_noise_01_psd_4a298b74.vtex_c crc=fa900b26 size=351728
 materials/particle/tile/tile_noise_01_psd_670b38df.vtex_c crc=0dc5a7fe size=351712
 materials/particle/tile/tile_noise_cellular.vtex_c crc=6375418d size=133092
 materials/particle/tile/tile_noise_cellular_painted.vtex_c crc=af260955 size=133092
@@ -4247,6 +4263,7 @@ materials/particle/warp_ripple_normal.vtex_c crc=1aef431b size=89204
 materials/particle/warp_ripple_normal_tga_287ad0ed.vtex_c crc=cb8944ed size=89300
 materials/particle/warp_ripple_oriented.vmat_c crc=962b4e30 size=4424
 materials/particle/warp_ripple_soft_normal.vtex_c crc=9fb4c03a size=351636
+materials/particle/warp_ripple_wedge_normal.vtex_c crc=e5a6b208 size=89460
 materials/particle/warp_spiral01.vmat_c crc=1a55bc79 size=4368
 materials/particle/warp_spiral01.vtex_c crc=21f87b9f size=89172
 materials/particle/warp_spiral01_normal_tga_94f5e69b.vtex_c crc=508a17b9 size=89220

@@ -17,6 +17,7 @@ import "steammessages_steamlearn.steamworkssdk.proto";
 
 option (50) = "dota_cavern_crawl_types.h";
 option (50) = "dota_overworld.h";
+option (50) = "dota_labyrinth_blessings_types.h";
 
 enum EPoorNetworkConditionsType {
 	k_EPoorNetworkConditions_None = 0;

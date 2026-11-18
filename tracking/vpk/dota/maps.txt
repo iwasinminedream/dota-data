@@ -367,7 +367,7 @@ maps/cavern_assets/models/crystals/crystal_chips_01.vmdl_c crc=ad8e9a98 size=987
 maps/cavern_assets/models/crystals/crystal_chips_02.vmdl_c crc=9b5c58bf size=98763
 maps/cavern_assets/models/crystals/crystal_chips_03.vmdl_c crc=72955ad4 size=26635
 maps/cavern_assets/models/crystals/crystal_chunk001.vmdl_c crc=1fd2b4ad size=15755
-maps/cavern_assets/models/crystals/crystal_chunk002.vmdl_c crc=bdd8846e size=23547
+maps/cavern_assets/models/crystals/crystal_chunk002.vmdl_c crc=af3fc981 size=19868
 maps/cavern_assets/models/crystals/crystal_chunk003.vmdl_c crc=00546009 size=4939
 maps/cavern_assets/models/crystals/crystal_chunk004.vmdl_c crc=07d61f29 size=20379
 maps/cavern_assets/models/crystals/crystal_shards_large_01.vmdl_c crc=b5d0083f size=21794

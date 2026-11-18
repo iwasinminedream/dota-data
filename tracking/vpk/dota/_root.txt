@@ -1,8 +1,7 @@
 cache.fow crc=990ff987 size=15630992
 matchmodes.txt crc=c2559523 size=110
-stringtokendatabase.txt crc=bdd6ab8f size=3027488
 team_info_cache.json crc=1b87b6ec size=129048
-toolscenelightrigs.vdata_c crc=aebd3553 size=2206
+toolscenelightrigs.vdata_c crc=6b28ead6 size=2206
 toolscenevismodes.txt crc=f0e1a709 size=480
 vr_fidelity_levels.csv crc=3a0f9448 size=1481
 workshoptags.txt crc=cb17189c size=44

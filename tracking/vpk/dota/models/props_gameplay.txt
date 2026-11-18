@@ -65,7 +65,7 @@ models/props_gameplay/divine_rapier_spell.vmdl_c crc=320e58e2 size=33395
 models/props_gameplay/divine_sentinel/divine_sentinel.vmdl_c crc=8e82951b size=221134
 models/props_gameplay/divine_sentinel/divine_sentinel_10th_anniversary.vmdl_c crc=e0c857e2 size=199530
 models/props_gameplay/divine_sentinel/divine_sentinel_cube.vmdl_c crc=091bbd53 size=212979
-models/props_gameplay/divine_sentinel/divine_sentinel_monster.vmdl_c crc=cf681882 size=1376582
+models/props_gameplay/divine_sentinel/divine_sentinel_monster.vmdl_c crc=7b4ffea2 size=1380460
 models/props_gameplay/divine_sentinel/divine_sentinel_ornament.vmdl_c crc=792974d2 size=342851
 models/props_gameplay/divine_sentinel/mini_divine_sentinel_cube.vmdl_c crc=6e13dc10 size=41889
 models/props_gameplay/donkey.vmdl_c crc=07851fe5 size=266816
@@ -86,7 +86,7 @@ models/props_gameplay/frog.vmdl_c crc=e8dac1b1 size=142904
 models/props_gameplay/frostivus_candy.vmdl_c crc=90feab79 size=17152
 models/props_gameplay/gem01.vmdl_c crc=8baea9f5 size=27707
 models/props_gameplay/goal_lines.vmdl_c crc=7df09635 size=4304
-models/props_gameplay/gold_bag.vmdl_c crc=8dd9d2ed size=14517
+models/props_gameplay/gold_bag.vmdl_c crc=acebf89b size=14920
 models/props_gameplay/gold_bag_2_bag.vmdl_c crc=d0ea4205 size=16381
 models/props_gameplay/gold_coin001.vmdl_c crc=11a71eeb size=10987
 models/props_gameplay/gold_coin001b.vmdl_c crc=8f9502b2 size=13019
@@ -156,7 +156,7 @@ models/props_gameplay/red_box.vmdl_c crc=cf71ac36 size=93751
 models/props_gameplay/refresher_shard.vmdl_c crc=b641e34e size=25516
 models/props_gameplay/roquelaire/roq_mesh.vmdl_c crc=ba2004f3 size=39159
 models/props_gameplay/roquelaire/roquelaire.vmdl_c crc=3ce889f0 size=355763
-models/props_gameplay/roshans_banner.vmdl_c crc=d784181d size=344300
+models/props_gameplay/roshans_banner.vmdl_c crc=01745eba size=334532
 models/props_gameplay/roshans_banner_lookdev.vmdl_c crc=cc40d6c6 size=274852
 models/props_gameplay/rune_arcane.vmdl_c crc=e260b408 size=14285
 models/props_gameplay/rune_doubledamage01.vmdl_c crc=f6cf0ee5 size=41682

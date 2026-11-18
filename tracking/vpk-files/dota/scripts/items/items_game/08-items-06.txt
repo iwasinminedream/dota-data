@@ -28459,7 +28459,7 @@
 				"can_equip_as_ability_effects"
 				{
 					"attribute_class"		"can_equip_as_ability_effects"
-					"value"		"3"
+					"value"		"4"
 				}
 			}
 			"used_by_heroes"
@@ -28478,21 +28478,21 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_tgt.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_walruspunch_tgt.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
 					"type"		"ability_icon"
 					"asset"		"tusk_walrus_punch"
 					"modifier"		"tusk/ti9_immortal_fist/tusk_walrus_punch_immortal"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_txt_ult.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_walruspunch_txt_ult.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"skip_model_combine"		"1"
 				"asset_modifier"
@@ -28500,7 +28500,7 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_walruspunch_start.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 			}
 		}
@@ -37849,7 +37849,7 @@
 				"can_equip_as_ability_effects"
 				{
 					"attribute_class"		"can_equip_as_ability_effects"
-					"value"		"3"
+					"value"		"4"
 				}
 			}
 			"used_by_heroes"
@@ -37868,21 +37868,21 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_tgt.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_walruspunch_tgt.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
 					"type"		"ability_icon"
 					"asset"		"tusk_walrus_punch"
 					"modifier"		"tusk/ti9_immortal_fist/tusk_walrus_punch_immortal_gold"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"asset_modifier"
 				{
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_txt_ult.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_golden_walruspunch_txt_ult.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"skip_model_combine"		"1"
 				"asset_modifier"
@@ -37890,7 +37890,7 @@
 					"type"		"particle"
 					"asset"		"particles/units/heroes/hero_tusk/tusk_walruspunch_start.vpcf"
 					"modifier"		"particles/econ/items/tuskarr/tusk_ti9_immortal/tusk_ti9_golden_walruspunch_start.vpcf"
-					"apply_when_equipped_in_ability_effects_slot"		"3"
+					"apply_when_equipped_in_ability_effects_slot"		"4"
 				}
 				"skin"		"1"
 			}
@@ -88905,7 +88905,6 @@
 			{
 				"tradable after date"		"1698865200"
 				"additional_tooltip_text"		"#DOTA_EconItemSet_Tooltip_Immortals_TI11_Limited_Tradeability"
-				"workshop accepted"		"0"
 			}
 			"used_by_heroes"
 			{
@@ -88966,7 +88965,6 @@
 			{
 				"tradable after date"		"1698865200"
 				"additional_tooltip_text"		"#DOTA_EconItemSet_Tooltip_Immortals_TI11_Limited_Tradeability"
-				"workshop accepted"		"0"
 			}
 			"used_by_heroes"
 			{
@@ -89031,7 +89029,6 @@
 			{
 				"tradable after date"		"1698865200"
 				"additional_tooltip_text"		"#DOTA_EconItemSet_Tooltip_Immortals_TI11_Limited_Tradeability"
-				"workshop accepted"		"0"
 			}
 			"used_by_heroes"
 			{

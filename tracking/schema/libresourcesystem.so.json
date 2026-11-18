@@ -70,14 +70,13 @@
 {"name":"InfoForResourceTypeCResourceManifestInternal","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCResponseRulesList","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCSequenceGroupData","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
-{"name":"InfoForResourceTypeCSurfaceGraph","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
+{"name":"InfoForResourceTypeCSurfaceGraph2","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCTestResourceData","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCTextureBase","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCTypeScriptResource","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVDSPResource","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVDataItemDefs","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVDataResource","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
-{"name":"InfoForResourceTypeCVMixListResource","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVPhysXSurfacePropertiesList","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVSoundEventScriptList","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
 {"name":"InfoForResourceTypeCVSoundStackScriptList","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[{"name":"MResourceTypeForInfoType"}],"fields":[]},
@@ -115,8 +114,8 @@
  {"name":"m_flTurbulenceMix","type":"float32","offset":48,"metadata":[{"name":"MPropertyAttributeRange","value":"0 1"}]},
  {"name":"m_Oscillators","type":"CUtlVector< NoiseOscillatorDef_t >","offset":56,"metadata":[]}]},
 {"name":"PackedAABB_t","size":8,"align":255,"flags":[44,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_nPackedMin","type":"uint32","offset":0,"metadata":[]},
- {"name":"m_nPackedMax","type":"uint32","offset":4,"metadata":[]}]},
+ {"name":"m_nPackedMin","type":"?","offset":0,"metadata":[]},
+ {"name":"m_nPackedMax","type":"?","offset":4,"metadata":[]}]},
 {"name":"ResourceId_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
  {"name":"m_Value","type":"uint64","offset":0,"metadata":[]}]},
 {"name":"VariableInfo_t","size":24,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[

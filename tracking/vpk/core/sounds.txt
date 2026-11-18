@@ -60,9 +60,15 @@ sounds/diagnostics/wind_light_foliage_lp_01.vsnd_c crc=94d2d7f4 size=8345808
 sounds/diagnostics/wind_med_foliage_lp_01.vsnd_c crc=a53b5174 size=6623104
 sounds/diagnostics/wpn_shotgun_fire_head_test_01.vsnd_c crc=07f1c5f1 size=580422
 sounds/graphs/__main__.vmix_c crc=3f51a7fc size=2375
-sounds/graphs/mixgraphs.vrman_c crc=97701183 size=1049
+sounds/graphs/__main__.vsnd_c crc=4b7a289b size=2494
+sounds/graphs/base.vsnd_c crc=7a3b59f5 size=1953
+sounds/graphs/echo.vsnd_c crc=8f29652d size=2488
+sounds/graphs/lpf.vsnd_c crc=eafb1975 size=2429
+sounds/graphs/mixgraphs.vrman_c crc=2709c999 size=1049
 sounds/graphs/test_mix8.vmix_c crc=3b415e25 size=2524
+sounds/graphs/test_mix8.vsnd_c crc=ebbe4248 size=2637
 sounds/graphs/test_voice_sends.vmix_c crc=c4f6a099 size=1996
+sounds/graphs/test_voice_sends.vsnd_c crc=94c4eeca size=2111
 sounds/ir/default.vsnd_c crc=6b28a32a size=59276
 sounds/ir/impulse_transient_filtered_pink_noise.vsnd_c crc=9969fa8f size=10138
 sounds/ir/impulse_transient_filtered_pink_noise_3sec_loop.vsnd_c crc=ed832cc1 size=265916

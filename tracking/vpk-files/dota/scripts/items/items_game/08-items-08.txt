@@ -1264,10 +1264,6 @@
 					"frequency"		"1"
 				}
 			}
-			"static_attributes"
-			{
-				"workshop accepted"		"0"
-			}
 		}
 		"19216"
 		{
@@ -65249,10 +65245,6 @@
 				"bundle"		"1"
 				"price"		"199"
 			}
-			"static_attributes"
-			{
-				"workshop accepted"		"0"
-			}
 		}
 		"20901"
 		{
@@ -92868,7 +92860,6 @@
 					"attribute_class"		"cannot_trade"
 					"value"		"1"
 				}
-				"workshop accepted"		"0"
 			}
 			"used_by_heroes"
 			{

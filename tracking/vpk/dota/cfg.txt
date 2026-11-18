@@ -1,4 +1,4 @@
-cfg/dotakeys.lst crc=1f555c88 size=131668
+cfg/dotakeys.lst crc=40158483 size=131915
 cfg/frontpage_layout.txt crc=d32f820f size=547
 cfg/moddefaults.txt crc=25787934 size=405860
 cfg/video_defaults_0.txt crc=cb3a5d01 size=970

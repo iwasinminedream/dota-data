@@ -16780,7 +16780,7 @@ panorama/images/econ/loading_screens/bounch_luna_ls_png.vtex_c crc=9dede078 size
 panorama/images/econ/loading_screens/bound_of_the_soul_keeper_loading_screen_png.vtex_c crc=4df6a877 size=67760
 panorama/images/econ/loading_screens/bounty_scout_loading_screen_png.vtex_c crc=ad72ecb0 size=81272
 panorama/images/econ/loading_screens/breached_mist_lord_loading2_png.vtex_c crc=38ea8762 size=67840
-panorama/images/econ/loading_screens/brewmaster_hujiang_ls_png.vtex_c crc=c414e822 size=67728
+panorama/images/econ/loading_screens/brewmaster_hujiang_ls_png.vtex_c crc=724e6e68 size=46148
 panorama/images/econ/loading_screens/bringer_of_troubles_bringer_of_troubles_png.vtex_c crc=02c59527 size=67680
 panorama/images/econ/loading_screens/broken_envoyarc_warden_broken_envoyarc_warden_loadingscreen_png.vtex_c crc=2775e079 size=67840
 panorama/images/econ/loading_screens/broodmother_webs_of_perception_png.vtex_c crc=e4dbcbf8 size=67728
@@ -17496,7 +17496,7 @@ panorama/images/econ/loading_screens/rustic_enrapture_loading_screen_png.vtex_c 
 panorama/images/econ/loading_screens/sacred_fire_sacred_fire_loading_png.vtex_c crc=ad0a2508 size=67712
 panorama/images/econ/loading_screens/sacredmemories_png.vtex_c crc=9ef325cf size=81076
 panorama/images/econ/loading_screens/sailfish_commandos_ls_png.vtex_c crc=28f28239 size=67712
-panorama/images/econ/loading_screens/saint_bodhisattva_ls_png.vtex_c crc=92433942 size=67712
+panorama/images/econ/loading_screens/saint_bodhisattva_ls_png.vtex_c crc=0b9b4f7c size=46148
 panorama/images/econ/loading_screens/salted_voodoo_dog_salted_voodoo_dog_ls_png.vtex_c crc=a56a5453 size=67760
 panorama/images/econ/loading_screens/samurai_soul_png.vtex_c crc=a75731a3 size=67648
 panorama/images/econ/loading_screens/sandking_jungle_symbiosis_loading_screen_png.vtex_c crc=a736c2b3 size=67760
@@ -17820,7 +17820,7 @@ panorama/images/econ/loading_screens/wd_voodoo_doc_ls_png.vtex_c crc=76bd7102 si
 panorama/images/econ/loading_screens/weaver_devil_ripper_ls_png.vtex_c crc=57e13992 size=67760
 panorama/images/econ/loading_screens/white_the_crystal_courier_loading_screen_png.vtex_c crc=47e79745 size=67760
 panorama/images/econ/loading_screens/wildthorn_set_ls_png.vtex_c crc=dfbcbc3e size=67664
-panorama/images/econ/loading_screens/winning_buddha_loading_png.vtex_c crc=cb0e3c9a size=67728
+panorama/images/econ/loading_screens/winning_buddha_loading_png.vtex_c crc=9911ea2b size=46148
 panorama/images/econ/loading_screens/winter_2016_loading_screen_carry_png.vtex_c crc=9870e7b8 size=67728
 panorama/images/econ/loading_screens/winter_2016_loading_screen_solo_png.vtex_c crc=7f98998d size=67728
 panorama/images/econ/loading_screens/winter_2016_loading_screen_support_png.vtex_c crc=5a56fd87 size=67744
@@ -28583,7 +28583,7 @@ panorama/images/events/crownfall/visual_novel/wet_effect_background_png.vtex_c c
 panorama/images/events/dark_carnival/artwork/banner_small_png.vtex_c crc=a6d43573 size=58037
 panorama/images/events/dark_carnival/axe_automaton_png.vtex_c crc=12cc3b91 size=336131
 panorama/images/events/dark_carnival/axe_automaton_small_png.vtex_c crc=311f9abf size=47112
-panorama/images/events/dark_carnival/backgrounds/sky_background_png.vtex_c crc=02e40cca size=8480397
+panorama/images/events/dark_carnival/backgrounds/sky_background_png.vtex_c crc=74e262c1 size=1370132
 panorama/images/events/dark_carnival/badges/dark_carnival_progress_badge_gold_png.vtex_c crc=454d12ca size=15137
 panorama/images/events/dark_carnival/badges/dark_carnival_progress_badge_red_png.vtex_c crc=d222fce2 size=14901
 panorama/images/events/dark_carnival/badges/dark_carnival_progress_badge_silver_png.vtex_c crc=0a8b16dd size=15722
@@ -28660,6 +28660,7 @@ panorama/images/events/dark_carnival/lockpicking/lockpicking_background_psd.vtex
 panorama/images/events/dark_carnival/lockpicking/sign_psd.vtex_c crc=dcbaf4cb size=502100
 panorama/images/events/dark_carnival/lockpicking/slark_arm_psd.vtex_c crc=208b3d73 size=2864980
 panorama/images/events/dark_carnival/lockpicking/slark_head_psd.vtex_c crc=70f9c3c0 size=53762116
+panorama/images/events/dark_carnival/logos/act_switch_background_png.vtex_c crc=fea494b4 size=36046
 panorama/images/events/dark_carnival/logos/dark_canival_moon_emblem_png.vtex_c crc=92259585 size=16748
 panorama/images/events/dark_carnival/logos/dark_carnival_emblem_cn_png.vtex_c crc=4a62e5d2 size=461824
 panorama/images/events/dark_carnival/logos/dark_carnival_emblem_png.vtex_c crc=bd315bd9 size=458158
@@ -28732,6 +28733,11 @@ panorama/images/events/dark_carnival/overworld/coupler_active_png.vtex_c crc=4c8
 panorama/images/events/dark_carnival/overworld/coupler_car_png.vtex_c crc=0bfa5222 size=37121
 panorama/images/events/dark_carnival/overworld/coupler_locked_png.vtex_c crc=3a78b04d size=40921
 panorama/images/events/dark_carnival/overworld/coupler_png.vtex_c crc=289d92e2 size=37105
+panorama/images/events/dark_carnival/overworld/coupler_reverse_active_png.vtex_c crc=7c477895 size=52166
+panorama/images/events/dark_carnival/overworld/coupler_reverse_png.vtex_c crc=fb7a2377 size=52383
+panorama/images/events/dark_carnival/overworld/coupler_tickets_required_png.vtex_c crc=12c60991 size=151838
+panorama/images/events/dark_carnival/overworld/current_location_arrow_bg_png.vtex_c crc=822c7728 size=73534
+panorama/images/events/dark_carnival/overworld/current_location_arrow_fg_png.vtex_c crc=aece92e6 size=410642
 panorama/images/events/dark_carnival/overworld/curtain_png.vtex_c crc=881900f8 size=1053769
 panorama/images/events/dark_carnival/overworld/encounter_node_container_png.vtex_c crc=d545b954 size=15800
 panorama/images/events/dark_carnival/overworld/encounter_smelter_off_png.vtex_c crc=5a5d11cd size=816795
@@ -28740,7 +28746,6 @@ panorama/images/events/dark_carnival/overworld/gift_icon_large_envelope_png.vtex
 panorama/images/events/dark_carnival/overworld/gift_icon_large_heart_png.vtex_c crc=c8855a0c size=9931
 panorama/images/events/dark_carnival/overworld/gift_icon_large_png.vtex_c crc=c95fe44d size=20890
 panorama/images/events/dark_carnival/overworld/gift_icon_star_orbit_png.vtex_c crc=c20becf3 size=7630
-panorama/images/events/dark_carnival/overworld/hero_icons/hero_portrait_mask_png.vtex_c crc=9a3d7e1d size=12956
 panorama/images/events/dark_carnival/overworld/hero_icons/hoodwink_png.vtex_c crc=3aa257cc size=80414
 panorama/images/events/dark_carnival/overworld/hero_icons/legion_commander_png.vtex_c crc=482f0419 size=62284
 panorama/images/events/dark_carnival/overworld/hero_icons/slark_png.vtex_c crc=1c20582c size=102538
@@ -28893,8 +28898,6 @@ panorama/images/events/dark_carnival/tarots/01_the_magician_lines_psd.vtex_c crc
 panorama/images/events/dark_carnival/tarots/01_the_magician_psd.vtex_c crc=b5f7b876 size=2517060
 panorama/images/events/dark_carnival/tarots/02_the_high_priestess_lines_psd.vtex_c crc=ffe5e077 size=2517060
 panorama/images/events/dark_carnival/tarots/02_the_high_priestess_psd.vtex_c crc=13bd560e size=2517060
-panorama/images/events/dark_carnival/tarots/03_the_empress_lines_psd.vtex_c crc=c3ad343b size=2517060
-panorama/images/events/dark_carnival/tarots/03_the_empress_psd.vtex_c crc=2d924991 size=2517060
 panorama/images/events/dark_carnival/tarots/04_the_emperor_lines_psd.vtex_c crc=e6df7785 size=2517060
 panorama/images/events/dark_carnival/tarots/04_the_emperor_psd.vtex_c crc=b0ce9d30 size=2517060
 panorama/images/events/dark_carnival/tarots/06_the_lovers_lines_psd.vtex_c crc=40edc232 size=2517060
@@ -28935,7 +28938,7 @@ panorama/images/events/dark_carnival/textures/popup_mask_16_9_vertical_png.vtex_
 panorama/images/events/dark_carnival/textures/room_mask_active_png.vtex_c crc=ba14a9d6 size=30188
 panorama/images/events/dark_carnival/textures/room_mask_png.vtex_c crc=b78144a4 size=25518
 panorama/images/events/dark_carnival/textures/screw_png.vtex_c crc=55cbe08a size=4436
-panorama/images/events/dark_carnival/textures/texture_fabric_png.vtex_c crc=2ed3529f size=218055
+panorama/images/events/dark_carnival/textures/texture_fabric_png.vtex_c crc=ba4d7d88 size=204655
 panorama/images/events/dark_carnival/textures/texture_woodgrain_horizontal_png.vtex_c crc=5755284c size=385175
 panorama/images/events/dark_carnival/textures/texture_woodgrain_png.vtex_c crc=a529cdc2 size=502896
 panorama/images/events/dark_carnival/textures/tooltip_background_png.vtex_c crc=41b66248 size=42418
@@ -29109,7 +29112,7 @@ panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_de
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_nervous_png.vtex_c crc=83e3d3f2 size=1948335
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_nervous_talking_lookleft_png.vtex_c crc=375139e5 size=1947321
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_nervous_talking_png.vtex_c crc=2f616fbc size=1947784
-panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_ponder_png.vtex_c crc=020d0094 size=1892611
+panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_ponder_png.vtex_c crc=63980f51 size=1885286
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_surprised_png.vtex_c crc=26d7bbc5 size=1953359
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_unimpressed_eyesclosed_png.vtex_c crc=6dfd6503 size=1919647
 panorama/images/events/dark_carnival/visual_novel/portraits/hoodwink/hoodwink_default_unimpressed_png.vtex_c crc=9427a9bc size=1909933
@@ -29938,7 +29941,7 @@ panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_undefined_pn
 panorama/images/events/seasonal/artwork/visual_novel_portrait_frame_winter_png.vtex_c crc=dec9c1a8 size=128836
 panorama/images/events/seasonal/backgrounds/background_mask_psd.vtex_c crc=481abb3e size=1050676
 panorama/images/events/seasonal/backgrounds/fall_2026_background_alt_psd.vtex_c crc=3e79b959 size=4948900
-panorama/images/events/seasonal/backgrounds/fall_background_png.vtex_c crc=85546096 size=4217814
+panorama/images/events/seasonal/backgrounds/fall_background_png.vtex_c crc=9a801024 size=1696183
 panorama/images/events/seasonal/backgrounds/floor_png.vtex_c crc=30144f63 size=3913068
 panorama/images/events/seasonal/backgrounds/floor_winter_png.vtex_c crc=fa067bb8 size=3957511
 panorama/images/events/seasonal/backgrounds/spring_background_fx_mask_psd.vtex_c crc=7ff4621c size=8311876
@@ -30479,6 +30482,7 @@ panorama/images/front_page/floor_shadow_png.vtex_c crc=13a2ec8a size=42801
 panorama/images/front_page/front_page_737_png.vtex_c crc=d41ff7ec size=438886
 panorama/images/front_page/front_page_737d_psd.vtex_c crc=a3942013 size=310964
 panorama/images/front_page/front_page_741_background_png.vtex_c crc=7eb593e7 size=590998
+panorama/images/front_page/front_page_742_background_png.vtex_c crc=57cd1548 size=318110
 panorama/images/front_page/front_page_heroes_hoard_spring_2025_png.vtex_c crc=67ef3103 size=310980
 panorama/images/front_page/front_page_snapfire_png.vtex_c crc=a50169bf size=1861785
 panorama/images/front_page/front_page_spring_forward_jpg.vtex_c crc=89138dea size=289507
@@ -31191,6 +31195,8 @@ panorama/images/heroes/npc_dota_neutral_centaur_khan_png.vtex_c crc=a5ef0bf6 siz
 panorama/images/heroes/npc_dota_neutral_centaur_outrunner_png.vtex_c crc=1db0bdf0 size=11332
 panorama/images/heroes/npc_dota_neutral_dark_troll_png.vtex_c crc=5a02e5c9 size=11316
 panorama/images/heroes/npc_dota_neutral_dark_troll_warlord_png.vtex_c crc=1f02c4de size=11332
+panorama/images/heroes/npc_dota_neutral_eimermole_foreman_png.vtex_c crc=1d30eb87 size=11332
+panorama/images/heroes/npc_dota_neutral_eimermole_png.vtex_c crc=4e6500cb size=11316
 panorama/images/heroes/npc_dota_neutral_enraged_wildkin_png.vtex_c crc=eb909924 size=11316
 panorama/images/heroes/npc_dota_neutral_fel_beast_png.vtex_c crc=85193089 size=11316
 panorama/images/heroes/npc_dota_neutral_forest_troll_berserker_png.vtex_c crc=e13340b7 size=11332
@@ -31212,12 +31218,17 @@ panorama/images/heroes/npc_dota_neutral_kobold_taskmaster_png.vtex_c crc=d908bec
 panorama/images/heroes/npc_dota_neutral_kobold_tunneler_png.vtex_c crc=d9fe6d09 size=11316
 panorama/images/heroes/npc_dota_neutral_mud_golem_png.vtex_c crc=f36fabd7 size=11316
 panorama/images/heroes/npc_dota_neutral_mud_golem_split_png.vtex_c crc=4e81d58d size=11316
+panorama/images/heroes/npc_dota_neutral_odobenus_footman_png.vtex_c crc=d998c7ff size=11332
+panorama/images/heroes/npc_dota_neutral_odobenus_frostmage_png.vtex_c crc=cb674d71 size=11332
 panorama/images/heroes/npc_dota_neutral_ogre_magi_png.vtex_c crc=fd411e0e size=11316
 panorama/images/heroes/npc_dota_neutral_ogre_mauler_png.vtex_c crc=0a63d895 size=11316
+panorama/images/heroes/npc_dota_neutral_ogre_seal_png.vtex_c crc=23102e5a size=11316
+panorama/images/heroes/npc_dota_neutral_ogre_seal_pup_png.vtex_c crc=c1c47a38 size=11316
 panorama/images/heroes/npc_dota_neutral_polar_furbolg_champion_png.vtex_c crc=60dc82c2 size=38868
 panorama/images/heroes/npc_dota_neutral_polar_furbolg_ursa_warrior_png.vtex_c crc=e1ab10b6 size=38884
 panorama/images/heroes/npc_dota_neutral_prowler_acolyte_png.vtex_c crc=40e48745 size=11316
 panorama/images/heroes/npc_dota_neutral_prowler_shaman_png.vtex_c crc=bfbcab60 size=11316
+panorama/images/heroes/npc_dota_neutral_radigull_png.vtex_c crc=52166070 size=150321
 panorama/images/heroes/npc_dota_neutral_rock_golem_png.vtex_c crc=33cde198 size=11316
 panorama/images/heroes/npc_dota_neutral_satyr_hellcaller_png.vtex_c crc=29f67aca size=11332
 panorama/images/heroes/npc_dota_neutral_satyr_soulstealer_png.vtex_c crc=177a8d5d size=11332
@@ -31426,6 +31437,7 @@ panorama/images/heroes/selection/npc_dota_neutral_boglet_png.vtex_c crc=3932a28c
 panorama/images/heroes/selection/npc_dota_neutral_centaur_conqueror_png.vtex_c crc=f76fef45 size=28812
 panorama/images/heroes/selection/npc_dota_neutral_croaker_png.vtex_c crc=506af8ef size=43393
 panorama/images/heroes/selection/npc_dota_neutral_dark_troll_summoner_png.vtex_c crc=c7884bd6 size=28812
+panorama/images/heroes/selection/npc_dota_neutral_eimermole_foreman_png.vtex_c crc=6c3c09b9 size=9028
 panorama/images/heroes/selection/npc_dota_neutral_fell_spirit_png.vtex_c crc=e66721f0 size=28812
 panorama/images/heroes/selection/npc_dota_neutral_ghost_png.vtex_c crc=ecc93d89 size=28684
 panorama/images/heroes/selection/npc_dota_neutral_giant_wolf_png.vtex_c crc=b927de83 size=28700
@@ -31439,8 +31451,11 @@ panorama/images/heroes/selection/npc_dota_neutral_kobold_soldier_png.vtex_c crc=
 panorama/images/heroes/selection/npc_dota_neutral_marshmage_apprentice_png.vtex_c crc=7b0a05be size=38205
 panorama/images/heroes/selection/npc_dota_neutral_marshmage_png.vtex_c crc=904f9067 size=44894
 panorama/images/heroes/selection/npc_dota_neutral_mud_golem_png.vtex_c crc=d002e15d size=28700
+panorama/images/heroes/selection/npc_dota_neutral_odobenus_frostmage_png.vtex_c crc=ea366d89 size=9028
 panorama/images/heroes/selection/npc_dota_neutral_ogre_bruiser_png.vtex_c crc=a52070f5 size=28812
 panorama/images/heroes/selection/npc_dota_neutral_ogre_frostmage_png.vtex_c crc=9f8a3379 size=28812
+panorama/images/heroes/selection/npc_dota_neutral_ogre_seal_png.vtex_c crc=50c4ff0e size=9028
+panorama/images/heroes/selection/npc_dota_neutral_radigull_png.vtex_c crc=642a228f size=9028
 panorama/images/heroes/selection/npc_dota_neutral_satyr_banisher_png.vtex_c crc=c6b7c2a6 size=28812
 panorama/images/heroes/selection/npc_dota_neutral_satyr_mindstealer_png.vtex_c crc=1537ea00 size=28812
 panorama/images/heroes/selection/npc_dota_neutral_satyr_tormenter_png.vtex_c crc=15f242a9 size=28812
@@ -31625,7 +31640,6 @@ panorama/images/hud/bounty_hunter/nail_png.vtex_c crc=565f01f3 size=16516
 panorama/images/hud/bounty_hunter/paper_mask_png.vtex_c crc=c817d80c size=35953
 panorama/images/hud/bounty_hunter/paper_texture_png.vtex_c crc=ac737e7a size=153517
 panorama/images/hud/bounty_hunter/texture_mask_png.vtex_c crc=d379a95a size=154522
-panorama/images/hud/button_square_brushed-1_png.vtex_c crc=3dc1e0dd size=16418
 panorama/images/hud/button_thin_secondary_png.vtex_c crc=b1e35aa5 size=10882
 panorama/images/hud/buyback_protected_png.vtex_c crc=48896854 size=4820
 panorama/images/hud/buyback_protection_off_png.vtex_c crc=779fe867 size=16516
@@ -31641,7 +31655,7 @@ panorama/images/hud/default/inventory/stash_active_lower_png.vtex_c crc=1653372b
 panorama/images/hud/default/inventory/stash_lower_png.vtex_c crc=e4a89333 size=13768
 panorama/images/hud/default/inventory/stash_upper_png.vtex_c crc=fc31b125 size=29451
 panorama/images/hud/dota_psd.vtex_c crc=c2cd3f5b size=1050644
-panorama/images/hud/drow_hero_content_png.vtex_c crc=79dbe078 size=2421165
+panorama/images/hud/drow_hero_content_png.vtex_c crc=85489e66 size=1845793
 panorama/images/hud/dvr_pause_png.vtex_c crc=d00f6363 size=3204
 panorama/images/hud/dvr_play_png.vtex_c crc=f0d7ba95 size=3204
 panorama/images/hud/facets/icons/aghs_png.vtex_c crc=b43d9889 size=3628
@@ -32351,10 +32365,14 @@ panorama/images/items/ash_legion_shield_png.vtex_c crc=2ebb4f6d size=7732
 panorama/images/items/assault_png.vtex_c crc=a0b2a86f size=7716
 panorama/images/items/avianas_feather_png.vtex_c crc=fe53077a size=7716
 panorama/images/items/ballista_png.vtex_c crc=7e613c9c size=24548
+panorama/images/items/balmhook_png.vtex_c crc=bf1b7d4f size=7716
 panorama/images/items/band_of_elvenskin_png.vtex_c crc=b9842872 size=7732
 panorama/images/items/basher_png.vtex_c crc=93bc299d size=7716
 panorama/images/items/bear_cloak_png.vtex_c crc=6008ff16 size=7716
 panorama/images/items/belt_of_strength_png.vtex_c crc=042e510a size=7716
+panorama/images/items/berserkers_hood_png.vtex_c crc=f573e161 size=7716
+panorama/images/items/berserkers_sabatons_active_png.vtex_c crc=26815e1e size=7732
+panorama/images/items/berserkers_sabatons_png.vtex_c crc=fb061404 size=7732
 panorama/images/items/bfury_png.vtex_c crc=746eae25 size=7716
 panorama/images/items/black_grimoire_png.vtex_c crc=ef6ba4e5 size=7716
 panorama/images/items/black_king_bar_png.vtex_c crc=d508eb0d size=7716
@@ -32369,6 +32387,7 @@ panorama/images/items/blight_stone_png.vtex_c crc=fd611963 size=7716
 panorama/images/items/blink_png.vtex_c crc=f5cc68ec size=7716
 panorama/images/items/blitz_knuckles_png.vtex_c crc=11b92053 size=7716
 panorama/images/items/blood_grenade_png.vtex_c crc=81f46593 size=7716
+panorama/images/items/bloodslinger_png.vtex_c crc=32a4f279 size=7716
 panorama/images/items/bloodstone_active_png.vtex_c crc=83ccff55 size=7732
 panorama/images/items/bloodstone_png.vtex_c crc=473f7452 size=7716
 panorama/images/items/bloodthorn_png.vtex_c crc=18cf9999 size=7716
@@ -32399,12 +32418,14 @@ panorama/images/items/bottle_xp_png.vtex_c crc=35e69e75 size=7716
 panorama/images/items/bottomless_chalice_png.vtex_c crc=f196edfe size=7732
 panorama/images/items/bracer_png.vtex_c crc=4f1eb13b size=7716
 panorama/images/items/branches_png.vtex_c crc=eeab51c4 size=7716
+panorama/images/items/brick_png.vtex_c crc=9f9f90e9 size=24612
 panorama/images/items/broadsword_png.vtex_c crc=4a67340f size=7716
 panorama/images/items/broom_handle_png.vtex_c crc=64d27273 size=24548
 panorama/images/items/buckler_active_png.vtex_c crc=b16b964e size=7716
 panorama/images/items/buckler_png.vtex_c crc=97147061 size=7716
 panorama/images/items/bullwhip_png.vtex_c crc=e197a206 size=7716
 panorama/images/items/butterfly_png.vtex_c crc=96e2f4a8 size=7716
+panorama/images/items/caduceus_png.vtex_c crc=0bdc53a5 size=7716
 panorama/images/items/carapace_of_qaldin_png.vtex_c crc=624f7243 size=7732
 panorama/images/items/caster_rapier_png.vtex_c crc=27172745 size=7716
 panorama/images/items/ceremonial_robe_png.vtex_c crc=e7d80f4f size=7716
@@ -32414,6 +32435,7 @@ panorama/images/items/cheese_png.vtex_c crc=32b2e266 size=7716
 panorama/images/items/chipped_vest_png.vtex_c crc=af69ce85 size=7716
 panorama/images/items/circlet_png.vtex_c crc=78682d76 size=7716
 panorama/images/items/clarity_png.vtex_c crc=58d04ade size=7716
+panorama/images/items/claszian_timepiece_png.vtex_c crc=e59ce6ad size=7732
 panorama/images/items/claymore_png.vtex_c crc=de0570d8 size=7716
 panorama/images/items/cloak_of_flames_png.vtex_c crc=4a386854 size=7716
 panorama/images/items/cloak_png.vtex_c crc=1812ec26 size=7716
@@ -32455,7 +32477,6 @@ panorama/images/items/default_png.vtex_c crc=ae1d7889 size=7716
 panorama/images/items/defiant_shell_png.vtex_c crc=813ec8c1 size=7716
 panorama/images/items/demon_edge_png.vtex_c crc=5e783793 size=7716
 panorama/images/items/demonicon_png.vtex_c crc=2992804b size=24548
-panorama/images/items/desolator_2_png.vtex_c crc=a519ae4c size=24548
 panorama/images/items/desolator_png.vtex_c crc=cad5fc53 size=7716
 panorama/images/items/devastator_png.vtex_c crc=1c25a7b2 size=24564
 panorama/images/items/dezun_bloodrite_png.vtex_c crc=5e4269a7 size=7716
@@ -32590,12 +32611,15 @@ panorama/images/items/heavens_halberd_png.vtex_c crc=e929b426 size=7716
 panorama/images/items/heavy_blade_png.vtex_c crc=f2a499d8 size=7716
 panorama/images/items/helm_of_iron_will_png.vtex_c crc=516d62d6 size=7732
 panorama/images/items/helm_of_the_dominator_png.vtex_c crc=6b8a3818 size=7732
+panorama/images/items/helm_of_the_hivemind_png.vtex_c crc=6730a863 size=7732
 panorama/images/items/helm_of_the_overlord_png.vtex_c crc=722678b9 size=7732
 panorama/images/items/helm_of_the_undying_png.vtex_c crc=cc4dbdf3 size=7732
 panorama/images/items/holy_locket_enemy_png.vtex_c crc=6d57b991 size=7732
 panorama/images/items/holy_locket_png.vtex_c crc=b948c783 size=7716
 panorama/images/items/hood_of_defiance_png.vtex_c crc=73d773c1 size=7716
 panorama/images/items/horizon_png.vtex_c crc=da57021d size=7716
+panorama/images/items/horn_of_battle_greater_png.vtex_c crc=ebce588f size=7732
+panorama/images/items/horn_of_battle_png.vtex_c crc=b8e03594 size=7716
 panorama/images/items/hurricane_pike_drow_arcana_alt1_png.vtex_c crc=6303e08c size=7732
 panorama/images/items/hurricane_pike_drow_arcana_png.vtex_c crc=58699741 size=7732
 panorama/images/items/hurricane_pike_png.vtex_c crc=aa3ed214 size=7716
@@ -32671,6 +32695,7 @@ panorama/images/items/nether_shawl_png.vtex_c crc=64ebc817 size=7716
 panorama/images/items/neutral_png.vtex_c crc=b835ed40 size=7716
 panorama/images/items/nian_flag_trap_png.vtex_c crc=8ce1e5c1 size=24036
 panorama/images/items/ninja_gear_png.vtex_c crc=4d65da0e size=7716
+panorama/images/items/nothl_sigil_png.vtex_c crc=06d15e9f size=7716
 panorama/images/items/null_talisman_png.vtex_c crc=ddbad8c1 size=7716
 panorama/images/items/nullifier_png.vtex_c crc=a893beae size=7716
 panorama/images/items/oblivion_staff_png.vtex_c crc=8eece940 size=7716
@@ -32773,12 +32798,13 @@ panorama/images/items/recipe_opacity_mask_nopurchase_psd.vtex_c crc=f9599251 siz
 panorama/images/items/recipe_opacity_mask_png.vtex_c crc=159e7c05 size=5770
 panorama/images/items/recipe_png.vtex_c crc=6d6c7a4e size=7716
 panorama/images/items/recipe_scroll_png.vtex_c crc=c60f43b6 size=10157
+panorama/images/items/red_ledger_png.vtex_c crc=668baa62 size=7716
 panorama/images/items/refresher_png.vtex_c crc=bf418f0b size=7716
 panorama/images/items/refresher_shard_png.vtex_c crc=22f4886f size=7716
 panorama/images/items/relic_png.vtex_c crc=f914ed44 size=7716
 panorama/images/items/repair_kit_png.vtex_c crc=ee184f93 size=7716
 panorama/images/items/revenants_brooch_active_png.vtex_c crc=2373f121 size=24580
-panorama/images/items/revenants_brooch_png.vtex_c crc=426c5d3f size=24548
+panorama/images/items/revenants_brooch_png.vtex_c crc=1c390eae size=7716
 panorama/images/items/riftshadow_prism_png.vtex_c crc=effaa724 size=7716
 panorama/images/items/ring_of_aquila_active_png.vtex_c crc=c1bd3341 size=7732
 panorama/images/items/ring_of_aquila_png.vtex_c crc=361bcbaa size=7716
@@ -32789,6 +32815,7 @@ panorama/images/items/ring_of_protection_png.vtex_c crc=c86ad629 size=7732
 panorama/images/items/ring_of_regen_png.vtex_c crc=93e898b8 size=7716
 panorama/images/items/ring_of_tarrasque_png.vtex_c crc=91f3a5a6 size=7716
 panorama/images/items/rippers_lash_png.vtex_c crc=77c04bc5 size=7716
+panorama/images/items/ristuls_devotion_png.vtex_c crc=20a7315b size=7716
 panorama/images/items/river_painter2_png.vtex_c crc=c600b41e size=7716
 panorama/images/items/river_painter3_png.vtex_c crc=79396cd9 size=7716
 panorama/images/items/river_painter4_png.vtex_c crc=943cd3f2 size=7716
@@ -32824,6 +32851,7 @@ panorama/images/items/sign_of_the_arachnid_png.vtex_c crc=f90ab892 size=7732
 panorama/images/items/silver_edge_png.vtex_c crc=8f5a722b size=7716
 panorama/images/items/sisters_shroud_png.vtex_c crc=85124fc4 size=7716
 panorama/images/items/skadi_png.vtex_c crc=2164188b size=7716
+panorama/images/items/skypiercer_png.vtex_c crc=e1659e3f size=7716
 panorama/images/items/slippers_of_halcyon_png.vtex_c crc=45633e6a size=7732
 panorama/images/items/slippers_of_the_abyss_png.vtex_c crc=7ed32210 size=7732
 panorama/images/items/slippers_png.vtex_c crc=25b2ae83 size=7716
@@ -32845,6 +32873,8 @@ panorama/images/items/spirit_vessel_png.vtex_c crc=c69469e1 size=7716
 panorama/images/items/splintmail_png.vtex_c crc=71d0633f size=7716
 panorama/images/items/spy_gadget_png.vtex_c crc=d0934f26 size=7716
 panorama/images/items/staff_of_wizardry_png.vtex_c crc=a1db46ed size=7732
+panorama/images/items/starforge_png.vtex_c crc=d5e898b3 size=7716
+panorama/images/items/stone_of_recall_png.vtex_c crc=376c7034 size=7716
 panorama/images/items/stonefeather_satchel_feathers_png.vtex_c crc=c811d2c3 size=7732
 panorama/images/items/stonefeather_satchel_png.vtex_c crc=76de7d8d size=7732
 panorama/images/items/stonefeather_satchel_rocks_png.vtex_c crc=fa844bb5 size=7732
@@ -32852,6 +32882,7 @@ panorama/images/items/stonework_pendant_png.vtex_c crc=2f1535f8 size=7732
 panorama/images/items/stony_coat_png.vtex_c crc=ccc79bc8 size=7716
 panorama/images/items/stormcrafter_png.vtex_c crc=2a10602b size=7716
 panorama/images/items/stout_shield_png.vtex_c crc=a01ea060 size=7716
+panorama/images/items/stygian_desolator_png.vtex_c crc=4ae09b07 size=24612
 panorama/images/items/super_blink_png.vtex_c crc=22a065f6 size=7716
 panorama/images/items/swift_blink_png.vtex_c crc=21c8ed6e size=24548
 panorama/images/items/talisman_of_evasion_png.vtex_c crc=daf091e7 size=7732
@@ -32911,6 +32942,7 @@ panorama/images/items/vambrace_str_png.vtex_c crc=fb7ec735 size=7716
 panorama/images/items/vampire_fangs_png.vtex_c crc=fda0371c size=7716
 panorama/images/items/vanguard_png.vtex_c crc=9ca10faa size=7716
 panorama/images/items/veil_of_discord_png.vtex_c crc=8442a6d7 size=7716
+panorama/images/items/vile_phial_png.vtex_c crc=c780e9cf size=7716
 panorama/images/items/vindicators_axe_png.vtex_c crc=e21f10f6 size=7716
 panorama/images/items/vitality_booster_png.vtex_c crc=fb165fa0 size=7716
 panorama/images/items/vladmir_png.vtex_c crc=3064a077 size=7716
@@ -35248,16 +35280,16 @@ panorama/images/minimap/dire_top_base_png.vtex_c crc=7ed57d40 size=3498
 panorama/images/minimap/dire_top_tier1_png.vtex_c crc=ab5158a7 size=3306
 panorama/images/minimap/dire_top_tier2_png.vtex_c crc=95ee9ed7 size=3303
 panorama/images/minimap/dotamap_dire_buildings_psd.vtex_c crc=72798ee6 size=411716
-panorama/images/minimap/dotamap_psd.vtex_c crc=c51534d9 size=104484
+panorama/images/minimap/dotamap_psd.vtex_c crc=3e58754e size=104484
 panorama/images/minimap/dotamap_radiant_buildings_psd.vtex_c crc=9443b81b size=411716
-panorama/images/minimap/minimaplaneglow_botdire_psd.vtex_c crc=14b55bff size=411716
-panorama/images/minimap/minimaplaneglow_botradiant_psd.vtex_c crc=4cf85dd9 size=411732
-panorama/images/minimap/minimaplaneglow_jungledire_psd.vtex_c crc=d0bbcb64 size=411732
-panorama/images/minimap/minimaplaneglow_jungleradiant_psd.vtex_c crc=f04b4886 size=411732
-panorama/images/minimap/minimaplaneglow_middire_psd.vtex_c crc=d8fd9e34 size=411716
-panorama/images/minimap/minimaplaneglow_midradiant_psd.vtex_c crc=f7c92701 size=411732
-panorama/images/minimap/minimaplaneglow_topdire_psd.vtex_c crc=3e952bfa size=411716
-panorama/images/minimap/minimaplaneglow_topradiant_psd.vtex_c crc=e3becd0f size=411732
+panorama/images/minimap/minimaplaneglow_botdire_psd.vtex_c crc=722cdbe8 size=411700
+panorama/images/minimap/minimaplaneglow_botradiant_psd.vtex_c crc=5959946e size=411700
+panorama/images/minimap/minimaplaneglow_jungledire_psd.vtex_c crc=c9c266d0 size=411700
+panorama/images/minimap/minimaplaneglow_jungleradiant_psd.vtex_c crc=b3944c57 size=411700
+panorama/images/minimap/minimaplaneglow_middire_psd.vtex_c crc=8a3e5b57 size=411700
+panorama/images/minimap/minimaplaneglow_midradiant_psd.vtex_c crc=77959b4e size=411700
+panorama/images/minimap/minimaplaneglow_topdire_psd.vtex_c crc=8698b15d size=411700
+panorama/images/minimap/minimaplaneglow_topradiant_psd.vtex_c crc=27ff2301 size=411700
 panorama/images/minimap/radiant_bot_base_png.vtex_c crc=514c01f9 size=3525
 panorama/images/minimap/radiant_bot_tier1_png.vtex_c crc=e821a9dd size=3325
 panorama/images/minimap/radiant_bot_tier2_png.vtex_c crc=a5450da2 size=3328
@@ -36008,7 +36040,7 @@ panorama/images/spellicons/antimage_spell_shield_png.vtex_c crc=4f75463a size=18
 panorama/images/spellicons/arc_warden/ti9_immortal_shoulders/arc_warden_spark_wraith_immortal_png.vtex_c crc=8acd3574 size=18532
 panorama/images/spellicons/arc_warden_flux_png.vtex_c crc=b070e3c5 size=18484
 panorama/images/spellicons/arc_warden_flux_tempest_png.vtex_c crc=6dc38506 size=18484
-panorama/images/spellicons/arc_warden_magnetic_field_frostivus_png.vtex_c crc=38d1ccbd size=18452
+panorama/images/spellicons/arc_warden_magnetic_field_frostivus_png.vtex_c crc=469227c2 size=18500
 panorama/images/spellicons/arc_warden_magnetic_field_png.vtex_c crc=e2bac256 size=18484
 panorama/images/spellicons/arc_warden_magnetic_field_tempest_png.vtex_c crc=48b10bf8 size=18500
 panorama/images/spellicons/arc_warden_runic_infusion_png.vtex_c crc=4e23a490 size=18484
@@ -36036,6 +36068,7 @@ panorama/images/spellicons/axe_counter_helix_unleashed_png.vtex_c crc=3871d494 s
 panorama/images/spellicons/axe_culling_blade_png.vtex_c crc=42e67d43 size=18484
 panorama/images/spellicons/axe_culling_blade_unleashed_png.vtex_c crc=e12bf0eb size=18372
 panorama/images/spellicons/axe_foreboding_png.vtex_c crc=eff0492e size=115855
+panorama/images/spellicons/axe_one_man_army_png.vtex_c crc=962cd79d size=18484
 panorama/images/spellicons/backdoor_protection_in_base_png.vtex_c crc=44370005 size=18484
 panorama/images/spellicons/backdoor_protection_png.vtex_c crc=0b80cbda size=18484
 panorama/images/spellicons/bane/bane_fall20_immortal_ability_icon/bane_fall20_immortal_fiends_grip_png.vtex_c crc=1805ac2e size=18548
@@ -36072,6 +36105,8 @@ panorama/images/spellicons/beastmaster_summon_raptor_attack_png.vtex_c crc=b6667
 panorama/images/spellicons/beastmaster_summon_raptor_png.vtex_c crc=0b1a5d61 size=18484
 panorama/images/spellicons/beastmaster_summon_razorback_mh_png.vtex_c crc=4542a041 size=18532
 panorama/images/spellicons/beastmaster_summon_razorback_png.vtex_c crc=11461b7e size=18500
+panorama/images/spellicons/beastmaster_summon_thunderhide_png.vtex_c crc=e5fc237c size=18500
+panorama/images/spellicons/beastmaster_thunderhide_drum_png.vtex_c crc=38cf9135 size=18500
 panorama/images/spellicons/beastmaster_wild_axes_mh_png.vtex_c crc=b172ac03 size=18500
 panorama/images/spellicons/beastmaster_wild_axes_png.vtex_c crc=56b32f16 size=18484
 panorama/images/spellicons/berserker_troll_break_png.vtex_c crc=c5bbc66a size=18484
@@ -36206,6 +36241,8 @@ panorama/images/spellicons/chaos_knight/ck_ti7_immortal/chaos_knight_reality_rif
 panorama/images/spellicons/chaos_knight/ck_ti7_immortal/chaos_knight_reality_rift_alt_png.vtex_c crc=96a133b8 size=18640
 panorama/images/spellicons/chaos_knight/ck_ti7_immortal_gold/chaos_knight_reality_rift_alt2.png crc=5a1fb18e size=35159
 panorama/images/spellicons/chaos_knight/ck_ti7_immortal_gold/chaos_knight_reality_rift_alt2_png.vtex_c crc=b6af261a size=18672
+panorama/images/spellicons/chaos_knight_armageddons_flank_end_png.vtex_c crc=2c91993d size=18500
+panorama/images/spellicons/chaos_knight_armageddons_flank_png.vtex_c crc=bcd4d7c1 size=18500
 panorama/images/spellicons/chaos_knight_chaos_bolt_png.vtex_c crc=abadf00c size=18484
 panorama/images/spellicons/chaos_knight_chaos_strike_png.vtex_c crc=7a16bb4f size=18484
 panorama/images/spellicons/chaos_knight_chaos_strike_ti9_png.vtex_c crc=e0e4674c size=18388
@@ -36359,6 +36396,7 @@ panorama/images/spellicons/dazzle_poison_touch_png.vtex_c crc=98aa3bc7 size=1848
 panorama/images/spellicons/dazzle_rain_of_vermin_png.vtex_c crc=6ecd0ccc size=41776
 panorama/images/spellicons/dazzle_shadow_wave_png.vtex_c crc=55e372ff size=18484
 panorama/images/spellicons/dazzle_shallow_grave_png.vtex_c crc=019ea501 size=18484
+panorama/images/spellicons/dazzle_through_the_realm_png.vtex_c crc=b1e69f03 size=18484
 panorama/images/spellicons/dazzle_weave_png.vtex_c crc=c2cacb2f size=18484
 panorama/images/spellicons/death_prophet/awakened_thirst_ult_bat_icon/death_prophet_exorcism_png.vtex_c crc=c549b170 size=18516
 panorama/images/spellicons/death_prophet/dp_monster/dp_monster_crypt_swarm_png.vtex_c crc=6b2785a2 size=18500
@@ -36498,6 +36536,8 @@ panorama/images/spellicons/earthshaker_fissure_alt_png.vtex_c crc=f8218dd0 size=
 panorama/images/spellicons/earthshaker_fissure_png.vtex_c crc=0b7c567e size=18484
 panorama/images/spellicons/earthshaker_fissure_ti9_png.vtex_c crc=64872c52 size=18356
 panorama/images/spellicons/earthshaker_fissure_ti9_style1_png.vtex_c crc=0cdd010c size=18388
+panorama/images/spellicons/eimermole_miners_aura_png.vtex_c crc=9e55611d size=18484
+panorama/images/spellicons/eimermole_miners_slam_png.vtex_c crc=58caa6e8 size=18484
 panorama/images/spellicons/elder_titan/elder_titan_ti7_immortal/elder_titan_echo_stomp_alt.png crc=27b6dced size=35954
 panorama/images/spellicons/elder_titan/elder_titan_ti7_immortal/elder_titan_echo_stomp_alt_png.vtex_c crc=9ddb2b3e size=18436
 panorama/images/spellicons/elder_titan/elder_titan_ti7_immortal/elder_titan_echo_stomp_spirit_alt.png crc=b4de6ef9 size=32570
@@ -36669,6 +36709,7 @@ panorama/images/spellicons/hoodwink_decoy_png.vtex_c crc=91a88ee6 size=18484
 panorama/images/spellicons/hoodwink_heavy_quiver_png.vtex_c crc=5c8ddfc6 size=18484
 panorama/images/spellicons/hoodwink_hunters_boomerang_png.vtex_c crc=d3c789e0 size=18484
 panorama/images/spellicons/hoodwink_hunters_quiver_png.vtex_c crc=028baf35 size=18484
+panorama/images/spellicons/hoodwink_mistwoods_wayfarer_png.vtex_c crc=18e38903 size=18484
 panorama/images/spellicons/hoodwink_scurry_png.vtex_c crc=85ee32ee size=18484
 panorama/images/spellicons/hoodwink_sharpshooter_png.vtex_c crc=c32031c8 size=18484
 panorama/images/spellicons/hoodwink_sharpshooter_release_png.vtex_c crc=9cf34da5 size=18484
@@ -36818,6 +36859,7 @@ panorama/images/spellicons/largo_amphibian_rhapsody_active_png.vtex_c crc=0eac4f
 panorama/images/spellicons/largo_amphibian_rhapsody_png.vtex_c crc=99c677d9 size=18484
 panorama/images/spellicons/largo_catchy_lick_png.vtex_c crc=a70f8c0f size=18484
 panorama/images/spellicons/largo_croak_of_genius_png.vtex_c crc=1206ee62 size=18484
+panorama/images/spellicons/largo_encore_png.vtex_c crc=ad87c322 size=18484
 panorama/images/spellicons/largo_frogstomp_png.vtex_c crc=ce50efcb size=40714
 panorama/images/spellicons/largo_song_double_time_png.vtex_c crc=40f9d0a3 size=18484
 panorama/images/spellicons/largo_song_double_time_rhythm_png.vtex_c crc=a4f873f5 size=18500
@@ -36856,7 +36898,7 @@ panorama/images/spellicons/leshrac_pulse_nova_png.vtex_c crc=0e615d0b size=18484
 panorama/images/spellicons/leshrac_split_earth_png.vtex_c crc=ed2cc9ed size=18484
 panorama/images/spellicons/lich/lich_ti10_immortal_ability_icon/lich_ti10_immortal_sinister_gaze_png.vtex_c crc=d0e50c1a size=18548
 panorama/images/spellicons/lich/shearing_deposition/lich_frost_nova_png.vtex_c crc=1f8f30cf size=18356
-panorama/images/spellicons/lich/ti8_immortal_wrist/lich_chain_frost_immortal_png.vtex_c crc=c598a8d4 size=18388
+panorama/images/spellicons/lich/ti8_immortal_wrist/lich_chain_frost_immortal_png.vtex_c crc=bb60fae0 size=18500
 panorama/images/spellicons/lich_chain_frost_png.vtex_c crc=1efb4b43 size=18484
 panorama/images/spellicons/lich_dark_sorcery_png.vtex_c crc=da330855 size=18484
 panorama/images/spellicons/lich_death_charge_png.vtex_c crc=073d9b73 size=18484
@@ -36911,6 +36953,7 @@ panorama/images/spellicons/lina_fiery_soul_png.vtex_c crc=9c8583f5 size=18484
 panorama/images/spellicons/lina_flame_cloak_png.vtex_c crc=a00c9132 size=18484
 panorama/images/spellicons/lina_laguna_blade_png.vtex_c crc=9ed15386 size=18484
 panorama/images/spellicons/lina_light_strike_array_png.vtex_c crc=2f35d4e3 size=18484
+panorama/images/spellicons/lina_slow_burn_png.vtex_c crc=bbdd3cbc size=18484
 panorama/images/spellicons/lion/demon_drain/lion_mana_drain_png.vtex_c crc=b9b09230 size=18324
 panorama/images/spellicons/lion/demon_drain/lion_mana_drain_purple_png.vtex_c crc=069c4dbe size=18516
 panorama/images/spellicons/lion/dungeon_poacher/dungeon_poacher_finger_of_death_png.vtex_c crc=7afd27ba size=18516
@@ -36939,6 +36982,7 @@ panorama/images/spellicons/lone_druid_spirit_bear_entangle_png.vtex_c crc=07e209
 panorama/images/spellicons/lone_druid_spirit_bear_fetch_png.vtex_c crc=632f3521 size=18500
 panorama/images/spellicons/lone_druid_spirit_bear_png.vtex_c crc=6d0db542 size=18484
 panorama/images/spellicons/lone_druid_spirit_bear_return_png.vtex_c crc=713161de size=18500
+panorama/images/spellicons/lone_druid_spirit_bear_summon_druid_png.vtex_c crc=608c6cf3 size=18500
 panorama/images/spellicons/lone_druid_spirit_link_png.vtex_c crc=ccc9768e size=18484
 panorama/images/spellicons/lone_druid_true_form_battle_cry_png.vtex_c crc=eeff6e58 size=18500
 panorama/images/spellicons/lone_druid_true_form_druid_png.vtex_c crc=5fd3dc34 size=18484
@@ -37035,6 +37079,7 @@ panorama/images/spellicons/meepo/meepo_2022_immortal_ability_icon/meepo_2022_imm
 panorama/images/spellicons/meepo_divided_we_stand_png.vtex_c crc=d7301d28 size=18484
 panorama/images/spellicons/meepo_divided_we_stand_scavenger_png.vtex_c crc=80dfd4e1 size=18324
 panorama/images/spellicons/meepo_earthbind_png.vtex_c crc=7888eee7 size=18484
+panorama/images/spellicons/meepo_fling_release_png.vtex_c crc=c37a6e75 size=18484
 panorama/images/spellicons/meepo_geostrike_scavenger_png.vtex_c crc=4a148582 size=18292
 panorama/images/spellicons/meepo_megameepo_fling_png.vtex_c crc=32e2bd15 size=18484
 panorama/images/spellicons/meepo_megameepo_png.vtex_c crc=44f44950 size=18484
@@ -37175,6 +37220,7 @@ panorama/images/spellicons/necronomicon_warrior_sight_png.vtex_c crc=3588a0f8 si
 panorama/images/spellicons/neutral_spell_immunity_png.vtex_c crc=0b8389cf size=18484
 panorama/images/spellicons/nevermore_dark_lord_demon_png.vtex_c crc=0a2aaa5e size=18484
 panorama/images/spellicons/nevermore_dark_lord_png.vtex_c crc=aadc6044 size=18484
+panorama/images/spellicons/nevermore_frenzy_demon_png.vtex_c crc=2a388f40 size=18484
 panorama/images/spellicons/nevermore_frenzy_png.vtex_c crc=858275f0 size=18484
 panorama/images/spellicons/nevermore_necromastery_demon_png.vtex_c crc=e0f559c4 size=18500
 panorama/images/spellicons/nevermore_necromastery_png.vtex_c crc=2dddd701 size=18484
@@ -37209,6 +37255,7 @@ panorama/images/spellicons/nyx_assassin_impale_png.vtex_c crc=225487fa size=1848
 panorama/images/spellicons/nyx_assassin_jolt_png.vtex_c crc=e7378a98 size=18484
 panorama/images/spellicons/nyx_assassin_mana_burn_png.vtex_c crc=abbe3f50 size=35035
 panorama/images/spellicons/nyx_assassin_neuro_sting_png.vtex_c crc=10748e06 size=35131
+panorama/images/spellicons/nyx_assassin_scarab_metabolism_png.vtex_c crc=04c2104f size=18500
 panorama/images/spellicons/nyx_assassin_spiked_carapace_crimson_ti9_png.vtex_c crc=d9dc4763 size=41135
 panorama/images/spellicons/nyx_assassin_spiked_carapace_png.vtex_c crc=65b91a21 size=43191
 panorama/images/spellicons/nyx_assassin_spiked_carapace_ti9_png.vtex_c crc=0e0f157a size=44002
@@ -37228,6 +37275,8 @@ panorama/images/spellicons/obsidian_destroyer_equilibrium_png.vtex_c crc=ac0b395
 panorama/images/spellicons/obsidian_destroyer_essence_aura_png.vtex_c crc=a3700f98 size=18500
 panorama/images/spellicons/obsidian_destroyer_objurgation_png.vtex_c crc=8ea73779 size=18500
 panorama/images/spellicons/obsidian_destroyer_sanity_eclipse_png.vtex_c crc=78419564 size=18500
+panorama/images/spellicons/odobenus_footman_odobenus_blight_png.vtex_c crc=aeb4d9fc size=18484
+panorama/images/spellicons/odobenus_frostmage_snowball_shot_png.vtex_c crc=9907b23e size=67652
 panorama/images/spellicons/ogre_bruiser_ogre_smash_png.vtex_c crc=819097db size=32874
 panorama/images/spellicons/ogre_magi/antipodeanabilityicons/ogre_magi_bloodlust_png.vtex_c crc=ca561967 size=36195
 panorama/images/spellicons/ogre_magi/antipodeanabilityicons/ogre_magi_fireblast_png.vtex_c crc=987d786d size=18500
@@ -37254,6 +37303,8 @@ panorama/images/spellicons/ogre_magi_ignite_png.vtex_c crc=74e2db19 size=18484
 panorama/images/spellicons/ogre_magi_multicast_png.vtex_c crc=0f844825 size=18484
 panorama/images/spellicons/ogre_magi_smash_png.vtex_c crc=3a9e2da1 size=18484
 panorama/images/spellicons/ogre_magi_unrefined_fireblast_png.vtex_c crc=f3974d2b size=18500
+panorama/images/spellicons/ogre_seal_flop_png.vtex_c crc=7885bd0e size=18484
+panorama/images/spellicons/ogre_seal_pup_disapproval_aura_png.vtex_c crc=d0ea11cc size=18500
 panorama/images/spellicons/omni_knight/adoring_wingfall/omniknight_purification_png.vtex_c crc=76d43427 size=18404
 panorama/images/spellicons/omni_knight/omni_2021_immortal_ability_icon/omni_fall20_immortal_guardian_angel_png.vtex_c crc=ceb8060b size=18452
 panorama/images/spellicons/omni_knight/omni_fall20_immortal_ability_icon/omni_fall20_immortal_crimson_degen_aura_png.vtex_c crc=355d7c85 size=18436
@@ -37438,6 +37489,7 @@ panorama/images/spellicons/pugna_life_drain_png.vtex_c crc=ed5ed77c size=18484
 panorama/images/spellicons/pugna_nether_blast_png.vtex_c crc=4fe06e0e size=18484
 panorama/images/spellicons/pugna_nether_ward_alt_png.vtex_c crc=89244a2e size=18484
 panorama/images/spellicons/pugna_nether_ward_png.vtex_c crc=163d1b70 size=18484
+panorama/images/spellicons/pugna_oblivion_savant_png.vtex_c crc=e4be05ed size=18484
 panorama/images/spellicons/queen_of_pain/arcana/queenofpain_blink_alt1_png.vtex_c crc=a7790c11 size=18500
 panorama/images/spellicons/queen_of_pain/arcana/queenofpain_blink_alt2_png.vtex_c crc=6fb7341c size=18500
 panorama/images/spellicons/queen_of_pain/arcana/queenofpain_scream_of_pain_alt1_png.vtex_c crc=c0742413 size=18500
@@ -37458,6 +37510,7 @@ panorama/images/spellicons/queenofpain_sanguine_shadow_strike_png.vtex_c crc=838
 panorama/images/spellicons/queenofpain_scream_of_pain_png.vtex_c crc=a30b941b size=18484
 panorama/images/spellicons/queenofpain_shadow_strike_png.vtex_c crc=0be8c69f size=18484
 panorama/images/spellicons/queenofpain_sonic_wave_png.vtex_c crc=0049ab66 size=36149
+panorama/images/spellicons/radigull_eggstremism_png.vtex_c crc=c4d68a0f size=18484
 panorama/images/spellicons/ranged_damage.vsvg_c crc=b86cf408 size=21627
 panorama/images/spellicons/ranged_damage_png.vtex_c crc=a3ac9125 size=18484
 panorama/images/spellicons/rattletrap_battery_assault_png.vtex_c crc=a4cdb114 size=18484
@@ -37623,6 +37676,7 @@ panorama/images/spellicons/shredder/ti9_immortal_offhand/shredder_chakram_immort
 panorama/images/spellicons/shredder/ti9_immortal_offhand/shredder_chakram_immortal_tyrian_png.vtex_c crc=548aebca size=18516
 panorama/images/spellicons/shredder_chakram_2_png.vtex_c crc=edc73602 size=34288
 panorama/images/spellicons/shredder_chakram_png.vtex_c crc=8720519d size=18484
+panorama/images/spellicons/shredder_exposure_therapy_png.vtex_c crc=95efa177 size=18484
 panorama/images/spellicons/shredder_flamethrower_png.vtex_c crc=70f36008 size=18484
 panorama/images/spellicons/shredder_reactive_armor_png.vtex_c crc=70af4c83 size=31205
 panorama/images/spellicons/shredder_return_chakram_2_png.vtex_c crc=44ef9b9a size=18484
@@ -37711,6 +37765,7 @@ panorama/images/spellicons/slark_saltwater_shiv_png.vtex_c crc=0790eb5a size=184
 panorama/images/spellicons/slark_shadow_dance_png.vtex_c crc=cf8023a0 size=36534
 panorama/images/spellicons/snapfire/snapfire_fall20_immortal_ability_icon/snapfire_fall20_immortal_lil_shredder_png.vtex_c crc=d1c60121 size=18596
 panorama/images/spellicons/snapfire/snapfire_frostivus_2023/snapfire_mortimer_kisses_frost_png.vtex_c crc=3d39179d size=18468
+panorama/images/spellicons/snapfire_boomstick_png.vtex_c crc=bb24e503 size=18484
 panorama/images/spellicons/snapfire_firesnap_cookie_png.vtex_c crc=45bfa4e2 size=18484
 panorama/images/spellicons/snapfire_gobble_up_png.vtex_c crc=f2eafe8f size=18484
 panorama/images/spellicons/snapfire_lil_shredder_png.vtex_c crc=3a2288fa size=18484
@@ -37726,6 +37781,7 @@ panorama/images/spellicons/sniper_headshot_immortal_crimson_png.vtex_c crc=fa477
 panorama/images/spellicons/sniper_headshot_immortal_gold_png.vtex_c crc=ad78fdfe size=18308
 panorama/images/spellicons/sniper_headshot_immortal_png.vtex_c crc=e4a1b099 size=18292
 panorama/images/spellicons/sniper_headshot_png.vtex_c crc=9baefef2 size=18484
+panorama/images/spellicons/sniper_keen_scope_png.vtex_c crc=2287bf85 size=18484
 panorama/images/spellicons/sniper_shrapnel_muh_keen_gun_png.vtex_c crc=0aa26d62 size=18500
 panorama/images/spellicons/sniper_shrapnel_png.vtex_c crc=b58e4a8f size=18484
 panorama/images/spellicons/sniper_take_aim_png.vtex_c crc=28efc617 size=18484
@@ -37959,12 +38015,12 @@ panorama/images/spellicons/tusk/glaciomarine_ability_icons/tusk_launch_snowball_
 panorama/images/spellicons/tusk/glaciomarine_ability_icons/tusk_snowball_png.vtex_c crc=df08bc2d size=18500
 panorama/images/spellicons/tusk/glaciomarine_ability_icons/tusk_walrus_kick_png.vtex_c crc=e67ad172 size=18500
 panorama/images/spellicons/tusk/glaciomarine_ability_icons/tusk_walrus_punch_png.vtex_c crc=00aff90c size=18500
-panorama/images/spellicons/tusk/ti9_immortal_fist/tusk_walrus_punch_immortal_gold_png.vtex_c crc=c55964d6 size=18484
-panorama/images/spellicons/tusk/ti9_immortal_fist/tusk_walrus_punch_immortal_png.vtex_c crc=2741b6bf size=18468
+panorama/images/spellicons/tusk/ti9_immortal_fist/tusk_walrus_punch_immortal_gold_png.vtex_c crc=969b0a74 size=18516
+panorama/images/spellicons/tusk/ti9_immortal_fist/tusk_walrus_punch_immortal_png.vtex_c crc=c1645a4b size=18500
 panorama/images/spellicons/tusk_bitter_chill_png.vtex_c crc=656b333a size=18484
 panorama/images/spellicons/tusk_drinking_buddies_png.vtex_c crc=ce22edd7 size=18484
 panorama/images/spellicons/tusk_drinking_buddies_secondary_png.vtex_c crc=63a95e4c size=18500
-panorama/images/spellicons/tusk_frostivus_punch_png.vtex_c crc=48a8a7f2 size=18436
+panorama/images/spellicons/tusk_frostivus_punch_png.vtex_c crc=3685f3d7 size=18484
 panorama/images/spellicons/tusk_frozen_sigil_png.vtex_c crc=c5a02aa2 size=18484
 panorama/images/spellicons/tusk_ice_shards_png.vtex_c crc=7815023b size=18484
 panorama/images/spellicons/tusk_snowball_png.vtex_c crc=65e8eb45 size=18484
@@ -37984,6 +38040,7 @@ panorama/images/spellicons/undying/direstones_corruption/direstones_corruption_t
 panorama/images/spellicons/undying/pale_augur/undying_decay_png.vtex_c crc=036eb5e5 size=18324
 panorama/images/spellicons/undying/undying_fall20_immortal_ability_icon/undying_fall20_immortal_soul_rip_png.vtex_c crc=90cf0732 size=18580
 panorama/images/spellicons/undying/undying_fall20_immortal_ability_icon/undying_fall20_immortal_tombstone_png.vtex_c crc=6b184476 size=18580
+panorama/images/spellicons/undying_bite_png.vtex_c crc=02bddefb size=18468
 panorama/images/spellicons/undying_ceaseless_dirge_png.vtex_c crc=9e2571b7 size=18484
 panorama/images/spellicons/undying_decay_png.vtex_c crc=d5638ddd size=18484
 panorama/images/spellicons/undying_flesh_golem_png.vtex_c crc=ff7eb295 size=18484
@@ -38062,6 +38119,7 @@ panorama/images/spellicons/void_spirit/vs_2021_immortal_ability_icon/vs_annivers
 panorama/images/spellicons/void_spirit_aether_remnant_png.vtex_c crc=c7b307dd size=41134
 panorama/images/spellicons/void_spirit_astral_step_png.vtex_c crc=b0695ce0 size=18484
 panorama/images/spellicons/void_spirit_dissimilate_png.vtex_c crc=06f3a95a size=40079
+panorama/images/spellicons/void_spirit_intrinsic_edge_png.vtex_c crc=54ff6e8a size=18484
 panorama/images/spellicons/void_spirit_resonant_pulse_png.vtex_c crc=8f750115 size=38774
 panorama/images/spellicons/warlock/ti9_immortal_offhand/warlock_shadow_word_png.vtex_c crc=dc0f80d2 size=18452
 panorama/images/spellicons/warlock/tools_hellsworn_icons/warlock_golem_flaming_fists_png.vtex_c crc=7af39632 size=18420
@@ -38085,6 +38143,7 @@ panorama/images/spellicons/weaver/immortal/weaver_geminate_attack_png.vtex_c crc
 panorama/images/spellicons/weaver_geminate_attack_png.vtex_c crc=fe9946a1 size=18484
 panorama/images/spellicons/weaver_shukuchi_png.vtex_c crc=4c2886a4 size=18484
 panorama/images/spellicons/weaver_the_swarm_png.vtex_c crc=ba52c9e1 size=18484
+panorama/images/spellicons/weaver_time_lapse_ally_png.vtex_c crc=dc46776b size=18484
 panorama/images/spellicons/weaver_time_lapse_png.vtex_c crc=3921bdcf size=18484
 panorama/images/spellicons/windrunner/peregrine_flight/windrunner_powershot_png.vtex_c crc=a4db0881 size=18388
 panorama/images/spellicons/windrunner_focusfire_arcana_alt_png.vtex_c crc=d599cde1 size=31237
@@ -38483,6 +38542,7 @@ panorama/images/status_icons/ability_aoe_icon_png.vtex_c crc=e41f9a5e size=6212
 panorama/images/status_icons/ability_aoe_icon_psd.vtex_c crc=15f2f224 size=8468
 panorama/images/status_icons/ability_castrange_icon_psd.vtex_c crc=1e9125cc size=8484
 panorama/images/status_icons/ability_cooldown_icon_psd.vtex_c crc=807d067e size=8468
+panorama/images/status_icons/ability_effectiveness_icon_png.vtex_c crc=ac1a7e6a size=17716
 panorama/images/status_icons/ability_healthcost_icon_psd.vtex_c crc=419c5dec size=8484
 panorama/images/status_icons/ability_manacost_icon_psd.vtex_c crc=5586b870 size=8468
 panorama/images/status_icons/actiontaken_psd.vtex_c crc=855daf0c size=6020
@@ -38527,6 +38587,7 @@ panorama/images/status_icons/ping_psd.vtex_c crc=b83b2875 size=3876
 panorama/images/status_icons/previousbest_icon_psd.vtex_c crc=4d3235f9 size=8292
 panorama/images/status_icons/pro_icon_psd.vtex_c crc=4eaf975a size=27604
 panorama/images/status_icons/proplayer_psd.vtex_c crc=6062a4ea size=6020
+panorama/images/status_icons/quickcast_followslot_psd.vtex_c crc=84b1f2ca size=25204
 panorama/images/status_icons/quickcast_keydown_psd.vtex_c crc=62071af0 size=25124
 panorama/images/status_icons/quickcast_keyup_psd.vtex_c crc=e1c9a798 size=26340
 panorama/images/status_icons/quickcast_lightning_psd.vtex_c crc=7819d50f size=2660

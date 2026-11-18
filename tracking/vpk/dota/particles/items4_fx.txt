@@ -4,6 +4,15 @@ particles/items4_fx/ascetic_cap_ground_stamp.vpcf_c crc=a2173067 size=2184
 particles/items4_fx/ascetic_cap_ground_swirl.vpcf_c crc=37ae5a40 size=3192
 particles/items4_fx/ascetic_cap_reverse.vpcf_c crc=58da3fa1 size=3537
 particles/items4_fx/ascetic_cap_reverse_glow.vpcf_c crc=093e7150 size=3204
+particles/items4_fx/brick.vpcf_c crc=13d7f54e size=4141
+particles/items4_fx/brick_debris.vpcf_c crc=c11dced2 size=4098
+particles/items4_fx/brick_explode.vpcf_c crc=5f7e8e04 size=3386
+particles/items4_fx/brick_explode_debris.vpcf_c crc=a0090928 size=4354
+particles/items4_fx/brick_explode_flash_b.vpcf_c crc=188416ed size=3017
+particles/items4_fx/brick_explode_glow.vpcf_c crc=06d6ca2d size=2664
+particles/items4_fx/brick_glow.vpcf_c crc=66f4bafc size=4176
+particles/items4_fx/brick_model.vpcf_c crc=f0bce30f size=3830
+particles/items4_fx/brick_trail.vpcf_c crc=83207d58 size=3952
 particles/items4_fx/bull_whip.vpcf_c crc=23993165 size=2963
 particles/items4_fx/bull_whip_buff.vpcf_c crc=9e29dc31 size=3248
 particles/items4_fx/bull_whip_buff_trail.vpcf_c crc=61ae141f size=2330
@@ -222,7 +231,7 @@ particles/items4_fx/nullifier_slow_detail.vpcf_c crc=462626c1 size=2261
 particles/items4_fx/nullifier_slow_energy.vpcf_c crc=e6304429 size=2199
 particles/items4_fx/nullifier_slow_glow.vpcf_c crc=cbac28df size=2123
 particles/items4_fx/nullifier_slow_trail.vpcf_c crc=de60a8a0 size=2601
-particles/items4_fx/retribution_cloak_cast.vpcf_c crc=f88652ef size=2167
+particles/items4_fx/retribution_cloak_cast.vpcf_c crc=2906e17a size=2256
 particles/items4_fx/retributor_cloak.vpcf_c crc=6a77eeca size=2622
 particles/items4_fx/retributor_cloak_activation.vpcf_c crc=d3160808 size=2939
 particles/items4_fx/retributor_cloak_cast.vpcf_c crc=9d849e8e size=2886

@@ -18,7 +18,7 @@ particles/dire_fx/bad_ancient002_destruction_sphere.vpcf_c crc=6201f461 size=224
 particles/dire_fx/bad_ancient002_pit_lava_blast.vpcf_c crc=5b85211d size=1810
 particles/dire_fx/bad_ancient002_pit_lava_blast_lava.vpcf_c crc=f83a3261 size=4429
 particles/dire_fx/bad_ancient002_pit_lava_glow.vpcf_c crc=5e80efe6 size=4132
-particles/dire_fx/bad_ancient002_pit_lava_glow_light.vpcf_c crc=4726b499 size=3686
+particles/dire_fx/bad_ancient002_pit_lava_glow_light.vpcf_c crc=eccf511d size=3755
 particles/dire_fx/bad_ancient002_pit_lava_smoke.vpcf_c crc=71f7485e size=4316
 particles/dire_fx/bad_ancient002_pit_lava_sparks.vpcf_c crc=9405185c size=4334
 particles/dire_fx/bad_ancient_ambdefl1.vpcf_c crc=ae37871a size=2135

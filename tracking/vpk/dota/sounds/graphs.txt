@@ -1,5 +1,9 @@
 sounds/graphs/__main__.vmix_c crc=c1ac9d77 size=3508
+sounds/graphs/__main__.vsnd_c crc=18a0a4d8 size=3631
 sounds/graphs/dota_hrtf_basic.vmix_c crc=74141c99 size=2513
+sounds/graphs/dota_hrtf_basic.vsnd_c crc=4c11b267 size=2620
 sounds/graphs/dota_ui_pan.vmix_c crc=42cbafdd size=3002
-sounds/graphs/mixgraphs.vrman_c crc=ea1f1d0b size=1133
+sounds/graphs/dota_ui_pan.vsnd_c crc=a4c2a234 size=3110
+sounds/graphs/mixgraphs.vrman_c crc=764c2411 size=1133
 sounds/graphs/pitch_shift.vmix_c crc=c45a7d0a size=2227
+sounds/graphs/pitch_shift.vsnd_c crc=6180367d size=2322

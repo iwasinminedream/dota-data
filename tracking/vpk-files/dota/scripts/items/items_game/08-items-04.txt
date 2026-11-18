@@ -62945,6 +62945,12 @@
 					"asset"		"ALL"
 					"style"		"0"
 				}
+				"asset_modifier"
+				{
+					"type"		"model"
+					"asset"		"models/items/lich/dark_carnival_lich/dark_carnival_lich_weapon.vmdl"
+					"modifier"		"models/items/lich/dark_carnival_lich/dark_carnival_lich_arms_refit.vmdl"
+				}
 			}
 		}
 		"9757"

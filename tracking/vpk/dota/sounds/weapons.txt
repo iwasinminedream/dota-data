@@ -282,6 +282,7 @@ sounds/weapons/hero/beastmaster/inner_beast_cast.vsnd_c crc=24d6311b size=441477
 sounds/weapons/hero/beastmaster/preattack.vsnd_c crc=53dc81ea size=103560
 sounds/weapons/hero/beastmaster/primal_roar.vsnd_c crc=b8bbdaa4 size=471372
 sounds/weapons/hero/beastmaster/primal_ti7_layer.vsnd_c crc=0265294c size=370312
+sounds/weapons/hero/beastmaster/summon_thunderhide.vsnd_c crc=e643f8e8 size=499028
 sounds/weapons/hero/beastmaster/taunt_ti9.vsnd_c crc=d19f05b6 size=348358
 sounds/weapons/hero/beastmaster/wild_axes.vsnd_c crc=01d13220 size=300684
 sounds/weapons/hero/bloodseeker/attack01.vsnd_c crc=7eb86100 size=38520
@@ -373,6 +374,9 @@ sounds/weapons/hero/centaur/retaliate_target.vsnd_c crc=5e53edca size=133472
 sounds/weapons/hero/centaur/stampede_cast.vsnd_c crc=69c309df size=630076
 sounds/weapons/hero/centaur/stampede_movement.vsnd_c crc=14326dcc size=1059492
 sounds/weapons/hero/centaur/taunt.vsnd_c crc=4e8ffd6f size=876956
+sounds/weapons/hero/chaos_knight/armageddon_cast.vsnd_c crc=43caaa39 size=931799
+sounds/weapons/hero/chaos_knight/armageddon_lp.vsnd_c crc=070034e4 size=509411
+sounds/weapons/hero/chaos_knight/armageddon_lp02.vsnd_c crc=d0909271 size=504030
 sounds/weapons/hero/chaos_knight/chaos_bolt_cast.vsnd_c crc=53817f57 size=257148
 sounds/weapons/hero/chaos_knight/chaos_bolt_target.vsnd_c crc=bbc1f077 size=236912
 sounds/weapons/hero/chaos_knight/chaos_strike.vsnd_c crc=299c892c size=302220
@@ -517,6 +521,7 @@ sounds/weapons/hero/dawnbreaker/healing_touch_powerup.vsnd_c crc=7d72a801 size=5
 sounds/weapons/hero/dawnbreaker/solar_flare.vsnd_c crc=2604840e size=415612
 sounds/weapons/hero/dazzle/attack.vsnd_c crc=176e88e3 size=103358
 sounds/weapons/hero/dazzle/bad_juju_target.vsnd_c crc=26bcd081 size=394192
+sounds/weapons/hero/dazzle/nothl_body_return.vsnd_c crc=aa875f2f size=136087
 sounds/weapons/hero/dazzle/poison_cast.vsnd_c crc=019bc33f size=214488
 sounds/weapons/hero/dazzle/poison_impact.vsnd_c crc=c27ae275 size=581384
 sounds/weapons/hero/dazzle/poison_tick.vsnd_c crc=4e224c4a size=149016
@@ -2385,6 +2390,7 @@ sounds/weapons/hero/underlord/portal_in.vsnd_c crc=683cdb49 size=527476
 sounds/weapons/hero/underlord/portal_out.vsnd_c crc=e050c432 size=355284
 sounds/weapons/hero/underlord/reveal.vsnd_c crc=e234d38d size=1407528
 sounds/weapons/hero/underlord/taunt2022.vsnd_c crc=46d207a0 size=563582
+sounds/weapons/hero/undying/bite_cast.vsnd_c crc=d461f727 size=266308
 sounds/weapons/hero/undying/dead_can_dance.vsnd_c crc=76d5424e size=530680
 sounds/weapons/hero/undying/decay_cast.vsnd_c crc=dc94e2cb size=490620
 sounds/weapons/hero/undying/decay_cast_pale_augur.vsnd_c crc=906be387 size=427212

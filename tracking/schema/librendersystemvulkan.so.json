@@ -7,15 +7,15 @@
  {"name":"m_nSlotType","type":"RenderSlotType_t","offset":43,"metadata":[]},
  {"name":"m_szShaderSemantic","type":"char[32]","offset":44,"metadata":[]}]},
 {"name":"RsBlendStateDesc_t","size":32,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_srcBlendBits","type":"uint32","offset":0,"metadata":[]},
- {"name":"m_destBlendBits","type":"uint32","offset":4,"metadata":[]},
- {"name":"m_srcBlendAlphaBits","type":"uint32","offset":8,"metadata":[]},
- {"name":"m_destBlendAlphaBits","type":"uint32","offset":12,"metadata":[]},
- {"name":"m_renderTargetWriteMaskBits","type":"uint32","offset":16,"metadata":[]},
+ {"name":"m_srcBlendBits","type":"?","offset":0,"metadata":[]},
+ {"name":"m_destBlendBits","type":"?","offset":4,"metadata":[]},
+ {"name":"m_srcBlendAlphaBits","type":"?","offset":8,"metadata":[]},
+ {"name":"m_destBlendAlphaBits","type":"?","offset":12,"metadata":[]},
+ {"name":"m_renderTargetWriteMaskBits","type":"?","offset":16,"metadata":[]},
  {"name":"m_blendOpBits","type":"bitfield:30","offset":0,"metadata":[]},
  {"name":"m_bAlphaToCoverageEnable","type":"bitfield:1","offset":0,"metadata":[]},
  {"name":"m_bIndependentBlendEnable","type":"bitfield:1","offset":0,"metadata":[]},
- {"name":"m_blendOpAlphaBits","type":"uint32","offset":24,"metadata":[]},
+ {"name":"m_blendOpAlphaBits","type":"?","offset":24,"metadata":[]},
  {"name":"m_blendEnableBits","type":"uint8","offset":28,"metadata":[]},
  {"name":"m_srgbWriteEnableBits","type":"uint8","offset":29,"metadata":[]}]},
 {"name":"RsDepthStencilStateDesc_t","size":8,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
@@ -44,7 +44,7 @@
  {"name":"m_nStencilReadMask","type":"uint8","offset":4,"metadata":[]},
  {"name":"m_nStencilWriteMask","type":"uint8","offset":5,"metadata":[]}]},
 {"name":"SheetSequenceIntegerId_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[{"name":"MIsBoxedIntegerType"}],"fields":[
- {"name":"m_Value","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_Value","type":"?","offset":0,"metadata":[]}]},
 {"name":"VsInputSignatureElement_t","size":196,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_pName","type":"char[64]","offset":0,"metadata":[]},
  {"name":"m_pSemantic","type":"char[64]","offset":64,"metadata":[]},

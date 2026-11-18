@@ -25,6 +25,7 @@ materials/dev/color_correction_warp.vmat_c crc=0fd2c215 size=2704
 materials/dev/color_picker.vmat_c crc=c8f1ec82 size=1449
 materials/dev/composite_portrait.vmat_c crc=34afc6d1 size=2312
 materials/dev/copy_depth.vmat_c crc=55bb2245 size=1370
+materials/dev/copycoloranddepth.vmat_c crc=0f992818 size=1744
 materials/dev/copytexturemultiply.vmat_c crc=6f8d319c size=1221
 materials/dev/db_isingame.vmat_c crc=8d4d09a4 size=3936
 materials/dev/debug_cloth.vmat_c crc=bd066c41 size=4464
@@ -98,6 +99,7 @@ materials/dev/game_fairy_shadow_realm.vmat_c crc=0dac01cf size=3920
 materials/dev/game_fairy_shadow_realm_heroes.vmat_c crc=316ad3a5 size=2744
 materials/dev/game_paused.vmat_c crc=c6eb566e size=3912
 materials/dev/glow_output.vmat_c crc=b8001f91 size=2456
+materials/dev/glowproperty.vmat_c crc=ab951686 size=1960
 materials/dev/gray_25.vmat_c crc=4c998ae3 size=4288
 materials/dev/gray_25_color_tga_185b4f36.vtex_c crc=8d9749e4 size=351252
 materials/dev/gray_25_color_tga_5345fe28.vtex_c crc=869e7f7a size=176796
@@ -117,6 +119,8 @@ materials/dev/hero_color_chart.vmat_c crc=8f7df191 size=3815
 materials/dev/hero_spectre_death.vmat_c crc=73e8494f size=4198
 materials/dev/houmat_template.vmat_c crc=2c660511 size=6536
 materials/dev/identitylightwarp.vtex_c crc=bafffd0e size=3828
+materials/dev/jfa_init.vmat_c crc=66118c0b size=1600
+materials/dev/jfa_pass.vmat_c crc=4a42ee59 size=1616
 materials/dev/journey_beige.vmat_c crc=95392774 size=4600
 materials/dev/journey_beige_vmat_g_tcolor_13735cfb.vtex_c crc=68da2f1e size=1820
 materials/dev/journey_blue.vmat_c crc=1b47a11d size=4600
@@ -141,6 +145,8 @@ materials/dev/noillum_primary_green.vmat_c crc=d0170d01 size=4416
 materials/dev/noillum_primary_green_color_tga_f85cef0e.vtex_c crc=dcad398c size=176540
 materials/dev/normal_test.vmat_c crc=47ec6592 size=5136
 materials/dev/occluder_visualization.vmat_c crc=783b356c size=2864
+materials/dev/outline_blend.vmat_c crc=7c854cae size=1616
+materials/dev/outline_render.vmat_c crc=8808bce2 size=1616
 materials/dev/panel_normal_tga_842c0122.vtex_c crc=3182db04 size=1399956
 materials/dev/particle_bloom_blur.vmat_c crc=10bf94b9 size=2488
 materials/dev/postprocess_special_effect_crt.vmat_c crc=2d4c5350 size=2484

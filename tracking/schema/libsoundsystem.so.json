@@ -20,11 +20,12 @@
  {"name":"m_morphData","type":"CAudioMorphData","offset":56,"metadata":[]}]},
 {"name":"CDSPMixgroupModifier","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_mixgroup","type":"CUtlString","offset":0,"metadata":[{"name":"MPropertyDescription","value":"Name of the mixgroup. TODO: needs to be autopopulated with mixgroups."},{"name":"MPropertyFriendlyName","value":"Mixgroup Name"}]},
- {"name":"m_flModifier","type":"float32","offset":8,"metadata":[{"name":"MPropertyDescription","value":"The amount to multiply the volume of the non-spatialized reverb/dsp by when at the max reverb blend distance. 1.0 leaves the volume unchanged."},{"name":"MPropertyFriendlyName","value":"Max reverb gain amount for listener DSP."}]},
- {"name":"m_flModifierMin","type":"float32","offset":12,"metadata":[{"name":"MPropertyDescription","value":"The amount to multiply the volume of the non-spatialized reverb/dsp by when at the min reverb blend distance. 1.0 leaves the volume unchanged."},{"name":"MPropertyFriendlyName","value":"Min reverb gain amount amount for listener DSP."}]},
- {"name":"m_flSourceModifier","type":"float32","offset":16,"metadata":[{"name":"MPropertyDescription","value":"If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."},{"name":"MPropertyFriendlyName","value":"Max reverb gain amount for source-specific DSP."}]},
- {"name":"m_flSourceModifierMin","type":"float32","offset":20,"metadata":[{"name":"MPropertyDescription","value":"If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."},{"name":"MPropertyFriendlyName","value":"Min reverb gain amount for source-specific DSP."}]},
- {"name":"m_flListenerReverbModifierWhenSourceReverbIsActive","type":"float32","offset":24,"metadata":[{"name":"MPropertyDescription","value":"When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount."},{"name":"MPropertyFriendlyName","value":"Modification amount for listener DSP when source DSP is used."}]}]},
+ {"name":"m_flListenerReverbFar","type":"float32","offset":8,"metadata":[{"name":"MPropertyDescription","value":"The amount to multiply the volume of the non-spatialized reverb/dsp by when at the max reverb blend distance. 1.0 leaves the volume unchanged."},{"name":"MPropertyFriendlyName","value":"Far reverb gain amount for listener DSP."}]},
+ {"name":"m_flListenerReverbNear","type":"float32","offset":12,"metadata":[{"name":"MPropertyDescription","value":"The amount to multiply the volume of the non-spatialized reverb/dsp by when at the min reverb blend distance. 1.0 leaves the volume unchanged."},{"name":"MPropertyFriendlyName","value":"Near reverb gain amount for listener DSP."}]},
+ {"name":"m_flSourceReverbFar","type":"float32","offset":16,"metadata":[{"name":"MPropertyDescription","value":"If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."},{"name":"MPropertyFriendlyName","value":"Far reverb gain amount for source-specific DSP."}]},
+ {"name":"m_flSourceReverbNear","type":"float32","offset":20,"metadata":[{"name":"MPropertyDescription","value":"If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."},{"name":"MPropertyFriendlyName","value":"Near reverb gain amount for source-specific DSP."}]},
+ {"name":"m_flListenerReverbModifierWhenSourceReverbIsActive","type":"float32","offset":24,"metadata":[{"name":"MPropertyDescription","value":"When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount."},{"name":"MPropertyFriendlyName","value":"Modification amount for listener DSP when source DSP is used."}]},
+ {"name":"m_flTailVolume","type":"float32","offset":28,"metadata":[{"name":"MPropertyDescription","value":"Gain applied to the tail of sounds whose source is in this DSP preset (see csgo_mega use_tail_distance_attenuation). 1.0 leaves the tail unchanged."},{"name":"MPropertyFriendlyName","value":"Tail volume for sources in this DSP preset."}]}]},
 {"name":"CDSPPresetMixgroupModifierTable","size":24,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MVDataRoot"},{"name":"MVDataNodeType"}],"fields":[
  {"name":"m_table","type":"CUtlVector< CDspPresetModifierList >","offset":0,"metadata":[{"name":"MPropertyDescription","value":"Table of mixgroup modifiers for effect names."},{"name":"MPropertyFriendlyName","value":"Modifier Table"}]}]},
 {"name":"CDspPresetModifierList","size":32,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -80,7 +81,7 @@
  {"name":"m_flRelease","type":"float32","offset":44,"metadata":[]},
  {"name":"m_bBeatEnvelopes","type":"bool","offset":48,"metadata":[]},
  {"name":"m_nNextVoiceSlot","type":"uint8","offset":212,"metadata":[]},
- {"name":"m_hSoundEventHash","type":"uint32","offset":216,"metadata":[]}]},
+ {"name":"m_hSoundEventHash","type":"?","offset":216,"metadata":[]}]},
 {"name":"CSndSeqInstSndEvtSchema","size":32,"align":8,"flags":[262433,0],"bases":[{"name":"CSndSeqInstBaseSchema","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"SoundEvent on Start"}],"fields":[]},
 {"name":"CSndSeqInstruments","size":40,"align":255,"flags":[33,0],"bases":[{"name":"ISndSeqInstruments","offset":0}],"metadata":[],"fields":[]},
 {"name":"CSosGroupActionLimitSchema","size":24,"align":8,"flags":[262433,0],"bases":[{"name":"CSosGroupActionSchema","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Limiter"}],"fields":[
@@ -179,7 +180,7 @@
 {"name":"CVMixAudioMeter","size":24,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":0,"metadata":[]},
  {"name":"m_displayName","type":"CUtlString","offset":8,"metadata":[]},
- {"name":"m_nDebugId","type":"uint32","offset":16,"metadata":[]}]},
+ {"name":"m_nDebugId","type":"?","offset":16,"metadata":[]}]},
 {"name":"CVMixAutoFilterProcessorDesc","size":88,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_desc","type":"VMixAutoFilterDesc_t","offset":40,"metadata":[]}]},
 {"name":"CVMixAutomaticControlInput","size":24,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -204,7 +205,7 @@
  {"name":"m_automaticControlInputs","type":"CUtlLeanVector< CVMixAutomaticControlInput >","offset":192,"metadata":[]}]},
 {"name":"CVMixBaseProcessorDesc","size":40,"align":255,"flags":[262435,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":8,"metadata":[]},
- {"name":"m_nDebugId","type":"uint32","offset":16,"metadata":[]},
+ {"name":"m_nDebugId","type":"?","offset":16,"metadata":[]},
  {"name":"m_flxfade","type":"float32","offset":20,"metadata":[]},
  {"name":"m_nChannels","type":"int32","offset":24,"metadata":[]},
  {"name":"m_bDebugBypass","type":"bool","offset":28,"metadata":[]},
@@ -216,7 +217,7 @@
  {"name":"m_desc","type":"VMixBoxverbDesc_t","offset":40,"metadata":[]}]},
 {"name":"CVMixCommand","size":32,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_nCommand","type":"VMixGraphCommandID_t","offset":0,"metadata":[{"name":"MKV3TransferName","value":"command"}]},
- {"name":"m_nParameterNameHash","type":"uint32","offset":4,"metadata":[{"name":"MKV3TransferName","value":"paramName"}]},
+ {"name":"m_nParameterNameHash","type":"?","offset":4,"metadata":[{"name":"MKV3TransferName","value":"paramName"}]},
  {"name":"m_nOutputSubmix","type":"CVMixDataOffset","offset":8,"metadata":[{"name":"MKV3TransferName","value":"outputSubmix"}]},
  {"name":"m_nInputSubmix0","type":"CVMixDataOffset","offset":12,"metadata":[{"name":"MKV3TransferName","value":"inputSubmix0"}]},
  {"name":"m_nInputSubmix1","type":"CVMixDataOffset","offset":16,"metadata":[{"name":"MKV3TransferName","value":"inputSubmix1"}]},
@@ -233,7 +234,7 @@
  {"name":"m_desc","type":"VMixConvolutionDesc_t","offset":40,"metadata":[]},
  {"name":"m_paramImpulseResponse","type":"CVMixDataOffset","offset":72,"metadata":[]}]},
 {"name":"CVMixDataOffset","size":4,"align":255,"flags":[40,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_nOffset","type":"uint32","offset":0,"metadata":[]}]},
+ {"name":"m_nOffset","type":"?","offset":0,"metadata":[]}]},
 {"name":"CVMixDelayProcessorDesc","size":88,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_desc","type":"VMixDelayDesc_t","offset":40,"metadata":[]},
  {"name":"m_paramCutoffFrequency","type":"CVMixParameterFloat","offset":80,"metadata":[]},
@@ -242,7 +243,7 @@
  {"name":"m_submixList","type":"CUtlLeanVector< CSubmix >","offset":208,"metadata":[{"name":"MKV3TransferName","value":"m_Submixes"}]},
  {"name":"m_sources","type":"CUtlLeanVector< std::unique_ptr< CVoiceContainerBase > >","offset":224,"metadata":[]},
  {"name":"m_impulseResponseValues","type":"CUtlLeanVector< uint64 >","offset":240,"metadata":[]},
- {"name":"m_nNameHashCode","type":"uint32","offset":256,"metadata":[]}]},
+ {"name":"m_nNameHashCode","type":"?","offset":256,"metadata":[]}]},
 {"name":"CVMixDiffusorProcessorDesc","size":56,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_desc","type":"VMixDiffusorDesc_t","offset":40,"metadata":[]}]},
 {"name":"CVMixDualCompressorProcessorDesc","size":104,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -387,10 +388,11 @@
 {"name":"CVMixSubmix","size":56,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_name","type":"CUtlString","offset":0,"metadata":[]},
  {"name":"m_SendNames","type":"CUtlString[4]","offset":8,"metadata":[]},
- {"name":"m_nSoloNameHash","type":"uint32","offset":44,"metadata":[]},
+ {"name":"m_nSoloNameHash","type":"?","offset":44,"metadata":[]},
  {"name":"m_nChannels","type":"int32","offset":48,"metadata":[]},
  {"name":"m_nSendOperator","type":"VMixSendOperator_t","offset":52,"metadata":[{"name":"MPropertyFriendlyName","value":"Send Operator"}]},
- {"name":"m_nMixDownRule","type":"VMixMixDownRule_t","offset":54,"metadata":[]}]},
+ {"name":"m_nMixDownRule","type":"VMixMixDownRule_t","offset":54,"metadata":[]},
+ {"name":"m_nUpMixRule","type":"VMixUpMixRule_t","offset":55,"metadata":[]}]},
 {"name":"CVMixUtilityProcessorDesc","size":64,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_desc","type":"VMixUtilityDesc_t","offset":40,"metadata":[]}]},
 {"name":"CVMixVocoderProcessorDesc","size":88,"align":8,"flags":[262433,0],"bases":[{"name":"CVMixBaseProcessorDesc","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
@@ -402,109 +404,114 @@
  {"name":"m_Sentences","type":"CUtlLeanVector< CAudioSentence >","offset":0,"metadata":[]},
  {"name":"m_nRate","type":"int32","offset":16,"metadata":[]},
  {"name":"m_nFormat","type":"CVSoundFormat_t","offset":20,"metadata":[]},
- {"name":"m_nChannels","type":"uint32","offset":24,"metadata":[]},
+ {"name":"m_nChannels","type":"?","offset":24,"metadata":[]},
  {"name":"m_nLoopStart","type":"int32","offset":28,"metadata":[]},
- {"name":"m_nSampleCount","type":"uint32","offset":32,"metadata":[]},
+ {"name":"m_nSampleCount","type":"?","offset":32,"metadata":[]},
  {"name":"m_flDuration","type":"float32","offset":36,"metadata":[]},
- {"name":"m_nStreamingSize","type":"uint32","offset":40,"metadata":[]},
+ {"name":"m_nStreamingSize","type":"?","offset":40,"metadata":[]},
  {"name":"m_nLoopEnd","type":"int32","offset":44,"metadata":[]}]},
-{"name":"CVoiceContainerAmpedDecayingSineWave","size":128,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerDecayingSineWave","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: Amped Decaying Sine Wave Container"},{"name":"MPropertyDescription","value":"Bytecode instruction"}],"fields":[
- {"name":"m_flGainAmount","type":"float32","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Attenuation Amount (dB)"},{"name":"MPropertyDescription","value":"The amount of attenuation ."}]}]},
+{"name":"CVoiceContainerAmpedDecayingSineWave","size":136,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerDecayingSineWave","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: Amped Decaying Sine Wave Container"},{"name":"MPropertyDescription","value":"Bytecode instruction"}],"fields":[
+ {"name":"m_flGainAmount","type":"float32","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Attenuation Amount (dB)"},{"name":"MPropertyDescription","value":"The amount of attenuation ."}]}]},
 {"name":"CVoiceContainerAnalysisBase","size":72,"align":8,"flags":[262433,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MVDataNodeType"},{"name":"MPropertyPolymorphicClass"},{"name":"MPropertyFriendlyName","value":"Analysis Container"},{"name":"MPropertyDescription","value":"Does Not Play Sound, member of CVoiceContainerDefaultDefault"}],"fields":[
  {"name":"m_curve","type":"CPiecewiseCurve","offset":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Envelope Curve"}]}]},
-{"name":"CVoiceContainerAsyncGenerator","size":128,"align":255,"flags":[262435,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
-{"name":"CVoiceContainerBase","size":112,"align":255,"flags":[262435,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MVDataRoot"},{"name":"MVDataNodeType"},{"name":"MPropertyPolymorphicClass"},{"name":"MVDataFileExtension","value":"vsnd"},{"name":"MVDataSingleton"},{"name":"MPropertyFriendlyName","value":"VSND Container"},{"name":"MPropertyDescription","value":"Voice Container Base"}],"fields":[
- {"name":"m_vSound","type":"CVSound","offset":40,"metadata":[{"name":"MPropertySuppressField"}]},
- {"name":"m_pEnvelopeAnalyzer","type":"CVoiceContainerAnalysisBase*","offset":104,"metadata":[{"name":"MPropertySuppressExpr","value":"true"}]}]},
-{"name":"CVoiceContainerBlender","size":184,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Blender"},{"name":"MPropertyDescription","value":"Blends two containers."}],"fields":[
- {"name":"m_firstSound","type":"CSoundContainerReference","offset":112,"metadata":[]},
- {"name":"m_secondSound","type":"CSoundContainerReference","offset":144,"metadata":[]},
- {"name":"m_flBlendFactor","type":"float32","offset":176,"metadata":[]}]},
-{"name":"CVoiceContainerDecayingSineWave","size":120,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: Decaying Sine Wave Container"},{"name":"MPropertyDescription","value":"Only text params, renders in real time"}],"fields":[
- {"name":"m_flFrequency","type":"float32","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]},
- {"name":"m_flDecayTime","type":"float32","offset":116,"metadata":[{"name":"MPropertyFriendlyName","value":"Decay Time (Seconds)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]}]},
-{"name":"CVoiceContainerDefault","size":112,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Default Container"},{"name":"MPropertyDescription","value":"Voice Container Default"}],"fields":[]},
-{"name":"CVoiceContainerEnum","size":176,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"VSND Enum"},{"name":"MPropertyDescription","value":"Switches between a selection of vsnds based on a provided index."}],"fields":[
- {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To Play"}]},
- {"name":"m_iSelection","type":"int32","offset":168,"metadata":[{"name":"MPropertyFriendlyName","value":"Index"}]},
- {"name":"m_flCrossfadeTime","type":"float32","offset":172,"metadata":[{"name":"MPropertyFriendlyName","value":"Crossfade Time"}]}]},
+{"name":"CVoiceContainerAsyncGenerator","size":136,"align":255,"flags":[262435,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CVoiceContainerBase","size":120,"align":255,"flags":[262435,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MVDataRoot"},{"name":"MVDataNodeType"},{"name":"MPropertyPolymorphicClass"},{"name":"MVDataFileExtension","value":"vsnd"},{"name":"MVDataSingleton"},{"name":"MPropertyFriendlyName","value":"VSND Container"},{"name":"MPropertyDescription","value":"Voice Container Base"}],"fields":[
+ {"name":"m_nResourceName","type":"CUtlStringToken","offset":16,"metadata":[]},
+ {"name":"m_bRegisteredVMix","type":"bool","offset":20,"metadata":[]},
+ {"name":"m_bIsValidForPlayback","type":"bool","offset":21,"metadata":[]},
+ {"name":"m_vSound","type":"CVSound","offset":48,"metadata":[{"name":"MPropertySuppressField"}]},
+ {"name":"m_pEnvelopeAnalyzer","type":"CVoiceContainerAnalysisBase*","offset":112,"metadata":[{"name":"MPropertySuppressExpr","value":"true"}]}]},
+{"name":"CVoiceContainerBlender","size":192,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Blender"},{"name":"MPropertyDescription","value":"Blends two containers."}],"fields":[
+ {"name":"m_firstSound","type":"CSoundContainerReference","offset":120,"metadata":[]},
+ {"name":"m_secondSound","type":"CSoundContainerReference","offset":152,"metadata":[]},
+ {"name":"m_flBlendFactor","type":"float32","offset":184,"metadata":[]}]},
+{"name":"CVoiceContainerDecayingSineWave","size":128,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: Decaying Sine Wave Container"},{"name":"MPropertyDescription","value":"Only text params, renders in real time"}],"fields":[
+ {"name":"m_flFrequency","type":"float32","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]},
+ {"name":"m_flDecayTime","type":"float32","offset":124,"metadata":[{"name":"MPropertyFriendlyName","value":"Decay Time (Seconds)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]}]},
+{"name":"CVoiceContainerDefault","size":120,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Default Container"},{"name":"MPropertyDescription","value":"Voice Container Default"}],"fields":[]},
+{"name":"CVoiceContainerEnum","size":184,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"VSND Enum"},{"name":"MPropertyDescription","value":"Switches between a selection of vsnds based on a provided index."}],"fields":[
+ {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To Play"}]},
+ {"name":"m_iSelection","type":"int32","offset":176,"metadata":[{"name":"MPropertyFriendlyName","value":"Index"}]},
+ {"name":"m_flCrossfadeTime","type":"float32","offset":180,"metadata":[{"name":"MPropertyFriendlyName","value":"Crossfade Time"}]}]},
 {"name":"CVoiceContainerEnvelopeAnalyzer","size":88,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAnalysisBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Envelope Analyzer"},{"name":"MPropertyDescription","value":"Generates an Envelope Curve on compile"}],"fields":[
  {"name":"m_mode","type":"EMode_t","offset":72,"metadata":[{"name":"MPropertyFriendlyName","value":"Envelope Mode"}]},
  {"name":"m_fAnalysisWindowMs","type":"float32","offset":76,"metadata":[{"name":"MPropertyFriendlyName","value":"Analysis Window"}]},
  {"name":"m_flThreshold","type":"float32","offset":80,"metadata":[{"name":"MPropertyFriendlyName","value":"Threshold"}]}]},
-{"name":"CVoiceContainerGenerator","size":112,"align":255,"flags":[262435,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
-{"name":"CVoiceContainerGranulator","size":368,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Granulator Container"}],"fields":[
- {"name":"m_flGrainLength","type":"float32","offset":128,"metadata":[]},
- {"name":"m_flGrainCrossfadeAmount","type":"float32","offset":132,"metadata":[]},
- {"name":"m_flStartJitter","type":"float32","offset":136,"metadata":[]},
- {"name":"m_flPlaybackJitter","type":"float32","offset":140,"metadata":[]},
- {"name":"m_bShouldWraparound","type":"bool","offset":144,"metadata":[]},
- {"name":"m_sourceAudio","type":"CStrongHandle< InfoForResourceTypeCVoiceContainerBase >","offset":152,"metadata":[]},
- {"name":"m_bDoubleBufferSourceAudio","type":"bool","offset":160,"metadata":[{"name":"MPropertyFriendlyName","value":"Double Buffer Source Audio"}]},
- {"name":"m_flMaxSourceLength","type":"float32","offset":164,"metadata":[{"name":"MPropertyFriendlyName","value":"Max Source Length (seconds)"}]}]},
-{"name":"CVoiceContainerLoopTrigger","size":160,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"LoopTrigger"},{"name":"MPropertyDescription","value":"Continuously retriggers a sound and optionally fades to the new instance."}],"fields":[
- {"name":"m_flRetriggerTimeMin","type":"float32","offset":112,"metadata":[]},
- {"name":"m_flRetriggerTimeMax","type":"float32","offset":116,"metadata":[]},
- {"name":"m_flFadeTime","type":"float32","offset":120,"metadata":[]},
- {"name":"m_bCrossFade","type":"bool","offset":124,"metadata":[]},
- {"name":"m_sound","type":"CSoundContainerReference","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd Reference"}]}]},
-{"name":"CVoiceContainerLoopTriggerWithRandomPanner","size":192,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerLoopTrigger","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"LoopTriggerWithRandomPanner"},{"name":"MPropertyDescription","value":"Continuously retriggers a sound and optionally fades to the new instance. Sends a new Random panning value to a control input on each retrigger"}],"fields":[
- {"name":"m_randomPannerControls","type":"CRandomPannerControls","offset":160,"metadata":[{"name":"MPropertyFriendlyName","value":"Random Panner Control"}]}]},
-{"name":"CVoiceContainerLoopXFade","size":168,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Loop XFade"},{"name":"MPropertyDescription","value":"Sample accurate looping with xfade capabilities."}],"fields":[
- {"name":"m_sound","type":"CSoundContainerReference","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd Reference"}]},
- {"name":"m_flLoopEnd","type":"float32","offset":144,"metadata":[]},
- {"name":"m_flLoopStart","type":"float32","offset":148,"metadata":[]},
- {"name":"m_flFadeOut","type":"float32","offset":152,"metadata":[]},
- {"name":"m_flFadeIn","type":"float32","offset":156,"metadata":[]},
- {"name":"m_bPlayHead","type":"bool","offset":160,"metadata":[]},
- {"name":"m_bPlayTail","type":"bool","offset":161,"metadata":[]},
- {"name":"m_bEqualPow","type":"bool","offset":162,"metadata":[]}]},
-{"name":"CVoiceContainerMultiBlender","size":176,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Multi Blender"},{"name":"MPropertyDescription","value":"Blends any number of containers"}],"fields":[
- {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To Blend"}]},
- {"name":"m_flBlendFactor","type":"float32","offset":168,"metadata":[{"name":"MPropertyFriendlyName","value":"Blend Amount (0.0 = 100% first sound, 1.0 = 100% last sound)"}]},
- {"name":"m_flCrossover","type":"float32","offset":172,"metadata":[{"name":"MPropertyFriendlyName","value":"Crossfade Amount (0.0 = no crossfade, 1.0 = constant crossfading)"}]}]},
-{"name":"CVoiceContainerNull","size":112,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Null Container"},{"name":"MPropertyDescription","value":"Plays a single channel of silence."}],"fields":[]},
-{"name":"CVoiceContainerParameterBlender","size":448,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Parameter Blender"},{"name":"MPropertyDescription","value":"Blends two containers according to parameter curves."}],"fields":[
- {"name":"m_firstSound","type":"CSoundContainerReference","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"First Sound"}]},
- {"name":"m_secondSound","type":"CSoundContainerReference","offset":144,"metadata":[{"name":"MPropertyFriendlyName","value":"Second Sound"}]},
- {"name":"m_bEnableOcclusionBlend","type":"bool","offset":176,"metadata":[{"name":"MPropertyStartGroup","value":"Occlusion"},{"name":"MPropertyFriendlyName","value":"Enable Occlusion Blend"}]},
- {"name":"m_curve1","type":"CPiecewiseCurve","offset":184,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableOcclusionBlend == false"},{"name":"MPropertyFriendlyName","value":"First Curve"}]},
- {"name":"m_curve2","type":"CPiecewiseCurve","offset":248,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableOcclusionBlend == false"},{"name":"MPropertyFriendlyName","value":"Second Curve"}]},
- {"name":"m_bEnableDistanceBlend","type":"bool","offset":312,"metadata":[{"name":"MPropertyStartGroup","value":"Distance"},{"name":"MPropertyFriendlyName","value":"Enable Distance Blend"}]},
- {"name":"m_curve3","type":"CPiecewiseCurve","offset":320,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableDistanceBlend == false"},{"name":"MPropertyFriendlyName","value":"First Curve"}]},
- {"name":"m_curve4","type":"CPiecewiseCurve","offset":384,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableDistanceBlend == false"},{"name":"MPropertyFriendlyName","value":"Second Curve"}]}]},
-{"name":"CVoiceContainerRandomSampler","size":424,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Sampler Container"},{"name":"MPropertyDescription","value":"Trash Synth"}],"fields":[
- {"name":"m_flAmplitude","type":"float32","offset":128,"metadata":[]},
- {"name":"m_flAmplitudeJitter","type":"float32","offset":132,"metadata":[]},
- {"name":"m_flTimeJitter","type":"float32","offset":136,"metadata":[]},
- {"name":"m_flMaxLength","type":"float32","offset":140,"metadata":[]},
- {"name":"m_nNumDelayVariations","type":"int32","offset":144,"metadata":[]},
- {"name":"m_grainResources","type":"CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > >","offset":152,"metadata":[]}]},
-{"name":"CVoiceContainerRealtimeFMSineWave","size":128,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: FM Synth Container"},{"name":"MPropertyDescription","value":"Real time FM Synthesis"}],"fields":[
- {"name":"m_flCarrierFrequency","type":"float32","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]},
- {"name":"m_flModulatorFrequency","type":"float32","offset":116,"metadata":[{"name":"MPropertyFriendlyName","value":"Mod Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of the sine tone modulating this sine tone."}]},
- {"name":"m_flModulatorAmount","type":"float32","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Mod Amount (Hz)"},{"name":"MPropertyDescription","value":"The amount the modulating sine tone modulates this sine tone."}]}]},
-{"name":"CVoiceContainerSelector","size":232,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Selector"},{"name":"MPropertyDescription","value":"Plays a selected vsnd on playback."}],"fields":[
- {"name":"m_mode","type":"PlayBackMode_t","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Playback Mode"}]},
- {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To play"}]},
- {"name":"m_fProbabilityWeights","type":"CUtlVector< float32 >","offset":176,"metadata":[{"name":"MPropertyFriendlyName","value":"Relative Weights"}]}]},
-{"name":"CVoiceContainerSet","size":160,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Container Set"},{"name":"MPropertyDescription","value":"An array of containers that are played all at once."}],"fields":[
- {"name":"m_soundsToPlay","type":"CUtlVector< CVoiceContainerSetElement >","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Container List"}]}]},
+{"name":"CVoiceContainerGenerator","size":120,"align":255,"flags":[262435,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[]},
+{"name":"CVoiceContainerGranulator","size":376,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Granulator Container"}],"fields":[
+ {"name":"m_flGrainLength","type":"float32","offset":136,"metadata":[]},
+ {"name":"m_flGrainCrossfadeAmount","type":"float32","offset":140,"metadata":[]},
+ {"name":"m_flStartJitter","type":"float32","offset":144,"metadata":[]},
+ {"name":"m_flPlaybackJitter","type":"float32","offset":148,"metadata":[]},
+ {"name":"m_bShouldWraparound","type":"bool","offset":152,"metadata":[]},
+ {"name":"m_sourceAudio","type":"CStrongHandle< InfoForResourceTypeCVoiceContainerBase >","offset":160,"metadata":[]},
+ {"name":"m_bDoubleBufferSourceAudio","type":"bool","offset":168,"metadata":[{"name":"MPropertyFriendlyName","value":"Double Buffer Source Audio"}]},
+ {"name":"m_flMaxSourceLength","type":"float32","offset":172,"metadata":[{"name":"MPropertyFriendlyName","value":"Max Source Length (seconds)"}]}]},
+{"name":"CVoiceContainerLoopTrigger","size":168,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"LoopTrigger"},{"name":"MPropertyDescription","value":"Continuously retriggers a sound and optionally fades to the new instance."}],"fields":[
+ {"name":"m_flRetriggerTimeMin","type":"float32","offset":120,"metadata":[]},
+ {"name":"m_flRetriggerTimeMax","type":"float32","offset":124,"metadata":[]},
+ {"name":"m_flFadeTime","type":"float32","offset":128,"metadata":[]},
+ {"name":"m_bCrossFade","type":"bool","offset":132,"metadata":[]},
+ {"name":"m_sound","type":"CSoundContainerReference","offset":136,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd Reference"}]}]},
+{"name":"CVoiceContainerLoopTriggerWithRandomPanner","size":200,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerLoopTrigger","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"LoopTriggerWithRandomPanner"},{"name":"MPropertyDescription","value":"Continuously retriggers a sound and optionally fades to the new instance. Sends a new Random panning value to a control input on each retrigger"}],"fields":[
+ {"name":"m_randomPannerControls","type":"CRandomPannerControls","offset":168,"metadata":[{"name":"MPropertyFriendlyName","value":"Random Panner Control"}]}]},
+{"name":"CVoiceContainerLoopXFade","size":176,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Loop XFade"},{"name":"MPropertyDescription","value":"Sample accurate looping with xfade capabilities."}],"fields":[
+ {"name":"m_sound","type":"CSoundContainerReference","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd Reference"}]},
+ {"name":"m_flLoopEnd","type":"float32","offset":152,"metadata":[]},
+ {"name":"m_flLoopStart","type":"float32","offset":156,"metadata":[]},
+ {"name":"m_flFadeOut","type":"float32","offset":160,"metadata":[]},
+ {"name":"m_flFadeIn","type":"float32","offset":164,"metadata":[]},
+ {"name":"m_bPlayHead","type":"bool","offset":168,"metadata":[]},
+ {"name":"m_bPlayTail","type":"bool","offset":169,"metadata":[]},
+ {"name":"m_bEqualPow","type":"bool","offset":170,"metadata":[]}]},
+{"name":"CVoiceContainerMultiBlender","size":184,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Multi Blender"},{"name":"MPropertyDescription","value":"Blends any number of containers"}],"fields":[
+ {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To Blend"}]},
+ {"name":"m_flBlendFactor","type":"float32","offset":176,"metadata":[{"name":"MPropertyFriendlyName","value":"Blend Amount (0.0 = 100% first sound, 1.0 = 100% last sound)"}]},
+ {"name":"m_flCrossover","type":"float32","offset":180,"metadata":[{"name":"MPropertyFriendlyName","value":"Crossfade Amount (0.0 = no crossfade, 1.0 = constant crossfading)"}]}]},
+{"name":"CVoiceContainerNull","size":120,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Null Container"},{"name":"MPropertyDescription","value":"Plays a single channel of silence."}],"fields":[]},
+{"name":"CVoiceContainerParameterBlender","size":456,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Parameter Blender"},{"name":"MPropertyDescription","value":"Blends two containers according to parameter curves."}],"fields":[
+ {"name":"m_firstSound","type":"CSoundContainerReference","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"First Sound"}]},
+ {"name":"m_secondSound","type":"CSoundContainerReference","offset":152,"metadata":[{"name":"MPropertyFriendlyName","value":"Second Sound"}]},
+ {"name":"m_bEnableOcclusionBlend","type":"bool","offset":184,"metadata":[{"name":"MPropertyStartGroup","value":"Occlusion"},{"name":"MPropertyFriendlyName","value":"Enable Occlusion Blend"}]},
+ {"name":"m_curve1","type":"CPiecewiseCurve","offset":192,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableOcclusionBlend == false"},{"name":"MPropertyFriendlyName","value":"First Curve"}]},
+ {"name":"m_curve2","type":"CPiecewiseCurve","offset":256,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableOcclusionBlend == false"},{"name":"MPropertyFriendlyName","value":"Second Curve"}]},
+ {"name":"m_bEnableDistanceBlend","type":"bool","offset":320,"metadata":[{"name":"MPropertyStartGroup","value":"Distance"},{"name":"MPropertyFriendlyName","value":"Enable Distance Blend"}]},
+ {"name":"m_curve3","type":"CPiecewiseCurve","offset":328,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableDistanceBlend == false"},{"name":"MPropertyFriendlyName","value":"First Curve"}]},
+ {"name":"m_curve4","type":"CPiecewiseCurve","offset":392,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bEnableDistanceBlend == false"},{"name":"MPropertyFriendlyName","value":"Second Curve"}]}]},
+{"name":"CVoiceContainerRandomSampler","size":432,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Random Sampler Container"},{"name":"MPropertyDescription","value":"Trash Synth"}],"fields":[
+ {"name":"m_flAmplitude","type":"float32","offset":136,"metadata":[]},
+ {"name":"m_flAmplitudeJitter","type":"float32","offset":140,"metadata":[]},
+ {"name":"m_flTimeJitter","type":"float32","offset":144,"metadata":[]},
+ {"name":"m_flMaxLength","type":"float32","offset":148,"metadata":[]},
+ {"name":"m_nNumDelayVariations","type":"int32","offset":152,"metadata":[]},
+ {"name":"m_grainResources","type":"CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > >","offset":160,"metadata":[]}]},
+{"name":"CVoiceContainerRealtimeFMSineWave","size":136,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"TESTBED: FM Synth Container"},{"name":"MPropertyDescription","value":"Real time FM Synthesis"}],"fields":[
+ {"name":"m_flCarrierFrequency","type":"float32","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of this sine tone."}]},
+ {"name":"m_flModulatorFrequency","type":"float32","offset":124,"metadata":[{"name":"MPropertyFriendlyName","value":"Mod Frequency (Hz)"},{"name":"MPropertyDescription","value":"The frequency of the sine tone modulating this sine tone."}]},
+ {"name":"m_flModulatorAmount","type":"float32","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Mod Amount (Hz)"},{"name":"MPropertyDescription","value":"The amount the modulating sine tone modulates this sine tone."}]}]},
+{"name":"CVoiceContainerReference","size":128,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Reference Container"},{"name":"MPropertyDescription","value":"Plays a vsnd file."}],"fields":[
+ {"name":"m_sound","type":"CStrongHandle< InfoForResourceTypeCVoiceContainerBase >","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd File"}]}]},
+{"name":"CVoiceContainerSelector","size":240,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Selector"},{"name":"MPropertyDescription","value":"Plays a selected vsnd on playback."}],"fields":[
+ {"name":"m_mode","type":"PlayBackMode_t","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Playback Mode"}]},
+ {"name":"m_soundsToPlay","type":"CSoundContainerReferenceArray","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Sounds To play"}]},
+ {"name":"m_fProbabilityWeights","type":"CUtlVector< float32 >","offset":184,"metadata":[{"name":"MPropertyFriendlyName","value":"Relative Weights"}]}]},
+{"name":"CVoiceContainerSet","size":168,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Container Set"},{"name":"MPropertyDescription","value":"An array of containers that are played all at once."}],"fields":[
+ {"name":"m_soundsToPlay","type":"CUtlVector< CVoiceContainerSetElement >","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Container List"}]}]},
 {"name":"CVoiceContainerSetElement","size":40,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_sound","type":"CSoundContainerReference","offset":0,"metadata":[]},
  {"name":"m_flVolumeDB","type":"float32","offset":32,"metadata":[{"name":"MPropertyFriendlyName","value":"Volume (in Decibels)"}]}]},
-{"name":"CVoiceContainerShapedNoise","size":328,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wind Generator Container"},{"name":"MPropertyDescription","value":"This is a synth meant to generate whoosh noises."}],"fields":[
- {"name":"m_bUseCurveForFrequency","type":"bool","offset":112,"metadata":[]},
- {"name":"m_flFrequency","type":"float32","offset":116,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForFrequency == 1"}]},
- {"name":"m_frequencySweep","type":"CPiecewiseCurve","offset":120,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForFrequency == 0"},{"name":"MPropertyFriendlyName","value":"Frequency Sweep"}]},
- {"name":"m_bUseCurveForResonance","type":"bool","offset":184,"metadata":[]},
- {"name":"m_flResonance","type":"float32","offset":188,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForResonance == 1"}]},
- {"name":"m_resonanceSweep","type":"CPiecewiseCurve","offset":192,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForResonance == 0"},{"name":"MPropertyFriendlyName","value":"Resonance Sweep"}]},
- {"name":"m_bUseCurveForAmplitude","type":"bool","offset":256,"metadata":[]},
- {"name":"m_flGainInDecibels","type":"float32","offset":260,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForAmplitude == 1"}]},
- {"name":"m_gainSweep","type":"CPiecewiseCurve","offset":264,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForAmplitude == 0"},{"name":"MPropertyFriendlyName","value":"Gain Sweep (in Decibels)"}]}]},
-{"name":"CVoiceContainerStaticAdditiveSynth","size":176,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Additive Synth Container"},{"name":"MPropertyDescription","value":"This is a static additive synth that can scale components of the synth based on how many instances are running."}],"fields":[
- {"name":"m_tones","type":"CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >","offset":128,"metadata":[]}]},
+{"name":"CVoiceContainerShapedNoise","size":336,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Wind Generator Container"},{"name":"MPropertyDescription","value":"This is a synth meant to generate whoosh noises."}],"fields":[
+ {"name":"m_bUseCurveForFrequency","type":"bool","offset":120,"metadata":[]},
+ {"name":"m_flFrequency","type":"float32","offset":124,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForFrequency == 1"}]},
+ {"name":"m_frequencySweep","type":"CPiecewiseCurve","offset":128,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForFrequency == 0"},{"name":"MPropertyFriendlyName","value":"Frequency Sweep"}]},
+ {"name":"m_bUseCurveForResonance","type":"bool","offset":192,"metadata":[]},
+ {"name":"m_flResonance","type":"float32","offset":196,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForResonance == 1"}]},
+ {"name":"m_resonanceSweep","type":"CPiecewiseCurve","offset":200,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForResonance == 0"},{"name":"MPropertyFriendlyName","value":"Resonance Sweep"}]},
+ {"name":"m_bUseCurveForAmplitude","type":"bool","offset":264,"metadata":[]},
+ {"name":"m_flGainInDecibels","type":"float32","offset":268,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForAmplitude == 1"}]},
+ {"name":"m_gainSweep","type":"CPiecewiseCurve","offset":272,"metadata":[{"name":"MPropertySuppressExpr","value":"m_bUseCurveForAmplitude == 0"},{"name":"MPropertyFriendlyName","value":"Gain Sweep (in Decibels)"}]}]},
+{"name":"CVoiceContainerStaticAdditiveSynth","size":184,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Additive Synth Container"},{"name":"MPropertyDescription","value":"This is a static additive synth that can scale components of the synth based on how many instances are running."}],"fields":[
+ {"name":"m_tones","type":"CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >","offset":136,"metadata":[]}]},
 {"name":"CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance","size":16,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_flMinVolume","type":"float32","offset":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Quietest Volume"}]},
  {"name":"m_nInstancesAtMinVolume","type":"int32","offset":4,"metadata":[{"name":"MPropertyFriendlyName","value":"# Instances Playing Until We Get Louder Than Quietest Volume"}]},
@@ -522,51 +529,51 @@
  {"name":"m_harmonics","type":"CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >","offset":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Harmonics"}]},
  {"name":"m_curve","type":"CPiecewiseCurve","offset":24,"metadata":[{"name":"MPropertyFriendlyName","value":"Envelope"}]},
  {"name":"m_bSyncInstances","type":"bool","offset":88,"metadata":[{"name":"MPropertyFriendlyName","value":"Play All Instances In Sync"}]}]},
-{"name":"CVoiceContainerSwitch","size":136,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Container Switch"},{"name":"MPropertyDescription","value":"An array of containers"}],"fields":[
- {"name":"m_soundsToPlay","type":"CUtlVector< CSoundContainerReference >","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Container List"}]}]},
-{"name":"CVoiceContainerTapePlayer","size":208,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Tape Player"}],"fields":[
- {"name":"m_bShouldWraparound","type":"bool","offset":128,"metadata":[]},
- {"name":"m_sourceAudio","type":"CStrongHandle< InfoForResourceTypeCVoiceContainerBase >","offset":136,"metadata":[]},
- {"name":"m_flTapeSpeedAttackTime","type":"float32","offset":144,"metadata":[]},
- {"name":"m_flTapeSpeedReleaseTime","type":"float32","offset":148,"metadata":[]}]},
-{"name":"CVoiceContainerVMixSnd","size":392,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"VMixSound"},{"name":"MPropertyDescription","value":"Plays a vmix graph and its containers."}],"fields":[
- {"name":"m_resourceName","type":"CUtlString","offset":384,"metadata":[]}]},
-{"name":"CVoiceContainerVsndRadioButton","size":2296,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Vsnd Radio Button"},{"name":"MPropertyDescription","value":"Plays vsnds based on membership in a numbered index."}],"fields":[
- {"name":"m_namespace","type":"CUtlString","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Namespace"}]},
- {"name":"m_slot1","type":"CVsndRadioButtonSlot","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 01"}]},
- {"name":"m_slot2","type":"CVsndRadioButtonSlot","offset":256,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 02"}]},
- {"name":"m_slot3","type":"CVsndRadioButtonSlot","offset":392,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 03"}]},
- {"name":"m_slot4","type":"CVsndRadioButtonSlot","offset":528,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 04"}]},
- {"name":"m_slot5","type":"CVsndRadioButtonSlot","offset":664,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 05"}]},
- {"name":"m_slot6","type":"CVsndRadioButtonSlot","offset":800,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 06"}]},
- {"name":"m_slot7","type":"CVsndRadioButtonSlot","offset":936,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 07"}]},
- {"name":"m_slot8","type":"CVsndRadioButtonSlot","offset":1072,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 08"}]},
- {"name":"m_slot9","type":"CVsndRadioButtonSlot","offset":1208,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 09"}]},
- {"name":"m_slot10","type":"CVsndRadioButtonSlot","offset":1344,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 10"}]},
- {"name":"m_slot11","type":"CVsndRadioButtonSlot","offset":1480,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 11"}]},
- {"name":"m_slot12","type":"CVsndRadioButtonSlot","offset":1616,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 12"}]},
- {"name":"m_slot13","type":"CVsndRadioButtonSlot","offset":1752,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 13"}]},
- {"name":"m_slot14","type":"CVsndRadioButtonSlot","offset":1888,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 14"}]},
- {"name":"m_slot15","type":"CVsndRadioButtonSlot","offset":2024,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 15"}]},
- {"name":"m_slot16","type":"CVsndRadioButtonSlot","offset":2160,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 16"}]}]},
-{"name":"CVoiceContainerVsndTrigger","size":2296,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Vsnd Trigger"},{"name":"MPropertyDescription","value":"Plays vsnds based on trigger parameter changes."}],"fields":[
- {"name":"m_namespace","type":"CUtlString","offset":112,"metadata":[{"name":"MPropertyFriendlyName","value":"Namespace"}]},
- {"name":"m_slot1","type":"CVsndTriggerSlot","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 01"}]},
- {"name":"m_slot2","type":"CVsndTriggerSlot","offset":256,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 02"}]},
- {"name":"m_slot3","type":"CVsndTriggerSlot","offset":392,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 03"}]},
- {"name":"m_slot4","type":"CVsndTriggerSlot","offset":528,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 04"}]},
- {"name":"m_slot5","type":"CVsndTriggerSlot","offset":664,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 05"}]},
- {"name":"m_slot6","type":"CVsndTriggerSlot","offset":800,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 06"}]},
- {"name":"m_slot7","type":"CVsndTriggerSlot","offset":936,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 07"}]},
- {"name":"m_slot8","type":"CVsndTriggerSlot","offset":1072,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 08"}]},
- {"name":"m_slot9","type":"CVsndTriggerSlot","offset":1208,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 09"}]},
- {"name":"m_slot10","type":"CVsndTriggerSlot","offset":1344,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 10"}]},
- {"name":"m_slot11","type":"CVsndTriggerSlot","offset":1480,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 11"}]},
- {"name":"m_slot12","type":"CVsndTriggerSlot","offset":1616,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 12"}]},
- {"name":"m_slot13","type":"CVsndTriggerSlot","offset":1752,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 13"}]},
- {"name":"m_slot14","type":"CVsndTriggerSlot","offset":1888,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 14"}]},
- {"name":"m_slot15","type":"CVsndTriggerSlot","offset":2024,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 15"}]},
- {"name":"m_slot16","type":"CVsndTriggerSlot","offset":2160,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 16"}]}]},
+{"name":"CVoiceContainerSwitch","size":144,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Container Switch"},{"name":"MPropertyDescription","value":"An array of containers"}],"fields":[
+ {"name":"m_soundsToPlay","type":"CUtlVector< CSoundContainerReference >","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Container List"}]}]},
+{"name":"CVoiceContainerTapePlayer","size":216,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerAsyncGenerator","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Tape Player"}],"fields":[
+ {"name":"m_bShouldWraparound","type":"bool","offset":136,"metadata":[]},
+ {"name":"m_sourceAudio","type":"CStrongHandle< InfoForResourceTypeCVoiceContainerBase >","offset":144,"metadata":[]},
+ {"name":"m_flTapeSpeedAttackTime","type":"float32","offset":152,"metadata":[]},
+ {"name":"m_flTapeSpeedReleaseTime","type":"float32","offset":156,"metadata":[]}]},
+{"name":"CVoiceContainerVMixSnd","size":400,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"VMixSound"},{"name":"MPropertyDescription","value":"Plays a vmix graph and its containers."}],"fields":[
+ {"name":"m_resourceName","type":"CUtlString","offset":392,"metadata":[]}]},
+{"name":"CVoiceContainerVsndRadioButton","size":2304,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Vsnd Radio Button"},{"name":"MPropertyDescription","value":"Plays vsnds based on membership in a numbered index."}],"fields":[
+ {"name":"m_namespace","type":"CUtlString","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Namespace"}]},
+ {"name":"m_slot1","type":"CVsndRadioButtonSlot","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 01"}]},
+ {"name":"m_slot2","type":"CVsndRadioButtonSlot","offset":264,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 02"}]},
+ {"name":"m_slot3","type":"CVsndRadioButtonSlot","offset":400,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 03"}]},
+ {"name":"m_slot4","type":"CVsndRadioButtonSlot","offset":536,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 04"}]},
+ {"name":"m_slot5","type":"CVsndRadioButtonSlot","offset":672,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 05"}]},
+ {"name":"m_slot6","type":"CVsndRadioButtonSlot","offset":808,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 06"}]},
+ {"name":"m_slot7","type":"CVsndRadioButtonSlot","offset":944,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 07"}]},
+ {"name":"m_slot8","type":"CVsndRadioButtonSlot","offset":1080,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 08"}]},
+ {"name":"m_slot9","type":"CVsndRadioButtonSlot","offset":1216,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 09"}]},
+ {"name":"m_slot10","type":"CVsndRadioButtonSlot","offset":1352,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 10"}]},
+ {"name":"m_slot11","type":"CVsndRadioButtonSlot","offset":1488,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 11"}]},
+ {"name":"m_slot12","type":"CVsndRadioButtonSlot","offset":1624,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 12"}]},
+ {"name":"m_slot13","type":"CVsndRadioButtonSlot","offset":1760,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 13"}]},
+ {"name":"m_slot14","type":"CVsndRadioButtonSlot","offset":1896,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 14"}]},
+ {"name":"m_slot15","type":"CVsndRadioButtonSlot","offset":2032,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 15"}]},
+ {"name":"m_slot16","type":"CVsndRadioButtonSlot","offset":2168,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 16"}]}]},
+{"name":"CVoiceContainerVsndTrigger","size":2304,"align":8,"flags":[262433,0],"bases":[{"name":"CVoiceContainerBase","offset":0}],"metadata":[{"name":"MGetKV3ClassDefaults"},{"name":"MPropertyFriendlyName","value":"Vsnd Trigger"},{"name":"MPropertyDescription","value":"Plays vsnds based on trigger parameter changes."}],"fields":[
+ {"name":"m_namespace","type":"CUtlString","offset":120,"metadata":[{"name":"MPropertyFriendlyName","value":"Namespace"}]},
+ {"name":"m_slot1","type":"CVsndTriggerSlot","offset":128,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 01"}]},
+ {"name":"m_slot2","type":"CVsndTriggerSlot","offset":264,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 02"}]},
+ {"name":"m_slot3","type":"CVsndTriggerSlot","offset":400,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 03"}]},
+ {"name":"m_slot4","type":"CVsndTriggerSlot","offset":536,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 04"}]},
+ {"name":"m_slot5","type":"CVsndTriggerSlot","offset":672,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 05"}]},
+ {"name":"m_slot6","type":"CVsndTriggerSlot","offset":808,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 06"}]},
+ {"name":"m_slot7","type":"CVsndTriggerSlot","offset":944,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 07"}]},
+ {"name":"m_slot8","type":"CVsndTriggerSlot","offset":1080,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 08"}]},
+ {"name":"m_slot9","type":"CVsndTriggerSlot","offset":1216,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 09"}]},
+ {"name":"m_slot10","type":"CVsndTriggerSlot","offset":1352,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 10"}]},
+ {"name":"m_slot11","type":"CVsndTriggerSlot","offset":1488,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 11"}]},
+ {"name":"m_slot12","type":"CVsndTriggerSlot","offset":1624,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 12"}]},
+ {"name":"m_slot13","type":"CVsndTriggerSlot","offset":1760,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 13"}]},
+ {"name":"m_slot14","type":"CVsndTriggerSlot","offset":1896,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 14"}]},
+ {"name":"m_slot15","type":"CVsndTriggerSlot","offset":2032,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 15"}]},
+ {"name":"m_slot16","type":"CVsndTriggerSlot","offset":2168,"metadata":[{"name":"MPropertyFriendlyName","value":"Vsnd 16"}]}]},
 {"name":"CVsndRadioButtonSlot","size":136,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_bEnableVsnd","type":"bool","offset":0,"metadata":[{"name":"MPropertyGroupName","value":"Vsnd"},{"name":"MPropertyFriendlyName","value":"Enable Vsnd"}]},
  {"name":"m_vsnd","type":"CSoundContainerReference","offset":8,"metadata":[{"name":"MPropertyGroupName","value":"Vsnd"},{"name":"MPropertyFriendlyName","value":"Vsnd File"}]},
@@ -603,7 +610,8 @@
 {"name":"EventBugBugComplete_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_pPayload","type":"EventBugBug_t*","offset":0,"metadata":[]}]},
 {"name":"EventBugBug_t","size":32,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[]},
-{"name":"EventClientAdvanceNonRenderedFrame_t","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"EventClientAdvanceNonRenderedFrame_t","size":1,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_bRenderOnly","type":"bool","offset":0,"metadata":[]}]},
 {"name":"EventClientAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventAdvanceTick_t","offset":0}],"metadata":[],"fields":[]},
 {"name":"EventClientFrameSimulate_t","size":56,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
@@ -620,8 +628,9 @@
 {"name":"EventClientPollInput_t","size":48,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
  {"name":"m_flRealTime","type":"float32","offset":40,"metadata":[]}]},
-{"name":"EventClientPollNetworking_t","size":4,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
- {"name":"m_nTickCount","type":"int32","offset":0,"metadata":[]}]},
+{"name":"EventClientPollNetworking_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
+ {"name":"m_nTickCount","type":"int32","offset":0,"metadata":[]},
+ {"name":"m_nTotalTicks","type":"int32","offset":4,"metadata":[]}]},
 {"name":"EventClientPostAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventPostAdvanceTick_t","offset":0}],"metadata":[],"fields":[]},
 {"name":"EventClientPostOutput_t","size":64,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_LoopState","type":"EngineLoopState_t","offset":0,"metadata":[]},
@@ -656,6 +665,7 @@
 {"name":"EventFrameBoundary_t","size":4,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[
  {"name":"m_flFrameTime","type":"float32","offset":0,"metadata":[]}]},
 {"name":"EventModInitialized_t","size":1,"align":255,"flags":[172,0],"bases":[],"metadata":[],"fields":[]},
+{"name":"EventPlayerConsoleCommand_t","size":8,"align":255,"flags":[168,0],"bases":[],"metadata":[],"fields":[]},
 {"name":"EventPostAdvanceTick_t","size":64,"align":255,"flags":[168,0],"bases":[{"name":"EventSimulate_t","offset":0}],"metadata":[],"fields":[
  {"name":"m_nCurrentTick","type":"int32","offset":44,"metadata":[]},
  {"name":"m_nCurrentTickThisFrame","type":"int32","offset":48,"metadata":[]},
@@ -815,8 +825,9 @@
  {"name":"m_flRMSTimeMS","type":"float32","offset":24,"metadata":[{"name":"MPropertyFriendlyName","value":"Threshold detection time (ms)"}]},
  {"name":"m_flWetMix","type":"float32","offset":28,"metadata":[{"name":"MPropertyFriendlyName","value":"Dry/Wet"}]},
  {"name":"m_flSCHighPassFreq","type":"float32","offset":32,"metadata":[{"name":"MPropertyFriendlyName","value":"SideChain Highpass"}]},
- {"name":"m_bPeakMode","type":"bool","offset":36,"metadata":[{"name":"MPropertyFriendlyName","value":"Peak mode"}]},
- {"name":"m_bAutoMakeupGain","type":"bool","offset":37,"metadata":[{"name":"MPropertyFriendlyName","value":"Auto Make-up Gain"}]}]},
+ {"name":"m_nCompressorType","type":"VMixCompressorType_t","offset":36,"metadata":[{"name":"MPropertyFriendlyName","value":"Compressor Type"}]},
+ {"name":"m_bPeakMode","type":"bool","offset":37,"metadata":[{"name":"MPropertyFriendlyName","value":"Peak mode"}]},
+ {"name":"m_bAutoMakeupGain","type":"bool","offset":38,"metadata":[{"name":"MPropertyFriendlyName","value":"Auto Make-up Gain"}]}]},
 {"name":"VMixDynamicsDesc_t","size":48,"align":4,"flags":[300,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_fldbGain","type":"float32","offset":0,"metadata":[]},
  {"name":"m_fldbNoiseGateThreshold","type":"float32","offset":4,"metadata":[]},
@@ -893,7 +904,7 @@
  {"name":"m_flFeedbackDiffusion1","type":"float32","offset":20,"metadata":[]},
  {"name":"m_flFeedbackDiffusion2","type":"float32","offset":24,"metadata":[]}]},
 {"name":"VMixPointerFixupEntry_t","size":8,"align":4,"flags":[296,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
- {"name":"m_nIndex","type":"uint32","offset":0,"metadata":[]},
+ {"name":"m_nIndex","type":"?","offset":0,"metadata":[]},
  {"name":"m_offset","type":"CVMixDataOffset","offset":4,"metadata":[]}]},
 {"name":"VMixPresetDSPDesc_t","size":16,"align":8,"flags":[288,0],"bases":[],"metadata":[{"name":"MGetKV3ClassDefaults"}],"fields":[
  {"name":"m_effectName","type":"CUtlString","offset":0,"metadata":[]}]},
@@ -956,6 +967,7 @@
 {"name":"SosGroupType_t","size":4,"metadata":[],"enumerators":[{"name":"SOS_GROUPTYPE_DYNAMIC","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Dynamic"}]},{"name":"SOS_GROUPTYPE_STATIC","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Static"}]}]},
 {"name":"VMixAutoControlType_t","size":1,"metadata":[],"enumerators":[{"name":"VMIX_AUTO_SEND_LEVEL","value":0,"metadata":[]},{"name":"VMIX_AUTO_STACK_VAR","value":1,"metadata":[]},{"name":"VMIX_AUTO_PLAYTIME","value":2,"metadata":[]},{"name":"VMIX_AUTO_DISTANCE","value":3,"metadata":[]},{"name":"VMIX_AUTO_POSITION_X","value":4,"metadata":[]},{"name":"VMIX_AUTO_POSITION_Y","value":5,"metadata":[]},{"name":"VMIX_AUTO_POSITION_Z","value":6,"metadata":[]},{"name":"VMIX_AUTO_POSITION_VECTOR","value":7,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_YAW_SIN","value":8,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_YAW_COS","value":9,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_PITCH_SIN","value":10,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_PITCH_COS","value":11,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_ROLL_SIN","value":12,"metadata":[]},{"name":"VMIX_AUTO_LISTENER_ROLL_COS","value":13,"metadata":[]}]},
 {"name":"VMixChannelOperation_t","size":4,"metadata":[],"enumerators":[{"name":"VMIX_CHAN_STEREO","value":0,"metadata":[]},{"name":"VMIX_CHAN_LEFT","value":1,"metadata":[]},{"name":"VMIX_CHAN_RIGHT","value":2,"metadata":[]},{"name":"VMIX_CHAN_SWAP","value":3,"metadata":[]},{"name":"VMIX_CHAN_MONO","value":4,"metadata":[]},{"name":"VMIX_CHAN_MID_SIDE","value":5,"metadata":[]}]},
+{"name":"VMixCompressorType_t","size":1,"metadata":[],"enumerators":[{"name":"MixBus","value":0,"metadata":[]},{"name":"Smooth","value":1,"metadata":[]}]},
 {"name":"VMixFilterChannelSet_t","size":1,"metadata":[],"enumerators":[{"name":"FILTER_ALL_CHANNELS","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"All Channels"}]},{"name":"FILTER_LEFT_ONLY","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Left Only"}]},{"name":"FILTER_RIGHT_ONLY","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Right Only"}]},{"name":"FILTER_MID_ONLY","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"Mid Only"}]},{"name":"FILTER_SIDE_ONLY","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"Side Only"}]},{"name":"FILTER_CHANNEL_SET_MAX","value":5,"metadata":[]}]},
 {"name":"VMixFilterSlope_t","size":1,"metadata":[],"enumerators":[{"name":"FILTER_SLOPE_1POLE_6dB","value":0,"metadata":[]},{"name":"FILTER_SLOPE_1POLE_12dB","value":1,"metadata":[]},{"name":"FILTER_SLOPE_1POLE_18dB","value":2,"metadata":[]},{"name":"FILTER_SLOPE_1POLE_24dB","value":3,"metadata":[]},{"name":"FILTER_SLOPE_12dB","value":4,"metadata":[]},{"name":"FILTER_SLOPE_24dB","value":5,"metadata":[]},{"name":"FILTER_SLOPE_36dB","value":6,"metadata":[]},{"name":"FILTER_SLOPE_48dB","value":7,"metadata":[]},{"name":"FILTER_SLOPE_MAX","value":7,"metadata":[]}]},
 {"name":"VMixFilterType_t","size":1,"metadata":[],"enumerators":[{"name":"FILTER_UNKNOWN","value":-1,"metadata":[]},{"name":"FILTER_LOWPASS","value":0,"metadata":[]},{"name":"FILTER_HIGHPASS","value":1,"metadata":[]},{"name":"FILTER_BANDPASS","value":2,"metadata":[]},{"name":"FILTER_NOTCH","value":3,"metadata":[]},{"name":"FILTER_PEAKING_EQ","value":4,"metadata":[]},{"name":"FILTER_LOW_SHELF","value":5,"metadata":[]},{"name":"FILTER_HIGH_SHELF","value":6,"metadata":[]},{"name":"FILTER_ALLPASS","value":7,"metadata":[]},{"name":"FILTER_PASSTHROUGH","value":8,"metadata":[]}]},
@@ -967,5 +979,6 @@
 {"name":"VMixPannerType_t","size":4,"metadata":[],"enumerators":[{"name":"PANNER_TYPE_LINEAR","value":0,"metadata":[]},{"name":"PANNER_TYPE_EQUAL_POWER","value":1,"metadata":[]}]},
 {"name":"VMixSendOperator_t","size":2,"metadata":[],"enumerators":[{"name":"NO_VOICES","value":-1,"metadata":[{"name":"MPropertySuppressEnumerator"}]},{"name":"ALL_VOICES","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"All"}]},{"name":"ROOM_VOICES","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Room Voices"}]},{"name":"FACING_VOICES","value":2,"metadata":[{"name":"MPropertyFriendlyName","value":"Facing Voices"}]},{"name":"MIXGROUP_VOICES","value":3,"metadata":[{"name":"MPropertyFriendlyName","value":"By Mixgroup"}]},{"name":"NAMED_SEND","value":4,"metadata":[{"name":"MPropertyFriendlyName","value":"By Named Send"}]},{"name":"INVERSE_NAMED_SENDS","value":5,"metadata":[{"name":"MPropertyFriendlyName","value":"1 - (Sum of Named Sends)"}]},{"name":"INVERSE_TOTAL_SEND","value":6,"metadata":[{"name":"MPropertyFriendlyName","value":"1 - (Sum of all sends)"}]},{"name":"ALL_MAX_SEND","value":7,"metadata":[{"name":"MPropertyFriendlyName","value":"All Voices with max Send Value"}]},{"name":"TRACK","value":8,"metadata":[{"name":"MPropertyFriendlyName","value":"Send To Track"}]}]},
 {"name":"VMixSubgraphSwitchInterpolationType_t","size":4,"metadata":[],"enumerators":[{"name":"SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE","value":0,"metadata":[]},{"name":"SUBGRAPH_INTERPOLATION_TEMPORAL_FADE_OUT","value":1,"metadata":[]},{"name":"SUBGRAPH_INTERPOLATION_KEEP_LAST_SUBGRAPH_RUNNING","value":2,"metadata":[]}]},
+{"name":"VMixUpMixRule_t","size":1,"metadata":[],"enumerators":[{"name":"DIVIDE","value":0,"metadata":[{"name":"MPropertyFriendlyName","value":"Divide into channels"}]},{"name":"BROADCAST","value":1,"metadata":[{"name":"MPropertyFriendlyName","value":"Broadcast Mono"}]}]},
 {"name":"soundlevel_t","size":4,"metadata":[],"enumerators":[{"name":"SNDLVL_NONE","value":0,"metadata":[]},{"name":"SNDLVL_20dB","value":20,"metadata":[]},{"name":"SNDLVL_25dB","value":25,"metadata":[]},{"name":"SNDLVL_30dB","value":30,"metadata":[]},{"name":"SNDLVL_35dB","value":35,"metadata":[]},{"name":"SNDLVL_40dB","value":40,"metadata":[]},{"name":"SNDLVL_45dB","value":45,"metadata":[]},{"name":"SNDLVL_50dB","value":50,"metadata":[]},{"name":"SNDLVL_55dB","value":55,"metadata":[]},{"name":"SNDLVL_IDLE","value":60,"metadata":[]},{"name":"SNDLVL_60dB","value":60,"metadata":[]},{"name":"SNDLVL_65dB","value":65,"metadata":[]},{"name":"SNDLVL_STATIC","value":66,"metadata":[]},{"name":"SNDLVL_70dB","value":70,"metadata":[]},{"name":"SNDLVL_NORM","value":75,"metadata":[]},{"name":"SNDLVL_75dB","value":75,"metadata":[]},{"name":"SNDLVL_80dB","value":80,"metadata":[]},{"name":"SNDLVL_TALKING","value":80,"metadata":[]},{"name":"SNDLVL_85dB","value":85,"metadata":[]},{"name":"SNDLVL_90dB","value":90,"metadata":[]},{"name":"SNDLVL_95dB","value":95,"metadata":[]},{"name":"SNDLVL_100dB","value":100,"metadata":[]},{"name":"SNDLVL_105dB","value":105,"metadata":[]},{"name":"SNDLVL_110dB","value":110,"metadata":[]},{"name":"SNDLVL_120dB","value":120,"metadata":[]},{"name":"SNDLVL_130dB","value":130,"metadata":[]},{"name":"SNDLVL_GUNFIRE","value":140,"metadata":[]},{"name":"SNDLVL_140dB","value":140,"metadata":[]},{"name":"SNDLVL_150dB","value":150,"metadata":[]},{"name":"SNDLVL_180dB","value":180,"metadata":[]}]}
 ]}

@@ -117395,6 +117395,12 @@
 				}
 				"asset_modifier"
 				{
+					"type"		"ability_icon"
+					"asset"		"nevermore_frenzy"
+					"modifier"		"nevermore_frenzy_demon"
+				}
+				"asset_modifier"
+				{
 					"type"		"icon_replacement_hero"
 					"asset"		"npc_dota_hero_nevermore"
 					"modifier"		"npc_dota_hero_nevermore_alt1"

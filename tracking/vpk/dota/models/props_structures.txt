@@ -367,7 +367,7 @@ models/props_structures/radiant_tower002.vmdl_c crc=9e279a83 size=73855
 models/props_structures/radiant_tower002_destruction.vmdl_c crc=3eebb7ff size=988778
 models/props_structures/radiant_tower002_destruction_001.vmdl_c crc=bcf68204 size=888966
 models/props_structures/radiant_tower002_destruction_002.vmdl_c crc=acc48f35 size=733090
-models/props_structures/radiant_tower002_destruction_003.vmdl_c crc=ad1356c7 size=460206
+models/props_structures/radiant_tower002_destruction_003.vmdl_c crc=7e9b0e96 size=460237
 models/props_structures/radiant_tower_base001.vmdl_c crc=0697faaa size=34651
 models/props_structures/radiant_tower_base002.vmdl_c crc=669ee85d size=32427
 models/props_structures/radiant_wall001.vmdl_c crc=f6a069c4 size=59909

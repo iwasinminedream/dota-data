@@ -14,9 +14,11 @@ sounds/items/blink_nailed.vsnd_c crc=285c2c23 size=327432
 sounds/items/blink_overwhelming.vsnd_c crc=a86469f1 size=494968
 sounds/items/blink_swift.vsnd_c crc=52753ade size=655056
 sounds/items/blood_grenade.vsnd_c crc=4e8a87c8 size=244768
+sounds/items/bloodslinger_cast.vsnd_c crc=f6d403e3 size=171211
 sounds/items/bloodstone_cast.vsnd_c crc=e2493b8e size=392204
 sounds/items/bloodthorn.vsnd_c crc=9a3e06dc size=529016
 sounds/items/book_of_shadows.vsnd_c crc=42e8be44 size=741400
+sounds/items/brick_target.vsnd_c crc=1e9781b6 size=178667
 sounds/items/brooch_cast.vsnd_c crc=cf4c479e size=979824
 sounds/items/brooch_target.vsnd_c crc=dfa672a5 size=221080
 sounds/items/bullwhip_ally.vsnd_c crc=7a297234 size=415516

@@ -1678,7 +1678,6 @@ message CMsgDOTAClaimEventActionResponse {
 		Timeout = 11;
 		RequiresPlusSubscription = 12;
 		InvalidItem = 13;
-		AsyncRewards = 14;
 	}
 	message MysteryItemRewardData {
 		optional uint32 item_def = 1 [(20) = "item_definition_index_t"];

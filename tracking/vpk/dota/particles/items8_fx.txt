@@ -78,6 +78,11 @@ particles/items8_fx/hydras_breath_single_proc_fire_a.vpcf_c crc=31570326 size=43
 particles/items8_fx/hydras_breath_single_proc_fire_trail.vpcf_c crc=106b3fcd size=4812
 particles/items8_fx/hydras_breath_single_proc_follower.vpcf_c crc=3c7dc5d3 size=4579
 particles/items8_fx/hydras_breath_single_proc_large_outer_glow_shell.vpcf_c crc=c3930125 size=5818
+particles/items8_fx/poison_coating.vpcf_c crc=af9a7635 size=3821
+particles/items8_fx/poison_coating_b.vpcf_c crc=90c3a2cf size=2880
+particles/items8_fx/poison_coating_c.vpcf_c crc=935d389a size=2989
+particles/items8_fx/poison_coating_nova.vpcf_c crc=8a2a850f size=3096
+particles/items8_fx/poison_coating_nova_b.vpcf_c crc=69b529de size=2857
 particles/items8_fx/specialists_array_air_trails.vpcf_c crc=0933e6d9 size=4457
 particles/items8_fx/specialists_array_arrow.vmdl_c crc=9402e0a9 size=11223
 particles/items8_fx/specialists_array_arrow_base.vpcf_c crc=169276de size=4593
