@@ -15,9 +15,11 @@ no GPU, no Steam client). When the installed Dota build changes it:
    `dump-checks/<version>.md` and noted in the commit message; the first dump is the one committed;
 4. `npm run build` and `test/files_match_dump.spec.ts` (the schema tests download fixtures that
    no longer exist upstream and fail regardless);
-5. commits `<version>`; the commit body says which client dumped and how the control dump went;
+5. commits `<version>`; the commit body says which client dumped and how the control dump went,
+   and pushes it to `origin/master` at once, so the dump is on GitHub without waiting for the
+   report (after a big patch the report takes hours);
 6. writes the update report `reports/<version>.md` (`update-report.py`, commit `report: <version>`)
-   and pushes to `origin/master`. The report has a summary (a draft pass and a checking pass, both Claude Sonnet 5.5) of the API changes
+   and pushes the report commits to `origin/master`. The report has a summary (a draft pass and a checking pass, both Claude Sonnet 5.5) of the API changes
    (`files/changelogs/<version>.json`, minus what the control dump marked as noise) and of the
    `.so` changes against the previous snapshot (sizes, code size, exports, strings from the
    read-only data and protobuf descriptors) and function by function (`funcdiff.py`, below), plus

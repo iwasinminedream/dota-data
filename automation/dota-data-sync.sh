@@ -10,12 +10,13 @@
 #      in dump-checks/<version>.md and in the commit message;
 #   4. npm run build and the files-match-dump test (the schema tests need network fixtures that are
 #      gone upstream); a rebuild that changes nothing in files/ is not committed;
-#   5. commit "<version>";
+#   5. commit "<version>" and push it right away: the dump is on GitHub without waiting for the report,
+#      which can take hours after a big patch;
 #   6. the update report reports/<version>.md: API changes from the dump and .so changes (strings,
 #      exports and function by function, reports/<version>-functions.md), drafted and then checked
 #      with read-only tools by Claude Sonnet 5.5 (update-report.py), and its English version
-#      reports/<version>.en.md (translate-report.py); then push. Commits that could not be pushed are
-#      pushed by the next run. Reports missing for recent versions (e.g. the claude login had expired)
+#      reports/<version>.en.md (translate-report.py); then push the report commits. Commits that could
+#      not be pushed are pushed by the next run. Reports missing for recent versions (e.g. the claude login had expired)
 #      are written later from those versions' commits (API part only once their .so snapshots are gone);
 #   7. new reports go to Telegram (telegram-notify.py, queued until the bot is configured), and so do
 #      failures (a dump, a report, an expired claude login), once each.
@@ -29,7 +30,8 @@
 #
 # Environment: DOTA_DATA_REPO (default: the repo this script is in), DOTA_DATA_ENV (dumper
 # environment, /root/dota-data-runtime/dumper.env), DOTA_DATA_BRANCH (master), DOTA_DATA_STATE
-# (/var/lib/dota-data). Exit codes: 0 done or nothing to do, 1 failed, 3 committed but not pushed.
+# (/var/lib/dota-data), DOTA_DATA_LOCK (/run/dota-data-sync.lock; another one only for a test copy).
+# Exit codes: 0 done or nothing to do, 1 failed, 3 committed but not pushed.
 set -Eeuo pipefail
 
 HERE=$(cd "$(dirname "$(readlink -f "$0")")" && pwd)
@@ -37,7 +39,7 @@ REPO=${DOTA_DATA_REPO:-$(dirname "$HERE")}
 ENV_FILE=${DOTA_DATA_ENV:-/root/dota-data-runtime/dumper.env}
 BRANCH=${DOTA_DATA_BRANCH:-master}
 STATE=${DOTA_DATA_STATE:-/var/lib/dota-data}
-LOCK=/run/dota-data-sync.lock
+LOCK=${DOTA_DATA_LOCK:-/run/dota-data-sync.lock}
 UPDATE_ACTIVE=/run/dota-update.active
 RETRY_AFTER=$((6 * 3600)) # a failed version is retried after this long (or with --force)
 
@@ -316,6 +318,23 @@ if [[ $DUMPED != "$INSTALLED" || $DUMPED_BUILD != "$BUILD" || $FORCE == 1 ]]; th
     fi
 fi
 
+# push_commits: local commits to origin/$BRANCH. 0: pushed or nothing to push, 1: the push failed.
+push_commits() {
+    local ahead
+    ahead=$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)
+    (( ahead > 0 )) || return 0
+    if git push -q origin "HEAD:$BRANCH"; then
+        say "pushed $ahead commit(s) to origin/$BRANCH"
+        return 0
+    fi
+    say "push failed — $ahead commit(s) wait locally (deploy key with write access on GitHub?)"
+    return 1
+}
+
+# The dump goes to GitHub now: after a big patch the report below takes hours. A failed push here is
+# retried after the reports (and makes the run exit 3 if that fails too).
+push_commits || say "the reports are written anyway; the push is retried after them"
+
 # The update reports (automation/update-report.py) and their English versions (translate-report.py).
 # A failed one is retried after RETRY_AFTER (report-failed-<id> in $STATE) or at once with --force.
 TG_QUEUE=$STATE/telegram-queue # reports waiting to be sent to Telegram (after the push)
@@ -404,18 +423,12 @@ while read -r rev version; do
 done < <(git log -n 300 --format='%H %s' | awk '$2 ~ /^[0-9]+$/ && NF == 2' | head -n "$CATCH_UP" | tac)
 
 AHEAD=$(git rev-list --count "origin/$BRANCH..HEAD" 2>/dev/null || echo 0)
-if (( AHEAD > 0 )); then
-    if git push -q origin "HEAD:$BRANCH"; then
-        say "pushed $AHEAD commit(s) to origin/$BRANCH"
-        PUSHED=1
-    else
-        say "push failed — $AHEAD commit(s) wait locally (deploy key with write access on GitHub?)"
-        exit 3
-    fi
-else
+if (( AHEAD == 0 )); then
     say "up to date: Dota $INSTALLED"
-    PUSHED=1
+elif ! push_commits; then
+    exit 3
 fi
+PUSHED=1
 
 # New reports to Telegram once they are on GitHub (the message links there). Kept in the queue while
 # the bot is not configured (exit 4) or Telegram fails.
