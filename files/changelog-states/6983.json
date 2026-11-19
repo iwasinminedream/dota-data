@@ -1930,7 +1930,7 @@
         "type": "method",
         "class": "CDOTA_Ability_DataDriven",
         "name": "ApplyDataDrivenThinker",
-        "signature": "ApplyDataDrivenThinker(caster: CDOTA_BaseNPC, location: unknown, modifierName: string, modifierTable: table | nil)",
+        "signature": "ApplyDataDrivenThinker(caster: CDOTA_BaseNPC, location: Vector, modifierName: string, modifierTable: table | nil)",
         "returns": "CDOTA_Buff",
         "description": "Applies a data driven thinker at the location.",
         "argDescriptions": "",
@@ -1954,7 +1954,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "CastFilterResultLocation",
-        "signature": "CastFilterResultLocation(location: unknown)",
+        "signature": "CastFilterResultLocation(location: Vector)",
         "returns": "UnitFilterResult",
         "description": "Determine whether an issued command on a location is valid.",
         "argDescriptions": "",
@@ -2054,7 +2054,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "GetCastRange",
-        "signature": "GetCastRange(location: unknown, target: CDOTA_BaseNPC | nil)",
+        "signature": "GetCastRange(location: Vector, target: CDOTA_BaseNPC | nil)",
         "returns": "int",
         "description": "Return cast range of this ability.",
         "argDescriptions": "",
@@ -2154,7 +2154,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "GetCustomCastErrorLocation",
-        "signature": "GetCustomCastErrorLocation(location: unknown)",
+        "signature": "GetCustomCastErrorLocation(location: Vector)",
         "returns": "string",
         "description": "Return the error string of a failed command on a location.",
         "argDescriptions": "",
@@ -2184,7 +2184,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "GetEffectiveCastRange",
-        "signature": "GetEffectiveCastRange(location: unknown, target: handle)",
+        "signature": "GetEffectiveCastRange(location: Vector, target: handle)",
         "returns": "int",
         "description": "Return cast range of this ability, accounting for modifiers.",
         "argDescriptions": "",
@@ -2444,7 +2444,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "OnProjectileHit",
-        "signature": "OnProjectileHit(target: CDOTA_BaseNPC | nil, location: unknown)",
+        "signature": "OnProjectileHit(target: CDOTA_BaseNPC | nil, location: Vector)",
         "returns": "bool | nil",
         "description": "Projectile has collided with a given target or reached its destination. If 'true` is returned, projectile would be destroyed.",
         "argDescriptions": "",
@@ -2454,7 +2454,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "OnProjectileHit_ExtraData",
-        "signature": "OnProjectileHit_ExtraData(target: CDOTA_BaseNPC | nil, location: unknown, extraData: table)",
+        "signature": "OnProjectileHit_ExtraData(target: CDOTA_BaseNPC | nil, location: Vector, extraData: table)",
         "returns": "bool | nil",
         "description": "Projectile has collided with a given target or reached its destination. If 'true` is returned, projectile would be destroyed.",
         "argDescriptions": "",
@@ -2464,7 +2464,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "OnProjectileHitHandle",
-        "signature": "OnProjectileHitHandle(target: CDOTA_BaseNPC | nil, location: unknown, projectileHandle: ProjectileID)",
+        "signature": "OnProjectileHitHandle(target: CDOTA_BaseNPC | nil, location: Vector, projectileHandle: ProjectileID)",
         "returns": "bool | nil",
         "description": "Projectile has collided with a given target or reached its destination. If 'true` is returned, projectile would be destroyed.",
         "argDescriptions": "",
@@ -2474,7 +2474,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "OnProjectileThink",
-        "signature": "OnProjectileThink(location: unknown)",
+        "signature": "OnProjectileThink(location: Vector)",
         "returns": "nil",
         "description": "Projectile is actively moving.",
         "argDescriptions": "",
@@ -2484,7 +2484,7 @@
         "type": "method",
         "class": "CDOTA_Ability_Lua",
         "name": "OnProjectileThink_ExtraData",
-        "signature": "OnProjectileThink_ExtraData(location: unknown, extraData: table)",
+        "signature": "OnProjectileThink_ExtraData(location: Vector, extraData: table)",
         "returns": "nil",
         "description": "Projectile is actively moving.",
         "argDescriptions": "",
@@ -2880,7 +2880,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "CastAbilityOnPosition",
-        "signature": "CastAbilityOnPosition(position: unknown, ability: CDOTABaseAbility, playerIndex: int)",
+        "signature": "CastAbilityOnPosition(position: Vector, ability: CDOTABaseAbility, playerIndex: int)",
         "returns": "nil",
         "description": "Cast an ability on a position.",
         "argDescriptions": "",
@@ -2960,7 +2960,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "DropItemAtPosition",
-        "signature": "DropItemAtPosition(dest: unknown, item: CDOTA_Item)",
+        "signature": "DropItemAtPosition(dest: Vector, item: CDOTA_Item)",
         "returns": "nil",
         "description": "Drop an item at a given point.",
         "argDescriptions": "",
@@ -2970,7 +2970,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "DropItemAtPositionImmediate",
-        "signature": "DropItemAtPositionImmediate(item: CDOTA_Item, position: unknown)",
+        "signature": "DropItemAtPositionImmediate(item: CDOTA_Item, position: Vector)",
         "returns": "nil",
         "description": "Immediately drop a carried item at a given position.",
         "argDescriptions": "",
@@ -2990,7 +2990,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "FaceTowards",
-        "signature": "FaceTowards(target: unknown)",
+        "signature": "FaceTowards(target: Vector)",
         "returns": "nil",
         "description": "This unit will be set to face the target point.",
         "argDescriptions": "",
@@ -3621,7 +3621,7 @@
         "class": "CDOTA_BaseNPC",
         "name": "GetInitialGoalPosition",
         "signature": "GetInitialGoalPosition()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Get waypoint position for this NPC.",
         "argDescriptions": "",
         "abstract": false
@@ -4720,7 +4720,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "IsPositionInRange",
-        "signature": "IsPositionInRange(position: unknown, range: float)",
+        "signature": "IsPositionInRange(position: Vector, range: float)",
         "returns": "bool",
         "description": "",
         "argDescriptions": "",
@@ -5020,7 +5020,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "MoveToPosition",
-        "signature": "MoveToPosition(dest: unknown)",
+        "signature": "MoveToPosition(dest: Vector)",
         "returns": "nil",
         "description": "Issue a Move-To command.",
         "argDescriptions": "",
@@ -5120,7 +5120,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "OnCommandMoveToDirection",
-        "signature": "OnCommandMoveToDirection(pos: unknown)",
+        "signature": "OnCommandMoveToDirection(pos: Vector)",
         "returns": "nil",
         "description": "Tells the underlying AI to move in the given direction, skipping Dota orders.",
         "argDescriptions": "",
@@ -5140,7 +5140,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "PatrolToPosition",
-        "signature": "PatrolToPosition(dest: unknown)",
+        "signature": "PatrolToPosition(dest: Vector)",
         "returns": "nil",
         "description": "Issue a Patrol-To command.",
         "argDescriptions": "",
@@ -5620,7 +5620,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "SetCursorPosition",
-        "signature": "SetCursorPosition(location: unknown)",
+        "signature": "SetCursorPosition(location: Vector)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -5750,7 +5750,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "SetInitialGoalPosition",
-        "signature": "SetInitialGoalPosition(position: unknown)",
+        "signature": "SetInitialGoalPosition(position: Vector)",
         "returns": "nil",
         "description": "Set waypoint position for this NPC.",
         "argDescriptions": "",
@@ -5850,7 +5850,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC",
         "name": "SetOrigin",
-        "signature": "SetOrigin(location: unknown)",
+        "signature": "SetOrigin(location: Vector)",
         "returns": "nil",
         "description": "Set the unit's origin.",
         "argDescriptions": "",
@@ -7342,7 +7342,7 @@
         "type": "method",
         "class": "CDOTA_BaseNPC_Hero",
         "name": "SetRespawnPosition",
-        "signature": "SetRespawnPosition(origin: unknown)",
+        "signature": "SetRespawnPosition(origin: Vector)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -7459,7 +7459,7 @@
         "class": "CDOTA_BaseNPC_Trap_Ward",
         "name": "GetTrapTarget",
         "signature": "GetTrapTarget()",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Get the trap target for this entity.",
         "argDescriptions": "",
         "abstract": false
@@ -8194,7 +8194,7 @@
         "type": "method",
         "class": "CDOTA_Item",
         "name": "LaunchLoot",
-        "signature": "LaunchLoot(autoUse: bool, height: float, duration: float, endPoint: unknown, teleportOwner: CDOTA_BaseNPC_Hero | nil)",
+        "signature": "LaunchLoot(autoUse: bool, height: float, duration: float, endPoint: Vector, teleportOwner: CDOTA_BaseNPC_Hero | nil)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -8204,7 +8204,7 @@
         "type": "method",
         "class": "CDOTA_Item",
         "name": "LaunchLootInitialHeight",
-        "signature": "LaunchLootInitialHeight(autoUse: bool, initialHeight: float, launchHeight: float, duration: float, endPoint: unknown)",
+        "signature": "LaunchLootInitialHeight(autoUse: bool, initialHeight: float, launchHeight: float, duration: float, endPoint: Vector)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -8214,7 +8214,7 @@
         "type": "method",
         "class": "CDOTA_Item",
         "name": "LaunchLootRequiredHeight",
-        "signature": "LaunchLootRequiredHeight(autoUse: bool, requiredHeight: float, height: float, duration: float, endPoint: unknown)",
+        "signature": "LaunchLootRequiredHeight(autoUse: bool, requiredHeight: float, height: float, duration: float, endPoint: Vector)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -8452,7 +8452,7 @@
         "type": "method",
         "class": "CDOTA_Item_DataDriven",
         "name": "ApplyDataDrivenThinker",
-        "signature": "ApplyDataDrivenThinker(caster: CDOTA_BaseNPC, location: unknown, modifierName: string, modifierTable: table | nil)",
+        "signature": "ApplyDataDrivenThinker(caster: CDOTA_BaseNPC, location: Vector, modifierName: string, modifierTable: table | nil)",
         "returns": "CDOTA_Buff",
         "description": "Applies a data driven thinker at the location.",
         "argDescriptions": "",
@@ -8520,7 +8520,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "CastFilterResultLocation",
-        "signature": "CastFilterResultLocation(location: unknown)",
+        "signature": "CastFilterResultLocation(location: Vector)",
         "returns": "UnitFilterResult",
         "description": "Determine whether an issued command on a location is valid.",
         "argDescriptions": "",
@@ -8590,7 +8590,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "GetCastRange",
-        "signature": "GetCastRange(location: unknown, target: CDOTA_BaseNPC | nil)",
+        "signature": "GetCastRange(location: Vector, target: CDOTA_BaseNPC | nil)",
         "returns": "int",
         "description": "Return cast range of this ability.",
         "argDescriptions": "",
@@ -8670,7 +8670,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "GetCustomCastErrorLocation",
-        "signature": "GetCustomCastErrorLocation(location: unknown)",
+        "signature": "GetCustomCastErrorLocation(location: Vector)",
         "returns": "string",
         "description": "Return the error string of a failed command on a location.",
         "argDescriptions": "",
@@ -8700,7 +8700,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "GetEffectiveCastRange",
-        "signature": "GetEffectiveCastRange(location: unknown, target: handle)",
+        "signature": "GetEffectiveCastRange(location: Vector, target: handle)",
         "returns": "int",
         "description": "Return cast range of this ability, taking modifiers into account.",
         "argDescriptions": "",
@@ -8940,7 +8940,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "OnProjectileHit",
-        "signature": "OnProjectileHit(target: CDOTA_BaseNPC | nil, location: unknown)",
+        "signature": "OnProjectileHit(target: CDOTA_BaseNPC | nil, location: Vector)",
         "returns": "bool | nil",
         "description": "Projectile has collided with a given target or reached its destination. If 'true` is returned, projectile would be destroyed.",
         "argDescriptions": "",
@@ -8950,7 +8950,7 @@
         "type": "method",
         "class": "CDOTA_Item_Lua",
         "name": "OnProjectileThink",
-        "signature": "OnProjectileThink(location: unknown)",
+        "signature": "OnProjectileThink(location: Vector)",
         "returns": "nil",
         "description": "Projectile is actively moving.",
         "argDescriptions": "",
@@ -15568,7 +15568,7 @@
         "type": "method",
         "class": "CDOTABaseAbility",
         "name": "CreateVisibilityNode",
-        "signature": "CreateVisibilityNode(location: unknown, radius: float, duration: float)",
+        "signature": "CreateVisibilityNode(location: Vector, radius: float, duration: float)",
         "returns": "nil",
         "description": "",
         "argDescriptions": "",
@@ -15998,7 +15998,7 @@
         "type": "method",
         "class": "CDOTABaseAbility",
         "name": "GetEffectiveCastRange",
-        "signature": "GetEffectiveCastRange(location: unknown, target: handle)",
+        "signature": "GetEffectiveCastRange(location: Vector, target: handle)",
         "returns": "int",
         "description": "Gets the cast range of the ability, taking modifiers into account.",
         "argDescriptions": "",
@@ -18750,7 +18750,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddMinimapDebugPoint",
-        "signature": "AddMinimapDebugPoint(index: int, location: unknown, r: int, g: int, b: int, size: int, duration: float)",
+        "signature": "AddMinimapDebugPoint(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float)",
         "returns": "nil",
         "description": "Add a point on the minimap.",
         "argDescriptions": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds.",
@@ -18760,7 +18760,7 @@
         "type": "method",
         "class": "CDOTAGameRules",
         "name": "AddMinimapDebugPointForTeam",
-        "signature": "AddMinimapDebugPointForTeam(index: int, location: unknown, r: int, g: int, b: int, size: int, duration: float, team: DOTATeam_t)",
+        "signature": "AddMinimapDebugPointForTeam(index: int, location: Vector, r: int, g: int, b: int, size: int, duration: float, team: DOTATeam_t)",
         "returns": "nil",
         "description": "Add a point on the minimap for a specific team.",
         "argDescriptions": "index: Identifier sent with the point (`index` of CDOTAUserMsg_MinimapDebugPoint).\nr: Red, 0-255.\ng: Green, 0-255.\nb: Blue, 0-255.\nduration: Seconds.\nteam: Team whose players see the point.",
@@ -20264,7 +20264,7 @@
         "type": "method",
         "class": "CDOTAPlayerController",
         "name": "SpawnCourierAtPosition",
-        "signature": "SpawnCourierAtPosition(location: unknown)",
+        "signature": "SpawnCourierAtPosition(location: Vector)",
         "returns": "CDOTA_Unit_Courier",
         "description": "Spawn a courier for this player at the given position.",
         "argDescriptions": "",
@@ -20426,7 +20426,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "CreateLocationTask",
-        "signature": "CreateLocationTask(location: unknown)",
+        "signature": "CreateLocationTask(location: Vector)",
         "returns": "nil",
         "description": "Add a task to move to a specific location.",
         "argDescriptions": "",
@@ -20496,7 +20496,7 @@
         "type": "method",
         "class": "CDOTATutorial",
         "name": "MoveCameraToLocation",
-        "signature": "MoveCameraToLocation(location: unknown)",
+        "signature": "MoveCameraToLocation(location: Vector)",
         "returns": "nil",
         "description": "Moves the camera to a position.",
         "argDescriptions": "",
@@ -21154,7 +21154,7 @@
         "type": "method",
         "class": "CFoWBlockerRegion",
         "name": "AddRectangularBlocker",
-        "signature": "AddRectangularBlocker(mins: unknown, maxs: unknown, clearRegion: bool)",
+        "signature": "AddRectangularBlocker(mins: Vector, maxs: Vector, clearRegion: bool)",
         "returns": "nil",
         "description": "Sets or clears a blocker rectangle.",
         "argDescriptions": "",
@@ -21164,7 +21164,7 @@
         "type": "method",
         "class": "CFoWBlockerRegion",
         "name": "AddRectangularOutlineBlocker",
-        "signature": "AddRectangularOutlineBlocker(mins: unknown, maxs: unknown, clearRegion: bool)",
+        "signature": "AddRectangularOutlineBlocker(mins: Vector, maxs: Vector, clearRegion: bool)",
         "returns": "nil",
         "description": "Sets or clears a blocker rectangle outline.",
         "argDescriptions": "",
@@ -22276,7 +22276,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "CanFindPath",
-        "signature": "CanFindPath(start: unknown, end: unknown)",
+        "signature": "CanFindPath(start: Vector, end: Vector)",
         "returns": "bool",
         "description": "Determine if it is possible to reach the specified end point from the specified start point. bool.",
         "argDescriptions": "",
@@ -22286,7 +22286,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "DestroyTreesAroundPoint",
-        "signature": "DestroyTreesAroundPoint(position: unknown, radius: float, fullCollision: bool)",
+        "signature": "DestroyTreesAroundPoint(position: Vector, radius: float, fullCollision: bool)",
         "returns": "nil",
         "description": "Destroy all trees in the area(vPosition, flRadius, bFullCollision.",
         "argDescriptions": "",
@@ -22296,7 +22296,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "FindPathLength",
-        "signature": "FindPathLength(start: unknown, end: unknown)",
+        "signature": "FindPathLength(start: Vector, end: Vector)",
         "returns": "float",
         "description": "Find a path between the two points an return the length of the path. If there is not a path between the points the returned value will be -1.",
         "argDescriptions": "",
@@ -22306,7 +22306,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "GetAllTreesAroundPoint",
-        "signature": "GetAllTreesAroundPoint(position: unknown, radius: float, fullCollision: bool)",
+        "signature": "GetAllTreesAroundPoint(position: Vector, radius: float, fullCollision: bool)",
         "returns": "(CDOTA_MapTree)[]",
         "description": "Returns a table full of tree HSCRIPTS.",
         "argDescriptions": "",
@@ -22336,7 +22336,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "IsBlocked",
-        "signature": "IsBlocked(position: unknown)",
+        "signature": "IsBlocked(position: Vector)",
         "returns": "bool",
         "description": "Checks whether the given position is blocked.",
         "argDescriptions": "position: Only x and y are used.",
@@ -22346,7 +22346,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "IsNearbyTree",
-        "signature": "IsNearbyTree(position: unknown, radius: float, checkFullTreeRadius: bool)",
+        "signature": "IsNearbyTree(position: Vector, radius: float, checkFullTreeRadius: bool)",
         "returns": "bool",
         "description": "Checks whether there are any trees overlapping the given point.",
         "argDescriptions": "",
@@ -22356,7 +22356,7 @@
         "type": "method",
         "class": "GridNav",
         "name": "IsTraversable",
-        "signature": "IsTraversable(position: unknown)",
+        "signature": "IsTraversable(position: Vector)",
         "returns": "bool",
         "description": "Checks whether the given position is traversable.",
         "argDescriptions": "position: Only x and y are used.",
@@ -22451,7 +22451,7 @@
         "class": "ProjectileManager",
         "name": "GetLinearProjectileLocation",
         "signature": "GetLinearProjectileLocation(projectile: ProjectileID)",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Returns current location of projectile.",
         "argDescriptions": "",
         "abstract": false
@@ -22481,7 +22481,7 @@
         "class": "ProjectileManager",
         "name": "GetTrackingProjectileLocation",
         "signature": "GetTrackingProjectileLocation(projectile: ProjectileID)",
-        "returns": "unknown",
+        "returns": "Vector",
         "description": "Returns current location of projectile.",
         "argDescriptions": "",
         "abstract": false
@@ -22855,7 +22855,7 @@
       {
         "type": "function",
         "name": "AddFOWViewer",
-        "signature": "AddFOWViewer(teamId: DOTATeam_t, location: unknown, radius: float, duration: float, obstructedVision: bool)",
+        "signature": "AddFOWViewer(teamId: DOTATeam_t, location: Vector, radius: float, duration: float, obstructedVision: bool)",
         "returns": "ViewerID",
         "description": "Add temporary vision for a given team.",
         "argDescriptions": ""
@@ -23007,7 +23007,7 @@
       {
         "type": "function",
         "name": "CreateItemOnPositionForLaunch",
-        "signature": "CreateItemOnPositionForLaunch(location: unknown, item: CDOTA_Item | nil)",
+        "signature": "CreateItemOnPositionForLaunch(location: Vector, item: CDOTA_Item | nil)",
         "returns": "CDOTA_Item_Physical",
         "description": "Create a physical item at a given location, can start in air (but doesn't clear a space).",
         "argDescriptions": ""
@@ -23015,7 +23015,7 @@
       {
         "type": "function",
         "name": "CreateItemOnPositionSync",
-        "signature": "CreateItemOnPositionSync(location: unknown, item: CDOTA_Item | nil)",
+        "signature": "CreateItemOnPositionSync(location: Vector, item: CDOTA_Item | nil)",
         "returns": "CDOTA_Item_Physical",
         "description": "Create a physical item at a given location.",
         "argDescriptions": ""
@@ -23023,7 +23023,7 @@
       {
         "type": "function",
         "name": "CreateModifierThinker",
-        "signature": "CreateModifierThinker(caster: CDOTA_BaseNPC | nil, ability: CDOTABaseAbility | nil, modifierName: string, paramTable: table | nil, origin: unknown, teamNumber: DOTATeam_t, phantomBlocker: bool)",
+        "signature": "CreateModifierThinker(caster: CDOTA_BaseNPC | nil, ability: CDOTABaseAbility | nil, modifierName: string, paramTable: table | nil, origin: Vector, teamNumber: DOTATeam_t, phantomBlocker: bool)",
         "returns": "CDOTA_BaseNPC",
         "description": "Create a modifier not associated with an NPC.",
         "argDescriptions": "paramTable: Converted like the table of `AddNewModifier`, except that vectors are dropped too."
@@ -23031,7 +23031,7 @@
       {
         "type": "function",
         "name": "CreateRune",
-        "signature": "CreateRune(location: unknown, runeType: DOTA_RUNES)",
+        "signature": "CreateRune(location: Vector, runeType: DOTA_RUNES)",
         "returns": "CBaseAnimatingActivity",
         "description": "Create a rune of the specified type.",
         "argDescriptions": ""
@@ -23047,7 +23047,7 @@
       {
         "type": "function",
         "name": "CreateTempTree",
-        "signature": "CreateTempTree(location: unknown, duration: float)",
+        "signature": "CreateTempTree(location: Vector, duration: float)",
         "returns": "CBaseAnimatingActivity",
         "description": "Create a temporary tree, uses a default tree model.",
         "argDescriptions": ""
@@ -23055,7 +23055,7 @@
       {
         "type": "function",
         "name": "CreateTempTreeWithModel",
-        "signature": "CreateTempTreeWithModel(location: unknown, duration: float, modelName: string)",
+        "signature": "CreateTempTreeWithModel(location: Vector, duration: float, modelName: string)",
         "returns": "CBaseAnimatingActivity",
         "description": "Create a temporary tree, specifying the tree model name.",
         "argDescriptions": ""
@@ -23087,7 +23087,7 @@
       {
         "type": "function",
         "name": "CreateUnitByName",
-        "signature": "CreateUnitByName(unitName: string, location: unknown, findClearSpace: bool, npcOwner: CBaseEntity | nil, entityOwner: CBaseEntity | nil, team: DOTATeam_t)",
+        "signature": "CreateUnitByName(unitName: string, location: Vector, findClearSpace: bool, npcOwner: CBaseEntity | nil, entityOwner: CBaseEntity | nil, team: DOTATeam_t)",
         "returns": "CDOTA_BaseNPC",
         "description": "Creates a unit by its dota_npc_units.txt name.\nThe spawned unit will not be controllable by default. You can use unit.SetControllableByPlayer() to change this.\nWarning: mass synchronous unit spawning may be slow. Prefer CreateUnitByNameAsync unless synchronous access is required.",
         "argDescriptions": "entityOwner: This entity will be returned by GetOwner() and GetOwnerEntity(). GetPlayerOwner() and GetPlayerOwnerID() will be automatically inferred from this entity. Can be changed after spawn using SetOwner(entity). When spawning heroes, passing CDOTAPlayerController makes hero use owned wearables."
@@ -23095,7 +23095,7 @@
       {
         "type": "function",
         "name": "CreateUnitByNameAsync",
-        "signature": "CreateUnitByNameAsync(unitName: string, location: unknown, findClearSpace: bool, npcOwner: CBaseEntity | nil, entityOwner: CBaseEntity | nil, team: DOTATeam_t, callback: function)",
+        "signature": "CreateUnitByNameAsync(unitName: string, location: Vector, findClearSpace: bool, npcOwner: CBaseEntity | nil, entityOwner: CBaseEntity | nil, team: DOTATeam_t, callback: function)",
         "returns": "SpawnGroupHandle",
         "description": "Creates a unit by its dota_npc_units.txt name.\nThe spawned unit will not be controllable by default. You can use unit.SetControllableByPlayer() to change this.",
         "argDescriptions": "entityOwner: This entity will be returned by GetOwner() and GetOwnerEntity(). GetPlayerOwner() and GetPlayerOwnerID() will be automatically inferred from this entity. Can be changed after spawn using SetOwner(entity). When spawning heroes, passing CDOTAPlayerController makes hero use owned wearables."
@@ -23335,7 +23335,7 @@
       {
         "type": "function",
         "name": "DropNeutralItemAtPositionForHero",
-        "signature": "DropNeutralItemAtPositionForHero(itemName: string, location: unknown, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool)",
+        "signature": "DropNeutralItemAtPositionForHero(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool)",
         "returns": "CDOTA_Item_Physical",
         "description": "Drop a neutral item for the team of the hero at the given tier.",
         "argDescriptions": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast)."
@@ -23343,7 +23343,7 @@
       {
         "type": "function",
         "name": "DropNeutralItemAtPositionForHeroWithOffset",
-        "signature": "DropNeutralItemAtPositionForHeroWithOffset(itemName: string, location: unknown, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool, launchOffset: Vector)",
+        "signature": "DropNeutralItemAtPositionForHeroWithOffset(itemName: string, location: Vector, unit: CDOTA_BaseNPC, tier: int, markAsEarned: bool, launchOffset: Vector)",
         "returns": "CDOTA_Item_Physical",
         "description": "Drop a neutral item for the team of the hero at the given tier.",
         "argDescriptions": "itemName: Can be any item name, it does not have to be neutral.\ntier: 1-based neutral item tier; 0 or less: the item's own tier.\nmarkAsEarned: When true, the item is recorded as found by the unit's team (the same record `RecordNeutralItemEarned` makes, without its toast).\nlaunchOffset: Added to the point the item is launched from (the unit position moved up to 100 units toward location)."
@@ -23383,7 +23383,7 @@
       {
         "type": "function",
         "name": "EmitAnnouncerSoundForTeamOnLocation",
-        "signature": "EmitAnnouncerSoundForTeamOnLocation(soundName: string, team: DOTATeam_t, location: unknown)",
+        "signature": "EmitAnnouncerSoundForTeamOnLocation(soundName: string, team: DOTATeam_t, location: Vector)",
         "returns": "nil",
         "description": "Emit an announcer sound for a team at a specific location.",
         "argDescriptions": ""
@@ -23431,7 +23431,7 @@
       {
         "type": "function",
         "name": "EmitSoundOnLocationForPlayer",
-        "signature": "EmitSoundOnLocationForPlayer(soundName: string, location: unknown, playerId: PlayerID)",
+        "signature": "EmitSoundOnLocationForPlayer(soundName: string, location: Vector, playerId: PlayerID)",
         "returns": "nil",
         "description": "Emit a sound on a location for only a specific player.",
         "argDescriptions": ""
@@ -23479,7 +23479,7 @@
       {
         "type": "function",
         "name": "FindClearSpaceForUnit",
-        "signature": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: unknown, interrupt: bool)",
+        "signature": "FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector, interrupt: bool)",
         "returns": "bool",
         "description": "Place a unit somewhere not already occupied.",
         "argDescriptions": "interrupt: When false, a unit whose movement component reports active movement is not moved and false is returned; when true that movement is interrupted and the unit is teleported."
@@ -23495,7 +23495,7 @@
       {
         "type": "function",
         "name": "FindUnitsInLine",
-        "signature": "FindUnitsInLine(team: DOTATeam_t, startPos: unknown, endPos: unknown, cacheUnit: CBaseEntity | nil, width: float, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS)",
+        "signature": "FindUnitsInLine(team: DOTATeam_t, startPos: Vector, endPos: Vector, cacheUnit: CBaseEntity | nil, width: float, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS)",
         "returns": "(CDOTA_BaseNPC)[]",
         "description": "Find units that intersect the given line with the given flags.",
         "argDescriptions": ""
@@ -23503,7 +23503,7 @@
       {
         "type": "function",
         "name": "FindUnitsInRadius",
-        "signature": "FindUnitsInRadius(team: DOTATeam_t, location: unknown, cacheUnit: CBaseEntity | nil, radius: float, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS, order: FindOrder, canGrowCache: bool)",
+        "signature": "FindUnitsInRadius(team: DOTATeam_t, location: Vector, cacheUnit: CBaseEntity | nil, radius: float, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS, order: FindOrder, canGrowCache: bool)",
         "returns": "(CDOTA_BaseNPC)[]",
         "description": "Finds the units in a given radius with the given flags.",
         "argDescriptions": ""
@@ -23583,8 +23583,8 @@
       {
         "type": "function",
         "name": "GetClearSpaceForUnit",
-        "signature": "GetClearSpaceForUnit(unit: CDOTA_BaseNPC, location: unknown)",
-        "returns": "unknown",
+        "signature": "GetClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vector)",
+        "returns": "Vector",
         "description": "Returns a location for the unit that is not already occupied.",
         "argDescriptions": "location: Returned unchanged when no clear space is found."
       },
@@ -23631,7 +23631,7 @@
       {
         "type": "function",
         "name": "GetGroundHeight",
-        "signature": "GetGroundHeight(location: unknown, unitHull: CDOTA_BaseNPC | nil)",
+        "signature": "GetGroundHeight(location: Vector, unitHull: CDOTA_BaseNPC | nil)",
         "returns": "float",
         "description": "",
         "argDescriptions": ""
@@ -23639,8 +23639,8 @@
       {
         "type": "function",
         "name": "GetGroundPosition",
-        "signature": "GetGroundPosition(location: unknown, unitHull: CDOTA_BaseNPC | nil)",
-        "returns": "unknown",
+        "signature": "GetGroundPosition(location: Vector, unitHull: CDOTA_BaseNPC | nil)",
+        "returns": "Vector",
         "description": "Returns the supplied position moved to the ground. Second parameter is an NPC for measuring movement collision hull offset.",
         "argDescriptions": ""
       },
@@ -23767,16 +23767,16 @@
       {
         "type": "function",
         "name": "GetTargetAOELocation",
-        "signature": "GetTargetAOELocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: unknown, castRange: int, radius: int, minTargets: int)",
-        "returns": "unknown",
+        "signature": "GetTargetAOELocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, castRange: int, radius: int, minTargets: int)",
+        "returns": "Vector",
         "description": "Center of the best cluster of units for an area effect (the bot helper). Units are searched within `castRange + radius` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found.",
         "argDescriptions": ""
       },
       {
         "type": "function",
         "name": "GetTargetLinearLocation",
-        "signature": "GetTargetLinearLocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: unknown, range: int, width: int, minTargets: int)",
-        "returns": "unknown",
+        "signature": "GetTargetLinearLocation(team: DOTATeam_t, typeFilter: DOTA_UNIT_TARGET_TYPE, teamFilter: DOTA_UNIT_TARGET_TEAM, origin: Vector, range: int, width: int, minTargets: int)",
+        "returns": "Vector",
         "description": "Best point for a line effect (the bot helper). Units are searched within `range + width` of origin, invisible ones excluded; returns a vector of FLT_MAX components when fewer than `minTargets` are found.",
         "argDescriptions": ""
       },
@@ -23911,7 +23911,7 @@
       {
         "type": "function",
         "name": "IsLocationVisible",
-        "signature": "IsLocationVisible(team: DOTATeam_t, location: unknown)",
+        "signature": "IsLocationVisible(team: DOTATeam_t, location: Vector)",
         "returns": "bool",
         "description": "Ask fog of war if a location is visible to a certain team.",
         "argDescriptions": ""
@@ -24247,7 +24247,7 @@
       {
         "type": "function",
         "name": "ResolveNPCPositions",
-        "signature": "ResolveNPCPositions(location: unknown, radius: float)",
+        "signature": "ResolveNPCPositions(location: Vector, radius: float)",
         "returns": "nil",
         "description": "Check and fix units that have been assigned a position inside collision radius of other NPCs.",
         "argDescriptions": ""
@@ -24455,7 +24455,7 @@
       {
         "type": "function",
         "name": "SpawnDOTAShopTriggerRadiusApproximate",
-        "signature": "SpawnDOTAShopTriggerRadiusApproximate(origin: unknown, radius: float)",
+        "signature": "SpawnDOTAShopTriggerRadiusApproximate(origin: Vector, radius: float)",
         "returns": "CDOTA_ShopTrigger",
         "description": "",
         "argDescriptions": ""
@@ -24463,7 +24463,7 @@
       {
         "type": "function",
         "name": "SpawnEffigyOfUnitOrModel",
-        "signature": "SpawnEffigyOfUnitOrModel(unitOrModel: string, team: DOTATeam_t, origin: unknown, angles: Vector, pedestalScale: float, modelScale: float, effigyType: int)",
+        "signature": "SpawnEffigyOfUnitOrModel(unitOrModel: string, team: DOTATeam_t, origin: Vector, angles: Vector, pedestalScale: float, modelScale: float, effigyType: int)",
         "returns": "handle",
         "description": "Spawn an effigy of the target unit.",
         "argDescriptions": "unitOrModel: Unit name, or a `.vmdl` model path.\nangles: Pitch, yaw, roll.\npedestalScale: Model scale of the pedestal.\nmodelScale: Model scale of the statue; negative: the unit's `ModelScale`.\neffigyType: Status effect index of the statue material; also selects the pedestal model (with team)."
@@ -24511,7 +24511,7 @@
       {
         "type": "function",
         "name": "SpawnMangoTree",
-        "signature": "SpawnMangoTree(pos: unknown, team: int, duration: float, mangoInterval: float, initialMangoes: int)",
+        "signature": "SpawnMangoTree(pos: Vector, team: int, duration: float, mangoInterval: float, initialMangoes: int)",
         "returns": "handle",
         "description": "Spawn a mango tree.",
         "argDescriptions": ""
@@ -131892,7 +131892,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_abaddon_aphotic_shield.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : parent:FindModifierByName(\"modifier_abaddon_borrowed_time\") ? 0 : -math.max(params.damage, 0)) : math.max(0, %damage_absorb% - self.field_1b04)) : %damage_absorb%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : parent:FindModifierByName(\"modifier_abaddon_borrowed_time\") ? 0 : -math.max(params.damage, 0)) : math.max(0, %damage_absorb% - self.field_1b04)) : %damage_absorb%"
       },
       {
         "type": "modifier_function_client",
@@ -132277,7 +132277,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_aghsfort_creature_spiked_carapace.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 48 ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_INVULNERABLE) ? 0 : 1"
+        "value": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_INVULNERABLE) ? 0 : 1"
       },
       {
         "type": "modifier_function_client",
@@ -133677,7 +133677,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_ascension_bulwark.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : params.damage_flags & 56 ~= 0 ? 0 : params.damage_type ~= 1 ? 0 : params.attacker == parent ? 0 : params.target ~= parent ? 0 : ? * ? * (? - ?) + (? - ?) * (? * ?) < ? ? 0 : %physical_damage_reduction% ~= 0 ? -%physical_damage_reduction% : 0"
+        "value": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_BYPASSES_PHYSICAL_BLOCK | DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : params.damage_type ~= DAMAGE_TYPE_PHYSICAL ? 0 : params.attacker == parent ? 0 : params.target ~= parent ? 0 : ? * ? * (? - ?) + (? - ?) * (? * ?) < ? ? 0 : %physical_damage_reduction% ~= 0 ? -%physical_damage_reduction% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -134402,7 +134402,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_beastmaster_axe_stack_counter.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%"
       },
       {
         "type": "modifier_function",
@@ -134657,7 +134657,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_black_drake_magic_amplification.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %spell_amp%"
+        "value": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %spell_amp%"
       },
       {
         "type": "modifier_function",
@@ -134692,7 +134692,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_bloodseeker_blood_mist_barrier.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : 0 <= self.field_1afc - params.damage ? -math.max(params.damage, 0) : -math.max(self.field_1afc - params.damage + params.damage, 0)) : math.max(0, self.field_1afc)) : %max_shield_pct% * parent:GetMaxHealth() / 100"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : 0 <= self.field_1afc - params.damage ? -math.max(params.damage, 0) : -math.max(self.field_1afc - params.damage + params.damage, 0)) : math.max(0, self.field_1afc)) : %max_shield_pct% * parent:GetMaxHealth() / 100"
       },
       {
         "type": "modifier_function_client",
@@ -135182,7 +135182,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_bounty_hunter_wind_walk.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "%damage_reduction_pct% <= 0 ? 0 : params.damage_flags & 32 == 0 ? -%damage_reduction_pct% : 0"
+        "value": "%damage_reduction_pct% <= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction_pct% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -135862,7 +135862,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_bristleback_bristleback.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : params.attacker == parent ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? > 1e+17 ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : params.attacker == parent ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? > 1e+17 ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%"
       },
       {
         "type": "modifier_function_client",
@@ -136427,7 +136427,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_centaur_stampede.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -137662,7 +137662,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_crystal_maiden_frostbite.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : params.attacker == parent ? 0 : caster ~= parent ? 0 : (-70)"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : params.attacker == parent ? 0 : caster ~= parent ? 0 : (-70)"
       },
       {
         "type": "modifier_function_client",
@@ -138007,7 +138007,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_dark_willow_bramble_maze.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%"
       },
       {
         "type": "modifier_state",
@@ -138107,12 +138107,12 @@
       {
         "type": "modifier_function",
         "name": "modifier_dark_willow_shadow_realm_aura_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : ? * %aura_damage_pct%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : ? * %aura_damage_pct%"
       },
       {
         "type": "modifier_function_client",
         "name": "modifier_dark_willow_shadow_realm_aura_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self.field_1b00 * %aura_damage_pct%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self.field_1b00 * %aura_damage_pct%"
       },
       {
         "type": "modifier_function",
@@ -139187,7 +139187,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_doom_bringer_doom.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 == 0 ? %damage_amp% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION == 0 ? %damage_amp% : 0"
       },
       {
         "type": "modifier_function",
@@ -140882,17 +140882,17 @@
       {
         "type": "modifier_function",
         "name": "modifier_faceless_void_backtrack.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? == 0 ? 0 : 1"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? == 0 ? 0 : 1"
       },
       {
         "type": "modifier_function_client",
         "name": "modifier_faceless_void_backtrack.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? > %dodge_chance_pct% ? 0 : 1"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? > %dodge_chance_pct% ? 0 : 1"
       },
       {
         "type": "modifier_function",
         "name": "modifier_faceless_void_backtrack_temp.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1"
       },
       {
         "type": "modifier_function",
@@ -141577,7 +141577,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_frogmen_water_bubble.MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)) : math.max(0, %damage_absorb% - self.field_1b00)) : %damage_absorb%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)) : math.max(0, %damage_absorb% - self.field_1b00)) : %damage_absorb%"
       },
       {
         "type": "modifier_function_client",
@@ -142247,7 +142247,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_grimstroke_ink_trail.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : not params.attacker:FindModifierByName(\"modifier_grimstroke_ink_trail_debuff\") ? 0 : -%damage_reduction%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : not params.attacker:FindModifierByName(\"modifier_grimstroke_ink_trail_debuff\") ? 0 : -%damage_reduction%"
       },
       {
         "type": "modifier_function_client",
@@ -143037,7 +143037,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_hoodwink_hunters_mark.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : %spell_amp%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : %spell_amp%"
       },
       {
         "type": "modifier_function",
@@ -143852,7 +143852,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_invoker_magic_amp_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : self.field_1af8"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : self.field_1af8"
       },
       {
         "type": "modifier_function_client",
@@ -144777,7 +144777,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_item_bloodstone_aura.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %aura_spell_vulnerability%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %aura_spell_vulnerability%"
       },
       {
         "type": "modifier_function",
@@ -146927,7 +146927,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_item_gale_guard.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage * %barrier_pct% / 100 + self.field_1b04 <= %barrier_amount% ? -math.max(params.damage * %barrier_pct% / 100, 0) : -math.max(params.damage * %barrier_pct% / 100 - (params.damage * %barrier_pct% / 100 + self.field_1b04 - %barrier_amount%), 0)) : math.max(0, %barrier_amount% - self.field_1b04)) : %barrier_amount%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage * %barrier_pct% / 100 + self.field_1b04 <= %barrier_amount% ? -math.max(params.damage * %barrier_pct% / 100, 0) : -math.max(params.damage * %barrier_pct% / 100 - (params.damage * %barrier_pct% / 100 + self.field_1b04 - %barrier_amount%), 0)) : math.max(0, %barrier_amount% - self.field_1b04)) : %barrier_amount%"
       },
       {
         "type": "modifier_function_client",
@@ -148262,7 +148262,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_item_martyrs_plate_effect.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "parent == caster ? 0 : params.damage_type ~= 2 ? 0 : params.damage_flags & 48 ~= 0 ? 0 : -%damage_redirection%"
+        "value": "parent == caster ? 0 : params.damage_type ~= DAMAGE_TYPE_MAGICAL ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : -%damage_redirection%"
       },
       {
         "type": "modifier_function_client",
@@ -150792,7 +150792,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_item_sphere_upgrade_absorb.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? math.max(params.damage, 0) : math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? math.max(params.damage, 0) : math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)"
       },
       {
         "type": "modifier_function_client",
@@ -151737,7 +151737,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_item_veil_of_discord_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%"
       },
       {
         "type": "modifier_function",
@@ -152532,7 +152532,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_juggernaut_duelist.MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE",
-        "value": "params.damage_flags & 1024 ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? == 0 ? (state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? == 0 ? (state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -153387,7 +153387,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_kez_shodo_sai_parry.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.target ~= parent ? 0 : parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : 1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1"
+        "value": "params.target ~= parent ? 0 : parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : 1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1"
       },
       {
         "type": "modifier_function_client",
@@ -153437,7 +153437,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_kez_shodo_sai_parry.MODIFIER_PROPERTY_AVOID_ATTACK_PROCS",
-        "value": "params.target ~= parent ? 0 : ? == 65535 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= 1 ? 0 : params.damage_type == 4 ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : ? == ? + (? + ? * 2) * 8 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= 1 ? 0 : params.damage_type == 4 ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : 0"
+        "value": "params.target ~= parent ? 0 : ? == 65535 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.damage_type == DAMAGE_TYPE_PURE ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : ? == ? + (? + ? * 2) * 8 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.damage_type == DAMAGE_TYPE_PURE ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -154327,7 +154327,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_lich_frost_shield.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 ~= 0 ? 0 : params.damage_category ~= 1 ? 0 : params.attacker:IsHero() ? -%damage_reduction% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.attacker:IsHero() ? -%damage_reduction% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -154857,12 +154857,12 @@
       {
         "type": "modifier_function",
         "name": "modifier_lina_laguna_blade_superheated.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %increased_damage%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %increased_damage%"
       },
       {
         "type": "modifier_function",
         "name": "modifier_lina_slow_burn_intrinsic.MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE",
-        "value": "params.damage_type ~= 2 ? 0 : params.damage_flags & 560 ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? ~= 0 ? 0 : params.inflictor == ability ? 0 : params.inflictor:IsItem() ? 0 : params.inflictor:GetBehavior() & DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES ~= 0 ? 0 : %impact_damage_pct% - 100"
+        "value": "params.damage_type ~= DAMAGE_TYPE_MAGICAL ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS) ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? ~= 0 ? 0 : params.inflictor == ability ? 0 : params.inflictor:IsItem() ? 0 : params.inflictor:GetBehavior() & DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES ~= 0 ? 0 : %impact_damage_pct% - 100"
       },
       {
         "type": "modifier_function_client",
@@ -156137,7 +156137,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_marci_bodyguarded.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.max(params.damage, 0)) : math.max(0, %shared_barrier% - self.field_1b24)) : %shared_barrier%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.max(params.damage, 0)) : math.max(0, %shared_barrier% - self.field_1b24)) : %shared_barrier%"
       },
       {
         "type": "modifier_function_client",
@@ -158202,17 +158202,17 @@
       {
         "type": "modifier_function",
         "name": "modifier_monkey_king_transform.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL",
-        "value": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
       },
       {
         "type": "modifier_function",
         "name": "modifier_monkey_king_transform.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL",
-        "value": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
       },
       {
         "type": "modifier_function",
         "name": "modifier_monkey_king_transform.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE",
-        "value": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0"
       },
       {
         "type": "modifier_function",
@@ -159272,12 +159272,12 @@
       {
         "type": "modifier_function",
         "name": "modifier_muerta_pierce_the_veil_magic_immunity_damage_cancel.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 131072 == 0 ? 0 : state(parent, MODIFIER_STATE_MAGIC_IMMUNE) ? (-100) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK == 0 ? 0 : state(parent, MODIFIER_STATE_MAGIC_IMMUNE) ? (-100) : 0"
       },
       {
         "type": "modifier_function_client",
         "name": "modifier_muerta_pierce_the_veil_magic_immunity_damage_cancel.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 131072 == 0 ? 0 : not parent:IsMagicImmune() ? 0 : (-100)"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK == 0 ? 0 : not parent:IsMagicImmune() ? 0 : (-100)"
       },
       {
         "type": "modifier_function",
@@ -160517,7 +160517,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_nyx_assassin_burrow.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -160657,7 +160657,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_nyx_assassin_spiked_carapace.MODIFIER_PROPERTY_AVOID_DAMAGE",
-        "value": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:IsControllableByAnyPlayer() ? (params.damage_flags & 1048624 ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : ? ~= 0 ? 1 : params.damage <= parent:GetHealth() ? 1 : 0) : params.attacker:IsHero() ? (params.damage_flags & 1048624 ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : 1) : 0"
+        "value": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:IsControllableByAnyPlayer() ? (params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_REFLECTION) ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : ? ~= 0 ? 1 : params.damage <= parent:GetHealth() ? 1 : 0) : params.attacker:IsHero() ? (params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_REFLECTION) ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : 1) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -160737,7 +160737,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_nyx_assassin_vendetta_armor_reduction.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %shard_magic_resist_reduction%"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %shard_magic_resist_reduction%"
       },
       {
         "type": "modifier_state",
@@ -160892,7 +160892,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_obsidian_destroyer_equilibrium_barrier.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt"
       },
       {
         "type": "modifier_function_client",
@@ -160902,7 +160902,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_obsidian_destroyer_equilibrium_barrier.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "%all_damage% ~= 0 ? (params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt) : 0"
+        "value": "%all_damage% ~= 0 ? (params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -161132,7 +161132,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_ogre_magi_smash_buff.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage_category & 1 ~= 0 ? (params.attacker:IsHero() ? %damage_absorb_pct% / 100 * params.damage : 0) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? (params.attacker:IsHero() ? %damage_absorb_pct% / 100 * params.damage : 0) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -161187,7 +161187,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_omniknight_degen_aura_effect.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%"
       },
       {
         "type": "modifier_function",
@@ -165612,7 +165612,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_rune_shield.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= parent:GetMaxHealth() - ? >> 1 ? -math.max(params.damage, 0) : -math.max(math.max(0, params.damage - (params.damage + self.field_1b00 - (parent:GetMaxHealth() - ? >> 1))), 0)) : (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 >= 0 ? (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 : 0) : parent:GetMaxHealth() - ? >> 1"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= parent:GetMaxHealth() - ? >> 1 ? -math.max(params.damage, 0) : -math.max(math.max(0, params.damage - (params.damage + self.field_1b00 - (parent:GetMaxHealth() - ? >> 1))), 0)) : (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 >= 0 ? (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 : 0) : parent:GetMaxHealth() - ? >> 1"
       },
       {
         "type": "modifier_function_client",
@@ -166722,7 +166722,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_shredder_reactive_armor_bomb.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b18 <= %max_shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b18 - %max_shield%), 0)) : math.max(0, %max_shield% - self.field_1b18)) : %max_shield%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b18 <= %max_shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b18 - %max_shield%), 0)) : math.max(0, %max_shield% - self.field_1b18)) : %max_shield%"
       },
       {
         "type": "modifier_function_client",
@@ -167227,7 +167227,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_skywrath_mage_shield_barrier.MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params[0x10] ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.do_not_consume ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1af8 <= self:GetStackCount() * %damage_barrier% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - self:GetStackCount() * %damage_barrier%), 0)) : self:GetStackCount() * %damage_barrier%"
+        "value": "params.report_max == 0 ? (params[0x10] ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.do_not_consume ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1af8 <= self:GetStackCount() * %damage_barrier% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - self:GetStackCount() * %damage_barrier%), 0)) : self:GetStackCount() * %damage_barrier%"
       },
       {
         "type": "modifier_function_client",
@@ -168692,7 +168692,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_spectre_dispersion.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "parent:IsIllusion() ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_flags & 16 ~= 0 ? -%damage_reflection_pct% : not caster:FindModifierByName(\"modifier_spectre_dispersion_boost\") ? -%damage_reflection_pct% : -(%damage_reflection_pct% * ((%activation_bonus_pct% + 100) / 100))"
+        "value": "parent:IsIllusion() ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? -%damage_reflection_pct% : not caster:FindModifierByName(\"modifier_spectre_dispersion_boost\") ? -%damage_reflection_pct% : -(%damage_reflection_pct% * ((%activation_bonus_pct% + 100) / 100))"
       },
       {
         "type": "modifier_function_client",
@@ -169097,7 +169097,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_spirit_breaker_bulldoze.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.min(params.damage, self.field_1b04)) : self.field_1b04) : %damage_barrier%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.min(params.damage, self.field_1b04)) : self.field_1b04) : %damage_barrier%"
       },
       {
         "type": "modifier_function_client",
@@ -170937,7 +170937,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_tinker_defense_matrix.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b10 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b10 - %damage_absorb%), 0)) : %damage_absorb% - self.field_1b10 >= 0 ? %damage_absorb% - self.field_1b10 : 0) : %damage_absorb%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b10 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b10 - %damage_absorb%), 0)) : %damage_absorb% - self.field_1b10 >= 0 ? %damage_absorb% - self.field_1b10 : 0) : %damage_absorb%"
       },
       {
         "type": "modifier_function_client",
@@ -171527,7 +171527,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_treant_living_armor.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -171537,7 +171537,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_treant_living_armor_permanent.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-        "value": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -172857,7 +172857,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_ursa_enrage.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 == 0 ? (parent == caster ? -%damage_reduction% : -(%damage_reduction% / 2)) : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? (parent == caster ? -%damage_reduction% : -(%damage_reduction% / 2)) : 0"
       },
       {
         "type": "modifier_function_client",
@@ -173112,7 +173112,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_vengefulspirit_nether_swap_damage_reduction.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -173122,7 +173122,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_vengefulspirit_nether_swap_damage_reduction.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b04 <= %damage% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b04 - %damage%), 0)) : math.max(0, %damage% - self.field_1b04)) : %damage%"
+        "value": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b04 <= %damage% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b04 - %damage%), 0)) : math.max(0, %damage% - self.field_1b04)) : %damage%"
       },
       {
         "type": "modifier_function_client",
@@ -174232,7 +174232,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_void_spirit_resonant_pulse_physical_buff.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
-        "value": "%is_all_barrier% == 0 ? 0 : params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage < self.field_1afc ? -params.damage : -self.field_1afc) : self.field_1afc) : self.field_1b00"
+        "value": "%is_all_barrier% == 0 ? 0 : params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage < self.field_1afc ? -params.damage : -self.field_1afc) : self.field_1afc) : self.field_1b00"
       },
       {
         "type": "modifier_function_client",
@@ -174307,7 +174307,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_warlock_rain_of_chaos_golem.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "%bonus_damage_resist% <= 0 ? 0 : params.damage_flags & 32 == 0 ? -%bonus_damage_resist% : 0"
+        "value": "%bonus_damage_resist% <= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%bonus_damage_resist% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -175257,7 +175257,7 @@
       {
         "type": "modifier_function",
         "name": "modifier_wisp_tether.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_flags & 32 == 0 ? -%damage_absorb% : 0"
+        "value": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_absorb% : 0"
       },
       {
         "type": "modifier_function_client",
@@ -175627,12 +175627,12 @@
       {
         "type": "modifier_function",
         "name": "modifier_zuus_thunder_trail_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : kv.debuff_spell_amp"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : kv.debuff_spell_amp"
       },
       {
         "type": "modifier_function_client",
         "name": "modifier_zuus_thunder_trail_debuff.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
-        "value": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : self.field_1af8"
+        "value": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : self.field_1af8"
       },
       {
         "type": "modifier_function",
