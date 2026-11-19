@@ -1,5 +1,5 @@
 {
- "version": "6978",
+ "version": "6979",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -37023,7 +37023,7 @@
      },
      {
       "in": "OnCreated",
-      "value": "? == 0 ? 0 : %shield%"
+      "value": "? == 0 ? 0 : ?"
      },
      {
       "in": "OnIntervalThink",
@@ -37031,7 +37031,7 @@
      },
      {
       "in": "OnRefresh",
-      "value": "? == 0 ? 0 : %shield%"
+      "value": "? == 0 ? 0 : ?"
      }
     ]
    },

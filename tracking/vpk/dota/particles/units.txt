@@ -8172,6 +8172,12 @@ particles/units/heroes/hero_kunkka/kunkka_spell_torrent_wave_c.vpcf_c crc=d2941d
 particles/units/heroes/hero_kunkka/kunkka_spell_x_spot.vpcf_c crc=cf09f1a8 size=2237
 particles/units/heroes/hero_kunkka/kunkka_spell_x_spot_line.vpcf_c crc=31d20ee7 size=1860
 particles/units/heroes/hero_kunkka/kunkka_spell_x_spot_return.vpcf_c crc=6ae47592 size=2037
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe.vpcf_c crc=4de0baa5 size=4448
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe_front.vpcf_c crc=dec3aebc size=4004
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe_normal.vpcf_c crc=69c69e04 size=4707
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe_normal_quick.vpcf_c crc=53a9cd29 size=4480
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe_splash.vpcf_c crc=31ceead1 size=4872
+particles/units/heroes/hero_kunkka/kunkka_tidebringer_aoe_spray.vpcf_c crc=2969dd50 size=5025
 particles/units/heroes/hero_kunkka/kunkka_weapon_drip.vpcf_c crc=b0ac02dd size=2544
 particles/units/heroes/hero_kunkka/kunkka_weapon_drip_b.vpcf_c crc=b50b7388 size=2429
 particles/units/heroes/hero_kunkka/kunkka_weapon_glow.vpcf_c crc=ccc2e622 size=1928

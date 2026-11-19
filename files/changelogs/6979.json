@@ -1,0 +1,111 @@
+{
+  "version": "6979",
+  "date": "Nov 18 2026",
+  "time": "13:37:02",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1807
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "nyx_assassin_mana_burn",
+          "changes": {
+            "AbilityValues": {
+              "max_mana_as_damage_pct": {
+                "old": "20 25 30 35",
+                "new": "25 30 35 40"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "nyx_assassin_vendetta",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage": {
+                "value": {
+                  "old": "300 380 460",
+                  "new": "300 400 500"
+                },
+                "special_bonus_unique_nyx_vendetta_damage": {
+                  "old": "+50",
+                  "new": "+50"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_nyx_assassin",
+          "changes": {
+            "StatusHealthRegen": {
+              "old": 1,
+              "new": 2
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "dota_tip_intermediate_36",
+          "changes": {
+            "value": {
+              "old": "Strength, Agility, and Intelligence heroes gain 1 attack damage for each point of their primary attribute. Universal heroes gain 0.7 attack damage for every point of any attribute they have.",
+              "new": "Strength, Agility, and Intelligence heroes gain 1 attack damage for each point of their primary attribute. Universal heroes gain 0.45 attack damage for every point of any attribute they have."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "dota_tip_intermediate_76",
+          "changes": {
+            "value": {
+              "old": "Starting with the third death, Roshan drops Refresher Shard on the Radiant side and Aghanim's Blessing on the Dire side.",
+              "new": "Starting with the second death, Roshan drops Roshan's Banner. After the third death, he also drops Refresher Shard and Cheese."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "dota_tip_advanced_39",
+          "changes": {
+            "value": {
+              "old": "Eye of Skadi pierces Debuff Immunity and cannot be dispelled.",
+              "new": "Eye of Skadi cannot be dispelled."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1850,7 +1850,7 @@ scripts/fantasy_crafting.vdata_c crc=a42f9c7a size=10517
 scripts/featured_gamemodes.vdata_c crc=709e95bd size=2564
 scripts/height_levels.txt crc=955b3b21 size=64
 scripts/help_tips.txt crc=98dfcfed size=4837
-scripts/heroes.herolist_c crc=e5132d64 size=152335
+scripts/heroes.herolist_c crc=63a299bf size=152335
 scripts/hudanimations.txt crc=fb40b17c size=4072
 scripts/items/items_game.txt crc=a1265812 size=52337736
 scripts/items/player_card_template.txt crc=7347601e size=1163
@@ -1968,7 +1968,7 @@ scripts/npc/heroes/npc_dota_hero_naga_siren.txt crc=e4fc8bd7 size=22845
 scripts/npc/heroes/npc_dota_hero_necrolyte.txt crc=98991c5b size=21146
 scripts/npc/heroes/npc_dota_hero_nevermore.txt crc=6b59f084 size=24917
 scripts/npc/heroes/npc_dota_hero_night_stalker.txt crc=447daba8 size=18758
-scripts/npc/heroes/npc_dota_hero_nyx_assassin.txt crc=72c63f04 size=22843
+scripts/npc/heroes/npc_dota_hero_nyx_assassin.txt crc=14820b75 size=22843
 scripts/npc/heroes/npc_dota_hero_obsidian_destroyer.txt crc=7244924a size=17844
 scripts/npc/heroes/npc_dota_hero_ogre_magi.txt crc=532a8ada size=22055
 scripts/npc/heroes/npc_dota_hero_omniknight.txt crc=d07d8bc4 size=30141

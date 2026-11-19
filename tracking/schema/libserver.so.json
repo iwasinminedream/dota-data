@@ -13790,7 +13790,7 @@
  {"name":"m_nFXIndex","type":"ParticleIndex_t","offset":6912,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Item_SentryWard","size":6904,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff_Item","offset":0}],"metadata":[],"fields":[]},
 {"name":"CDOTA_Modifier_Item_SerratedShiv","size":6944,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff_Item","offset":0}],"metadata":[],"fields":[
- {"name":"proc_chance","type":"int32","offset":6904,"metadata":[]},
+ {"name":"proc_chance","type":"float32","offset":6904,"metadata":[]},
  {"name":"hp_dmg","type":"float32","offset":6908,"metadata":[]},
  {"name":"hp_dmg_rosh","type":"float32","offset":6912,"metadata":[]},
  {"name":"m_InFlightAttackRecords","type":"CUtlVector< AttackRecord_t >","offset":6920,"metadata":[]}]},
@@ -13843,10 +13843,10 @@
  {"name":"cold_duration","type":"float32","offset":6916,"metadata":[]},
  {"name":"m_InFlightAttackRecords","type":"CUtlVector< AttackRecord_t >","offset":6920,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Item_Skadi_Slow","size":6928,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"cold_slow_melee","type":"int32","offset":6904,"metadata":[]},
- {"name":"cold_slow_ranged","type":"int32","offset":6908,"metadata":[]},
- {"name":"cold_attack_slow_melee","type":"int32","offset":6912,"metadata":[]},
- {"name":"cold_attack_slow_ranged","type":"int32","offset":6916,"metadata":[]},
+ {"name":"cold_slow_melee","type":"float32","offset":6904,"metadata":[]},
+ {"name":"cold_slow_ranged","type":"float32","offset":6908,"metadata":[]},
+ {"name":"cold_attack_slow_melee","type":"float32","offset":6912,"metadata":[]},
+ {"name":"cold_attack_slow_ranged","type":"float32","offset":6916,"metadata":[]},
  {"name":"restoration_reduction","type":"float32","offset":6920,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Item_Skypiercer","size":6944,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff_Item","offset":0}],"metadata":[],"fields":[
  {"name":"bonus_strength","type":"int32","offset":6904,"metadata":[]},
@@ -13963,7 +13963,7 @@
  {"name":"m_flNextHit","type":"GameTime_t","offset":6904,"metadata":[]},
  {"name":"passive_movement_bonus","type":"int32","offset":6908,"metadata":[]},
  {"name":"range","type":"float32","offset":6912,"metadata":[]},
- {"name":"damage","type":"int32","offset":6916,"metadata":[]},
+ {"name":"damage","type":"float32","offset":6916,"metadata":[]},
  {"name":"slow_duration","type":"float32","offset":6920,"metadata":[]},
  {"name":"bonus_mana_regen","type":"float32","offset":6924,"metadata":[]},
  {"name":"max_targets","type":"int32","offset":6928,"metadata":[]}]},
@@ -14186,7 +14186,7 @@
  {"name":"projectile_speed","type":"int32","offset":6924,"metadata":[]},
  {"name":"m_InFlightAttackRecords","type":"CUtlVector< AttackRecord_t >","offset":6928,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Item_Witch_Blade_Slow","size":6920,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"slow","type":"int32","offset":6904,"metadata":[]},
+ {"name":"slow","type":"float32","offset":6904,"metadata":[]},
  {"name":"int_damage_multiplier","type":"float32","offset":6908,"metadata":[]},
  {"name":"building_effectiveness_pct","type":"float32","offset":6912,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Item_Witless_shako","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff_Item","offset":0}],"metadata":[],"fields":[
@@ -17227,10 +17227,10 @@
  {"name":"radius","type":"float32","offset":6908,"metadata":[]},
  {"name":"m_nFXIndex","type":"ParticleIndex_t","offset":6912,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Orb_Of_Corrosion_Debuff","size":6920,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"corruption_armor","type":"int32","offset":6904,"metadata":[]},
- {"name":"heal_reduction","type":"int32","offset":6908,"metadata":[]},
- {"name":"slow_melee","type":"int32","offset":6912,"metadata":[]},
- {"name":"slow_ranged","type":"int32","offset":6916,"metadata":[]}]},
+ {"name":"corruption_armor","type":"float32","offset":6904,"metadata":[]},
+ {"name":"heal_reduction","type":"float32","offset":6908,"metadata":[]},
+ {"name":"slow_melee","type":"float32","offset":6912,"metadata":[]},
+ {"name":"slow_ranged","type":"float32","offset":6916,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Orb_Of_Destruction_Debuff","size":6920,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
  {"name":"armor_reduction","type":"int32","offset":6904,"metadata":[]},
  {"name":"slow_melee","type":"int32","offset":6908,"metadata":[]},
@@ -18559,7 +18559,7 @@
  {"name":"m_nDamageAbsorbed","type":"int32","offset":6904,"metadata":[]},
  {"name":"m_timeLastDamage","type":"GameTime_t","offset":6908,"metadata":[]},
  {"name":"bonus_hp_regen","type":"int32","offset":6912,"metadata":[]},
- {"name":"shield","type":"int32","offset":6916,"metadata":[]},
+ {"name":"shield","type":"float32","offset":6916,"metadata":[]},
  {"name":"restore_time","type":"float32","offset":6920,"metadata":[]}]},
 {"name":"CDOTA_Modifier_SandKing_Burrowstrike_Spines_Thinker","size":6920,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
  {"name":"spine_radius","type":"float32","offset":6904,"metadata":[]},
