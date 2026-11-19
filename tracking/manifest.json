@@ -1,7 +1,7 @@
 {
  "build": {
-  "ClientVersion": "6984",
-  "SourceRevision": "11257680",
+  "ClientVersion": "6985",
+  "SourceRevision": "11258601",
   "VersionDate": "Nov 19 2026"
  },
  "failed": {},
@@ -22,6 +22,6 @@
  },
  "vpk": {
   "core": 1444,
-  "dota": 388777
+  "dota": 388776
  }
 }

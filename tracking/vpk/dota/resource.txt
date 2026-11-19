@@ -3169,7 +3169,7 @@ resource/localization/patchnotes/patchnotes_bulgarian.txt crc=eb8f56a7 size=3793
 resource/localization/patchnotes/patchnotes_czech.txt crc=5b28b899 size=3659788
 resource/localization/patchnotes/patchnotes_danish.txt crc=29ae225f size=2706139
 resource/localization/patchnotes/patchnotes_dutch.txt crc=1ebb0abc size=316374
-resource/localization/patchnotes/patchnotes_english.txt crc=ef0840de size=3066511
+resource/localization/patchnotes/patchnotes_english.txt crc=1285c1f8 size=3066514
 resource/localization/patchnotes/patchnotes_finnish.txt crc=4eede849 size=2615956
 resource/localization/patchnotes/patchnotes_french.txt crc=7de1a8c4 size=3552733
 resource/localization/patchnotes/patchnotes_german.txt crc=01756786 size=3122716
