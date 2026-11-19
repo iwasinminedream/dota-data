@@ -2077,7 +2077,7 @@ particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ambient_tail.vp
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ambient_tail_b.vpcf_c crc=6e554681 size=3029
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ambient_tail_c.vpcf_c crc=929f0fbc size=2657
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ambient_tail_d.vpcf_c crc=fa47be8c size=2893
-particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge.vpcf_c crc=4e9d17a1 size=5455
+particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge.vpcf_c crc=f3e9c10d size=5441
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_active.vpcf_c crc=aeb46603 size=2522
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_bumper.vpcf_c crc=3722a7a9 size=3780
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_cast.vpcf_c crc=556f3936 size=4728
@@ -2086,11 +2086,11 @@ particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_cast_mod
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_debris.vpcf_c crc=11a06f86 size=3855
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_debris_continuous.vpcf_c crc=a7cbdd6c size=4224
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_dust.vpcf_c crc=1546fcee size=2795
-particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_dust_trail.vpcf_c crc=6d8c7edb size=3776
+particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_dust_trail.vpcf_c crc=01bce7e9 size=3831
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_flag.vpcf_c crc=9a5c04d3 size=5158
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_flag_spring.vpcf_c crc=5c15c5e2 size=4583
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_ground.vpcf_c crc=c9df178b size=5007
-particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_ground_glow.vpcf_c crc=2e5b169d size=4306
+particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_ground_glow.vpcf_c crc=69496ea9 size=4385
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_pole.vpcf_c crc=374d8a84 size=4844
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_rocks.vpcf_c crc=cc7154a0 size=2950
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_charge_trails.vpcf_c crc=e6c9c63c size=3710
@@ -2098,6 +2098,7 @@ particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_horse_ambient.v
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_horse_eye_glow_a.vpcf_c crc=1e332709 size=3231
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_human_eye_glow_a.vpcf_c crc=50990bbb size=2698
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ribbon.vpcf_c crc=de85cf42 size=4156
+particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_ribbon_b.vpcf_c crc=76bfef76 size=3934
 particles/units/heroes/hero_chaos_knight/chaos_knight_armageddon_takeoff.vpcf_c crc=24c7d439 size=4157
 particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf_c crc=6077ab64 size=2639
 particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg_b.vpcf_c crc=a23b17ff size=2236

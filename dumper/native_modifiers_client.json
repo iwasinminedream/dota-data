@@ -1,5 +1,5 @@
 {
- "version": "6980",
+ "version": "6983",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -4326,7 +4326,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%",
+     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%",
      "status": "partial",
      "specials": [
       "damage_amp"
@@ -4878,7 +4878,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %spell_amp%",
+     "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -10114,7 +10114,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -10251,7 +10251,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self.field_1b00 * %aura_damage_pct%",
+     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self.field_1b00 * %aura_damage_pct%",
      "status": "partial",
      "specials": [
       "aura_damage_pct"
@@ -12029,7 +12029,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION == 0 ? %damage_amp% : 0",
+     "formula": "params.damage_flags & 16 == 0 ? %damage_amp% : 0",
      "status": "formula",
      "specials": [
       "damage_amp"
@@ -14879,7 +14879,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? > %dodge_chance_pct% ? 0 : 1",
+     "formula": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? > %dodge_chance_pct% ? 0 : 1",
      "status": "partial",
      "specials": [
       "dodge_chance_pct"
@@ -14894,7 +14894,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1",
+     "formula": "params.damage_flags & 32 ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1",
      "status": "formula"
     }
    ]
@@ -18244,7 +18244,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : %spell_amp%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -21385,7 +21385,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %aura_spell_vulnerability%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %aura_spell_vulnerability%",
      "status": "formula",
      "specials": [
       "aura_spell_vulnerability"
@@ -35177,7 +35177,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -40226,7 +40226,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %increased_damage%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %increased_damage%",
      "status": "formula",
      "specials": [
       "increased_damage"
@@ -45259,7 +45259,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL",
      "handler": "GetAbsoluteNoDamagePhysical",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -45268,7 +45268,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL",
      "handler": "GetAbsoluteNoDamageMagical",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -45277,7 +45277,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE",
      "handler": "GetAbsoluteNoDamagePure",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -46659,7 +46659,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK == 0 ? 0 : not parent:IsMagicImmune() ? 0 : (-100)",
+     "formula": "params.damage_flags & 131072 == 0 ? 0 : not parent:IsMagicImmune() ? 0 : (-100)",
      "status": "formula"
     }
    ]
@@ -48957,7 +48957,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %shard_magic_resist_reduction%",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %shard_magic_resist_reduction%",
      "status": "formula",
      "specials": [
       "shard_magic_resist_reduction"
@@ -49723,7 +49723,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%",
+     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%",
      "status": "partial",
      "specials": [
       "bonus_damage_per_stack"
@@ -72425,7 +72425,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : self.field_1af8",
+     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : self.field_1af8",
      "status": "formula"
     },
     {

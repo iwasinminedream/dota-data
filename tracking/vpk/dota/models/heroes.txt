@@ -1324,8 +1324,8 @@ models/heroes/ember_spirit/head.vmdl_c crc=9b8c9c53 size=14079
 models/heroes/ember_spirit/shoulder.vmdl_c crc=ee36721c size=37534
 models/heroes/ember_spirit/weapon1.vmdl_c crc=cef91160 size=21513
 models/heroes/ember_spirit/weapon2.vmdl_c crc=10878a4f size=21515
-models/heroes/enchantress/enchantress.vmdl_c crc=af86d3af size=543842
-models/heroes/enchantress/enchantress/enchantress_model_vmorf.vtex_c crc=ed815637 size=779864
+models/heroes/enchantress/enchantress.vmdl_c crc=1debbb9b size=495134
+models/heroes/enchantress/enchantress/enchantress_model_vmorf.vtex_c crc=8a15bdfa size=779960
 models/heroes/enchantress/enchantress_bracers.vmdl_c crc=357443db size=24429
 models/heroes/enchantress/enchantress_dress.vmdl_c crc=bf7f26f9 size=30174
 models/heroes/enchantress/enchantress_flower.vmdl_c crc=50fc4bd7 size=20662
