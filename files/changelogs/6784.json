@@ -4,14 +4,7 @@
   "time": "14:47:00",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1796
-        }
-      ],
+      "added": [],
       "removed": [
         {
           "type": "enum_member",
@@ -44,13 +37,7 @@
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "Activity",
-          "name": "ACT_DOTA_KEZ_KATANA_ULT_CHAIN_B"
-        }
-      ],
+      "added": [],
       "removed": [
         {
           "type": "enum_member",

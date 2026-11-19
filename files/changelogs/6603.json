@@ -460,12 +460,6 @@
           "value": 4194304
         },
         {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1797
-        },
-        {
           "type": "enum",
           "name": "quest_text_replace_values_t"
         },

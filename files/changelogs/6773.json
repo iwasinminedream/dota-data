@@ -4,33 +4,13 @@
   "time": "16:01:07",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_TORRENT",
-          "value": 1808
-        }
-      ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_VOODOO_REST",
-          "value": 1806
-        }
-      ],
+      "added": [],
+      "removed": [],
       "changed": []
     },
     "Engine Enums": {
       "added": [],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "Team",
-          "name": "DOTA_TEAM_NEUTRALS"
-        }
-      ],
+      "removed": [],
       "changed": []
     },
     "Abilities": {

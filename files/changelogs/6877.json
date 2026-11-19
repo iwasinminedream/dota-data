@@ -52,12 +52,6 @@
       "added": [
         {
           "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1794
-        },
-        {
-          "type": "enum_member",
           "enum": "modifierfunction",
           "name": "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE_UNIQUE_2",
           "value": 49
@@ -69,20 +63,7 @@
           "value": 408
         }
       ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST_RAZE_STATUE",
-          "value": 1781
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST_REQUIEM_STATUE",
-          "value": 1782
-        }
-      ],
+      "removed": [],
       "changed": []
     },
     "Modifiers": {

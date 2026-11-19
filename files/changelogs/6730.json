@@ -492,12 +492,6 @@
         },
         {
           "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-          "value": 1802
-        },
-        {
-          "type": "enum_member",
           "enum": "modifierfunction",
           "name": "MODIFIER_PROPERTY_STATS_INTELLECT_NONE",
           "value": 109
@@ -605,12 +599,6 @@
           "enum": "DOTA_INVALID_ORDERS",
           "name": "DOTA_INVALID_ORDER_CANT_BUYBACK_REAPERS_SCYTHE",
           "value": 98
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1800
         },
         {
           "type": "enum_member",

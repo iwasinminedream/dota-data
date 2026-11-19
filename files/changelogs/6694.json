@@ -13,25 +13,12 @@
         },
         {
           "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_SPWN",
-          "value": 1807
-        },
-        {
-          "type": "enum_member",
           "enum": "SourceEngineAnimationEvent",
           "name": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
           "value": 51
         }
       ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1799
-        }
-      ],
+      "removed": [],
       "changed": []
     },
     "Panorama Enums": {

@@ -5,13 +5,7 @@
   "changes": {
     "Engine Enums": {
       "added": [],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "Attribute",
-          "name": "DOTA_ATTRIBUTE_STRENGTH_HP_REGEN"
-        }
-      ],
+      "removed": [],
       "changed": []
     },
     "Units": {

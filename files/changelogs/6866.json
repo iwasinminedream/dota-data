@@ -4,28 +4,8 @@
   "time": "17:03:29",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST_RAZE_STATUE",
-          "value": 1781
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST_REQUIEM_STATUE",
-          "value": 1782
-        }
-      ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1795
-        }
-      ],
+      "added": [],
+      "removed": [],
       "changed": []
     },
     "Panorama Panels": {
@@ -55,13 +35,7 @@
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "AbilityBehavior",
-          "name": "DOTA_ABILITY_BEHAVIOR_NONE"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },

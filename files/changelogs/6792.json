@@ -4,20 +4,7 @@
   "time": "14:16:57",
   "changes": {
     "Console Variables": {
-      "added": [
-        {
-          "type": "convar",
-          "name": "dota_video_config.setting.aspectratiomode"
-        },
-        {
-          "type": "convar",
-          "name": "dota_video_config.setting.monitor_index"
-        },
-        {
-          "type": "convar",
-          "name": "dota_video_config.setting.useadvanced"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },

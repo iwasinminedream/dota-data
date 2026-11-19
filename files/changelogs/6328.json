@@ -973,13 +973,7 @@
           "name": "DOTA_ABILITY_BEHAVIOR_IS_FAKE_ITEM"
         }
       ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "Activity",
-          "name": "ACT_MP_GESTURE_VC_FISTPUMP_ITEM2"
-        }
-      ],
+      "removed": [],
       "changed": []
     }
   }

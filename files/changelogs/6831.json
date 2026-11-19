@@ -243,12 +243,6 @@
       "removed": [
         {
           "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1804
-        },
-        {
-          "type": "enum_member",
           "enum": "modifierstate",
           "name": "MODIFIER_STATE_ATTACKS_DONT_REVEAL",
           "value": 62
@@ -1071,11 +1065,6 @@
     },
     "Engine Enums": {
       "added": [
-        {
-          "type": "enum_member",
-          "enum": "Attribute",
-          "name": "DOTA_ATTRIBUTE_STRENGTH_HP_REGEN"
-        },
         {
           "type": "enum_member",
           "enum": "FieldType",

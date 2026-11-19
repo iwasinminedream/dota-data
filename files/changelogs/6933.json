@@ -4,13 +4,7 @@
   "time": "11:10:47",
   "changes": {
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "AbilityBehavior",
-          "name": "DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },

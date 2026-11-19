@@ -321,11 +321,6 @@
         },
         {
           "type": "enum_member",
-          "enum": "Activity",
-          "name": "ACT_MP_GESTURE_VC_FISTPUMP_ITEM2"
-        },
-        {
-          "type": "enum_member",
           "enum": "FieldType",
           "name": "FIELD_HNMGRAPHDEFINITION"
         }

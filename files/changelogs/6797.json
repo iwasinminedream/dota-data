@@ -4,26 +4,13 @@
   "time": "13:59:03",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1804
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },
     "Engine Enums": {
       "added": [],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "SpellImmunityType",
-          "name": "SPELL_IMMUNITY_ENEMIES_NO"
-        }
-      ],
+      "removed": [],
       "changed": []
     },
     "Units": {

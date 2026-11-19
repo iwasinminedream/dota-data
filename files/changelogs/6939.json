@@ -26,13 +26,7 @@
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "AbilityBehavior",
-          "name": "DOTA_ABILITY_BEHAVIOR_TOGGLE"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     }

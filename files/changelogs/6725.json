@@ -18,22 +18,8 @@
       "changed": []
     },
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_VOODOO_REST",
-          "value": 1797
-        }
-      ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-          "value": 1794
-        }
-      ],
+      "added": [],
+      "removed": [],
       "changed": []
     }
   }

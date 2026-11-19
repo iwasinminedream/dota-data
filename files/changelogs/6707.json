@@ -18,37 +18,12 @@
       "changed": []
     },
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_SPWN",
-          "value": 1805
-        }
-      ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1794
-        }
-      ],
+      "added": [],
+      "removed": [],
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "PseudoRandom",
-          "name": "DOTA_PSEUDO_RANDOM_ITEM_SILVER_EDGE"
-        },
-        {
-          "type": "enum_member",
-          "enum": "PseudoRandom",
-          "name": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     }

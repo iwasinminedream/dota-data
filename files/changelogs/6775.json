@@ -74,13 +74,7 @@
       ]
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "Team",
-          "name": "DOTA_TEAM_NEUTRALS"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     }

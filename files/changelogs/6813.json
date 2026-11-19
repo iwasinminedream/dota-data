@@ -6,25 +6,15 @@
     "Lua API": {
       "added": [],
       "removed": [],
-      "changed": [
-        
-      ]
+      "changed": []
     },
     "Lua Types": {
-      "added": [
-
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "DamageType",
-          "name": "DAMAGE_TYPE_HP_REMOVAL"
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },

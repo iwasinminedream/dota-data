@@ -4,14 +4,7 @@
   "time": "13:39:41",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1799
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     },
@@ -31,20 +24,8 @@
       "changed": []
     },
     "Engine Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "AbilityBehavior",
-          "name": "DOTA_ABILITY_BEHAVIOR_ITEM"
-        }
-      ],
-      "removed": [
-        {
-          "type": "enum_member",
-          "enum": "AbilityBehavior",
-          "name": "DOTA_ABILITY_BEHAVIOR_NONE"
-        }
-      ],
+      "added": [],
+      "removed": [],
       "changed": []
     },
     "Localization": {

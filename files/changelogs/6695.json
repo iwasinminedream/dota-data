@@ -4,14 +4,7 @@
   "time": "15:50:43",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1806
-        }
-      ],
+      "added": [],
       "removed": [
         {
           "type": "enum_member",

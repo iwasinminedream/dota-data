@@ -1671,18 +1671,6 @@
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
-          "name": "ACT_DOTA_TORRENT",
-          "value": 1795
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_RUN_ALT",
-          "value": 1796
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
           "name": "ACT_DOTA_RADIANT_CREEP_HAMMER",
           "value": 1801
         },
@@ -1707,12 +1695,6 @@
         {
           "type": "enum_member",
           "enum": "GameActivity_t",
-          "name": "ACT_DOTA_SPWN",
-          "value": 1805
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
           "name": "ACT_DOTA_CAST3_STATUE",
           "value": 1806
         },
@@ -1721,12 +1703,6 @@
           "enum": "GameActivity_t",
           "name": "ACT_DOTA_CAST4_STATUE",
           "value": 1807
-        },
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1808
         },
         {
           "type": "enum_member",

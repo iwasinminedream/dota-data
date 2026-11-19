@@ -4,14 +4,7 @@
   "time": "14:30:37",
   "changes": {
     "Lua Enums": {
-      "added": [
-        {
-          "type": "enum_member",
-          "enum": "GameActivity_t",
-          "name": "ACT_DOTA_CAST5_STATUE",
-          "value": 1801
-        }
-      ],
+      "added": [],
       "removed": [],
       "changed": []
     }
