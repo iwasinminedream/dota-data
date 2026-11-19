@@ -5693,10 +5693,18 @@ materials/models/heroes/jakiro/jakiro_wings_normal_psd_fc5b91fb.vtex_c crc=e4d9d
 materials/models/heroes/jakiro/jakiro_wings_specmask_psd_22d78cd8.vtex_c crc=7c77930b size=352324
 materials/models/heroes/juggernaut/jugg_healing_ward_color.vmat_c crc=3aa31157 size=4053
 materials/models/heroes/juggernaut/jugg_healing_ward_color_psd_a17f409d.vtex_c crc=be12c984 size=45532
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_morphling.vmat_c crc=0b7e2598 size=5479
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_morphling_vmat_g_tmasks1_3875df31.vtex_c crc=f3409313 size=2000
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_morphling_vmat_g_tmasks2_9735bb65.vtex_c crc=afdcbf61 size=1992
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_morphling_vmat_g_tnormal_5a28bd86.vtex_c crc=add6386c size=2048
 materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_outline.vmat_c crc=cae1b2c7 size=5527
 materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_outline_vmat_g_tmasks1_3875df31.vtex_c crc=f3409313 size=2000
 materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_outline_vmat_g_tmasks2_9735bb65.vtex_c crc=afdcbf61 size=1992
 materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_outline_vmat_g_tnormal_5a28bd86.vtex_c crc=add6386c size=2048
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_rubick.vmat_c crc=dd73432f size=5463
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_rubick_vmat_g_tmasks1_3875df31.vtex_c crc=f3409313 size=2000
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_rubick_vmat_g_tmasks2_9735bb65.vtex_c crc=afdcbf61 size=1992
+materials/models/heroes/juggernaut/juggernaut_bladefury_attacks_rubick_vmat_g_tnormal_5a28bd86.vtex_c crc=add6386c size=2048
 materials/models/heroes/juggernaut/juggernaut_bracers.vmat_c crc=c833a68f size=11432
 materials/models/heroes/juggernaut/juggernaut_bracers_color_psd_e3f9c4d3.vtex_c crc=23dc91c1 size=23700
 materials/models/heroes/juggernaut/juggernaut_bracers_detailmask_psd_b5a5b92d.vtex_c crc=7591b643 size=46692
@@ -9191,7 +9199,7 @@ materials/models/heroes/statuseffects/colorwarp_c2015_dire.vtex_c crc=1cdce63d s
 materials/models/heroes/statuseffects/colorwarp_c2015_lvl2_dire.vtex_c crc=ce4355bd size=17544
 materials/models/heroes/statuseffects/colorwarp_c2015_lvl2_radiant.vtex_c crc=f3ca45a8 size=17560
 materials/models/heroes/statuseffects/colorwarp_c2015_radiant.vtex_c crc=10d6ba8d size=17528
-materials/models/heroes/statuseffects/colorwarp_chaos_knight_illusion.vtex_c crc=036c8463 size=5176
+materials/models/heroes/statuseffects/colorwarp_chaos_knight_illusion.vtex_c crc=86b42cbc size=9304
 materials/models/heroes/statuseffects/colorwarp_chemical_rage.vtex_c crc=a67bcb78 size=17528
 materials/models/heroes/statuseffects/colorwarp_chitin_scepter.vtex_c crc=0e36156b size=5208
 materials/models/heroes/statuseffects/colorwarp_crownfall_generic_hit.vtex_c crc=c82f8079 size=5144

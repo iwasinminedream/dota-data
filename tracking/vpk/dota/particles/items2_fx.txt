@@ -6,12 +6,10 @@ particles/items2_fx/ash_legion_buckler_f.vpcf_c crc=b6189922 size=3529
 particles/items2_fx/ash_legion_buckler_g.vpcf_c crc=d082b463 size=3508
 particles/items2_fx/ash_legion_buckler_h.vpcf_c crc=f0ee6507 size=2278
 particles/items2_fx/ash_legion_buckler_model.vpcf_c crc=6c2f3a08 size=4082
-particles/items2_fx/blood_grenade_debuff.vpcf_c crc=da60f0a4 size=1305
-particles/items2_fx/blood_grenade_debuff_b.vpcf_c crc=70ad64da size=2613
-particles/items2_fx/blood_grenade_debuff_c.vpcf_c crc=a76f2a3a size=2699
-particles/items2_fx/blood_grenade_debuff_d.vpcf_c crc=e574f7e1 size=2659
-particles/items2_fx/blood_grenade_debuff_drips.vpcf_c crc=d9d13213 size=3066
-particles/items2_fx/blood_grenade_debuff_glow.vpcf_c crc=efad797b size=2565
+particles/items2_fx/blood_grenade_debuff.vpcf_c crc=67f525ab size=1735
+particles/items2_fx/blood_grenade_debuff_b.vpcf_c crc=afb3ce83 size=2574
+particles/items2_fx/blood_grenade_debuff_drips.vpcf_c crc=11570712 size=3801
+particles/items2_fx/blood_grenade_debuff_glow.vpcf_c crc=cfaf70a9 size=3789
 particles/items2_fx/blood_grenade_projectile.vpcf_c crc=88466244 size=4491
 particles/items2_fx/blood_grenade_projectile_blobs.vpcf_c crc=74be6ec0 size=3921
 particles/items2_fx/blood_grenade_projectile_burst_blobs.vpcf_c crc=17ee044a size=4060

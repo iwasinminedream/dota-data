@@ -1,4 +1,4 @@
-particles/status_fx/chaos_knight_armageddon_illusion_status_effect.vpcf_c crc=fda638d5 size=2511
+particles/status_fx/chaos_knight_armageddon_illusion_status_effect.vpcf_c crc=210bada5 size=2441
 particles/status_fx/crystal_maiden_crystal_clone.vpcf_c crc=782a79ed size=1950
 particles/status_fx/status_effect_abaddon_borrowed_time.vpcf_c crc=f2cf6eef size=2046
 particles/status_fx/status_effect_abaddon_frostmourne.vpcf_c crc=0a7c081a size=2243

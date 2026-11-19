@@ -1786,8 +1786,8 @@ models/heroes/juggernaut/jugg_mask.vmdl_c crc=035f20d5 size=24464
 models/heroes/juggernaut/jugg_sword.vmdl_c crc=eca5956d size=13980
 models/heroes/juggernaut/juggernaut.vmdl_c crc=d9beb063 size=889463
 models/heroes/juggernaut/juggernaut/juggernaut_vmorf.vtex_c crc=c2b4829c size=71732
-models/heroes/juggernaut/juggernaut_arcana.vmdl_c crc=1679d030 size=1847248
-models/heroes/juggernaut/juggernaut_arcana/juggernaut_base_arcana_vmorf.vtex_c crc=3574268a size=125908
+models/heroes/juggernaut/juggernaut_arcana.vmdl_c crc=59437c0e size=1841994
+models/heroes/juggernaut/juggernaut_arcana/juggernaut_base_arcana_vmorf.vtex_c crc=d92cfe49 size=125940
 models/heroes/juggernaut/juggernaut_pants.vmdl_c crc=2b2629cd size=77883
 models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl_c crc=b627a2e7 size=1499601
 models/heroes/keeper_of_the_light/keeper_of_the_light/keeper_of_the_light_model_vmorf.vtex_c crc=f36ac6d9 size=391380

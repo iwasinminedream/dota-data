@@ -115,7 +115,7 @@ particles/items5_fx/helm_of_the_dominator_buff_ground_glow.vpcf_c crc=4807096d s
 particles/items5_fx/helm_of_the_dominator_buff_ground_ring.vpcf_c crc=6a671a73 size=2530
 particles/items5_fx/helm_of_the_hivemind_buff.vpcf_c crc=4ed41d80 size=4055
 particles/items5_fx/helm_of_the_hivemind_buff_cast.vpcf_c crc=4f4ed8e9 size=2516
-particles/items5_fx/helm_of_the_hivemind_buff_glow.vpcf_c crc=3c0579fe size=4511
+particles/items5_fx/helm_of_the_hivemind_buff_glow.vpcf_c crc=def456ef size=4486
 particles/items5_fx/helm_of_the_hivemind_buff_glow_points.vpcf_c crc=20a09aee size=3137
 particles/items5_fx/helm_of_the_hivemind_buff_stars.vpcf_c crc=3d19d620 size=3352
 particles/items5_fx/helm_of_the_hivemind_buff_stars_line.vpcf_c crc=a4117d2d size=3148
@@ -272,13 +272,16 @@ particles/items5_fx/starforge_aoe_ground_ring_timer_initial.vpcf_c crc=a2298a78 
 particles/items5_fx/starforge_aoe_ground_shadow.vpcf_c crc=2940100b size=3883
 particles/items5_fx/starforge_aoe_ring_rope.vpcf_c crc=18b96b1f size=5438
 particles/items5_fx/starforge_aoe_verticals.vpcf_c crc=df7960e7 size=5248
-particles/items5_fx/starforge_cast.vpcf_c crc=394e995b size=4076
+particles/items5_fx/starforge_burn.vpcf_c crc=2e8b6554 size=3647
+particles/items5_fx/starforge_burn_detail.vpcf_c crc=b6536e6a size=3207
+particles/items5_fx/starforge_burn_glow.vpcf_c crc=002fec0b size=3158
+particles/items5_fx/starforge_cast.vpcf_c crc=0ccefc37 size=4107
 particles/items5_fx/starforge_cast_burst.vpcf_c crc=390cbb72 size=4166
 particles/items5_fx/starforge_cast_embers.vpcf_c crc=cfc29d76 size=4896
 particles/items5_fx/starforge_cast_eyes.vpcf_c crc=10804f1d size=1385
 particles/items5_fx/starforge_cast_eyes_flare.vpcf_c crc=083a4c6a size=4550
 particles/items5_fx/starforge_cast_eyes_glow.vpcf_c crc=8789f6ad size=3992
-particles/items5_fx/starforge_cast_eyes_grp.vpcf_c crc=382d7b63 size=4039
+particles/items5_fx/starforge_cast_eyes_grp.vpcf_c crc=96629931 size=4072
 particles/items5_fx/starforge_cast_flare.vpcf_c crc=9905e328 size=3884
 particles/items5_fx/starforge_cast_ground_noise_wave.vpcf_c crc=11cc2405 size=4255
 particles/items5_fx/starforge_cast_smoke.vpcf_c crc=e2c64962 size=4233
@@ -291,7 +294,7 @@ particles/items5_fx/starforge_debuff_embers.vpcf_c crc=6adb971f size=4896
 particles/items5_fx/starforge_debuff_eyes.vpcf_c crc=591b2074 size=1387
 particles/items5_fx/starforge_debuff_eyes_flare.vpcf_c crc=7f8c97cb size=4550
 particles/items5_fx/starforge_debuff_eyes_glow.vpcf_c crc=0bb64268 size=3992
-particles/items5_fx/starforge_debuff_eyes_grp.vpcf_c crc=a810b77b size=4055
+particles/items5_fx/starforge_debuff_eyes_grp.vpcf_c crc=e3b8ffe8 size=4088
 particles/items5_fx/starforge_debuff_flare.vpcf_c crc=30c951f1 size=3884
 particles/items5_fx/starforge_debuff_smoke.vpcf_c crc=5aa417b8 size=4233
 particles/items5_fx/starforge_debuff_stars.vpcf_c crc=056e74f9 size=4363
@@ -320,7 +323,7 @@ particles/items5_fx/starforge_spell_ground_impact_shake.vpcf_c crc=1058821e size
 particles/items5_fx/starforge_spell_ground_impact_shock.vpcf_c crc=2e7bb0ab size=4500
 particles/items5_fx/starforge_spell_ground_impact_sparks.vpcf_c crc=8c5da11a size=3791
 particles/items5_fx/starforge_spell_ground_impact_sphere_full.vpcf_c crc=9091046e size=4025
-particles/items5_fx/starforge_spell_ground_shadow.vpcf_c crc=e3b25120 size=3727
+particles/items5_fx/starforge_spell_ground_shadow.vpcf_c crc=b9c8b3ff size=3760
 particles/items5_fx/starforge_spell_land_debris_ground.vpcf_c crc=16fa18c3 size=4393
 particles/items5_fx/starforge_spell_starfall.vpcf_c crc=fe45e194 size=3780
 particles/items5_fx/starforge_spell_starfall_arcs.vpcf_c crc=c4b11a39 size=3360

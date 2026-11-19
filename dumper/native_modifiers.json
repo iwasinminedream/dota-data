@@ -1,5 +1,5 @@
 {
- "version": "6979",
+ "version": "6980",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -38159,7 +38159,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
-     "formula": "%scepter_attack_damage_pct%",
+     "formula": "%scepter_attack_damage_pct% - 100",
      "status": "formula",
      "specials": [
       "scepter_attack_damage_pct"

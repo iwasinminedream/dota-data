@@ -4460,6 +4460,8 @@ models/items/faceless_void/faceless_void_arcana/debut/materials/particle/gradien
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/gradient1_rot90_png_fae961f2.vtex_c crc=8e82ebe5 size=1400256
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_15f89577.vtex_c crc=936456a8 size=351652
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_21120d7a.vtex_c crc=36c9e0fd size=351760
+models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_4b26d075.vtex_c crc=f589acc9 size=351760
+models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_4fa498b9.vtex_c crc=9dac17c1 size=351760
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_55186b0c.vtex_c crc=67df3296 size=351728
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_78437973.vtex_c crc=d48d3935 size=1400212
 models/items/faceless_void/faceless_void_arcana/debut/materials/particle/tile_noise_01_png_8b6a5407.vtex_c crc=798f1349 size=89616
