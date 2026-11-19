@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { readDump } from '../util';
+import { readDump, tryReadDump } from '../util';
 import { unknownTypeFixes } from './unknown-type-fixes';
 
 const reloadMessage = 'Initializing script VM...\n...done';
@@ -35,14 +35,21 @@ interface PrevMethodTypes {
   returns: string | null;
 }
 
-// Map of `${className}.${method}` (or `_G.${func}`) → previous-version types.
+// How many previous published versions are searched for a known type. One is not enough: when a
+// version's api.json loses types (6980 and 6985 were built from the client dump, and 6983/6984 then
+// carried their <unknown>s forward from it), the next versions would keep the <unknown>s for good.
+const CARRY_FORWARD_VERSIONS = 6;
+
+// Map of `${className}.${method}` (or `_G.${func}`) → the newest known types of previous versions:
+// each argument / return type comes from the newest of the last CARRY_FORWARD_VERSIONS versions in
+// which it is a real type.
 function loadPreviousApiTypes(): Map<string, PrevMethodTypes> {
   const map = new Map<string, PrevMethodTypes>();
   try {
     const currentVersion = readFileSync(join(repoRoot, 'dumper', 'dump'), 'utf8').match(
       /ClientVersion=(\d+)/,
     )?.[1];
-    const shas = execSync('git rev-list --max-count=60 HEAD', {
+    const shas = execSync('git rev-list --max-count=120 HEAD', {
       cwd: repoRoot,
       stdio: ['pipe', 'pipe', 'ignore'],
     })
@@ -51,33 +58,47 @@ function loadPreviousApiTypes(): Map<string, PrevMethodTypes> {
       .split('\n')
       .filter(Boolean);
 
-    // Find the most recent commit whose dump is a DIFFERENT version — that is the
-    // previous published version whose types we want to carry forward.
-    let apiJson: unknown = null;
+    // The newest commit of each DIFFERENT version, newest version first.
+    const apiJsons: unknown[] = [];
+    const seen = new Set<string>();
     for (const sha of shas) {
+      if (apiJsons.length >= CARRY_FORWARD_VERSIONS) break;
       try {
         const ver = gitShow(sha, 'dumper/dump').match(/ClientVersion=(\d+)/)?.[1];
-        if (ver && ver !== currentVersion) {
-          apiJson = JSON.parse(gitShow(sha, 'files/vscripts/api.json'));
-          break;
+        if (ver && ver !== currentVersion && !seen.has(ver)) {
+          seen.add(ver);
+          apiJsons.push(JSON.parse(gitShow(sha, 'files/vscripts/api.json')));
         }
       } catch {
         // dump/api.json missing in this commit — keep walking back.
       }
     }
-    if (!Array.isArray(apiJson)) return map;
 
     const add = (key: string, member: { args?: { types?: unknown }[]; returns?: unknown }) => {
-      map.set(key, {
-        args: (member.args ?? []).map((a) => coreType(a.types)),
-        returns: coreType(member.returns),
-      });
+      const args = (member.args ?? []).map((a) => coreType(a.types));
+      const returns = coreType(member.returns);
+      const known = map.get(key);
+      if (!known) {
+        map.set(key, { args, returns });
+        return;
+      }
+      // An older version only fills what the newer ones did not know, and its arguments only when
+      // the signature has as many of them (positions would not line up otherwise).
+      if (args.length === known.args.length) {
+        args.forEach((t, i) => {
+          if (known.args[i] == null && t != null) known.args[i] = t;
+        });
+      }
+      if (known.returns == null && returns != null) known.returns = returns;
     };
-    for (const item of apiJson as any[]) {
-      if (item.kind === 'class' && Array.isArray(item.members)) {
-        for (const m of item.members) if (m.kind === 'function') add(`${item.name}.${m.name}`, m);
-      } else if (item.kind === 'function') {
-        add(`_G.${item.name}`, item);
+    for (const apiJson of apiJsons) {
+      if (!Array.isArray(apiJson)) continue;
+      for (const item of apiJson as any[]) {
+        if (item.kind === 'class' && Array.isArray(item.members)) {
+          for (const m of item.members) if (m.kind === 'function') add(`${item.name}.${m.name}`, m);
+        } else if (item.kind === 'function') {
+          add(`_G.${item.name}`, item);
+        }
       }
     }
   } catch {
@@ -159,16 +180,17 @@ export const clientDump: Dump = applyUnknownTypeFixes(
   JSON.parse(readDump('cl_script_reload').replace(reloadMessage, '')),
 );
 
-let _serverDump: Dump;
-try {
-  _serverDump = applyUnknownTypeFixes(
-    JSON.parse(readDump('script_reload').replace(reloadMessage, '')),
-  );
-} catch {
-  console.warn('Warning: Failed to parse server dump, falling back to client dump');
-  _serverDump = clientDump;
+// Without a server section (a dump that has none) the client one stands in for it. A server section
+// that is there but does not parse is an error: falling back would publish the client API (C_*
+// classes) as the server API, which is what happened to 6980 and 6985.
+const serverText = tryReadDump('script_reload');
+if (serverText === undefined) {
+  console.warn('Warning: the dump has no server script_reload section, using the client dump');
 }
-export const serverDump: Dump = _serverDump;
+export const serverDump: Dump =
+  serverText === undefined
+    ? clientDump
+    : applyUnknownTypeFixes(JSON.parse(serverText.replace(reloadMessage, '')));
 
 export type Dump = (DumpConstant | DumpClass | DumpFunction)[];
 

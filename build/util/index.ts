@@ -4,7 +4,17 @@ import path from 'path';
 export * from './export-types';
 export * from './normalization';
 
-const dump = fs.readFileSync(path.join(__dirname, '../../dumper/dump'), 'utf8');
+// Lines the engine prints on its own while the dumper is writing a section. They are not part of
+// any section and can land in the middle of one: 6980 and 6985 had "LUA Memory usage warning: …"
+// inside the script_reload JSON, which then failed to parse.
+const CONSOLE_NOISE = [/^LUA Memory usage warning: .*$/, /^Stall detected\.$/];
+const isConsoleNoise = (line: string) => CONSOLE_NOISE.some((re) => re.test(line.replace(/\r$/, '')));
+
+const dump = fs
+  .readFileSync(path.join(__dirname, '../../dumper/dump'), 'utf8')
+  .split('\n')
+  .filter((line) => !isConsoleNoise(line))
+  .join('\n');
 const [, ...dumpGroups] = dump.split(/\$> (.+)/g);
 
 export function tryReadDump(name: string): string | undefined {
