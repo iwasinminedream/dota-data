@@ -27,6 +27,8 @@ no GPU, no Steam client). When the installed Dota build changes it:
    every changed function, goes to `reports/<version>-functions.md`. The report is written in
    Russian; `translate-report.py` (Claude Sonnet 5.5) adds the English `reports/<version>.en.md`
    (commit `report: <version> (English)`), which the site shows when its reader picks English.
+   Code never reaches the translating model (placeholders, put back verbatim), and the prose goes
+   in chunks cut at headings, so a report of a big patch (6978: 793 KB, mostly code) translates too.
 
 ## Function-level comparison
 
@@ -121,7 +123,7 @@ reliable the dumper is right now. `DOTA_DATA_CONTROL_DUMP=0` turns the control d
 | `dump-diff.py` | section-by-section comparison of two raw dumps |
 | `so-report.py` | `snapshot`, `list`, `report OLD NEW` (a .so-only report by hand) |
 | `update-report.py` | `VERSION --out reports/VERSION.md`: the update report |
-| `translate-report.py` | `reports/VERSION.md`: its English version `reports/VERSION.en.md`, checked against the original |
+| `translate-report.py` | `reports/VERSION.md`: its English version `reports/VERSION.en.md`, translated in chunks with code kept out, checked against the original |
 | `game-tracking.py` | `tracking/`: schema, .proto, VPK index, text files from the VPKs |
 | `tracking-diff.py` | `OLD NEW`: what changed in `tracking/` (used by the report) |
 | `schema-dump/schema-dump.cpp` | the SchemaSystem dumper (C++, built on demand) |
