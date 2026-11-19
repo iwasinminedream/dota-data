@@ -1,13 +1,13 @@
-ClientVersion=6983
-ServerVersion=6983
+ClientVersion=6984
+ServerVersion=6984
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11256873
-VersionDate=Nov 18 2026
-VersionTime=21:37:20
+SourceRevision=11257680
+VersionDate=Nov 19 2026
+VersionTime=10:39:24
 $> script_reload
 Initializing script VM...
 ...done
@@ -13770,6 +13770,7 @@ Initializing script VM...
     "name":"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE",
     "value":117
   },{
+    "description":"GetModifierAttackWhileMovingTarget",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
@@ -14237,7 +14238,7 @@ Initializing script VM...
     "name":"MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS",
     "value":98
   },{
-    "description":"GetModifierPropetyFailAttack",
+    "description":"GetModifierPropertyFailAttack",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_FAIL_ATTACK",
@@ -14477,12 +14478,13 @@ Initializing script VM...
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
     "value":297
   },{
-    "description":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST",
+    "description":"GetModifierIncomingDamageConstantPost",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST",
     "value":303
   },{
+    "description":"GetModifierIncomingDamageIllusion",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
@@ -15298,7 +15300,7 @@ Initializing script VM...
     "name":"MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING",
     "value":307
   },{
-    "description":"GEtModifierSlowResistance_Unique",
+    "description":"GetModifierSlowResistance_Unique",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
@@ -31755,15 +31757,15 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST3_STATUE",
-    "value":1793
+    "value":1794
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST4_STATUE",
-    "value":1796
+    "value":1797
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1811
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31879,7 +31881,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1809
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -31999,7 +32001,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CHANNEL_STATUE",
-    "value":1795
+    "value":1796
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CHILLING_TOUCH",
@@ -32039,7 +32041,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1798
+    "value":1804
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32059,7 +32061,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DEFEAT_STATUE",
-    "value":1794
+    "value":1795
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DIE",
@@ -32075,7 +32077,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DISABLED_END",
-    "value":1797
+    "value":1792
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DP_SPIRIT_SIPHON",
@@ -32215,7 +32217,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1799
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32336,6 +32338,10 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_LOADOUT_RARE",
     "value":1683
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_LOADOUT_STATUE",
+    "value":1801
   },{
     "kind":"constant",
     "name":"ACT_DOTA_LOOK_AROUND",
@@ -32479,7 +32485,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1806
+    "value":1812
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32519,7 +32525,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1807
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32531,7 +32537,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1808
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32551,7 +32557,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1812
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32636,10 +32642,6 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
-  },{
-    "kind":"constant",
-    "name":"ACT_DOTA_SPWN",
-    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32743,7 +32745,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TORRENT",
-    "value":1800
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
@@ -32807,7 +32809,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1801
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -40033,6 +40035,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "name":"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE",
     "value":117
   },{
+    "description":"GetModifierAttackWhileMovingTarget",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
@@ -40500,7 +40503,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "name":"MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS",
     "value":98
   },{
-    "description":"GetModifierPropetyFailAttack",
+    "description":"GetModifierPropertyFailAttack",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_FAIL_ATTACK",
@@ -40740,12 +40743,13 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
     "value":297
   },{
-    "description":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST",
+    "description":"GetModifierIncomingDamageConstantPost",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST",
     "value":303
   },{
+    "description":"GetModifierIncomingDamageIllusion",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
@@ -41561,7 +41565,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
     "name":"MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING",
     "value":307
   },{
-    "description":"GEtModifierSlowResistance_Unique",
+    "description":"GetModifierSlowResistance_Unique",
     "enum":"modifierfunction",
     "kind":"constant",
     "name":"MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
@@ -42516,7 +42520,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"battlemaiden_debut_truncated",
-    "value":1792
+    "value":1793
   },{
     "enum":"DOTACustomCameraEventFlags_t",
     "kind":"constant",
@@ -42585,19 +42589,19 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1802
+    "value":1798
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1803
+    "value":1799
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1804
+    "value":1800
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1805
+    "value":1811
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -48258,6 +48262,7 @@ declare enum modifierfunction
     MODIFIER_PROPERTY_VISUAL_Z_DELTA = 274,
     /** GetVisualZSpeedBaseOverride */
     MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 275,
+    /** GetModifierIncomingDamageIllusion */
     MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 276,
     /** GetModifierNoVisionOfAttacker */
     MODIFIER_PROPERTY_DONT_GIVE_VISION_OF_ATTACKER = 277,
@@ -48279,6 +48284,7 @@ declare enum modifierfunction
     MODIFIER_PROPERTY_ATTACKSPEED_REDUCTION_PERCENTAGE = 285,
     /** GetModifierMoveSpeedReductionPercentage */
     MODIFIER_PROPERTY_MOVESPEED_REDUCTION_PERCENTAGE = 286,
+    /** GetModifierAttackWhileMovingTarget */
     MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET = 287,
     /** GetModifierAttackSpeedPercentage */
     MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE = 288,
@@ -48304,19 +48310,19 @@ declare enum modifierfunction
     MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 298,
     /** GetModifierAvoidDamageAfterReductions */
     MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS = 299,
-    /** GetModifierPropetyFailAttack */
+    /** GetModifierPropertyFailAttack */
     MODIFIER_PROPERTY_FAIL_ATTACK = 300,
     /** GetModifierPrereduceIncomingDamage_Mult */
     MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 301,
     /** GetModifierSuppressFullscreenDeathFX */
     MODIFIER_PROPERTY_SUPPRESS_FULLSCREEN_DEATH_FX = 302,
-    /** MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST */
+    /** GetModifierIncomingDamageConstantPost */
     MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST = 303,
     /** GetModifierDamageOutgoing_PercentageMultiplicative */
     MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE = 304,
     /** GetModifierTickGold_Multiplier */
     MODIFIER_PROPERTY_TICK_GOLD_MULTIPLIER = 305,
-    /** GEtModifierSlowResistance_Unique */
+    /** GetModifierSlowResistance_Unique */
     MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE = 306,
     /** GetModifierSlowResistance_Stacking */
     MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING = 307,
@@ -52539,7 +52545,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.378582
+Time: 0.375917
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list
@@ -61350,6 +61356,7 @@ declare enum modifierfunction
     MODIFIER_PROPERTY_VISUAL_Z_DELTA = 274,
     /** GetVisualZSpeedBaseOverride */
     MODIFIER_PROPERTY_VISUAL_Z_SPEED_BASE_OVERRIDE = 275,
+    /** GetModifierIncomingDamageIllusion */
     MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION = 276,
     /** GetModifierNoVisionOfAttacker */
     MODIFIER_PROPERTY_DONT_GIVE_VISION_OF_ATTACKER = 277,
@@ -61371,6 +61378,7 @@ declare enum modifierfunction
     MODIFIER_PROPERTY_ATTACKSPEED_REDUCTION_PERCENTAGE = 285,
     /** GetModifierMoveSpeedReductionPercentage */
     MODIFIER_PROPERTY_MOVESPEED_REDUCTION_PERCENTAGE = 286,
+    /** GetModifierAttackWhileMovingTarget */
     MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET = 287,
     /** GetModifierAttackSpeedPercentage */
     MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE = 288,
@@ -61396,19 +61404,19 @@ declare enum modifierfunction
     MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY = 298,
     /** GetModifierAvoidDamageAfterReductions */
     MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS = 299,
-    /** GetModifierPropetyFailAttack */
+    /** GetModifierPropertyFailAttack */
     MODIFIER_PROPERTY_FAIL_ATTACK = 300,
     /** GetModifierPrereduceIncomingDamage_Mult */
     MODIFIER_PROPERTY_PREREDUCE_INCOMING_DAMAGE_MULT = 301,
     /** GetModifierSuppressFullscreenDeathFX */
     MODIFIER_PROPERTY_SUPPRESS_FULLSCREEN_DEATH_FX = 302,
-    /** MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST */
+    /** GetModifierIncomingDamageConstantPost */
     MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT_POST = 303,
     /** GetModifierDamageOutgoing_PercentageMultiplicative */
     MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE = 304,
     /** GetModifierTickGold_Multiplier */
     MODIFIER_PROPERTY_TICK_GOLD_MULTIPLIER = 305,
-    /** GEtModifierSlowResistance_Unique */
+    /** GetModifierSlowResistance_Unique */
     MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE = 306,
     /** GetModifierSlowResistance_Stacking */
     MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING = 307,

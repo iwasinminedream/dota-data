@@ -1,5 +1,5 @@
 {
- "version": "6983",
+ "version": "6984",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -62,7 +62,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : parent:FindModifierByName(\"modifier_abaddon_borrowed_time\") ? 0 : -math.max(params.damage, 0)) : math.max(0, %damage_absorb% - self.field_1b04)) : %damage_absorb%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : parent:FindModifierByName(\"modifier_abaddon_borrowed_time\") ? 0 : -math.max(params.damage, 0)) : math.max(0, %damage_absorb% - self.field_1b04)) : %damage_absorb%",
      "status": "partial",
      "specials": [
       "damage_absorb"
@@ -177,6 +177,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -912,7 +913,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 48 ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_INVULNERABLE) ? 0 : 1",
+     "formula": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? ~= 0 ? 0 : state(params.attacker, MODIFIER_STATE_INVULNERABLE) ? 0 : 1",
      "status": "partial"
     }
    ]
@@ -2882,6 +2883,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_DISABLE_MANA_GAIN",
+     "handler": "GetDisableManaGain",
      "formula": "1",
      "status": "constant"
     },
@@ -3184,6 +3186,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_XP_DURING_DEATH",
+     "handler": "GetModifierXPDuringDeath",
      "formula": "1",
      "status": "constant"
     },
@@ -3316,7 +3319,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : params.damage_flags & 56 ~= 0 ? 0 : params.damage_type ~= 1 ? 0 : params.attacker == parent ? 0 : params.target ~= parent ? 0 : ? * ? * (? - ?) + (? - ?) * (? * ?) < ? ? 0 : %physical_damage_reduction% ~= 0 ? -%physical_damage_reduction% : 0",
+     "formula": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_BYPASSES_PHYSICAL_BLOCK | DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : params.damage_type ~= DAMAGE_TYPE_PHYSICAL ? 0 : params.attacker == parent ? 0 : params.target ~= parent ? 0 : ? * ? * (? - ?) + (? - ?) * (? * ?) < ? ? 0 : %physical_damage_reduction% ~= 0 ? -%physical_damage_reduction% : 0",
      "status": "partial",
      "specials": [
       "physical_damage_reduction"
@@ -3844,6 +3847,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE",
+     "handler": "GetModifierCastRangeBonusPercentage",
      "formula": "-%cast_reduction%",
      "status": "formula",
      "specials": [
@@ -3944,6 +3948,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPER_ILLUSION",
+     "handler": "GetModifierSuperIllusion",
      "formula": "1",
      "status": "constant"
     },
@@ -4003,6 +4008,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     },
     {
@@ -4407,7 +4413,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %damage_amp%",
      "status": "partial",
      "specials": [
       "damage_amp"
@@ -4710,6 +4716,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_INNATE_DAMAGE_BLOCK_PCT_OVERRIDE",
+     "handler": "GetModifierInnateDamageBlockPctOverride",
      "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : ? & 3 ~= 0 ? 0 : params.attacker:IsBuilding() ? 0 : %damage_block_pct_vs_creeps%",
      "status": "partial",
      "specials": [
@@ -4734,6 +4741,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     },
     {
@@ -4983,7 +4991,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %spell_amp%",
+     "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -5075,7 +5083,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : 0 <= self.field_1afc - params.damage ? -math.max(params.damage, 0) : -math.max(self.field_1afc - params.damage + params.damage, 0)) : math.max(0, self.field_1afc)) : %max_shield_pct% * parent:GetMaxHealth() / 100",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : 0 <= self.field_1afc - params.damage ? -math.max(params.damage, 0) : -math.max(self.field_1afc - params.damage + params.damage, 0)) : math.max(0, self.field_1afc)) : %max_shield_pct% * parent:GetMaxHealth() / 100",
      "status": "formula",
      "specials": [
       "max_shield_pct"
@@ -5899,7 +5907,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "%damage_reduction_pct% <= 0 ? 0 : params.damage_flags & 32 == 0 ? -%damage_reduction_pct% : 0",
+     "formula": "%damage_reduction_pct% <= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction_pct% : 0",
      "status": "formula",
      "specials": [
       "damage_reduction_pct"
@@ -7000,7 +7008,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : params.attacker == parent ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? > 1e+17 ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : params.attacker == parent ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? > 1e+17 ? (? ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? * ? * (? - ?) + (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%) : 0 <= ? ? 0 : -%back_damage_reduction%) : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) <= ? ? 0 : -%back_damage_reduction%",
      "status": "partial",
      "specials": [
       "back_damage_reduction"
@@ -7205,6 +7213,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET",
+     "handler": "GetModifierProcAttack_BonusDamage_Magical_Target",
      "formula": "params.target ~= parent ? 0 : state(params.target, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : params.process_procs == 0 ? 0 : %attack_damage%",
      "status": "formula",
      "specials": [
@@ -7237,6 +7246,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST",
+     "handler": "GetModifierBaseAttackTimeConstant_Adjust",
      "formula": "%bat_bonus%",
      "status": "formula",
      "specials": [
@@ -7327,6 +7337,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL_TARGET",
+     "handler": "GetModifierProcAttack_BonusDamage_Magical_Target",
      "formula": "params.target ~= parent ? 0 : state(params.target, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : params.process_procs == 0 ? 0 : %attack_damage%",
      "status": "formula",
      "specials": [
@@ -7493,6 +7504,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_TURN_RATE_CONSTANT",
+     "handler": "GetModifierTurnRateConstant",
      "formula": "self.field_1b04",
      "status": "formula"
     }
@@ -7768,6 +7780,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "self:GetStackCount() * %shard_str_pct%",
      "status": "formula",
      "specials": [
@@ -8004,7 +8017,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -8326,6 +8339,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -8480,6 +8494,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_ILLUSIONS",
+     "handler": "GetModifierMagicalResistanceBonusIllusions",
      "formula": "%magic_resistance%",
      "status": "formula",
      "specials": [
@@ -8501,6 +8516,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_ILLUSIONS",
+     "handler": "GetModifierMagicalResistanceBonusIllusions",
      "formula": "%magic_resistance%",
      "status": "formula",
      "specials": [
@@ -8520,6 +8536,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "1",
      "status": "constant"
     }
@@ -8890,6 +8907,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_CONVERT_PHYSICAL_TO_MAGICAL",
+     "handler": "GetModifierProcAttack_ConvertPhysicalToMagical",
      "formula": "params.target:IsBuilding() ? 0 : self.field_1b10 <= 0 ? 0 : ? == params.record ? (%attacks_as_magic% ~= 0 ? 1 : 0) : 1 < self.field_1b10 ? (? == params.record ? (%attacks_as_magic% ~= 0 ? 1 : 0) : 2 < self.field_1b10 ? (? == params.record ? (%attacks_as_magic% ~= 0 ? 1 : 0) : 0) : 0) : 0",
      "status": "partial",
      "specials": [
@@ -9165,6 +9183,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+     "handler": "GetPhysicalArmorPiercingPercentageTarget",
      "formula": "params.attacker == caster ? self:GetStackCount() : not params.attacker:FindModifierByName(\"modifier_clinkz_burning_army\") ? 0 : self:GetStackCount()",
      "status": "formula"
     }
@@ -9713,6 +9732,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC",
+     "handler": "GetModifierPreAttack_BonusDamage_Proc",
      "formula": "parent ~= params.attacker ? 0 : self:GetStackCount() >= %every_n_attacks% ? (params.attacker ~= caster ? 0 : params.target:IsBuilding() ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : params.attacker:IsIllusion() ? 0 : %maxhp_percent_damage% / 100 * params.target:GetMaxHealth() - params.damage) : 0",
      "status": "formula",
      "specials": [
@@ -9947,6 +9967,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BASE_REDUCTION",
+     "handler": "GetModifierMagicalResistanceBaseReduction",
      "formula": "100",
      "status": "constant"
     },
@@ -10172,7 +10193,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : params.attacker == parent ? 0 : caster ~= parent ? 0 : (-70)",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : params.attacker == parent ? 0 : caster ~= parent ? 0 : (-70)",
      "status": "formula"
     },
     {
@@ -10216,6 +10237,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 100 : parent ~= caster ? 100 : %aoe_bonus% + 100",
      "status": "formula",
      "specials": [
@@ -10736,7 +10758,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : params.inflictor == ability ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -10883,7 +10905,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : ? * %aura_damage_pct%",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : ? * %aura_damage_pct%",
      "status": "partial",
      "specials": [
       "aura_damage_pct"
@@ -11151,6 +11173,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -12743,6 +12766,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "not params.ability:IsStolen() ? 100 : ? == 0 ? (? == 0 ? 100 : params.ability:GetAbilityName() == ?:GetAbilityName() ? %bonus_aoe_pct% + 100 : 100) : params.ability:GetAbilityName() ~= ?:GetAbilityName() ? (? == 0 ? 100 : params.ability:GetAbilityName() == ?:GetAbilityName() ? %bonus_aoe_pct% + 100 : 100) : %bonus_aoe_pct% + 100",
      "status": "partial",
      "specials": [
@@ -12758,7 +12782,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 16 == 0 ? %damage_amp% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION == 0 ? %damage_amp% : 0",
      "status": "formula",
      "specials": [
       "damage_amp"
@@ -13517,6 +13541,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC",
+     "handler": "GetModifierPreAttack_BonusDamage_Proc",
      "formula": "0",
      "status": "constant"
     },
@@ -13580,6 +13605,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Agility_Percentage",
      "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : caster == parent ? %trueshot_agi_bonus% : 0",
      "status": "formula",
      "specials": [
@@ -14249,6 +14275,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_XP_DURING_DEATH",
+     "handler": "GetModifierXPDuringDeath",
      "formula": "1",
      "status": "constant"
     },
@@ -14776,6 +14803,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BASE_REDUCTION",
+     "handler": "GetModifierMagicalResistanceBaseReduction",
      "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : ?:GetSpecialValueFor(\"magic_resistance_pct\")",
      "status": "partial",
      "specials": [
@@ -15220,8 +15248,13 @@
     {
      "function": "MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS",
      "handler": "GetActivityTranslationModifiers",
-     "formula": "params.activity == 1503 ? ? : params.activity - 1503 == 1 ? ? : params.activity - 1503 - 1 == 1 ? ? : params.activity - 1503 - 1 - 1 == 200 ? ? : params.activity - 1503 - 1 - 1 - 200 == 53 ? ? : ?",
+     "formula": "params.activity == 1503 ? (parent:FindModifierByName(\"modifier_phantom_assassin_stiflingdagger_caster\") ? ? : state(parent, MODIFIER_STATE_SILENCED) ? ? : parent:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : not ability:GetAutoCastState() ? ? : ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : params.activity - 1503 == 1 ? (parent:FindModifierByName(\"modifier_phantom_assassin_stiflingdagger_caster\") ? ? : state(parent, MODIFIER_STATE_SILENCED) ? ? : parent:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : not ability:GetAutoCastState() ? ? : ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : params.activity - 1503 - 1 == 1 ? (parent:FindModifierByName(\"modifier_phantom_assassin_stiflingdagger_caster\") ? ? : state(parent, MODIFIER_STATE_SILENCED) ? ? : parent:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : not ability:GetAutoCastState() ? ? : ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : params.activity - 1503 - 1 - 1 == 200 ? (parent:FindModifierByName(\"modifier_phantom_assassin_stiflingdagger_caster\") ? ? : state(parent, MODIFIER_STATE_SILENCED) ? ? : parent:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : not ability:GetAutoCastState() ? ? : ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : params.activity - 1503 - 1 - 1 - 200 ~= 53 ? ? : parent:FindModifierByName(\"modifier_phantom_assassin_stiflingdagger_caster\") ? ? : state(parent, MODIFIER_STATE_SILENCED) ? ? : parent:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?) : not ability:GetAutoCastState() ? ? : ability:GetEffectiveManaCost() > parent:GetMana() ? ? : not ability:IsCooldownReady() ? ? : ?",
      "status": "formula"
+    },
+    {
+     "function": "MODIFIER_EVENT_ON_ATTACK_FINISHED",
+     "handler": "OnAttackFinished",
+     "status": "event"
     },
     {
      "function": "MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY",
@@ -15759,7 +15792,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? == 0 ? 0 : 1",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:IsIllusion() ? 0 : ? == 0 ? 0 : 1",
      "status": "partial",
      "specials": [
       "dodge_chance_pct"
@@ -15774,7 +15807,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : parent:IsIllusion() ? 0 : 1",
      "status": "formula"
     }
    ]
@@ -15790,6 +15823,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "0",
      "status": "constant"
     },
@@ -15857,6 +15891,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROJECTILE_SPEED",
+     "handler": "GetModifierProjectileSpeed",
      "formula": "0",
      "status": "constant"
     }
@@ -15920,6 +15955,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "state(parent, MODIFIER_STATE_DEBUFF_IMMUNE) ? 0 : params.ability:IsItem() ? 0 : -%cooldown_percentage%",
      "status": "formula",
      "specials": [
@@ -16042,6 +16078,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "params.do_not_consume ~= 0 ? 0 : parent:IsHero() ? (parent:IsIllusion() ? 0 : parent:GetTeamNumber() ~= caster:GetTeamNumber() ? 0 : params.ability:GetAbilityType() == 1 ? 0 : %cooldown_acceleration% <= 100 ? 0 : %cooldown_acceleration% - 100) : 0",
      "status": "formula",
      "specials": [
@@ -16086,6 +16123,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROJECTILE_SPEED",
+     "handler": "GetModifierProjectileSpeed",
      "formula": "math.abs(((? * ? - ? * ? + (? * ? - ? * ?)) * ? + ? + (? * ? - ? * ?) >> 32) * (params[0x58] - (? >> 32)) + ((? * ? - ? * ? + (? * ? - ? * ?)) * ? + ? + (? * ? - ? * ?)) * (params[0x54] - ?)) > kv.radius * 0.707107 ? 0 : math.abs((? * ? - ? * ? + (? * (? * ? - ? * ? + (? * ? - ? * ?)) + ?) >> 32) * (params[0x58] - (? >> 32)) + (? * ? - ? * ? + (? * (? * ? - ? * ? + (? * ? - ? * ?)) + ?)) * (params[0x54] - ?)) > kv.radius * 0.707107 ? 0 : parent:GetTeamNumber() == ? ? %bonus_projectile_speed% : -%bonus_projectile_speed%",
      "status": "partial",
      "specials": [
@@ -16846,6 +16884,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_HEALTHBAR_PIPS_FRAGILE",
+     "handler": "GetModifierHealthBarPipsFragile",
      "formula": "1",
      "status": "constant"
     }
@@ -16905,7 +16944,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingSpellDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)) : math.max(0, %damage_absorb% - self.field_1b00)) : %damage_absorb%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)) : math.max(0, %damage_absorb% - self.field_1b00)) : %damage_absorb%",
      "status": "formula",
      "specials": [
       "damage_absorb"
@@ -18050,7 +18089,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : not params.attacker:FindModifierByName(\"modifier_grimstroke_ink_trail_debuff\") ? 0 : -%damage_reduction%",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : not params.attacker:FindModifierByName(\"modifier_grimstroke_ink_trail_debuff\") ? 0 : -%damage_reduction%",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -18097,6 +18136,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_ILLUSIONS",
+     "handler": "GetModifierMagicalResistanceBonusIllusions",
      "formula": "%immunity_resist%",
      "status": "formula",
      "specials": [
@@ -18105,6 +18145,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "1",
      "status": "constant"
     }
@@ -18357,6 +18398,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     }
    ]
@@ -19077,6 +19119,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPER_ILLUSION",
+     "handler": "GetModifierSuperIllusion",
      "formula": "ability:IsStolen() ? 0 : ? == 0 ? 1 : 0",
      "status": "partial"
     },
@@ -19191,6 +19234,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE",
+     "handler": "GetModifierProjectileSpeedBonusPercentage",
      "formula": "%bonus_projectile_speed_pct%",
      "status": "formula",
      "specials": [
@@ -19233,7 +19277,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : %spell_amp%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -19307,6 +19351,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_FAIL_ATTACK",
+     "handler": "GetModifierPropertyFailAttack",
      "formula": "0",
      "status": "constant"
     }
@@ -19564,6 +19609,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_FORCE_MAX_MANA",
+     "handler": "GetModifierForceMaxMana",
      "formula": "-1",
      "status": "constant"
     }
@@ -19769,6 +19815,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC",
+     "handler": "GetModifierPreAttack_BonusDamage_Proc",
      "formula": "params.attacker ~= parent ? 0 : params.attacker:IsRangedAttacker() ? (params.target:GetTeamNumber() == params.attacker:GetTeamNumber() ? 0 : ? & 131088 ~= 0 ? 0 : ? == 0 ? (parent:FindModifierByName(\"modifier_gyrocopter_flak_cannon\") ? 0 : parent:FindModifierByName(\"modifier_medusa_split_shot\") ? 0 : params[0x7a] ~= 0 ? 0 : self.field_1b60 <= 0 ? (? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == params.record ? 0 | %base_proc_dmg% : 1 < self.field_1b60 ? (? == params.record ? 0 | %base_proc_dmg% : 2 < self.field_1b60 ? (? == params.record ? 0 | %base_proc_dmg% : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? & 16 ~= 0 ? 0 : ? < 0 ? 0 : parent:FindModifierByName(\"modifier_gyrocopter_flak_cannon\") ? 0 : parent:FindModifierByName(\"modifier_medusa_split_shot\") ? 0 : params[0x7a] ~= 0 ? 0 : self.field_1b60 <= 0 ? (? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == params.record ? 0 | %base_proc_dmg% : 1 < self.field_1b60 ? (? == params.record ? 0 | %base_proc_dmg% : 2 < self.field_1b60 ? (? == params.record ? 0 | %base_proc_dmg% : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : 0",
      "status": "partial",
      "specials": [
@@ -20034,11 +20081,13 @@
     },
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
+     "handler": "GetModifierIncomingDamageIllusion",
      "formula": "0",
      "status": "constant"
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "self.field_1b08 - 100",
      "status": "formula"
     }
@@ -20135,6 +20184,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "not parent:IsIllusion() ? (params.attacker ~= parent ? 0 : params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : parent:FindModifierByName(\"modifier_riki_blinkstrike\") ? %bonus_potency% : parent:FindModifierByName(\"modifier_riki_tricks_of_the_trade_phase\") ? %bonus_potency% : 0 > self * (params.target >> 32) * (self * (params.target >> 32)) + params.target * (params.target >> 32) * (params.target * (params.target >> 32)) ? (1e-17 > ? ? (? ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (self * (params.target >> 32)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : ? > 1e+17 ? (? ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (self * (params.target >> 32)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1 / ? * (? - ?) * (self * (params.target >> 32) * (1 / ?)) + 1 / ? * (? - ?) * (params.target * (params.target >> 32) * (1 / ?)) > ? ? %bonus_potency% : 0) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32) * (1 / ?)) + (? - ?) * (params.target * (params.target >> 32) * (1 / ?)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32) * (1 / ?)) + (? - ?) * (params.target * (params.target >> 32) * (1 / ?)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (self * (params.target >> 32) * (1 / ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (params.target * (params.target >> 32) * (1 / ?)) > ? ? %bonus_potency% : 0) : math.sqrt(self * (params.target >> 32) * (self * (params.target >> 32)) + params.target * (params.target >> 32) * (params.target * (params.target >> 32))) ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : ? > 1e+17 ? (? ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 1 / ? * (? - ?) * (self * (params.target >> 32)) + 1 / ? * (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? ((? - ?) * (self * (params.target >> 32)) + (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (self * (params.target >> 32)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (params.target * (params.target >> 32)) > ? ? %bonus_potency% : 0) : 0 > ? ? %bonus_potency% : 0) : 0",
      "status": "partial",
      "specials": [
@@ -20610,7 +20660,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : self.field_1af8",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : self.field_1af8",
      "status": "formula"
     }
    ],
@@ -21055,6 +21105,7 @@
    "functions": [
     {
      "function": "MODIFIER_EVENT_ON_SCEPTER_UPGRADE_SELECTED",
+     "handler": "OnScepterUpgradeSelected",
      "status": "event"
     }
    ]
@@ -21065,6 +21116,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_IS_SHARD",
+     "handler": "GetModifierShard",
      "formula": "1",
      "status": "constant"
     },
@@ -21082,6 +21134,7 @@
    "functions": [
     {
      "function": "MODIFIER_EVENT_ON_SHARD_UPGRADE_SELECTED",
+     "handler": "OnShardUpgradeSelected",
      "status": "event"
     }
    ]
@@ -21363,6 +21416,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -21571,6 +21625,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_HEALTH_DRAIN_CONSTANT",
+     "handler": "GetModifierHealthDrainConstant",
      "formula": "%unholy_health_drain_per_second%",
      "status": "formula",
      "specials": [
@@ -22083,6 +22138,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_HEALTH_DRAIN_CONSTANT",
+     "handler": "GetModifierHealthDrainConstant",
      "formula": "%unholy_health_drain_per_second%",
      "status": "formula",
      "specials": [
@@ -22091,6 +22147,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_HEALTH_DRAIN_PERCENTAGE",
+     "handler": "GetModifierHealthDrainPercentage",
      "formula": "%unholy_health_drain_pct_per_second%",
      "status": "formula",
      "specials": [
@@ -22309,6 +22366,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -22506,7 +22564,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %aura_spell_vulnerability%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %aura_spell_vulnerability%",
      "status": "formula",
      "specials": [
       "aura_spell_vulnerability"
@@ -23446,6 +23504,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_CONSTANT",
+     "handler": "GetModifierAoEBonusConstant",
      "formula": "%aoe_bonus%",
      "status": "formula",
      "specials": [
@@ -23519,6 +23578,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "self:GetStackCount() > 0 ? -self:GetStackCount() * %cooldown_slow_pct% : 0",
      "status": "formula",
      "specials": [
@@ -23973,6 +24033,7 @@
    "functions": [
     {
      "function": "MODIFIER_EVENT_ON_REDIRECT_HEALTH_GAIN",
+     "handler": "OnRedirectHealthGain",
      "status": "event"
     },
     {
@@ -24338,6 +24399,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE",
+     "handler": "GetModifierDamageOutgoing_PercentageMultiplicative",
      "formula": "%counter_damage% - 100",
      "status": "formula",
      "specials": [
@@ -24497,6 +24559,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_HEALTHCOST_REDUCTION_CONSTANT",
+     "handler": "GetModifierHealthcostReduction_Constant",
      "formula": "params.ability:GetBehavior() & DOTA_ABILITY_BEHAVIOR_ATTACK ~= 0 ? 0 : -(%health_pct% / 100 * params.ability:GetEffectiveManaCost())",
      "status": "formula",
      "specials": [
@@ -24505,6 +24568,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "params.ability:GetBehavior() & DOTA_ABILITY_BEHAVIOR_ATTACK ~= 0 ? 0 : %aoe_pct% + 100",
      "status": "formula",
      "specials": [
@@ -25392,6 +25456,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE",
+     "handler": "GetModifierBaseAttackTimePercentage",
      "formula": "-%bat_reduce%",
      "status": "formula",
      "specials": [
@@ -25400,6 +25465,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "%intelligence_pct%",
      "status": "formula",
      "specials": [
@@ -25490,6 +25556,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "%bonus_potency%",
      "status": "formula",
      "specials": [
@@ -25680,6 +25747,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE",
+     "handler": "GetModifierBaseAttackTimePercentage",
      "formula": "-%bat_reduce%",
      "status": "formula",
      "specials": [
@@ -25968,6 +26036,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "params.target ~= parent ? 0 : ? ~= 0 ? 0 : -%knockback_resist%",
      "status": "partial",
      "specials": [
@@ -26290,6 +26359,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS_UNIQUE",
+     "handler": "GetModifierMagicalResistanceBonusUnique",
      "formula": "(self:GetStackCount() < %max_stacks% ? self:GetStackCount() : %max_stacks%) * %stack_resist% + %bonus_spell_resist%",
      "status": "formula",
      "specials": [
@@ -26318,6 +26388,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_TAKEDAMAGE_POST_UNAVOIDABLE_BLOCK",
+     "handler": "OnTakeDamagePostUnavoidableBlock",
      "status": "event"
     }
    ]
@@ -26996,7 +27067,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage * %barrier_pct% / 100 + self.field_1b04 <= %barrier_amount% ? -math.max(params.damage * %barrier_pct% / 100, 0) : -math.max(params.damage * %barrier_pct% / 100 - (params.damage * %barrier_pct% / 100 + self.field_1b04 - %barrier_amount%), 0)) : math.max(0, %barrier_amount% - self.field_1b04)) : %barrier_amount%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage * %barrier_pct% / 100 + self.field_1b04 <= %barrier_amount% ? -math.max(params.damage * %barrier_pct% / 100, 0) : -math.max(params.damage * %barrier_pct% / 100 - (params.damage * %barrier_pct% / 100 + self.field_1b04 - %barrier_amount%), 0)) : math.max(0, %barrier_amount% - self.field_1b04)) : %barrier_amount%",
      "status": "formula",
      "specials": [
       "barrier_amount",
@@ -27607,6 +27678,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_CONSTANT",
+     "handler": "GetModifierAoEBonusConstant",
      "formula": "? <= 0 ? (? ~= ? ? %bonus_aoe% : %bonus_aoe_imbue% + %bonus_aoe%) : ?",
      "status": "partial",
      "specials": [
@@ -29112,6 +29184,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
+     "handler": "GetModifierSlowResistance_Unique",
      "formula": "%slow_resistance%",
      "status": "formula",
      "specials": [
@@ -29511,6 +29584,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK",
+     "handler": "OnForceProcMagicStick",
      "status": "event"
     }
    ]
@@ -29589,6 +29663,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "params.ability == ability ? (self.field_1afc == 0 ? 0 : %water_acceleration%) : 0",
      "status": "formula",
      "specials": [
@@ -29728,7 +29803,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "parent == caster ? 0 : params.damage_type ~= 2 ? 0 : params.damage_flags & 48 ~= 0 ? 0 : -%damage_redirection%",
+     "formula": "parent == caster ? 0 : params.damage_type ~= DAMAGE_TYPE_MAGICAL ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS) ~= 0 ? 0 : -%damage_redirection%",
      "status": "formula",
      "specials": [
       "damage_redirection"
@@ -29967,6 +30042,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_PERCENTAGE",
+     "handler": "GetModifierBaseAttackTimePercentage",
      "formula": "-10",
      "status": "constant"
     },
@@ -30900,6 +30976,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_HEALTHCOST_REDUCTION_CONSTANT",
+     "handler": "GetModifierHealthcostReduction_Constant",
      "formula": "-(%mana_cost_reduction_pct% / 100 * params.ability:GetManaCost()) * (%health_cost_pct% / 100)",
      "status": "formula",
      "specials": [
@@ -31012,6 +31089,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "params.target ~= parent ? 0 : ? == 0 ? 0 : -%knockback_reduction%",
      "status": "partial",
      "specials": [
@@ -31638,6 +31716,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -32617,6 +32696,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE",
+     "handler": "GetModifierProjectileSpeedBonusPercentage",
      "formula": "%projectile_bonus%",
      "status": "formula",
      "specials": [
@@ -32696,6 +32776,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "%intelligence_pct%",
      "status": "formula",
      "specials": [
@@ -32880,6 +32961,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE",
+     "handler": "GetModifierProjectileSpeedBonusPercentage",
      "formula": "%projectile_increase%",
      "status": "formula",
      "specials": [
@@ -32888,6 +32970,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE",
+     "handler": "GetModifierPercentageAttackAnimTime",
      "formula": "%anim_increase%",
      "status": "formula",
      "specials": [
@@ -33202,6 +33285,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "1",
      "status": "constant"
     }
@@ -33709,6 +33793,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
+     "handler": "GetModifierSlowResistance_Unique",
      "formula": "%slow_resistance%",
      "status": "formula",
      "specials": [
@@ -33779,6 +33864,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
+     "handler": "GetModifierSlowResistance_Unique",
      "formula": "%slow_resistance%",
      "status": "formula",
      "specials": [
@@ -34170,6 +34256,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_CONSTANT",
+     "handler": "GetModifierAoEBonusConstant",
      "formula": "%bonus_aoe%",
      "status": "formula",
      "specials": [
@@ -34558,6 +34645,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_UNIQUE",
+     "handler": "GetModifierSlowResistance_Unique",
      "formula": "%slow_resistance%",
      "status": "formula",
      "specials": [
@@ -34977,7 +35065,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
      "handler": "GetModifierTotal_ConstantBlock",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? math.max(params.damage, 0) : math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= %damage_absorb% ? math.max(params.damage, 0) : math.max(params.damage - (params.damage + self.field_1b00 - %damage_absorb%), 0)",
      "status": "formula",
      "specials": [
       "damage_absorb"
@@ -35202,6 +35290,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION",
+     "handler": "GetModifierRadarCooldownReduction",
      "formula": "%scan_cooldown_reduction%",
      "status": "formula",
      "specials": [
@@ -35280,6 +35369,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     }
    ]
@@ -35349,6 +35439,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "self.field_1b04 == 0 ? -%knockback_resistance% : self.field_1b04 == 1 ? %knockback_resistance% : 0",
      "status": "formula",
      "specials": [
@@ -35503,6 +35594,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -36476,6 +36568,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_FORCE_MAX_HEALTH",
+     "handler": "GetModifierForceMaxHealth",
      "formula": "%max_health%",
      "status": "formula",
      "specials": [
@@ -36774,7 +36867,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : parent:FindModifierByName(\"modifier_item_bloodstone_aura\") ? 0 : %spell_amp%",
      "status": "formula",
      "specials": [
       "spell_amp"
@@ -37629,6 +37722,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PHYSICALDAMAGEOUTGOING_PERCENTAGE",
+     "handler": "GetModifierPhysicalDamageOutgoing_Percentage",
      "formula": "-%damage_penalty_aura%",
      "status": "formula",
      "specials": [
@@ -38142,6 +38236,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_ORDER_RECEIVED",
+     "handler": "OnOrderReceived",
      "status": "event"
     },
     {
@@ -38151,6 +38246,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
+     "handler": "GetModifierAttackWhileMovingTarget",
      "formula": "params.attacker ~= parent ? ? : not ?:IsAlive() ? ? : 0 < %scepter_attack_damage_pct% ? ? : ?",
      "status": "partial",
      "specials": [
@@ -38159,6 +38255,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "%scepter_attack_damage_pct% - 100",
      "status": "formula",
      "specials": [
@@ -38259,7 +38356,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE",
      "handler": "GetModifierTotalDamageOutgoing_Percentage",
-     "formula": "params.damage_flags & 1024 ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? == 0 ? (state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? == 0 ? (state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.attacker:GetTeamNumber() == params.target:GetTeamNumber() ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : ? > 1e+17 ? (? ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (1 / ? * (? - ?)) + ? * ? * (1 / ? * (? - ?)) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (0.01 <= ? ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : 0.01 <= 0 ? (parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : 0 > ? ? %front_damage_increase% : 0) : %front_damage_increase%) : parent:FindModifierByName(\"modifier_juggernaut_omnislash\") ? %front_damage_increase% : ? * ? * (? - ?) + ? * ? * (? - ?) > ? ? %front_damage_increase% : 0",
      "status": "partial",
      "specials": [
       "front_damage_increase"
@@ -38834,6 +38931,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -39070,6 +39168,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     },
     {
@@ -39127,10 +39226,6 @@
     ],
     "field_1b2c": [
      {
-      "in": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
-      "value": "nan"
-     },
-     {
       "in": "OnAttackCancelled",
       "value": "nan"
      },
@@ -39148,6 +39243,10 @@
      },
      {
       "in": "OnCreated",
+      "value": "nan"
+     },
+     {
+      "in": "OnModifierRemoved",
       "value": "nan"
      }
     ]
@@ -39219,6 +39318,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "1",
      "status": "constant"
     },
@@ -39619,7 +39719,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.target ~= parent ? 0 : parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : 1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1",
+     "formula": "params.target ~= parent ? 0 : parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : 1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1",
      "status": "partial"
     },
     {
@@ -39669,7 +39769,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_ATTACK_PROCS",
      "handler": "GetModifierAvoidAttackProcs",
-     "formula": "params.target ~= parent ? 0 : ? == 65535 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= 1 ? 0 : params.damage_type == 4 ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : ? == ? + (? + ? * 2) * 8 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & 16 ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= 1 ? 0 : params.damage_type == 4 ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : 0",
+     "formula": "params.target ~= parent ? 0 : ? == 65535 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.damage_type == DAMAGE_TYPE_PURE ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : ? == ? + (? + ? * 2) * 8 ? (parent:IsIllusion() ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : %parry_any_damage% ~= 0 ? (0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.damage_type == DAMAGE_TYPE_PURE ? 0 : 0 > (? - ?) * (? - ?) + (? - ?) * (? - ?) ? (1e-17 > ? ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > 1e+17 ? (? ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / ? * (? - ?)) + 1 / ? * (? - ?) * (? * ?) ? 0 : 1) : 1e-17 > math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) > 1e+17 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) ~= 0 ? (? > ? * ? * (? - ?) + (? - ?) * (? * ?) ? 0 : 1) : ? > 0 ? 0 : 1) : ? > ? * ? * (1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?)) + 1 / math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) * (? - ?) * (? * ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "parry_any_damage"
@@ -39976,6 +40076,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_PIERCING_PERCENTAGE_TARGET",
+     "handler": "GetPhysicalArmorPiercingPercentageTarget",
      "formula": "params.attacker ~= caster ? 0 : %pierces_armor%",
      "status": "formula",
      "specials": [
@@ -40248,6 +40349,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BUFF_AMPLIFICATION",
+     "handler": "GetBuffAmplification",
      "formula": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : %buff_amplification%",
      "status": "formula",
      "specials": [
@@ -40640,6 +40742,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_IGNORE_FORCE_ATTACK_TARGET",
+     "handler": "GetModifierPropertyIgnoreForceTarget",
      "formula": "parent ~= caster ? 0 : 1",
      "status": "formula"
     }
@@ -41254,7 +41357,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 16 ~= 0 ? 0 : params.damage_category ~= 1 ? 0 : params.attacker:IsHero() ? -%damage_reduction% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : params.damage_category ~= DOTA_DAMAGE_CATEGORY_ATTACK ? 0 : params.attacker:IsHero() ? -%damage_reduction% : 0",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -42082,7 +42185,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %increased_damage%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %increased_damage%",
      "status": "formula",
      "specials": [
       "increased_damage"
@@ -42112,7 +42215,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE",
      "handler": "GetModifierTotalDamageOutgoing_Percentage",
-     "formula": "params.damage_type ~= 2 ? 0 : params.damage_flags & 560 ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? ~= 0 ? 0 : params.inflictor == ability ? 0 : params.inflictor:IsItem() ? 0 : params.inflictor:GetBehavior() & DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES ~= 0 ? 0 : %impact_damage_pct% - 100",
+     "formula": "params.damage_type ~= DAMAGE_TYPE_MAGICAL ? 0 : params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS) ~= 0 ? 0 : params.attacker ~= parent ? 0 : ? ~= 0 ? 0 : params.inflictor == ability ? 0 : params.inflictor:IsItem() ? 0 : params.inflictor:GetBehavior() & DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES ~= 0 ? 0 : %impact_damage_pct% - 100",
      "status": "partial",
      "specials": [
       "impact_damage_pct"
@@ -42787,6 +42890,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_DISABLE_MANA_GAIN",
+     "handler": "GetDisableManaGain",
      "formula": "1",
      "status": "constant"
     }
@@ -43048,6 +43152,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CRIT",
+     "handler": "GetSuppressCrit",
      "formula": "1",
      "status": "constant"
     }
@@ -44071,6 +44176,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "params.target ~= parent ? 0 : ? ~= 0 ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : -%knockback_reduction%",
      "status": "partial",
      "specials": [
@@ -44255,7 +44361,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.max(params.damage, 0)) : math.max(0, %shared_barrier% - self.field_1b24)) : %shared_barrier%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.max(params.damage, 0)) : math.max(0, %shared_barrier% - self.field_1b24)) : %shared_barrier%",
      "status": "partial",
      "specials": [
       "shared_barrier"
@@ -45032,6 +45138,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -45587,6 +45694,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_MANA_DRAIN_AMPLIFY_PERCENTAGE",
+     "handler": "GetModifierManaDrainAmplify_Percentage",
      "formula": "not caster:FindModifierByName(\"modifier_meepo_megameepo_self\") ? -%dps_penalty_pct% : caster:FindModifierByName(\"modifier_meepo_megameepo_self\"):GetStackCount() <= 0 ? -%dps_penalty_pct% : %tooltip_clones% <= 0 ? -%dps_penalty_pct% : %dps_penalty_pct% / %tooltip_clones% * caster:FindModifierByName(\"modifier_meepo_megameepo_self\"):GetStackCount() - %dps_penalty_pct%",
      "status": "formula",
      "specials": [
@@ -45670,6 +45778,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_SPENT_ITEM_CHARGE",
+     "handler": "OnSpentItemCharge",
      "status": "event"
     },
     {
@@ -45789,7 +45898,15 @@
      "value": true
     },
     {
+     "state": "MODIFIER_STATE_UNSELECTABLE",
+     "value": true
+    },
+    {
      "state": "MODIFIER_STATE_NO_HEALTH_BAR",
+     "value": true
+    },
+    {
+     "state": "MODIFIER_STATE_UNTARGETABLE",
      "value": true
     }
    ]
@@ -46213,6 +46330,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_TOTAL_PERCENTAGE",
+     "handler": "GetModifierPhysicalArmorTotal_Percentage",
      "formula": "-%armor_decrease%",
      "status": "formula",
      "specials": [
@@ -46326,6 +46444,7 @@
    "functions": [
     {
      "function": "MODIFIER_EVENT_ON_MODIFIER_REMOVED",
+     "handler": "OnModifierRemoved",
      "status": "event"
     }
    ]
@@ -46470,6 +46589,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_MIN_PHYSICAL_ARMOR",
+     "handler": "GetModifierMinPhysicalArmor",
      "formula": "0",
      "status": "constant"
     },
@@ -46586,6 +46706,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "params.attacker ~= parent ? 0 : params.attacker:IsIllusion() ? 0 : state(params.attacker, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : not ability:GetCurrentAbilityCharges() ? 0 : params.target:IsBuilding() ? 0 : params.target:GetTeamNumber() == params.attacker:GetTeamNumber() ? 0 : params.target:IsOther() ? 0 : ?:GetAbilityName() == \"item_specialists_array\" ? 0 : ? == 0 ? 0 : ?:GetAbilityName() == \"item_hydras_breath\" ? 0 : ? == 0 ? 0 : ? == 0 ? 0 : %bonus_potency%",
      "status": "partial",
      "specials": [
@@ -47084,6 +47205,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -47545,7 +47667,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL",
      "handler": "GetAbsoluteNoDamagePhysical",
-     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -47554,7 +47676,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL",
      "handler": "GetAbsoluteNoDamageMagical",
-     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -47563,7 +47685,7 @@
     {
      "function": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE",
      "handler": "GetAbsoluteNoDamagePure",
-     "formula": "params.damage_flags & 4 == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY == 0 ? (%invul_duration% <= self:GetDuration() - (self:GetDieTime() - ?) ? 0 : 1) : 0",
      "status": "partial",
      "specials": [
       "invul_duration"
@@ -47826,6 +47948,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_BECOME_AGILITY",
+     "handler": "GetModifierBecomeAgility",
      "formula": "1",
      "status": "constant"
     }
@@ -47935,6 +48058,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_BECOME_STRENGTH",
+     "handler": "GetModifierBecomeStrength",
      "formula": "1",
      "status": "constant"
     }
@@ -48041,16 +48165,19 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "1",
      "status": "constant"
     },
     {
      "function": "MODIFIER_PROPERTY_SUPER_ILLUSION",
+     "handler": "GetModifierSuperIllusion",
      "formula": "1",
      "status": "constant"
     },
     {
      "function": "MODIFIER_PROPERTY_BUFF_AMPLIFICATION",
+     "handler": "GetBuffAmplification",
      "formula": "kv.echo_power - 100",
      "status": "formula",
      "kv": [
@@ -48217,6 +48344,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48225,6 +48353,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Agility_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48233,6 +48362,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48291,6 +48421,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "-(%scepter_stat_steal% + %scepter_additional_stats%)",
      "status": "formula",
      "specials": [
@@ -48300,6 +48431,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Agility_Percentage",
      "formula": "-(%scepter_stat_steal% + %scepter_additional_stats%)",
      "status": "formula",
      "specials": [
@@ -48309,6 +48441,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "-(%scepter_stat_steal% + %scepter_additional_stats%)",
      "status": "formula",
      "specials": [
@@ -48386,6 +48519,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48394,6 +48528,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Agility_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48402,6 +48537,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48478,6 +48614,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48486,6 +48623,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Agility_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -48494,6 +48632,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "-%scepter_stat_steal%",
      "status": "formula",
      "specials": [
@@ -49052,11 +49191,13 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_CONVERT_PHYSICAL_TO_MAGICAL",
+     "handler": "GetModifierProcAttack_ConvertPhysicalToMagical",
      "formula": "self.field_1b00 <= 0 ? 0 : ? == params.record ? 1 : 1 < self.field_1b00 ? (? == params.record ? 1 : 2 < self.field_1b00 ? (? == params.record ? 1 : 0) : 0) : 0",
      "status": "partial"
     },
     {
      "function": "MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK",
+     "handler": "GetAllowEtherealAttack",
      "formula": "1",
      "status": "constant"
     },
@@ -49166,7 +49307,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 131072 == 0 ? 0 : state(parent, MODIFIER_STATE_MAGIC_IMMUNE) ? (-100) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK == 0 ? 0 : state(parent, MODIFIER_STATE_MAGIC_IMMUNE) ? (-100) : 0",
      "status": "formula"
     }
    ]
@@ -51271,7 +51412,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -51504,6 +51645,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_MUTE_DAMAGE_ABILITIES",
+     "handler": "OnMuteDamageAbilities",
      "status": "event"
     }
    ]
@@ -51515,7 +51657,7 @@
     {
      "function": "MODIFIER_PROPERTY_AVOID_DAMAGE",
      "handler": "GetModifierAvoidDamage",
-     "formula": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:IsControllableByAnyPlayer() ? (params.damage_flags & 1048624 ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : ? ~= 0 ? 1 : params.damage <= parent:GetHealth() ? 1 : 0) : params.attacker:IsHero() ? (params.damage_flags & 1048624 ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : 1) : 0",
+     "formula": "params.attacker:IsBuilding() ? 0 : params.attacker:IsOther() ? 0 : params.attacker:IsControllableByAnyPlayer() ? (params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_REFLECTION) ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : ? ~= 0 ? 1 : params.damage <= parent:GetHealth() ? 1 : 0) : params.attacker:IsHero() ? (params.damage_flags & (DOTA_DAMAGE_FLAG_REFLECTION | DOTA_DAMAGE_FLAG_HPLOSS | DOTA_DAMAGE_FLAG_NO_REFLECTION) ~= 0 ? 0 : params.attacker:GetTeamNumber() == parent:GetTeamNumber() ? 0 : params.inflictor:GetAbilityName() == \"axe_culling_blade\" ? (params.damage <= parent:GetHealth() ? 1 : 0) : 1) : 0",
      "status": "partial"
     }
    ]
@@ -51557,6 +51699,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE",
+     "handler": "GetModifierPercentageAttackAnimTime",
      "formula": "%attack_animation_bonus%",
      "status": "formula",
      "specials": [
@@ -51619,7 +51762,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : %shard_magic_resist_reduction%",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : %shard_magic_resist_reduction%",
      "status": "formula",
      "specials": [
       "shard_magic_resist_reduction"
@@ -51837,7 +51980,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingPhysicalDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt",
      "status": "formula",
      "kv": [
       "barrier_amt"
@@ -51846,7 +51989,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "%all_damage% ~= 0 ? (params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt) : 0",
+     "formula": "%all_damage% ~= 0 ? (params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1afc > kv.barrier_amt ? -math.max(params.damage - (params.damage + self.field_1afc - kv.barrier_amt), 0) : -math.max(params.damage, 0)) : math.max(0, kv.barrier_amt - self.field_1afc)) : kv.barrier_amt) : 0",
      "status": "formula",
      "specials": [
       "all_damage"
@@ -52170,6 +52313,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_NONE",
+     "handler": "GetModifierIntellectNone",
      "formula": "1",
      "status": "constant"
     }
@@ -52296,6 +52440,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_ABILITY_POINTS",
+     "handler": "GetModifierAbilityPoints",
      "formula": "ability:GetItemState() + 1",
      "status": "formula"
     },
@@ -52314,7 +52459,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
      "handler": "GetModifierTotal_ConstantBlock",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage_category & 1 ~= 0 ? (params.attacker:IsHero() ? %damage_absorb_pct% / 100 * params.damage : 0) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? (params.attacker:IsHero() ? %damage_absorb_pct% / 100 * params.damage : 0) : 0",
      "status": "formula",
      "specials": [
       "damage_absorb_pct"
@@ -52434,7 +52579,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 16 ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? 0 : ? ~= ? ? 0 : self:GetStackCount() * %bonus_damage_per_stack%",
      "status": "partial",
      "specials": [
       "bonus_damage_per_stack"
@@ -52899,6 +53044,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Intellect_Percentage",
      "formula": "not ability:IsHidden() ? %int_bonus_pct% : 0",
      "status": "formula",
      "specials": [
@@ -54229,6 +54375,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE",
+     "handler": "GetModifierDamageOutgoing_PercentageMultiplicative",
      "formula": "kv.power_reduction <= 0 ? %attack_factor% : %attack_factor% - kv.power_reduction / 100 * (%attack_factor% + 100)",
      "status": "formula",
      "specials": [
@@ -55137,6 +55284,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "%hp_per_threshold% == 0 ? 100 : %trample_bonus% <= 0 ? ? * %aoe_per_threshold% + %base_aoe% + 100 : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %aoe_per_threshold% + %base_aoe% + 100 : (? * %aoe_per_threshold% + %base_aoe%) * %trample_bonus% + 100",
      "status": "partial",
      "specials": [
@@ -55343,6 +55491,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "self:GetStackCount() * %bonus_aoe_pct_per_hit% + 100",
      "status": "formula",
      "specials": [
@@ -55401,6 +55550,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_AOE_BONUS_PERCENTAGE",
+     "handler": "GetModifierAoEBonusPercentage",
      "formula": "self.field_1b04 * %roared_bonus_aoe_pct% + 100",
      "status": "formula",
      "specials": [
@@ -55492,6 +55642,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -56241,6 +56392,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK",
+     "handler": "OnForceProcMagicStick",
      "status": "event"
     }
    ],
@@ -56826,6 +56978,7 @@
    "functions": [
     {
      "function": "MODIFIER_EVENT_ON_ORDER_RECEIVED",
+     "handler": "OnOrderReceived",
      "status": "event"
     }
    ]
@@ -56994,6 +57147,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PHYSICAL_ARMOR_TOTAL_PERCENTAGE",
+     "handler": "GetModifierPhysicalArmorTotal_Percentage",
      "formula": "not caster:FindModifierByName(\"modifier_rattletrap_cog_self_bonuses\") ? 0 : %bonus_armor_pct%",
      "status": "formula",
      "specials": [
@@ -57227,6 +57381,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
+     "handler": "GetModifierAttackWhileMovingTarget",
      "formula": "params.attacker ~= parent ? ? : not ?:IsAlive() ? ? : ?",
      "status": "partial"
     }
@@ -57495,6 +57650,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE",
+     "handler": "GetModifierPercentageAttackAnimTime",
      "formula": "50",
      "status": "constant"
     }
@@ -58452,6 +58608,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC",
+     "handler": "GetModifierPreAttack_BonusDamage_Proc",
      "formula": "0",
      "status": "constant"
     },
@@ -58981,6 +59138,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_BUFF_AMPLIFICATION",
+     "handler": "GetBuffAmplification",
      "formula": "%curiosity_factor% <= 0 ? (self:GetStackCount() + self.field_1b30) * %curiosity_modifier_amp% : (self:GetStackCount() + self.field_1b30) * %curiosity_modifier_amp% * %curiosity_factor%",
      "status": "formula",
      "specials": [
@@ -59011,6 +59169,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK",
+     "handler": "OnForceProcMagicStick",
      "status": "event"
     },
     {
@@ -59399,7 +59558,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= parent:GetMaxHealth() - ? >> 1 ? -math.max(params.damage, 0) : -math.max(math.max(0, params.damage - (params.damage + self.field_1b00 - (parent:GetMaxHealth() - ? >> 1))), 0)) : (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 >= 0 ? (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 : 0) : parent:GetMaxHealth() - ? >> 1",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b00 <= parent:GetMaxHealth() - ? >> 1 ? -math.max(params.damage, 0) : -math.max(math.max(0, params.damage - (params.damage + self.field_1b00 - (parent:GetMaxHealth() - ? >> 1))), 0)) : (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 >= 0 ? (parent:GetMaxHealth() - ? >> 1) - self.field_1b00 : 0) : parent:GetMaxHealth() - ? >> 1",
      "status": "partial"
     }
    ],
@@ -59605,11 +59764,13 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "%potency% - 100",
      "status": "formula",
      "specials": [
@@ -60230,6 +60391,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_TRIGGER_COSMETIC_AND_END_ATTACK",
+     "handler": "GetTriggerCosmeticAndEndAttack",
      "formula": "params.target == parent ? 1 : 0",
      "status": "formula"
     }
@@ -61107,7 +61269,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b18 <= %max_shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b18 - %max_shield%), 0)) : math.max(0, %max_shield% - self.field_1b18)) : %max_shield%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b18 <= %max_shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b18 - %max_shield%), 0)) : math.max(0, %max_shield% - self.field_1b18)) : %max_shield%",
      "status": "formula",
      "specials": [
       "max_shield"
@@ -61552,6 +61714,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_FORCE_PROC_MAGIC_STICK",
+     "handler": "OnForceProcMagicStick",
      "status": "event"
     }
    ],
@@ -62103,7 +62266,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingSpellDamageConstant",
-     "formula": "params.report_max == 0 ? (params[0x10] ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.do_not_consume ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1af8 <= self:GetStackCount() * %damage_barrier% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - self:GetStackCount() * %damage_barrier%), 0)) : self:GetStackCount() * %damage_barrier%",
+     "formula": "params.report_max == 0 ? (params[0x10] ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.do_not_consume ~= 0 ? math.max(0, self:GetStackCount() * %damage_barrier% - self.field_1af8) : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1af8 <= self:GetStackCount() * %damage_barrier% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - self:GetStackCount() * %damage_barrier%), 0)) : self:GetStackCount() * %damage_barrier%",
      "status": "formula",
      "specials": [
       "damage_barrier"
@@ -63515,21 +63678,43 @@
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL",
      "handler": "GetModifierProcAttack_BonusDamage_Physical",
-     "formula": "parent ~= params.attacker ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : state(params.target, MODIFIER_STATE_ATTACK_IMMUNE) ? 0 : ? ~= 0 ? 0 : params.record ~= self.field_1b10 ? 0 : self.field_1b12 == 0 ? 0 : %damage%",
+     "formula": "parent ~= params.attacker ? 0 : ? == 0 ? (state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : state(params.target, MODIFIER_STATE_ATTACK_IMMUNE) ? 0 : ? ~= 0 ? 0 : 0 | %damage%) : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : state(params.target, MODIFIER_STATE_ATTACK_IMMUNE) ? 0 : ? ~= 0 ? 0 : self.field_1b18 <= 0 ? 0 : %damage%",
      "status": "partial",
      "specials": [
       "damage"
      ]
     },
     {
+     "function": "MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY",
+     "handler": "OnAttackRecordDestroy",
+     "status": "event"
+    },
+    {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "parent ~= params.attacker ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : state(params.target, MODIFIER_STATE_ATTACK_IMMUNE) ? 0 : ? ~= 0 ? 0 : ? & 3 ~= 0 ? (params.attacker:IsIllusion() ? 0 : state(params.target, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? == 0 ? 0 : %attack_effectiveness%) : params.target:IsCreep() ? (params.attacker:IsIllusion() ? 0 : state(params.target, MODIFIER_STATE_MAGIC_IMMUNE) ? 0 : ? == 0 ? 0 : %attack_effectiveness%) : 0",
      "status": "partial",
      "specials": [
       "attack_effectiveness"
      ]
     }
-   ]
+   ],
+   "fields": {
+    "field_1b18": [
+     {
+      "in": "GetModifierProcAttack_BonusDamage_Physical",
+      "value": "self.field_1b18 - 1"
+     },
+     {
+      "in": "OnAttackRecordDestroy",
+      "value": "self.field_1b18 - 1"
+     },
+     {
+      "in": "vfunc_7",
+      "value": "0"
+     }
+    ]
+   }
   },
   "modifier_sniper_headshot_knockback": {
    "class": "CDOTA_Modifier_Sniper_Headshot_Knockback",
@@ -64040,6 +64225,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST",
+     "handler": "GetModifierBaseAttackTimeConstant_Adjust",
      "formula": "%value%",
      "status": "formula",
      "specials": [
@@ -64693,6 +64879,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC",
+     "handler": "GetModifierPreAttack_BonusDamage_Proc",
      "formula": "params.attacker ~= parent ? 0 : params.attacker:IsRangedAttacker() ? (params.target:GetTeamNumber() == params.attacker:GetTeamNumber() ? 0 : params.target:IsWard() ? 0 : params.attacker:IsIllusion() ? 0 : params.target:IsBuilding() ? 0 : ? == 0 ? (parent:FindModifierByName(\"modifier_gyrocopter_flak_cannon\") ? 0 : parent:FindModifierByName(\"modifier_medusa_split_shot\") ? 0 : params[0x7a] ~= 0 ? 0 : self.field_1b58 <= 0 ? (? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == params.record ? 0 | %base_proc_dmg% : 1 < self.field_1b58 ? (? == params.record ? 0 | %base_proc_dmg% : 2 < self.field_1b58 ? (? == params.record ? 0 | %base_proc_dmg% : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? & 16 ~= 0 ? 0 : ? < 0 ? 0 : parent:FindModifierByName(\"modifier_gyrocopter_flak_cannon\") ? 0 : parent:FindModifierByName(\"modifier_medusa_split_shot\") ? 0 : params[0x7a] ~= 0 ? 0 : self.field_1b58 <= 0 ? (? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == params.record ? 0 | %base_proc_dmg% : 1 < self.field_1b58 ? (? == params.record ? 0 | %base_proc_dmg% : 2 < self.field_1b58 ? (? == params.record ? 0 | %base_proc_dmg% : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : ? == 0 ? 0 : 0 | %base_proc_dmg%) : 0",
      "status": "partial",
      "specials": [
@@ -64820,7 +65007,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "parent:IsIllusion() ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_flags & 16 ~= 0 ? -%damage_reflection_pct% : not caster:FindModifierByName(\"modifier_spectre_dispersion_boost\") ? -%damage_reflection_pct% : -(%damage_reflection_pct% * ((%activation_bonus_pct% + 100) / 100))",
+     "formula": "parent:IsIllusion() ? 0 : state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_REFLECTION ~= 0 ? -%damage_reflection_pct% : not caster:FindModifierByName(\"modifier_spectre_dispersion_boost\") ? -%damage_reflection_pct% : -(%damage_reflection_pct% * ((%activation_bonus_pct% + 100) / 100))",
      "status": "partial",
      "specials": [
       "activation_bonus_pct",
@@ -65360,7 +65547,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.min(params.damage, self.field_1b04)) : self.field_1b04) : %damage_barrier%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : -math.min(params.damage, self.field_1b04)) : self.field_1b04) : %damage_barrier%",
      "status": "formula",
      "specials": [
       "damage_barrier"
@@ -65569,6 +65756,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "? ~= 0 ? %knockback_amp% : -%knockback_amp%",
      "status": "partial",
      "specials": [
@@ -65588,6 +65776,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_KNOCKBACK_AMPLIFICATION_PERCENTAGE",
+     "handler": "GetModifierKnockbackAmplification_Percentage",
      "formula": "? == 0 ? 0 : %knockback_amp%",
      "status": "partial",
      "specials": [
@@ -66053,6 +66242,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "1",
      "status": "constant"
     }
@@ -67549,6 +67739,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "%strong_illusion%",
      "status": "formula",
      "specials": [
@@ -67573,6 +67764,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE",
+     "handler": "GetModifierDamageOutgoing_PercentageMultiplicative",
      "formula": "state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : self.field_1af8 == 0 ? 0 : %inside_radius_bonus_damage_pct%",
      "status": "formula",
      "specials": [
@@ -67961,11 +68153,13 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     },
     {
      "function": "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_MULTIPLICATIVE",
+     "handler": "GetModifierDamageOutgoing_PercentageMultiplicative",
      "formula": "params.target:IsBuilding() ? %building_pct_damage% * kv.damage_mult / 100 - 100 : kv.damage_mult - 100",
      "status": "formula",
      "specials": [
@@ -68222,6 +68416,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_BONUS",
+     "handler": "GetModifierPhysical_ConstantBlockBonus",
      "formula": "self:GetStackCount() * %fish_damage_block%",
      "status": "formula",
      "specials": [
@@ -68317,7 +68512,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b10 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b10 - %damage_absorb%), 0)) : %damage_absorb% - self.field_1b10 >= 0 ? %damage_absorb% - self.field_1b10 : 0) : %damage_absorb%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b10 <= %damage_absorb% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b10 - %damage_absorb%), 0)) : %damage_absorb% - self.field_1b10 >= 0 ? %damage_absorb% - self.field_1b10 : 0) : %damage_absorb%",
      "status": "formula",
      "specials": [
       "damage_absorb"
@@ -68406,6 +68601,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BASE_REDUCTION",
+     "handler": "GetModifierMagicalResistanceBaseReduction",
      "formula": "0",
      "status": "constant"
     },
@@ -68542,6 +68738,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE",
+     "handler": "GetModifierCastRangeBonusPercentage",
      "formula": "-%range_reduction%",
      "status": "formula",
      "specials": [
@@ -68677,6 +68874,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_APPLIES_TO_ATTACKS",
+     "handler": "GetModifierSlowResistanceAppliesToAttacks",
      "formula": "state(parent, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : 1",
      "status": "formula"
     }
@@ -68688,6 +68886,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -68843,6 +69042,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT_ADJUST",
+     "handler": "GetModifierBaseAttackTimeConstant_Adjust",
      "formula": "-%bat_increase%",
      "status": "formula",
      "specials": [
@@ -69339,7 +69539,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
      "handler": "GetModifierTotal_ConstantBlock",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0",
      "status": "partial",
      "specials": [
       "damage_block_threshold"
@@ -69381,7 +69581,7 @@
     {
      "function": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
      "handler": "GetModifierTotal_ConstantBlock",
-     "formula": "params.damage_flags & 32 ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= self.field_1b0c ? 0 : %damage_block_threshold% > params.damage ? 0 : params.attacker:IsControllableByAnyPlayer() ? (? ~= 0 ? 0 : self.field_1b0c) : params.attacker:IsHero() ? (? ~= 0 ? 0 : self.field_1b0c) : 0",
      "status": "partial",
      "specials": [
       "damage_block_threshold"
@@ -69627,6 +69827,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "%strength_bonus%",
      "status": "formula",
      "specials": [
@@ -70491,6 +70692,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE",
+     "handler": "GetModifierPercentageAttackAnimTime",
      "formula": "caster:GetCurrentActiveAbility() == ability ? (ability:GetEffectiveManaCost() > caster:GetMana() ? 0 : state(caster, MODIFIER_STATE_SILENCED) ? 0 : ability:IsCooldownReady() ? 40 : 0) : ability:GetAutoCastState() ? (ability:GetEffectiveManaCost() > caster:GetMana() ? 0 : state(caster, MODIFIER_STATE_SILENCED) ? 0 : ability:IsCooldownReady() ? 40 : 0) : 0",
      "status": "formula"
     },
@@ -71245,6 +71447,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
+     "handler": "GetModifierBonusStats_Strength_Percentage",
      "formula": "%str_percentage%",
      "status": "formula",
      "specials": [
@@ -71686,7 +71889,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 == 0 ? (parent == caster ? -%damage_reduction% : -(%damage_reduction% / 2)) : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? (parent == caster ? -%damage_reduction% : -(%damage_reduction% / 2)) : 0",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -71964,11 +72167,13 @@
     },
     {
      "function": "MODIFIER_PROPERTY_STRONG_ILLUSION",
+     "handler": "GetModifierStrongIllusion",
      "formula": "1",
      "status": "constant"
     },
     {
      "function": "MODIFIER_PROPERTY_SUPER_ILLUSION",
+     "handler": "GetModifierSuperIllusion",
      "formula": "1",
      "status": "constant"
     },
@@ -72059,6 +72264,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_XP_DURING_DEATH",
+     "handler": "GetModifierXPDuringDeath",
      "formula": "1",
      "status": "constant"
     }
@@ -72078,7 +72284,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 == 0 ? -%damage_reduction% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_reduction% : 0",
      "status": "formula",
      "specials": [
       "damage_reduction"
@@ -72087,7 +72293,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b04 <= %damage% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b04 - %damage%), 0)) : math.max(0, %damage% - self.field_1b04)) : %damage%",
+     "formula": "params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage + self.field_1b04 <= %damage% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1b04 - %damage%), 0)) : math.max(0, %damage% - self.field_1b04)) : %damage%",
      "status": "formula",
      "specials": [
       "damage"
@@ -72901,6 +73107,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_BECOME_UNIVERSAL",
+     "handler": "GetModifierBecomeUniversal",
      "formula": "1",
      "status": "constant"
     }
@@ -73075,6 +73282,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "params.ability:IsItem() ? 0 : self:GetStackCount() * %cooldown_speed_per_stack%",
      "status": "formula",
      "specials": [
@@ -73103,6 +73311,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
+     "handler": "GetModifierPercentageCooldownOngoing",
      "formula": "params.ability:IsItem() ? 0 : self:GetStackCount() * %cooldown_speed_per_stack% / 100",
      "status": "formula",
      "specials": [
@@ -73593,6 +73802,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
+     "handler": "GetSuppressCleave",
      "formula": "params.attacker ~= parent ? 0 : 1",
      "status": "formula"
     }
@@ -73796,7 +74006,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
      "handler": "GetModifierIncomingDamageConstant",
-     "formula": "%is_all_barrier% == 0 ? 0 : params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & 32 ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage < self.field_1afc ? -params.damage : -self.field_1afc) : self.field_1afc) : self.field_1b00",
+     "formula": "%is_all_barrier% == 0 ? 0 : params.report_max == 0 ? (params.do_not_consume == 0 ? (params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS ~= 0 ? 0 : 0 >= params.damage ? 0 : params.damage < self.field_1afc ? -params.damage : -self.field_1afc) : self.field_1afc) : self.field_1b00",
      "status": "formula",
      "specials": [
       "is_all_barrier"
@@ -73984,7 +74194,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "%bonus_damage_resist% <= 0 ? 0 : params.damage_flags & 32 == 0 ? -%bonus_damage_resist% : 0",
+     "formula": "%bonus_damage_resist% <= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%bonus_damage_resist% : 0",
      "status": "formula",
      "specials": [
       "bonus_damage_resist"
@@ -74273,6 +74483,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "%bonus_potency%",
      "status": "formula",
      "specials": [
@@ -74520,6 +74731,7 @@
     },
     {
      "function": "MODIFIER_EVENT_ON_ORDER_RECEIVED",
+     "handler": "OnOrderReceived",
      "status": "event"
     },
     {
@@ -74685,6 +74897,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
+     "handler": "GetModifierAttackWhileMovingTarget",
      "formula": "params.attacker ~= parent ? ? : %focusfire_fire_on_the_move% == 0 ? ? : not ?:IsAlive() ? ? : (params.order_type == 3 ? 0 : params.order_type - 3 == 1 ? 0 : 1) == 0 ? ? : ?",
      "status": "partial",
      "specials": [
@@ -74696,6 +74909,7 @@
     },
     {
      "function": "MODIFIER_PROPERTY_ATTACK_POTENCY",
+     "handler": "GetModifierPropertyAttackPotency",
      "formula": "self.field_1b00 == 0 ? 0 : %focusfire_attack_effectiveness% - 100",
      "status": "formula",
      "specials": [
@@ -74973,6 +75187,7 @@
    "functions": [
     {
      "function": "MODIFIER_PROPERTY_ABILITY_POINTS",
+     "handler": "GetModifierAbilityPoints",
      "formula": "ability:GetItemState() + 1",
      "status": "formula"
     },
@@ -75499,7 +75714,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_flags & 32 == 0 ? -%damage_absorb% : 0",
+     "formula": "params.damage_flags & DOTA_DAMAGE_FLAG_HPLOSS == 0 ? -%damage_absorb% : 0",
      "status": "formula",
      "specials": [
       "damage_absorb"
@@ -76098,7 +76313,7 @@
     {
      "function": "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE",
      "handler": "GetModifierIncomingDamage_Percentage",
-     "formula": "params.damage_category & 1 ~= 0 ? 0 : params.damage_flags & 1024 ~= 0 ? 0 : kv.debuff_spell_amp",
+     "formula": "params.damage_category & DOTA_DAMAGE_CATEGORY_ATTACK ~= 0 ? 0 : params.damage_flags & DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION ~= 0 ? 0 : kv.debuff_spell_amp",
      "status": "formula",
      "kv": [
       "debuff_spell_amp"
