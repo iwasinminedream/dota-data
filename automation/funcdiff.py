@@ -126,6 +126,48 @@ class Image:
                         self.symbolic.add(slot)
         return self._relocs
 
+    def plt_symbols(self):
+        """PLT stub address -> imported symbol name: the stub's `jmp [rip+X]` names a GOT slot, the
+        slot's relocation (.rela.plt / .rela.dyn) names the symbol. Stub addresses move with every
+        build, the symbol does not."""
+        if getattr(self, '_plt', None) is not None:
+            return self._plt
+        self._plt = {}
+        dynsym, dynstr = self.sections.get('.dynsym'), self.sections.get('.dynstr')
+        if not dynsym or not dynstr:
+            return self._plt
+        strtab = self.data[dynstr[2]:dynstr[2] + dynstr[3]]
+        def symname(index):
+            off = dynsym[2] + index * 24
+            name, = struct.unpack_from('<I', self.data, off)
+            end = strtab.find(b'\0', name)
+            return strtab[name:end].decode(errors='replace')
+        slots = {}
+        for name in ('.rela.plt', '.rela.dyn'):
+            sec = self.sections.get(name)
+            if not sec:
+                continue
+            _t, _a, off, size = sec
+            for r in range(off, off + size - 23, 24):
+                slot, info, _addend = struct.unpack_from('<QQq', self.data, r)
+                if info >> 32:
+                    slots[slot] = info >> 32
+        for name in ('.plt', '.plt.sec', '.plt.got'):
+            sec = self.sections.get(name)
+            if not sec:
+                continue
+            _t, addr, off, size = sec
+            for stub in range(0, size, 16):
+                code = self.data[off + stub:off + stub + 16]
+                at = code.find(b'\xff\x25')
+                if at < 0 or at + 6 > len(code):
+                    continue
+                disp, = struct.unpack_from('<i', code, at + 2)
+                slot = addr + stub + at + 6 + disp
+                if slot in slots:
+                    self._plt[addr + stub] = symname(slots[slot])
+        return self._plt
+
     def fde_starts(self):
         hdr = self.sections.get('.eh_frame_hdr')
         if not hdr:
@@ -560,6 +602,7 @@ def compare(old_path, new_path, diff_budget=250000):
     old = load_table(old_path)['funcs']
     new = load_table(new_path)['funcs']
     same, changed, removed, added = match(old, new)
+    matched = list(same) + list(changed)   # every old function with its new counterpart
     swapped = callee_changes(old, new, same)
     changed = [(i, j) for i, j in changed if old[i][3] != new[j][3]]
     # an "added" function whose exact code the old build already has (or a "removed" one the new
@@ -571,6 +614,45 @@ def compare(old_path, new_path, diff_budget=250000):
     removed = [i for i in removed if old[i][3] not in n_hashes]
     o_callers, n_callers = caller_names(old), caller_names(new)
     o_img, n_img = Image(old_path), Image(new_path)
+    # Which functions a changed function calls (or takes the address of), in new-build addresses:
+    # a call target it did not have before is a change of logic, never just a recompilation.
+    o2n = {old[i][0]: new[j][0] for i, j in matched}
+    n_by_start = {f[0]: f for f in new}
+    o_by_start = {f[0]: f for f in old}
+
+    def target_name(f, addr):
+        names = f[5] if f else []
+        return names[0] if names else (f'{addr:#x} ' + '; '.join(f'"{s[:40]}"' for s in (f[4] if f else [])[:2])).strip()
+
+    o_plt, n_plt = o_img.plt_symbols(), n_img.plt_symbols()
+
+    # The same target in both builds has the same identity: a function by its new address, an
+    # import by its symbol. A target that is neither (a cold block, a jump into the middle of
+    # something) has no identity across builds and is left out rather than reported.
+    def identity_old(x):
+        if x in o2n:
+            return o2n[x]
+        if x in o_plt:
+            return ('import', o_plt[x])
+        return None
+
+    def identity_new(y):
+        if y in n_by_start:
+            return y
+        if y in n_plt:
+            return ('import', n_plt[y])
+        return None
+
+    def label(ident, f):
+        return f'{ident[1]}()' if isinstance(ident, tuple) else target_name(f, ident)
+
+    def call_changes(o, n):
+        before = {identity_old(x) for x in o[6]} - {None}
+        now = {identity_new(y) for y in n[6]} - {None}
+        added = [i for i in dict.fromkeys(identity_new(y) for y in n[6]) if i is not None and i not in before]
+        removed = [i for i in dict.fromkeys(identity_old(x) for x in o[6]) if i is not None and i not in now]
+        return ([label(i, n_by_start.get(i)) for i in added][:20],
+                [label(i, n_by_start.get(i)) for i in removed][:20])
     lib = os.path.basename(new_path)
     # code diffs: about diff_budget characters per library in all (50 per line), at least 10 lines
     # a function while the budget lasts; the rest only through so-query fdiff
@@ -581,22 +663,29 @@ def compare(old_path, new_path, diff_budget=250000):
         o, n = old[i], new[j]
         ot, nt = function_tokens(old_path, o[0], o[1], o_img), function_tokens(new_path, n[0], n[1], n_img)
         diff = [d[:200] for d in difflib.unified_diff(ot, nt, lineterm='', n=2) if not d.startswith(('---', '+++'))]
+        calls_added, calls_removed = call_changes(o, n)
+        info = summary(ot, nt)
+        if calls_added or calls_removed:
+            info.insert(-1, 'цели вызовов: ' + ' '.join([f'+{x}' for x in calls_added] + [f'−{x}' for x in calls_removed]))
         entries.append({'kind': 'changed', 'old': o[0], 'new': n[0], 'names': n[5] or o[5],
                         'title': describe(n, n_callers.get(j)), 'was': f'{o[0]:#x} ({o[1] - o[0]} байт)',
-                        'summary': summary(ot, nt), 'diff': diff[:min(per_function, max(lines_left, 0))],
-                        'diff_total': len(diff)})
+                        'summary': info, 'diff': diff[:min(per_function, max(lines_left, 0))],
+                        'diff_total': len(diff), 'strings': list(dict.fromkeys(o[4] + n[4])),
+                        'calls_added': calls_added, 'calls_removed': calls_removed})
         lines_left -= per_function
     for i, j, x, y in swapped:
         entries.append({'kind': 'callee', 'old': old[i][0], 'new': new[j][0], 'names': new[j][5],
                         'title': describe(new[j], n_callers.get(j)), 'was': f'{old[i][0]:#x}',
                         'summary': [f'код тот же, но вызывает другую функцию: было {x:#x}, стало {y:#x}'],
-                        'diff': [], 'diff_total': 0})
+                        'diff': [], 'diff_total': 0, 'strings': new[j][4]})
     for j in added:
         entries.append({'kind': 'added', 'new': new[j][0], 'names': new[j][5],
-                        'title': describe(new[j], n_callers.get(j)), 'summary': [], 'diff': [], 'diff_total': 0})
+                        'title': describe(new[j], n_callers.get(j)), 'summary': [], 'diff': [], 'diff_total': 0,
+                        'strings': new[j][4]})
     for i in removed:
         entries.append({'kind': 'removed', 'old': old[i][0], 'names': old[i][5],
-                        'title': describe(old[i], o_callers.get(i)), 'summary': [], 'diff': [], 'diff_total': 0})
+                        'title': describe(old[i], o_callers.get(i)), 'summary': [], 'diff': [], 'diff_total': 0,
+                        'strings': old[i][4]})
     for j in copies_added:
         entries.append({'kind': 'copy_added', 'new': new[j][0], 'names': new[j][5],
                         'title': describe(new[j], n_callers.get(j)), 'summary': [], 'diff': [], 'diff_total': 0})
