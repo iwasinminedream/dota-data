@@ -166,9 +166,49 @@ def snapshot_pair(version):
     return (older[-1], newest) if older else None
 
 
-def function_diffs(old, new, files, workspace):
+# The game rules' game mode field per library: a function that starts or stops comparing it with
+# DOTA_GAMEMODE_CUSTOM (15) behaves differently in custom games (the browser, chat, Panorama APIs...).
+GAME_MODE_FIELD = {'libclient.so': ('C_DOTAGamerules', 'm_iGameMode'), 'libserver.so': ('CDOTAGameRules', 'm_iGameMode')}
+GAMEMODE_CUSTOM = 15
+
+
+def field_offset(tracking, lib, cls, field):
+    """Offset of a field from tracking/schema/<lib>.json, None when not there."""
+    try:
+        with open(os.path.join(tracking, 'schema', f'{lib}.json')) as f:
+            classes = json.load(f)['classes']
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    for c in classes:
+        if c.get('name') == cls:
+            return next((x.get('offset') for x in c.get('fields') or [] if x.get('name') == field), None)
+    return None
+
+
+def add_mode_checks(result, old_path, new_path, trackings):
+    """entry['mode_checks'] = (before, after): how many times the function compares the game mode
+    with DOTA_GAMEMODE_CUSTOM, when that changed; and a summary line saying so."""
+    lib = os.path.basename(new_path)
+    if lib not in GAME_MODE_FIELD or not trackings or not all(trackings):
+        return
+    offs = [field_offset(t, lib, *GAME_MODE_FIELD[lib]) for t in trackings]
+    if None in offs:
+        return
+    entries = [e for e in result['entries'] if e['kind'] in ('changed', 'callee', 'added', 'removed')]
+    before = funcdiff.field_compares(old_path, [e['old'] for e in entries if 'old' in e], offs[0])
+    after = funcdiff.field_compares(new_path, [e['new'] for e in entries if 'new' in e], offs[1])
+    for e in entries:
+        a = before.get(e.get('old'), {}).get(GAMEMODE_CUSTOM, 0) if 'old' in e else 0
+        b = after.get(e.get('new'), {}).get(GAMEMODE_CUSTOM, 0) if 'new' in e else 0
+        if a != b:
+            e['mode_checks'] = (a, b)
+            e.setdefault('summary', []).insert(0, f'проверки режима игры (m_iGameMode == 15, DOTA_GAMEMODE_CUSTOM): {a} -> {b}')
+
+
+def function_diffs(old, new, files, workspace, trackings=None):
     """Function-level comparison of every changed game library (not the third-party ones):
-    func-diff/<lib>.json in the workspace (for so-query) and the results."""
+    func-diff/<lib>.json in the workspace (for so-query) and the results. trackings: (old, new)
+    tracking/ directories, for the schema offsets of the game-mode checks."""
     results = []
     os.makedirs(os.path.join(workspace, 'func-diff'), exist_ok=True)
     for f in files:
@@ -181,6 +221,11 @@ def function_diffs(old, new, files, workspace):
             print(f"funcdiff {f['rel']}: {e!r}", file=sys.stderr)
             continue
         result['rel'] = f['rel']
+        try:
+            add_mode_checks(result, os.path.join(so_report.STORE, old, f['rel']),
+                            os.path.join(so_report.STORE, new, f['rel']), trackings)
+        except Exception as e:  # never lose the function diff over it
+            print(f"mode checks {f['rel']}: {e!r}", file=sys.stderr)
         with open(os.path.join(workspace, 'func-diff', f"{result['lib']}.json"), 'w') as out:
             json.dump(result, out, ensure_ascii=False)
         results.append(result)
@@ -274,8 +319,13 @@ def _signs(strings):
 
 def restriction_signs(entry, changed_only=False):
     """Strings / names of the function that look like a restriction. changed_only: only those among
-    the strings the change added or removed (the strong sign: new or dropped messages, URLs, names)."""
-    found = [x for s in entry.get('summary', []) if s.startswith('строки') for x in _signs(summary_strings(s))]
+    the strings the change added or removed (the strong sign: new or dropped messages, URLs, names).
+    A changed game-mode check (add_mode_checks) comes first."""
+    found = []
+    if entry.get('mode_checks'):
+        a, b = entry['mode_checks']
+        found.append(f'проверка режима игры == DOTA_GAMEMODE_CUSTOM: {a} -> {b}')
+    found += [x for s in entry.get('summary', []) if s.startswith('строки') for x in _signs(summary_strings(s))]
     if entry['kind'] in ('added', 'removed'):
         found += _signs(entry_strings(entry))   # a whole new / dropped function: all its strings are changed
     if not changed_only:
@@ -350,7 +400,7 @@ def classify(result):
     for e in result['entries']:
         if e['kind'].startswith('copy_'):
             out[id(e)] = 'copy'
-        elif restriction_signs(e, changed_only=True):
+        elif e.get('mode_checks') or restriction_signs(e, changed_only=True):
             out[id(e)] = 'restriction'   # added or removed strings that look like a restriction: always kept
         elif is_gameplay(e):
             out[id(e)] = 'gameplay'
@@ -691,7 +741,9 @@ game», аддон), браузер, HTML-панели и URL (что откры
 (консольных и клиентских команд, конваров, событий, адресов), новые флаги команд (cheat, \
 clientcmd_can_execute, server_can_execute и т. п.), новые проверки прав, доверия и античита, лимиты и \
 отказы («not allowed», «denied», «disabled»). Функции с признаками ограничения в данных уже помечены «⚠» — \
-разбери каждую: что именно проверяется и что запрещается. Пиши даже о мелочи.
+разбери каждую: что именно проверяется и что запрещается. Пиши даже о мелочи. Строка «проверки режима игры \
+(m_iGameMode == 15, DOTA_GAMEMODE_CUSTOM): N -> M» значит, что функция стала чаще или реже сравнивать режим \
+игры с кастомным: в кастомках она теперь работает иначе (например, браузер и HTML-панели, чат, Panorama API).
 - Затем остальные технические изменения: что поменялось в логике функции (новая или убранная проверка, \
 другой вызов, строки, константы), в API, в протоколах и схеме — и что это может значить для кастомок и \
 плагинов (с пометкой «возможно», если это вывод).
@@ -717,7 +769,8 @@ FINAL_PROMPT = """Ты проверяешь и доводишь техничес
 в другую функцию, перенос static-инициализации, вызов помощника вместо встроенного кода и наоборот, другие \
 адреса вызовов и таблиц при том же коде, номера строк __LINE__); шум дампера. Не пиши и о том, что \
 что-то отфильтровано, «не разбирается» или «игровое» — просто не упоминай, и в «Что исправлено в черновике» \
-тоже. Если раздел после этого пуст — одна строка.
+тоже. Не называй файлы рабочего каталога (api-changes.txt, so-diff.txt, func-diff.txt, tracking-diff.txt, \
+digests/, chunks/) и не пиши, где что пусто, — только выводы о самой игре. Если раздел после этого пуст — одна строка.
 
 В рабочем каталоге:
 - digests/ — черновые конспекты всех частей данных (первый проход, без инструментов). Черновик ошибается: \
@@ -747,7 +800,8 @@ libserver.so — сервер; libengine2.so — движок, сеть, кон�
 (Grep/Read по chunks, api-changes.txt, so-diff.txt, func-diff.txt, дампам; so-query для .so). Исправь \
 неверное, убери неподтверждённое, игровое и объяснимое пересборкой, дополни пропущенное. Особенно ищи \
 ограничения: функции, помеченные «⚠»; новые и изменённые проверки режима игры (сравнение с 15 = \
-DOTA_GAMEMODE_CUSTOM, «custom game»); всё про браузер, HTML-панели и URL (по строкам browser/HTML/URL — \
+DOTA_GAMEMODE_CUSTOM, «custom game»; строка «проверки режима игры … N -> M» в func-diff.txt — обязательно \
+разбери по коду, что функция делает в кастомке иначе и откуда она вызывается); всё про браузер, HTML-панели и URL (по строкам browser/HTML/URL — \
 xref и func: что проверяется перед открытием); белые и чёрные списки команд, конваров, событий и адресов \
 (массивы имён в коде, новые флаги clientcmd_can_execute / server_can_execute / cheat в api-changes.txt); \
 новые отказы и лимиты. Для каждого — что именно проверяется, что запрещается или меняется, для кого \
@@ -915,6 +969,10 @@ def main():
             json.dump({'old': os.path.join(so_report.STORE, pair[0]) if pair else None,
                        'new': os.path.join(so_report.STORE, current)}, f)
         add_dirs.append(os.path.join(so_report.STORE, current))
+    tracking_table, tracking_old, t_blocks, old_tracking = None, None, [], None
+    new_tracking = os.path.join(DATA, 'tracking')
+    if os.path.exists(os.path.join(new_tracking, 'manifest.json')):
+        old_tracking, tracking_old = previous_tracking(version, workspace)
     files, func_results = [], []
     if pair:
         old, new = pair
@@ -927,7 +985,7 @@ def main():
                 f.write(f'Снимки .so: {old} -> {new}\n\n' +
                         ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in bl))
         add_dirs.append(os.path.join(so_report.STORE, old))
-        func_results = function_diffs(old, new, files, workspace)
+        func_results = function_diffs(old, new, files, workspace, (old_tracking, new_tracking))
         if func_results:
             technical = []
             for r in func_results:
@@ -940,19 +998,15 @@ def main():
                 f.write(f'Снимки .so: {old} -> {new}\n\n' + '\n'.join(funcdiff.render(r) for r in func_results))
             blocks += function_blocks(func_results, full)
 
-    tracking_table, tracking_old, t_blocks = None, None, []
-    new_tracking = os.path.join(DATA, 'tracking')
-    if os.path.exists(os.path.join(new_tracking, 'manifest.json')):
-        old_tracking, tracking_old = previous_tracking(version, workspace)
-        if old_tracking:
-            t_all, tracking_table = tracking_diff.blocks(old_tracking, new_tracking)
-            t_blocks = technical_tracking_blocks(t_all)
-            for path, bl in ((os.path.join(workspace, 'tracking-diff.txt'), t_blocks),
-                             (os.path.join(full, 'tracking-diff-all.txt'), t_all)):
-                with open(path, 'w') as f:
-                    f.write(f'tracking/: {tracking_old} -> {version}\n\n' +
-                            ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in bl))
-            blocks += t_blocks
+    if old_tracking:
+        t_all, tracking_table = tracking_diff.blocks(old_tracking, new_tracking)
+        t_blocks = technical_tracking_blocks(t_all)
+        for path, bl in ((os.path.join(workspace, 'tracking-diff.txt'), t_blocks),
+                         (os.path.join(full, 'tracking-diff-all.txt'), t_all)):
+            with open(path, 'w') as f:
+                f.write(f'tracking/: {tracking_old} -> {version}\n\n' +
+                        ''.join(f'### {t}\n' + '\n'.join(lines) + '\n\n' for t, lines in bl))
+        blocks += t_blocks
 
     chunks = chunk(blocks)
     if args.no_ai:

@@ -416,6 +416,69 @@ def function_tokens(path, start, end, img=None):
     return tokens(img, insns, start, end)[0]
 
 
+_FIELD_LOAD = re.compile(r'^(\w+), dword ptr \[\w+ \+ (0x[0-9a-f]+)\]$')
+_FIELD_CMP = re.compile(r'^dword ptr \[\w+ \+ (0x[0-9a-f]+)\], (0x[0-9a-f]+|\d+)$')
+_REG_IMM = re.compile(r'^(\w+), (0x[0-9a-f]+|\d+)$')
+
+
+def field_compares(path, starts, offset):
+    """Which constants a dword field at `offset` of an object (m_iGameMode of the game rules, say) is
+    compared with, per function: {start: Counter(imm)} for the functions starting at `starts`.
+    Counted: `cmp [r + off], imm`; a load of the field into a register that is compared (cmp/sub)
+    within the next four instructions; the same after a call to a getter that only returns it."""
+    img = Image(path)
+    funcs = {f[0]: f for f in load_table(path)['funcs']}
+    md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_64)
+    disp = offset.to_bytes(4, 'little') if offset >= 0x80 else bytes([offset])
+    off_hex = hex(offset)
+
+    def body(f):
+        o = img.offset(f[0])
+        return img.data[o:o + (f[1] - f[0])]
+
+    getters = set()
+    for f in funcs.values():
+        if f[1] - f[0] <= 40 and disp in body(f):
+            ins = list(md.disasm(body(f), f[0]))
+            if ins and ins[-1].mnemonic == 'ret' and any(
+                    i.mnemonic == 'mov' and (m := _FIELD_LOAD.match(i.op_str)) and m.group(1) == 'eax'
+                    and m.group(2) == off_hex for i in ins):
+                getters.add(f[0])
+    out = {}
+    for start in starts:
+        f = funcs.get(start)
+        found = collections.Counter()
+        out[start] = found
+        if not f:
+            continue
+        blob = body(f)
+        if disp not in blob and not getters & set(f[6]):
+            continue
+        ins = list(md.disasm(blob, start))
+        for k, i in enumerate(ins):
+            reg = None
+            if i.mnemonic == 'cmp':
+                m = _FIELD_CMP.match(i.op_str)
+                if m and m.group(1) == off_hex:
+                    found[int(m.group(2), 0)] += 1
+                    continue
+            if i.mnemonic in ('mov', 'movsxd'):
+                m = _FIELD_LOAD.match(i.op_str)
+                if m and m.group(2) == off_hex:
+                    reg = m.group(1)
+            elif i.mnemonic == 'call' and i.op_str.startswith('0x') and int(i.op_str, 16) in getters:
+                reg = 'eax'
+            if reg:
+                for j in ins[k + 1:k + 5]:
+                    m = _REG_IMM.match(j.op_str)
+                    if j.mnemonic in ('cmp', 'sub') and m and m.group(1) == reg:
+                        found[int(m.group(2), 0)] += 1
+                        break
+                    if j.mnemonic not in ('cmp', 'test') and j.op_str.split(',')[0] == reg:
+                        break   # the register gets another value
+    return out
+
+
 def _lis(pairs):
     """Longest chain of pairs increasing in both indexes (pairs sorted by the first)."""
     tails, links, idx = [], [None] * len(pairs), []

@@ -19,7 +19,9 @@ no GPU, no Steam client). When the installed Dota build changes it:
    and pushes it to `origin/master` at once, so the dump is on GitHub without waiting for the
    report (after a big patch the report takes hours);
 6. writes the update report `reports/<version>.md` (`update-report.py`, commit `report: <version>`) — a technical
-   report: restrictions and oddities first (game-mode checks, browser/URLs, allow lists, command flags),
+   report: restrictions and oddities first (game-mode checks, browser/URLs, allow lists, command flags;
+   a function of libclient/libserver that starts or stops comparing `m_iGameMode` with 15,
+   DOTA_GAMEMODE_CUSTOM — offset from the build's schema — is always marked ⚠),
    then the API, the client (`libclient.so`) in detail, server and engine, schema and protocols; patch
    content and balance and what a recompilation alone explains are left out (full lists in
    `reports/<version>-functions.md`),
