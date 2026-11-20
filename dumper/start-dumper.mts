@@ -16,6 +16,7 @@ import * as path from 'path';
 import dotaDir from '../build/util/dota-dir';
 import { reportBaselineChange, syncModifierBaseline } from './modifier-baseline.mts';
 import { extractNativeModifiers, installedVersion } from './native-modifiers.mts';
+import { extractTableKeys } from './table-keys.mts';
 import { extractInterfaces, parseLayoutXsd, PanelInfo } from './panels.mts';
 import * as vConsole from './vconsole.mts';
 import { carryForward } from './linux/carry-forward.mts';
@@ -244,6 +245,8 @@ console.log('\nSaved dump + modifier test — dumper finished successfully.');
 
 // Modifier functions and property formulas of the native modifiers (static analysis of server.dll).
 extractNativeModifiers(dota2Dir, installedVersion(dota2Dir));
+// Keys server.dll reads from the Lua tables VScript functions take (the same kind of analysis).
+extractTableKeys(dota2Dir, installedVersion(dota2Dir));
 
 // Fold this dump's modifier state back into the dumper, and say so at the very end
 // if the modifier function list itself changed in this Dota build.

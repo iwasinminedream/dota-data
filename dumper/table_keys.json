@@ -1,0 +1,2370 @@
+{
+ "version": "6986",
+ "functions": {
+  "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery": {
+   "keys": {
+    "clear_storage_per_query": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "clear_storage_per_trigger_or_pre_test_pass": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "fail_gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "ignore_previous_entries": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "matching_type": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "never_match_queries": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "post_tests": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "postmatch_increments": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "postmatch_increments.pre_storage_test": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "postmatch_increments.storage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "progress_stored_in": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.accumulate_event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.accumulate_event.event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.accumulate_event.gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.accumulate_event.storage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.accumulate_event.tracked_stat_id": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.end_event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.end_event.event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.end_event.gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.end_event.storage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.end_event.tracked_stat_id": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.series": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.start_event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.start_event.event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.start_event.gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.start_event.storage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.start_event.tracked_stat_id": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.state_values": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.time_block": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.trigger": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.trigger.event": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.trigger.gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.trigger.storage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query.trigger.tracked_stat_id": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "query_match_causes_failure": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    },
+    "success_gametime": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "AddRealTimeCombatAnalyzerQuery"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetAbilityTuningValueFilter": {
+   "keys": {
+    "entindex_ability_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_caster_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "level": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "value": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "value_name_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetBountyRunePickupFilter": {
+   "keys": {
+    "gold_bounty": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "player_id_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "xp_bounty": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetDamageFilter": {
+   "keys": {
+    "damage": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "damagetype_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_attacker_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_inflictor_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_victim_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetExecuteOrderFilter": {
+   "keys": {
+    "entindex_ability": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_target": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "issuer_player_id_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "order_type": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "position_x": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "position_y": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "position_z": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "queue": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "sequence_number_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "shop_item_name": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "units": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetHealingFilter": {
+   "keys": {
+    "entindex_healer_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_inflictor_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_target_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "heal": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetItemAddedToInventoryFilter": {
+   "keys": {
+    "inventory_parent_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "item_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "item_parent_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "suggested_slot": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetModifierGainedFilter": {
+   "keys": {
+    "duration": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_ability_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_caster_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_parent_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "name_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetModifyExperienceFilter": {
+   "keys": {
+    "experience": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "hero_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "player_id_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "reason_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "source_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetModifyGoldFilter": {
+   "keys": {
+    "gold": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "player_id_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "reason_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "reliable": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "source_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetRuneSpawnFilter": {
+   "keys": {
+    "rune_type": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "spawner_entindex_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTABaseGameMode.SetTrackingProjectileFilter": {
+   "keys": {
+    "dodgeable": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_ability_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_source_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "entindex_target_const": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "expire_time": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "is_attack": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "max_impact_time": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    },
+    "move_speed": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "filter invoker"
+     ]
+    }
+   }
+  },
+  "CDOTAVoteSystem.StartVote": {
+   "keys": {
+    "AllowVoteChanging": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "DefaultChoice": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "Duration": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "EndEarlyIfAllHaveVoted": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "EndEarlyIfOutcomeIsDetermined": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "NumChoices": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "PauseGame": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "RequiredVoteThreshold": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    },
+    "Text": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_StartVote"
+     ]
+    }
+   }
+  },
+  "CDOTA_BaseNPC.AddNewModifier": {
+   "keys": {
+    "allow_copy": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura_apply_modifier": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura_is_heal": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura_search_flags": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura_search_team": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "aura_search_type": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "auraOwner": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "BaseClass": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "creationtime": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "duplication_source": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "duration": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "existing_duration": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "force_duration": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "isCurrentlyInAuraRange": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "isProvidedByAura": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    },
+    "stack_count": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "Script_AddNewModifier"
+     ]
+    }
+   }
+  },
+  "CDOTA_BaseNPC_Creature.AddItemDrop": {
+   "keys": {
+    "bMustBeChampion": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_AddItemDrop"
+     ]
+    },
+    "flChance": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_AddItemDrop"
+     ]
+    },
+    "nReqLevel": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_AddItemDrop"
+     ]
+    },
+    "szItemName": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_AddItemDrop"
+     ]
+    }
+   }
+  },
+  "ProjectileManager.CreateLinearProjectile": {
+   "keys": {
+    "Ability": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bDrawsOnMinimap": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bHasFrontalCone": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bIgnoreObstructions": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bIgnoreSource": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bProvidesVision": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bStickyFoWReveal": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "bVisibleToEnemies": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "EffectName": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "ExtraData": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "fDistance": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "fEndRadius": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "fExpireTime": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "fMaxSpeed": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "fStartRadius": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "iUnitTargetFlags": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "iUnitTargetTeam": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "iUnitTargetType": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "iVisionRadius": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "iVisionTeamNumber": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "Source": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "vAcceleration": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "vParticleSpawnOrigin": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "vSpawnOrigin": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    },
+    "vVelocity": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateLinearProjectile"
+     ]
+    }
+   }
+  },
+  "ProjectileManager.CreateTrackingProjectile": {
+   "keys": {
+    "Ability": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bDodgeable": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bDrawsOnMinimap": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bIgnoreObstructions": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bIsAttack": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bProvidesVision": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bReplaceExisting": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bSuppressTargetCheck": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "bVisibleToEnemies": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "EffectName": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "ExtraData": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "flExpireTime": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "iMoveSpeed": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "iSourceAttachment": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "iVisionRadius": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "iVisionTeamNumber": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "Source": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "Target": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "vSourceLoc": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    },
+    "vTargetLoc": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateTrackingProjectile"
+     ]
+    }
+   }
+  },
+  "_G.ApplyDamage": {
+   "keys": {
+    "ability": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    },
+    "attacker": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    },
+    "damage": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    },
+    "damage_flags": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    },
+    "damage_type": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    },
+    "victim": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_ApplyDamage"
+     ]
+    }
+   }
+  },
+  "_G.CreateEffect": {
+   "keys": {
+    "angles": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateEffect"
+     ]
+    },
+    "direction": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateEffect"
+     ]
+    },
+    "effectname": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateEffect"
+     ]
+    },
+    "entity": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateEffect"
+     ]
+    },
+    "position": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_CreateEffect"
+     ]
+    }
+   }
+  },
+  "_G.CreateIllusions": {
+   "keys": {
+    "allow_copy": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura_apply_modifier": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura_is_heal": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura_search_flags": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura_search_team": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "aura_search_type": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "auraOwner": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "BaseClass": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "bounty_base": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "bounty_growth": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "creationtime": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "duplication_source": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "duration": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "existing_duration": {
+     "access": [
+      "kv_set"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "fixed_day_vision": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated"
+     ]
+    },
+    "fixed_night_vision": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated"
+     ]
+    },
+    "force_duration": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "illusion_effect_override": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    },
+    "illusion_effectiveness": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "illusion_type": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "illusionlabel": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated"
+     ]
+    },
+    "incoming_damage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "invulnerability_on_creation": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    },
+    "is_hidden": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated"
+     ]
+    },
+    "isCurrentlyInAuraRange": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "isProvidedByAura": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "no_effect_on_original": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    },
+    "nodraw": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    },
+    "outgoing_damage": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "outgoing_damage_roshan": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "outgoing_damage_structure": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "CDOTA_Modifier_Illusion::OnCreated",
+      "CDOTA_Modifier_Illusion::OnRefresh"
+     ]
+    },
+    "permit_illusion_recycling": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    },
+    "stack_count": {
+     "access": [
+      "kv_get",
+      "kv_set"
+     ],
+     "sources": [
+      "generic modifier creation"
+     ]
+    },
+    "teamonlyparticles": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_CreateIllusions"
+     ]
+    }
+   }
+  },
+  "_G.CreateUnitFromTable": {
+   "keys": {
+    "classname": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "DOTA_VScript_CreateUnitFromTable"
+     ]
+    },
+    "MapUnitName": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_CreateUnitFromTable"
+     ]
+    }
+   }
+  },
+  "_G.ExecuteOrderFromTable": {
+   "keys": {
+    "AbilityIndex": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    },
+    "OrderType": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    },
+    "Position": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    },
+    "Queue": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    },
+    "TargetIndex": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    },
+    "UnitIndex": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "Script_ExecuteOrderFromTable"
+     ]
+    }
+   }
+  },
+  "_G.PrecacheEntityFromTable": {
+   "keys": {
+    "attributes": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_PrecacheEntityFromTable"
+     ]
+    },
+    "classname": {
+     "access": [
+      "getvalue",
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_PrecacheEntityFromTable"
+     ]
+    },
+    "connections": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_PrecacheEntityFromTable"
+     ]
+    }
+   }
+  },
+  "_G.PrecacheUnitFromTableAsync": {
+   "keys": {
+    "classname": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "DOTA_VScript_PrecacheUnitFromTableAsync"
+     ]
+    },
+    "MapUnitName": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_PrecacheUnitFromTableAsync"
+     ]
+    }
+   }
+  },
+  "_G.PrecacheUnitFromTableSync": {
+   "keys": {
+    "classname": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "DOTA_VScript_PrecacheUnitFromTableSync"
+     ]
+    },
+    "MapUnitName": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "DOTA_VScript_PrecacheUnitFromTableSync"
+     ]
+    }
+   }
+  },
+  "_G.SpawnEntityFromTableAsynchronous": {
+   "keys": {
+    "attributes": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableAsynchronous"
+     ]
+    },
+    "classname": {
+     "access": [
+      "getvalue",
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableAsynchronous"
+     ]
+    },
+    "connections": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableAsynchronous"
+     ]
+    }
+   }
+  },
+  "_G.SpawnEntityFromTableSynchronous": {
+   "keys": {
+    "attributes": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableSynchronous"
+     ]
+    },
+    "classname": {
+     "access": [
+      "getvalue",
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableSynchronous"
+     ]
+    },
+    "connections": {
+     "access": [
+      "iter_cmp"
+     ],
+     "sources": [
+      "Script_SpawnEntityFromTableSynchronous"
+     ]
+    }
+   }
+  },
+  "_G.TraceCollideable": {
+   "keys": {
+    "endpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "ent": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "fraction": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "hit": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "max": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "min": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "normal": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "pos": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "startpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    },
+    "startsolid": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceCollideable"
+     ]
+    }
+   }
+  },
+  "_G.TraceHull": {
+   "keys": {
+    "endpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "enthit": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "fraction": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "hit": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "ignore": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "max": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "min": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "normal": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "pos": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "startpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    },
+    "startsolid": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceHull"
+     ]
+    }
+   }
+  },
+  "_G.TraceLine": {
+   "keys": {
+    "endpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "enthit": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "fraction": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "hit": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "ignore": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "mask": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "normal": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "pos": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "startpos": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    },
+    "startsolid": {
+     "access": [
+      "setvalue"
+     ],
+     "sources": [
+      "Script_TraceLine"
+     ]
+    }
+   }
+  },
+  "_G.UTIL_MessageTextAll_WithContext": {
+   "keys": {
+    "player_id": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageTextAll_WithContext"
+     ]
+    },
+    "team_id": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageTextAll_WithContext"
+     ]
+    },
+    "value": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageTextAll_WithContext"
+     ]
+    }
+   }
+  },
+  "_G.UTIL_MessageText_WithContext": {
+   "keys": {
+    "player_id": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageText_WithContext"
+     ]
+    },
+    "team_id": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageText_WithContext"
+     ]
+    },
+    "value": {
+     "access": [
+      "getvalue"
+     ],
+     "sources": [
+      "Script_UTIL_MessageText_WithContext"
+     ]
+    }
+   }
+  },
+  "_G.UpdateEventPoints": {
+   "keys": {
+    "event_score": {
+     "access": [
+      "kv_get"
+     ],
+     "sources": [
+      "UpdateEventPoints"
+     ]
+    }
+   }
+  }
+ }
+}

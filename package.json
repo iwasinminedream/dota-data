@@ -30,6 +30,7 @@
     "build:modifier-properties": "tsx dumper/build-modifier-properties.ts",
     "build:native-modifiers": "tsx dumper/build-native-modifiers.ts",
     "dump:native-modifiers": "tsx dumper/native-modifiers.mts",
+    "dump:table-keys": "tsx dumper/table-keys.mts",
     "build:abilities": "tsx dumper/build-abilities.ts",
     "build:units": "tsx dumper/build-units.ts",
     "build:localization": "tsx dumper/build-localization.ts",

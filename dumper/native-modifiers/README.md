@@ -128,3 +128,66 @@ their functions). The changelog tracks client results as `modifier_function_clie
 server.dll, half a minute for client.dll). The modules can
 be used one by one; `Renderer.unknown` / `Renderer.examples` count and show what made formulas partial,
 which is the list to work from when a patch changes the code patterns.
+
+# Table keys (`table_keys.py`)
+
+The keys server.dll reads from (and writes to) the Lua tables VScript functions take: CreateIllusions'
+`modifierKeys`, the options of `ApplyDamage`, `ExecuteOrderFromTable` and the projectiles, the `Trace*` tables,
+the event tables of the `Set*Filter` callbacks, and so on. Static analysis of the Windows server.dll with the same
+tooling (`pe.py`, `script_api.py`, `modifiers.py`, `x64emu.py`); about 35 s on 6986.
+
+```
+python3 -I dumper/native-modifiers/table_keys.py --dll server.dll [--out dumper/table_keys.json] [--version 6986]
+                                                 [--debug]   # roots with RVAs, notes, call chains, untraced
+npm run dump:table-keys                                      # the same, as the dumper runs it (dumper/table-keys.mts)
+```
+
+`dumper/table-keys.mts` runs it after every dump (`npm run auto-dump`); then `build/vscripts/table-keys.ts`
+(part of `generateVScripts`) compares the result with the documented table types:
+
+- `files/vscripts/table_keys.json`: every function with its keys, `access` (`read`: the engine reads it from the
+  table; `write`: the engine puts it there, e.g. a filter event field), the engine code that does it (`sources`),
+  `documented` against the argument's type, `documentedNotSeen`, and for filters `notReadBack` (documented as
+  writable, but the engine does not read it back after the filter, so a change in Lua is ignored);
+- `files/vscripts/api-types.json`: a key a type lacks is added to it, `types: ['unknown']` and a description
+  saying where it was found, so a key a new build starts reading shows up in the types and in the changelog at
+  once. Describe it in `build/vscripts/api-types/index.ts` and the description there takes its place. Not added:
+  nested keys, keys of the entity spawn tables (`SpawnEntityFromTable*`, `CreateUnitFromTable`: the whole table
+  becomes the entity's keyvalues), keys the engine itself writes into an option table (bookkeeping such as
+  `creationtime`), and keys only the generic modifier creation reads (AddNewModifier's own keys);
+- the changelog category **Lua Table Keys** (one item per function and key; its read/write is the signature).
+
+## How it works
+
+1. **Roots**: every binding of `script_classes()` with a direct implementation (2287 functions in 91 classes on
+   6986), plus extra roots where a table is read outside the binding: `CDOTA_Modifier_Illusion::OnCreated` /
+   `OnRefresh` and the C++ AddNewModifier for CreateIllusions (the KeyValues reach the illusion modifier through
+   the spawn key `illusionKeyValues`), and for every `Set*Filter` the functions that invoke the filter (they pass
+   the field the setter stores the function into to the shared filter runner, which turns the event KeyValues
+   into a table, calls Lua and reads the table back).
+2. **Data flow** per function (capstone, basic blocks, registers and stack slots): string literals, `g_pScriptVM`
+   and its slots, the arguments, `new KeyValues`, call results, the `GetValue` out-variant (nested tables), struct
+   fields, HKeySymbols. Callees to depth 3, summarised in terms of their arguments and substituted at each call.
+3. **What is recorded**: virtual calls on the script VM with a literal key (`getvalue` / `setvalue`; the slots are
+   calibrated from the code: GetValue is the slot whose out-variant is passed to ReleaseValue afterwards), the
+   KeyValues imports with a literal key (`kv_get`: `Get*`, `FindKey`, also through cached HKeySymbols; `kv_set`:
+   `Set*`, `Add*`, `FindKey(create)`), and keys compared while the table is iterated (`iter_cmp`).
+4. **Tracing**: a finding counts only when its object goes back to the Lua table (the argument, a nested table read
+   from it, or KeyValues filled from it); everything else is `_untraced` and is written only with `--debug`
+   (it depends on inlining and would come and go between builds).
+5. **Check**: if the VM slots cannot be calibrated, or keys every working analysis finds are missing (`ANCHORS`:
+   ApplyDamage's victim/attacker/damage/damage_type, CreateIllusions' outgoing/incoming_damage and bounty_base,
+   the damage filter's `damage`, TraceLine's startpos/endpos), it exits 3 without output and the previous file is
+   kept, instead of a changelog that removes every key and adds them back with the next build.
+
+KeyValues compare keys without case (`illusionLabel` = `illusionlabel`). The output has no addresses: the same
+analysis of the same DLL gives the same file (checked with different `PYTHONHASHSEED` and environments).
+
+**Known limits.** Keys read through objects the analysis does not model (heap fields, globals, `GetPtr`, virtual
+calls it cannot resolve) are missed or untraced: `fullhp` of CreateIllusions is read by the spawn code behind
+`illusionKeyValues` and is not seen. Keys built at run time and `GetFirstSubKey` loops are invisible. Engine
+→ Lua tables that are not filter events (modifier event parameters, return values) are not covered.
+
+**Found with it on 6986**: `illusion_effectiveness` of CreateIllusions (a float `modifier_illusion` keeps;
+default 20), and the filter fields `level` (AbilityTuningValue) and `shop_item_name` (ExecuteOrder), which are not
+read back; it also confirms that TraceCollideable reads `min`/`max` and TraceHull does not read `mask`.

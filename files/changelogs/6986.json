@@ -35,5 +35,43 @@
         }
       ]
     }
+  },
+  "documentation": {
+    "Lua Types": {
+      "added": [
+        {
+          "type": "type_field",
+          "class": "CreateIllusionsModifierKeys",
+          "name": "illusion_effectiveness",
+          "signature": "illusion_effectiveness: float | nil",
+          "description": "`modifier_illusion` reads it as a float when it is created and refreshed and keeps it on the modifier. Not in the help; what it changes is not established yet.\n@default 20"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "type_field",
+          "name": "level",
+          "class": "AbilityTuningValueFilterEvent",
+          "changes": {
+            "description": {
+              "old": "Zero-based ability level the value is requested for.",
+              "new": "Zero-based ability level the value is requested for. Not read back after the filter: changing it has no effect."
+            }
+          }
+        },
+        {
+          "type": "type_field",
+          "name": "shop_item_name",
+          "class": "ExecuteOrderFilterEvent",
+          "changes": {
+            "description": {
+              "old": "",
+              "new": "Not read back after the filter: changing it has no effect."
+            }
+          }
+        }
+      ]
+    }
   }
 }

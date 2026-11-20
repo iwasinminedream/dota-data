@@ -164,6 +164,13 @@ apiTypesDeclarations.push({
         'Allows reusing a pooled illusion entity of this hero instead of spawning a new one.\n@default true',
     },
     {
+      name: 'illusion_effectiveness',
+      types: ['float', 'nil'],
+      description:
+        '`modifier_illusion` reads it as a float when it is created and refreshed and keeps it on the modifier. ' +
+        'Not in the help; what it changes is not established yet.\n@default 20',
+    },
+    {
       name: 'fullhp',
       types: ['bool', 'nil'],
       description:
@@ -421,7 +428,8 @@ apiTypesDeclarations.push({
     {
       name: 'level',
       types: ['int'],
-      description: 'Zero-based ability level the value is requested for.',
+      description:
+        'Zero-based ability level the value is requested for. Not read back after the filter: changing it has no effect.',
     },
     { name: 'value', types: ['int'] },
   ],
@@ -463,7 +471,11 @@ apiTypesDeclarations.push({
     { name: 'position_x', types: ['float'] },
     { name: 'position_y', types: ['float'] },
     { name: 'position_z', types: ['float'] },
-    { name: 'shop_item_name', types: ['string'] },
+    {
+      name: 'shop_item_name',
+      types: ['string'],
+      description: 'Not read back after the filter: changing it has no effect.',
+    },
   ],
 });
 

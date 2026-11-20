@@ -107,6 +107,7 @@ dota-data/
 │   ├── build-modifiers.ts      # Extracts modifier_list.json from dump
 │   ├── native-modifiers/       # server.dll / client.dll analysis: native modifiers' functions + formulas (Python)
 │   ├── native-modifiers.mts    # Runs it after auto-dump → native_modifiers.json (+ _client.json from client.dll)
+│   ├── table-keys.mts          # Runs native-modifiers/table_keys.py after auto-dump → table_keys.json (Lua table keys)
 │   └── build-native-modifiers.ts # native_modifiers.json → files/vscripts/native_modifiers.json
 ├── files/                      # Generated output (published in npm)
 │   ├── convars.json
@@ -126,7 +127,8 @@ dota-data/
 │       ├── api-types.json / .d.ts # Type definitions (Object, Nominal, Primitive)
 │       ├── enums.json / .d.ts  # Enum + constant declarations
 │       ├── modifier_list.json  # Modifier names by category
-│       └── native_modifiers.json # Per native modifier: declared functions, property formulas (server + client.dll)
+│       ├── native_modifiers.json # Per native modifier: declared functions, property formulas (server + client.dll)
+│       └── table_keys.json     # Keys server.dll reads from / writes to the Lua tables of VScript functions
 ├── src/                        # Runtime library (compiled to lib/)
 │   ├── helpers/
 │   │   └── vscripts.ts         # allData, findTypeByName(), getDeepTypes(), getFuncDeepTypes()
@@ -200,6 +202,8 @@ The `-- BASELINE START/END` block in that file holds the previous dump's state, 
 `dumper/native-modifiers/extract.py` (Python 3 + capstone, the same requirement as `automation/funcdiff.py`) reads server.dll without launching the game: every class derived from `CDOTA_Buff`, the modifier functions its `DeclareFunctions` registers, and for every property the value its handler returns as a formula over special values (`%name%`), creation parameters (`kv.name`), `params` fields, the stack count and named calls on caster / parent / ability (`parent:IsRangedAttacker()`, `state(parent, MODIFIER_STATE_X)`). A symbolic executor follows every path of the x86-64 code; names come from the Lua bindings of the same DLL (each method's native code becomes a template), so nothing is hard-coded per build. Status per function: `constant`, `formula`, `partial` (some part shown as `?`), `unresolved`, `event` (events are listed without a formula). `CheckState` is read the same way: per modifier the `MODIFIER_STATE_*` it sets true / false and the condition (`states`). Details, the formula syntax and the output schema: `dumper/native-modifiers/README.md`.
 
 It runs at the end of every successful `npm run auto-dump`, or alone with `npm run dump:native-modifiers` (it only needs the installed server.dll; `DOTA_SERVER_BINARY` on Linux, as for engine enums; with only libserver.so or without Python/capstone the previous file is kept), and writes `dumper/native_modifiers.json` with the game version from steam.inf. The same analysis of client.dll (next to server.dll, or `DOTA_CLIENT_BINARY`) writes `dumper/native_modifiers_client.json`: the client's own copy of the modifiers (what it predicts and shows in tooltips). `build:native-modifiers` checks the server file against the dump (version, `modifierfunction` names), merges the client one (a function's `client` result where it differs from the server's, `side: "server" | "client"` for what only one DLL has; client CheckState is not used), adds the ability whose special values the formulas read (`ability`, or `abilities` when several define all of them) and writes `files/vscripts/native_modifiers.json`. The changelog tracks every modifier function with its formula as the value, the client's differing results as `modifier_function_client` and every state with its value and condition (`modifier_state`) (a changed formula is a game change; never part of the Documentation block).
+
+**Table keys.** `dumper/native-modifiers/table_keys.py` (same tooling) lists the keys server.dll reads from and writes to the Lua tables VScript functions take (CreateIllusions' modifierKeys, ApplyDamage, the projectile and Trace tables, the Set*Filter event tables…) into `dumper/table_keys.json`: traced findings only, no addresses, deterministic; it exits 3 and keeps the previous file when the VM slots cannot be calibrated or keys it always finds (`ANCHORS`) are missing. `dumper/table-keys.mts` runs it after every successful `npm run auto-dump` (alone: `npm run dump:table-keys`). `build/vscripts/table-keys.ts`, part of `generateVScripts` (so `files_match_dump` regenerates the same files), writes `files/vscripts/table_keys.json` (per function: keys, read/write, the engine code that uses them, documented or not against the argument's type, `documentedNotSeen`, filters' `notReadBack`) and adds the keys a type lacks to `files/vscripts/api-types.json` (`unknown`, "Not described yet: found in server.dll…"; not for nested keys, entity spawn tables, engine bookkeeping or keys only the generic modifier creation reads). A description in `build/vscripts/api-types/index.ts` replaces the generated one. The changelog category is **Lua Table Keys** (`type_field` items: function, key, read/write as the signature; never in the Documentation block; a category the previous version lacks is the baseline). Details: `dumper/native-modifiers/README.md`.
 
 ### Capturing on Linux
 

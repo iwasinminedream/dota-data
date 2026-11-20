@@ -90,6 +90,8 @@ def item_text(item):
     if item.get('class'):
         name = f"{item['class']}.{name}"
     extra = item.get('signature') or item.get('value') or item.get('description') or ''
+    if item.get('type') == 'type_field' and item.get('signature') and item.get('description'):
+        extra = f"{extra} ({item['description']})"   # table keys: documented or not, which code reads it
     if isinstance(extra, (dict, list)):
         extra = json.dumps(extra, ensure_ascii=False)
     kind = item.get('type', '')
@@ -748,7 +750,8 @@ clientcmd_can_execute, server_can_execute и т. п.), новые проверк
 другой вызов, строки, константы), в API, в протоколах и схеме — и что это может значить для кастомок и \
 плагинов (с пометкой «возможно», если это вывод).
 - Отдельным списком в конце — все новые свойства, события и методы (модификаторов, Lua API, Panorama) с \
-точными именами и сигнатурами.
+точными именами и сигнатурами, и новые ключи таблиц-аргументов (раздел API «Lua Table Keys»: что движок \
+читает из таблиц CreateIllusions, ApplyDamage, событий фильтров и т. п. — read/write, описан ли ключ в типах).
 
 Чего не писать совсем — ни подробно, ни одной строкой, ни чтобы сказать, что это оно: сам патч и его \
 содержание (герои, способности, предметы, нейтралы, их модификаторы и классы схемы, баланс, тексты, \

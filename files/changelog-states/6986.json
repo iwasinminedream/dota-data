@@ -25156,6 +25156,13 @@
       {
         "type": "type_field",
         "class": "CreateIllusionsModifierKeys",
+        "name": "illusion_effectiveness",
+        "signature": "illusion_effectiveness: float | nil",
+        "description": "`modifier_illusion` reads it as a float when it is created and refreshed and keeps it on the modifier. Not in the help; what it changes is not established yet.\n@default 20"
+      },
+      {
+        "type": "type_field",
+        "class": "CreateIllusionsModifierKeys",
         "name": "fullhp",
         "signature": "fullhp: bool | nil",
         "description": "Spawn with full health. Otherwise the illusion gets the current health of the original hero.\n@default false"
@@ -25804,7 +25811,7 @@
         "class": "AbilityTuningValueFilterEvent",
         "name": "level",
         "signature": "level: int",
-        "description": "Zero-based ability level the value is requested for."
+        "description": "Zero-based ability level the value is requested for. Not read back after the filter: changing it has no effect."
       },
       {
         "type": "type_field",
@@ -25959,7 +25966,7 @@
         "class": "ExecuteOrderFilterEvent",
         "name": "shop_item_name",
         "signature": "shop_item_name: string",
-        "description": ""
+        "description": "Not read back after the filter: changing it has no effect."
       },
       {
         "type": "object",
@@ -176120,6 +176127,1929 @@
         "type": "modifier_function",
         "name": "winter_wyvern_winters_curse_kill_credit.MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY",
         "value": "event"
+      }
+    ]
+  },
+  "table_keys": {
+    "name": "Lua Table Keys",
+    "items": [
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "clear_storage_per_query",
+        "signature": "clear_storage_per_query: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "clear_storage_per_trigger_or_pre_test_pass",
+        "signature": "clear_storage_per_trigger_or_pre_test_pass: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "fail_gametime",
+        "signature": "fail_gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "ignore_previous_entries",
+        "signature": "ignore_previous_entries: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "matching_type",
+        "signature": "matching_type: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "never_match_queries",
+        "signature": "never_match_queries: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "post_tests",
+        "signature": "post_tests: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "postmatch_increments",
+        "signature": "postmatch_increments: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "postmatch_increments.pre_storage_test",
+        "signature": "postmatch_increments.pre_storage_test: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "postmatch_increments.storage",
+        "signature": "postmatch_increments.storage: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "progress_stored_in",
+        "signature": "progress_stored_in: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query",
+        "signature": "query: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query_match_causes_failure",
+        "signature": "query_match_causes_failure: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.accumulate_event",
+        "signature": "query.accumulate_event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.accumulate_event.event",
+        "signature": "query.accumulate_event.event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.accumulate_event.gametime",
+        "signature": "query.accumulate_event.gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.accumulate_event.storage",
+        "signature": "query.accumulate_event.storage: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.accumulate_event.tracked_stat_id",
+        "signature": "query.accumulate_event.tracked_stat_id: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.end_event",
+        "signature": "query.end_event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.end_event.event",
+        "signature": "query.end_event.event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.end_event.gametime",
+        "signature": "query.end_event.gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.end_event.storage",
+        "signature": "query.end_event.storage: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.end_event.tracked_stat_id",
+        "signature": "query.end_event.tracked_stat_id: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.series",
+        "signature": "query.series: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.start_event",
+        "signature": "query.start_event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.start_event.event",
+        "signature": "query.start_event.event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.start_event.gametime",
+        "signature": "query.start_event.gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.start_event.storage",
+        "signature": "query.start_event.storage: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.start_event.tracked_stat_id",
+        "signature": "query.start_event.tracked_stat_id: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.state_values",
+        "signature": "query.state_values: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.time_block",
+        "signature": "query.time_block: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.trigger",
+        "signature": "query.trigger: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.trigger.event",
+        "signature": "query.trigger.event: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.trigger.gametime",
+        "signature": "query.trigger.gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.trigger.storage",
+        "signature": "query.trigger.storage: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "query.trigger.tracked_stat_id",
+        "signature": "query.trigger.tracked_stat_id: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+        "name": "success_gametime",
+        "signature": "success_gametime: read",
+        "description": "AddRealTimeCombatAnalyzerQuery"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+        "name": "entindex_ability_const",
+        "signature": "entindex_ability_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+        "name": "entindex_caster_const",
+        "signature": "entindex_caster_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+        "name": "level",
+        "signature": "level: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+        "name": "value",
+        "signature": "value: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+        "name": "value_name_const",
+        "signature": "value_name_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetBountyRunePickupFilter",
+        "name": "gold_bounty",
+        "signature": "gold_bounty: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetBountyRunePickupFilter",
+        "name": "player_id_const",
+        "signature": "player_id_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetBountyRunePickupFilter",
+        "name": "xp_bounty",
+        "signature": "xp_bounty: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetDamageFilter",
+        "name": "damage",
+        "signature": "damage: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetDamageFilter",
+        "name": "damagetype_const",
+        "signature": "damagetype_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetDamageFilter",
+        "name": "entindex_attacker_const",
+        "signature": "entindex_attacker_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetDamageFilter",
+        "name": "entindex_inflictor_const",
+        "signature": "entindex_inflictor_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetDamageFilter",
+        "name": "entindex_victim_const",
+        "signature": "entindex_victim_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "entindex_ability",
+        "signature": "entindex_ability: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "entindex_target",
+        "signature": "entindex_target: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "issuer_player_id_const",
+        "signature": "issuer_player_id_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "order_type",
+        "signature": "order_type: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "position_x",
+        "signature": "position_x: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "position_y",
+        "signature": "position_y: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "position_z",
+        "signature": "position_z: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "queue",
+        "signature": "queue: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "sequence_number_const",
+        "signature": "sequence_number_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "shop_item_name",
+        "signature": "shop_item_name: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetExecuteOrderFilter",
+        "name": "units",
+        "signature": "units: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetHealingFilter",
+        "name": "entindex_healer_const",
+        "signature": "entindex_healer_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetHealingFilter",
+        "name": "entindex_inflictor_const",
+        "signature": "entindex_inflictor_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetHealingFilter",
+        "name": "entindex_target_const",
+        "signature": "entindex_target_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetHealingFilter",
+        "name": "heal",
+        "signature": "heal: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetItemAddedToInventoryFilter",
+        "name": "inventory_parent_entindex_const",
+        "signature": "inventory_parent_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetItemAddedToInventoryFilter",
+        "name": "item_entindex_const",
+        "signature": "item_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetItemAddedToInventoryFilter",
+        "name": "item_parent_entindex_const",
+        "signature": "item_parent_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetItemAddedToInventoryFilter",
+        "name": "suggested_slot",
+        "signature": "suggested_slot: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifierGainedFilter",
+        "name": "duration",
+        "signature": "duration: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifierGainedFilter",
+        "name": "entindex_ability_const",
+        "signature": "entindex_ability_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifierGainedFilter",
+        "name": "entindex_caster_const",
+        "signature": "entindex_caster_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifierGainedFilter",
+        "name": "entindex_parent_const",
+        "signature": "entindex_parent_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifierGainedFilter",
+        "name": "name_const",
+        "signature": "name_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyExperienceFilter",
+        "name": "experience",
+        "signature": "experience: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyExperienceFilter",
+        "name": "hero_entindex_const",
+        "signature": "hero_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyExperienceFilter",
+        "name": "player_id_const",
+        "signature": "player_id_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyExperienceFilter",
+        "name": "reason_const",
+        "signature": "reason_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyExperienceFilter",
+        "name": "source_entindex_const",
+        "signature": "source_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyGoldFilter",
+        "name": "gold",
+        "signature": "gold: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyGoldFilter",
+        "name": "player_id_const",
+        "signature": "player_id_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyGoldFilter",
+        "name": "reason_const",
+        "signature": "reason_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyGoldFilter",
+        "name": "reliable",
+        "signature": "reliable: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetModifyGoldFilter",
+        "name": "source_entindex_const",
+        "signature": "source_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetRuneSpawnFilter",
+        "name": "rune_type",
+        "signature": "rune_type: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetRuneSpawnFilter",
+        "name": "spawner_entindex_const",
+        "signature": "spawner_entindex_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "dodgeable",
+        "signature": "dodgeable: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "entindex_ability_const",
+        "signature": "entindex_ability_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "entindex_source_const",
+        "signature": "entindex_source_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "entindex_target_const",
+        "signature": "entindex_target_const: write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "expire_time",
+        "signature": "expire_time: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "is_attack",
+        "signature": "is_attack: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "max_impact_time",
+        "signature": "max_impact_time: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+        "name": "move_speed",
+        "signature": "move_speed: read/write",
+        "description": "filter invoker"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "AllowVoteChanging",
+        "signature": "AllowVoteChanging: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "DefaultChoice",
+        "signature": "DefaultChoice: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "Duration",
+        "signature": "Duration: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "EndEarlyIfAllHaveVoted",
+        "signature": "EndEarlyIfAllHaveVoted: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "EndEarlyIfOutcomeIsDetermined",
+        "signature": "EndEarlyIfOutcomeIsDetermined: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "NumChoices",
+        "signature": "NumChoices: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "PauseGame",
+        "signature": "PauseGame: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "RequiredVoteThreshold",
+        "signature": "RequiredVoteThreshold: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTAVoteSystem.StartVote",
+        "name": "Text",
+        "signature": "Text: read",
+        "description": "Script_StartVote"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "allow_copy",
+        "signature": "allow_copy: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura",
+        "signature": "aura: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura_apply_modifier",
+        "signature": "aura_apply_modifier: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura_is_heal",
+        "signature": "aura_is_heal: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura_search_flags",
+        "signature": "aura_search_flags: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura_search_team",
+        "signature": "aura_search_team: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "aura_search_type",
+        "signature": "aura_search_type: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "auraOwner",
+        "signature": "auraOwner: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "BaseClass",
+        "signature": "BaseClass: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "creationtime",
+        "signature": "creationtime: read/write",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "duplication_source",
+        "signature": "duplication_source: read/write",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "duration",
+        "signature": "duration: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "existing_duration",
+        "signature": "existing_duration: write",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "force_duration",
+        "signature": "force_duration: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "isCurrentlyInAuraRange",
+        "signature": "isCurrentlyInAuraRange: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "isProvidedByAura",
+        "signature": "isProvidedByAura: read",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC.AddNewModifier",
+        "name": "stack_count",
+        "signature": "stack_count: read/write",
+        "description": "Script_AddNewModifier"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC_Creature.AddItemDrop",
+        "name": "bMustBeChampion",
+        "signature": "bMustBeChampion: read",
+        "description": "Script_AddItemDrop"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC_Creature.AddItemDrop",
+        "name": "flChance",
+        "signature": "flChance: read",
+        "description": "Script_AddItemDrop"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC_Creature.AddItemDrop",
+        "name": "nReqLevel",
+        "signature": "nReqLevel: read",
+        "description": "Script_AddItemDrop"
+      },
+      {
+        "type": "type_field",
+        "class": "CDOTA_BaseNPC_Creature.AddItemDrop",
+        "name": "szItemName",
+        "signature": "szItemName: read",
+        "description": "Script_AddItemDrop"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "Ability",
+        "signature": "Ability: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bDrawsOnMinimap",
+        "signature": "bDrawsOnMinimap: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bHasFrontalCone",
+        "signature": "bHasFrontalCone: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bIgnoreObstructions",
+        "signature": "bIgnoreObstructions: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bIgnoreSource",
+        "signature": "bIgnoreSource: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bProvidesVision",
+        "signature": "bProvidesVision: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bStickyFoWReveal",
+        "signature": "bStickyFoWReveal: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "bVisibleToEnemies",
+        "signature": "bVisibleToEnemies: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "EffectName",
+        "signature": "EffectName: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "ExtraData",
+        "signature": "ExtraData: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "fDistance",
+        "signature": "fDistance: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "fEndRadius",
+        "signature": "fEndRadius: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "fExpireTime",
+        "signature": "fExpireTime: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "fMaxSpeed",
+        "signature": "fMaxSpeed: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "fStartRadius",
+        "signature": "fStartRadius: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "iUnitTargetFlags",
+        "signature": "iUnitTargetFlags: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "iUnitTargetTeam",
+        "signature": "iUnitTargetTeam: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "iUnitTargetType",
+        "signature": "iUnitTargetType: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "iVisionRadius",
+        "signature": "iVisionRadius: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "iVisionTeamNumber",
+        "signature": "iVisionTeamNumber: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "Source",
+        "signature": "Source: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "vAcceleration",
+        "signature": "vAcceleration: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "vParticleSpawnOrigin",
+        "signature": "vParticleSpawnOrigin: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "vSpawnOrigin",
+        "signature": "vSpawnOrigin: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateLinearProjectile",
+        "name": "vVelocity",
+        "signature": "vVelocity: read",
+        "description": "Script_CreateLinearProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "Ability",
+        "signature": "Ability: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bDodgeable",
+        "signature": "bDodgeable: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bDrawsOnMinimap",
+        "signature": "bDrawsOnMinimap: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bIgnoreObstructions",
+        "signature": "bIgnoreObstructions: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bIsAttack",
+        "signature": "bIsAttack: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bProvidesVision",
+        "signature": "bProvidesVision: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bReplaceExisting",
+        "signature": "bReplaceExisting: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bSuppressTargetCheck",
+        "signature": "bSuppressTargetCheck: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "bVisibleToEnemies",
+        "signature": "bVisibleToEnemies: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "EffectName",
+        "signature": "EffectName: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "ExtraData",
+        "signature": "ExtraData: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "flExpireTime",
+        "signature": "flExpireTime: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "iMoveSpeed",
+        "signature": "iMoveSpeed: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "iSourceAttachment",
+        "signature": "iSourceAttachment: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "iVisionRadius",
+        "signature": "iVisionRadius: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "iVisionTeamNumber",
+        "signature": "iVisionTeamNumber: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "Source",
+        "signature": "Source: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "Target",
+        "signature": "Target: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "vSourceLoc",
+        "signature": "vSourceLoc: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "ProjectileManager.CreateTrackingProjectile",
+        "name": "vTargetLoc",
+        "signature": "vTargetLoc: read",
+        "description": "Script_CreateTrackingProjectile"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "ability",
+        "signature": "ability: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "attacker",
+        "signature": "attacker: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "damage",
+        "signature": "damage: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "damage_flags",
+        "signature": "damage_flags: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "damage_type",
+        "signature": "damage_type: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ApplyDamage",
+        "name": "victim",
+        "signature": "victim: read",
+        "description": "DOTA_VScript_ApplyDamage"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateEffect",
+        "name": "angles",
+        "signature": "angles: read",
+        "description": "Script_CreateEffect"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateEffect",
+        "name": "direction",
+        "signature": "direction: read",
+        "description": "Script_CreateEffect"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateEffect",
+        "name": "effectname",
+        "signature": "effectname: read",
+        "description": "Script_CreateEffect"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateEffect",
+        "name": "entity",
+        "signature": "entity: read",
+        "description": "Script_CreateEffect"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateEffect",
+        "name": "position",
+        "signature": "position: read",
+        "description": "Script_CreateEffect"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "allow_copy",
+        "signature": "allow_copy: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura",
+        "signature": "aura: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura_apply_modifier",
+        "signature": "aura_apply_modifier: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura_is_heal",
+        "signature": "aura_is_heal: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura_search_flags",
+        "signature": "aura_search_flags: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura_search_team",
+        "signature": "aura_search_team: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "aura_search_type",
+        "signature": "aura_search_type: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "auraOwner",
+        "signature": "auraOwner: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "BaseClass",
+        "signature": "BaseClass: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "bounty_base",
+        "signature": "bounty_base: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "bounty_growth",
+        "signature": "bounty_growth: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "creationtime",
+        "signature": "creationtime: read/write",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "duplication_source",
+        "signature": "duplication_source: read/write",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "duration",
+        "signature": "duration: read",
+        "description": "generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "existing_duration",
+        "signature": "existing_duration: write",
+        "description": "generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "fixed_day_vision",
+        "signature": "fixed_day_vision: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "fixed_night_vision",
+        "signature": "fixed_night_vision: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "force_duration",
+        "signature": "force_duration: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "illusion_effect_override",
+        "signature": "illusion_effect_override: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "illusion_effectiveness",
+        "signature": "illusion_effectiveness: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "illusion_type",
+        "signature": "illusion_type: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "illusionlabel",
+        "signature": "illusionlabel: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "incoming_damage",
+        "signature": "incoming_damage: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "invulnerability_on_creation",
+        "signature": "invulnerability_on_creation: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "is_hidden",
+        "signature": "is_hidden: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "isCurrentlyInAuraRange",
+        "signature": "isCurrentlyInAuraRange: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "isProvidedByAura",
+        "signature": "isProvidedByAura: read",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "no_effect_on_original",
+        "signature": "no_effect_on_original: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "nodraw",
+        "signature": "nodraw: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "outgoing_damage",
+        "signature": "outgoing_damage: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "outgoing_damage_roshan",
+        "signature": "outgoing_damage_roshan: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "outgoing_damage_structure",
+        "signature": "outgoing_damage_structure: read",
+        "description": "CDOTA_Modifier_Illusion::OnCreated, CDOTA_Modifier_Illusion::OnRefresh"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "permit_illusion_recycling",
+        "signature": "permit_illusion_recycling: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "stack_count",
+        "signature": "stack_count: read/write",
+        "description": "not documented in CreateIllusionsModifierKeys; generic modifier creation"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateIllusions",
+        "name": "teamonlyparticles",
+        "signature": "teamonlyparticles: read",
+        "description": "Script_CreateIllusions"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateUnitFromTable",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "not documented in CreateUnitFromTableOptions; DOTA_VScript_CreateUnitFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.CreateUnitFromTable",
+        "name": "MapUnitName",
+        "signature": "MapUnitName: read",
+        "description": "DOTA_VScript_CreateUnitFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "AbilityIndex",
+        "signature": "AbilityIndex: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "OrderType",
+        "signature": "OrderType: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "Position",
+        "signature": "Position: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "Queue",
+        "signature": "Queue: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "TargetIndex",
+        "signature": "TargetIndex: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.ExecuteOrderFromTable",
+        "name": "UnitIndex",
+        "signature": "UnitIndex: read",
+        "description": "Script_ExecuteOrderFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheEntityFromTable",
+        "name": "attributes",
+        "signature": "attributes: read",
+        "description": "Script_PrecacheEntityFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheEntityFromTable",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "Script_PrecacheEntityFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheEntityFromTable",
+        "name": "connections",
+        "signature": "connections: read",
+        "description": "Script_PrecacheEntityFromTable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheUnitFromTableAsync",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "DOTA_VScript_PrecacheUnitFromTableAsync"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheUnitFromTableAsync",
+        "name": "MapUnitName",
+        "signature": "MapUnitName: read",
+        "description": "DOTA_VScript_PrecacheUnitFromTableAsync"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheUnitFromTableSync",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "DOTA_VScript_PrecacheUnitFromTableSync"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.PrecacheUnitFromTableSync",
+        "name": "MapUnitName",
+        "signature": "MapUnitName: read",
+        "description": "DOTA_VScript_PrecacheUnitFromTableSync"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableAsynchronous",
+        "name": "attributes",
+        "signature": "attributes: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableAsynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableAsynchronous",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableAsynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableAsynchronous",
+        "name": "connections",
+        "signature": "connections: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableAsynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableSynchronous",
+        "name": "attributes",
+        "signature": "attributes: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableSynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableSynchronous",
+        "name": "classname",
+        "signature": "classname: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableSynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.SpawnEntityFromTableSynchronous",
+        "name": "connections",
+        "signature": "connections: read",
+        "description": "not documented in SpawnEntityFromTableOptions; Script_SpawnEntityFromTableSynchronous"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "endpos",
+        "signature": "endpos: read",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "ent",
+        "signature": "ent: read",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "fraction",
+        "signature": "fraction: write",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "hit",
+        "signature": "hit: write",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "max",
+        "signature": "max: read",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "min",
+        "signature": "min: read",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "normal",
+        "signature": "normal: write",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "pos",
+        "signature": "pos: write",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "startpos",
+        "signature": "startpos: read",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceCollideable",
+        "name": "startsolid",
+        "signature": "startsolid: write",
+        "description": "Script_TraceCollideable"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "endpos",
+        "signature": "endpos: read",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "enthit",
+        "signature": "enthit: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "fraction",
+        "signature": "fraction: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "hit",
+        "signature": "hit: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "ignore",
+        "signature": "ignore: read",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "max",
+        "signature": "max: read",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "min",
+        "signature": "min: read",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "normal",
+        "signature": "normal: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "pos",
+        "signature": "pos: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "startpos",
+        "signature": "startpos: read",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceHull",
+        "name": "startsolid",
+        "signature": "startsolid: write",
+        "description": "Script_TraceHull"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "endpos",
+        "signature": "endpos: read",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "enthit",
+        "signature": "enthit: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "fraction",
+        "signature": "fraction: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "hit",
+        "signature": "hit: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "ignore",
+        "signature": "ignore: read",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "mask",
+        "signature": "mask: read",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "normal",
+        "signature": "normal: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "pos",
+        "signature": "pos: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "startpos",
+        "signature": "startpos: read",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.TraceLine",
+        "name": "startsolid",
+        "signature": "startsolid: write",
+        "description": "Script_TraceLine"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageTextAll_WithContext",
+        "name": "player_id",
+        "signature": "player_id: read",
+        "description": "Script_UTIL_MessageTextAll_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageTextAll_WithContext",
+        "name": "team_id",
+        "signature": "team_id: read",
+        "description": "Script_UTIL_MessageTextAll_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageTextAll_WithContext",
+        "name": "value",
+        "signature": "value: read",
+        "description": "Script_UTIL_MessageTextAll_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageText_WithContext",
+        "name": "player_id",
+        "signature": "player_id: read",
+        "description": "Script_UTIL_MessageText_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageText_WithContext",
+        "name": "team_id",
+        "signature": "team_id: read",
+        "description": "Script_UTIL_MessageText_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UTIL_MessageText_WithContext",
+        "name": "value",
+        "signature": "value: read",
+        "description": "Script_UTIL_MessageText_WithContext"
+      },
+      {
+        "type": "type_field",
+        "class": "_G.UpdateEventPoints",
+        "name": "event_score",
+        "signature": "event_score: read",
+        "description": "UpdateEventPoints"
       }
     ]
   },

@@ -1,0 +1,2959 @@
+{
+  "version": "6986",
+  "functions": [
+    {
+      "function": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
+      "types": [],
+      "keys": [
+        {
+          "name": "clear_storage_per_query",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "clear_storage_per_trigger_or_pre_test_pass",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "fail_gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "ignore_previous_entries",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "matching_type",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "never_match_queries",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "post_tests",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "postmatch_increments",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "postmatch_increments.pre_storage_test",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "postmatch_increments.storage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "progress_stored_in",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query_match_causes_failure",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.accumulate_event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.accumulate_event.event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.accumulate_event.gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.accumulate_event.storage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.accumulate_event.tracked_stat_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.end_event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.end_event.event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.end_event.gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.end_event.storage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.end_event.tracked_stat_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.series",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.start_event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.start_event.event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.start_event.gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.start_event.storage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.start_event.tracked_stat_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.state_values",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.time_block",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.trigger",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.trigger.event",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.trigger.gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.trigger.storage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "query.trigger.tracked_stat_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        },
+        {
+          "name": "success_gametime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "AddRealTimeCombatAnalyzerQuery"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetAbilityTuningValueFilter",
+      "types": [
+        "AbilityTuningValueFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "entindex_ability_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_caster_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "level",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "value",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "value_name_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ],
+      "notReadBack": [
+        "level"
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetBountyRunePickupFilter",
+      "types": [
+        "BountyRunePickupFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "gold_bounty",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "player_id_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "xp_bounty",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetDamageFilter",
+      "types": [
+        "DamageFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "damage",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "damagetype_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_attacker_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_inflictor_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_victim_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetExecuteOrderFilter",
+      "types": [
+        "ExecuteOrderFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "entindex_ability",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_target",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "issuer_player_id_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "order_type",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "position_x",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "position_y",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "position_z",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "queue",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "sequence_number_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "shop_item_name",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "units",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ],
+      "notReadBack": [
+        "shop_item_name"
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetHealingFilter",
+      "types": [
+        "HealingFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "entindex_healer_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_inflictor_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_target_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "heal",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetItemAddedToInventoryFilter",
+      "types": [
+        "ItemAddedToInventoryFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "inventory_parent_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "item_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "item_parent_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "suggested_slot",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetModifierGainedFilter",
+      "types": [
+        "ModifierGainedFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "duration",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_ability_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_caster_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_parent_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "name_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetModifyExperienceFilter",
+      "types": [
+        "ModifyExperienceFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "experience",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "hero_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "player_id_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "reason_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "source_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetModifyGoldFilter",
+      "types": [
+        "ModifyGoldFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "gold",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "player_id_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "reason_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "reliable",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "source_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetRuneSpawnFilter",
+      "types": [
+        "RuneSpawnFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "rune_type",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "spawner_entindex_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTABaseGameMode.SetTrackingProjectileFilter",
+      "types": [
+        "TrackingProjectileFilterEvent"
+      ],
+      "keys": [
+        {
+          "name": "dodgeable",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_ability_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_source_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "entindex_target_const",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "expire_time",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "is_attack",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "max_impact_time",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        },
+        {
+          "name": "move_speed",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "filter invoker"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "CDOTAVoteSystem.StartVote",
+      "types": [],
+      "keys": [
+        {
+          "name": "AllowVoteChanging",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "DefaultChoice",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "Duration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "EndEarlyIfAllHaveVoted",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "EndEarlyIfOutcomeIsDetermined",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "NumChoices",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "PauseGame",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "RequiredVoteThreshold",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        },
+        {
+          "name": "Text",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_StartVote"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "CDOTA_BaseNPC.AddNewModifier",
+      "types": [],
+      "keys": [
+        {
+          "name": "allow_copy",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura_apply_modifier",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura_is_heal",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura_search_flags",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura_search_team",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "aura_search_type",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "auraOwner",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "BaseClass",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "creationtime",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "duplication_source",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "duration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "existing_duration",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "force_duration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "isCurrentlyInAuraRange",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "isProvidedByAura",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        },
+        {
+          "name": "stack_count",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "Script_AddNewModifier"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "CDOTA_BaseNPC_Creature.AddItemDrop",
+      "types": [
+        "AddItemDropOptions"
+      ],
+      "keys": [
+        {
+          "name": "bMustBeChampion",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddItemDrop"
+          ],
+          "documented": true
+        },
+        {
+          "name": "flChance",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddItemDrop"
+          ],
+          "documented": true
+        },
+        {
+          "name": "nReqLevel",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddItemDrop"
+          ],
+          "documented": true
+        },
+        {
+          "name": "szItemName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_AddItemDrop"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "ProjectileManager.CreateLinearProjectile",
+      "types": [
+        "CreateLinearProjectileOptions"
+      ],
+      "keys": [
+        {
+          "name": "Ability",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bDrawsOnMinimap",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bHasFrontalCone",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bIgnoreObstructions",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bIgnoreSource",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bProvidesVision",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bStickyFoWReveal",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bVisibleToEnemies",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "EffectName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "ExtraData",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fDistance",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fEndRadius",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fExpireTime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fMaxSpeed",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fStartRadius",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iUnitTargetFlags",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iUnitTargetTeam",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iUnitTargetType",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iVisionRadius",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iVisionTeamNumber",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "Source",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vAcceleration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vParticleSpawnOrigin",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vSpawnOrigin",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vVelocity",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateLinearProjectile"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "ProjectileManager.CreateTrackingProjectile",
+      "types": [
+        "CreateTrackingProjectileOptions"
+      ],
+      "keys": [
+        {
+          "name": "Ability",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bDodgeable",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bDrawsOnMinimap",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bIgnoreObstructions",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bIsAttack",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bProvidesVision",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bReplaceExisting",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bSuppressTargetCheck",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bVisibleToEnemies",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "EffectName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "ExtraData",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "flExpireTime",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iMoveSpeed",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iSourceAttachment",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iVisionRadius",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "iVisionTeamNumber",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "Source",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "Target",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vSourceLoc",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        },
+        {
+          "name": "vTargetLoc",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateTrackingProjectile"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.ApplyDamage",
+      "types": [
+        "ApplyDamageOptions"
+      ],
+      "keys": [
+        {
+          "name": "ability",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        },
+        {
+          "name": "attacker",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        },
+        {
+          "name": "damage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        },
+        {
+          "name": "damage_flags",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        },
+        {
+          "name": "damage_type",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        },
+        {
+          "name": "victim",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_ApplyDamage"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.CreateEffect",
+      "types": [],
+      "keys": [
+        {
+          "name": "angles",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateEffect"
+          ]
+        },
+        {
+          "name": "direction",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateEffect"
+          ]
+        },
+        {
+          "name": "effectname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateEffect"
+          ]
+        },
+        {
+          "name": "entity",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateEffect"
+          ]
+        },
+        {
+          "name": "position",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateEffect"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.CreateIllusions",
+      "types": [
+        "CreateIllusionsModifierKeys"
+      ],
+      "keys": [
+        {
+          "name": "allow_copy",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura_apply_modifier",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura_is_heal",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura_search_flags",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura_search_team",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "aura_search_type",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "auraOwner",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "BaseClass",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "bounty_base",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "bounty_growth",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "creationtime",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "duplication_source",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "duration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": true
+        },
+        {
+          "name": "existing_duration",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ]
+        },
+        {
+          "name": "fixed_day_vision",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fixed_night_vision",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated"
+          ],
+          "documented": true
+        },
+        {
+          "name": "force_duration",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "illusion_effect_override",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        },
+        {
+          "name": "illusion_effectiveness",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "illusion_type",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "illusionlabel",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated"
+          ],
+          "documented": true
+        },
+        {
+          "name": "incoming_damage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "invulnerability_on_creation",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        },
+        {
+          "name": "is_hidden",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated"
+          ],
+          "documented": true
+        },
+        {
+          "name": "isCurrentlyInAuraRange",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "isProvidedByAura",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "no_effect_on_original",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        },
+        {
+          "name": "nodraw",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        },
+        {
+          "name": "outgoing_damage",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "outgoing_damage_roshan",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "outgoing_damage_structure",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "CDOTA_Modifier_Illusion::OnCreated",
+            "CDOTA_Modifier_Illusion::OnRefresh"
+          ],
+          "documented": true
+        },
+        {
+          "name": "permit_illusion_recycling",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        },
+        {
+          "name": "stack_count",
+          "access": [
+            "read",
+            "write"
+          ],
+          "sources": [
+            "generic modifier creation"
+          ],
+          "documented": false
+        },
+        {
+          "name": "teamonlyparticles",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_CreateIllusions"
+          ],
+          "documented": true
+        }
+      ],
+      "documentedNotSeen": [
+        "fullhp"
+      ]
+    },
+    {
+      "function": "_G.CreateUnitFromTable",
+      "types": [
+        "CreateUnitFromTableOptions"
+      ],
+      "keys": [
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_CreateUnitFromTable"
+          ],
+          "documented": false
+        },
+        {
+          "name": "MapUnitName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_CreateUnitFromTable"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.ExecuteOrderFromTable",
+      "types": [
+        "ExecuteOrderOptions"
+      ],
+      "keys": [
+        {
+          "name": "AbilityIndex",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "OrderType",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "Position",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "Queue",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "TargetIndex",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "UnitIndex",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_ExecuteOrderFromTable"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.PrecacheEntityFromTable",
+      "types": [],
+      "keys": [
+        {
+          "name": "attributes",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_PrecacheEntityFromTable"
+          ]
+        },
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_PrecacheEntityFromTable"
+          ]
+        },
+        {
+          "name": "connections",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_PrecacheEntityFromTable"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.PrecacheUnitFromTableAsync",
+      "types": [],
+      "keys": [
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_PrecacheUnitFromTableAsync"
+          ]
+        },
+        {
+          "name": "MapUnitName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_PrecacheUnitFromTableAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.PrecacheUnitFromTableSync",
+      "types": [],
+      "keys": [
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_PrecacheUnitFromTableSync"
+          ]
+        },
+        {
+          "name": "MapUnitName",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "DOTA_VScript_PrecacheUnitFromTableSync"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.SpawnEntityFromTableAsynchronous",
+      "types": [
+        "SpawnEntityFromTableOptions"
+      ],
+      "keys": [
+        {
+          "name": "attributes",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableAsynchronous"
+          ],
+          "documented": false
+        },
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableAsynchronous"
+          ],
+          "documented": false
+        },
+        {
+          "name": "connections",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableAsynchronous"
+          ],
+          "documented": false
+        }
+      ]
+    },
+    {
+      "function": "_G.SpawnEntityFromTableSynchronous",
+      "types": [
+        "SpawnEntityFromTableOptions"
+      ],
+      "keys": [
+        {
+          "name": "attributes",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableSynchronous"
+          ],
+          "documented": false
+        },
+        {
+          "name": "classname",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableSynchronous"
+          ],
+          "documented": false
+        },
+        {
+          "name": "connections",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_SpawnEntityFromTableSynchronous"
+          ],
+          "documented": false
+        }
+      ]
+    },
+    {
+      "function": "_G.TraceCollideable",
+      "types": [
+        "TraceCollideableInputs",
+        "TraceCollideableOutputs"
+      ],
+      "keys": [
+        {
+          "name": "endpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "ent",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fraction",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "hit",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "max",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "min",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "normal",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "pos",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startsolid",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceCollideable"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.TraceHull",
+      "types": [
+        "TraceHullInputs",
+        "TraceHullOutputs"
+      ],
+      "keys": [
+        {
+          "name": "endpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "enthit",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fraction",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "hit",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "ignore",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "max",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "min",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "normal",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "pos",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startsolid",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceHull"
+          ],
+          "documented": true
+        }
+      ],
+      "documentedNotSeen": [
+        "mask"
+      ]
+    },
+    {
+      "function": "_G.TraceLine",
+      "types": [
+        "TraceLineInputs",
+        "TraceLineOutputs"
+      ],
+      "keys": [
+        {
+          "name": "endpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "enthit",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "fraction",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "hit",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "ignore",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "mask",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "normal",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "pos",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startpos",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        },
+        {
+          "name": "startsolid",
+          "access": [
+            "write"
+          ],
+          "sources": [
+            "Script_TraceLine"
+          ],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "function": "_G.UTIL_MessageTextAll_WithContext",
+      "types": [],
+      "keys": [
+        {
+          "name": "player_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageTextAll_WithContext"
+          ]
+        },
+        {
+          "name": "team_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageTextAll_WithContext"
+          ]
+        },
+        {
+          "name": "value",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageTextAll_WithContext"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.UTIL_MessageText_WithContext",
+      "types": [],
+      "keys": [
+        {
+          "name": "player_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageText_WithContext"
+          ]
+        },
+        {
+          "name": "team_id",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageText_WithContext"
+          ]
+        },
+        {
+          "name": "value",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "Script_UTIL_MessageText_WithContext"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "_G.UpdateEventPoints",
+      "types": [],
+      "keys": [
+        {
+          "name": "event_score",
+          "access": [
+            "read"
+          ],
+          "sources": [
+            "UpdateEventPoints"
+          ]
+        }
+      ]
+    }
+  ]
+}

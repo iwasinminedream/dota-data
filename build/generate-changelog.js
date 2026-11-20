@@ -25,6 +25,7 @@ const trackedFiles = [
   { file: 'panorama/panels.json', type: 'panorama_panels', name: 'Panorama Panels' },
   { file: 'vscripts/modifier_properties.json', type: 'modifier_properties', name: 'Properties Fixed' },
   { file: 'vscripts/native_modifiers.json', type: 'native_modifiers', name: 'Native Modifier Functions' },
+  { file: 'vscripts/table_keys.json', type: 'table_keys', name: 'Lua Table Keys' },
   { file: 'convars.json', type: 'convars', name: 'Console Variables' },
   { file: 'engine-enums.json', type: 'engine_enums', name: 'Engine Enums' },
   { file: 'abilities.json', type: 'abilities', name: 'Abilities' },
@@ -366,6 +367,30 @@ function extractModifierProperties(content) {
 // function (its formula as the value) or state (true / false and the condition): a change is a change
 // of the game's code. server.dll's result is `modifier_function`; client.dll's, where it differs or only
 // the client has the function, is `modifier_function_client`
+// Extract the keys server.dll reads from / writes to the Lua tables of VScript functions
+// (files/vscripts/table_keys.json): one item per function and key; how the engine uses it is the
+// signature (a change of it is a change), whether the type documents it the description.
+function extractTableKeys(content) {
+  const functions = content && Array.isArray(content.functions) ? content.functions : [];
+  const items = [];
+  for (const f of functions) {
+    for (const k of f.keys || []) {
+      const notes = [];
+      if (k.documented === false) notes.push(`not documented in ${f.types.join(', ')}`);
+      if (k.addedToType) notes.push('added to the type');
+      if (k.sources && k.sources.length) notes.push(k.sources.join(', '));
+      items.push({
+        type: 'type_field',
+        class: f.function,
+        name: k.name,
+        signature: `${k.name}: ${(k.access || []).join('/') || 'seen'}`,
+        description: notes.join('; '),
+      });
+    }
+  }
+  return items;
+}
+
 function extractNativeModifiers(content) {
   const modifiers = content && typeof content === 'object' ? content.modifiers : null;
   if (!modifiers || typeof modifiers !== 'object') return [];
@@ -452,6 +477,9 @@ function buildState(readFile) {
         break;
       case 'native_modifiers':
         items = extractNativeModifiers(content);
+        break;
+      case 'table_keys':
+        items = extractTableKeys(content);
         break;
       case 'events':
       case 'panorama_events':
@@ -585,9 +613,12 @@ function compareStates(prev, curr, { docs = false } = {}) {
   const changes = {};
   
   for (const [key, currData] of Object.entries(curr)) {
-    // native modifier formulas are read from the game's code: never documentation fixes
-    if (docs && key === 'native_modifiers') continue;
+    // native modifier formulas and table keys are read from the game's code: never documentation fixes
+    if (docs && (key === 'native_modifiers' || key === 'table_keys')) continue;
     const prevData = prev?.[key];
+    // A category the previous version does not have yet (a file the dumper started writing) is the
+    // baseline, not a version that adds every item of it.
+    if (!docs && !prevData && prev && Object.keys(prev).length > 0) continue;
     const prevItems = prevData?.items || [];
     const prevMap = new Map(prevItems.map(i => [itemKey(i), i]));
     const currMap = new Map(currData.items.map(i => [itemKey(i), i]));
