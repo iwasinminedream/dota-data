@@ -1,5 +1,5 @@
 {
- "version": "6985",
+ "version": "6986",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -48157,8 +48157,8 @@
     {
      "function": "MODIFIER_PROPERTY_STATUS_RESISTANCE_CASTER",
      "handler": "GetModifierStatusResistanceCaster",
-     "formula": "kv.echo_power - 100",
-     "status": "formula",
+     "formula": "100 - kv.echo_power",
+     "status": "partial",
      "kv": [
       "echo_power"
      ]
@@ -48187,6 +48187,23 @@
     {
      "function": "MODIFIER_EVENT_ON_ABILITY_END_CHANNEL",
      "handler": "OnAbilityEndChannel",
+     "status": "event"
+    },
+    {
+     "function": "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL",
+     "handler": "GetModifierOverrideAbilitySpecial",
+     "formula": "params.ability:GetAbilityName() == \"tusk_snowball\" ? (params[0xb0] == \"snowball_windup\" ? 1 : ? == 0 ? 1 : 0) : ? ~= 0 ? 0 : params[0xb0] == \"snowball_windup\" ? 1 : ? == 0 ? 1 : 0",
+     "status": "partial"
+    },
+    {
+     "function": "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE",
+     "handler": "GetModifierOverrideAbilitySpecialValue",
+     "formula": "0",
+     "status": "constant"
+    },
+    {
+     "function": "MODIFIER_EVENT_ON_MODIFIER_REFRESHED",
+     "handler": "OnModifierRefreshed",
      "status": "event"
     }
    ],

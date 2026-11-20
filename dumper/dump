@@ -1,13 +1,13 @@
-ClientVersion=6985
-ServerVersion=6985
+ClientVersion=6986
+ServerVersion=6986
 ProductName=dota2_workshop
 appID=570
 ServerAppID=373310
 CustomGameServerAppID=471280
 ToolsAppID=316570
-SourceRevision=11258601
+SourceRevision=11259680
 VersionDate=Nov 19 2026
-VersionTime=13:29:01
+VersionTime=16:22:37
 $> script_reload
 Initializing script VM...
 ...done
@@ -1080,7 +1080,6 @@ Initializing script VM...
   },{
     "args":[{
         "type":"string"
-LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
       }],
     "description":"Gets the ability texture name for an ability",
     "kind":"function",
@@ -29810,6 +29809,7 @@ LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
 $> cl_script_reload
 Initializing script VM...
 ...done
+LUA Memory usage warning: The VM has hit a new high usage of 16,777,216 bytes.
 [{
     "args":[{
         "type":"float"
@@ -31765,7 +31765,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST5_STATUE",
-    "value":1798
+    "value":1810
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_ABILITY_1",
@@ -31881,7 +31881,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FENCE",
-    "value":1812
+    "value":1808
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CAST_FORGE_SPIRIT",
@@ -32041,7 +32041,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_CYCLONE",
-    "value":1799
+    "value":1811
   },{
     "kind":"constant",
     "name":"ACT_DOTA_DAGON",
@@ -32217,7 +32217,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_IMPALE",
-    "value":1800
+    "value":1812
   },{
     "kind":"constant",
     "name":"ACT_DOTA_INTRO",
@@ -32341,7 +32341,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_LOADOUT_STATUE",
-    "value":1807
+    "value":1803
   },{
     "kind":"constant",
     "name":"ACT_DOTA_LOOK_AROUND",
@@ -32485,7 +32485,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RADIANT_CREEP_HAMMER",
-    "value":1809
+    "value":1805
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RATTLETRAP_BATTERYASSAULT",
@@ -32525,7 +32525,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_IN",
-    "value":1810
+    "value":1806
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_LOOP",
@@ -32537,7 +32537,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_OUT",
-    "value":1811
+    "value":1807
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RELAX_START",
@@ -32557,7 +32557,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_ALT",
-    "value":1806
+    "value":1802
   },{
     "kind":"constant",
     "name":"ACT_DOTA_RUN_RARE",
@@ -32642,6 +32642,10 @@ Initializing script VM...
     "kind":"constant",
     "name":"ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE",
     "value":1593
+  },{
+    "kind":"constant",
+    "name":"ACT_DOTA_SPWN",
+    "value":1809
   },{
     "kind":"constant",
     "name":"ACT_DOTA_STARTLE",
@@ -32744,10 +32748,6 @@ Initializing script VM...
     "value":1557
   },{
     "kind":"constant",
-    "name":"ACT_DOTA_TORRENT",
-    "value":1801
-  },{
-    "kind":"constant",
     "name":"ACT_DOTA_TRANSITION",
     "value":1731
   },{
@@ -32809,7 +32809,7 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"ACT_DOTA_VOODOO_REST",
-    "value":1802
+    "value":1798
   },{
     "kind":"constant",
     "name":"ACT_DOTA_WAIT_IDLE",
@@ -42589,19 +42589,19 @@ Initializing script VM...
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_a",
-    "value":1803
+    "value":1799
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_b",
-    "value":1804
+    "value":1800
   },{
     "kind":"constant",
     "name":"muerta_debut_satyr_c",
-    "value":1805
+    "value":1801
   },{
     "kind":"constant",
     "name":"radiant_melee_mars_shieldbash",
-    "value":1808
+    "value":1804
   },{
     "extend":"C_BaseModelEntity",
     "kind":"class",
@@ -52545,7 +52545,7 @@ modifier_dark_carnival_firework
 modifier_dark_carnival_pied
 modifier_test_properties
 $> panorama_generate_layout_xsd
-Time: 0.344565
+Time: 0.383842
 Layout XSD contents copied to clipboard.
 $> cvarlist
 cvar list

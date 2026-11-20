@@ -1,0 +1,39 @@
+{
+  "version": "6986",
+  "date": "Nov 19 2026",
+  "time": "16:22:37",
+  "changes": {
+    "Native Modifier Functions": {
+      "added": [
+        {
+          "type": "modifier_function",
+          "name": "modifier_morphling_replicate_echo.MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL",
+          "value": "params.ability:GetAbilityName() == \"tusk_snowball\" ? (params[0xb0] == \"snowball_windup\" ? 1 : ? == 0 ? 1 : 0) : ? ~= 0 ? 0 : params[0xb0] == \"snowball_windup\" ? 1 : ? == 0 ? 1 : 0"
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_morphling_replicate_echo.MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE",
+          "value": "0"
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_morphling_replicate_echo.MODIFIER_EVENT_ON_MODIFIER_REFRESHED",
+          "value": "event"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "modifier_function",
+          "name": "modifier_morphling_replicate_echo.MODIFIER_PROPERTY_STATUS_RESISTANCE_CASTER",
+          "changes": {
+            "value": {
+              "old": "kv.echo_power - 100",
+              "new": "100 - kv.echo_power"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
