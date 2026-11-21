@@ -1,5 +1,5 @@
 {
-  "version": "6988",
+  "version": "6989",
   "functions": [
     {
       "function": "CDOTABaseGameMode.AddRealTimeCombatAnalyzerQuery",
