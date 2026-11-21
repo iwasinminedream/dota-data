@@ -2001,7 +2001,7 @@ maps/ti10_assets/trees/leaves_generic_01_vmat_g_ttintmask_670d93d.vtex_c crc=ad0
 maps/ti10_assets/trees/ti10_dire_trees01.vmat_c crc=3ba8ee91 size=6103
 maps/ti10_assets/trees/ti10_dire_trees01_vmat_g_tspecular_a4bcb692.vtex_c crc=01aa2e33 size=1580
 maps/ti10_assets/trees/ti10_dire_trees01_vmat_g_twindmask_364fe092.vtex_c crc=2774a54f size=1580
-maps/ti10_assets/trees/ti10_goldenbirch001.vmdl_c crc=322a36a3 size=38504
+maps/ti10_assets/trees/ti10_goldenbirch001.vmdl_c crc=038e4ef3 size=29444
 maps/ti10_assets/trees/ti10_trees01.vmat_c crc=9394a09e size=6288
 maps/ti10_assets/trees/ti10_trees01_color_psd_d0ea750f.vtex_c crc=30ddd6c6 size=701252
 maps/ti10_assets/trees/ti10_trees01_mask_psd_b336293d.vtex_c crc=c34e13a0 size=23700

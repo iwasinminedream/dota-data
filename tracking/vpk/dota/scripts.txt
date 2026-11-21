@@ -2061,7 +2061,7 @@ scripts/settings_search_no_results_messages.txt crc=1c634a3e size=754
 scripts/shop_tags.txt crc=7eb99ce6 size=2525
 scripts/shops.txt crc=fa400562 size=13896
 scripts/sound_operator_stacks.txt crc=a842788f size=282338
-scripts/soundmixers.txt crc=7178dbf0 size=26794
+scripts/soundmixers.txt crc=e005117e size=26796
 scripts/soundscapes_dota.txt crc=877e3aa5 size=65318
 scripts/soundscapes_dota_diretide.txt crc=0a54d6ed size=29614
 scripts/soundscapes_dota_frostivus.txt crc=9fc710bb size=15912

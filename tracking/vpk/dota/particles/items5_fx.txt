@@ -217,9 +217,9 @@ particles/items5_fx/outworld_staff_top_planets.vpcf_c crc=fab25b89 size=2740
 particles/items5_fx/philosopher_stone_destruction.vpcf_c crc=9b547976 size=1627
 particles/items5_fx/philosopher_stone_destruction_coins.vpcf_c crc=9b1b744a size=3698
 particles/items5_fx/philosopher_stone_destruction_shiny.vpcf_c crc=90fd2a1c size=3001
-particles/items5_fx/raindrop_shield.vpcf_c crc=b8698ce1 size=5110
-particles/items5_fx/raindrop_shield_burst.vpcf_c crc=152dc20c size=5067
-particles/items5_fx/raindrop_shield_start.vpcf_c crc=fa9343e5 size=5603
+particles/items5_fx/raindrop_shield.vpcf_c crc=b19e1488 size=5217
+particles/items5_fx/raindrop_shield_burst.vpcf_c crc=1134b231 size=5022
+particles/items5_fx/raindrop_shield_start.vpcf_c crc=9bb4e056 size=5564
 particles/items5_fx/raindrop_shield_warp.vpcf_c crc=25db74b8 size=4470
 particles/items5_fx/repair_kit.vpcf_c crc=397c1793 size=1690
 particles/items5_fx/repair_kit_ancient.vpcf_c crc=45652a00 size=1901
