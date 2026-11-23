@@ -15463,8 +15463,6 @@
  {"name":"m_bInitialized","type":"bool","offset":6964,"metadata":[]},
  {"name":"m_bDeathFxTriggered","type":"bool","offset":6965,"metadata":[]},
  {"name":"death_fx_time","type":"float32","offset":6968,"metadata":[]}]},
-{"name":"CDOTA_Modifier_Lycan_Wolf_Bite_Attack_Range","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"attack_range","type":"int32","offset":6904,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Lycan_Wolf_Uncontrollable","size":6904,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[]},
 {"name":"CDOTA_Modifier_MP_Regen","size":6904,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[]},
 {"name":"CDOTA_Modifier_MaelstromChain","size":6960,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[

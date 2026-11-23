@@ -1,5 +1,5 @@
 {
- "version": "6989",
+ "version": "6992",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -43834,21 +43834,6 @@
     }
    ]
   },
-  "modifier_lycan_wolf_bite_attack_range": {
-   "class": "CDOTA_Modifier_Lycan_Wolf_Bite_Attack_Range",
-   "bases": [],
-   "functions": [
-    {
-     "function": "MODIFIER_PROPERTY_MAX_ATTACK_RANGE",
-     "handler": "GetModifierMaxAttackRange",
-     "formula": "%attack_range%",
-     "status": "formula",
-     "specials": [
-      "attack_range"
-     ]
-    }
-   ]
-  },
   "modifier_lycan_wolf_uncontrollable": {
    "class": "CDOTA_Modifier_Lycan_Wolf_Uncontrollable",
    "bases": [],
@@ -63149,10 +63134,6 @@
     },
     {
      "state": "MODIFIER_STATE_TRUESIGHT_IMMUNE",
-     "value": true
-    },
-    {
-     "state": "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES",
      "value": true
     }
    ]

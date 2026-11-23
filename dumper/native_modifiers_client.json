@@ -1,5 +1,5 @@
 {
- "version": "6989",
+ "version": "6992",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -27519,7 +27519,7 @@
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT",
      "handler": "GetModifierPreAttack_BonusDamagePostCrit",
-     "formula": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202968 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
+     "formula": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
      "status": "partial",
      "specials": [
       "windwalk_bonus_damage"
@@ -41895,21 +41895,6 @@
      "function": "MODIFIER_EVENT_ON_ATTACK_LANDED",
      "handler": "OnAttackLanded",
      "status": "event"
-    }
-   ]
-  },
-  "modifier_lycan_wolf_bite_attack_range": {
-   "class": "CDOTA_Modifier_Lycan_Wolf_Bite_Attack_Range",
-   "bases": [],
-   "functions": [
-    {
-     "function": "MODIFIER_PROPERTY_MAX_ATTACK_RANGE",
-     "handler": "GetModifierMaxAttackRange",
-     "formula": "%attack_range%",
-     "status": "formula",
-     "specials": [
-      "attack_range"
-     ]
     }
    ]
   },
@@ -60145,10 +60130,6 @@
     {
      "state": "MODIFIER_STATE_TRUESIGHT_IMMUNE",
      "value": true
-    },
-    {
-     "state": "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES",
-     "value": true
     }
    ]
   },
@@ -60740,7 +60721,7 @@
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL",
      "handler": "GetModifierProcAttack_BonusDamage_Physical",
-     "formula": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202968 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
+     "formula": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
      "status": "partial",
      "specials": [
       "bonus_damage_distance",
