@@ -58919,6 +58919,7 @@
   "DOTA_Companion26_FreeTyrian_PopupBody": "Você já possui todos os terrenos, então concedemos a você uma Regalia Tíria adicional. Você ainda pode resgatar um terreno duplicado.",
   "DOTA_Armory_InventoryCapacityLimit": "O seu inventário está em <b>{d:backpack_filled_percent}%</b> da capacidade",
   "DOTA_Armory_InventoryCapacityLimit_Tooltip": "Quando estiver acima da capacidade, você não poderá obter itens do Dota a partir de recursos da Comunidade Steam, como o Mercado ou Trocas. Você ainda poderá comprar e obter itens no Dota.",
+  "DOTA_ItemHistory_Title": "Histórico de alterações {s:item_name}",
   "DOTA_Tooltip_Ability_BuffPotency": "{d:buff_potency}%",
   "GameUI_ReverseMouse": "Inverter mouse",
   "GameUI_ReverseMouseLabel": "Inverte o eixo vertical do mouse",

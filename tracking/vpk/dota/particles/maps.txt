@@ -1,10 +1,10 @@
 particles/maps/backgrounds/models/earthshaker_arcana_plates/earthshaker_arcana_plate_crack_01.vsnap_c crc=7edc62c1 size=1419
 particles/maps/backgrounds/models/earthshaker_arcana_plates/earthshaker_arcana_plate_crack_02.vsnap_c crc=b1d0c954 size=1419
 particles/maps/backgrounds/models/earthshaker_arcana_plates/earthshaker_arcana_plate_crack_03.vsnap_c crc=47718476 size=1207
-particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_1_fx.vsnap_c crc=64a232e6 size=1094
-particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_2_fx.vsnap_c crc=56da5e55 size=999
-particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_3_fx.vsnap_c crc=345a07f2 size=999
-particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_4_fx.vsnap_c crc=ed1e89ee size=999
+particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_1_fx.vsnap_c crc=5a08488b size=1225
+particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_2_fx.vsnap_c crc=707f6da7 size=1127
+particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_3_fx.vsnap_c crc=5a9e55ba size=1127
+particles/maps/journey_assets/props/trees/journey_fountain/journey_fountain_4_fx.vsnap_c crc=9f342746 size=1127
 particles/maps/jungle_assets/temple/temple_spout_fx.vsnap_c crc=2c4fa6b5 size=856
 particles/maps/jungle_assets/water/water_puddle_lrg_fx.vsnap_c crc=4b035ca5 size=808
 particles/maps/jungle_assets/water/water_puddle_sml_fx.vsnap_c crc=4966c89b size=880
