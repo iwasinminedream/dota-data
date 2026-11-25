@@ -1,5 +1,5 @@
 {
- "version": "6993",
+ "version": "6995",
  "modifiers": {
   "magnataur_shockwave_intrinsic": {
    "class": "CDOTA_Modifier_Mangataur_Shockwave_Intrinsic",
@@ -27519,7 +27519,7 @@
     {
      "function": "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT",
      "handler": "GetModifierPreAttack_BonusDamagePostCrit",
-     "formula": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
+     "formula": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202840 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
      "status": "partial",
      "specials": [
       "windwalk_bonus_damage"
@@ -52455,7 +52455,7 @@
     {
      "function": "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE",
      "handler": "GetModifierOverrideAbilitySpecialValue",
-     "formula": "? ~= 0 ? (? ~= 0 ? 0 : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %aoe_per_threshold% + %base_aoe% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %aoe_per_threshold% + %base_aoe% : (? * %aoe_per_threshold% + %base_aoe%) * %trample_bonus%) : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : (%slow_resistance_per_threshold% * ? + %base_slow_resist%) * %trample_bonus%",
+     "formula": "? ~= 0 ? (? ~= 0 ? 0 : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %aoe_per_threshold% + %base_aoe% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %aoe_per_threshold% + %base_aoe% : (? * %aoe_per_threshold% + %base_aoe%) * %trample_bonus%) : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : (? * %slow_resistance_per_threshold% + %base_slow_resist%) * %trample_bonus%",
      "status": "partial",
      "specials": [
       "aoe_per_threshold",
@@ -52469,7 +52469,7 @@
     {
      "function": "MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING",
      "handler": "GetModifierSlowResistance_Stacking",
-     "formula": "%hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : (%slow_resistance_per_threshold% * ? + %base_slow_resist%) * %trample_bonus%",
+     "formula": "%hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : (? * %slow_resistance_per_threshold% + %base_slow_resist%) * %trample_bonus%",
      "status": "partial",
      "specials": [
       "base_slow_resist",
@@ -58319,6 +58319,11 @@
      "status": "event"
     },
     {
+     "function": "MODIFIER_EVENT_ON_ATTACK_FAIL",
+     "handler": "OnAttackFail",
+     "status": "event"
+    },
+    {
      "function": "MODIFIER_EVENT_ON_DEATH",
      "handler": "OnDeath",
      "status": "event"
@@ -60721,7 +60726,7 @@
     {
      "function": "MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL",
      "handler": "GetModifierProcAttack_BonusDamage_Physical",
-     "formula": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
+     "formula": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202840 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
      "status": "partial",
      "specials": [
       "bonus_damage_distance",

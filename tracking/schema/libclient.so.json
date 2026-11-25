@@ -9739,7 +9739,8 @@
  {"name":"damage_per_wolf","type":"int32","offset":6904,"metadata":[]},
  {"name":"health_per_wolf","type":"int32","offset":6908,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Lycan_Pack_Hunter","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"mark_duration","type":"float32","offset":6904,"metadata":[]}]},
+ {"name":"mark_duration","type":"float32","offset":6904,"metadata":[]},
+ {"name":"mark_range","type":"float32","offset":6908,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Lycan_Pack_Hunter_Aura","size":6904,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[]},
 {"name":"CDOTA_Modifier_Lycan_Pack_Hunter_Marked","size":6920,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
  {"name":"bonus_damage","type":"float32","offset":6904,"metadata":[]},
@@ -11846,7 +11847,7 @@
  {"name":"base_slow_resist","type":"int32","offset":6908,"metadata":[]},
  {"name":"base_aoe","type":"int32","offset":6912,"metadata":[]},
  {"name":"hp_per_threshold","type":"int32","offset":6916,"metadata":[]},
- {"name":"slow_resistance_per_threshold","type":"int32","offset":6920,"metadata":[]},
+ {"name":"slow_resistance_per_threshold","type":"float32","offset":6920,"metadata":[]},
  {"name":"aoe_per_threshold","type":"float32","offset":6924,"metadata":[]},
  {"name":"trample_bonus","type":"float32","offset":6928,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Primal_Beast_Innate_Slow_Resistance_Per_Time","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
@@ -13456,7 +13457,7 @@
 {"name":"CDOTA_Modifier_Special_Bonus_HP","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
  {"name":"value","type":"int32","offset":6904,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Special_Bonus_HP_Regen","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
- {"name":"value","type":"int32","offset":6904,"metadata":[]}]},
+ {"name":"value","type":"float32","offset":6904,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Special_Bonus_Haste","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
  {"name":"value","type":"float32","offset":6904,"metadata":[]}]},
 {"name":"CDOTA_Modifier_Special_Bonus_Intelligence","size":6912,"align":255,"flags":[97,0],"bases":[{"name":"CDOTA_Buff","offset":0}],"metadata":[],"fields":[
@@ -21707,6 +21708,7 @@
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_35","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_4","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_40","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
+{"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_4_5","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_5","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_50","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},
 {"name":"C_DOTA_Ability_Special_Bonus_HP_Regen_6","size":2088,"align":8,"flags":[353,0],"bases":[{"name":"C_DOTABaseAbility","offset":0}],"metadata":[],"fields":[]},

@@ -1,1 +1,1 @@
-patchnotes/patchnotes.vdpn_c crc=f7ae5e35 size=2845090
+patchnotes/patchnotes.vdpn_c crc=4cc98cf6 size=2856322

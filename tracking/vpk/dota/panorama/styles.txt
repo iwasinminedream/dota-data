@@ -1903,7 +1903,7 @@ panorama/styles/ui_unit_picker.vcss_c crc=7a3e7454 size=13284
 panorama/styles/watch_downloads_element.vcss_c crc=1146a851 size=7937
 panorama/styles/watch_live_game_row.vcss_c crc=c6e7bf24 size=21801
 panorama/styles/watch_menu.vcss_c crc=da3caf2b size=18703
-panorama/styles/watch_replay_game_element.vcss_c crc=e3e4e674 size=10007
+panorama/styles/watch_replay_game_element.vcss_c crc=d3681afa size=9993
 panorama/styles/watch_stream_game_row.vcss_c crc=404876c1 size=3775
 panorama/styles/watch_tournament_details_game_element.vcss_c crc=74cbd9c5 size=13106
 panorama/styles/watch_tournaments_element_wide.vcss_c crc=1bce7afe size=4588

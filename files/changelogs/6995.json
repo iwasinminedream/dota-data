@@ -1,0 +1,1179 @@
+{
+  "version": "6995",
+  "date": "Nov 24 2026",
+  "time": "15:08:02",
+  "changes": {
+    "Native Modifier Functions": {
+      "added": [
+        {
+          "type": "modifier_function",
+          "name": "modifier_shredder_reactive_armor.MODIFIER_EVENT_ON_ATTACK_FAIL",
+          "value": "event"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "modifier_function_client",
+          "name": "modifier_item_invisibility_edge_windwalk.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT",
+          "changes": {
+            "value": {
+              "old": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%",
+              "new": "params.target:IsBuilding() ? 0 : params.target:IsOther() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202840 == 0 ? 0 : ? & 2 == 0 ? 0 : %windwalk_bonus_damage%"
+            }
+          }
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_item_safety_bubble.MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
+          "changes": {
+            "value": {
+              "old": "params.report_max == 0 ? (params.do_not_consume == 0 ? (0 >= params.damage ? 0 : params.attacker == caster ? 0 : params.damage + self.field_1af8 <= %shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - %shield%), 0)) : math.max(0, %shield% - self.field_1af8)) : %shield%",
+              "new": "params.report_max == 0 ? (params.do_not_consume == 0 ? (0 >= params.damage ? 0 : params.attacker == caster ? 0 : not parent:IsIllusion() ? (params.damage + self.field_1af8 <= %shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - %shield%), 0)) : params.damage_flags & DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS ~= 0 ? (params.damage + self.field_1af8 <= %shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - %shield%), 0)) : ? == 65535 ? (0 >= 1 ? 0 : params.damage + self.field_1af8 <= %shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - %shield%), 0)) : ? == ? + (? + ? * 2) * 8 ? (0 >= 1 ? 0 : params.damage + self.field_1af8 <= %shield% ? -math.max(params.damage, 0) : -math.max(params.damage - (params.damage + self.field_1af8 - %shield%), 0)) : 0 >= ? ? 0 : ? * params.damage + self.field_1af8 <= %shield% ? -math.max(? * params.damage, 0) / ? : -math.max(? * params.damage - (? * params.damage + self.field_1af8 - %shield%), 0) / ?) : math.max(0, %shield% - self.field_1af8)) : %shield%"
+            }
+          }
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_lone_druid_summon_druid_death_deferral.MODIFIER_PROPERTY_MIN_HEALTH",
+          "changes": {
+            "value": {
+              "old": "parent:IsHero() ? (parent:IsIllusion() ? 0 : not parent:IsAlive() ? 0 : ? ~= 0 ? 0 : not caster:IsAlive() ? 0 : caster:IsIllusion() ? 0 : ? ~= 0 ? 0 : not parent:FindModifierByName(\"modifier_lone_druid_summon_druid_downed\") ? (caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : 1) : 0",
+              "new": "parent:IsHero() ? (parent:IsIllusion() ? 0 : not parent:IsAlive() ? 0 : ? ~= 0 ? 0 : not caster:IsAlive() ? 0 : caster:IsIllusion() ? 0 : ? ~= 0 ? 0 : not parent:FindModifierByName(\"modifier_lone_druid_summon_druid_downed\") ? (?:GetAbilityName() == \"item_ultimate_scepter\" ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? - ? == 0 ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ?:GetAbilityName() == \"item_ultimate_scepter\" ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? - ? == 0 ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ?:GetAbilityName() == \"item_ultimate_scepter\" ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? ~= ? ? (not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 0 | 1 : 0 | 0) : not ?:IsCooldownReady() ? 0 | 0 | 1 : caster:IsReincarnating() ? 0 : ? == 0 ? (caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : ?:IsCooldownReady() ? (caster:FindModifierByName(\"modifier_skeleton_king_reincarnation_scepter_active\") ? 0 : ? == 0 ? 0 : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : ? == 0 ? (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) <= ?:GetSpecialValueFor(\"bonus_attack_leash_range\") + ?:GetSpecialValueFor(\"bear_attack_leash_range\") ? 1 : 0) : 0) : 1) : 0"
+            }
+          }
+        },
+        {
+          "type": "modifier_function_client",
+          "name": "modifier_primal_beast_colossal.MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE",
+          "changes": {
+            "value": {
+              "old": "? ~= 0 ? (? ~= 0 ? 0 : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %aoe_per_threshold% + %base_aoe% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %aoe_per_threshold% + %base_aoe% : (? * %aoe_per_threshold% + %base_aoe%) * %trample_bonus%) : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : (%slow_resistance_per_threshold% * ? + %base_slow_resist%) * %trample_bonus%",
+              "new": "? ~= 0 ? (? ~= 0 ? 0 : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %aoe_per_threshold% + %base_aoe% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %aoe_per_threshold% + %base_aoe% : (? * %aoe_per_threshold% + %base_aoe%) * %trample_bonus%) : %hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : (? * %slow_resistance_per_threshold% + %base_slow_resist%) * %trample_bonus%"
+            }
+          }
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_primal_beast_colossal.MODIFIER_PROPERTY_SLOW_RESISTANCE_STACKING",
+          "changes": {
+            "value": {
+              "old": "%hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? %slow_resistance_per_threshold% * ? + %base_slow_resist% : (%slow_resistance_per_threshold% * ? + %base_slow_resist%) * %trample_bonus%",
+              "new": "%hp_per_threshold% == 0 ? 0 : %trample_bonus% <= 0 ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : not parent:FindModifierByName(\"modifier_primal_beast_trample\") ? ? * %slow_resistance_per_threshold% + %base_slow_resist% : (? * %slow_resistance_per_threshold% + %base_slow_resist%) * %trample_bonus%"
+            }
+          }
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_smoke_of_deceit.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE",
+          "changes": {
+            "value": {
+              "old": "0",
+              "new": "? == 0 ? 0 : kv.bonus_movement_speed"
+            }
+          }
+        },
+        {
+          "type": "modifier_function",
+          "name": "modifier_smoke_of_deceit.MODIFIER_PROPERTY_TOOLTIP",
+          "changes": {
+            "value": {
+              "old": "0",
+              "new": "? == 0 ? 0 : kv.bonus_movement_speed ~= nil ? 0 : kv.visibility_radius"
+            }
+          }
+        },
+        {
+          "type": "modifier_function_client",
+          "name": "modifier_sniper_keen_scope.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL",
+          "changes": {
+            "value": {
+              "old": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539198712 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0",
+              "new": "params.attacker ~= parent ? 0 : state(caster, MODIFIER_STATE_PASSIVES_DISABLED) ? 0 : params.target:GetTeamNumber() ~= params.attacker:GetTeamNumber() ? (params.target:IsBuilding() ? 0 : ? == 0 ? 0 : params.record ~ ? & 64512 ~= 0 ? 0 : ((params.record & 1023) + (params.record & 1023) * 8 << 5) + 6539202840 ~= 0 ? %bonus_damage_for_range% * (math.sqrt((? - ?) * (? - ?) + (? - ?) * (? - ?)) / %bonus_damage_distance%) / 100 * ? : 0) : 0"
+            }
+          }
+        }
+      ]
+    },
+    "Abilities": {
+      "added": [
+        {
+          "type": "ability",
+          "name": "special_bonus_hp_regen_4_5",
+          "data": {
+            "AbilityType": "ABILITY_TYPE_ATTRIBUTES",
+            "AbilityBehavior": "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+            "AbilityValues": {
+              "value": {
+                "value": 4.5
+              }
+            }
+          }
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "radigull_eggstremism",
+          "changes": {
+            "AbilityValues": {
+              "fuse_duration": {
+                "old": 2,
+                "new": 2.5
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "abaddon_aphotic_shield",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "12 10 8 6",
+                  "new": "13 11 9 7"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "abaddon_withering_mist",
+          "changes": {
+            "AbilityValues": {
+              "max_heal_reduction_pct": {
+                "value": {
+                  "old": 40,
+                  "new": 35
+                },
+                "hero_levelup": {
+                  "old": "+1.0",
+                  "new": "+1.0"
+                },
+                "special_bonus_unique_abaddon_6": {
+                  "old": "+10",
+                  "new": "+10"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "abaddon_frostmourne",
+          "changes": {
+            "AbilityValues": {
+              "curse_dps": {
+                "value": {
+                  "old": "12 20 28 36",
+                  "new": "12 20 28 36"
+                },
+                "special_bonus_unique_abaddon_5": {
+                  "old": "+25",
+                  "new": "+20"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "beastmaster_summon_thunderhide",
+          "changes": {
+            "AbilityValues": {
+              "thunderhide_base_max_health": {
+                "old": 2200,
+                "new": 2100
+              },
+              "thunderhide_slam_duration": {
+                "old": null,
+                "new": 2
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "brewmaster_thunder_clap",
+          "changes": {
+            "AbilityValues": {
+              "movement_slow": {
+                "old": "15 30 45 60",
+                "new": "20 30 40 50"
+              },
+              "attack_speed_slow": {
+                "old": "15 30 45 60",
+                "new": "20 30 40 50"
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "bristleback_bristleback",
+          "changes": {
+            "AbilityValues": {
+              "quill_release_threshold": {
+                "value": {
+                  "old": "275 250 225 200",
+                  "new": "275 250 225 200"
+                },
+                "special_bonus_unique_bristleback": {
+                  "old": -30,
+                  "new": -35
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "broodmother_spawn_spiderlings",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 100,
+              "new": "100 125 150"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "centaur_stampede",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "100 95 90",
+                  "new": "100 95 90"
+                },
+                "special_bonus_unique_centaur_5": {
+                  "old": -25,
+                  "new": -30
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "dazzle_shadow_wave",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCastRange": {
+                "value": {
+                  "old": 800,
+                  "new": 800
+                },
+                "special_bonus_unique_dazzle_shadow_wave_cast_range": {
+                  "old": "+125",
+                  "new": "+100"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "dazzle_nothl_projection",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCastRange": {
+                "value": {
+                  "old": 450,
+                  "new": 450
+                },
+                "special_bonus_shard": {
+                  "old": "+250",
+                  "new": "+200"
+                }
+              },
+              "leash_start": {
+                "value": {
+                  "old": 1600,
+                  "new": 1600
+                },
+                "special_bonus_shard": {
+                  "old": "+500",
+                  "new": "+450"
+                }
+              },
+              "shard_cast_range_bonus": {
+                "old": 250,
+                "new": 200
+              },
+              "shard_leash_range_bonus": {
+                "old": 500,
+                "new": 450
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "enigma_demonic_conversion",
+          "changes": {
+            "AbilityValues": {
+              "eidolon_bonus_damage": {
+                "value": {
+                  "old": 0,
+                  "new": 0
+                },
+                "special_bonus_unique_enigma_3": {
+                  "old": "+30",
+                  "new": "+25"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "faceless_void_time_dilation",
+          "changes": {
+            "AbilityValues": {
+              "damage_per_stack": {
+                "value": {
+                  "old": "6 8 10 12",
+                  "new": "9 10 11 12"
+                },
+                "special_bonus_unique_faceless_void_6": {
+                  "old": "+6",
+                  "new": "+6"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "furion_wrath_of_nature",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "100 140 180",
+                  "new": "100 140 180"
+                },
+                "special_bonus_unique_furion_5": {
+                  "old": "+25",
+                  "new": "+30"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "grimstroke_dark_artistry",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "100 160 220 280",
+                  "new": "110 160 210 260"
+                },
+                "special_bonus_unique_grimstroke_2": {
+                  "old": "+70%",
+                  "new": "+70%"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "grimstroke_dark_portrait",
+          "changes": {
+            "AbilityValues": {
+              "images_movespeed_bonus": {
+                "value": {
+                  "old": 30,
+                  "new": 25
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "grimstroke_soul_chain",
+          "changes": {
+            "AbilityCastRange": {
+              "old": "700 800 900",
+              "new": 800
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "gyrocopter_flak_cannon",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 25,
+                  "new": 24
+                },
+                "special_bonus_unique_gyrocopter_1": {
+                  "old": -6,
+                  "new": -6
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "huskar_burning_spear",
+          "changes": {
+            "AbilityValues": {
+              "burn_damage_max_pct": {
+                "value": {
+                  "old": 0.5,
+                  "new": 0.6
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_MAGICAL",
+                  "new": "DAMAGE_TYPE_MAGICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "huskar_life_break",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "16 14 12",
+                  "new": "15 13 11"
+                },
+                "special_bonus_unique_huskar_7": {
+                  "old": -5,
+                  "new": -5
+                }
+              },
+              "immunity_resist": {
+                "old": 60,
+                "new": 80
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "juggernaut_healing_ward",
+          "changes": {
+            "AbilityManaCost": {
+              "old": 120,
+              "new": 110
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "juggernaut_bladeform",
+          "changes": {
+            "AbilityValues": {
+              "max_stacks": {
+                "old": 10,
+                "new": 12
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "kez_talon_toss",
+          "changes": {
+            "AbilityValues": {
+              "damage": {
+                "value": {
+                  "old": "60 120 180 240",
+                  "new": "80 140 200 260"
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "largo_amphibian_rhapsody",
+          "changes": {
+            "AbilityValues": {
+              "max_stacks": {
+                "value": {
+                  "old": 5,
+                  "new": "4 5 6"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lina_flame_cloak",
+          "changes": {
+            "AbilityValues": {
+              "flame_cloak_duration": {
+                "old": 7,
+                "new": 8
+              },
+              "magic_resistance": {
+                "value": {
+                  "old": 35,
+                  "new": 40
+                },
+                "display_type": {
+                  "old": "kBuffPercentage",
+                  "new": "kBuffPercentage"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lone_druid_spirit_bear",
+          "changes": {
+            "AbilityValues": {
+              "scepter_gained_cooldown": {
+                "old": null,
+                "new": 6
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "lycan_pack_hunter",
+          "changes": {
+            "AbilityValues": {
+              "mark_range": {
+                "old": null,
+                "new": 1200
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "medusa_stone_gaze",
+          "changes": {
+            "AbilityValues": {
+              "duration": {
+                "value": {
+                  "old": "5 5.5 6",
+                  "new": "4.5 5 5.5"
+                },
+                "special_bonus_unique_medusa": {
+                  "old": "+3",
+                  "new": "+3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "meepo_divided_we_stand",
+          "changes": {
+            "AbilityValues": {
+              "xp_penalty_time": {
+                "old": 5,
+                "new": 10
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "naga_siren_eelskin",
+          "changes": {
+            "AbilityValues": {
+              "evasion_per_naga": {
+                "value": {
+                  "old": 4,
+                  "new": 5
+                },
+                "hero_levelup": {
+                  "old": 0.1,
+                  "new": 0.1
+                },
+                "special_bonus_unique_naga_siren_eelskin_evasion": {
+                  "old": "+3",
+                  "new": "+3"
+                }
+              },
+              "radius": {
+                "value": {
+                  "old": 900,
+                  "new": 1200
+                },
+                "affected_by_aoe_increase": {
+                  "old": 1,
+                  "new": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "necrolyte_reapers_scythe",
+          "changes": {
+            "AbilityCooldown": {
+              "old": 100,
+              "new": 95
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phantom_assassin_stifling_dagger",
+          "changes": {
+            "AbilityValues": {
+              "attack_factor": {
+                "value": {
+                  "old": "-70 -55 -40 -25",
+                  "new": "-75 -60 -45 -30"
+                },
+                "special_bonus_unique_phantom_assassin_5": {
+                  "old": "+20",
+                  "new": "+20"
+                }
+              },
+              "attack_factor_tooltip": {
+                "value": {
+                  "old": "30 45 60 75",
+                  "new": "25 40 55 70"
+                },
+                "special_bonus_unique_phantom_assassin_5": {
+                  "old": "+15",
+                  "new": "+15"
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phantom_assassin_phantom_strike",
+          "changes": {
+            "AbilityValues": {
+              "bonus_attack_speed": {
+                "value": {
+                  "old": "80 120 160 200",
+                  "new": "75 100 125 150"
+                },
+                "special_bonus_unique_phantom_assassin_strike_aspd": {
+                  "old": "+60",
+                  "new": "+60"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "phantom_lancer_illusory_armaments",
+          "changes": {
+            "AbilityValues": {
+              "outgoing_floor": {
+                "value": {
+                  "old": 17,
+                  "new": 15
+                },
+                "hero_levelup": {
+                  "old": 2,
+                  "new": 2
+                },
+                "levelup_interval": {
+                  "old": 3,
+                  "new": 3
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "primal_beast_colossal",
+          "changes": {
+            "AbilityValues": {
+              "slow_resistance_per_threshold": {
+                "old": 1,
+                "new": 0.75
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "riki_smoke_screen",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "15 14 13 12",
+                  "new": "16 15 14 13"
+                },
+                "special_bonus_unique_riki_3": {
+                  "old": -3,
+                  "new": -3
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "riki_backstab",
+          "changes": {
+            "AbilityValues": {
+              "bonus_xp_kill": {
+                "old": "130 260 390",
+                "new": "100 200 300"
+              },
+              "bonus_xp_assist": {
+                "old": 100,
+                "new": 50
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sandking_burrowstrike",
+          "changes": {
+            "AbilityValues": {
+              "spine_damage_pct": {
+                "special_bonus_scepter": {
+                  "old": 75,
+                  "new": 70
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "shadow_demon_disruption",
+          "changes": {
+            "AbilityValues": {
+              "illusion_flat_damage": {
+                "value": {
+                  "old": "20 35 50 65",
+                  "new": "15 30 45 60"
+                },
+                "CalculateSpellDamageTooltip": {
+                  "old": 0,
+                  "new": 0
+                },
+                "DamageTypeTooltip": {
+                  "old": "DAMAGE_TYPE_PHYSICAL",
+                  "new": "DAMAGE_TYPE_PHYSICAL"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "shadow_shaman_shackles",
+          "changes": {
+            "AbilityCooldown": {
+              "old": "14 13 12 11",
+              "new": "15 14 13 12"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "skeleton_king_bone_guard",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "70 80 90 100",
+              "new": "70 85 100 115"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "snapfire_firesnap_cookie",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": "18 17 16 15",
+                  "new": "17 16 15 14"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "snapfire_lil_shredder",
+          "changes": {
+            "AbilityManaCost": {
+              "old": "70 80 90 100",
+              "new": "60 65 70 75"
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sven_gods_strength",
+          "changes": {
+            "AbilityValues": {
+              "bonus_slow_resistance": {
+                "value": {
+                  "old": 40,
+                  "new": 30
+                },
+                "special_bonus_unique_sven_gods_strength_slow_resist": {
+                  "old": "+20",
+                  "new": "+20"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "sven_wrath_of_god",
+          "changes": {
+            "AbilityValues": {
+              "bonus_damage_per_str": {
+                "value": {
+                  "old": 0.08,
+                  "new": 0.15
+                },
+                "hero_levelup": {
+                  "old": 0.02,
+                  "new": 0.01
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "troll_warlord_berserkers_rage",
+          "changes": {
+            "AbilityValues": {
+              "bonus_move_speed": {
+                "value": {
+                  "old": "15 25 35 45",
+                  "new": "15 20 25 30"
+                },
+                "special_bonus_unique_troll_warlord_2": {
+                  "old": "+20",
+                  "new": "+20"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "troll_warlord_battle_trance",
+          "changes": {
+            "AbilityValues": {
+              "movement_speed": {
+                "value": {
+                  "old": 35,
+                  "new": 30
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "visage_silent_as_the_grave",
+          "changes": {
+            "AbilityValues": {
+              "AbilityCooldown": {
+                "value": {
+                  "old": 45.75,
+                  "new": 45.5
+                },
+                "hero_levelup": {
+                  "old": -0.75,
+                  "new": -0.5
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_bloodslinger",
+          "changes": {
+            "AbilityHealthCost": {
+              "old": 75,
+              "new": 100
+            }
+          }
+        },
+        {
+          "type": "ability",
+          "name": "item_skadi",
+          "changes": {
+            "AbilityValues": {
+              "bonus_all_stats": {
+                "old": 35,
+                "new": 32
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Units": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "unit",
+          "name": "npc_dota_neutral_radigull",
+          "changes": {
+            "ModelScale": {
+              "old": 0.6,
+              "new": 0.69
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_beastmaster_thunderhide",
+          "changes": {
+            "MagicalResistance": {
+              "old": 35,
+              "new": 30
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_lina",
+          "changes": {
+            "AttributeBaseStrength": {
+              "old": 20,
+              "new": 21
+            },
+            "AttributeAgilityGain": {
+              "old": 2.4,
+              "new": 2.6
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_riki",
+          "changes": {
+            "AttributeBaseAgility": {
+              "old": 30,
+              "new": 26
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_skeleton_king",
+          "changes": {
+            "AttributeAgilityGain": {
+              "old": 1.7,
+              "new": 1.5
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_dazzle",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 25,
+              "new": 23
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_omniknight",
+          "changes": {
+            "AttributeAgilityGain": {
+              "old": 1.7,
+              "new": 1.5
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_meepo",
+          "changes": {
+            "AttributeAgilityGain": {
+              "old": 2.1,
+              "new": 2
+            },
+            "MovementSpeed": {
+              "old": 310,
+              "new": 305
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_visage",
+          "changes": {
+            "AttributeIntelligenceGain": {
+              "old": 2.9,
+              "new": 2.6
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_centaur",
+          "changes": {
+            "Ability10": {
+              "old": "special_bonus_hp_regen_4",
+              "new": "special_bonus_hp_regen_4_5"
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_bristleback",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 14,
+              "new": 15
+            }
+          }
+        },
+        {
+          "type": "unit",
+          "name": "npc_dota_hero_kez",
+          "changes": {
+            "AttributeBaseIntelligence": {
+              "old": 20,
+              "new": 18
+            },
+            "AttributeIntelligenceGain": {
+              "old": 1.7,
+              "new": 1.9
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_beastmaster_summon_thunderhide_Note1",
+          "value": "The Thunderhide's Slam slows enemies for %thunderhide_slam_duration% seconds."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lycan_pack_hunter_mark_range",
+          "value": "MARK RANGE:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lone_druid_spirit_bear_Note5",
+          "value": "Aghanim's Scepter goes on a %scepter_gained_cooldown% second cooldown when moved between Lone Druid and the Spirit Bear, unless near a shop."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lone_druid_spirit_bear_summon_druid_Note1",
+          "value": "Lone Druid drops Divine Rapier and Gem of True Sight when he goes down."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lone_druid_spirit_bear_summon_druid_Note2",
+          "value": "Does not keep Lone Druid alive while the Spirit Bear's Aghanim's Scepter is on cooldown."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_shredder_reactive_armor_Note2",
+          "value": "Attacks that miss Timbersaw due to evasion, blindness or uphill disadvantage still grant stacks."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_special_bonus_hp_regen_4_5",
+          "value": "+{s:value} Health Regen"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_item_safety_bubble_Note0",
+          "value": "Damage to the barrier on illusions is amplified by the illusion's incoming damage taken."
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_742a_Update",
+          "value": "7.42a Gameplay Update"
+        }
+      ],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lycan_pack_hunter_Description",
+          "changes": {
+            "value": {
+              "old": "Lycan and units under his control mark units on attack for %mark_duration% seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to %bonus_damage%%% of its attack damage per stack, and heals the attacker for %lifesteal%%% of its attack damage per stack.",
+              "new": "Lycan and units under his control mark units on attack for %mark_duration% seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to %bonus_damage%%% of its attack damage per stack, and heals the attacker for %lifesteal%%% of its attack damage per stack. Only units within %mark_range% range of Lycan can apply new marks.\\n\\nDISPEL TYPE: Basic Dispel"
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_chaos_knight_armageddon_Description",
+          "changes": {
+            "value": {
+              "old": "For each second Chaos Knight keeps moving without stopping or attacking, Armageddon gains bonus movement speed. The bonus drains away while stopping, and lost when attacking.<br><br>While at least one of Chaos Knight's phantasms is alive, Ahead, Armageddon can be activated to charge over terrain, building up to a max speed before releasing.  Chaos Knight and the illusions will attack units they charge over.",
+              "new": "For each second Chaos Knight keeps moving without stopping or attacking, Armageddon gains bonus movement speed. The bonus drains away while stopping, and lost when attacking.<br><br>While at least one of Chaos Knight's phantasms is alive, Ahead, Armageddon can be activated to charge over terrain, building up to a max speed before releasing.  Chaos Knight and the illusions will attack units they charge over. Can only be activated once per cast of Phantasm, and is refreshed when Phantasm is cast."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_item_horn_of_battle_Description",
+          "changes": {
+            "value": {
+              "old": "<h1>Use: Call to Arms</h1>Target an allied barracks anywhere on the map to summon a wave of mega creeps, including a catapult and a flagbearer, in that lane for your team. Can be used from the backpack.",
+              "new": "<h1>Use: Call to Arms</h1>Target an allied barracks anywhere on the map to summon a wave of Super Creeps, or Mega Creeps, if all enemy barracks are destroyed, including a catapult and a flagbearer, in that lane for your team. Can be used from the backpack."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_item_horn_of_battle_greater_Description",
+          "changes": {
+            "value": {
+              "old": "<h1>Use: Grand Call to Arms</h1>Summons a wave of mega creeps, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack.",
+              "new": "<h1>Use: Grand Call to Arms</h1>Summons a wave of super creeps, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

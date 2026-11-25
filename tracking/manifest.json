@@ -1,8 +1,8 @@
 {
  "build": {
-  "ClientVersion": "6993",
-  "SourceRevision": "11269454",
-  "VersionDate": "Nov 23 2026"
+  "ClientVersion": "6995",
+  "SourceRevision": "11273798",
+  "VersionDate": "Nov 24 2026"
  },
  "failed": {},
  "files": {
@@ -16,7 +16,7 @@
   "protos": 88
  },
  "schema": {
-  "classes": 18307,
+  "classes": 18309,
   "enums": 1477,
   "modules": 18
  },
