@@ -1,4 +1,4 @@
-import { tryReadDump } from '../../util';
+import { parseDumpJson, tryReadDump } from '../../util';
 import { PanoramaPanel } from './types';
 
 export { types as panelsTypes } from './types';
@@ -14,5 +14,5 @@ export function generatePanoramaPanels(): PanoramaPanel[] | undefined {
     return undefined;
   }
 
-  return JSON.parse(dump);
+  return parseDumpJson(dump, 'panorama_panels');
 }

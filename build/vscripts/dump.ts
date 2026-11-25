@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { readDump, tryReadDump } from '../util';
+import { parseDumpJson, readDump, tryReadDump } from '../util';
 import { unknownTypeFixes } from './unknown-type-fixes';
 
 const reloadMessage = 'Initializing script VM...\n...done';
@@ -140,7 +140,10 @@ function carryForwardUnknowns(key: string, member: DumpMethod): void {
  * Client-side class names (prefixed with `C_`) are normalized to server-side
  * names (prefixed with `C`) for lookup purposes.
  */
-function applyManualArgFix(member: DumpMethod, fix: { returns?: string; args?: Record<number, string> }) {
+function applyManualArgFix(
+  member: DumpMethod,
+  fix: { returns?: string; args?: Record<number, string> },
+) {
   if (fix.returns && member.returns === '<unknown>') {
     member.returns = fix.returns;
   }
@@ -177,7 +180,7 @@ function applyUnknownTypeFixes(dump: Dump): Dump {
 }
 
 export const clientDump: Dump = applyUnknownTypeFixes(
-  JSON.parse(readDump('cl_script_reload').replace(reloadMessage, '')),
+  parseDumpJson(readDump('cl_script_reload').replace(reloadMessage, ''), 'cl_script_reload'),
 );
 
 // Without a server section (a dump that has none) the client one stands in for it. A server section
@@ -190,7 +193,7 @@ if (serverText === undefined) {
 export const serverDump: Dump =
   serverText === undefined
     ? clientDump
-    : applyUnknownTypeFixes(JSON.parse(serverText.replace(reloadMessage, '')));
+    : applyUnknownTypeFixes(parseDumpJson(serverText.replace(reloadMessage, ''), 'script_reload'));
 
 export type Dump = (DumpConstant | DumpClass | DumpFunction)[];
 
