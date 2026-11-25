@@ -2859,7 +2859,7 @@ resource/localization/abilities_bulgarian.txt crc=56476ac2 size=2368529
 resource/localization/abilities_czech.txt crc=706ed872 size=2075898
 resource/localization/abilities_danish.txt crc=ab2d68d5 size=1805419
 resource/localization/abilities_dutch.txt crc=50d97a35 size=837001
-resource/localization/abilities_english.txt crc=bc916290 size=1898309
+resource/localization/abilities_english.txt crc=60aaea48 size=1898362
 resource/localization/abilities_finnish.txt crc=3de4a949 size=1937610
 resource/localization/abilities_french.txt crc=33f0ca91 size=2123101
 resource/localization/abilities_german.txt crc=a5a71f55 size=2069945
@@ -3169,7 +3169,7 @@ resource/localization/patchnotes/patchnotes_bulgarian.txt crc=feed15ad size=3820
 resource/localization/patchnotes/patchnotes_czech.txt crc=f6911165 size=3666190
 resource/localization/patchnotes/patchnotes_danish.txt crc=29ae225f size=2706139
 resource/localization/patchnotes/patchnotes_dutch.txt crc=1ebb0abc size=316374
-resource/localization/patchnotes/patchnotes_english.txt crc=572f2c1a size=3076507
+resource/localization/patchnotes/patchnotes_english.txt crc=2608d2f6 size=3076515
 resource/localization/patchnotes/patchnotes_finnish.txt crc=a973099f size=2699654
 resource/localization/patchnotes/patchnotes_french.txt crc=11eddcce size=3556619
 resource/localization/patchnotes/patchnotes_german.txt crc=2c6af49f size=3138873

@@ -1,0 +1,35 @@
+{
+  "version": "6996",
+  "date": "Nov 24 2026",
+  "time": "17:06:56",
+  "changes": {
+    "Lua Enums": {
+      "added": [],
+      "removed": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1798
+        }
+      ],
+      "changed": []
+    },
+    "Localization": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_item_horn_of_battle_greater_Description",
+          "changes": {
+            "value": {
+              "old": "<h1>Use: Grand Call to Arms</h1>Summons a wave of super creeps, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack.",
+              "new": "<h1>Use: Grand Call to Arms</h1>Summons a wave of Super Creeps, or Mega Creeps, if all enemy barracks are destroyed, including a catapult and a flagbearer, in every lane for your team. Can be used from the backpack."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
