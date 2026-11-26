@@ -1,0 +1,88 @@
+{
+  "version": "6997",
+  "date": "Nov 25 2026",
+  "time": "17:52:45",
+  "changes": {
+    "Lua Enums": {
+      "added": [
+        {
+          "type": "enum_member",
+          "enum": "GameActivity_t",
+          "name": "ACT_DOTA_CAST5_STATUE",
+          "value": 1798
+        }
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "Abilities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        {
+          "type": "ability",
+          "name": "big_thunder_lizard_slam",
+          "changes": {
+            "AbilityValues": {
+              "non_hero_duration": {
+                "old": 4,
+                "new": null
+              },
+              "hero_duration": {
+                "old": 3,
+                "new": null
+              },
+              "duration": {
+                "old": null,
+                "new": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Localization": {
+      "added": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_big_thunder_lizard_slam_duration",
+          "value": "DURATION:"
+        }
+      ],
+      "removed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_big_thunder_lizard_slam_non_hero_duration",
+          "value": "DURATION:"
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_big_thunder_lizard_slam_hero_duration",
+          "value": "HERO DURATION:"
+        }
+      ],
+      "changed": [
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_lycan_pack_hunter_Description",
+          "changes": {
+            "value": {
+              "old": "Lycan and units under his control mark units on attack for %mark_duration% seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to %bonus_damage%%% of its attack damage per stack, and heals the attacker for %lifesteal%%% of its attack damage per stack. Only units within %mark_range% range of Lycan can apply new marks.\\n\\nDISPEL TYPE: Basic Dispel",
+              "new": "Lycan and units under his control mark units on attack for %mark_duration% seconds. When Lycan or a unit under his control attacks a marked unit, it deals bonus damage equal to %bonus_damage%%% of its attack damage per stack, and heals the attacker for %lifesteal%%% of its attack damage per stack. Only units within %mark_range% range of Lycan can apply new marks."
+            }
+          }
+        },
+        {
+          "type": "localization",
+          "name": "DOTA_Tooltip_ability_big_thunder_lizard_slam_Description",
+          "changes": {
+            "value": {
+              "old": "The Ancient Thunderhide slams his mammoth foot against the ground, sending %pulse_count% shockwaves, each smaller than the last. Every wave damages enemies it catches and throws them off their footing, slowing their movement and attack speed. Heroes regain their balance more quickly.",
+              "new": "The Ancient Thunderhide slams his mammoth foot against the ground, sending %pulse_count% shockwaves, each smaller than the last. Every wave damages enemies it catches and throws them off their footing, slowing their movement and attack speed."
+            }
+          }
+        }
+      ]
+    }
+  }
+}

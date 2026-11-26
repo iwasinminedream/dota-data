@@ -2028,7 +2028,7 @@ scripts/npc/heroes/npc_dota_hero_witch_doctor.txt crc=2a006158 size=23118
 scripts/npc/heroes/npc_dota_hero_zuus.txt crc=e0b63dc8 size=22454
 scripts/npc/items.txt crc=1374ffbe size=701248
 scripts/npc/neutral_items.txt crc=4de2dbe5 size=6304
-scripts/npc/npc_abilities.txt crc=01deb48d size=564381
+scripts/npc/npc_abilities.txt crc=2e26e560 size=564346
 scripts/npc/npc_ability_ids.txt crc=7adf44ad size=161793
 scripts/npc/npc_heroes.txt crc=6f8c1c6e size=5879
 scripts/npc/npc_popular_items.txt crc=6a674c78 size=46002
